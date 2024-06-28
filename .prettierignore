@@ -1,0 +1,12 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+
+# IDE
+/.idea
+/.vscode
+
+# pnpm
+pnpm-lock.yaml
