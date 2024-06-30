@@ -10,6 +10,7 @@
 		"prepare": "husky"
 	},
 	"dependencies": {
+		"@headlessui/react": "^2.1.1",
 		"next": "15.0.0-canary.49",
 		"react": "19.0.0-rc-58af67a8f8-20240628",
 		"react-dom": "19.0.0-rc-58af67a8f8-20240628",

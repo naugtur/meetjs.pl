@@ -9,7 +9,7 @@ import {
 
 export const SocialLinks = () => {
 	return (
-		<ul className="flex gap-2 p-4 text-xl">
+		<ul className="flex items-center gap-4 p-4 text-xl md:gap-2">
 			<li>
 				<Link href="/facebook" target="_blank">
 					<FaFacebook />
