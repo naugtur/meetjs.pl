@@ -28,9 +28,9 @@ export const Navigation = () => {
 					<div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
 						<div className="relative flex h-16 items-center justify-between">
 							<div className="flex flex-1 items-center justify-between sm:items-stretch">
-								<div className="flex items-center">
+								<Link href="/" className="flex items-center">
 									<Logo />
-								</div>
+								</Link>
 								<ul className="hidden items-center justify-center gap-4 sm:flex">
 									{navigationLinks.map((item) => (
 										<Link
