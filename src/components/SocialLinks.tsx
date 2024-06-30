@@ -13,26 +13,31 @@ export const SocialLinks = () => {
 			<li>
 				<Link href="/facebook" target="_blank">
 					<FaFacebook />
+					<span className="sr-only">Facebook</span>
 				</Link>
 			</li>
 			<li>
 				<Link href="/linkedin" target="_blank">
 					<FaLinkedin />
+					<span className="sr-only">Linkedin</span>
 				</Link>
 			</li>
 			<li>
 				<Link href="/x" target="_blank">
 					<FaSquareXTwitter />
+					<span className="sr-only">X</span>
 				</Link>
 			</li>
 			<li>
 				<Link href="/discord" target="_blank">
 					<FaDiscord />
+					<span className="sr-only">Discord</span>
 				</Link>
 			</li>
 			<li>
 				<Link href="/github" target="_blank">
 					<FaGithub />
+					<span className="sr-only">Github</span>
 				</Link>
 			</li>
 		</ul>
