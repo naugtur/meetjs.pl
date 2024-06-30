@@ -17,6 +17,9 @@ importers:
       react-dom:
         specifier: 19.0.0-rc-58af67a8f8-20240628
         version: 19.0.0-rc-58af67a8f8-20240628(react@19.0.0-rc-58af67a8f8-20240628)
+      react-icons:
+        specifier: ^5.2.1
+        version: 5.2.1(react@19.0.0-rc-58af67a8f8-20240628)
     devDependencies:
       '@types/node':
         specifier: ^20.14.9
@@ -1594,6 +1597,11 @@ packages:
     resolution: {integrity: sha512-4iJcvjjTFuigD7JloPVTwBMMjJsE1U4Z6iYojwx+v2a8DrUM0oTB7o/+DXRhxw1iEJQnHClDw8kXivnHKUQgqg==}
     peerDependencies:
       react: 19.0.0-rc-58af67a8f8-20240628
+
+  react-icons@5.2.1:
+    resolution: {integrity: sha512-zdbW5GstTzXaVKvGSyTaBalt7HSfuK5ovrzlpyiWHAFXndXTdd/1hdDHI4xBM1Mn7YriT6aqESucFl9kEXzrdw==}
+    peerDependencies:
+      react: '*'
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -3603,6 +3611,10 @@ snapshots:
     dependencies:
       react: 19.0.0-rc-58af67a8f8-20240628
       scheduler: 0.25.0-rc-58af67a8f8-20240628
+
+  react-icons@5.2.1(react@19.0.0-rc-58af67a8f8-20240628):
+    dependencies:
+      react: 19.0.0-rc-58af67a8f8-20240628
 
   react-is@16.13.1: {}
 

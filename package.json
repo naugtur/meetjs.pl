@@ -12,7 +12,8 @@
 	"dependencies": {
 		"next": "15.0.0-canary.49",
 		"react": "19.0.0-rc-58af67a8f8-20240628",
-		"react-dom": "19.0.0-rc-58af67a8f8-20240628"
+		"react-dom": "19.0.0-rc-58af67a8f8-20240628",
+		"react-icons": "^5.2.1"
 	},
 	"devDependencies": {
 		"@types/node": "^20.14.9",
