@@ -6,7 +6,7 @@ export const Navigation = () => {
 	return (
 		<nav className="sticky top-0 bg-purple">
 			<div className="mx-auto flex max-w-7xl items-center justify-between">
-				<Link href="/" className="p-4">
+				<Link href="/">
 					<Logo />
 				</Link>
 
