@@ -10,14 +10,14 @@
 		"prepare": "husky"
 	},
 	"dependencies": {
-		"next": "^14.2.4",
-		"react": "^18.3.1",
-		"react-dom": "^18.3.1"
+		"next": "15.0.0-rc.0",
+		"react": "19.0.0-rc-58af67a8f8-20240628",
+		"react-dom": "19.0.0-rc-58af67a8f8-20240628"
 	},
 	"devDependencies": {
 		"@types/node": "^20.14.9",
-		"@types/react": "^18.3.3",
-		"@types/react-dom": "^18.3.0",
+		"@types/react": "npm:types-react@rc",
+		"@types/react-dom": "npm:types-react-dom@rc",
 		"eslint": "8.57.0",
 		"eslint-config-next": "14.2.4",
 		"eslint-config-prettier": "^9.1.0",
