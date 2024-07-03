@@ -3,6 +3,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/card';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { CiLocationOn, CiClock1 } from 'react-icons/ci';
 
 const Events = () => {
 	const [events, setEvents] = useState<OrgEvent[]>([]);
@@ -36,10 +37,20 @@ const Events = () => {
 						<CardDescription>{event.description}</CardDescription>
 					</CardHeader>
 					<CardContent>
-						<div className="flex items-center justify-between">
+						<div className="flex items-end justify-between gap-4">
 							<div>
-								<div className="text-sm font-medium">June 15, 2023</div>
-								<div className="text-sm dark:text-gray-400">6:30 PM - 8:30 PM</div>
+								<div className="flex gap-1">
+									<CiClock1 />
+									<div>
+										<div className="text-sm font-medium">June 15, 2023</div>
+										<div className="text-sm dark:text-gray-400">6:30 PM - 8:30 PM</div>
+									</div>
+								</div>
+
+								<div className="mt-3 flex gap-1 text-xl font-medium">
+									<CiLocationOn />
+									<span className="text-sm">{event.location.name}</span>
+								</div>
 							</div>
 							{event.eventLink && (
 								<Link
