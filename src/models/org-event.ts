@@ -2,8 +2,8 @@ interface OrgEvent {
 	id: string;
 	name: string;
 	description: string;
-	dateStart: string;
-	dateEnd: string;
+	startDateTime: string;
+	endDateTime: string;
 	location: Location;
 	organizer: Organizer;
 	eventLink: string;

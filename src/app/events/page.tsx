@@ -20,6 +20,8 @@ const Events = () => {
 		try {
 			const response = await fetch('/events.json');
 			const availableEvents: OrgEvent[] = await response.json();
+			// TODO: Validate data
+			// TODO: Sort events by start date
 			setEvents(availableEvents);
 		} catch (e: any) {
 			console.error(`Failed to fetch events ${e.message ?? e}`);

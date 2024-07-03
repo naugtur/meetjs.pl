@@ -3,8 +3,8 @@
 		"id": "1",
 		"name": "React Meetup",
 		"description": "Join us for a deep dive into the latest React features and best practices.",
-		"dateStart": "20240516T160000Z",
-		"dateEnd": "20240516T180000Z",
+		"startDateTime": "20240516T160000Z",
+		"endDateTime": "20240516T180000Z",
 		"location": {
 			"name": "Trzy Siostry, plac Uniwersytecki 8, 50-115 Wrocław, Poland",
 			"cords": {
@@ -22,8 +22,8 @@
 		"id": "2",
 		"name": "Serverless Meetup",
 		"description": "Explore the latest trends and best practices in serverless architecture.",
-		"dateStart": "20240516T160000Z",
-		"dateEnd": "20240516T180000Z",
+		"startDateTime": "20240516T160000Z",
+		"endDateTime": "20240516T180000Z",
 		"location": {
 			"name": "Trzy Siostry, plac Uniwersytecki 8, 50-115 Wrocław, Poland",
 			"cords": {
@@ -41,8 +41,8 @@
 		"id": "3",
 		"name": "DevOps Meetup",
 		"description": "Learn about the latest tools and techniques in the world of DevOps.",
-		"dateStart": "20240516T160000Z",
-		"dateEnd": "20240516T180000Z",
+		"startDateTime": "20240516T160000Z",
+		"endDateTime": "20240516T180000Z",
 		"location": {
 			"name": "Trzy Siostry, plac Uniwersytecki 8, 50-115 Wrocław, Poland",
 			"cords": {
@@ -60,8 +60,8 @@
 		"id": "4",
 		"name": "Meet.js",
 		"description": "Learn about the latest tools and techniques in the world of DevOps.",
-		"dateStart": "20240516T160000Z",
-		"dateEnd": "20240516T180000Z",
+		"startDateTime": "20240516T160000Z",
+		"endDateTime": "20240516T180000Z",
 		"location": {
 			"name": "Trzy Siostry, plac Uniwersytecki 8, 50-115 Wrocław, Poland",
 			"cords": {
