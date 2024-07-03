@@ -1,52 +1,8 @@
 'use client';
 
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/card';
 import Link from 'next/link';
-import { ScriptProps } from 'next/script';
 import { useEffect, useState } from 'react';
-
-interface OrgEvent {
-	id: string;
-	name: string;
-	description: string;
-	dateStart: string;
-	dateEnd: string;
-	location: Location;
-	organizer: Organizer;
-	eventLink: string;
-}
-
-interface Location {
-	name: string;
-	cords: {
-		lat: number;
-		lon: number;
-	};
-}
-
-interface Organizer {
-	name: string;
-	email: string;
-}
-
-const Card = (props: ScriptProps) => {
-	return <div className="rounded-2xl border border-gray-500 bg-white p-4 text-black">{props.children}</div>;
-};
-
-const CardHeader = (props: ScriptProps) => {
-	return <div className="">{props.children}</div>;
-};
-
-const CardTitle = (props: ScriptProps) => {
-	return <div className="text-2xl font-semibold">{props.children}</div>;
-};
-
-const CardDescription = (props: ScriptProps) => {
-	return <div className="text-gray-400">{props.children}</div>;
-};
-
-const CardContent = (props: ScriptProps) => {
-	return <div className="mt-6">{props.children}</div>;
-};
 
 const Events = () => {
 	const [events, setEvents] = useState<OrgEvent[]>([]);
