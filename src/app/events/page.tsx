@@ -29,7 +29,7 @@ interface Organizer {
 }
 
 const Card = (props: ScriptProps) => {
-	return <div className="rounded-2xl border border-gray-500 p-4">{props.children}</div>;
+	return <div className="rounded-2xl border border-gray-500 bg-white p-4 text-black">{props.children}</div>;
 };
 
 const CardHeader = (props: ScriptProps) => {
@@ -88,7 +88,7 @@ const Events = () => {
 							{event.eventLink && (
 								<Link
 									href={event.eventLink}
-									className="bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-ring inline-flex h-8 items-center justify-center rounded-md px-4 text-sm font-medium shadow transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 dark:bg-white dark:text-black"
+									className="hover:bg-primary/90 focus-visible:ring-ring inline-flex h-8 items-center justify-center rounded-md bg-gray-900 px-4 text-sm font-medium text-white shadow transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50"
 									prefetch={false}
 								>
 									RSVP
