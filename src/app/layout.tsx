@@ -23,7 +23,7 @@ const RootLayout = ({
 }>) => {
 	return (
 		<html lang="en" className={montserrat.variable}>
-			<body className="font-montserrat">
+			<body>
 				<Navigation />
 				{children}
 				<Footer />
