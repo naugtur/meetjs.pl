@@ -8,7 +8,7 @@ import { FaRegEnvelope } from 'react-icons/fa6';
 
 export const Footer = () => {
 	return (
-		<footer className="bg-purple">
+		<footer className="bg-purple text-white">
 			<div className="mx-auto flex max-w-7xl flex-col justify-between px-2 sm:px-6 md:flex-row lg:px-8">
 				<section className="flex flex-col">
 					<Logo />
