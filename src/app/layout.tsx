@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
 import './globals.css';
 import type { ReactNode } from 'react';
+import { ThemeProvider } from '@/components/theme-provider';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 
@@ -22,11 +23,18 @@ const RootLayout = ({
 	children: ReactNode;
 }>) => {
 	return (
-		<html lang="en" className={montserrat.variable}>
+		<html lang="en" className={montserrat.variable} suppressHydrationWarning>
 			<body>
-				<Navigation />
-				{children}
-				<Footer />
+				<ThemeProvider
+					attribute="class"
+					defaultTheme="system"
+					enableSystem
+					disableTransitionOnChange
+				>
+					<Navigation />
+					{children}
+					<Footer />
+				</ThemeProvider>
 			</body>
 		</html>
 	);
