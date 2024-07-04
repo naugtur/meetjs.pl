@@ -73,7 +73,7 @@ importers:
         specifier: ^15.2.7
         version: 15.2.7
       postcss:
-        specifier: ^8.4.38
+        specifier: ^8.4.39
         version: 8.4.39
       prettier:
         specifier: 3.3.2
@@ -85,10 +85,10 @@ importers:
         specifier: ^3.4.4
         version: 3.4.4
       typescript:
-        specifier: ^5.5.2
+        specifier: ^5.5.3
         version: 5.5.3
       typescript-eslint:
-        specifier: ^7.14.1
+        specifier: ^7.15.0
         version: 7.15.0(eslint@8.57.0)(typescript@5.5.3)
 
 packages:
