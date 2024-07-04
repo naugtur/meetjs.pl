@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const EventsPage = () => {
 	return (
 		<main className="flex min-h-screen flex-col items-center gap-12 p-24">
-			<section className="flex flex-col items-center justify-center">
+			<section className="flex flex-col items-center justify-center gap-4">
 				<h1 className="text-4xl font-bold">All events</h1>
 				<p className="text-center text-lg">
 					All meet.js events in one place. Check past and upcoming meetups.
