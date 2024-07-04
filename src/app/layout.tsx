@@ -23,7 +23,7 @@ const RootLayout = ({
 	children: ReactNode;
 }>) => {
 	return (
-		<html lang="en" className={montserrat.variable}>
+		<html lang="en" className={montserrat.variable} suppressHydrationWarning>
 			<body>
 				<ThemeProvider
 					attribute="class"
