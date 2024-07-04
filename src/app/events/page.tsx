@@ -26,7 +26,6 @@ const EventsPage = () => {
 							<EventCard event={event} key={event.id} />
 						</li>
 					))}
-					g
 				</ul>
 			</section>
 

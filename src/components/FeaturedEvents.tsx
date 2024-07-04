@@ -34,7 +34,13 @@ export const FeaturedEvents = () => {
 					</CarouselContent>
 				</Carousel>
 				<div className="mx-auto">
-					<Link href="/events" className={buttonVariants()}>
+					<Link
+						href="/events"
+						className={buttonVariants({
+							className:
+								'w-full bg-purple text-black hover:bg-purple/80 md:w-auto dark:bg-green dark:hover:bg-green/80',
+						})}
+					>
 						All events
 					</Link>
 				</div>

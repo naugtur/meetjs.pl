@@ -45,7 +45,8 @@ export const EventCard = ({ event }: EventCardProps) => {
 						target="_blank"
 						className={buttonVariants({
 							size: 'sm',
-							className: 'w-full md:w-auto',
+							className:
+								'w-full bg-purple text-black hover:bg-purple/80 md:w-auto dark:bg-green dark:hover:bg-green/80',
 						})}
 					>
 						RSVP
