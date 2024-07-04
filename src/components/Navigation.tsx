@@ -9,16 +9,8 @@ import { FaBars, FaX } from 'react-icons/fa6';
 import { Logo } from '@/components/Logo';
 import { SocialLinks } from '@/components/SocialLinks';
 import Link from 'next/link';
-
-const navigationLinks = [
-	{ name: 'events', href: '#', current: false },
-	{ name: 'about', href: '#', current: false },
-	{ name: 'contact', href: '#', current: false },
-];
-
-function classNames(...classes: string[]) {
-	return classes.filter(Boolean).join(' ');
-}
+import { menuLinks } from '@/content/menuLinks';
+import { classNames } from '@/utils/classNames';
 
 export const Navigation = () => {
 	return (
@@ -32,7 +24,7 @@ export const Navigation = () => {
 									<Logo />
 								</Link>
 								<ul className="hidden items-center justify-center gap-4 sm:flex">
-									{navigationLinks.map((item) => (
+									{menuLinks.map((item) => (
 										<Link
 											key={item.name}
 											href={item.href}
@@ -69,7 +61,7 @@ export const Navigation = () => {
 
 					<DisclosurePanel className="sm:hidden">
 						<div className="space-y-1 px-2 pb-3 pt-2">
-							{navigationLinks.map((item) => (
+							{menuLinks.map((item) => (
 								<DisclosureButton
 									key={item.name}
 									as="a"

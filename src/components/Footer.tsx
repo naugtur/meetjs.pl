@@ -1,13 +1,9 @@
 import { Logo } from '@/components/Logo';
 import { SocialLinks } from '@/components/SocialLinks';
 import Link from 'next/link';
-import { FaInstagram } from 'react-icons/fa6';
-
-const navigationLinks = [
-	{ name: 'events', href: '#', current: false },
-	{ name: 'about', href: '#', current: false },
-	{ name: 'contact', href: '#', current: false },
-];
+import { instagramLinksData } from '@/content/socialLinks';
+import cities from '@/content/cities.json';
+import { menuLinks } from '@/content/menuLinks';
 
 export const Footer = () => {
 	return (
@@ -17,36 +13,18 @@ export const Footer = () => {
 					<Logo />
 					<SocialLinks />
 					<ul className="flex flex-col items-start justify-center gap-4 px-4 text-xl md:gap-2">
-						<li>
-							<Link
-								href="/instagram-bialystok"
-								target="_blank"
-								className="flex items-center justify-center gap-2"
-							>
-								<FaInstagram />
-								<span>Białystok</span>
-							</Link>
-						</li>
-						<li>
-							<Link
-								href="/instagram-poznan"
-								target="_blank"
-								className="flex items-center justify-center gap-2"
-							>
-								<FaInstagram />
-								<span>Poznań</span>
-							</Link>
-						</li>
-						<li>
-							<Link
-								href="/instagram-wroclaw"
-								target="_blank"
-								className="flex items-center justify-center gap-2"
-							>
-								<FaInstagram />
-								<span>Wrocław</span>
-							</Link>
-						</li>
+						{instagramLinksData.map((socialLink) => (
+							<li key={socialLink.name}>
+								<Link
+									href={socialLink.url}
+									target="_blank"
+									className="flex items-center justify-center gap-2"
+								>
+									{socialLink.icon}
+									<span>{socialLink.name}</span>
+								</Link>
+							</li>
+						))}
 					</ul>
 
 					<p className="p-4">
@@ -56,23 +34,15 @@ export const Footer = () => {
 				<section className="p-4">
 					<h3 className="pb-4 text-2xl font-bold">Cities</h3>
 					<ul className="flex flex-col gap-2">
-						<li>Białystok</li>
-						<li>Bielsko-Biała</li>
-						<li>Gdańsk</li>
-						<li>Katowice</li>
-						<li>Kielce</li>
-						<li>Kraków</li>
-						<li>Łódź</li>
-						<li>Lublin</li>
-						<li>Poznań</li>
-						<li>Warszawa</li>
-						<li>Wrocław</li>
+						{cities.map((city) => (
+							<li key={city}>{city}</li>
+						))}
 					</ul>
 				</section>
 				<section className="p-4">
 					<h3 className="pb-4 text-2xl font-bold">Menu</h3>
 					<ul className="flex flex-col gap-2">
-						{navigationLinks.map((link) => (
+						{menuLinks.map((link) => (
 							<li key={link.name}>
 								<Link href={link.href}>{link.name}</Link>
 							</li>
