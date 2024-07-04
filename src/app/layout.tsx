@@ -5,7 +5,11 @@ import type { ReactNode } from 'react';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 
-const montserrat = Montserrat({ subsets: ['latin'] });
+const montserrat = Montserrat({
+	subsets: ['latin'],
+	display: 'swap',
+	variable: '--font-montserrat',
+});
 
 export const metadata: Metadata = {
 	title: 'meet.js',
@@ -18,8 +22,8 @@ const RootLayout = ({
 	children: ReactNode;
 }>) => {
 	return (
-		<html lang="en">
-			<body className={montserrat.className}>
+		<html lang="en" className={montserrat.variable}>
+			<body className="font-montserrat">
 				<Navigation />
 				{children}
 				<Footer />
