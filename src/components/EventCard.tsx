@@ -1,7 +1,6 @@
 import {
 	Card,
 	CardContent,
-	CardDescription,
 	CardFooter,
 	CardHeader,
 	CardTitle,
@@ -17,14 +16,12 @@ interface EventCardProps {
 
 export const EventCard = ({ event }: EventCardProps) => {
 	return (
-		<Card>
+		<Card className="max-w-xl">
 			<CardHeader>
 				<CardTitle>{event.name}</CardTitle>
-				<CardDescription>{event.description}</CardDescription>
+				{/*<CardDescription>{event.description}</CardDescription>*/}
 			</CardHeader>
-			<CardContent>
-				<p>Card Content</p>
-			</CardContent>
+			<CardContent>{event.description}</CardContent>
 			<CardFooter className="flex flex-col items-end justify-between gap-4 md:flex-row">
 				<div className="flex flex-col gap-4">
 					<div className="mt-3 flex items-center gap-2 text-xl font-medium">
