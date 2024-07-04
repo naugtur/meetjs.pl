@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { instagramLinksData } from '@/content/socialLinks';
 import cities from '@/content/cities.json';
 import { menuLinks } from '@/content/menuLinks';
+import { FaRegEnvelope } from 'react-icons/fa6';
 
 export const Footer = () => {
 	return (
@@ -25,6 +26,15 @@ export const Footer = () => {
 								</Link>
 							</li>
 						))}
+						<li>
+							<Link
+								href="mailto:contact@meetjs.pl"
+								className="flex items-center justify-center gap-2"
+							>
+								<FaRegEnvelope />
+								contact@meetjs.pl
+							</Link>
+						</li>
 					</ul>
 
 					<p className="p-4">
