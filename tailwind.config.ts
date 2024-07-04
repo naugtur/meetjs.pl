@@ -1,12 +1,10 @@
+import defaultTheme from 'tailwindcss/defaultTheme';
 import type { Config } from 'tailwindcss';
 
-const config = {
-	darkMode: ['class'],
+const config: Config = {
 	content: [
-		'./pages/**/*.{ts,tsx}',
-		'./components/**/*.{ts,tsx}',
-		'./app/**/*.{ts,tsx}',
-		'./src/**/*.{ts,tsx}',
+		'./src/components/**/*.{ts,tsx,mdx}',
+		'./src/app/**/*.{ts,tsx,mdx}',
 	],
 	prefix: '',
 	theme: {
@@ -18,7 +16,18 @@ const config = {
 			},
 		},
 		extend: {
+			fontFamily: {
+				sans: ['var(--font-montserrat)', ...defaultTheme.fontFamily.sans],
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'gradient-conic':
+					'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+			},
 			colors: {
+				purple: '#2b1932',
+				blue: '#219eab',
+				green: '#bcd35d',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -75,6 +84,6 @@ const config = {
 		},
 	},
 	plugins: [require('tailwindcss-animate')],
-} satisfies Config;
+};
 
 export default config;
