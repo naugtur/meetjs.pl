@@ -8,6 +8,21 @@ const nextConfig = {
 				permanent: true,
 			},
 			{
+				source: '/instagram-bialystok',
+				destination: 'https://www.instagram.com/meet.js_bialystok',
+				permanent: true,
+			},
+			{
+				source: '/instagram-poznan',
+				destination: 'https://www.instagram.com/meet.js_poznan',
+				permanent: true,
+			},
+			{
+				source: '/instagram-wroclaw',
+				destination: 'https://www.instagram.com/meetjs_wroclaw',
+				permanent: true,
+			},
+			{
 				source: '/linkedin',
 				destination: 'https://www.linkedin.com/company/meetjs',
 				permanent: true,
