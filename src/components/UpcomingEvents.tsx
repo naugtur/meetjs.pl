@@ -9,7 +9,7 @@ export const UpcomingEvents = () => {
 	const eventCards = () => (
 		<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 			{events.map((event) => (
-				<Card key={event.id}>
+				<Card key={event.id} className="bg-white text-black">
 					<CardHeader>
 						<CardTitle>{event.name}</CardTitle>
 						<CardDescription>{event.description}</CardDescription>
@@ -33,7 +33,7 @@ export const UpcomingEvents = () => {
 							{event.eventLink && (
 								<Link
 									href={event.eventLink}
-									className="inline-flex h-8 items-center justify-center rounded-md bg-gray-900 px-4 text-sm font-medium text-white shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+									className="inline-flex h-8 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-white shadow transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
 									prefetch={false}
 								>
 									RSVP
