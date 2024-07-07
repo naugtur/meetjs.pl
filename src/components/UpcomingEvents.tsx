@@ -1,7 +1,7 @@
 import { useEvents } from '@/hooks/useEvents';
 import Link from 'next/link';
 import { CiClock1, CiLocationOn } from 'react-icons/ci';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 
 export const UpcomingEvents = () => {
 	const { events, loadingEvents, loadingEventsError } = useEvents();
