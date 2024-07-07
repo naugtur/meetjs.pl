@@ -1,4 +1,4 @@
-interface OrgEvent {
+export interface OrgEvent {
 	id: string;
 	name: string;
 	description: string;
