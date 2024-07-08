@@ -1,10 +1,6 @@
 'use client';
 
-import {
-	Disclosure,
-	DisclosureButton,
-	DisclosurePanel,
-} from '@headlessui/react';
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { FaBars, FaX } from 'react-icons/fa6';
 import { Logo } from '@/components/Logo';
 import { SocialLinks } from '@/components/SocialLinks';
@@ -14,7 +10,7 @@ import { classNames } from '@/utils/classNames';
 
 export const Navigation = () => {
 	return (
-		<Disclosure as="nav" className="sticky top-0 bg-purple">
+		<Disclosure as="nav" className="sticky top-0 bg-primary">
 			{({ open }) => (
 				<>
 					<div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -29,9 +25,7 @@ export const Navigation = () => {
 											key={item.name}
 											href={item.href}
 											className={classNames(
-												item.current
-													? 'bg-gray-900 text-white'
-													: 'text-white hover:bg-green/80 hover:text-purple',
+												item.current ? 'bg-gray-900 text-white' : 'text-white hover:bg-secondary hover:text-purple',
 												'rounded-md px-3 py-2 font-medium',
 											)}
 											aria-current={item.current ? 'page' : undefined}
@@ -67,9 +61,7 @@ export const Navigation = () => {
 									as="a"
 									href={item.href}
 									className={classNames(
-										item.current
-											? 'bg-gray-900 text-white'
-											: 'text-gray-300 hover:bg-gray-700 hover:text-white',
+										item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
 										'block rounded-md px-3 py-2 text-base font-medium',
 									)}
 									aria-current={item.current ? 'page' : undefined}
