@@ -19,8 +19,8 @@ export const useEvents = () => {
 			// TODO: Validate data
 			// TODO: Sort events by start date
 			setEvents(availableEvents);
-		} catch (e: any) {
-			console.error(`Failed to fetch events ${e.message ?? e}`);
+		} catch (e: unknown) {
+			console.error(`Failed to fetch events ${(e as Error).message ?? e}`);
 			setError('List of events is currently unavailable, please try again later.');
 		}
 		setLoading(false);
