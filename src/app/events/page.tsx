@@ -32,17 +32,23 @@ const EventsPage = async () => {
 
 			<section className="flex flex-col items-center justify-center gap-12">
 				<h2 className="text-2xl font-bold">Upcoming events</h2>
-				{events === null && <p>No upcoming events. Check back later.</p>}
-				<ul className="flex flex-col gap-4">
-					{Object.keys(events).map((key) => {
-						const event = events[key];
-						return (
-							<li key={event.id}>
-								<EventCard event={event} />
-							</li>
-						);
-					})}
-				</ul>
+				{events === null && (
+					<p className="text-center font-bold">
+						No found upcoming events :( Check back later.
+					</p>
+				)}
+				{events !== null && (
+					<ul className="flex flex-col gap-4">
+						{Object.keys(events).map((key) => {
+							const event = events[key];
+							return (
+								<li key={event.id}>
+									<EventCard event={event} />
+								</li>
+							);
+						})}
+					</ul>
+				)}
 			</section>
 
 			<section className="flex flex-col items-center justify-center gap-12">

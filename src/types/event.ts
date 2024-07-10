@@ -14,6 +14,6 @@ const EventSchema = z.object({
 	serie: z.string(),
 });
 
-export const EventsSchema = z.record(z.string(), EventSchema);
+export const EventsSchema = z.record(z.string(), EventSchema).nullable();
 
 export type EventType = z.infer<typeof EventSchema>;
