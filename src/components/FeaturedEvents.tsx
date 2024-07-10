@@ -5,10 +5,22 @@ import {
 } from '@/components/ui/carousel';
 import { buttonVariants } from '@/components/ui/button';
 import { EventCard } from '@/components/EventCard';
-import events from '@/content/events.json';
 import Link from 'next/link';
+import { env } from '@/env';
+import { EventsSchema } from '@/types/event';
+import { EventsAPIPartner } from '@/components/EventsAPIPartner';
 
-export const FeaturedEvents = () => {
+const getFeaturedEvents = async () => {
+	const eventsRes = await fetch(env.EVENTS_API_URL);
+
+	const eventsJson = await eventsRes.json();
+
+	return EventsSchema.parse(eventsJson);
+};
+
+export const FeaturedEvents = async () => {
+	const events = await getFeaturedEvents();
+
 	return (
 		<section
 			className="mx-auto flex w-full max-w-7xl snap-y scroll-mt-16 flex-col justify-between px-2 lg:px-8"
@@ -21,18 +33,27 @@ export const FeaturedEvents = () => {
 				<p className="text-center">
 					Check out some of our upcoming featured events.
 				</p>
-				<Carousel>
-					<CarouselContent>
-						{events.map((event) => (
-							<CarouselItem
-								className="basis-full md:basis-1/2 lg:basis-1/3"
-								key={event.id}
-							>
-								<EventCard event={event} />
-							</CarouselItem>
-						))}
-					</CarouselContent>
-				</Carousel>
+				{events === null && (
+					<p className="text-center font-bold">No found upcoming events :(</p>
+				)}
+				{events !== null && (
+					<Carousel>
+						<CarouselContent>
+							{Object.keys(events).map((key) => {
+								const event = events[key];
+								return (
+									<CarouselItem
+										className="basis-full md:basis-1/2 lg:basis-1/3"
+										key={event.id}
+									>
+										<EventCard event={event} />
+									</CarouselItem>
+								);
+							})}
+						</CarouselContent>
+					</Carousel>
+				)}
+
 				<div className="mx-auto">
 					<Link
 						href="/events"
@@ -44,6 +65,8 @@ export const FeaturedEvents = () => {
 						All events
 					</Link>
 				</div>
+
+				<EventsAPIPartner />
 			</div>
 		</section>
 	);
