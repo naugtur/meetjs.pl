@@ -17,6 +17,9 @@ importers:
       '@radix-ui/react-slot':
         specifier: 1.1.0-rc.7
         version: 1.1.0-rc.7(react@19.0.0-rc-9c6806964f-20240703)(types-react@19.0.0-rc.1)
+      '@t3-oss/env-nextjs':
+        specifier: ^0.10.1
+        version: 0.10.1(typescript@5.5.3)(zod@3.23.8)
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
@@ -26,6 +29,9 @@ importers:
       embla-carousel-react:
         specifier: ^8.1.6
         version: 8.1.6(react@19.0.0-rc-9c6806964f-20240703)
+      jiti:
+        specifier: ^1.21.6
+        version: 1.21.6
       lucide-react:
         specifier: ^0.400.0
         version: 0.400.0(react@19.0.0-rc-9c6806964f-20240703)
@@ -50,6 +56,9 @@ importers:
       tailwindcss-animate:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@3.4.4)
+      zod:
+        specifier: ^3.23.8
+        version: 3.23.8
     devDependencies:
       '@types/node':
         specifier: ^20.14.9
@@ -688,6 +697,24 @@ packages:
 
   '@swc/helpers@0.5.11':
     resolution: {integrity: sha512-YNlnKRWF2sVojTpIyzwou9XoTNbzbzONwRhOoniEioF1AtaitTvVZblaQRrAzChWQ1bLYyYSWzM18y4WwgzJ+A==}
+
+  '@t3-oss/env-core@0.10.1':
+    resolution: {integrity: sha512-GcKZiCfWks5CTxhezn9k5zWX3sMDIYf6Kaxy2Gx9YEQftFcz8hDRN56hcbylyAO3t4jQnQ5ifLawINsNgCDpOg==}
+    peerDependencies:
+      typescript: '>=5.0.0'
+      zod: ^3.0.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
+  '@t3-oss/env-nextjs@0.10.1':
+    resolution: {integrity: sha512-iy2qqJLnFh1RjEWno2ZeyTu0ufomkXruUsOZludzDIroUabVvHsrSjtkHqwHp1/pgPUzN3yBRHMILW162X7x2Q==}
+    peerDependencies:
+      typescript: '>=5.0.0'
+      zod: ^3.0.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
 
   '@tanstack/react-virtual@3.5.0':
     resolution: {integrity: sha512-rtvo7KwuIvqK9zb0VZ5IL7fiJAEnG+0EiFZz8FUOs+2mhGqdGmjKIaT1XU7Zq0eFqL0jonLlhbayJI/J2SA/Bw==}
@@ -2450,6 +2477,9 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
+  zod@3.23.8:
+    resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
+
 snapshots:
 
   '@alloc/quick-lru@5.2.0': {}
@@ -2971,6 +3001,19 @@ snapshots:
   '@swc/helpers@0.5.11':
     dependencies:
       tslib: 2.6.3
+
+  '@t3-oss/env-core@0.10.1(typescript@5.5.3)(zod@3.23.8)':
+    dependencies:
+      zod: 3.23.8
+    optionalDependencies:
+      typescript: 5.5.3
+
+  '@t3-oss/env-nextjs@0.10.1(typescript@5.5.3)(zod@3.23.8)':
+    dependencies:
+      '@t3-oss/env-core': 0.10.1(typescript@5.5.3)(zod@3.23.8)
+      zod: 3.23.8
+    optionalDependencies:
+      typescript: 5.5.3
 
   '@tanstack/react-virtual@3.5.0(react-dom@19.0.0-rc-9c6806964f-20240703(react@19.0.0-rc-9c6806964f-20240703))(react@19.0.0-rc-9c6806964f-20240703)':
     dependencies:
@@ -4992,3 +5035,5 @@ snapshots:
   yaml@2.4.5: {}
 
   yocto-queue@0.1.0: {}
+
+  zod@3.23.8: {}
