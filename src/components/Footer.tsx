@@ -16,14 +16,14 @@ export const Footer = () => {
 					<ul className="flex flex-col items-start justify-center gap-4 px-4 text-xl md:gap-2">
 						{instagramLinksData.map((socialLink) => (
 							<li key={socialLink.name}>
-								<Link
+								<a
 									href={socialLink.url}
 									target="_blank"
 									className="flex items-center justify-center gap-2"
 								>
 									{socialLink.icon}
 									<span>{socialLink.name}</span>
-								</Link>
+								</a>
 							</li>
 						))}
 						<li>
