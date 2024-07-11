@@ -14,7 +14,7 @@ import { classNames } from '@/utils/classNames';
 
 export const Navigation = () => {
 	return (
-		<Disclosure as="nav" className="sticky top-0 bg-purple">
+		<Disclosure as="nav" className="sticky top-0 z-10 bg-purple">
 			{({ open }) => (
 				<>
 					<div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
