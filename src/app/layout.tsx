@@ -14,7 +14,23 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
 	title: 'meet.js',
-	description: 'Official website of meet.js',
+	description: 'JavaScript meetups in Poland',
+	openGraph: {
+		title: 'meet.js',
+		description: 'JavaScript meetups in Poland',
+		type: 'website',
+		locale: 'en_US',
+		url: 'https://meetjs.pl',
+		siteName: 'meet.js',
+		images: [
+			{
+				url: 'https://meetjs-pl-git-herosection-stanisaw-synowiecs-projects.vercel.app/og-image.png',
+				width: 1200,
+				height: 630,
+				alt: 'meet.js',
+			},
+		],
+	},
 };
 
 const RootLayout = ({
