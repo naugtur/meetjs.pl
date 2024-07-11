@@ -25,19 +25,20 @@ export const Navigation = () => {
 								</Link>
 								<ul className="hidden items-center justify-center gap-4 sm:flex">
 									{menuLinks.map((item) => (
-										<Link
-											key={item.name}
-											href={item.href}
-											className={classNames(
-												item.current
-													? 'bg-gray-900 text-white'
-													: 'text-white hover:bg-green/80 hover:text-purple',
-												'rounded-md px-3 py-2 font-medium',
-											)}
-											aria-current={item.current ? 'page' : undefined}
-										>
-											{item.name}
-										</Link>
+										<li key={item.name}>
+											<Link
+												href={item.href}
+												className={classNames(
+													item.current
+														? 'bg-gray-900 text-white'
+														: 'text-white hover:bg-green/80 hover:text-purple',
+													'rounded-md px-3 py-2 font-medium',
+												)}
+												aria-current={item.current ? 'page' : undefined}
+											>
+												{item.name}
+											</Link>
+										</li>
 									))}
 								</ul>
 								<div className="hidden items-center justify-center md:flex">
