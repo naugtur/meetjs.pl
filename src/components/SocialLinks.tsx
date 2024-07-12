@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { socialLinksData } from '@/content/socialLinks';
 
 export const SocialLinks = () => {
@@ -6,10 +5,10 @@ export const SocialLinks = () => {
 		<ul className="flex items-center gap-4 p-4 text-xl text-white md:gap-2">
 			{socialLinksData.map((socialLink) => (
 				<li key={socialLink.name}>
-					<Link href={socialLink.url} target="_blank">
+					<a href={socialLink.url} target="_blank">
 						{socialLink.icon}
 						<span className="sr-only">{socialLink.name}</span>
-					</Link>
+					</a>
 				</li>
 			))}
 		</ul>
