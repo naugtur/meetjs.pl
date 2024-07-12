@@ -26,4 +26,9 @@ export const PARTNERS = [
 		alt: 'Warszawskie Dni Informatyki',
 	},
 	{ href: 'https://crossweb.pl/', src: '/crossweb-logo.svg', alt: 'crossweb' },
+	{
+		href: 'https://www.siepomaga.pl/',
+		src: '/partners/siepomaga.svg',
+		alt: 'Siepomaga',
+	},
 ];
