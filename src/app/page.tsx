@@ -1,8 +1,9 @@
-import { AboutSection } from '@/components/about';
+import { AboutSection } from '@/components/AboutSection';
 import { Stats } from '@/components/stats';
 
 import { FeaturedEvents } from '@/components/FeaturedEvents';
 import { HeroSection } from '@/components/HeroSection';
+import { PartnersSection } from '@/components/PartnersSection';
 
 const Home = () => {
 	return (
@@ -14,6 +15,7 @@ const Home = () => {
 					<AboutSection />
 					<Stats />
 				</div>
+				<PartnersSection />
 			</main>
 		</>
 	);
