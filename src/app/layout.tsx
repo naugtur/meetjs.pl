@@ -13,6 +13,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+	metadataBase: new URL('https://meetjs.pl'),
 	title: 'meet.js',
 	description: 'JavaScript meetups in Poland',
 	openGraph: {
@@ -24,10 +25,24 @@ export const metadata: Metadata = {
 		siteName: 'meet.js',
 		images: [
 			{
-				url: 'https://meetjs-pl-git-herosection-stanisaw-synowiecs-projects.vercel.app/og-image.png',
+				url: 'https://meetjs.pl/og-image.png',
 				width: 1200,
 				height: 630,
-				alt: 'meet.js',
+				alt: 'meet.js | JavaScript meetups in Poland',
+			},
+		],
+	},
+	twitter: {
+		card: 'summary_large_image',
+		site: '@meetjs',
+		title: 'meet.js',
+		description: 'JavaScript meetups in Poland',
+		images: [
+			{
+				url: 'https://meetjs.pl/og-image.png',
+				width: 1200,
+				height: 630,
+				alt: 'meet.js | JavaScript meetups in Poland',
 			},
 		],
 	},
