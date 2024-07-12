@@ -20,8 +20,12 @@ export const PartnersCarousel = () => {
 		>
 			<CarouselContent className="items-center">
 				{PARTNERS.map((partner) => (
-					<CarouselItem className="basis-1/6" key={partner.alt}>
-						<Link href={partner.href} className="block" target="_blank">
+					<CarouselItem className="basis-full md:basis-1/6" key={partner.alt}>
+						<Link
+							href={partner.href}
+							className="flex items-center justify-center"
+							target="_blank"
+						>
 							<Image
 								src={partner.src}
 								alt={partner.alt}
