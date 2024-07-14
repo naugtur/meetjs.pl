@@ -57,6 +57,11 @@ export const Footer = () => {
 								<Link href={link.href}>{link.name}</Link>
 							</li>
 						))}
+						<li>
+							<Link href="https://berlincodeofconduct.org/">
+								code of conduct
+							</Link>
+						</li>
 					</ul>
 				</section>
 				<section></section>
