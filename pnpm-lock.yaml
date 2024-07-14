@@ -26,6 +26,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      embla-carousel-autoplay:
+        specifier: ^8.1.6
+        version: 8.1.6(embla-carousel@8.1.6)
       embla-carousel-react:
         specifier: ^8.1.6
         version: 8.1.6(react@19.0.0-rc-df5f2736-20240712)
@@ -1106,6 +1109,11 @@ packages:
 
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
+
+  embla-carousel-autoplay@8.1.6:
+    resolution: {integrity: sha512-e5n9f4q+DVeBPiPPT3gwzqpiqfae8aP8fQACS4OZkPFvFLdsVhnWcw+cwtewryP7snWJGKPXEMA1GOjieEKv+w==}
+    peerDependencies:
+      embla-carousel: 8.1.6
 
   embla-carousel-react@8.1.6:
     resolution: {integrity: sha512-DHxwFzF63yVrU95Eo58E9Xr5b6Y9ul6TTsqb/rtwMi+jXudAmIqN1i9iBxQ73i8jKuUVxll/ziNYMmnWvrdQJQ==}
@@ -3469,6 +3477,10 @@ snapshots:
       esutils: 2.0.3
 
   eastasianwidth@0.2.0: {}
+
+  embla-carousel-autoplay@8.1.6(embla-carousel@8.1.6):
+    dependencies:
+      embla-carousel: 8.1.6
 
   embla-carousel-react@8.1.6(react@19.0.0-rc-df5f2736-20240712):
     dependencies:
