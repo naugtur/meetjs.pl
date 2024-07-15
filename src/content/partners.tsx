@@ -31,4 +31,14 @@ export const PARTNERS = [
 		src: '/partners/siepomaga.svg',
 		alt: 'Siepomaga',
 	},
+	{
+		href: 'https://4developers.org.pl/',
+		src: '/partners/4developers.png',
+		alt: '4developers',
+	},
+	{
+		href: 'https://infoshare.pl/',
+		src: '/partners/infoshare.png',
+		alt: 'infoshare',
+	},
 ];
