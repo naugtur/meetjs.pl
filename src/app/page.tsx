@@ -1,5 +1,5 @@
 import { AboutSection } from '@/components/AboutSection';
-import { Stats } from '@/components/stats';
+import { Stats } from '@/components/Stats';
 
 import { FeaturedEvents } from '@/components/FeaturedEvents';
 import { HeroSection } from '@/components/HeroSection';
