@@ -1,12 +1,16 @@
 import { fileURLToPath } from 'node:url';
 import createJiti from 'jiti';
 
+import createMDX from '@next/mdx';
+import remarkGfm from 'remark-gfm';
+
 const jiti = createJiti(fileURLToPath(import.meta.url));
 
 jiti('./src/env.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
 	async redirects() {
 		return [
 			{
@@ -53,4 +57,10 @@ const nextConfig = {
 	},
 };
 
-export default nextConfig;
+const withMdx = createMDX({
+	options: {
+		remarkPlugins: [remarkGfm],
+		rehypePlugins: [],
+	},
+});
+export default withMdx(nextConfig);
