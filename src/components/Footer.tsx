@@ -2,7 +2,7 @@ import { Logo } from '@/components/Logo';
 import { SocialLinks } from '@/components/SocialLinks';
 import Link from 'next/link';
 import { instagramLinksData } from '@/content/socialLinks';
-import cities from '@/content/cities.json';
+import { CITIES } from '@/content/cities';
 import { menuLinks } from '@/content/menuLinks';
 import { FaRegEnvelope } from 'react-icons/fa6';
 
@@ -44,8 +44,10 @@ export const Footer = () => {
 				<section className="p-4">
 					<h3 className="pb-4 text-2xl font-bold">Cities</h3>
 					<ul className="flex flex-col gap-2">
-						{cities.map((city) => (
-							<li key={city}>{city}</li>
+						{CITIES.map((city) => (
+							<li key={city.name}>
+								<Link href={city.href}>{city.name}</Link>
+							</li>
 						))}
 					</ul>
 				</section>

@@ -1,4 +1,5 @@
 import NumberTicker from '@/components/magicui/number-ticker';
+import { CITIES } from '@/content/cities';
 
 export const Stats = () => {
 	return (
@@ -18,7 +19,7 @@ export const Stats = () => {
 				</div>
 				<div className="w-full p-8 xl:w-1/4">
 					<h3 className="text-2xl font-bold">
-						<NumberTicker value={11} />
+						<NumberTicker value={CITIES.length} />
 					</h3>
 					<p>cities</p>
 				</div>
