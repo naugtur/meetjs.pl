@@ -11,11 +11,15 @@ import { EventsSchema } from '@/types/event';
 import { EventsAPIPartner } from '@/components/EventsAPIPartner';
 
 const getFeaturedEvents = async () => {
-	const eventsRes = await fetch(env.EVENTS_API_URL);
+	try {
+		const eventsRes = await fetch(env.EVENTS_API_URL);
 
-	const eventsJson = await eventsRes.json();
+		const eventsJson = await eventsRes.json();
 
-	return EventsSchema.parse(eventsJson);
+		return EventsSchema.parse(eventsJson);
+	} catch (error) {
+		return null;
+	}
 };
 
 export const FeaturedEvents = async () => {
