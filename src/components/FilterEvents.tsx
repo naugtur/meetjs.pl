@@ -13,11 +13,11 @@ interface FilterEventsProps {
 	events: EventsType;
 }
 
-export const FilterEvents = ({ events }: FilterEventsProps) => {
+const FilterEventsContent = ({ events }: FilterEventsProps) => {
 	const [cityFilter, setCity] = useQueryState('city');
 
 	return (
-		<Suspense fallback="Loading...">
+		<>
 			<div className="flex flex-col gap-2">
 				<p>Filter events by city:</p>
 				<div className="flex gap-2">
@@ -65,6 +65,14 @@ export const FilterEvents = ({ events }: FilterEventsProps) => {
 					})}
 				</ul>
 			)}
+		</>
+	);
+};
+
+export const FilterEvents = ({ events }: FilterEventsProps) => {
+	return (
+		<Suspense fallback={<div>Loading...</div>}>
+			<FilterEventsContent events={events} />
 		</Suspense>
 	);
 };
