@@ -7,6 +7,7 @@ import { EventCard } from '@/components/EventCard';
 import { Button } from '@/components/ui/button';
 import { EventsType } from '@/types/event';
 import { clsx } from 'clsx';
+import { Suspense } from 'react';
 
 interface FilterEventsProps {
 	events: EventsType;
@@ -16,7 +17,7 @@ export const FilterEvents = ({ events }: FilterEventsProps) => {
 	const [cityFilter, setCity] = useQueryState('city');
 
 	return (
-		<>
+		<Suspense fallback="Loading...">
 			<div className="flex flex-col gap-2">
 				<p>Filter events by city:</p>
 				<div className="flex gap-2">
@@ -64,6 +65,6 @@ export const FilterEvents = ({ events }: FilterEventsProps) => {
 					})}
 				</ul>
 			)}
-		</>
+		</Suspense>
 	);
 };
