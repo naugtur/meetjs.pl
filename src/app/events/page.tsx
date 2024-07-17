@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { env } from '@/env';
 import { EventsSchema } from '@/types/event';
 import { EventsAPIPartner } from '@/components/EventsAPIPartner';
+import { FilterEvents } from '@/components/FilterEvents';
 
 export const metadata: Metadata = {
 	title: 'All Events | meet.js',
@@ -11,7 +12,9 @@ export const metadata: Metadata = {
 
 const getUpcomingEvents = async () => {
 	try {
-		const upcomingEventsRes = await fetch(env.EVENTS_API_URL);
+		const upcomingEventsRes = await fetch(env.EVENTS_API_URL, {
+			cache: 'force-cache',
+		});
 
 		const upcomingEventsJson = await upcomingEventsRes.json();
 
@@ -24,7 +27,9 @@ const getUpcomingEvents = async () => {
 
 const getPastEvents = async () => {
 	try {
-		const pastEventsRes = await fetch(`${env.EVENTS_API_URL}&old=1`);
+		const pastEventsRes = await fetch(`${env.EVENTS_API_URL}&old=1`, {
+			cache: 'force-cache',
+		});
 
 		const pastEventsJson = await pastEventsRes.json();
 
@@ -72,18 +77,7 @@ const EventsPage = async () => {
 
 			<section className="flex flex-col items-center justify-center gap-12">
 				<h2 className="text-2xl font-bold">Past events</h2>
-				{pastEvents !== null && (
-					<ul className="flex flex-col gap-4">
-						{Object.keys(pastEvents).map((key) => {
-							const event = pastEvents[key];
-							return (
-								<li key={event.id}>
-									<EventCard event={event} />
-								</li>
-							);
-						})}
-					</ul>
-				)}
+				<FilterEvents events={pastEvents} />
 			</section>
 		</main>
 	);
