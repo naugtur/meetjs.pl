@@ -1,78 +1,68 @@
-'use client';
-
-import { useQueryState } from 'nuqs';
 import { badgeVariants } from '@/components/ui/badge';
 import { CITIES } from '@/content/cities';
-import { EventCard } from '@/components/EventCard';
-import { Button } from '@/components/ui/button';
-import { EventsType } from '@/types/event';
+import { EventType } from '@/types/event';
 import { clsx } from 'clsx';
 import { Suspense } from 'react';
+import { EventsList } from '@/components/EventsList';
+import Link from 'next/link';
 
 interface FilterEventsProps {
-	events: EventsType;
+	events: EventType[] | null;
+	filter: string | null;
 }
 
-const FilterEventsContent = ({ events }: FilterEventsProps) => {
-	const [cityFilter, setCity] = useQueryState('city');
+const FilterEventsContent = ({ events, filter }: FilterEventsProps) => {
+	const buttonClassNames = (city: string | null) =>
+		clsx(
+			badgeVariants({
+				variant: filter === city ? 'default' : 'outline',
+			}),
+			filter === city ? '' : 'bg-transparent',
+			'hover:text-black hover:bg-gray-100 hover:border-purple',
+		);
+
+	if (!events) {
+		return <div>Events not found</div>;
+	}
+
+	const filteredEvents = filter
+		? events.filter((event) => event.city === filter)
+		: events;
 
 	return (
 		<>
 			<div className="flex flex-col gap-2">
 				<p>Filter events by city:</p>
 				<div className="flex gap-2">
-					<Button
-						size="sm"
-						className={clsx(badgeVariants({ variant: 'default' }))}
-						onClick={() => setCity(null)}
+					<Link
+						href={{ pathname: '/events' }}
+						className={buttonClassNames(null)}
 					>
 						All ({events !== null ? Object.keys(events).length : 0})
-					</Button>
+					</Link>
 					{CITIES.map((city) => {
 						return (
-							<Button
-								size="sm"
-								className={clsx(
-									badgeVariants({
-										variant: cityFilter === city.name ? 'default' : 'outline',
-									}),
-									cityFilter === city.name ? '' : 'bg-transparent',
-								)}
+							<Link
+								href={{ pathname: '/events', query: { city: city.name } }}
+								className={buttonClassNames(city.name)}
 								key={city.name}
-								onClick={() => setCity(city.name)}
 							>
 								{city.name}
-							</Button>
+							</Link>
 						);
 					})}
 				</div>
 			</div>
 
-			{events !== null && (
-				<ul className="flex flex-col gap-4">
-					{Object.keys(events).map((key) => {
-						const event = events[key];
-
-						if (cityFilter && event.city !== cityFilter) {
-							return null;
-						}
-
-						return (
-							<li key={event.id}>
-								<EventCard event={event} />
-							</li>
-						);
-					})}
-				</ul>
-			)}
+			{filteredEvents !== null && <EventsList eventsList={filteredEvents} />}
 		</>
 	);
 };
 
-export const FilterEvents = ({ events }: FilterEventsProps) => {
+export const FilterEvents = ({ events, filter }: FilterEventsProps) => {
 	return (
 		<Suspense fallback={<div>Loading...</div>}>
-			<FilterEventsContent events={events} />
+			<FilterEventsContent events={events} filter={filter} />
 		</Suspense>
 	);
 };
