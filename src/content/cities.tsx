@@ -1,46 +1,136 @@
 export const CITIES = [
 	{
-		href: '/bialystok',
 		name: 'Białystok',
+		href: '/bialystok',
+		pointPosition: {
+			x: 220,
+			y: 80,
+		},
+		textPosition: {
+			x: 170,
+			y: 80,
+		},
 	},
 	{
-		href: '/bielsko-biala',
 		name: 'Bielsko-Biała',
+		href: '/bielsko-biala',
+		pointPosition: {
+			x: 120,
+			y: 210,
+		},
+		textPosition: {
+			x: 120,
+			y: 222,
+		},
 	},
 	{
-		href: '/gdansk',
 		name: 'Gdańsk',
+		href: '/gdansk',
+		pointPosition: {
+			x: 110,
+			y: 25,
+		},
+		textPosition: {
+			x: 70,
+			y: 34,
+		},
 	},
 	{
-		href: '/katowice',
 		name: 'Katowice',
+		href: '/katowice',
+		pointPosition: {
+			x: 130,
+			y: 200,
+		},
+		textPosition: {
+			x: 134,
+			y: 200,
+		},
 	},
 	{
-		href: '/kielce',
 		name: 'Kielce',
+		href: '/kielce',
+		pointPosition: {
+			x: 150,
+			y: 164,
+		},
+		textPosition: {
+			x: 154,
+			y: 164,
+		},
 	},
 	{
-		href: '/krakow',
 		name: 'Kraków',
+		href: '/krakow',
+		pointPosition: {
+			x: 150,
+			y: 210,
+		},
+		textPosition: {
+			x: 154,
+			y: 210,
+		},
 	},
 	{
-		href: '/lodz',
 		name: 'Łódź',
+		href: '/lodz',
+		pointPosition: {
+			x: 130,
+			y: 130,
+		},
+		textPosition: {
+			x: 134,
+			y: 130,
+		},
 	},
 	{
-		href: '/lublin',
 		name: 'Lublin',
+		href: '/lublin',
+		pointPosition: {
+			x: 190,
+			y: 160,
+		},
+		textPosition: {
+			x: 194,
+			y: 160,
+		},
 	},
 	{
-		href: '/poznan',
 		name: 'Poznań',
+		href: '/poznan',
+		pointPosition: {
+			x: 60,
+			y: 110,
+		},
+		textPosition: {
+			x: 64,
+			y: 110,
+		},
 	},
 	{
-		href: '/warszawa',
 		name: 'Warszawa',
+		href: '/warszawa',
+		pointPosition: {
+			x: 160,
+			y: 110,
+		},
+		textPosition: {
+			x: 164,
+			y: 110,
+		},
 	},
 	{
-		href: '/wroclaw',
 		name: 'Wrocław',
+		href: '/wroclaw',
+		pointPosition: {
+			x: 70,
+			y: 170,
+		},
+		textPosition: {
+			x: 74,
+			y: 170,
+		},
 	},
 ];
+
+export default CITIES;

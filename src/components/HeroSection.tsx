@@ -11,7 +11,7 @@ export const HeroSection = () => {
 					JavaScript meetups in Poland
 				</h1>
 				<Link
-					href="/#events"
+					href="/#joinus"
 					className={buttonVariants({
 						className: 'text-purple dark:bg-green dark:hover:bg-green/80',
 						size: 'lg',
