@@ -12,7 +12,7 @@ interface FilterEventsProps {
 }
 
 const FilterEventsContent = ({ events, filter }: FilterEventsProps) => {
-	const buttonClassNames = (city: string | null) =>
+	const linkClassNames = (city: string | null) =>
 		clsx(
 			badgeVariants({
 				variant: filter === city ? 'default' : 'outline',
@@ -25,34 +25,34 @@ const FilterEventsContent = ({ events, filter }: FilterEventsProps) => {
 		return <div>Events not found</div>;
 	}
 
-	let city;
-
-	switch (filter) {
-		case 'Bielsko-Biała':
-			city = 'Bielsko Biała';
-			break;
-		case 'Gdańsk':
-			city = 'Trójmiasto';
-			break;
-		default:
-			city = filter;
-	}
-
-	const filteredEvents = city
-		? events.filter((event) => event.city === city)
+	const filteredEvents = filter
+		? events.filter((event) => event.city === filter)
 		: events;
 
 	return (
 		<>
 			<div className="flex flex-col gap-2">
 				<p>Filter events by city:</p>
-				<div className="flex gap-2">
+				<div className="flex max-w-3xl flex-wrap justify-center gap-2">
 					<Link
 						href={{ pathname: '/events' }}
 						replace
-						className={buttonClassNames(null)}
+						className={linkClassNames(null)}
 					>
 						All ({events.length})
+					</Link>
+					<Link
+						href={{
+							pathname: '/events',
+							query: {
+								city: 'On-line',
+							},
+						}}
+						replace
+						className={linkClassNames('On-line')}
+					>
+						On-line ({events.filter((event) => event.city === 'On-line').length}
+						)
 					</Link>
 					{CITIES.map((city) => {
 						return (
@@ -62,10 +62,11 @@ const FilterEventsContent = ({ events, filter }: FilterEventsProps) => {
 									query: { city: city.name },
 								}}
 								replace
-								className={buttonClassNames(city.name)}
+								className={linkClassNames(city.name)}
 								key={city.name}
 							>
-								{city.name}
+								{city.name} (
+								{events.filter((event) => event.city === city.name).length})
 							</Link>
 						);
 					})}
