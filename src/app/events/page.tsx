@@ -6,6 +6,7 @@ import { EventsSchema } from '@/types/event';
 import { EmptyEventsAlert } from '@/components/EmptyEventsAlert';
 import { EventsList } from '@/components/EventsList';
 import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
+import { changeCityName } from '@/utils/changeCityName';
 
 export const metadata: Metadata = {
 	title: 'All Events | meet.js',
@@ -26,7 +27,7 @@ const getPastEvents = async () => {
 			return null;
 		}
 
-		return Object.values(data);
+		return Object.values(data).map(changeCityName);
 	} catch (error) {
 		console.log(error);
 		return null;

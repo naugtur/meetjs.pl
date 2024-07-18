@@ -1,5 +1,6 @@
 import { env } from '@/env';
 import { EventsSchema } from '@/types/event';
+import { changeCityName } from '@/utils/changeCityName';
 
 export const getUpcomingEvents = async () => {
 	try {
@@ -14,7 +15,7 @@ export const getUpcomingEvents = async () => {
 			return null;
 		}
 
-		return Object.values(data);
+		return Object.values(data).map(changeCityName);
 	} catch (error) {
 		console.log(error);
 		return null;
