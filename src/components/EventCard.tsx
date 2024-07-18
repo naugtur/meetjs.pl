@@ -9,6 +9,12 @@ interface EventCardProps {
 }
 
 export const EventCard = ({ event }: EventCardProps) => {
+	const nowTimestamp = Date.now();
+
+	const eventDateTimeStamp = new Date(
+		event.date.split('.').reverse().join(','),
+	).getTime();
+
 	return (
 		<Card className="max-w-xl">
 			<CardHeader>
@@ -33,7 +39,7 @@ export const EventCard = ({ event }: EventCardProps) => {
 						</div>
 					</div>
 				</div>
-				{event.rsvp && (
+				{nowTimestamp < eventDateTimeStamp && event.rsvp && (
 					<Link
 						href={event.rsvp}
 						target="_blank"
