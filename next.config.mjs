@@ -13,6 +13,8 @@ const nextConfig = {
 	reactStrictMode: true,
 	experimental: {
 		reactCompiler: true,
+		ppr: 'incremental',
+		after: true,
 		staleTimes: {
 			dynamic: 30,
 		},
