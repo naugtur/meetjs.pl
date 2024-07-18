@@ -44,7 +44,7 @@ const EventsPage = async ({ searchParams }: EventsPageProps) => {
 	const pastEvents = await getPastEvents();
 
 	return (
-		<main className="flex min-h-screen flex-col items-center gap-12 p-24">
+		<main className="flex min-h-screen flex-col items-center gap-12 p-5">
 			<section className="flex flex-col items-center justify-center gap-4">
 				<h1 className="text-4xl font-bold">All events</h1>
 				<p className="text-center text-lg">

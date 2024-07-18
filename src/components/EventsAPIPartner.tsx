@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export const EventsAPIPartner = () => {
 	return (
-		<div className="flex items-center justify-center">
+		<div className="flex flex-col items-center justify-center md:flex-row">
 			<p>Events API powered by</p>
 			<Link href="https://crossweb.pl" className="pl-2" target="_blank">
 				<Image
