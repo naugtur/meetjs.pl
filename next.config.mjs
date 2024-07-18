@@ -10,7 +10,11 @@ jiti('./src/env.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	reactStrictMode: true,
 	experimental: {
+		reactCompiler: true,
+		ppr: 'incremental',
+		after: true,
 		staleTimes: {
 			dynamic: 30,
 		},
