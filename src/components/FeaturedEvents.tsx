@@ -6,24 +6,12 @@ import {
 import { buttonVariants } from '@/components/ui/button';
 import { EventCard } from '@/components/EventCard';
 import Link from 'next/link';
-import { env } from '@/env';
-import { EventsSchema } from '@/types/event';
 import { EventsAPIPartner } from '@/components/EventsAPIPartner';
-
-const getFeaturedEvents = async () => {
-	try {
-		const eventsRes = await fetch(env.EVENTS_API_URL);
-
-		const eventsJson = await eventsRes.json();
-
-		return EventsSchema.parse(eventsJson);
-	} catch (error) {
-		return null;
-	}
-};
+import { EmptyEventsAlert } from '@/components/EmptyEventsAlert';
+import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
 
 export const FeaturedEvents = async () => {
-	const events = await getFeaturedEvents();
+	const events = await getUpcomingEvents();
 
 	return (
 		<section
@@ -37,14 +25,12 @@ export const FeaturedEvents = async () => {
 				<p className="text-center">
 					Check out some of our upcoming featured events.
 				</p>
-				{events === null && (
-					<p className="text-center font-bold">No found upcoming events :(</p>
-				)}
-				{events !== null && (
+				{events === null ? (
+					<EmptyEventsAlert />
+				) : (
 					<Carousel>
 						<CarouselContent>
-							{Object.keys(events).map((key) => {
-								const event = events[key];
+							{events.map((event) => {
 								return (
 									<CarouselItem
 										className="basis-full md:basis-1/2 lg:basis-1/3"

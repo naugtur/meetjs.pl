@@ -18,3 +18,4 @@ const EventSchema = z.object({
 export const EventsSchema = z.record(z.string(), EventSchema).nullable();
 
 export type EventType = z.infer<typeof EventSchema>;
+export type EventsType = z.infer<typeof EventsSchema>;
