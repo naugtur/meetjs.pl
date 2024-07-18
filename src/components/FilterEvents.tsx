@@ -36,6 +36,7 @@ const FilterEventsContent = ({ events, filter }: FilterEventsProps) => {
 				<div className="flex max-w-3xl flex-wrap justify-center gap-2">
 					<Link
 						href={{ pathname: '/events' }}
+						scroll={false}
 						replace
 						className={linkClassNames(null)}
 					>
@@ -49,6 +50,7 @@ const FilterEventsContent = ({ events, filter }: FilterEventsProps) => {
 							},
 						}}
 						replace
+						scroll={false}
 						className={linkClassNames('On-line')}
 					>
 						On-line ({events.filter((event) => event.city === 'On-line').length}
@@ -62,6 +64,7 @@ const FilterEventsContent = ({ events, filter }: FilterEventsProps) => {
 									query: { city: city.name },
 								}}
 								replace
+								scroll={false}
 								className={linkClassNames(city.name)}
 								key={city.name}
 							>
