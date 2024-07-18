@@ -10,6 +10,11 @@ jiti('./src/env.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	experimental: {
+		staleTimes: {
+			dynamic: 30,
+		},
+	},
 	pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
 	async redirects() {
 		return [
