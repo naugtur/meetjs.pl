@@ -49,14 +49,19 @@ const FilterEventsContent = ({ events, filter }: FilterEventsProps) => {
 				<div className="flex gap-2">
 					<Link
 						href={{ pathname: '/events' }}
+						replace
 						className={buttonClassNames(null)}
 					>
-						All ({events !== null ? Object.keys(events).length : 0})
+						All ({events.length})
 					</Link>
 					{CITIES.map((city) => {
 						return (
 							<Link
-								href={{ pathname: '/events', query: { city: city.name } }}
+								href={{
+									pathname: '/events',
+									query: { city: city.name },
+								}}
+								replace
 								className={buttonClassNames(city.name)}
 								key={city.name}
 							>
