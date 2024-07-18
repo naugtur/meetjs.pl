@@ -12,6 +12,7 @@ jiti('./src/env.ts');
 const nextConfig = {
 	reactStrictMode: true,
 	experimental: {
+		reactCompiler: true,
 		staleTimes: {
 			dynamic: 30,
 		},
