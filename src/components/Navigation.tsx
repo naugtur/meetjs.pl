@@ -5,7 +5,7 @@ import {
 	DisclosureButton,
 	DisclosurePanel,
 } from '@headlessui/react';
-import { FaBars, FaX } from 'react-icons/fa6';
+import { FaBars, FaX, FaArrowUpRightFromSquare } from 'react-icons/fa6';
 import { Logo } from '@/components/Logo';
 import { SocialLinks } from '@/components/SocialLinks';
 import Link from 'next/link';
@@ -35,8 +35,15 @@ export const Navigation = () => {
 													'rounded-md px-3 py-2 font-medium',
 												)}
 												aria-current={item.current ? 'page' : undefined}
+												target={item.external ? '_blank' : undefined}
 											>
 												{item.name}
+												{item.external && (
+													<FaArrowUpRightFromSquare
+														className="mb-1 ml-2 inline-block"
+														aria-hidden="true"
+													/>
+												)}
 											</Link>
 										</li>
 									))}
