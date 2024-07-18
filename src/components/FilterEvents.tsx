@@ -25,8 +25,21 @@ const FilterEventsContent = ({ events, filter }: FilterEventsProps) => {
 		return <div>Events not found</div>;
 	}
 
-	const filteredEvents = filter
-		? events.filter((event) => event.city === filter)
+	let city;
+
+	switch (filter) {
+		case 'Bielsko-Biała':
+			city = 'Bielsko Biała';
+			break;
+		case 'Gdańsk':
+			city = 'Trójmiasto';
+			break;
+		default:
+			city = filter;
+	}
+
+	const filteredEvents = city
+		? events.filter((event) => event.city === city)
 		: events;
 
 	return (
