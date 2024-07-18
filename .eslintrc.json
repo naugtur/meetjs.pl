@@ -1,8 +1,11 @@
 {
-	"plugins": ["@typescript-eslint"],
+	"plugins": ["@typescript-eslint", "eslint-plugin-react-compiler"],
 	"extends": [
 		"next/core-web-vitals",
 		"plugin:@typescript-eslint/recommended",
 		"prettier"
-	]
+	],
+	"rules": {
+		"react-compiler/react-compiler": "error"
+	}
 }
