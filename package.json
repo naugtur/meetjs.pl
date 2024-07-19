@@ -26,7 +26,7 @@
 		"eslint-plugin-react-compiler": "0.0.0-experimental-0998c1e-20240625",
 		"framer-motion": "12.0.0-alpha.0",
 		"jiti": "^1.21.6",
-		"lucide-react": "^0.400.0",
+		"lucide-react": "^0.410.0",
 		"next": "15.0.0-canary.73",
 		"next-themes": "^0.3.0",
 		"react": "19.0.0-rc-512b09b2-20240718",
@@ -38,20 +38,20 @@
 		"zod": "^3.23.8"
 	},
 	"devDependencies": {
-		"@types/node": "^20.14.10",
+		"@types/node": "^20.14.11",
 		"@types/react": "npm:types-react@rc",
 		"@types/react-dom": "npm:types-react-dom@rc",
 		"eslint": "8.57.0",
-		"eslint-config-next": "14.2.4",
+		"eslint-config-next": "14.2.5",
 		"eslint-config-prettier": "^9.1.0",
-		"husky": "^9.0.11",
+		"husky": "^9.1.1",
 		"lint-staged": "^15.2.7",
 		"postcss": "^8.4.39",
-		"prettier": "3.3.2",
+		"prettier": "3.3.3",
 		"prettier-plugin-tailwindcss": "^0.6.5",
-		"tailwindcss": "^3.4.4",
+		"tailwindcss": "^3.4.6",
 		"typescript": "^5.5.3",
-		"typescript-eslint": "^7.16.0"
+		"typescript-eslint": "^7.16.1"
 	},
 	"packageManager": "pnpm@9.1.1+sha512.14e915759c11f77eac07faba4d019c193ec8637229e62ec99eefb7cf3c3b75c64447882b7c485142451ee3a6b408059cdfb7b7fa0341b975f12d0f7629c71195"
 }
