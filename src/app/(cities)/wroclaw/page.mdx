@@ -1,5 +1,40 @@
+import { env } from '../../../env';
+
 export const metadata = {
+	metadataBase: new URL(`${env.SITE_URL}/wroclaw`),
 	title: "meet.js Wrocław",
+	description: "JavaScript meetups in Wrocław",
+	keywords: "meet.js, Wrocław, JavaScript, meetup",
+	openGraph: {
+		title: 'meet.js Wrocław',
+		description: 'JavaScript meetups in Wrocław',
+		type: 'website',
+		locale: 'en_US',
+		url: `${env.SITE_URL}/wroclaw`,
+		siteName: 'meet.js',
+		images: [
+			{
+				url: 'http://localhost:3000/api/og?city=Wrocław',
+				width: 1200,
+				height: 630,
+				alt: 'meet.js | JavaScript meetups in Wrocław',
+			},
+		],
+	},
+	twitter: {
+		card: 'summary_large_image',
+		site: '@meetjs',
+		title: 'meet.js',
+		description: 'JavaScript meetups in Wrocław',
+		images: [
+			{
+				url: 'http://localhost:3000/api/og?city=Wrocław',
+				width: 1200,
+				height: 630,
+				alt: 'meet.js | JavaScript meetups in Wrocław',
+			},
+		],
+	},
 };
 
 # Wrocław
