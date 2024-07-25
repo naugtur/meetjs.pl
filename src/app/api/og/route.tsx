@@ -42,7 +42,7 @@ export const GET = async (request: Request) => {
 				fonts: [{ name: 'Montserrat-Bold', data: fontData, style: 'normal' }],
 			},
 		);
-	} catch (e: any) {
+	} catch (e) {
 		console.log(`${e.message}`);
 		return new Response(`Failed to generate the image`, {
 			status: 500,
