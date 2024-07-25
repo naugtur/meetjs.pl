@@ -5,6 +5,7 @@ import type { ReactNode } from 'react';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
+import { env } from '@/env';
 
 const montserrat = Montserrat({
 	subsets: ['latin'],
@@ -13,7 +14,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-	metadataBase: new URL('https://meetjs.pl'),
+	metadataBase: new URL(env.SITE_URL),
 	title: 'meet.js',
 	description: 'JavaScript meetups in Poland',
 	openGraph: {
@@ -21,11 +22,11 @@ export const metadata: Metadata = {
 		description: 'JavaScript meetups in Poland',
 		type: 'website',
 		locale: 'en_US',
-		url: 'https://meetjs.pl',
+		url: env.SITE_URL,
 		siteName: 'meet.js',
 		images: [
 			{
-				url: 'https://meetjs.pl/og-image.png',
+				url: `${env.SITE_URL}/og-image.png`,
 				width: 1200,
 				height: 630,
 				alt: 'meet.js | JavaScript meetups in Poland',
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
 		description: 'JavaScript meetups in Poland',
 		images: [
 			{
-				url: 'https://meetjs.pl/og-image.png',
+				url: `${env.SITE_URL}/og-image.png`,
 				width: 1200,
 				height: 630,
 				alt: 'meet.js | JavaScript meetups in Poland',
