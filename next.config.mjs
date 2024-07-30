@@ -19,6 +19,18 @@ const nextConfig = {
 			dynamic: 30,
 		},
 	},
+	images: {
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'avatars.githubusercontent.com',
+			},
+			{
+				protocol: 'https',
+				hostname: 'media.licdn.com',
+			},
+		],
+	},
 	pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
 	async redirects() {
 		return [
