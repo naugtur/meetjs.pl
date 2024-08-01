@@ -6,7 +6,7 @@ import {
 } from '@/components/ui/accordion';
 import { JSX } from 'react';
 
-interface FAQQuestion {
+export interface FAQQuestion {
 	id: string;
 	question: string;
 	answer: JSX.Element | string;

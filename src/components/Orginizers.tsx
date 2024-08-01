@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 
-interface Organizer {
+export interface Organizer {
 	name: string;
 	image?: string;
 	email?: string;
