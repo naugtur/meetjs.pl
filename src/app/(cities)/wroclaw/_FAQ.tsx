@@ -28,7 +28,7 @@ export const WroclawFAQ: FAQQuestion[] = [
 			<>
 				Register to upcoming event on{' '}
 				<a href="https://www.meetup.com/pl-PL/meet-js-wroclaw/">meetup.com</a>.
-				Join us on time in venue. It's easy 🥳
+				Join us on time in venue. It&apos;s easy 🥳
 			</>
 		),
 	},
