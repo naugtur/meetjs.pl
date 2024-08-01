@@ -17,7 +17,12 @@ export const WroclawFAQ: FAQQuestion[] = [
 		answer: (
 			<>
 				Create{' '}
-				<a href="https://github.com/meetjspl/wroclaw/issues">issue on gitHub</a>
+				<a
+					href="https://github.com/meetjspl/wroclaw/issues"
+					className="font-bold hover:underline"
+				>
+					issue on gitHub
+				</a>
 			</>
 		),
 	},
@@ -27,8 +32,13 @@ export const WroclawFAQ: FAQQuestion[] = [
 		answer: (
 			<>
 				Register to upcoming event on{' '}
-				<a href="https://www.meetup.com/pl-PL/meet-js-wroclaw/">meetup.com</a>.
-				Join us on time in venue. It&apos;s easy 🥳
+				<a
+					href="https://www.meetup.com/pl-PL/meet-js-wroclaw/"
+					className="font-bold hover:underline"
+				>
+					meetup.com
+				</a>
+				. Join us on time in venue. It&apos;s easy 🥳
 			</>
 		),
 	},
