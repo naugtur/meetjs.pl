@@ -74,6 +74,11 @@ const nextConfig = {
 				destination: 'https://github.com/meetjspl',
 				permanent: true,
 			},
+			{
+				source: '/youtube',
+				destination: 'https://www.youtube.com/@meetjs',
+				permanent: true,
+			},
 		];
 	},
 };

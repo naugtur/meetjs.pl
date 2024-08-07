@@ -5,6 +5,7 @@ import {
 	FaInstagram,
 	FaLinkedin,
 	FaSquareXTwitter,
+	FaYoutube,
 } from 'react-icons/fa6';
 import type { JSX } from 'react';
 
@@ -39,6 +40,11 @@ export const socialLinksData: socialLink[] = [
 		name: 'Github',
 		url: '/github',
 		icon: <FaGithub />,
+	},
+	{
+		name: 'YouTube',
+		url: '/youtube',
+		icon: <FaYoutube />,
 	},
 ];
 
