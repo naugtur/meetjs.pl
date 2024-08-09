@@ -9,15 +9,15 @@ import { WroclawOrganizers } from './_Organizers';
 
 export const metadata = {
 	metadataBase: new URL(`${env.SITE_URL}/wroclaw`),
-	title: "meet.js Wrocław",
-	description: "JavaScript meetups in Wrocław",
-	keywords: "meet.js, Wrocław, JavaScript, meetup",
+	title: 'meet.js Wrocław',
+	description: 'JavaScript meetups in Wrocław',
+	keywords: 'meet.js, Wrocław, JavaScript, meetup',
 	openGraph: {
 		title: 'meet.js Wrocław',
 		description: 'JavaScript meetups in Wrocław',
 		type: 'website',
 		locale: 'en_US',
-		url: `${env.SITE_URL}/wroclaw`,
+		url: `${env.SITE_URL}/city/wroclaw`,
 		siteName: 'meet.js',
 		images: [
 			{
@@ -44,13 +44,18 @@ export const metadata = {
 	},
 };
 
-<CityBanner city='Wrocław' background='wroclaw.jpeg' />
+<CityBanner city="Wrocław" background="wroclaw.jpeg" />
 
 <LocalGroups
-	localGroups={['https://www.meetup.com/meet-js-wroclaw/', 'https://www.facebook.com/groups/326774397348491', 'https://lu.ma/user/usr-eNzoaGXYjizOBQI']} />
+	localGroups={[
+		'https://www.meetup.com/meet-js-wroclaw/',
+		'https://www.facebook.com/groups/326774397348491',
+		'https://lu.ma/user/usr-eNzoaGXYjizOBQI',
+	]}
+/>
 
 <FAQ questions={WroclawFAQ} />
 
-<Organizers city='Wrocław' organizers={WroclawOrganizers} />
+<Organizers city="Wrocław" organizers={WroclawOrganizers} />
 
-<CityEmail email='wroclaw@meetjs.pl' />
+<CityEmail email="wroclaw@meetjs.pl" />
