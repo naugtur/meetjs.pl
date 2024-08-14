@@ -29,7 +29,7 @@ export const CityBanner = ({ city, background }: CityBannerProps) => {
 					<BreadcrumbSeparator className="text-white" />
 					<BreadcrumbItem>
 						<BreadcrumbPage className="font-bold text-white">
-							Wrocław
+							{city}
 						</BreadcrumbPage>
 					</BreadcrumbItem>
 				</BreadcrumbList>
