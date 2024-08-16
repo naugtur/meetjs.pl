@@ -1,5 +1,36 @@
 {
 	"name": "meetjs.pl",
+	"description": "Official website of Meet.js - JavaScript meetups in Poland",
+	"keywords": [
+		"meet.js",
+		"JavaScript",
+		"meetup",
+		"javascript",
+		"poland",
+		"community"
+	],
+	"homepage": "https://meetjs.pl",
+	"bugs": {
+		"url": "https://github.com/meetjspl/meetjs.pl/issues/new",
+		"email": "contact@meetjs.pl"
+	},
+	"contributors": [
+		{
+			"name": "Stanisław Synowiec",
+			"email": "stanislaw@ssynowiec.pl",
+			"url": "https://ssynowiec.dev"
+		},
+		{
+			"name": "Kamil Dzieniszewski"
+		},
+		{
+			"name": "Konrad Cielecki"
+		}
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/meetjspl/meetjs.pl.git"
+	},
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
@@ -54,5 +85,9 @@
 		"typescript": "5.5.4",
 		"typescript-eslint": "^8.1.0"
 	},
-	"packageManager": "pnpm@9.1.1+sha512.14e915759c11f77eac07faba4d019c193ec8637229e62ec99eefb7cf3c3b75c64447882b7c485142451ee3a6b408059cdfb7b7fa0341b975f12d0f7629c71195"
+	"engines": {
+		"node": ">=20.12",
+		"npm": ">=10.8",
+		"pnpm": ">=9.4"
+	}
 }
