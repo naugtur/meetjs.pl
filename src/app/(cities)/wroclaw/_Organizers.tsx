@@ -18,7 +18,7 @@ export const WroclawOrganizers: Organizer[] = [
 	{
 		name: 'Stanisław Synowiec',
 		image: 'https://avatars.githubusercontent.com/u/52856724?v=4',
-		email: 'stasyn1410@gmail.com',
+		email: 'meetjs@ssynowiec.dev',
 		linkedin: 'https://www.linkedin.com/in/ssynowiecpl/',
 		gitHub: 'https://github.com/ssynowiec',
 	},
