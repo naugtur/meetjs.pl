@@ -38,7 +38,7 @@ const detectIcon = (link: string) => {
 export const LocalGroups = ({ localGroups }: LocalGroupProps) => {
 	return (
 		<section className="flex flex-col items-center justify-center gap-4 p-8">
-			<h2 className="text-2xl font-bold">Join our local groups</h2>
+			<h2 className="text-center text-2xl font-bold">Join our local groups</h2>
 			<div className="flex gap-2">
 				{localGroups.map((localGroup) => (
 					<Link

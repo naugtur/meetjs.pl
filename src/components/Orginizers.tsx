@@ -20,7 +20,9 @@ export const Organizers = ({ city, organizers }: OrganizersProps) => {
 	return (
 		<section className="flex w-full flex-col items-center justify-center gap-4 p-8">
 			<h2 className="text-2xl font-bold">{city} organizers</h2>
-			<p>Meet the people who organize meetups in {city}</p>
+			<p className="text-center">
+				Meet the people who organize meetups in {city}
+			</p>
 			<div className="flex flex-col justify-center gap-8 md:flex-row">
 				{organizers.map((organizer) => (
 					<Card
