@@ -24,7 +24,7 @@ export const EventCard = ({ event }: EventCardProps) => {
 			</CardHeader>
 			<CardFooter className="flex flex-col items-end justify-between gap-4 md:flex-row">
 				<div className="flex flex-col gap-4">
-					<div className="mt-3 flex items-center gap-2 text-xl font-medium">
+					<div className="mt-3 flex items-center gap-1 text-xl font-medium">
 						<FaLocationDot />
 						<span className="text-sm">
 							{event.address ? `${event.address}, ${event.city}` : event.city}
