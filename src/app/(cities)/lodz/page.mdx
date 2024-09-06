@@ -1,5 +1,60 @@
+import {env} from '../../../env';
+import {CityBanner} from '../../../components/CityBanner';
+import {LocalGroups} from "../../../components/LocalGroups";
+import {CityEmail} from "../../../components/CityEmail";
+import {FAQ} from "../../../components/FAQ";
+import {Organizers} from "../../../components/Orginizers";
+import {LodzFAQ} from "./_FAQ";
+import {LodzOrganizers} from "./_Organizers";
+
 export const metadata = {
+    metadataBase: new URL(`${env.SITE_URL}/lodz`),
 	title: "meet.js Łódź",
+    description: 'JavaScript meetups in Łódź',
+    keywords: 'meet.js, Łódź, JavaScript, meetup',
+    openGraph: {
+        title: 'meet.js Łódź',
+        description: 'JavaScript meetups in Łódź',
+        type: 'website',
+        locale: 'en_US',
+        url: `${env.SITE_URL}/lodz`,
+        siteName: 'meet.js',
+        images: [
+            {
+                url: `${env.SITE_URL}/api/og?city=Lodz`,
+                width: 1200,
+                height: 630,
+                alt: 'meet.js | JavaScript meetups in Łódź',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        site: '@meetjs',
+        title: 'meet.js',
+        description: 'JavaScript meetups in Łódź',
+        images: [
+            {
+                url: `${env.SITE_URL}/api/og?city=Lodz`,
+                width: 1200,
+                height: 630,
+                alt: 'meet.js | JavaScript meetups in Łódź',
+            },
+        ],
+    },
 };
 
-# Łódź
+<CityBanner city="Łódź" background="city/lodz.jpg" />
+
+<LocalGroups
+    localGroups={[
+        'https://www.meetup.com/meet-js-lodz/',
+        'https://lu.ma/user/usr-eNzoaGXYjizOBQI',
+    ]}
+/>
+
+<FAQ questions={LodzFAQ} />
+
+<Organizers city="Lodz" organizers={LodzOrganizers} />
+
+<CityEmail email="Lodz@meetjs.pl" />
