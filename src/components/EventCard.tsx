@@ -1,4 +1,4 @@
-import { Card, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
 import { FaClock, FaLocationDot } from 'react-icons/fa6';
@@ -16,13 +16,13 @@ export const EventCard = ({ event }: EventCardProps) => {
 	).getTime();
 
 	return (
-		<Card className="max-w-xl">
+		<Card className="flex min-h-80 max-w-xl flex-col justify-between md:min-h-60">
 			<CardHeader>
 				<CardTitle>
 					<Link href={event.url}>{event.name}</Link>
 				</CardTitle>
 			</CardHeader>
-			<CardFooter className="flex flex-col items-end justify-between gap-4 md:flex-row">
+			<CardContent className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
 				<div className="flex flex-col gap-4">
 					<div className="mt-3 flex items-center gap-1 text-xl font-medium">
 						<FaLocationDot />
@@ -52,7 +52,7 @@ export const EventCard = ({ event }: EventCardProps) => {
 						RSVP
 					</Link>
 				)}
-			</CardFooter>
+			</CardContent>
 		</Card>
 	);
 };

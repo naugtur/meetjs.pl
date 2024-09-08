@@ -23,11 +23,11 @@ export const Organizers = ({ city, organizers }: OrganizersProps) => {
 			<p className="text-center">
 				Meet the people who organize meetups in {city}
 			</p>
-			<div className="flex flex-col justify-center gap-8 md:flex-row">
+			<div className="flex w-full flex-col justify-center gap-8 px-4 md:flex-row">
 				{organizers.map((organizer) => (
 					<Card
 						key={organizer.name}
-						className="w-full overflow-hidden text-2xl font-bold md:w-1/3"
+						className="w-full max-w-[15rem] overflow-hidden text-2xl font-bold md:w-1/3"
 					>
 						<CardContent className="flex items-center justify-center pt-6">
 							{organizer.image ? (
