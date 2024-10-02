@@ -44,7 +44,7 @@ export const WroclawFAQ: FAQQuestion[] = [
 	},
 	{
 		id: '5',
-		question: 'How is it cost to join event?',
+		question: 'What does it cost to join event?',
 		answer: (
 			<>
 				Generally our event are FREE! Only{' '}

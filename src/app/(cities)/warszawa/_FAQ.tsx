@@ -2,14 +2,14 @@ import { FAQQuestion } from '@/components/FAQ';
 
 export const WarsawFAQ: FAQQuestion[] = [
 	{
-		id: '1',
+		id: '4',
 		question: 'How to become Warsaw meetup sponsor?',
-		answer: 'contact',
+		answer: `Email organizers and they'll  get back to you with details. You can host us at your office or help us cover the cost of a venue. Or we can organize the meetup outdoors :) We're open to ideas!`,
 	},
 	{
 		id: '2',
 		question: 'How to become Warsaw speaker?',
-		answer: 'Contact local Organizer.',
+		answer: 'Go to https://github.com/meetjspl/warsaw/issues/ and suggest a topic',
 	},
 	{
 		id: '3',
@@ -29,8 +29,8 @@ export const WarsawFAQ: FAQQuestion[] = [
 		),
 	},
 	{
-		id: '4',
-		question: 'How is it cost to join event?',
+		id: '1',
+		question: 'What does it cost to join event?',
 		answer: (
 			<>
 				Generally our event are FREE! Only{' '}
@@ -38,6 +38,8 @@ export const WarsawFAQ: FAQQuestion[] = [
 					summit
 				</a>{' '}
 				is paid event.
+				<br/>
+				We sometimes organize charity events where you can donate to participate.
 			</>
 		),
 	},
