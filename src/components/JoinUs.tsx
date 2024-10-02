@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const JoinUs = async () => {
 	return (
 		<section
-			className="mx-auto flex w-full max-w-7xl snap-y scroll-mt-16 flex-col justify-between px-2 lg:px-8"
+			className="mx-auto flex w-full p-12 max-w-7xl snap-y scroll-mt-16 flex-col justify-between px-2 lg:px-8"
 			id="joinus"
 		>
 			<div className="flex w-full flex-col gap-4 p-4">
@@ -44,9 +44,9 @@ export const JoinUs = async () => {
 						))}
 					</svg>
 				</div>
-				<div className="w-full md:w-1/2">
+				<div className="w-full md:w-1/2 p-4">
 					<p className="pb-6">
-						<strong>meet.js</strong> is a family of local meetups all around Poland. They&aposre for-community and by-community, non-commercial and organized by passionate individuals. Free to attend or for-charity. With the main goal of getting the Web Developers community together and facilitating knowledge exchange and camraderie. 
+						<strong>meet.js</strong> is a family of local meetups all around Poland. They&apos;re for-community and by-community, non-commercial and organized by passionate individuals. Free to attend or for-charity. With the main goal of getting the Web Developers community together and facilitating knowledge exchange and camraderie. 
 					</p>
 					<p className="pb-6">
 						<strong>Click your city</strong> to learn how to join your local event as an attendee, spekaer or sponsor. 

@@ -15,15 +15,15 @@ export const FeaturedEvents = async () => {
 
 	return (
 		<section
-			className="mx-auto flex w-full max-w-7xl snap-y scroll-mt-16 flex-col justify-between px-2 lg:px-8"
+			className="mx-auto flex w-full max-w-7xl p-12 snap-y scroll-mt-16 flex-col justify-between px-2 lg:px-8 bg-branding-blue"
 			id="events"
 		>
 			<div className="flex w-full flex-col gap-4 p-4">
 				<h2 className="text-center text-3xl font-bold">
-					Featured Upcoming Events
+					Upcoming Events
 				</h2>
 				<p className="text-center">
-					Check out some of our upcoming featured events.
+					Don&apos;t miss these!
 				</p>
 				{events === null ? (
 					<EmptyEventsAlert />
