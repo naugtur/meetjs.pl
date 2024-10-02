@@ -11,7 +11,7 @@
 	],
 	"homepage": "https://meetjs.pl",
 	"bugs": {
-		"url": "https://github.com/meetjspl/meetjs.pl/issues/new",
+		"url": "https://github.com/naugtur/meetjs.pl/issues/new",
 		"email": "contact@meetjs.pl"
 	},
 	"contributors": [
@@ -25,11 +25,16 @@
 		},
 		{
 			"name": "Konrad Cielecki"
+		},
+		{
+			"name": "Zbyszek Tenerowicz",
+			"email": "naugtur@gmail.com",
+			"url": "https://naugtur.pl"
 		}
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/meetjspl/meetjs.pl.git"
+		"url": "git+https://github.com/naugtur/meetjs.pl.git"
 	},
 	"version": "0.1.0",
 	"private": true,
@@ -70,6 +75,7 @@
 		"zod": "^3.23.8"
 	},
 	"devDependencies": {
+		"@lavamoat/preinstall-always-fail": "^2.1.0",
 		"@types/node": "^22.3.0",
 		"@types/react": "npm:types-react@19.0.0-rc.1",
 		"@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
