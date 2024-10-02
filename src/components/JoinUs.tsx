@@ -9,7 +9,6 @@ export const JoinUs = async () => {
 		>
 			<div className="flex w-full flex-col gap-4 p-4">
 				<h2 className="text-center text-3xl font-bold">Join Us</h2>
-				<p className="text-center">Contact your local organizer!</p>
 			</div>
 
 			<div className="flex w-full flex-col p-4 md:flex-row">
