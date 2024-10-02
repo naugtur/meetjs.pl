@@ -33,6 +33,10 @@
 		--ring: 0 0% 3.9%;
 
 		--radius: 0.5rem;
+
+		--branding-green: #bcd35d;
+		--branding-blue: #219eab;
+		--branding-purple: #2b1932;
 	}
 
 	.dark {
