@@ -4,8 +4,8 @@ export const WarsawOrganizers: Organizer[] = [
 	{
 		name: 'Zbyszek Tenerowicz',
 		image: 'https://avatars.githubusercontent.com/u/509375?v=4',
-		email: '',
-		linkedin: '',
+		email: 'naugtur@gmail.com',
+		linkedin: 'https://www.linkedin.com/in/zbigniew-tenerowicz-288175165/',
 		gitHub: 'https://github.com/naugtur',
 	},
 	{
