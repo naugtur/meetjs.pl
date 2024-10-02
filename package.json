@@ -1,5 +1,36 @@
 {
 	"name": "meetjs.pl",
+	"description": "Official website of Meet.js - JavaScript meetups in Poland",
+	"keywords": [
+		"meet.js",
+		"JavaScript",
+		"meetup",
+		"javascript",
+		"poland",
+		"community"
+	],
+	"homepage": "https://meetjs.pl",
+	"bugs": {
+		"url": "https://github.com/meetjspl/meetjs.pl/issues/new",
+		"email": "contact@meetjs.pl"
+	},
+	"contributors": [
+		{
+			"name": "Stanisław Synowiec",
+			"email": "stanislaw@ssynowiec.pl",
+			"url": "https://ssynowiec.dev"
+		},
+		{
+			"name": "Kamil Dzieniszewski"
+		},
+		{
+			"name": "Konrad Cielecki"
+		}
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/meetjspl/meetjs.pl.git"
+	},
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
@@ -10,24 +41,53 @@
 		"prepare": "husky"
 	},
 	"dependencies": {
-		"next": "^14.2.4",
-		"react": "^18.3.1",
-		"react-dom": "^18.3.1"
+		"@headlessui/react": "^2.1.2",
+		"@mdx-js/loader": "^3.0.1",
+		"@mdx-js/react": "^3.0.1",
+		"@next/mdx": "^14.2.5",
+		"@radix-ui/react-accordion": "^1.2.0",
+		"@radix-ui/react-dropdown-menu": "2.1.1",
+		"@radix-ui/react-slot": "1.1.0",
+		"@t3-oss/env-nextjs": "^0.11.0",
+		"@types/mdx": "^2.0.13",
+		"babel-plugin-react-compiler": "0.0.0-experimental-696af53-20240625",
+		"class-variance-authority": "^0.7.0",
+		"clsx": "^2.1.1",
+		"embla-carousel-autoplay": "^8.1.8",
+		"embla-carousel-react": "^8.1.8",
+		"eslint-plugin-react-compiler": "0.0.0-experimental-9ed098e-20240725",
+		"framer-motion": "12.0.0-alpha.0",
+		"jiti": "^1.21.6",
+		"lucide-react": "^0.427.0",
+		"next": "15.0.0-canary.115",
+		"next-themes": "^0.3.0",
+		"react": "19.0.0-rc-49496d49-20240814",
+		"react-dom": "19.0.0-rc-49496d49-20240814",
+		"react-icons": "^5.3.0",
+		"remark-gfm": "^4.0.0",
+		"tailwind-merge": "^2.5.2",
+		"tailwindcss-animate": "^1.0.7",
+		"zod": "^3.23.8"
 	},
 	"devDependencies": {
-		"@types/node": "^20.14.9",
-		"@types/react": "^18.3.3",
-		"@types/react-dom": "^18.3.0",
+		"@types/node": "^22.3.0",
+		"@types/react": "npm:types-react@19.0.0-rc.1",
+		"@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
 		"eslint": "8.57.0",
-		"eslint-config-next": "14.2.4",
+		"eslint-config-next": "14.2.5",
 		"eslint-config-prettier": "^9.1.0",
-		"husky": "^9.0.11",
-		"lint-staged": "^15.2.7",
-		"postcss": "^8.4.38",
-		"prettier": "3.3.2",
-		"prettier-plugin-tailwindcss": "^0.6.5",
-		"tailwindcss": "^3.4.4",
-		"typescript": "^5.5.2",
-		"typescript-eslint": "^7.14.1"
+		"husky": "^9.1.4",
+		"lint-staged": "^15.2.9",
+		"postcss": "^8.4.41",
+		"prettier": "3.3.3",
+		"prettier-plugin-tailwindcss": "^0.6.6",
+		"tailwindcss": "^3.4.10",
+		"typescript": "5.5.4",
+		"typescript-eslint": "^8.1.0"
+	},
+	"engines": {
+		"node": ">=20.12",
+		"npm": ">=10.8",
+		"pnpm": ">=9.4"
 	}
 }

@@ -1,8 +1,25 @@
+import { AboutSection } from '@/components/AboutSection';
+import { Stats } from '@/components/Stats';
+
+import { JoinUs } from '@/components/JoinUs';
+import { FeaturedEvents } from '@/components/FeaturedEvents';
+import { HeroSection } from '@/components/HeroSection';
+import { PartnersSection } from '@/components/PartnersSection';
+
 const Home = () => {
 	return (
-		<main className="flex min-h-screen flex-col items-center justify-between p-24">
-			Hello world meet.js!
-		</main>
+		<>
+			<HeroSection />
+			<main className="flex min-h-screen flex-col items-center">
+				<JoinUs />
+				<FeaturedEvents />
+				<div className="w-full">
+					<AboutSection />
+					<Stats />
+				</div>
+				<PartnersSection />
+			</main>
+		</>
 	);
 };
 
