@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Montserrat } from 'next/font/google';
 import './globals.css';
 import type { ReactNode } from 'react';
@@ -73,6 +74,7 @@ const RootLayout = ({
 					<Footer />
 				</ThemeProvider>
 				<Analytics />
+				<SpeedInsights />
 			</body>
 		</html>
 	);
