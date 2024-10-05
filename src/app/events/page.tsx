@@ -35,11 +35,12 @@ const getPastEvents = async () => {
 };
 
 interface EventsPageProps {
-	searchParams: { city: string };
+	searchParams: Promise<{ city: string }>;
 }
 
 const EventsPage = async ({ searchParams }: EventsPageProps) => {
-	const city = searchParams?.city ?? null;
+	const resolvedSearchParams = await searchParams;
+	const city = resolvedSearchParams?.city ?? null;
 	const upcomingEvents = await getUpcomingEvents();
 	const pastEvents = await getPastEvents();
 
