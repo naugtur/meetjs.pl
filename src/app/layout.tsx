@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/react';
 import { Montserrat } from 'next/font/google';
 import './globals.css';
 import type { ReactNode } from 'react';
@@ -71,6 +72,7 @@ const RootLayout = ({
 					{children}
 					<Footer />
 				</ThemeProvider>
+				<Analytics />
 			</body>
 		</html>
 	);
