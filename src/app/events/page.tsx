@@ -19,18 +19,17 @@ const getPastEvents = async () => {
 			cache: 'force-cache',
 		});
 
-		const pastEventsJson = await pastEventsRes.json();
-
-		const data = EventsSchema.parse(pastEventsJson);
-
-		if (!data) {
-			return null;
+		if (!pastEventsRes.ok) {
+			throw new Error(`HTTP error! status: ${pastEventsRes.status}`);
 		}
 
-		return Object.values(data).map(changeCityName);
+		const pastEventsJson = await pastEventsRes.json();
+		const data = EventsSchema.parse(pastEventsJson);
+
+		return Object.values(data ?? {}).map(changeCityName);
 	} catch (error) {
-		console.log(error);
-		return null;
+		console.error('Error fetching past events:', error);
+		return [];
 	}
 };
 
