@@ -19,27 +19,27 @@ const getPastEvents = async () => {
 			cache: 'force-cache',
 		});
 
-		const pastEventsJson = await pastEventsRes.json();
-
-		const data = EventsSchema.parse(pastEventsJson);
-
-		if (!data) {
-			return null;
+		if (!pastEventsRes.ok) {
+			throw new Error(`HTTP error! status: ${pastEventsRes.status}`);
 		}
 
-		return Object.values(data).map(changeCityName);
+		const pastEventsJson = await pastEventsRes.json();
+		const data = EventsSchema.parse(pastEventsJson);
+
+		return Object.values(data ?? {}).map(changeCityName);
 	} catch (error) {
-		console.log(error);
-		return null;
+		console.error('Error fetching past events:', error);
+		return [];
 	}
 };
 
 interface EventsPageProps {
-	searchParams: { city: string };
+	searchParams: Promise<{ city: string }>;
 }
 
 const EventsPage = async ({ searchParams }: EventsPageProps) => {
-	const city = searchParams?.city ?? null;
+	const resolvedSearchParams = await searchParams;
+	const city = resolvedSearchParams?.city ?? null;
 	const upcomingEvents = await getUpcomingEvents();
 	const pastEvents = await getPastEvents();
 
