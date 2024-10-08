@@ -4,16 +4,13 @@ export const WroclawOrganizers: Organizer[] = [
 	{
 		name: 'Cezary Dynak',
 		image:
-			'https://media.licdn.com/dms/image/C5603AQEG4Z0uFmofJg/profile-displayphoto-shrink_800_800/0/1554878839563?e=1727308800&v=beta&t=fbgj_n2VojJ1851QeAbJithQO87E5JbqSwGOsvG7n1Y',
+			'https://media.licdn.com/dms/image/v2/C5603AQEG4Z0uFmofJg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1554878839563?e=1733961600&v=beta&t=LNTwIpmkSlWRAB-F-e8hNTbrk5IlmKBm6epUwyyNjd0',
 		linkedin: 'https://www.linkedin.com/in/cdynak/',
 	},
 	{
 		name: 'Aleksandra Pawlus',
 		image:
-			'https://media.licdn.com/dms/image/D4D03AQE6uTN1xIKaqg/profile-displayphoto-shrink_800_800/0/1719568267585?e=1727308800&v=beta&t=WDjRLoOYyRlw-qCwvS7npymelUqusEQ3U2yvKpg8t10',
-	},
-	{
-		name: 'No name',
+			'https://media.licdn.com/dms/image/v2/D4D03AQE6uTN1xIKaqg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1719568267585?e=1733961600&v=beta&t=MDkJF7RN575Jt3LagGeg8fUPRzXrwbt4yPfZ3UQuIDc',
 	},
 	{
 		name: 'Stanisław Synowiec',
@@ -25,7 +22,7 @@ export const WroclawOrganizers: Organizer[] = [
 	{
 		name: 'Michał Korczak',
 		image:
-			'https://media.licdn.com/dms/image/D4D03AQH9q4ag2N6EEQ/profile-displayphoto-shrink_800_800/0/1718251235797?e=1727913600&v=beta&t=vUOUyrzraSswYf0TvyEGkhYGaU_a_yqqLZ8GPe692h0',
+			'https://media.licdn.com/dms/image/v2/D4D03AQH9q4ag2N6EEQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718251235797?e=1733961600&v=beta&t=zhoWFh8E1ocyZVwXmFiL5S3dAONGIhKAh449GjsMrjc',
 		linkedin: 'https://www.linkedin.com/in/michal-korczak/',
 	},
 ];
