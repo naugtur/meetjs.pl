@@ -1,5 +1,61 @@
+import { env } from '../../../env';
+import { CityEmail } from '../../../components/CityEmail';
+import { Organizers } from '../../../components/Orginizers';
+import { FAQ } from '../../../components/FAQ';
+import { LocalGroups } from '../../../components/LocalGroups';
+import { CityBanner } from '../../../components/CityBanner';
+import { PoznanFAQ } from './_FAQ';
+import { PoznanOrganizers } from './_Organizers';
+
 export const metadata = {
-	title: "meet.js Poznań",
+	metadataBase: new URL(`${env.SITE_URL}/poznan`),
+	title: 'meet.js Poznań',
+	description: 'JavaScript meetups in Poznań',
+	keywords: 'meet.js, Poznań, JavaScript, meetup',
+	openGraph: {
+		title: 'meet.js Poznań',
+		description: 'JavaScript meetups in Poznań',
+		type: 'website',
+		locale: 'en_US',
+		url: `${env.SITE_URL}/city/poznan`,
+		siteName: 'meet.js',
+		images: [
+			{
+				url: `${env.SITE_URL}/api/og?city=Poznań`,
+				width: 1200,
+				height: 630,
+				alt: 'meet.js | JavaScript meetups in Poznań',
+			},
+		],
+	},
+	twitter: {
+		card: 'summary_large_image',
+		site: '@meetjs',
+		title: 'meet.js',
+		description: 'JavaScript meetups in Poznań',
+		images: [
+			{
+				url: `${env.SITE_URL}/api/og?city=Poznań`,
+				width: 1200,
+				height: 630,
+				alt: 'meet.js | JavaScript meetups in Poznań',
+			},
+		],
+	},
 };
 
-# Poznań
+<CityBanner city="Poznań" background="city/poznan.jpeg" />
+
+<LocalGroups
+	localGroups={[
+		'https://crossweb.pl/cykle-wydarzen/meet-js-poznan/',
+		'https://www.meetup.com/pl-PL/meet-js-poznań/',
+		'https://github.com/meetjspl/poznan',
+	]}
+/>
+
+<FAQ questions={PoznanFAQ} />
+
+<Organizers city="Poznań" organizers={PoznanOrganizers} />
+
+<CityEmail email="poznan@meetjs.pl" />
