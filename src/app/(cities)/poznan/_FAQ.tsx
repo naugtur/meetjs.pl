@@ -4,15 +4,11 @@ export const PoznanFAQ: FAQQuestion[] = [
 	{
 		id: '1',
 		question: 'How to become Poznań meetup sponsor?',
-		answer: 'contact',
+		answer:
+			'Feel free to connect with one of the organizers on LinkedIn — we’d love to chat with you about sponsorship opportunities!',
 	},
 	{
 		id: '2',
-		question: 'Example question',
-		answer: 'Example answer',
-	},
-	{
-		id: '3',
 		question: 'How to become Poznań speaker?',
 		answer: (
 			<>
@@ -27,7 +23,7 @@ export const PoznanFAQ: FAQQuestion[] = [
 		),
 	},
 	{
-		id: '4',
+		id: '3',
 		question: 'How to join to our meetup?',
 		answer: (
 			<>
@@ -43,7 +39,7 @@ export const PoznanFAQ: FAQQuestion[] = [
 		),
 	},
 	{
-		id: '5',
+		id: '4',
 		question: 'How is it cost to join event?',
 		answer: (
 			<>
