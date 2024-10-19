@@ -3,17 +3,17 @@ import createJiti from 'jiti';
 
 import createMDX from '@next/mdx';
 import remarkGfm from 'remark-gfm';
+import { NextConfig } from 'next';
 
 const jiti = createJiti(fileURLToPath(import.meta.url));
 
 jiti('./src/env.ts');
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
 	reactStrictMode: true,
 	experimental: {
 		reactCompiler: true,
-		ppr: 'incremental',
 		after: true,
 		staleTimes: {
 			dynamic: 30,

@@ -1,5 +1,9 @@
 {
-	"plugins": ["@typescript-eslint", "eslint-plugin-react-compiler"],
+	"plugins": [
+		"@typescript-eslint",
+		"eslint-plugin-react-compiler",
+		"eslint-plugin-react-hooks"
+	],
 	"extends": [
 		"next/core-web-vitals",
 		"plugin:@typescript-eslint/recommended",
