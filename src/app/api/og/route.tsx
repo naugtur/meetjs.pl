@@ -19,6 +19,8 @@ export const GET = async (request: Request) => {
 						display: 'flex',
 						position: 'relative',
 					}}
+					role="img"
+					aria-label={`Image of ${city}`}
 				>
 					{/* eslint-disable-next-line @next/next/no-img-element */}
 					<img

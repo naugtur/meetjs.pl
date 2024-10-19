@@ -17,8 +17,10 @@ export const CityBanner = ({ city, background }: CityBannerProps) => {
 		<section
 			className="flex flex-col items-center justify-center bg-cover bg-center p-28"
 			style={{ backgroundImage: `url(${background})` }}
+			role="region"
+			aria-labelledby="city-banner-title"
 		>
-			<h1 className="text-6xl font-bold text-white">{city}</h1>
+			<h1 id="city-banner-title" className="text-6xl font-bold text-white">{city}</h1>
 			<Breadcrumb className="bg-gray-400/50 p-2">
 				<BreadcrumbList>
 					<BreadcrumbItem>

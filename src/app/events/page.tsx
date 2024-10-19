@@ -34,14 +34,15 @@ const getPastEvents = async () => {
 };
 
 interface EventsPageProps {
-	searchParams: Promise<{ city: string }>;
+	searchParams: { city: string };
 }
 
 const EventsPage = async ({ searchParams }: EventsPageProps) => {
-	const resolvedSearchParams = await searchParams;
-	const city = resolvedSearchParams?.city ?? null;
-	const upcomingEvents = await getUpcomingEvents();
-	const pastEvents = await getPastEvents();
+	const city = searchParams?.city ?? null;
+	const [upcomingEvents, pastEvents] = await Promise.all([
+		getUpcomingEvents(),
+		getPastEvents(),
+	]);
 
 	return (
 		<main className="flex min-h-screen flex-col items-center gap-12 p-5">

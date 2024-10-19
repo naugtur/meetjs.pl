@@ -48,6 +48,7 @@ export const EventCard = ({ event }: EventCardProps) => {
 							className:
 								'w-full bg-purple text-black hover:bg-purple/80 md:w-auto dark:bg-green dark:hover:bg-green/80',
 						})}
+						aria-label={`RSVP for ${event.name}`}
 					>
 						RSVP
 					</Link>

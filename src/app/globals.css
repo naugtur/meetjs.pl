@@ -78,3 +78,24 @@
 		@apply bg-background text-foreground;
 	}
 }
+
+@layer components {
+	/* Ensure focus styles are visible */
+	:focus {
+		outline: 2px solid var(--ring);
+		outline-offset: 2px;
+	}
+
+	/* Ensure that interactive elements are keyboard accessible */
+	button,
+	[type='button'],
+	[type='reset'],
+	[type='submit'] {
+		@apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary;
+	}
+
+	/* Ensure that links are keyboard accessible */
+	a {
+		@apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary;
+	}
+}
