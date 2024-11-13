@@ -45,7 +45,7 @@ export const questions = [
       correct: 0
     },
     {
-      question: 'What does the "=== " operator do?',
+      question: 'What does the "===" operator do?',
       options: [
         'Assigns a value',
         'Compares values only',
