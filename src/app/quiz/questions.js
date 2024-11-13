@@ -49,7 +49,7 @@ export const questions = [
       options: [
         'Assigns a value',
         'Compares values only',
-        'Compares values and types',
+        'Compares and returns true if primitives or object references are identical',
         'Concatenates strings'
       ],
       correct: 2
