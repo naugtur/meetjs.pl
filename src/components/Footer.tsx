@@ -9,64 +9,64 @@ import { FaRegEnvelope } from 'react-icons/fa6';
 export const Footer = () => {
 	return (
 		<footer className="bg-purple text-white">
-			<div className="mx-auto flex max-w-7xl flex-col justify-between px-2 sm:px-6 md:flex-row lg:px-8">
-				<section className="flex flex-col">
-					<Logo />
-					<SocialLinks />
-					<ul className="flex flex-col items-start justify-center gap-4 px-4 text-xl md:gap-2">
-						{instagramLinksData.map((socialLink) => (
-							<li key={socialLink.name}>
-								<a
-									href={socialLink.url}
-									target="_blank"
-									className="flex items-center justify-center gap-2"
-								>
-									{socialLink.icon}
-									<span>{socialLink.name}</span>
-								</a>
+			<div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+				<div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+					{/* First column */}
+					<div className="space-y-8">
+						<Logo />
+						<SocialLinks />
+						<ul className="space-y-4">
+							{instagramLinksData.map((socialLink) => (
+								<li key={socialLink.name}>
+									<a href={socialLink.url} target="_blank" className="flex items-center gap-2 hover:text-gray-300">
+										{socialLink.icon}
+										<span>{socialLink.name}</span>
+									</a>
+								</li>
+							))}
+							<li>
+								<Link href="mailto:contact@meetjs.pl" className="flex items-center gap-2 hover:text-gray-300">
+									<FaRegEnvelope />
+									contact@meetjs.pl
+								</Link>
 							</li>
-						))}
-						<li>
-							<Link
-								href="mailto:contact@meetjs.pl"
-								className="flex items-center justify-center gap-2"
-							>
-								<FaRegEnvelope />
-								contact@meetjs.pl
-							</Link>
-						</li>
-					</ul>
+						</ul>
+					</div>
 
-					<p className="p-4">
-						© {new Date().getFullYear()} meet.js. All rights reserved.
-					</p>
-				</section>
-				<section className="p-4">
-					<h3 className="pb-4 text-2xl font-bold">Cities</h3>
-					<ul className="flex flex-col gap-2">
-						{CITIES.map((city) => (
-							<li key={city.name}>
-								<Link href={city.href}>{city.name}</Link>
+					{/* Cities column */}
+					<div>
+						<h3 className="text-xl font-semibold">Cities</h3>
+						<ul className="mt-4 space-y-2">
+							{CITIES.map((city) => (
+								<li key={city.name}>
+									<Link href={city.href} className="hover:text-gray-300">{city.name}</Link>
+								</li>
+							))}
+						</ul>
+					</div>
+
+					{/* Menu column */}
+					<div>
+						<h3 className="text-xl font-semibold">Menu</h3>
+						<ul className="mt-4 space-y-2">
+							{menuLinks.map((link) => (
+								<li key={link.name}>
+									<Link href={link.href} className="hover:text-gray-300">{link.name}</Link>
+								</li>
+							))}
+							<li>
+								<Link href="https://berlincodeofconduct.org/" className="hover:text-gray-300">
+									code of conduct
+								</Link>
 							</li>
-						))}
-					</ul>
-				</section>
-				<section className="p-4">
-					<h3 className="pb-4 text-2xl font-bold">Menu</h3>
-					<ul className="flex flex-col gap-2">
-						{menuLinks.map((link) => (
-							<li key={link.name}>
-								<Link href={link.href}>{link.name}</Link>
-							</li>
-						))}
-						<li>
-							<Link href="https://berlincodeofconduct.org/">
-								code of conduct
-							</Link>
-						</li>
-					</ul>
-				</section>
-				<section></section>
+						</ul>
+					</div>
+				</div>
+
+				{/* Copyright */}
+				<div className="mt-12 border-t border-white/10 pt-8">
+					<p className="text-center">© {new Date().getFullYear()} meet.js. All rights reserved.</p>
+				</div>
 			</div>
 		</footer>
 	);
