@@ -56,7 +56,7 @@ export const questions = [
     },
     {
       question: 'What is the output of typeof null?',
-      options: ['null', 'undefined', 'object', 'number'],
+      options: ['null', 'undefined', 'object', 'NaN'],
       correct: 2
     },
     {
