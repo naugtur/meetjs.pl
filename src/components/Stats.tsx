@@ -3,25 +3,25 @@ import { CITIES } from '@/content/cities';
 
 export const Stats = () => {
 	return (
-		<div className="flex w-full flex-col items-center justify-center gap-4 bg-green py-4">
-			<div className="mx-auto flex w-full max-w-7xl flex-col justify-evenly px-2 text-center sm:px-6 md:flex-row lg:px-8">
-				<div className="w-full p-8 xl:w-1/4">
-					<h3 className="text-2xl font-bold">
+		<div className="w-full bg-green py-12 md:py-16">
+			<div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 sm:px-6 md:grid-cols-3 lg:px-8">
+				<div className="text-center">
+					<h3 className="text-3xl font-bold sm:text-4xl">
 						<NumberTicker value={9} />
 					</h3>
-					<p>summits</p>
+					<p className="mt-2 text-lg">summits</p>
 				</div>
-				<div className="w-full p-8 xl:w-1/4">
-					<h3 className="text-2xl font-bold">
+				<div className="text-center">
+					<h3 className="text-3xl font-bold sm:text-4xl">
 						<NumberTicker value={2011} />
 					</h3>
-					<p>since</p>
+					<p className="mt-2 text-lg">since</p>
 				</div>
-				<div className="w-full p-8 xl:w-1/4">
-					<h3 className="text-2xl font-bold">
+				<div className="text-center">
+					<h3 className="text-3xl font-bold sm:text-4xl">
 						<NumberTicker value={CITIES.length} />
 					</h3>
-					<p>cities</p>
+					<p className="mt-2 text-lg">cities</p>
 				</div>
 			</div>
 		</div>
