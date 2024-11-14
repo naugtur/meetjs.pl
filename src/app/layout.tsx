@@ -84,13 +84,6 @@ export const metadata: Metadata = {
 	alternates: {
 		canonical: env.SITE_URL,
 	},
-	viewport: {
-		width: 'device-width',
-		initialScale: 1,
-		maximumScale: 5,
-		userScalable: true,
-		viewportFit: 'cover',
-	},
 	verification: {
 		google: 'google-site-verification',
 		yandex: 'yandex-verification',
