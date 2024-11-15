@@ -21,7 +21,8 @@
 			"url": "https://ssynowiec.dev"
 		},
 		{
-			"name": "Kamil Dzieniszewski"
+			"name": "Kamil Dzieniszewski",
+			"email": "kamil.dzieniszewski@gmail.com"
 		},
 		{
 			"name": "Konrad Cielecki"
@@ -39,7 +40,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"dev": "next dev",
+		"dev": "next dev --turbopack",
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
@@ -47,9 +48,9 @@
 	},
 	"dependencies": {
 		"@headlessui/react": "^2.1.2",
-		"@mdx-js/loader": "^3.0.1",
-		"@mdx-js/react": "^3.0.1",
-		"@next/mdx": "^14.2.14",
+		"@mdx-js/loader": "^3.1.0",
+		"@mdx-js/react": "^3.1.0",
+		"@next/mdx": "15.0.2",
 		"@radix-ui/react-accordion": "^1.2.0",
 		"@radix-ui/react-dropdown-menu": "2.1.1",
 		"@radix-ui/react-slot": "1.1.0",
@@ -63,15 +64,15 @@
 		"embla-carousel-autoplay": "^8.1.8",
 		"embla-carousel-react": "^8.1.8",
 		"eslint-plugin-react-compiler": "0.0.0-experimental-9a75bad-20241003",
-		"framer-motion": "12.0.0-alpha.0",
+		"eslint-plugin-react-hooks": "5.0.0",
+		"framer-motion": "12.0.0-alpha.1",
 		"jiti": "^1.21.6",
 		"lucide-react": "^0.427.0",
-		"next": "15.0.0-canary.179",
+		"next": "15.0.3",
 		"next-themes": "^0.3.0",
-		"react": "19.0.0-rc-1460d67c-20241003",
-		"react-dom": "19.0.0-rc-1460d67c-20241003",
+		"react": "19.0.0-rc-66855b96-20241106",
+		"react-dom": "19.0.0-rc-66855b96-20241106",
 		"react-icons": "^5.3.0",
-		"remark-gfm": "^4.0.0",
 		"tailwind-merge": "^2.5.2",
 		"tailwindcss-animate": "^1.0.7",
 		"zod": "^3.23.8"
@@ -81,8 +82,8 @@
 		"@types/node": "^22.3.0",
 		"@types/react": "npm:types-react@19.0.0-rc.1",
 		"@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
-		"eslint": "8.57.0",
-		"eslint-config-next": "14.2.5",
+		"eslint": "9.12.0",
+		"eslint-config-next": "15.0.2",
 		"eslint-config-prettier": "^9.1.0",
 		"husky": "^9.1.4",
 		"lint-staged": "^15.2.9",
@@ -98,5 +99,5 @@
 		"npm": ">=10.8",
 		"pnpm": ">=9.4"
 	},
-	"packageManager": "pnpm@9.10.0+sha512.73a29afa36a0d092ece5271de5177ecbf8318d454ecd701343131b8ebc0c1a91c487da46ab77c8e596d6acf1461e3594ced4becedf8921b074fbd8653ed7051c"
+	"packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee"
 }
