@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
 import { RankingBanner } from '@/components/RankingBanner';
+import { Memories } from '@/components/Memories';
 
 export const HeroSection = () => {
 	return (
@@ -13,6 +14,7 @@ export const HeroSection = () => {
 			/>
 
 			<div className="col-start-1 row-start-1 mx-auto my-auto">
+				<Memories />
 				<p className="-rotate-2 bg-blue p-2 text-6xl font-bold">meet.js</p>
 				<h1 className="p-4 text-xl font-medium">
 					JavaScript meetups in Poland
