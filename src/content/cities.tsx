@@ -1,4 +1,18 @@
-export const CITIES = [
+export interface City {
+	name: string;
+	href: string;
+	pointPosition: {
+		x: number;
+		y: number;
+	};
+	textPosition: {
+		x: number;
+		y: number;
+	};
+	status: 'active' | 'inactive' | 'coming-soon' | 'new';
+}
+
+export const CITIES: City[] = [
 	{
 		name: 'Białystok',
 		href: '/bialystok',
@@ -10,6 +24,7 @@ export const CITIES = [
 			x: 170,
 			y: 80,
 		},
+		status: 'active',
 	},
 	{
 		name: 'Bielsko-Biała',
@@ -22,6 +37,7 @@ export const CITIES = [
 			x: 120,
 			y: 222,
 		},
+		status: 'inactive',
 	},
 	{
 		name: 'Gdańsk',
@@ -34,6 +50,7 @@ export const CITIES = [
 			x: 70,
 			y: 34,
 		},
+		status: 'inactive',
 	},
 	{
 		name: 'Katowice',
@@ -46,6 +63,7 @@ export const CITIES = [
 			x: 134,
 			y: 200,
 		},
+		status: 'inactive',
 	},
 	{
 		name: 'Kielce',
@@ -58,6 +76,7 @@ export const CITIES = [
 			x: 154,
 			y: 164,
 		},
+		status: 'inactive',
 	},
 	{
 		name: 'Kraków',
@@ -70,6 +89,7 @@ export const CITIES = [
 			x: 154,
 			y: 210,
 		},
+		status: 'inactive',
 	},
 	{
 		name: 'Łódź',
@@ -82,6 +102,7 @@ export const CITIES = [
 			x: 134,
 			y: 130,
 		},
+		status: 'active',
 	},
 	{
 		name: 'Lublin',
@@ -94,6 +115,7 @@ export const CITIES = [
 			x: 194,
 			y: 160,
 		},
+		status: 'inactive',
 	},
 	{
 		name: 'Poznań',
@@ -106,6 +128,7 @@ export const CITIES = [
 			x: 64,
 			y: 110,
 		},
+		status: 'active',
 	},
 	{
 		name: 'Warszawa',
@@ -118,6 +141,7 @@ export const CITIES = [
 			x: 164,
 			y: 110,
 		},
+		status: 'active',
 	},
 	{
 		name: 'Wrocław',
@@ -130,6 +154,7 @@ export const CITIES = [
 			x: 74,
 			y: 170,
 		},
+		status: 'active',
 	},
 ];
 
