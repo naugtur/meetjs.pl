@@ -9,7 +9,7 @@ export interface City {
 		x: number;
 		y: number;
 	};
-	status: 'active' | 'inactive' | 'coming-soon' | 'new';
+	status: 'active' | 'paused' | 'coming-soon' | 'new';
 }
 
 export const CITIES: City[] = [
@@ -37,7 +37,7 @@ export const CITIES: City[] = [
 			x: 120,
 			y: 222,
 		},
-		status: 'inactive',
+		status: 'paused',
 	},
 	{
 		name: 'Gdańsk',
@@ -50,7 +50,7 @@ export const CITIES: City[] = [
 			x: 70,
 			y: 34,
 		},
-		status: 'inactive',
+		status: 'paused',
 	},
 	{
 		name: 'Katowice',
@@ -63,7 +63,7 @@ export const CITIES: City[] = [
 			x: 134,
 			y: 200,
 		},
-		status: 'inactive',
+		status: 'paused',
 	},
 	{
 		name: 'Kielce',
@@ -76,7 +76,7 @@ export const CITIES: City[] = [
 			x: 154,
 			y: 164,
 		},
-		status: 'inactive',
+		status: 'paused',
 	},
 	{
 		name: 'Kraków',
@@ -89,7 +89,7 @@ export const CITIES: City[] = [
 			x: 154,
 			y: 210,
 		},
-		status: 'inactive',
+		status: 'active',
 	},
 	{
 		name: 'Łódź',
@@ -115,7 +115,7 @@ export const CITIES: City[] = [
 			x: 194,
 			y: 160,
 		},
-		status: 'inactive',
+		status: 'paused',
 	},
 	{
 		name: 'Poznań',
