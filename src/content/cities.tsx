@@ -156,6 +156,32 @@ export const CITIES: City[] = [
 		},
 		status: 'active',
 	},
+	{
+		name: 'Szczecin',
+		href: '/szczecin',
+		pointPosition: {
+			x: 20,
+			y: 50,
+		},
+		textPosition: {
+			x: 24,
+			y: 50,
+		},
+		status: 'paused',
+	},
+	{
+		name: 'Toruń',
+		href: '/torun',
+		pointPosition: {
+			x: 100,
+			y: 80,
+		},
+		textPosition: {
+			x: 104,
+			y: 80,
+		},
+		status: 'paused',
+	},
 ];
 
 export default CITIES;

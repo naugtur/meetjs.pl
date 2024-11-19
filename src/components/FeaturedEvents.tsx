@@ -23,7 +23,7 @@ export interface Event {
 	address: string | null;
 	serie: string;
 	topic: string[];
-}[];
+};
 
 export const FeaturedEvents = async () => {
 	const events: Event[] | null = await getUpcomingEvents();
