@@ -1,7 +1,11 @@
 import { CITIES } from "@/content/cities";
 import { PolandMap } from "./PolandMap";
+import { getUpcomingEvents } from "@/utils/getUpcomingEvents";
+import { Event } from "@/components/FeaturedEvents";
 
 export const JoinUs = async () => {
+	const events: Event[] | null = await getUpcomingEvents();
+
 	return (
 		<section
 			className="mx-auto flex w-full p-12 max-w-7xl snap-y scroll-mt-16 flex-col justify-between px-2 lg:px-8"
@@ -13,7 +17,7 @@ export const JoinUs = async () => {
 
 			<div className="flex w-full flex-col p-4 md:flex-row">
 				<div className="w-full md:w-1/2">
-					<PolandMap cities={CITIES} />
+					<PolandMap cities={CITIES} events={events ?? []} />
 				</div>
 				<div className="w-full md:w-1/2 p-4">
 					<p className="pb-6">

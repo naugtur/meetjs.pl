@@ -10,8 +10,23 @@ import { EventsAPIPartner } from '@/components/EventsAPIPartner';
 import { EmptyEventsAlert } from '@/components/EmptyEventsAlert';
 import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
 
+export interface Event {
+	type: string;
+	id: number;
+	date_add: number;
+	date: string;
+	time: string;
+	name: string;
+	url: string;
+	rsvp: string;
+	city: string;
+	address: string | null;
+	serie: string;
+	topic: string[];
+}[];
+
 export const FeaturedEvents = async () => {
-	const events = await getUpcomingEvents();
+	const events: Event[] | null = await getUpcomingEvents();
 
 	return (
 		<section
