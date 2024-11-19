@@ -39,7 +39,15 @@ export const Footer = () => {
 						<ul className="mt-4 space-y-2">
 							{CITIES.map((city) => (
 								<li key={city.name}>
-									<Link href={city.href} className="hover:text-gray-300">{city.name}</Link>
+									<Link href={city.href} className="hover:text-gray-300">
+										{city.name}
+										{city.status && (
+											<span className={`ml-2 inline-block h-2 w-2 rounded-full ${city.status === 'active' ? 'bg-green' :
+												city.status === 'coming-soon' ? 'bg-yellow-400' :
+													'bg-gray-400'
+												}`} />
+										)}
+									</Link>
 								</li>
 							))}
 						</ul>
