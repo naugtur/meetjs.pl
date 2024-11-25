@@ -1,9 +1,60 @@
+
+import { env } from '../../../env';
+import { CityEmail } from '../../../components/CityEmail';
+import { Organizers } from '../../../components/Orginizers';
+import { FAQ } from '../../../components/FAQ';
+import { LocalGroups } from '../../../components/LocalGroups';
+import { CityBanner } from '../../../components/CityBanner';
+import { KrakowFAQ } from './_FAQ';
+import { KrakowOrganizers } from './_Organizers';
+
 export const metadata = {
-	title: "meet.js Kraków",
+	metadataBase: new URL(`${env.SITE_URL}/krakow`),
+	title: 'meet.js Krakow',
+	description: 'JavaScript meetups in Krakow',
+	keywords: 'meet.js, Krakow, JavaScript, meetup',
+	openGraph: {
+		title: 'meet.js Krakow',
+		description: 'JavaScript meetups in Krakow',
+		type: 'website',
+		locale: 'en_US',
+		url: `${env.SITE_URL}/krakow`,
+		siteName: 'meet.js',
+		images: [
+			{
+				url: `${env.SITE_URL}/api/og?city=Krakow`,
+				width: 1200,
+				height: 630,
+				alt: 'meet.js | JavaScript meetups in Krakow',
+			},
+		],
+	},
+	twitter: {
+		card: 'summary_large_image',
+		site: '@meetjs',
+		title: 'meet.js',
+		description: 'JavaScript meetups in Krakow',
+		images: [
+			{
+				url: `${env.SITE_URL}/api/og?city=Krakow`,
+				width: 1200,
+				height: 630,
+				alt: 'meet.js | JavaScript meetups in Krakow',
+			},
+		],
+	},
 };
 
-<div className="prose dark:prose-invert max-w-none space-y-8 my-8">
-  # Kraków
+<CityBanner city="Krakow" background="city/krakow.jpg" />
 
-  We're looking for organizers! [Let us know if you want to help.](mailto:contact@meetjs.pl)
-</div>
+<LocalGroups
+	localGroups={[
+	  'https://www.meetup.com/krakowjs/'
+	]}
+/>
+
+<FAQ questions={KrakowFAQ} />
+
+<Organizers city="Krakow" organizers={KrakowOrganizers} />
+
+<CityEmail email="meetjskrk@gmail.com" />
