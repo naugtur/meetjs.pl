@@ -61,6 +61,7 @@
 		"babel-plugin-react-compiler": "0.0.0-experimental-734b737-20241003",
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.1",
+		"date-fns": "^4.1.0",
 		"embla-carousel-autoplay": "^8.1.8",
 		"embla-carousel-react": "^8.1.8",
 		"eslint-plugin-react-compiler": "0.0.0-experimental-9a75bad-20241003",
