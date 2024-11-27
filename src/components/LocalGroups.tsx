@@ -1,4 +1,4 @@
-import { FaFacebook, FaMeetup } from 'react-icons/fa6';
+import { FaFacebook, FaGithub, FaMeetup } from 'react-icons/fa6';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -30,6 +30,24 @@ const detectIcon = (link: string) => {
 			<>
 				<span className="sr-only">Facebook group</span>
 				<FaFacebook className="h-10 w-10" />
+			</>
+		);
+	}
+
+	if (link.includes('crossweb.pl')) {
+		return (
+			<>
+				<span className="sr-only">Crossweb group</span>
+				<Image src="/crossweb-favicon.png" alt="Crossweb logo" width={50} height={50} />
+			</>
+		);
+	}
+
+	if (link.includes('github.com')) {
+		return (
+			<>
+				<span className="sr-only">Github group</span>
+				<FaGithub className="h-10 w-10" />
 			</>
 		);
 	}
