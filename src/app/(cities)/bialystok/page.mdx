@@ -1,9 +1,61 @@
+import { env } from '../../../env';
+import { CityEmail } from '../../../components/CityEmail';
+import { Organizers } from '../../../components/Orginizers';
+import { FAQ } from '../../../components/FAQ';
+import { LocalGroups } from '../../../components/LocalGroups';
+import { CityBanner } from '../../../components/CityBanner';
+import { PoznanFAQ } from './_FAQ';
+import { BialystokOrganizers } from './_Organizers';
+
 export const metadata = {
-	title: "meet.js Białystok",
+	metadataBase: new URL(`${env.SITE_URL}/bialystok`),
+	title: 'meet.js Białystok',
+	description: 'JavaScript meetups in Białystok',
+	keywords: 'meet.js, Białystok, JavaScript, meetup',
+	openGraph: {
+		title: 'meet.js Białystok',
+		description: 'JavaScript meetups in Białystok',
+		type: 'website',
+		locale: 'en_US',
+		url: `${env.SITE_URL}/city/poznan`,
+		siteName: 'meet.js',
+		images: [
+			{
+				url: `${env.SITE_URL}/api/og?city=Białystok`,
+				width: 1200,
+				height: 630,
+				alt: 'meet.js | JavaScript meetups in Białystok',
+			},
+		],
+	},
+	twitter: {
+		card: 'summary_large_image',
+		site: '@meetjs',
+		title: 'meet.js',
+		description: 'JavaScript meetups in Białystok',
+		images: [
+			{
+				url: `${env.SITE_URL}/api/og?city=Białystok`,
+				width: 1200,
+				height: 630,
+				alt: 'meet.js | JavaScript meetups in Białystok',
+			},
+		],
+	},
 };
 
-<div className="prose dark:prose-invert max-w-none space-y-8 my-8">
-  # Białystok
+<CityBanner city="Białystok" background="city/poznan.jpg" />
 
-  We're looking for organizers! [Let us know if you want to help.](mailto:contact@meetjs.pl)
-</div>
+<LocalGroups
+	localGroups={[
+		'https://crossweb.pl/cykle-wydarzen/meet-js-poznan/',
+		'https://www.meetup.com/pl-PL/meet-js-Białystok/',
+		'https://github.com/meetjspl/poznan',
+	]}
+/>
+
+<FAQ questions={PoznanFAQ} />
+
+<Organizers city="Białystok" organizers={BialystokOrganizers} />
+
+<CityEmail email="poznan@meetjs.pl" />
