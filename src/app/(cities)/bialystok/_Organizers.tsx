@@ -10,7 +10,7 @@ export const BialystokOrganizers: Organizer[] = [
 	{
 		name: 'Kacper Lewko',
 		image:
-			'https://media.licdn.com/dms/image/v2/D4D35AQGTsKAPlw9bPw/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1723033411056?e=1732820400&v=beta&t=DrQIEbrAvSQFpwBYapNTHzSJW2zIkOqleFfNnPYcPI4',
+			'https://media.licdn.com/dms/image/v2/D4D03AQFZy4d5hzbDwA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1723033408880?e=1738195200&v=beta&t=XhbH5quWnhjzMXS2DXngrVmNhPOxTqdcOtONydXP1tg',
 		linkedin: 'https://pl.linkedin.com/in/kacper-lewko-66a165273',
 	},
 	{

@@ -9,7 +9,6 @@ import { PartnersSection } from '@/components/PartnersSection';
 const Home = () => {
 	return (
 		<>
-{/* 
 			<HeroSection />
 			<main className="flex min-h-screen flex-col items-center">
 				<JoinUs />
@@ -19,7 +18,7 @@ const Home = () => {
 					<Stats />
 				</div>
 				<PartnersSection />
-			</main>  */}
+			</main>  
 		</>
 		
 	);
