@@ -1,50 +1,34 @@
 import { FAQQuestion } from '@/components/FAQ';
 
-export const PoznanFAQ: FAQQuestion[] = [
+export const BialystokFAQ: FAQQuestion[] = [
 	{
 		id: '1',
-		question: 'How to become Poznań meetup sponsor?',
+		question: 'How to become Białystok meetup sponsor or speaker?',
 		answer:
 			'Feel free to connect with one of the organizers on LinkedIn — we&apos;d love to chat with you about sponsorship opportunities!',
 	},
 	{
 		id: '2',
-		question: 'How to become Poznań speaker?',
+		question: 'How to join to our meetup?',
 		answer: (
 			<>
-				Create{' '}
+				It's that easy! Come to the meeting in {' '}
 				<a
-					href="https://github.com/meetjspl/poznan/issues"
+					href="https://maps.app.goo.gl/JsVjDFjsTSsMvwh47"
 					className="font-bold hover:underline"
 				>
-					issue on gitHub
+					Gwint
 				</a>
+				
 			</>
 		),
 	},
 	{
 		id: '3',
-		question: 'How to join to our meetup?',
-		answer: (
-			<>
-				Register to upcoming event on{' '}
-				<a
-					href="https://crossweb.pl/cykle-wydarzen/meet-js-poznan/"
-					className="font-bold hover:underline"
-				>
-					crossweb.pl
-				</a>
-				. Join us on time in venue. It&apos;s easy 🥳
-			</>
-		),
-	},
-	{
-		id: '4',
 		question: 'How is it cost to join event?',
 		answer: (
 			<>
-				Generally our event are FREE! Only{' '}
-				<a href="https://summit.meetjs.pl">summit</a> is paid event.
+				Generally, our events in Białystok are free!
 			</>
 		),
 	},

@@ -18,8 +18,9 @@ const Home = () => {
 					<Stats />
 				</div>
 				<PartnersSection />
-			</main> 
-		</>		
+			</main>  
+		</>
+		
 	);
 };
 

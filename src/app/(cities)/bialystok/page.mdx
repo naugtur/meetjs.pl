@@ -2,9 +2,8 @@ import { env } from '../../../env';
 import { CityEmail } from '../../../components/CityEmail';
 import { Organizers } from '../../../components/Orginizers';
 import { FAQ } from '../../../components/FAQ';
-import { LocalGroups } from '../../../components/LocalGroups';
 import { CityBanner } from '../../../components/CityBanner';
-import { PoznanFAQ } from './_FAQ';
+import { BialystokFAQ } from './_FAQ';
 import { BialystokOrganizers } from './_Organizers';
 
 export const metadata = {
@@ -17,7 +16,7 @@ export const metadata = {
 		description: 'JavaScript meetups in Białystok',
 		type: 'website',
 		locale: 'en_US',
-		url: `${env.SITE_URL}/city/poznan`,
+		url: `${env.SITE_URL}/city/bialystok`,
 		siteName: 'meet.js',
 		images: [
 			{
@@ -44,18 +43,10 @@ export const metadata = {
 	},
 };
 
-<CityBanner city="Białystok" background="city/poznan.jpg" />
+<CityBanner city="Białystok" background="city/bialystok.jpg" />
 
-<LocalGroups
-	localGroups={[
-		'https://crossweb.pl/cykle-wydarzen/meet-js-poznan/',
-		'https://www.meetup.com/pl-PL/meet-js-Białystok/',
-		'https://github.com/meetjspl/poznan',
-	]}
-/>
-
-<FAQ questions={PoznanFAQ} />
+<FAQ questions={BialystokFAQ} />
 
 <Organizers city="Białystok" organizers={BialystokOrganizers} />
 
-<CityEmail email="poznan@meetjs.pl" />
+<CityEmail email="hello@meetjs.bialystok.pl" />
