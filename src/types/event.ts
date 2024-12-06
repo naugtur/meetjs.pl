@@ -9,7 +9,7 @@ const EventSchema = z.object({
 	type: z.string(),
 	url: z.string(),
 	rsvp: z.string(),
-	city: z.string(),
+	city: z.string().default(''),
 	address: z.string().nullable(),
 	serie: z.string(),
 	topic: z.array(z.string()).default([]),
