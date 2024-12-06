@@ -35,9 +35,11 @@ export const EventCard = ({ event }: EventCardProps) => {
 						</Link>
 					</CardTitle>
 				</div>
-				<p className="text-sm text-muted-foreground">
-					{formatDistanceToNow(eventDate)}
-				</p>
+				{eventDate.getTime() > 0 && isUpcoming && (
+					<p className="text-sm text-muted-foreground">
+						{formatDistanceToNow(eventDate)}
+					</p>
+				)}
 			</CardHeader>
 
 			<CardContent className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
