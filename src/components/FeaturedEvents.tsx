@@ -21,25 +21,22 @@ export interface Event {
 	rsvp: string;
 	city: string;
 	address: string | null;
+	image: string;
 	serie: string;
 	topic: string[];
-};
+}
 
 export const FeaturedEvents = async () => {
 	const events: Event[] | null = await getUpcomingEvents();
 
 	return (
 		<section
-			className="mx-auto flex w-full max-w-7xl p-12 snap-y scroll-mt-16 flex-col justify-between px-2 lg:px-8 bg-branding-blue"
+			className="bg-branding-blue mx-auto flex w-full max-w-7xl snap-y scroll-mt-16 flex-col justify-between p-12 px-2 lg:px-8"
 			id="events"
 		>
 			<div className="flex w-full flex-col gap-4 p-4">
-				<h2 className="text-center text-3xl font-bold">
-					Upcoming Events
-				</h2>
-				<p className="text-center">
-					Don&apos;t miss these!
-				</p>
+				<h2 className="text-center text-3xl font-bold">Upcoming Events</h2>
+				<p className="text-center">Don&apos;t miss these!</p>
 				{events === null ? (
 					<EmptyEventsAlert />
 				) : (
