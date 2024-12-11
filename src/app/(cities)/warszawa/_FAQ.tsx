@@ -9,7 +9,20 @@ export const WarsawFAQ: FAQQuestion[] = [
 	{
 		id: '2',
 		question: 'How to become Warsaw speaker?',
-		answer: 'Go to https://github.com/meetjspl/warsaw/issues/ and suggest a topic',
+		answer: (
+			<>
+				Go to{' '}
+				<a
+					href="https://github.com/meetjspl/warsaw/issues/"
+					className="font-bold hover:underline"
+					about="_blank"
+				>
+					https://github.com/meetjspl/warsaw/issues/
+				</a>
+				{' '}and suggest a topic
+			</>
+		),
+		
 	},
 	{
 		id: '3',
