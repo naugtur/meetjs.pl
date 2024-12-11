@@ -11,6 +11,7 @@ const EventSchema = z.object({
 	rsvp: z.string(),
 	city: z.string().default(''),
 	address: z.string().nullable(),
+	image: z.string().default(''),
 	serie: z.string(),
 	topic: z.array(z.string()).default([]),
 });
