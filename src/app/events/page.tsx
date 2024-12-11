@@ -15,7 +15,10 @@ export const metadata: Metadata = {
 
 const getPastEvents = async () => {
 	try {
-		const pastEventsRes = await fetch(`${env.EVENTS_API_URL}&old=1`, {
+		const url = new URL(env.EVENTS_API_URL);
+		url.searchParams.set('old', '1');
+
+		const pastEventsRes = await fetch(url, {
 			cache: 'force-cache',
 		});
 

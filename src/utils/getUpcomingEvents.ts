@@ -4,7 +4,7 @@ import { changeCityName } from '@/utils/changeCityName';
 
 export const getUpcomingEvents = async () => {
 	try {
-		const upcomingEventsRes = await fetch(env.EVENTS_API_URL);
+		const upcomingEventsRes = await fetch(new URL(env.EVENTS_API_URL));
 
 		const upcomingEventsJson = await upcomingEventsRes.json();
 		const data = EventsSchema.parse(upcomingEventsJson);
