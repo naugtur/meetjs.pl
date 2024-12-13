@@ -5,7 +5,7 @@ export const BialystokFAQ: FAQQuestion[] = [
 		id: '1',
 		question: 'How to become Białystok meetup sponsor or speaker?',
 		answer:
-			'Feel free to connect with one of the organizers on LinkedIn — we&apos;d love to chat with you about sponsorship opportunities!',
+			'Feel free to connect with one of the organizers on LinkedIn — we\'d love to chat with you about sponsorship opportunities!',
 	},
 	{
 		id: '2',
