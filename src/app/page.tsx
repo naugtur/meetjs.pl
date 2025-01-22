@@ -6,6 +6,8 @@ import { FeaturedEvents } from '@/components/FeaturedEvents';
 import { HeroSection } from '@/components/HeroSection';
 import { PartnersSection } from '@/components/PartnersSection';
 
+export const dynamic = 'force-dynamic';
+
 const Home = () => {
 	return (
 		<>
@@ -18,9 +20,8 @@ const Home = () => {
 					<Stats />
 				</div>
 				<PartnersSection />
-			</main>  
+			</main>
 		</>
-		
 	);
 };
 
