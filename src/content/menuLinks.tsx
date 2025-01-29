@@ -5,7 +5,7 @@ export const menuLinks = [
 		current: false,
 		external: true,
 	},
-	{ name: 'events', href: '/#events', current: false, external: false },
-	{ name: 'about', href: '/#about', current: false, external: false },
+	{ name: 'events', href: '/events', current: false, external: false },
+	{ name: 'about', href: '/about', current: false, external: false },
 	// { name: 'contact', href: '#', current: false, external: false },
 ];
