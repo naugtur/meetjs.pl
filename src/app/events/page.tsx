@@ -19,7 +19,7 @@ const getPastEvents = async () => {
 		url.searchParams.set('old', '1');
 
 		const pastEventsRes = await fetch(url, {
-			cache: 'force-cache',
+			next: { revalidate: 3600 }
 		});
 
 		if (!pastEventsRes.ok) {
