@@ -22,7 +22,7 @@ export default function Page() {
             </div>
             <a
                 className="mt-8 text-purple py-2 px-4 rounded bg-green dark:bg-green-500 hover:bg-green-400"
-                href="mailto:contact@meetjs.pl"
+                href="mailto:contact@meetjs.pl?subject=Sharing%20My%20Memory"
             >
                 Share Your Memory
             </a>
