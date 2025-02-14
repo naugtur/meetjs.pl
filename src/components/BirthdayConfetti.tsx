@@ -10,6 +10,7 @@ const Confetti = dynamic(() => import('react-confetti'), {
 export const BirthdayConfetti = () => {
     const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
     const [isClient, setIsClient] = useState(false);
+    const [showConfetti, setShowConfetti] = useState(true);
 
     useEffect(() => {
         setIsClient(true);
@@ -25,11 +26,18 @@ export const BirthdayConfetti = () => {
             });
         };
 
+        const confettiTimeout = setTimeout(() => {
+            setShowConfetti(false);
+        }, 10000);
+
         window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            clearTimeout(confettiTimeout);
+        };
     }, []);
 
-    return isClient ? (
+    return isClient && showConfetti ? (
         <div className="fixed inset-0 pointer-events-none z-50">
             <Confetti
                 width={dimensions.width}
