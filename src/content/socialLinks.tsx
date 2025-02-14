@@ -17,6 +17,11 @@ export interface socialLink {
 
 export const socialLinksData: socialLink[] = [
 	{
+		name: 'Instagram',
+		url: '/instagram',
+		icon: <FaInstagram />,
+	},
+	{
 		name: 'Facebook',
 		url: '/facebook',
 		icon: <FaFacebook />,
@@ -49,6 +54,11 @@ export const socialLinksData: socialLink[] = [
 ];
 
 export const instagramLinksData: socialLink[] = [
+	{
+		name: 'Instagram',
+		url: '/instagram',
+		icon: <FaInstagram />,
+	},
 	{
 		name: 'Białystok',
 		url: '/instagram-bialystok',

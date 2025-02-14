@@ -38,6 +38,11 @@ const nextConfig: NextConfig = {
 				permanent: true,
 			},
 			{
+				source: '/instagram',
+				destination: 'https://www.instagram.com/meet.js_poland',
+				permanent: true,
+			},
+			{
 				source: '/instagram-bialystok',
 				destination: 'https://www.instagram.com/meet.js_bialystok',
 				permanent: true,
