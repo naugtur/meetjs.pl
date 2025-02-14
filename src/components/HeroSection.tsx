@@ -1,6 +1,5 @@
-import Link from 'next/link';
-import { buttonVariants } from '@/components/ui/button';
 import { RankingBanner } from '@/components/RankingBanner';
+import { Instagram, MessagesSquare } from 'lucide-react';
 
 export const HeroSection = () => {
 	return (
@@ -17,15 +16,28 @@ export const HeroSection = () => {
 				<h1 className="p-4 text-xl font-medium">
 					JavaScript meetups in Poland
 				</h1>
-				<Link
-					href="/#joinus"
-					className={buttonVariants({
-						className: 'text-purple dark:bg-green dark:hover:bg-green/80',
-						size: 'lg',
-					})}
-				>
-					Join us
-				</Link>
+
+				{/* Social Media Buttons */}
+				<div className="mt-6 flex justify-center gap-4">
+					<a
+						href="https://instagram.com/meet.js_poland"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 text-sm backdrop-blur-sm transition-all hover:bg-white/30"
+					>
+						<Instagram className="h-4 w-4" />
+						Follow us
+					</a>
+					<a
+						href="https://discord.gg/8r9XKTeNW8"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="flex items-center gap-2 rounded-full bg-[#5865F2]/90 px-4 py-2 text-sm backdrop-blur-sm transition-all hover:bg-[#5865F2]"
+					>
+						<MessagesSquare className="h-4 w-4" />
+						Join Discord
+					</a>
+				</div>
 			</div>
 		</header>
 	);
