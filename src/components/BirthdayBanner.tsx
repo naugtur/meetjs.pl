@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export const BirthdayBanner = () => {
 	return (
-		<div className="to-purple-500 relative bg-gradient-to-r from-pink-500 via-red-500">
+		<div className="to-purple-500 relative -z-10 bg-gradient-to-r from-pink-500 via-red-500">
 			<div className="container mx-auto px-4 py-3 text-center">
 				<Link
 					href="/14-birthday"
