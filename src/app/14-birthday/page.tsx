@@ -12,7 +12,7 @@ const shareText = `🎉 Happy 14th Birthday, meet.js! 🎉
 
 Fourteen years ago, meet.js started as a small gathering of JavaScript enthusiasts. Today, we're a thriving community that has brought together thousands of developers, shared countless lines of code, and sparked friendships that go beyond tech.
 
-Thank you to everyone—speakers, organizers, attendees—who have made meet.js what it is today. Your passion and dedication keep this community alive and growing! 🚀
+Thank you to everyone—speakers, organizers, attendees—who have made meet.js. Your passion and dedication keep this community alive and growing! 🚀
 
 Here's to more meetups, knowledge-sharing, and JavaScript magic! 🥳
 
