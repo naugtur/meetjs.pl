@@ -23,10 +23,18 @@ export const EventCard = ({ event }: EventCardProps) => {
 		+hours,
 		+minutes
 	);
+
+	// Calculate event end time (3 hours after start)
+	const eventEndDate = new Date(eventDate.getTime() + (3 * 60 * 60 * 1000));
+
 	const isUpcoming = now < eventDate;
+	const isInProgress = now >= eventDate && now <= eventEndDate;
 
 	return (
-		<Card className="group flex min-h-80 max-w-xl flex-col justify-between transition-all hover:shadow-lg md:min-h-60">
+		<Card className={cn(
+			"group flex min-h-80 max-w-xl flex-col justify-between transition-all hover:shadow-lg md:min-h-60",
+			isInProgress && "border-purple dark:border-green border-2"
+		)}>
 			<CardHeader>
 				<div className="flex items-start justify-between gap-2">
 					<CardTitle>
@@ -35,9 +43,13 @@ export const EventCard = ({ event }: EventCardProps) => {
 						</Link>
 					</CardTitle>
 				</div>
-				{eventDate.getTime() > 0 && isUpcoming && (
+				{eventDate.getTime() > 0 && (
 					<p className="text-sm text-muted-foreground">
-						{formatDistanceToNow(eventDate)}
+						{isInProgress
+							? "🎉 Live now! Why aren't you here?"
+							: isUpcoming
+								? formatDistanceToNow(eventDate)
+								: "Event ended"}
 					</p>
 				)}
 			</CardHeader>

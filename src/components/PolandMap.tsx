@@ -8,7 +8,27 @@ type MapProps = {
 };
 
 export const PolandMap = ({ cities, events = [] }: MapProps) => {
-    const citiesWithEvents = new Set(events.map(event => event.city));
+    const now = new Date();
+
+    const getCityEventStatus = (cityName: string) => {
+        const cityEvents = events.filter(event => event.city === cityName);
+
+        for (const event of cityEvents) {
+            const [day, month, year] = event.date.split('.');
+            const [hours, minutes] = event.time.split(':');
+
+            const eventDate = new Date(+year, +month - 1, +day, +hours, +minutes);
+            const eventEndDate = new Date(eventDate.getTime() + (3 * 60 * 60 * 1000));
+
+            if (now >= eventDate && now <= eventEndDate) {
+                return 'in-progress';
+            }
+            if (now < eventDate) {
+                return 'upcoming';
+            }
+        }
+        return 'none';
+    };
 
     return (
         <div className="flex flex-col gap-2">
@@ -20,48 +40,52 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
                         stroke="#2b1932"
                         strokeWidth="2"
                     />
-                    {cities.map((city, index) => (
-                        <g key={index}>
-                            <Link href={city.href}>
-                                <circle
-                                    cx={city.pointPosition.x}
-                                    cy={city.pointPosition.y}
-                                    r="3"
-                                    fill={
-                                        city.status === 'active' ? '#219eab' :
-                                            city.status === 'coming-soon' ? '#EAB308' :
-                                                city.status === 'new' ? '#219eab' :
-                                                    '#9CA3AF'
-                                    }
-                                    className="cursor-pointer hover:opacity-80"
-                                />
-                                {citiesWithEvents.has(city.name) && (
+                    {cities.map((city, index) => {
+                        const eventStatus = getCityEventStatus(city.name);
+                        return (
+                            <g key={index}>
+                                <Link href={city.href}>
                                     <circle
                                         cx={city.pointPosition.x}
                                         cy={city.pointPosition.y}
-                                        r="6"
-                                        fill="none"
-                                        stroke="#219eab"
-                                        strokeWidth="1"
+                                        r="3"
+                                        fill={
+                                            city.status === 'active' ? '#219eab' :
+                                                city.status === 'coming-soon' ? '#EAB308' :
+                                                    city.status === 'new' ? '#219eab' :
+                                                        '#9CA3AF'
+                                        }
+                                        className="cursor-pointer hover:opacity-80"
                                     />
-                                )}
-                                <text
-                                    x={city.textPosition.x}
-                                    y={city.textPosition.y}
-                                    fontSize="10"
-                                    fill={
-                                        city.status === 'active' ? '#2b1932' :
-                                            city.status === 'coming-soon' ? '#2b1932' :
-                                                city.status === 'new' ? '#2b1932' :
-                                                    '#6B7280'
-                                    }
-                                    className="cursor-pointer"
-                                >
-                                    {city.name}
-                                </text>
-                            </Link>
-                        </g>
-                    ))}
+                                    {eventStatus !== 'none' && (
+                                        <circle
+                                            cx={city.pointPosition.x}
+                                            cy={city.pointPosition.y}
+                                            r="6"
+                                            fill="none"
+                                            stroke={eventStatus === 'in-progress' ? '#9333ea' : '#219eab'}
+                                            strokeWidth={eventStatus === 'in-progress' ? "2" : "1"}
+                                            className={eventStatus === 'in-progress' ? "animate-pulse dark:stroke-green-500" : ""}
+                                        />
+                                    )}
+                                    <text
+                                        x={city.textPosition.x}
+                                        y={city.textPosition.y}
+                                        fontSize="10"
+                                        fill={
+                                            city.status === 'active' ? '#2b1932' :
+                                                city.status === 'coming-soon' ? '#2b1932' :
+                                                    city.status === 'new' ? '#2b1932' :
+                                                        '#6B7280'
+                                        }
+                                        className="cursor-pointer"
+                                    >
+                                        {city.name}
+                                    </text>
+                                </Link>
+                            </g>
+                        );
+                    })}
                 </svg>
             </div>
 
@@ -76,6 +100,13 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
                         <div className="absolute -inset-1 rounded-full border border-[#219eab]" />
                     </div>
                     <span>Active with upcoming event</span>
+                </div>
+                <div className="flex items-center gap-2 whitespace-nowrap">
+                    <div className="relative">
+                        <div className="h-2 w-2 rounded-full bg-[#219eab]" />
+                        <div className="absolute -inset-1 rounded-full border-2 border-[#9333ea] dark:border-green-500 animate-pulse" />
+                    </div>
+                    <span>Event in progress!</span>
                 </div>
                 <div className="flex items-center gap-2 whitespace-nowrap">
                     <div className="h-2 w-2 rounded-full bg-[#EAB308]" />
