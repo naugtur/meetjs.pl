@@ -106,21 +106,83 @@ export default function Page() {
                     </p>
                 </div>
 
-                <div className="mb-12">
-                    <Image
-                        src="/about/meetjs-meetup.avif"
-                        alt="meet.js meetup celebration"
-                        width={1024}
-                        height={256}
-                        className="w-full h-64 object-cover rounded-lg shadow-lg mb-2"
-                    />
-                </div>
-
                 <div className="mb-8 space-y-4">
-                    <p className="text-lg">
-                        What started as a Valentine&apos;s Day eve gathering in a Poznań pub has blossomed into
+                    <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+                        What started as a gathering on February 12, 2011 in Klub ZAK, Poznań has blossomed into
                         Poland&apos;s largest JavaScript community. For 14 incredible years, we&apos;ve been:
                     </p>
+                    <div className="my-6">
+                        <Image
+                            src="/IMG_0093.JPG"
+                            alt="First meet.js meetup at Klub ZAK in 2011"
+                            width={400}
+                            height={300}
+                            className="rounded-lg shadow-lg mb-2 mx-auto"
+                        />
+                        <p className="text-sm text-gray-500 italic text-center">
+                            A snapshot from the very first meet.js meetup at Klub ZAK, Poznań (February 12, 2011)
+                        </p>
+                    </div>
+                    <div className="bg-gray-50 border-l-4 border-blue-600 p-4 rounded-r-lg shadow-sm">
+                        <p className="text-sm leading-relaxed text-gray-700">
+                            The first meet.js featured talks on cutting-edge topics of the time, including jQuery Mobile,
+                            Box2D physics engine, HTML5 audio, and IndexedDB API - setting the stage for our community&apos;s
+                            focus on sharing knowledge about emerging web technologies.{' '}
+                            <a
+                                href="https://web.archive.org/web/20110121031140/http://jsnews.pl/2011/01/18/meet-js-12-lutego-w-poznaniu/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center font-medium text-blue-600 hover:text-blue-800 transition-colors duration-200"
+                            >
+                                <span>View original announcement</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                                    <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                                </svg>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 text-center">
+                    <div className="p-4 bg-white rounded-lg shadow-lg border border-gray-200">
+                        <div className="text-3xl font-bold text-blue-600 mb-2">14</div>
+                        <div className="text-gray-600">Years Strong</div>
+                    </div>
+                    <div className="p-4 bg-white rounded-lg shadow-lg border border-gray-200">
+                        <div className="text-3xl font-bold text-blue-600 mb-2">8+</div>
+                        <div className="text-gray-600">Active Cities</div>
+                    </div>
+                    <div className="p-4 bg-white rounded-lg shadow-lg border border-gray-200">
+                        <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
+                        <div className="text-gray-600">Meetups Held</div>
+                    </div>
+                    <div className="p-4 bg-white rounded-lg shadow-lg border border-gray-200">
+                        <div className="text-3xl font-bold text-blue-600 mb-2">1000+</div>
+                        <div className="text-gray-600">Talks Given</div>
+                    </div>
+                </div>
+
+                <div className="my-12">
+                    <h2 className="text-2xl font-semibold mb-6 text-center">Key Milestones</h2>
+                    <div className="space-y-4">
+                        <div className="flex items-start">
+                            <div className="flex-shrink-0 w-24 font-bold text-blue-600">2011</div>
+                            <div className="flex-grow">First meet.js in Poznań</div>
+                        </div>
+                        <div className="flex items-start">
+                            <div className="flex-shrink-0 w-24 font-bold text-blue-600">2012</div>
+                            <div className="flex-grow">Expansion to Warsaw and Wrocław</div>
+                        </div>
+                        <div className="flex items-start">
+                            <div className="flex-shrink-0 w-24 font-bold text-blue-600">2015</div>
+                            <div className="flex-grow">First meet.js Summit conference</div>
+                        </div>
+                        <div className="flex items-start">
+                            <div className="flex-shrink-0 w-24 font-bold text-blue-600">2024</div>
+                            <div className="flex-grow">14th Anniversary - Still growing strong!</div>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
