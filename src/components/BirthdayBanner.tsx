@@ -10,7 +10,7 @@ export const BirthdayBanner = () => {
 					href="/14-birthday"
 					className="inline-flex items-center gap-2 font-medium text-white transition-opacity hover:opacity-90"
 				>
-					🎉 Today is our 14th Birthday! Join the celebration on
+					🎉 It&apos;s our 14th Birthday! Join the celebration on
 					Valentine&apos;s Day! 💝
 					<span className="underline">Learn more</span>
 				</Link>
