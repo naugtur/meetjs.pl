@@ -6,6 +6,7 @@ import { LocalGroups } from '../../../components/LocalGroups';
 import { CityBanner } from '../../../components/CityBanner';
 import { PoznanFAQ } from './_FAQ';
 import { PoznanOrganizers } from './_Organizers';
+import { EventSection } from '../../../components/EventSection';
 
 export const metadata = {
 	metadataBase: new URL(`${env.SITE_URL}/poznan`),
@@ -45,6 +46,8 @@ export const metadata = {
 };
 
 <CityBanner city="Poznań" background="city/poznan.jpg" />
+
+<EventSection city="Poznań" />
 
 <LocalGroups
 	localGroups={[

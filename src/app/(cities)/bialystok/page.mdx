@@ -5,6 +5,7 @@ import { FAQ } from '../../../components/FAQ';
 import { CityBanner } from '../../../components/CityBanner';
 import { BialystokFAQ } from './_FAQ';
 import { BialystokOrganizers } from './_Organizers';
+import { EventSection } from '../../../components/EventSection';
 
 export const metadata = {
 	metadataBase: new URL(`${env.SITE_URL}/bialystok`),
@@ -44,6 +45,8 @@ export const metadata = {
 };
 
 <CityBanner city="Białystok" background="city/bialystok.jpg" />
+
+<EventSection city="Białystok" />
 
 <FAQ questions={BialystokFAQ} />
 
