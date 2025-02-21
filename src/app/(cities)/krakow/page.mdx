@@ -1,4 +1,3 @@
-
 import { env } from '../../../env';
 import { CityEmail } from '../../../components/CityEmail';
 import { Organizers } from '../../../components/Orginizers';
@@ -7,6 +6,7 @@ import { LocalGroups } from '../../../components/LocalGroups';
 import { CityBanner } from '../../../components/CityBanner';
 import { KrakowFAQ } from './_FAQ';
 import { KrakowOrganizers } from './_Organizers';
+import { EventSection } from '../../../components/EventSection';
 
 export const metadata = {
 	metadataBase: new URL(`${env.SITE_URL}/krakow`),
@@ -45,13 +45,11 @@ export const metadata = {
 	},
 };
 
-<CityBanner city="Krakow" background="city/krakow.jpg" />
+<CityBanner city="Kraków" background="city/krakow.jpg" />
 
-<LocalGroups
-	localGroups={[
-	  'https://www.meetup.com/krakowjs/'
-	]}
-/>
+<EventSection city="Kraków" />
+
+<LocalGroups localGroups={['https://www.meetup.com/krakowjs/']} />
 
 <FAQ questions={KrakowFAQ} />
 
