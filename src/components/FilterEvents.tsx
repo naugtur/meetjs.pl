@@ -32,8 +32,8 @@ const FilterEventsContent = ({ events, filter }: FilterEventsProps) => {
 	return (
 		<>
 			<div className="flex flex-col gap-2">
-				<p>Filter events by city:</p>
-				<div className="flex max-w-3xl flex-wrap justify-center gap-2">
+				<p className="text-lg text-center">Filter events by city</p>
+				<div className="flex max-w-4xl flex-wrap justify-center gap-2">
 					<Link
 						href={{ pathname: '/events' }}
 						scroll={false}

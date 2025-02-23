@@ -32,7 +32,7 @@ export const EventCard = ({ event }: EventCardProps) => {
 
 	return (
 		<Card className={cn(
-			"group flex min-h-80 max-w-xl flex-col justify-between transition-all hover:shadow-lg md:min-h-60",
+			"group flex min-h-60 min-w-full flex-col justify-between transition-all hover:shadow-lg",
 			isInProgress && "border-purple dark:border-green border-2"
 		)}>
 			<CardHeader>
