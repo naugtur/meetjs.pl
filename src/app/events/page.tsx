@@ -47,16 +47,16 @@ const EventsPage = async ({ searchParams }: EventsPageProps) => {
 	const pastEvents = await getPastEvents();
 
 	return (
-		<main className="flex min-h-screen flex-col items-center gap-12 p-5">
-			<section className="flex flex-col items-center justify-center gap-4">
-				<h1 className="text-4xl font-bold">All events</h1>
+		<main className="flex min-h-screen flex-col items-center gap-6 p-5 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+			<section className="flex flex-col items-center justify-center gap-6 w-full">
+				<h1 className="text-4xl font-bold py-4">All events</h1>
 				<p className="text-center text-lg">
 					All meet.js events in one place. Check past and upcoming meetups.
 				</p>
 				<EventsAPIPartner />
 			</section>
 
-			<section className="flex flex-col items-center justify-center gap-12">
+			<section className="flex flex-col items-center justify-center gap-6 w-full">
 				<h2 className="text-2xl font-bold">Upcoming events</h2>
 				{upcomingEvents ? (
 					<EventsList eventsList={upcomingEvents} />
@@ -65,7 +65,7 @@ const EventsPage = async ({ searchParams }: EventsPageProps) => {
 				)}
 			</section>
 
-			<section className="flex flex-col items-center justify-center gap-12">
+			<section className="flex flex-col items-center justify-center gap-6 w-full">
 				<h2 className="text-2xl font-bold">Past events</h2>
 				<FilterEvents events={pastEvents} filter={city} />
 			</section>
