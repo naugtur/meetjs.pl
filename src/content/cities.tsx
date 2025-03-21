@@ -115,7 +115,7 @@ export const CITIES: City[] = [
 			x: 194,
 			y: 160,
 		},
-		status: 'paused',
+		status: 'coming-soon',
 	},
 	{
 		name: 'Poznań',

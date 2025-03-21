@@ -45,29 +45,47 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
                         return (
                             <g key={index}>
                                 <Link href={city.href}>
-                                    <circle
-                                        cx={city.pointPosition.x}
-                                        cy={city.pointPosition.y}
-                                        r="3"
-                                        fill={
-                                            city.status === 'active' ? '#219eab' :
-                                                city.status === 'coming-soon' ? '#EAB308' :
-                                                    city.status === 'new' ? '#219eab' :
-                                                        '#9CA3AF'
-                                        }
-                                        className="cursor-pointer hover:opacity-80"
-                                    />
-                                    {eventStatus !== 'none' && (
+                                    <g className="city-marker group">
+                                        {/* City dot */}
                                         <circle
                                             cx={city.pointPosition.x}
                                             cy={city.pointPosition.y}
-                                            r="6"
-                                            fill="none"
-                                            stroke={eventStatus === 'in-progress' ? '#9333ea' : '#219eab'}
-                                            strokeWidth={eventStatus === 'in-progress' ? "2" : "1"}
-                                            className={eventStatus === 'in-progress' ? "animate-pulse dark:stroke-green-500" : ""}
+                                            r="3"
+                                            fill={
+                                                city.status === 'active' ? '#219eab' :
+                                                    city.status === 'coming-soon' ? '#EAB308' :
+                                                        city.status === 'new' ? '#219eab' :
+                                                            '#9CA3AF'
+                                            }
+                                            className="cursor-pointer hover:opacity-80"
                                         />
-                                    )}
+                                        
+                                        {/* Event status circle */}
+                                        {eventStatus !== 'none' && (
+                                            <circle
+                                                cx={city.pointPosition.x}
+                                                cy={city.pointPosition.y}
+                                                r="6"
+                                                fill="none"
+                                                stroke={eventStatus === 'in-progress' ? '#9333ea' : '#219eab'}
+                                                strokeWidth={eventStatus === 'in-progress' ? "2" : "1"}
+                                                className={eventStatus === 'in-progress' ? "animate-pulse dark:stroke-green-500" : ""}
+                                            />
+                                        )}
+                                        
+                                        {/* Coming soon dashed circle */}
+                                        {city.status === 'coming-soon' && eventStatus === 'none' && (
+                                            <circle
+                                                cx={city.pointPosition.x}
+                                                cy={city.pointPosition.y}
+                                                r="6"
+                                                fill="none"
+                                                stroke="#EAB308"
+                                                strokeWidth="1"
+                                                strokeDasharray="2,1"
+                                            />
+                                        )}
+                                    </g>
                                     <text
                                         x={city.textPosition.x}
                                         y={city.textPosition.y}
@@ -91,26 +109,25 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
 
             <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm">
                 <div className="flex items-center gap-2 whitespace-nowrap">
-                    <div className="h-2 w-2 rounded-full bg-[#219eab]" />
-                    <span>Active</span>
+                    <div className="flex gap-3 items-center">
+                        <div className="h-2 w-2 rounded-full bg-[#219eab]" />
+                        <div className="relative">
+                            <div className="h-2 w-2 rounded-full bg-[#219eab]" />
+                            <div className="absolute -inset-1 rounded-full border border-[#219eab]" />
+                        </div>
+                        <div className="relative">
+                            <div className="h-2 w-2 rounded-full bg-[#219eab]" />
+                            <div className="absolute -inset-1 rounded-full border-2 border-[#9333ea] dark:border-green-500 animate-pulse" />
+                        </div>
+                    </div>
+                    <span>Active / upcoming / in progress</span>
                 </div>
                 <div className="flex items-center gap-2 whitespace-nowrap">
                     <div className="relative">
-                        <div className="h-2 w-2 rounded-full bg-[#219eab]" />
-                        <div className="absolute -inset-1 rounded-full border border-[#219eab]" />
+                        <div className="h-2 w-2 rounded-full bg-[#EAB308]" />
+                        <div className="absolute -inset-1 rounded-full border border-[#EAB308]" style={{ borderStyle: 'dashed' }} />
                     </div>
-                    <span>Active with upcoming event</span>
-                </div>
-                <div className="flex items-center gap-2 whitespace-nowrap">
-                    <div className="relative">
-                        <div className="h-2 w-2 rounded-full bg-[#219eab]" />
-                        <div className="absolute -inset-1 rounded-full border-2 border-[#9333ea] dark:border-green-500 animate-pulse" />
-                    </div>
-                    <span>Event in progress!</span>
-                </div>
-                <div className="flex items-center gap-2 whitespace-nowrap">
-                    <div className="h-2 w-2 rounded-full bg-[#EAB308]" />
-                    <span>Coming soon</span>
+                    <span>Coming soon!</span>
                 </div>
                 <div className="flex items-center gap-2 whitespace-nowrap">
                     <div className="h-2 w-2 rounded-full bg-[#9CA3AF]" />
