@@ -22,8 +22,8 @@ export const WroclawOrganizers: Organizer[] = [
 	},
 	{
 		name: 'Michał Korczak',
-		image:
-			'https://media.licdn.com/dms/image/v2/D4D03AQH9q4ag2N6EEQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718251235797?e=1733961600&v=beta&t=zhoWFh8E1ocyZVwXmFiL5S3dAONGIhKAh449GjsMrjc',
+		image: 'https://avatars.githubusercontent.com/u/6079265?v=4',
 		linkedin: 'https://www.linkedin.com/in/michal-korczak/',
+		gitHub: 'https://github.com/Omikorin',
 	},
 ];
