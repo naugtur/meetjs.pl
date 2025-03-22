@@ -46,4 +46,9 @@ export const PARTNERS = [
 		src: '/partners/asi.svg',
 		alt: 'Akademickie Stowarzyszenie Informatyczne',
 	},
+	{
+		href: 'https://sesja.linuksowa.pl/',
+		src: '/partners/sesja-linuksowa.png',
+		alt: 'Sesja Linuksowa',
+	},
 ];
