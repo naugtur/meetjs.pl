@@ -41,4 +41,9 @@ export const PARTNERS = [
 		src: '/partners/infoshare.png',
 		alt: 'infoshare',
 	},
+	{
+		href: 'https://asi.wroclaw.pl/',
+		src: '/partners/asi.svg',
+		alt: 'Akademickie Stowarzyszenie Informatyczne',
+	},
 ];
