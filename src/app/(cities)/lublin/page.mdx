@@ -1,9 +1,61 @@
+import { env } from '../../../env';
+import { CityEmail } from '../../../components/CityEmail';
+import { Organizers } from '../../../components/Orginizers';
+import { FAQ } from '../../../components/FAQ';
+import { LocalGroups } from '../../../components/LocalGroups';
+import { CityBanner } from '../../../components/CityBanner';
+import { LublinFAQ } from './_FAQ';
+import { LublinOrganizers } from './_Organizers';
+import { EventSection } from '../../../components/EventSection';
+
 export const metadata = {
-	title: "meet.js Lublin",
+	metadataBase: new URL(`${env.SITE_URL}/lublin`),
+	title: 'meet.js Lublin',
+	description: 'JavaScript meetups in Lublin',
+	keywords: 'meet.js, Lublin, JavaScript, meetup',
+	openGraph: {
+		title: 'meet.js Lublin',
+		description: 'JavaScript meetups in Lublin',
+		type: 'website',
+		locale: 'en_US',
+		url: `${env.SITE_URL}/lublin`,
+		siteName: 'meet.js',
+		images: [
+			{
+				url: `${env.SITE_URL}/api/og?city=Lublin`,
+				width: 1200,
+				height: 630,
+				alt: 'meet.js | JavaScript meetups in Lublin',
+			},
+		],
+	},
+	twitter: {
+		card: 'summary_large_image',
+		site: '@meetjs',
+		title: 'meet.js',
+		description: 'JavaScript meetups in Lublin',
+		images: [
+			{
+				url: `${env.SITE_URL}/api/og?city=Lublin`,
+				width: 1200,
+				height: 630,
+				alt: 'meet.js | JavaScript meetups in Lublin',
+			},
+		],
+	},
 };
 
-<div className="prose dark:prose-invert max-w-none space-y-8 my-8">
-  # Lublin
+<CityBanner
+	city="Lublin"
+	background="https://ocdn.eu/pulscms-transforms/1/EDik9kpTURBXy9iYjJhMTIyMGEzY2E2M2YzMjUyNGRmZDBmZWNhMTZhMC5qcGeTlQMAzNbNDvDNCGeTBc0DFM0BvJMJpmQ2NzRmNAbeAAGhMAY/lublin.avif"
+/>
 
-  We're looking for organizers! [Let us know if you want to help.](mailto:contact@meetjs.pl)
-</div>
+<EventSection city="Lublin" />
+
+<LocalGroups localGroups={[]} />
+
+<FAQ questions={LublinFAQ} />
+
+<Organizers city="Lublin" organizers={LublinOrganizers} />
+
+<CityEmail email="lublin@meetjs.pl" />
