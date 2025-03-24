@@ -60,7 +60,7 @@ export default function Page() {
 							Thank you for participating in this year’s edition — we’ll see you
 							in{' '}
 							<span className="rounded bg-gray-100 px-2 py-1 font-mono">
-								2026
+								{DISCOUNT_END_DATE.getFullYear() + 1}
 							</span>
 							!
 						</p>
