@@ -134,16 +134,9 @@ export default function Page() {
 						Until March 31st, 2025, you can buy a Standard or Executive ticket
 						with a 20% discount using a special code from the Program Council:
 					</p>
-					<div
-						className="mb-4 cursor-pointer rounded-md border border-gray-200 bg-white p-3 text-center transition-colors hover:bg-gray-50"
-						onClick={copyDiscountCode}
-						title="Click to copy"
-					>
-						<code className="text-blue-600 text-lg font-bold">WDI25RP20</code>
-						<div className="mt-1 text-xs text-gray-500">
-							{copied ? 'Copied!' : 'Click to copy'}
-						</div>
-					</div>
+
+					<ClickToCopy textToCopy="WDI25RP20" />
+
 					<p className="text-sm text-gray-600">
 						This offer is valid only until the end of this month, so don&apos;t
 						miss out!
