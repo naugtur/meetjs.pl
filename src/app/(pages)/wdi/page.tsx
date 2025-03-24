@@ -1,5 +1,6 @@
-import { ClickToCopy } from './_components/ClickToCopy';
+import { Banner } from './_components/Banner';
 import { ActionLink } from './_components/ActionLink';
+import { ClickToCopy } from './_components/ClickToCopy';
 import { CalendarIcon } from './_components/icons/CalendarIcon';
 import { LocationPinIcon } from './_components/icons/LocationPinIcon';
 import { StackedFoldersIcon } from './_components/icons/StackedFoldersIcon';
@@ -41,15 +42,31 @@ export default function Page() {
 				</ActionLink>
 			</div>
 
-			<div className="mb-8 border-l-4 border-yellow-400 bg-yellow-50 p-4">
-				<p className="font-semibold">Discount ends soon!</p>
-				<p>
-					Only {daysRemaining} days left to get 20% off with code:{' '}
-					<span className="rounded bg-gray-100 px-2 py-1 font-mono">
-						{DISCOUNT_CODE}
-					</span>
-				</p>
-			</div>
+			<Banner>
+				{daysRemaining >= 0 ? (
+					<>
+						<p className="font-semibold">Discount ends soon!</p>
+						<p>
+							Only {daysRemaining} days left to get 20% off with code:{' '}
+							<span className="rounded bg-gray-100 px-2 py-1 font-mono">
+								{DISCOUNT_CODE}
+							</span>
+						</p>{' '}
+					</>
+				) : (
+					<>
+						<p className="font-semibold">The discount has ended!</p>
+						<p>
+							Thank you for participating in this year’s edition — we’ll see you
+							in{' '}
+							<span className="rounded bg-gray-100 px-2 py-1 font-mono">
+								2026
+							</span>
+							!
+						</p>
+					</>
+				)}
+			</Banner>
 
 			<div className="mb-8 space-y-4">
 				<p>
