@@ -11,7 +11,6 @@ export default function Page() {
 
 	const [copied, setCopied] = useState(false);
 
-	// Function to copy discount code
 	const copyDiscountCode = () => {
 		navigator.clipboard.writeText('WDI25RP20');
 		setCopied(true);
