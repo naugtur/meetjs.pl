@@ -21,14 +21,9 @@ export default function Page() {
 		<div className="container mx-auto max-w-3xl py-16">
 			<div className="mb-8 flex flex-col items-start justify-between md:flex-row md:items-center">
 				<h1 className="mb-4 text-4xl font-bold md:mb-0">Warsaw IT Days 2025</h1>
-				<a
-					href="https://warszawskiedniinformatyki.pl/"
-					target="_blank"
-					rel="noopener noreferrer"
-					className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2 text-primary-foreground transition-all hover:bg-primary/90"
-				>
+				<ActionLink href="https://warszawskiedniinformatyki.pl/">
 					Register Now! 🚀
-				</a>
+				</ActionLink>
 			</div>
 
 			<div className="mb-8 border-l-4 border-yellow-400 bg-yellow-50 p-4">
@@ -165,14 +160,9 @@ export default function Page() {
 					with the JavaScript community.
 				</p>
 				<div className="mt-6 text-center">
-					<a
-						href="https://warszawskiedniinformatyki.pl/"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="mx-auto inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2 text-primary-foreground transition-all hover:bg-primary/90"
-					>
+					<ActionLink href="https://warszawskiedniinformatyki.pl/">
 						Join the JavaScript Track! 💻
-					</a>
+					</ActionLink>
 				</div>
 			</div>
 
