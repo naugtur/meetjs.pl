@@ -1,5 +1,11 @@
 export const menuLinks = [
 	{
+		name: 'WDI 2025',
+		href: '/wdi',
+		current: false,
+		external: false,
+	},
+	{
 		name: 'summit',
 		href: 'https://summit.meetjs.pl',
 		current: false,
