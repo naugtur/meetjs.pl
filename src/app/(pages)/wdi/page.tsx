@@ -1,4 +1,4 @@
-import { Banner } from './_components/Banner';
+import { Banner } from '@/components/Banner';
 import { ActionLink } from './_components/ActionLink';
 import { ClickToCopy } from './_components/ClickToCopy';
 import { CalendarIcon } from './_components/icons/CalendarIcon';
