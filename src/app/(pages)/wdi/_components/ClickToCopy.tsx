@@ -18,7 +18,7 @@ export const ClickToCopy = ({ textToCopy }: Props) => {
 
 	return (
 		<div
-			className="mb-4 cursor-pointer rounded-md border border-gray-200 bg-white p-3 text-center transition-colors hover:bg-gray-50"
+			className="cursor-pointer rounded-md border border-gray-200 bg-white p-3 text-center transition-colors hover:bg-gray-50"
 			onClick={copyText}
 			title="Click to copy"
 		>

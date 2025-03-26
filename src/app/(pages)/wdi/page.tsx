@@ -100,8 +100,8 @@ export default function Page() {
 
 			<div className="mb-8">
 				<h2 className="mb-4 text-2xl font-semibold">Special Discount</h2>
-				<div className="bg-blue-50 border-blue-200 rounded-lg border p-6">
-					<p className="mb-4">
+				<div className="bg-blue-50 border-blue-200 space-y-4 rounded-lg border p-6">
+					<p>
 						Until March 31st, 2025, you can buy a Standard or Executive ticket
 						with a 20% discount using a special code from the Program Council:
 					</p>
