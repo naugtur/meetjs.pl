@@ -2,7 +2,7 @@ export default function Page() {
     return (
         <div className="container mx-auto max-w-3xl py-16">
             <h1 className="text-4xl font-bold mb-8">
-                Become an Organizer
+                How to become an organizer
             </h1>
 
             <div className="mb-8 space-y-4">

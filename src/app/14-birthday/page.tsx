@@ -221,7 +221,7 @@ export default function Page() {
                     <h3 className="text-xl font-semibold mb-4">Join the Celebration!</h3>
                     <p className="mb-4">
                         Find your local meet.js chapter or{' '}
-                        <a href="/organization" className="text-blue-600 hover:underline font-bold">
+                        <a href="/how-to-become-an-organizer" className="text-blue-600 hover:underline font-bold">
                             become an organizer
                         </a>{' '}
                         to help write the next chapter of our story.

@@ -59,7 +59,7 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
                                             }
                                             className="cursor-pointer hover:opacity-80"
                                         />
-                                        
+
                                         {/* Event status circle */}
                                         {eventStatus !== 'none' && (
                                             <circle
@@ -72,7 +72,7 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
                                                 className={eventStatus === 'in-progress' ? "animate-pulse dark:stroke-green-500" : ""}
                                             />
                                         )}
-                                        
+
                                         {/* Coming soon dashed circle */}
                                         {city.status === 'coming-soon' && eventStatus === 'none' && (
                                             <circle
@@ -131,7 +131,7 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
                 </div>
                 <div className="flex items-center gap-2 whitespace-nowrap">
                     <div className="h-2 w-2 rounded-full bg-[#9CA3AF]" />
-                    <Link href="/organization" className="hover:text-purple">
+                    <Link href="/how-to-become-an-organizer" className="hover:text-purple">
                         Paused (join as organizer)
                     </Link>
                 </div>
