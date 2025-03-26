@@ -2,9 +2,9 @@ import { Banner } from '@/components/Banner';
 import { ActionLink } from '@/components/ActionLink';
 import { ClickToCopy } from '@/components/ClickToCopy';
 
-import { CalendarIcon } from './_components/icons/CalendarIcon';
-import { LocationPinIcon } from './_components/icons/LocationPinIcon';
-import { StackedFoldersIcon } from './_components/icons/StackedFoldersIcon';
+import { CalendarIcon } from './_icons/CalendarIcon';
+import { LocationPinIcon } from './_icons/LocationPinIcon';
+import { StackedFoldersIcon } from './_icons/StackedFoldersIcon';
 
 const DISCOUNT_CODE = 'WDI25RP20';
 const DISCOUNT_END_DATE = new Date('2025-03-31');
