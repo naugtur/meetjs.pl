@@ -87,7 +87,7 @@ export default function Page() {
                     meet.js welcomes you to join our vibrant community.
                 </p>
                 <p className="mb-4">
-                    Find your local meet.js chapter or check out <a href="/organization" className="text-blue-600 hover:underline font-bold">how to become an organizer</a> to help grow Poland&apos;s most resilient tech community!
+                    Find your local meet.js chapter or check out <a href="/how-to-become-an-organizer" className="text-blue-600 hover:underline font-bold">how to become an organizer</a> to help grow Poland&apos;s most resilient tech community!
                 </p>
                 <Image
                     src="/about/meetjs-organizers.jpg"

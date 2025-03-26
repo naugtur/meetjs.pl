@@ -82,6 +82,16 @@ const nextConfig: NextConfig = {
 				destination: 'https://www.youtube.com/@meetjs',
 				permanent: true,
 			},
+			{
+				source: '/organizers',
+				destination: '/how-to-become-an-organizer',
+				permanent: true,
+			},
+			{
+				source: '/organization',
+				destination: '/how-to-become-an-organizer',
+				permanent: true,
+			},
 		];
 	},
 };
