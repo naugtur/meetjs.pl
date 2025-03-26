@@ -46,7 +46,7 @@ export const LublinFAQ: FAQQuestion[] = [
 		question: 'What does it cost to join event?',
 		answer: (
 			<>
-				Generally our event are FREE! Only{' '}
+				Generally our events are FREE! Only{' '}
 				<a href="https://summit.meetjs.pl" about="_blank">
 					summit
 				</a>{' '}
