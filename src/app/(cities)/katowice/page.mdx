@@ -1,9 +1,52 @@
+import { env } from '../../../env';
+import { CityEmail } from '../../../components/CityEmail';
+import { Organizers } from '../../../components/Orginizers';
+import { FAQ } from '../../../components/FAQ';
+import { CityBanner } from '../../../components/CityBanner';
+import { KatowiceFAQ } from './_FAQ';
+import { KatowiceOrganizers } from './_Organizers';
+import { EventSection } from '../../../components/EventSection';
+
 export const metadata = {
-	title: "meet.js Katowice",
+	title: 'meet.js Katowice',
+	description: 'JavaScript meetups in Katowice',
+	keywords: 'meet.js, Katowice, JavaScript, meetup',
+	openGraph: {
+		title: 'meet.js Katowice',
+		description: 'JavaScript meetups in Katowice',
+		type: 'website',
+		locale: 'en_US',
+		url: `${env.SITE_URL}/katowice`,
+		siteName: 'meet.js',
+		images: [
+			{
+				url: `${env.SITE_URL}/api/og?city=Katowice`,
+				width: 1200,
+				height: 630,
+				alt: 'meet.js | JavaScript meetups in Katowice',
+			},
+		],
+	},
+	twitter: {
+		card: 'summary_large_image',
+		site: '@meetjs',
+		title: 'meet.js',
+		description: 'JavaScript meetups in Katowice',
+		images: [
+			{
+				url: `${env.SITE_URL}/api/og?city=Katowice`,
+				width: 1200,
+				height: 630,
+				alt: 'meet.js | JavaScript meetups in Katowice',
+			},
+		],
+	},
 };
 
-<div className="prose dark:prose-invert max-w-none space-y-8 my-8">
-  # Katowice
+<CityBanner city="Katowice" background="city/katowice.avif" />
 
-  We're looking for organizers! [Let us know if you want to help.](mailto:contact@meetjs.pl)
-</div>
+<EventSection city="Katowice" />
+
+<FAQ questions={KatowiceFAQ} />
+
+<Organizers city="Katowice" organizers={KatowiceOrganizers} />
