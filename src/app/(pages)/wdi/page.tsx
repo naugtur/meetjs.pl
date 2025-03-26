@@ -1,6 +1,7 @@
 import { Banner } from '@/components/Banner';
+import { ClickToCopy } from '@/components/ClickToCopy';
+
 import { ActionLink } from './_components/ActionLink';
-import { ClickToCopy } from './_components/ClickToCopy';
 import { CalendarIcon } from './_components/icons/CalendarIcon';
 import { LocationPinIcon } from './_components/icons/LocationPinIcon';
 import { StackedFoldersIcon } from './_components/icons/StackedFoldersIcon';
