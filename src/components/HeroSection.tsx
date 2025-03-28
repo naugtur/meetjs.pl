@@ -1,7 +1,10 @@
 import { RankingBanner } from '@/components/RankingBanner';
 import { Instagram, MessagesSquare } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export const HeroSection = () => {
+	const t = useTranslations('HomePage');
+
 	return (
 		<header className="relative grid h-96 bg-[url('/conference.jpg')] bg-cover text-center text-white md:h-[35rem]">
 			<div className="col-start-1 row-start-1 h-full w-full bg-gray-800 bg-opacity-70"></div>
@@ -13,9 +16,7 @@ export const HeroSection = () => {
 
 			<div className="col-start-1 row-start-1 mx-auto my-auto">
 				<p className="-rotate-2 bg-blue p-2 text-6xl font-bold">meet.js</p>
-				<h1 className="p-4 text-xl font-medium">
-					JavaScript meetups in Poland
-				</h1>
+				<h1 className="p-4 text-xl font-medium">{t('title')}</h1>
 
 				{/* Social Media Buttons */}
 				<div className="mt-6 flex justify-center gap-4">
