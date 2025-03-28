@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
+import { NextIntlClientProvider, hasLocale } from 'next-intl';
+import { routing } from '@/i18n/routing';
+import { notFound } from 'next/navigation';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Montserrat } from 'next/font/google';
-import './globals.css';
+import '../globals.css';
 import type { ReactNode } from 'react';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Navigation } from '@/components/Navigation';
@@ -61,11 +64,11 @@ export const metadata: Metadata = {
 		url: env.SITE_URL,
 		siteName: 'meet.js',
 		images: [{
-			url: `${env.SITE_URL}/og-image.png`,
-			width: 1200,
-			height: 630,
-			alt: 'meet.js | JavaScript meetups in Poland',
-			type: 'image/png',
+				url: `${env.SITE_URL}/og-image.png`,
+				width: 1200,
+				height: 630,
+				alt: 'meet.js | JavaScript meetups in Poland',
+				type: 'image/png',
 		}],
 	},
 	twitter: {
@@ -75,10 +78,10 @@ export const metadata: Metadata = {
 		title: 'meet.js - JavaScript Meetups in Poland',
 		description: 'Join the largest JavaScript community in Poland. Regular meetups, expert talks, networking opportunities and knowledge sharing.',
 		images: [{
-			url: `${env.SITE_URL}/og-image.png`,
-			width: 1200,
-			height: 630,
-			alt: 'meet.js | JavaScript meetups in Poland',
+				url: `${env.SITE_URL}/og-image.png`,
+				width: 1200,
+				height: 630,
+				alt: 'meet.js | JavaScript meetups in Poland',
 		}],
 	},
 	alternates: {
@@ -92,14 +95,23 @@ export const metadata: Metadata = {
 	category: 'technology',
 };
 
-const RootLayout = ({
+const RootLayout = async ({
 	children,
+	params,
 }: Readonly<{
 	children: ReactNode;
+	params: Promise<{ locale: string }>;
 }>) => {
+	const { locale } = await params;
+	if (!hasLocale(routing.locales, locale)) {
+		notFound();
+	}
+
+	const messages = (await import(`../../../messages/${locale}.json`)).default;
+
 	return (
 		<html
-			lang="en"
+			lang={locale}
 			className={`${montserrat.variable} scroll-smooth`}
 			suppressHydrationWarning
 		>
@@ -111,7 +123,9 @@ const RootLayout = ({
 					disableTransitionOnChange
 				>
 					<Navigation />
-					{children}
+					<NextIntlClientProvider locale={locale} messages={messages}>
+						{children}
+					</NextIntlClientProvider>
 					<Footer />
 				</ThemeProvider>
 				<Analytics />

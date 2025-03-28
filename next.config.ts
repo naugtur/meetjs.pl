@@ -3,6 +3,7 @@ import createJiti from 'jiti';
 
 import createMDX from '@next/mdx';
 import { NextConfig } from 'next';
+import createNextIntlPlugin from 'next-intl/plugin';
 
 const jiti = createJiti(fileURLToPath(import.meta.url));
 
@@ -98,7 +99,8 @@ const nextConfig: NextConfig = {
 
 // https://github.com/vercel/next.js/issues/71819
 
-const withMdx = createMDX({
+const withMdx = createMDX({});
 
-});
-export default withMdx(nextConfig);
+const withNextIntl = createNextIntlPlugin();
+
+export default withMdx(withNextIntl(nextConfig));
