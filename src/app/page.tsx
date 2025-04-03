@@ -6,6 +6,7 @@ import { FeaturedEvents } from '@/components/FeaturedEvents';
 import { HeroSection } from '@/components/HeroSection';
 import { PartnersSection } from '@/components/PartnersSection';
 import { BirthdayBanner } from '@/components/BirthdayBanner';
+import { RegistrationBanner } from '@/components/RegistrationBanner';
 
 export const dynamic = 'force-dynamic';
 
@@ -23,6 +24,7 @@ const Home = () => {
 				</div>
 				<PartnersSection />
 			</main>
+			<RegistrationBanner />
 		</>
 	);
 };
