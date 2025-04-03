@@ -23,12 +23,16 @@ export const EventCard = ({ event }: EventCardProps) => {
 
 	const isUpcoming = now < eventDate;
 	const isInProgress = now >= eventDate && now <= eventEndDate;
+	const isToday = now.getDate() === eventDate.getDate() && 
+		now.getMonth() === eventDate.getMonth() && 
+		now.getFullYear() === eventDate.getFullYear();
 
 	return (
 		<Card
 			className={cn(
 				'group flex min-h-60 min-w-full flex-col justify-between transition-all hover:shadow-lg',
 				isInProgress && 'border-2 border-purple dark:border-green',
+				isToday && !isInProgress && 'border-2 border-yellow-500 dark:border-yellow-400',
 			)}
 		>
 			<CardHeader>
@@ -46,9 +50,11 @@ export const EventCard = ({ event }: EventCardProps) => {
 					<p className="text-sm text-muted-foreground">
 						{isInProgress
 							? "🎉 Live now! Why aren't you here?"
-							: isUpcoming
-								? formatDistanceToNow(eventDate)
-								: 'Event ended'}
+							: isToday && isUpcoming
+								? "🎯 Today! " + formatDistanceToNow(eventDate)
+								: isUpcoming
+									? formatDistanceToNow(eventDate)
+									: 'Event ended'}
 					</p>
 				)}
 			</CardHeader>
