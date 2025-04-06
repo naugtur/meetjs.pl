@@ -15,9 +15,9 @@ const Home = () => {
 		<>
 			<BirthdayBanner />
 			<HeroSection />
+			<FeaturedEvents />
 			<main className="flex min-h-screen flex-col items-center">
 				<JoinUs />
-				<FeaturedEvents />
 				<div className="w-full">
 					<AboutSection />
 					<Stats />
