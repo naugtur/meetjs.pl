@@ -8,14 +8,14 @@ export const JoinUs = async () => {
 
 	return (
 		<section
-			className="mx-auto flex w-full p-12 max-w-7xl snap-y scroll-mt-16 flex-col justify-between px-2 lg:px-8"
+			className="flex w-full p-12 snap-y scroll-mt-16 flex-col justify-between px-2 lg:px-8 bg-slate-100/50 dark:bg-slate-700/10"
 			id="joinus"
 		>
 			<div className="flex w-full flex-col gap-4 p-4">
 				<h2 className="text-center text-3xl font-bold">Join Us</h2>
 			</div>
 
-			<div className="flex w-full flex-col p-4 md:flex-row">
+			<div className="flex w-full flex-col p-4 md:flex-row max-w-7xl mx-auto">
 				<div className="w-full md:w-1/2">
 					<PolandMap cities={CITIES} events={events ?? []} />
 				</div>
