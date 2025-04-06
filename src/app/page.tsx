@@ -5,7 +5,7 @@ import { JoinUs } from '@/components/JoinUs';
 import { FeaturedEvents } from '@/components/FeaturedEvents';
 import { HeroSection } from '@/components/HeroSection';
 import { PartnersSection } from '@/components/PartnersSection';
-import { BirthdayBanner } from '@/components/BirthdayBanner';
+// import { BirthdayBanner } from '@/components/BirthdayBanner';
 import { RegistrationBanner } from '@/components/RegistrationBanner';
 
 export const dynamic = 'force-dynamic';
@@ -13,7 +13,7 @@ export const dynamic = 'force-dynamic';
 const Home = () => {
 	return (
 		<>
-			<BirthdayBanner />
+			{/* <BirthdayBanner /> 14 birthday banner */} 
 			<HeroSection />
 			<FeaturedEvents />
 			<main className="flex min-h-screen flex-col items-center">
