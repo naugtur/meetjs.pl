@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface Props {
 	textToCopy: string;
@@ -9,11 +9,20 @@ interface Props {
 export const ClickToCopy = ({ textToCopy }: Props) => {
 	const [copied, setCopied] = useState(false);
 
+	useEffect(() => {
+		if (!copied) return;
+
+		const timeout = setTimeout(() => {
+			setCopied(false);
+		}, 2_000);
+
+		return () => clearTimeout(timeout);
+	}, [copied]);
+
 	const copyText = () => {
 		navigator.clipboard.writeText(textToCopy);
 
 		setCopied(true);
-		setTimeout(() => setCopied(false), 2_000);
 	};
 
 	return (
