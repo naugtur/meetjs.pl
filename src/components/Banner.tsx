@@ -22,9 +22,9 @@ export const Banner = ({ children, variant = 'info' }: Props) => (
 const getVariantStyles = (variant: Variant) => {
 	switch (variant) {
 		case 'info':
-			return 'bg-blue-50 border-blue-400';
+			return 'bg-sky-50 border-sky-400';
 		case 'success':
-			return 'bg-green-50 border-green-400';
+			return 'bg-emerald-50 border-emerald-400';
 		case 'warning':
 			return 'bg-yellow-50 border-yellow-400';
 		case 'danger':
