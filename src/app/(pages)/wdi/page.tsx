@@ -43,7 +43,7 @@ export default function Page() {
 				</ActionLink>
 			</div>
 
-			<Banner>
+			<Banner variant="warning">
 				{daysRemaining >= 0 ? (
 					<>
 						<p className="font-semibold">Discount ends soon!</p>
