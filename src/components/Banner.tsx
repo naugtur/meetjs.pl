@@ -7,7 +7,6 @@ interface Props {
 	variant?: Variant;
 }
 
-// TODO: Introduce variants - https://github.com/naugtur/meetjs.pl/issues/129
 export const Banner = ({ children, variant = 'info' }: Props) => (
 	<article
 		className={classNames(
