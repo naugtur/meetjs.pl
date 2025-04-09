@@ -3,8 +3,8 @@ import { SocialLinks } from '@/components/SocialLinks';
 import Link from 'next/link';
 import { instagramLinksData } from '@/content/socialLinks';
 import { CITIES } from '@/content/cities';
-import { menuLinks } from '@/content/menuLinks';
-import { FaRegEnvelope } from 'react-icons/fa6';
+import { footerMenuLinks } from '@/content/menuLinks';
+import { FaRegEnvelope, FaArrowUpRightFromSquare } from 'react-icons/fa6';
 
 export const Footer = () => {
 	return (
@@ -54,21 +54,25 @@ export const Footer = () => {
 					</div>
 
 					{/* Menu column */}
-					<div>
+					<nav aria-label="Footer">
 						<h3 className="text-xl font-semibold">Menu</h3>
 						<ul className="mt-4 space-y-2">
-							{menuLinks.map((link) => (
+							{footerMenuLinks.map((link) => (
 								<li key={link.name}>
-									<Link href={link.href} className="hover:text-gray-300">{link.name}</Link>
+									<Link
+										href={link.href}
+										className="hover:text-gray-300"
+										target={link.external ? '_blank' : undefined}
+									>
+										{link.name}
+										{link.external && (
+											<FaArrowUpRightFromSquare className="mb-1 ml-2 inline-block h-3 w-3" aria-hidden="true" />
+										)}
+									</Link>
 								</li>
 							))}
-							<li>
-								<Link href="https://berlincodeofconduct.org/" className="hover:text-gray-300">
-									code of conduct
-								</Link>
-							</li>
 						</ul>
-					</div>
+					</nav>
 				</div>
 
 				{/* Copyright */}
