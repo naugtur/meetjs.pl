@@ -50,7 +50,7 @@ export const CITIES: City[] = [
 			x: 70,
 			y: 34,
 		},
-		status: 'paused',
+		status: 'coming-soon',
 	},
 	{
 		name: 'Katowice',
