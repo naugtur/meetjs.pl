@@ -11,6 +11,7 @@ jiti('./src/env.ts');
 /** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
 	reactStrictMode: true,
+	turbopack: {},
 	experimental: {
 		reactCompiler: true,
 		staleTimes: {
@@ -98,7 +99,5 @@ const nextConfig: NextConfig = {
 
 // https://github.com/vercel/next.js/issues/71819
 
-const withMdx = createMDX({
-
-});
+const withMdx = createMDX({});
 export default withMdx(nextConfig);
