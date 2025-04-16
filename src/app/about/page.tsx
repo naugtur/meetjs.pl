@@ -1,10 +1,12 @@
 import Image from 'next/image';
+import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
+import { FaUsers, FaTrophy, FaHeart, FaComments, FaMicrophone } from 'react-icons/fa6';
 
 export default function Page() {
     return (
         <div className="container mx-auto max-w-3xl py-16">
             <h1 className="text-4xl font-bold mb-8">
-                About meet.js
+                ✨ About meet.js
             </h1>
 
             <div className="mb-12">
@@ -32,13 +34,13 @@ export default function Page() {
 
             <div className="mb-8">
                 <h2 className="text-2xl font-semibold mb-4">
-                    Our Values
+                    💎 Our Values
                 </h2>
                 <ul className="list-disc pl-6 space-y-2">
-                    <li>100% Non-Commercial - We operate without corporate oversight or profit motives</li>
-                    <li>Free and Open - All our events are free and open to everyone interested in web technologies</li>
-                    <li>Community-Driven - Powered by passionate local organizers across Poland</li>
-                    <li>Knowledge Sharing - Focus on practical learning and networking opportunities</li>
+                    <li>🚫💰 100% Non-Commercial - We operate without corporate oversight or profit motives</li>
+                    <li>✅ Free and Open - All our events are free and open to everyone interested in web technologies</li>
+                    <li>🤝 Community-Driven - Powered by passionate local organizers across Poland</li>
+                    <li>💡 Knowledge Sharing - Focus on practical learning and networking opportunities</li>
                 </ul>
             </div>
 
@@ -65,22 +67,58 @@ export default function Page() {
                 </div>
             </div>
 
-            <div className="mb-8">
-                <h2 className="text-2xl font-semibold mb-4">
-                    What We Do
+            <div className="mb-12">
+                <h2 className="text-2xl font-semibold mb-6">
+                    🚀 What We Do
                 </h2>
-                <ul className="list-disc pl-6 space-y-2">
-                    <li>Regular local meetups across multiple Polish cities</li>
-                    <li>Semi-annual <a href="https://summit.meetjs.pl" className="text-blue-600 hover:underline">meet.js Summit</a> conference</li>
-                    <li>Partnership with charity organizations</li>
-                    <li>Networking opportunities for JavaScript enthusiasts</li>
-                    <li>Knowledge sharing sessions and tech talks</li>
-                </ul>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="bg-white p-4 rounded-lg shadow-md border border-gray-200 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
+                        <h3 className="font-semibold mb-2 flex items-center gap-2"> 
+                            <FaUsers className="text-purple" /> 
+                            Local Meetups
+                        </h3>
+                        <p className="text-gray-700 text-sm">Regular local meetups across multiple Polish cities.</p> 
+                    </div>
+
+                    <div className="bg-white p-4 rounded-lg shadow-md border border-gray-200 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
+                        <h3 className="font-semibold mb-2 flex items-center gap-2"> 
+                            <FaTrophy className="text-purple" /> 
+                            meet.js Summit
+                        </h3>
+                        <p className="text-gray-700 text-sm">Semi-annual <a href="https://summit.meetjs.pl" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">conference<FaArrowUpRightFromSquare className="mb-1 ml-1 inline-block h-3 w-3" aria-hidden="true" /></a>.</p> 
+                    </div>
+
+                    <div className="bg-white p-4 rounded-lg shadow-md border border-gray-200 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
+                        <h3 className="font-semibold mb-2 flex items-center gap-2"> 
+                            <FaHeart className="text-purple" /> 
+                            Charity Partnerships
+                        </h3>
+                        <p className="text-gray-700 text-sm">
+                            We partner with charity organizations, including <a href="https://www.siepomaga.pl/pomagacze/meetjs" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Siepomaga.pl<FaArrowUpRightFromSquare className="mb-1 ml-1 inline-block h-3 w-3" aria-hidden="true" /></a>.
+                        </p> 
+                    </div>
+
+                    <div className="bg-white p-4 rounded-lg shadow-md border border-gray-200 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
+                        <h3 className="font-semibold mb-2 flex items-center gap-2"> 
+                            <FaComments className="text-purple" /> 
+                            Networking
+                        </h3>
+                        <p className="text-gray-700 text-sm">Networking opportunities for JavaScript enthusiasts.</p> 
+                    </div>
+
+                    <div className="bg-white p-4 rounded-lg shadow-md border border-gray-200 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
+                        <h3 className="font-semibold mb-2 flex items-center gap-2"> 
+                            <FaMicrophone className="text-purple" /> 
+                            Tech Talks
+                        </h3>
+                        <p className="text-gray-700 text-sm">Knowledge sharing sessions and tech talks.</p> 
+                    </div>
+                </div>
             </div>
 
             <div className="mb-8">
                 <h2 className="text-2xl font-semibold mb-4">
-                    Get Involved
+                    👋 Get Involved
                 </h2>
                 <p className="mb-4">
                     Whether you&apos;re a seasoned developer or just starting your journey with JavaScript,
@@ -101,7 +139,7 @@ export default function Page() {
 
             <div>
                 <h2 className="text-2xl font-semibold mb-4">
-                    Contact Us
+                    📧 Contact Us
                 </h2>
                 <p>
                     Have questions? Reach out to us at <a href="mailto:contact@meetjs.pl" className="text-blue-600 hover:underline">contact@meetjs.pl</a>
