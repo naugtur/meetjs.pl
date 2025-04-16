@@ -48,6 +48,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "prepare": "husky"
   },
   "dependencies": {
@@ -83,22 +85,27 @@
   },
   "devDependencies": {
     "@lavamoat/preinstall-always-fail": "^2.1.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
     "@types/node": "^22.3.0",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.2",
+    "@vitejs/plugin-react": "^4.4.0",
     "eslint": "9.22.0",
     "eslint-config-next": "15.3.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react-compiler": "19.0.0-beta-3229e95-20250315",
     "eslint-plugin-react-hooks": "5.1.0",
     "husky": "^9.1.4",
+    "jsdom": "^26.1.0",
     "lint-staged": "^15.2.9",
     "postcss": "^8.4.41",
     "prettier": "3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.6",
     "tailwindcss": "^3.4.10",
     "typescript": "5.5.4",
-    "typescript-eslint": "^8.26.1"
+    "typescript-eslint": "^8.26.1",
+    "vitest": "^3.1.1"
   },
   "engines": {
     "node": ">=20.12",
