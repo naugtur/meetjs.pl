@@ -29,6 +29,7 @@ export const EventCard = ({ event }: EventCardProps) => {
 
 	return (
 		<Card
+			data-testid="event-card-wrapper"
 			className={cn(
 				'group flex min-h-60 min-w-full flex-col justify-between transition-all hover:shadow-lg',
 				isInProgress && 'border-2 border-purple dark:border-green',
@@ -40,7 +41,7 @@ export const EventCard = ({ event }: EventCardProps) => {
 					<CardTitle>
 						<Link
 							href={event.url}
-							className="transition-colors hover:text-purple"
+							className="transition-colors hover:text-purple dark:hover:text-green"
 						>
 							{event.name}
 						</Link>
@@ -51,9 +52,9 @@ export const EventCard = ({ event }: EventCardProps) => {
 						{isInProgress
 							? "🎉 Live now! Why aren't you here?"
 							: isToday && isUpcoming
-								? "🎯 Today! " + formatDistanceToNow(eventDate)
+								? `🎯 Today! Starts in ${formatDistanceToNow(eventDate)}`
 								: isUpcoming
-									? formatDistanceToNow(eventDate)
+									? `Starts in ${formatDistanceToNow(eventDate)}`
 									: 'Event ended'}
 					</p>
 				)}
@@ -61,22 +62,30 @@ export const EventCard = ({ event }: EventCardProps) => {
 
 			<CardContent className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
 				<div className="flex flex-col gap-4">
-					<div className="mt-3 flex items-center gap-2">
-						<FaLocationDot />
-						<div>
-							<div className="text-sm font-medium hover:underline">
-								{event.address ? event.address : 'Location TBA'}
-							</div>
-							{event.city && (
-								<div className="text-sm text-muted-foreground hover:underline">
-									{event.city}
+					{(event.address || event.city) && (
+						<div className="mt-3 flex items-center gap-2">
+							<FaLocationDot className="h-4 w-4 flex-shrink-0" />
+							{event.address ? (
+								<div>
+									<div className="text-sm font-medium hover:underline">
+										{event.address}
+									</div>
+									{event.city && (
+										<div className="text-sm hover:underline text-muted-foreground">
+											{event.city}
+										</div>
+									)}
+								</div>
+							) : (
+								<div className="text-sm font-medium text-muted-foreground">
+									Location TBA
 								</div>
 							)}
 						</div>
-					</div>
+					)}
 
 					<div className="flex items-center gap-2">
-						<FaClock />
+						<FaClock className="h-4 w-4 flex-shrink-0" />
 						<div>
 							<div className="text-sm font-medium">{event.date}</div>
 							<div className="text-sm text-muted-foreground">{event.time}</div>
@@ -88,6 +97,7 @@ export const EventCard = ({ event }: EventCardProps) => {
 					<Link
 						href={event.rsvp}
 						target="_blank"
+						rel="noopener noreferrer"
 						className={cn(
 							buttonVariants({
 								size: 'sm',
