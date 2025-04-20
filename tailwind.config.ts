@@ -25,9 +25,9 @@ const config: Config = {
 					'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
 			},
 			colors: {
-				purple: '#2b1932',
-				blue: '#219eab',
-				green: '#bcd35d',
+				Byzantiumpurple: '#2b1932',// dark shade of purple
+				Pacificblue: '#219eab',// shade of blue
+				yellowgreen: '#bcd35d',// a mixture of yellow and green
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
