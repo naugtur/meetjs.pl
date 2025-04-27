@@ -1,30 +1,5 @@
 import { cache } from 'react';
 
-// https://discord.com/developers/docs/resources/guild#guild-widget-object
-interface DiscordWidgetData {
-	id: string; // Server ID
-	name: string; // Server name
-	instant_invite: string; // Invite URL
-	presence_count: number; // Online members count
-	members: DiscordMemeber[];
-	channels: DiscordChannel[];
-}
-
-interface DiscordMemeber {
-	id: string;
-	username: string;
-	status: string;
-	avatar?: string;
-	avatar_url?: string;
-	game?: { name: string };
-}
-
-interface DiscordChannel {
-	id: string;
-	name: string;
-	position: number;
-}
-
 interface DiscordServerData {
 	id: string;
 	name: string;
@@ -65,3 +40,28 @@ export const getDiscordServerData = cache(
 		}
 	},
 );
+
+// https://discord.com/developers/docs/resources/guild#guild-widget-object
+interface DiscordWidgetData {
+	id: string; // Server ID
+	name: string; // Server name
+	instant_invite: string; // Invite URL
+	presence_count: number; // Online members count
+	members: DiscordMemeber[];
+	channels: DiscordChannel[];
+}
+
+interface DiscordMemeber {
+	id: string;
+	username: string;
+	status: string;
+	avatar?: string;
+	avatar_url?: string;
+	game?: { name: string };
+}
+
+interface DiscordChannel {
+	id: string;
+	name: string;
+	position: number;
+}
