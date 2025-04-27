@@ -61,6 +61,6 @@ const Loader = () => (
 const UsersCount = ({ count }: { count: number }) => (
 	<div className="bg-green-500/20 flex items-center gap-1 rounded-full px-2 py-1 text-sm">
 		<Users className="h-4 w-4" />
-		<span>{count} online</span>
+		<span className="text-center">{count} online</span>
 	</div>
 );
