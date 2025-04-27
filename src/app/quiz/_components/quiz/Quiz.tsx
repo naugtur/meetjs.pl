@@ -13,10 +13,11 @@ interface Props {
 export const Quiz = ({ questions }: Props) => {
 	const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 	const [score, setScore] = useState(0);
-	const [showResults, setShowResults] = useState(false);
 
 	const currentQuestion = questions[currentQuestionIndex];
 	const total = questions.length;
+
+	const allQuestionsCompleted = currentQuestionIndex + 1 >= total;
 
 	const handleAnswer = (optionIndex: number) => {
 		const isCorrectAnswer = optionIndex === currentQuestion.correct;
@@ -25,11 +26,7 @@ export const Quiz = ({ questions }: Props) => {
 			setScore((score) => score + 1);
 		}
 
-		const allQuestionsCompleted = currentQuestionIndex + 1 >= total;
-
-		if (allQuestionsCompleted) {
-			setShowResults(true);
-		} else {
+		if (!allQuestionsCompleted) {
 			setCurrentQuestionIndex((i) => i + 1);
 		}
 	};
@@ -37,10 +34,9 @@ export const Quiz = ({ questions }: Props) => {
 	const resetQuiz = () => {
 		setCurrentQuestionIndex(0);
 		setScore(0);
-		setShowResults(false);
 	};
 
-	if (showResults) {
+	if (allQuestionsCompleted) {
 		return (
 			<QuizSummary score={score} maxScore={total}>
 				<div className="space-x-4">
