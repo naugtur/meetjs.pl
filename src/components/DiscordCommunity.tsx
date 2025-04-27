@@ -29,9 +29,7 @@ export const DiscordCommunity = async () => {
 							</p>
 						</div>
 
-						{data?.approximate_presence_count && (
-							<UsersCount count={data.approximate_member_count ?? 0} />
-						)}
+						<UsersCount count={data.member_count} />
 					</div>
 
 					<a
@@ -58,9 +56,12 @@ const Loader = () => (
 	</p>
 );
 
-const UsersCount = ({ count }: { count: number }) => (
-	<div className="bg-green-500/20 flex items-center gap-1 rounded-full px-2 py-1 text-sm">
-		<Users className="h-4 w-4" />
-		<span className="text-center">{count} online</span>
-	</div>
-);
+const UsersCount = ({ count }: { count: number }) => {
+	if (!count) return null;
+	return (
+		<div className="bg-green-500/20 flex items-center gap-1 rounded-full px-2 py-1 text-sm">
+			<Users className="h-4 w-4" />
+			<span className="text-center">{count} online</span>
+		</div>
+	);
+};
