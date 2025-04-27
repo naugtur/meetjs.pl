@@ -3,23 +3,10 @@ import { PolandMap } from './PolandMap';
 import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
 import { Event } from '@/components/FeaturedEvents';
 import { MessagesSquare } from 'lucide-react';
-import { getDiscordServerData } from '@/lib/discord';
-import { DiscordCommunity } from './DiscordCommunity';
+import { DiscordWidget } from '@/components/DiscordCommunity';
 
 export const JoinUs = async () => {
 	const events: Event[] | null = await getUpcomingEvents();
-	let discordResponse: { data: Awaited<ReturnType<typeof getDiscordServerData>>, error?: string };
-
-	try {
-		discordResponse = {
-			data: await getDiscordServerData()
-		};
-	} catch (e) {
-		discordResponse = {
-			data: null,
-			error: e instanceof Error ? e.message : 'Failed to load Discord data'
-		};
-	}
 
 	return (
 		<section
@@ -51,15 +38,14 @@ export const JoinUs = async () => {
 						If you don&apos;t see your city on the map, consider starting a
 						local meet.js!
 					</p>
+
 					<div className="mt-4 border-t pt-6">
 						<h3 className="mb-4 flex items-center gap-2 text-xl font-semibold">
 							<MessagesSquare className="h-5 w-5 text-[#5865F2]" />
 							Join our Discord Community
 						</h3>
-						<DiscordCommunity 
-							discordData={discordResponse.data} 
-							error={discordResponse.error}
-						/>
+
+						<DiscordWidget />
 					</div>
 				</div>
 			</div>
