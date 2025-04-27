@@ -1,14 +1,5 @@
+import { Users } from 'lucide-react';
 import { getDiscordServerData } from '@/lib/discord';
-import { MessagesSquare, Users } from 'lucide-react';
-
-interface DiscordCommunityProps {
-	discordData?: {
-		name?: string;
-		approximate_presence_count?: number;
-		invite_url?: string;
-	} | null;
-	error?: string;
-}
 
 export const DiscordCommunity = async () => {
 	const { data, error } = await getDiscordServerData()
@@ -32,15 +23,14 @@ export const DiscordCommunity = async () => {
 							<h4 className="text-lg font-bold">
 								{data.name || 'MeetJS Community'}
 							</h4>
+
 							<p className="mt-1 text-sm text-gray-300">
 								Connect with JavaScript developers
 							</p>
 						</div>
-						{data.approximate_presence_count && (
-							<div className="bg-green-500/20 flex items-center gap-1 rounded-full px-2 py-1 text-sm">
-								<Users className="h-4 w-4" />
-								<span>{data.approximate_presence_count} online</span>
-							</div>
+
+						{data?.approximate_presence_count && (
+							<UsersCount count={data.approximate_member_count ?? 0} />
 						)}
 					</div>
 
@@ -66,4 +56,11 @@ const Loader = () => (
 	<p className="text-gray-500 dark:text-gray-400">
 		Loading community information...
 	</p>
+);
+
+const UsersCount = ({ count }: { count: number }) => (
+	<div className="bg-green-500/20 flex items-center gap-1 rounded-full px-2 py-1 text-sm">
+		<Users className="h-4 w-4" />
+		<span>{count} online</span>
+	</div>
 );
