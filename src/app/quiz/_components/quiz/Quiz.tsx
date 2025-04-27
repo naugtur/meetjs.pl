@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import { QuestionCard } from './QuestionCard';
 import { QuizSummary } from './QuizSummary';
-import { Question } from '../../_questions/questions';
+import { Question } from '../../_model/question';
 
 interface Props {
 	questions: Question[];
