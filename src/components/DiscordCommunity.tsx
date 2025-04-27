@@ -17,7 +17,7 @@ export const DiscordCommunity = async () => {
 			<div className="group relative mb-4 w-full max-w-md overflow-hidden rounded-lg bg-gradient-to-br from-[#2f3136] to-[#1e1f22] p-6 text-white shadow-xl transition-all duration-300 hover:shadow-2xl">
 				<div className="absolute inset-0 bg-gradient-to-r from-[#5865F2]/10 to-[#5865F2]/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
 
-				<div className="relative z-10">
+				<div className="relative">
 					<div className="mb-4 flex items-center justify-between">
 						<div>
 							<h4 className="text-lg font-bold">
