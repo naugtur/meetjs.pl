@@ -27,6 +27,7 @@ export default async function QuizPage() {
 	const { data: questions, error } = await getQuizQuestions();
 
 	if (error) {
+		// Todo: Proper handling - report on Discord (Add widget) or GitHub issues (you can fix it urself, PR)
 		return (
 			<div className="mx-auto min-h-screen max-w-2xl p-8">
 				<p className="text-red-500">There was an error.</p>
@@ -35,6 +36,7 @@ export default async function QuizPage() {
 		);
 	}
 
+	// Todo: Handle no questions
 	return (
 		<div className="mx-auto min-h-screen max-w-2xl p-8">
 			<div className="space-y-10">
