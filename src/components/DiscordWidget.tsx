@@ -1,4 +1,5 @@
 import { Users } from 'lucide-react';
+import { DiscordInviteLink } from './DiscordInviteLink';
 
 interface Props {
 	name: string;
@@ -24,14 +25,7 @@ export const DiscordWidget = ({ name, membersCount, inviteUrl }: Props) => (
 					<UsersCount count={membersCount} />
 				</div>
 
-				<a
-					href={inviteUrl}
-					target="_blank"
-					rel="noopener noreferrer"
-					className="block w-full transform rounded-md bg-gradient-to-r from-[#5865F2] to-[#4752C4] py-3 text-center font-medium text-white shadow-md transition-all duration-300 hover:scale-[1.02] hover:from-[#4752C4] hover:to-[#3a45a5]"
-				>
-					Join Server
-				</a>
+				<DiscordInviteLink href={inviteUrl} />
 			</div>
 		</div>
 	</div>
