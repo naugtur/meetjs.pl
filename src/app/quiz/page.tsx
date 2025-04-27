@@ -16,6 +16,7 @@ const getQuizQuestions = async () => {
 
 	const json: unknown = await response.json();
 
+	// Todo: Make reusable GET with validation
 	const result = QuestionsListSchema.safeParse(json);
 
 	return result.success
