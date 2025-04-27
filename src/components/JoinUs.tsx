@@ -3,7 +3,7 @@ import { PolandMap } from './PolandMap';
 import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
 import { Event } from '@/components/FeaturedEvents';
 import { MessagesSquare } from 'lucide-react';
-import { DiscordWidget } from '@/components/DiscordCommunity';
+import { DiscordCommunity } from '@/components/DiscordCommunity';
 
 export const JoinUs = async () => {
 	const events: Event[] | null = await getUpcomingEvents();
@@ -45,7 +45,7 @@ export const JoinUs = async () => {
 							Join our Discord Community
 						</h3>
 
-						<DiscordWidget />
+						<DiscordCommunity />
 					</div>
 				</div>
 			</div>

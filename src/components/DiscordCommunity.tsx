@@ -10,7 +10,7 @@ interface DiscordCommunityProps {
 	error?: string;
 }
 
-export const DiscordWidget = async () => {
+export const DiscordCommunity = async () => {
 	const { data, error } = await getDiscordServerData()
 		.then((data) => ({ data, error: null }))
 		.catch((e) => ({
