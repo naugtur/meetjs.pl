@@ -3,6 +3,8 @@
 import { type Question, QuestionSchema } from '../_model/question';
 import { useState } from 'react';
 import { QuestionCard } from './QuestionCard';
+import { Loader } from './Loader';
+import { sleep } from '@/utils/sleep';
 
 const getRandomQuestion = async () => {
 	const response = await fetch(`/api/quiz/questions/random`);
@@ -32,6 +34,8 @@ export const RandomQuestion = () => {
 		setError(null);
 		setIsLoading(true);
 
+		await sleep(1_500);
+
 		getRandomQuestion()
 			.then(({ data, error }) => (error ? setError(error) : setQuestion(data)))
 			.catch(({ error }) => setError(error))
@@ -40,7 +44,7 @@ export const RandomQuestion = () => {
 
 	const renderStuff = () => {
 		if (error) return <p className="font-bold text-red-500">Ooops. {error}</p>;
-		if (isLoading) return <p className="font-bold text-green">Loading...</p>;
+		if (isLoading) return <Loader text="$ npm install questions/random" />;
 		if (question) return <RandomQuiz question={question} />;
 	};
 
