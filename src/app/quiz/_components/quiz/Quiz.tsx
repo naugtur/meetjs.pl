@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import { QuestionCard } from './QuestionCard';
+import { QuestionCard } from '../QuestionCard';
 import { QuizSummary } from './QuizSummary';
 import { Question } from '../../_model/question';
 

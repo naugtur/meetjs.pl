@@ -2,10 +2,12 @@ import { env } from '@/env';
 import { Quiz } from './_components/quiz/Quiz';
 import { QuestionsListSchema } from './_model/question';
 import { ReportError } from './_components/ReportError';
+import { sleep } from '@/utils/sleep';
+import { RandomQuestion } from './_components/RandomQuestion';
 
 const FIFTEEN_MINUTES = 900;
 const getQuizQuestions = async () => {
-	await new Promise((r) => setTimeout(r, 25_000)); // todo: remove sleep.
+	// await sleep(25_000); // todo: remove sleep.
 
 	const response = await fetch(`${env.SITE_URL}/api/quiz/questions`, {
 		next: { revalidate: FIFTEEN_MINUTES },
@@ -38,6 +40,10 @@ export default async function QuizPage() {
 				{questions && <Quiz questions={questions} />}
 
 				<hr />
+
+				<h2 className="text-2xl font-bold">Random question</h2>
+				<RandomQuestion />
+
 				{/* Todo */}
 				<h2 className="text-2xl font-bold">Rate/flag question</h2>
 				<h2 className="text-2xl font-bold">Comment question</h2>
