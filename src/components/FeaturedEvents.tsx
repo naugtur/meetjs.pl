@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { EventsAPIPartner } from '@/components/EventsAPIPartner';
 import { EmptyEventsAlert } from '@/components/EmptyEventsAlert';
 import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
+import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
 
 export interface Event {
 	type: string;
@@ -27,7 +28,11 @@ export interface Event {
 }
 
 export const FeaturedEvents = async () => {
-	const events: Event[] | null = await getUpcomingEvents();
+	const apiEvents: Event[] | null = await getUpcomingEvents();
+const events: Event[] = [
+	...(apiEvents || []),
+	...ADDITIONAL_EVENTS,
+];
 
 	return (
 		<section
