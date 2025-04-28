@@ -4,7 +4,6 @@ import { EventsAPIPartner } from '@/components/EventsAPIPartner';
 import { FilterEvents } from '@/components/FilterEvents';
 import { EventsSchema } from '@/types/event';
 import { EmptyEventsAlert } from '@/components/EmptyEventsAlert';
-import { EventsList } from '@/components/EventsList';
 import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
 import { changeCityName } from '@/utils/changeCityName';
 import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
@@ -20,7 +19,7 @@ const getPastEvents = async () => {
 		url.searchParams.set('old', '1');
 
 		const pastEventsRes = await fetch(url, {
-			next: { revalidate: 3600 }
+			next: { revalidate: 3600 },
 		});
 
 		if (!pastEventsRes.ok) {
@@ -48,22 +47,19 @@ const EventsPage = async ({ searchParams }: EventsPageProps) => {
 	const pastEvents = await getPastEvents();
 
 	// Merge additional events with upcomingEvents
-	const allUpcomingEvents = [
-		...(upcomingEvents || []),
-		...ADDITIONAL_EVENTS,
-	];
+	const allUpcomingEvents = [...(upcomingEvents || []), ...ADDITIONAL_EVENTS];
 
 	return (
-		<main className="flex min-h-screen flex-col items-center gap-6 p-5 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-			<section className="flex flex-col items-center justify-center gap-6 w-full">
-				<h1 className="text-4xl font-bold py-4">All events</h1>
+		<main className="mx-auto flex min-h-screen max-w-7xl flex-col items-center gap-6 p-5 px-5 sm:px-6 lg:px-8">
+			<section className="flex w-full flex-col items-center justify-center gap-6">
+				<h1 className="py-4 text-4xl font-bold">All events</h1>
 				<p className="text-center text-lg">
 					All meet.js events in one place. Check past and upcoming meetups.
 				</p>
 				<EventsAPIPartner />
 			</section>
 
-			<section className="flex flex-col items-center justify-center gap-6 w-full">
+			<section className="flex w-full flex-col items-center justify-center gap-6">
 				<h2 className="text-2xl font-bold">Upcoming events</h2>
 				{allUpcomingEvents.length > 0 ? (
 					<FilterEvents events={allUpcomingEvents} filter={city} />
@@ -72,7 +68,7 @@ const EventsPage = async ({ searchParams }: EventsPageProps) => {
 				)}
 			</section>
 
-			<section className="flex flex-col items-center justify-center gap-6 w-full">
+			<section className="flex w-full flex-col items-center justify-center gap-6">
 				<h2 className="text-2xl font-bold">Past events</h2>
 				<FilterEvents events={pastEvents} filter={city} />
 			</section>
