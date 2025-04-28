@@ -1,12 +1,13 @@
 import { env } from '@/env';
 import { Quiz } from './_components/quiz/Quiz';
 import { QuestionsListSchema } from './_model/question';
+import { ReportError } from './_components/ReportError';
 
 const FIFTEEN_MINUTES = 900;
 const getQuizQuestions = async () => {
-	const url = `${env.SITE_URL}/api/quiz/questions`;
-	console.log({ url });
-	const response = await fetch(url, {
+	await new Promise((r) => setTimeout(r, 25_000)); // todo: remove sleep.
+
+	const response = await fetch(`${env.SITE_URL}/api/quiz/questions`, {
 		next: { revalidate: FIFTEEN_MINUTES },
 	});
 
@@ -27,15 +28,7 @@ const getQuizQuestions = async () => {
 export default async function QuizPage() {
 	const { data: questions, error } = await getQuizQuestions();
 
-	if (error) {
-		// Todo: Proper handling - report on Discord (Add widget) or GitHub issues (you can fix it urself, PR)
-		return (
-			<div className="mx-auto min-h-screen max-w-2xl p-8">
-				<p className="text-red-500">There was an error.</p>
-				<p className="text-red-500">{error}</p>
-			</div>
-		);
-	}
+	if (error) return <ReportError error={error} />;
 
 	// Todo: Handle no questions
 	// Todo: Question menu: Random question, search & filter, tabs for adding, API docs etc.
