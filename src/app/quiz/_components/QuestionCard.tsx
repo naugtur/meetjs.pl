@@ -4,6 +4,7 @@ interface Props {
 	chooseAnswer: (answerIndex: number) => void;
 }
 
+// Todo: Move to shared components - /components/quiz
 export const QuestionCard = ({ question, answers, chooseAnswer }: Props) => {
 	return (
 		<article className="space-y-6">
