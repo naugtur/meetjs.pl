@@ -3,6 +3,7 @@ import z from 'zod';
 
 // Todo: Add id, category, difficulty(intern, junior, regular, senior)
 export const QuestionSchema = z.object({
+	id: z.string(),
 	question: z.string(),
 	options: z.array(z.string()),
 	correct: z.number().nonnegative(),
