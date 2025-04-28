@@ -5,15 +5,15 @@ import { JoinUs } from '@/components/JoinUs';
 import { FeaturedEvents } from '@/components/FeaturedEvents';
 import { HeroSection } from '@/components/HeroSection';
 import { PartnersSection } from '@/components/PartnersSection';
-// import { BirthdayBanner } from '@/components/BirthdayBanner';
-// import { RegistrationBanner } from '@/components/RegistrationBanner';
+import { PromoBanners } from '@/components/PromoBanners';
+import { promos } from '@/content/promos';
 
 export const dynamic = 'force-dynamic';
 
 const Home = () => {
 	return (
 		<>
-			{/* <BirthdayBanner /> 14 birthday banner */} 
+			<PromoBanners promos={promos} />
 			<HeroSection />
 			<FeaturedEvents />
 			<main className="flex min-h-screen flex-col items-center">
@@ -24,7 +24,6 @@ const Home = () => {
 				</div>
 				<PartnersSection />
 			</main>
-			{/* <RegistrationBanner /> */}
 		</>
 	);
 };
