@@ -2,8 +2,8 @@ import { env } from '@/env';
 import { Quiz } from './_components/quiz/Quiz';
 import { QuestionsListSchema } from './_model/question';
 import { ReportError } from './_components/ReportError';
-import { sleep } from '@/utils/sleep';
 import { RandomQuestion } from './_components/RandomQuestion';
+// import { sleep } from '@/utils/sleep';
 
 const FIFTEEN_MINUTES = 900;
 const getQuizQuestions = async () => {
