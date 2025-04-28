@@ -11,9 +11,9 @@ export const PARTNERS = [
 		alt: 'JS Nation',
 	},
 	{
-		href: 'https://typescript.community/',
+		href: 'https://www.meetup.com/gdansk-typescript/',
 		src: '/partners/TSWrocław.png',
-		alt: 'TypeScript Wrocław',
+		alt: 'Gdańsk TypeScript',
 	},
 	{
 		href: 'https://warsawjs.com/',

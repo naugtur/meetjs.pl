@@ -52,10 +52,11 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
                                             cy={city.pointPosition.y}
                                             r="3"
                                             fill={
-                                                city.status === 'active' ? '#219eab' :
+                                                city.status === 'typescript' ? '#2563eb' : // blue for TypeScript event
+                                                    city.status === 'active' ? '#219eab' :
                                                     city.status === 'coming-soon' ? '#EAB308' :
-                                                        city.status === 'new' ? '#219eab' :
-                                                            '#9CA3AF'
+                                                    city.status === 'new' ? '#219eab' :
+                                                    '#9CA3AF'
                                             }
                                             className="cursor-pointer hover:opacity-80"
                                         />
@@ -121,6 +122,10 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
                         </div>
                     </div>
                     <span>Active / upcoming / in progress</span>
+                </div>
+                <div className="flex items-center gap-2 whitespace-nowrap">
+                    <div className="h-2 w-2 rounded-full bg-[#2563eb]" />
+                    <span>TypeScript Gdańsk</span>
                 </div>
                 <div className="flex items-center gap-2 whitespace-nowrap">
                     <div className="relative">

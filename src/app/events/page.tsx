@@ -7,6 +7,7 @@ import { EmptyEventsAlert } from '@/components/EmptyEventsAlert';
 import { EventsList } from '@/components/EventsList';
 import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
 import { changeCityName } from '@/utils/changeCityName';
+import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
 
 export const metadata: Metadata = {
 	title: 'All Events | meet.js',
@@ -46,6 +47,12 @@ const EventsPage = async ({ searchParams }: EventsPageProps) => {
 	const upcomingEvents = await getUpcomingEvents();
 	const pastEvents = await getPastEvents();
 
+	// Merge additional events with upcomingEvents
+	const allUpcomingEvents = [
+		...(upcomingEvents || []),
+		...ADDITIONAL_EVENTS,
+	];
+
 	return (
 		<main className="flex min-h-screen flex-col items-center gap-6 p-5 mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
 			<section className="flex flex-col items-center justify-center gap-6 w-full">
@@ -58,8 +65,8 @@ const EventsPage = async ({ searchParams }: EventsPageProps) => {
 
 			<section className="flex flex-col items-center justify-center gap-6 w-full">
 				<h2 className="text-2xl font-bold">Upcoming events</h2>
-				{upcomingEvents ? (
-					<EventsList eventsList={upcomingEvents} />
+				{allUpcomingEvents.length > 0 ? (
+					<FilterEvents events={allUpcomingEvents} filter={city} />
 				) : (
 					<EmptyEventsAlert />
 				)}

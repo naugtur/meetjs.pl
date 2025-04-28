@@ -9,7 +9,7 @@ export interface City {
 		x: number;
 		y: number;
 	};
-	status: 'active' | 'paused' | 'coming-soon' | 'new';
+	status: 'active' | 'paused' | 'coming-soon' | 'new' | 'typescript'; // added 'typescript'
 }
 
 export const CITIES: City[] = [
@@ -39,6 +39,7 @@ export const CITIES: City[] = [
 		},
 		status: 'paused',
 	},
+	// Special marker for TypeScript Gdańsk event
 	{
 		name: 'Gdańsk',
 		href: '/gdansk',
@@ -50,7 +51,7 @@ export const CITIES: City[] = [
 			x: 70,
 			y: 34,
 		},
-		status: 'coming-soon',
+		status: 'typescript', // blue marker for TypeScript event
 	},
 	{
 		name: 'Katowice',
