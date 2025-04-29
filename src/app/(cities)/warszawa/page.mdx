@@ -9,40 +9,40 @@ import { WarsawOrganizers } from './_Organizers';
 import { EventSection } from '../../../components/EventSection';
 
 export const metadata = {
-	metadataBase: new URL(`${env.SITE_URL}/warsaw`),
-	title: 'meet.js Warsaw',
-	description: 'JavaScript meetups in Warsaw',
-	keywords: 'meet.js, Warsaw, JavaScript, meetup',
-	openGraph: {
-		title: 'meet.js Warsaw',
-		description: 'JavaScript meetups in Warsaw',
-		type: 'website',
-		locale: 'en_US',
-		url: `${env.SITE_URL}/warsaw`,
-		siteName: 'meet.js',
-		images: [
-			{
-				url: `${env.SITE_URL}/api/og?city=Warsaw`,
-				width: 1200,
-				height: 630,
-				alt: 'meet.js | JavaScript meetups in Warsaw',
-			},
-		],
-	},
-	twitter: {
-		card: 'summary_large_image',
-		site: '@meetjs',
-		title: 'meet.js',
-		description: 'JavaScript meetups in Warsaw',
-		images: [
-			{
-				url: `${env.SITE_URL}/api/og?city=Warsaw`,
-				width: 1200,
-				height: 630,
-				alt: 'meet.js | JavaScript meetups in Warsaw',
-			},
-		],
-	},
+  metadataBase: new URL(`${env.SITE_URL}/warsaw`),
+  title: 'meet.js Warsaw',
+  description: 'JavaScript meetups in Warsaw',
+  keywords: 'meet.js, Warsaw, JavaScript, meetup',
+  openGraph: {
+    title: 'meet.js Warsaw',
+    description: 'JavaScript meetups in Warsaw',
+    type: 'website',
+    locale: 'en_US',
+    url: `${env.SITE_URL}/warsaw`,
+    siteName: 'meet.js',
+    images: [
+      {
+        url: `${env.SITE_URL}/api/og?city=Warsaw`,
+        width: 1200,
+        height: 630,
+        alt: 'meet.js | JavaScript meetups in Warsaw',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@meetjs',
+    title: 'meet.js',
+    description: 'JavaScript meetups in Warsaw',
+    images: [
+      {
+        url: `${env.SITE_URL}/api/og?city=Warsaw`,
+        width: 1200,
+        height: 630,
+        alt: 'meet.js | JavaScript meetups in Warsaw',
+      },
+    ],
+  },
 };
 
 <CityBanner city="Warsaw" background="city/warsaw.jpg" />
@@ -50,20 +50,20 @@ export const metadata = {
 <EventSection city="Warszawa" />
 
 <LocalGroups
-	localGroups={[
-		'https://www.meetup.com/meet-js-warsaw/',
-		'https://lu.ma/user/usr-eNzoaGXYjizOBQI',
-	]}
+  localGroups={[
+    'https://www.meetup.com/meet-js-warsaw/',
+    'https://lu.ma/user/usr-eNzoaGXYjizOBQI',
+  ]}
 />
 
 <div id="video" style={{ display: 'flex', justifyContent: 'center' }}>
-	<iframe
-		src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7301219840705339392?compact=1"
-		height="399"
-		width="710"
-		allowFullScreen
-		title="meet.js Warsaw at Box Warsaw"
-	></iframe>
+  <iframe
+    src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7301219840705339392?compact=1"
+    height="399"
+    width="710"
+    allowFullScreen
+    title="meet.js Warsaw at Box Warsaw"
+  ></iframe>
 </div>
 
 <FAQ questions={WarsawFAQ} />

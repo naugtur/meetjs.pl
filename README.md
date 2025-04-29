@@ -41,17 +41,17 @@ Each promo is an object in the exported `promos` array. Example:
 import { Promo } from '../components/PromoBanners';
 
 export const promos: Promo[] = [
-	{
-		id: 'cityjs-athens-2025', // Unique string identifier
-		message: 'CityJS Athens 2025: Use our promo code for a discount!', // Banner message
-		cta: '👉 Get Discount', // Call-to-action text
-		link: 'https://ti.to/cityjs-conference/cityjs-athens-2025/discount/meetjs', // Link for CTA
-		expiresAt: '2025-12-31T23:59:59+02:00', // Expiry date (ISO format)
-		gradient: 'bg-gradient-to-r from-blue via-purple to-green', // Optional Tailwind gradient class
-		icon: '🚀', // Optional emoji or icon (left side)
-		emojiRight: '🇬🇷', // Optional emoji (right side)
-	},
-	// Add more promos as needed
+  {
+    id: 'cityjs-athens-2025', // Unique string identifier
+    message: 'CityJS Athens 2025: Use our promo code for a discount!', // Banner message
+    cta: '👉 Get Discount', // Call-to-action text
+    link: 'https://ti.to/cityjs-conference/cityjs-athens-2025/discount/meetjs', // Link for CTA
+    expiresAt: '2025-12-31T23:59:59+02:00', // Expiry date (ISO format)
+    gradient: 'bg-gradient-to-r from-blue via-purple to-green', // Optional Tailwind gradient class
+    icon: '🚀', // Optional emoji or icon (left side)
+    emojiRight: '🇬🇷', // Optional emoji (right side)
+  },
+  // Add more promos as needed
 ];
 ```
 
