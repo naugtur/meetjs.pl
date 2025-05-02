@@ -10,5 +10,7 @@ export const promos: Promo[] = [
 		gradient: 'bg-gradient-to-r from-blue via-purple to-green',
 		icon: '🚀',
 		emojiRight: '🇬🇷',
+		country: 'Greece',
+		city: 'Athens',
 	},
 ];
