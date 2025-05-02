@@ -2,6 +2,21 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
+  safelist: [
+    'bg-gradient-to-r',
+    'from-indigo-500',
+    'via-blue-500',
+    'to-purple-500',
+    'from-yellow-400',
+    'via-orange-500',
+    'to-pink-500',
+    'from-blue',
+    'via-purple',
+    'to-green',
+    'from-green-400',
+    'via-emerald-500',
+    'to-teal-500',
+  ],
 	content: [
 		'./src/components/**/*.{ts,tsx,mdx}',
 		'./src/app/**/*.{ts,tsx,mdx}',

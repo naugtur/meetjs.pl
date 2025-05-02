@@ -13,4 +13,14 @@ export const promos: Promo[] = [
 		country: 'Greece',
 		city: 'Athens',
 	},
+	{
+		id: 'react-universe-2025',
+		message: 'React Universe Conf 2025: 10% off with code meet.js10!',
+		cta: '👉 Get Discount',
+		link: 'https://ti.to/RUC/react-universe-conf-2025/discount/meet.js10',
+		expiresAt: '2025-11-20T23:59:59+02:00',
+		gradient: 'bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500',
+		icon: '🪐',
+		emojiRight: '🌍',
+	},
 ];
