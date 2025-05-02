@@ -14,6 +14,8 @@ export type Promo = {
 	icon?: React.ReactNode; // Custom icon or emoji
 	emojiLeft?: string;
 	emojiRight?: string;
+	country?: string;
+	city?: string;
 };
 
 const getPromoDismissedKey = (id: string) => `promoBannerDismissed_${id}`;
