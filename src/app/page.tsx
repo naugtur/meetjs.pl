@@ -11,21 +11,21 @@ import { promos } from '@/content/promos';
 export const dynamic = 'force-dynamic';
 
 const Home = () => {
-	return (
-		<>
-			<PromoBanners promos={promos} />
-			<HeroSection />
-			<FeaturedEvents />
-			<main className="flex min-h-screen flex-col items-center">
-				<JoinUs />
-				<div className="w-full">
-					<AboutSection />
-					<Stats />
-				</div>
-				<PartnersSection />
-			</main>
-		</>
-	);
+  return (
+    <>
+      <PromoBanners promos={promos} />
+      <HeroSection />
+      <FeaturedEvents />
+      <main className="flex min-h-screen flex-col items-center">
+        <JoinUs />
+        <div className="w-full">
+          <AboutSection />
+          <Stats />
+        </div>
+        <PartnersSection />
+      </main>
+    </>
+  );
 };
 
 export default Home;

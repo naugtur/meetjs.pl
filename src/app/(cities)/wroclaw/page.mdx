@@ -9,40 +9,40 @@ import { WroclawOrganizers } from './_Organizers';
 import { EventSection } from '../../../components/EventSection';
 
 export const metadata = {
-	metadataBase: new URL(`${env.SITE_URL}/wroclaw`),
-	title: 'meet.js Wrocław',
-	description: 'JavaScript meetups in Wrocław',
-	keywords: 'meet.js, Wrocław, JavaScript, meetup',
-	openGraph: {
-		title: 'meet.js Wrocław',
-		description: 'JavaScript meetups in Wrocław',
-		type: 'website',
-		locale: 'en_US',
-		url: `${env.SITE_URL}/city/wroclaw`,
-		siteName: 'meet.js',
-		images: [
-			{
-				url: `${env.SITE_URL}/api/og?city=Wrocław`,
-				width: 1200,
-				height: 630,
-				alt: 'meet.js | JavaScript meetups in Wrocław',
-			},
-		],
-	},
-	twitter: {
-		card: 'summary_large_image',
-		site: '@meetjs',
-		title: 'meet.js',
-		description: 'JavaScript meetups in Wrocław',
-		images: [
-			{
-				url: `${env.SITE_URL}/api/og?city=Wrocław`,
-				width: 1200,
-				height: 630,
-				alt: 'meet.js | JavaScript meetups in Wrocław',
-			},
-		],
-	},
+  metadataBase: new URL(`${env.SITE_URL}/wroclaw`),
+  title: 'meet.js Wrocław',
+  description: 'JavaScript meetups in Wrocław',
+  keywords: 'meet.js, Wrocław, JavaScript, meetup',
+  openGraph: {
+    title: 'meet.js Wrocław',
+    description: 'JavaScript meetups in Wrocław',
+    type: 'website',
+    locale: 'en_US',
+    url: `${env.SITE_URL}/city/wroclaw`,
+    siteName: 'meet.js',
+    images: [
+      {
+        url: `${env.SITE_URL}/api/og?city=Wrocław`,
+        width: 1200,
+        height: 630,
+        alt: 'meet.js | JavaScript meetups in Wrocław',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@meetjs',
+    title: 'meet.js',
+    description: 'JavaScript meetups in Wrocław',
+    images: [
+      {
+        url: `${env.SITE_URL}/api/og?city=Wrocław`,
+        width: 1200,
+        height: 630,
+        alt: 'meet.js | JavaScript meetups in Wrocław',
+      },
+    ],
+  },
 };
 
 <CityBanner city="Wrocław" background="city/wroclaw.jpeg" />
@@ -50,11 +50,11 @@ export const metadata = {
 <EventSection city="Wrocław" />
 
 <LocalGroups
-	localGroups={[
-		'https://www.meetup.com/meet-js-wroclaw/',
-		'https://www.facebook.com/groups/326774397348491',
-		'https://lu.ma/user/usr-eNzoaGXYjizOBQI',
-	]}
+  localGroups={[
+    'https://www.meetup.com/meet-js-wroclaw/',
+    'https://www.facebook.com/groups/326774397348491',
+    'https://lu.ma/user/usr-eNzoaGXYjizOBQI',
+  ]}
 />
 
 <FAQ questions={WroclawFAQ} />
