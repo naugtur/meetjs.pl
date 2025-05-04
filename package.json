@@ -1,122 +1,122 @@
 {
-  "name": "meetjs.pl",
-  "description": "Official website of Meet.js - JavaScript meetups in Poland",
-  "keywords": [
-    "meet.js",
-    "JavaScript",
-    "meetup",
-    "javascript",
-    "poland",
-    "community"
-  ],
-  "homepage": "https://meetjs.pl",
-  "bugs": {
-    "url": "https://github.com/naugtur/meetjs.pl/issues/new",
-    "email": "contact@meetjs.pl"
-  },
-  "contributors": [
-    {
-      "name": "Stanisław Synowiec",
-      "email": "stanislaw@ssynowiec.pl",
-      "url": "https://ssynowiec.dev"
-    },
-    {
-      "name": "Kamil Dzieniszewski",
-      "email": "kamil.dzieniszewski@gmail.com"
-    },
-    {
-      "name": "Konrad Cielecki"
-    },
-    {
-      "name": "Zbyszek Tenerowicz",
-      "email": "naugtur@gmail.com",
-      "url": "https://naugtur.pl"
-    },
-    {
-      "name": "Olaf Krawczyk",
-      "email": "olaf.r.krawczyk@gmail.com"
-    }
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/naugtur/meetjs.pl.git"
-  },
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "prepare": "husky"
-  },
-  "dependencies": {
-    "@headlessui/react": "^2.2.0",
-    "@mdx-js/loader": "^3.1.0",
-    "@mdx-js/react": "^3.1.0",
-    "@next/mdx": "15.3.0",
-    "@radix-ui/react-accordion": "^1.2.3",
-    "@radix-ui/react-dropdown-menu": "2.1.6",
-    "@radix-ui/react-slot": "1.1.2",
-    "@t3-oss/env-nextjs": "^0.12.0",
-    "@types/mdx": "^2.0.13",
-    "@vercel/analytics": "^1.5.0",
-    "@vercel/speed-insights": "^1.2.0",
-    "babel-plugin-react-compiler": "19.0.0-beta-3229e95-20250315",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.1",
-    "date-fns": "^4.1.0",
-    "embla-carousel-autoplay": "^8.5.1",
-    "embla-carousel-react": "^8.5.1",
-    "jiti": "^1.21.6",
-    "lucide-react": "^0.483.0",
-    "motion": "^12.5.0",
-    "next": "15.3.0",
-    "next-themes": "^0.4.4",
-    "react": "19.1.0",
-    "react-confetti": "^6.2.2",
-    "react-dom": "19.1.0",
-    "react-icons": "^5.5.0",
-    "tailwind-merge": "^2.5.2",
-    "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.24.2"
-  },
-  "devDependencies": {
-    "@lavamoat/preinstall-always-fail": "^2.1.0",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.3.0",
-    "@types/node": "^22.3.0",
-    "@types/react": "19.1.0",
-    "@types/react-dom": "19.1.2",
-    "@vitejs/plugin-react": "^4.4.0",
-    "eslint": "9.22.0",
-    "eslint-config-next": "15.3.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-react-compiler": "19.0.0-beta-3229e95-20250315",
-    "eslint-plugin-react-hooks": "5.1.0",
-    "husky": "^9.1.4",
-    "jsdom": "^26.1.0",
-    "lint-staged": "^15.2.9",
-    "postcss": "^8.4.41",
-    "prettier": "3.3.3",
-    "prettier-plugin-tailwindcss": "^0.6.6",
-    "tailwindcss": "^3.4.10",
-    "typescript": "5.5.4",
-    "typescript-eslint": "^8.26.1",
-    "vitest": "^3.1.1"
-  },
-  "engines": {
-    "node": ">=20.12",
-    "npm": ">=10.8",
-    "pnpm": ">=9.4"
-  },
-  "packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee",
-  "pnpm": {
-    "overrides": {
-      "@types/react": "19.1.0",
-      "@types/react-dom": "19.1.2"
-    }
-  }
+	"name": "meetjs.pl",
+	"description": "Official website of Meet.js - JavaScript meetups in Poland",
+	"keywords": [
+		"meet.js",
+		"JavaScript",
+		"meetup",
+		"javascript",
+		"poland",
+		"community"
+	],
+	"homepage": "https://meetjs.pl",
+	"bugs": {
+		"url": "https://github.com/naugtur/meetjs.pl/issues/new",
+		"email": "contact@meetjs.pl"
+	},
+	"contributors": [
+		{
+			"name": "Stanisław Synowiec",
+			"email": "stanislaw@ssynowiec.pl",
+			"url": "https://ssynowiec.dev"
+		},
+		{
+			"name": "Kamil Dzieniszewski",
+			"email": "kamil.dzieniszewski@gmail.com"
+		},
+		{
+			"name": "Konrad Cielecki"
+		},
+		{
+			"name": "Zbyszek Tenerowicz",
+			"email": "naugtur@gmail.com",
+			"url": "https://naugtur.pl"
+		},
+		{
+			"name": "Olaf Krawczyk",
+			"email": "olaf.r.krawczyk@gmail.com"
+		}
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/naugtur/meetjs.pl.git"
+	},
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"prepare": "husky"
+	},
+	"dependencies": {
+		"@headlessui/react": "^2.2.2",
+		"@mdx-js/loader": "^3.1.0",
+		"@mdx-js/react": "^3.1.0",
+		"@next/mdx": "15.3.0",
+		"@radix-ui/react-accordion": "^1.2.3",
+		"@radix-ui/react-dropdown-menu": "2.1.6",
+		"@radix-ui/react-slot": "1.1.2",
+		"@t3-oss/env-nextjs": "^0.12.0",
+		"@types/mdx": "^2.0.13",
+		"@vercel/analytics": "^1.5.0",
+		"@vercel/speed-insights": "^1.2.0",
+		"babel-plugin-react-compiler": "19.1.0-rc.1",
+		"class-variance-authority": "^0.7.0",
+		"clsx": "^2.1.1",
+		"date-fns": "^4.1.0",
+		"embla-carousel-autoplay": "^8.5.1",
+		"embla-carousel-react": "^8.5.1",
+		"jiti": "^1.21.6",
+		"lucide-react": "^0.483.0",
+		"motion": "^12.5.0",
+		"next": "15.3.0",
+		"next-themes": "^0.4.4",
+		"react": "19.1.0",
+		"react-confetti": "^6.2.2",
+		"react-dom": "19.1.0",
+		"react-icons": "^5.5.0",
+		"tailwind-merge": "^2.5.2",
+		"tailwindcss-animate": "^1.0.7",
+		"zod": "^3.24.2"
+	},
+	"devDependencies": {
+		"@lavamoat/preinstall-always-fail": "^2.1.0",
+		"@testing-library/jest-dom": "^6.6.3",
+		"@testing-library/react": "^16.3.0",
+		"@types/node": "^22.3.0",
+		"@types/react": "19.1.0",
+		"@types/react-dom": "19.1.2",
+		"@vitejs/plugin-react": "^4.4.0",
+		"eslint": "9.22.0",
+		"eslint-config-next": "15.3.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-react-compiler": "19.1.0-rc.1",
+		"eslint-plugin-react-hooks": "5.1.0",
+		"husky": "^9.1.4",
+		"jsdom": "^26.1.0",
+		"lint-staged": "^15.2.9",
+		"postcss": "^8.4.41",
+		"prettier": "3.3.3",
+		"prettier-plugin-tailwindcss": "^0.6.6",
+		"tailwindcss": "^3.4.10",
+		"typescript": "5.5.4",
+		"typescript-eslint": "^8.26.1",
+		"vitest": "^3.1.1"
+	},
+	"engines": {
+		"node": ">=20.12",
+		"npm": ">=10.8",
+		"pnpm": ">=9.4"
+	},
+	"packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee",
+	"pnpm": {
+		"overrides": {
+			"@types/react": "19.1.0",
+			"@types/react-dom": "19.1.2"
+		}
+	}
 }
