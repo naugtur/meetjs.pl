@@ -13,7 +13,9 @@ const nextConfig: NextConfig = {
 	reactStrictMode: true,
 	turbopack: {},
 	experimental: {
-		reactCompiler: true,
+		reactCompiler: {
+			compilationMode: 'annotation',
+		},
 		staleTimes: {
 			dynamic: 30,
 		},
