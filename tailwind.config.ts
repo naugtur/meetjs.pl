@@ -2,21 +2,27 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  safelist: [
-    'bg-gradient-to-r',
-    'from-indigo-500',
-    'via-blue-500',
-    'to-purple-500',
-    'from-yellow-400',
-    'via-orange-500',
-    'to-pink-500',
-    'from-blue',
-    'via-purple',
-    'to-green',
-    'from-green-400',
-    'via-emerald-500',
-    'to-teal-500',
-  ],
+	safelist: [
+		'bg-gradient-to-r',
+		'from-indigo-500',
+		'via-blue-500',
+		'to-purple-500',
+		'from-yellow-400',
+		'via-orange-500',
+		'to-pink-500',
+		'from-blue',
+		'via-purple',
+		'to-green',
+		'from-green-400',
+		'via-emerald-500',
+		'to-teal-500',
+		'from-green-400',
+		'via-blue-500',
+		'to-purple-500',
+		'from-green-400',
+		'via-blue-500',
+		'to-purple-500',
+	],
 	content: [
 		'./src/components/**/*.{ts,tsx,mdx}',
 		'./src/app/**/*.{ts,tsx,mdx}',
@@ -40,9 +46,18 @@ const config: Config = {
 					'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
 			},
 			colors: {
-				purple: '#2b1932',
-				blue: '#219eab',
-				green: '#bcd35d',
+				purple: {
+					DEFAULT: '#2b1932',
+					500: '#2b1932'
+				},
+				blue: {
+					DEFAULT: '#219eab',
+					500: '#219eab'
+				},
+				green: {
+					DEFAULT: '#bcd35d',
+					400: '#bcd35d'
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
