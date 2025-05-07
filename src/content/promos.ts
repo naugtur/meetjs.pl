@@ -14,6 +14,18 @@ export const promos: Promo[] = [
 		city: 'Athens',
 	},
 	{
+		id: 'appjs-2025',
+		message: 'App.js 2025: Exclusive 15% discount for meet.js community!',
+		cta: '👉 Get 15% Off',
+		link: 'https://ti.to/appjs/2025/discount/meetJS',
+		expiresAt: '2025-07-28T23:59:59+02:00',
+		gradient: 'bg-gradient-to-r from-indigo-500 via-blue-500 to-purple-500',
+		icon: '📱',
+		emojiRight: '🇵🇱',
+		country: 'Poland',
+		city: 'Kraków',
+	},
+	{
 		id: 'react-universe-2025',
 		message: 'React Universe Conf 2025: 10% off with code meet.js10!',
 		cta: '👉 Get Discount',
