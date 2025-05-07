@@ -25,7 +25,7 @@ export function SpecialPromoBanners({ promos }: SpecialPromoBannersProps) {
 			{visiblePromos.map((promo) => (
 				<div
 					key={promo.id}
-					className={`relative overflow-hidden rounded-xl border-2 border-purple bg-gradient-to-br from-purple/80 via-green/60 to-blue/60 p-6 shadow-lg transition-transform hover:scale-[1.01]`}
+					className={`relative overflow-hidden rounded-xl border-2 border-purple ${promo.gradient || 'bg-gradient-to-r from-green-400 via-blue-500 to-purple-500'} p-6 shadow-lg transition-transform hover:scale-[1.01]`}
 				>
 					<div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
 						<div className="flex items-center gap-3 text-xl md:text-2xl">
