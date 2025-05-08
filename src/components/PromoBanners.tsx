@@ -8,8 +8,10 @@ export type Promo = {
 	id: string;
 	message: string;
 	cta: string;
-	link: string;
+	link: string; // Link to tickets/registration
+	eventLink?: string; // Link to the main event website
 	expiresAt: string; // ISO string
+	description?: string; // Short description of the event
 	gradient?: string; // Tailwind class for bg-gradient
 	icon?: React.ReactNode; // Custom icon or emoji
 	emojiLeft?: string;
