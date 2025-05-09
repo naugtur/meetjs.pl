@@ -5,7 +5,7 @@ import { FAQ } from '../../../components/FAQ';
 import { LocalGroups } from '../../../components/LocalGroups';
 import { CityBanner } from '../../../components/CityBanner';
 import { GdanskFAQ } from './_FAQ';
-import { GdanskOrganizers } from './_Organizers';
+import { getOrganizersByCity } from '../../../data/organizers';
 import { EventSection } from '../../../components/EventSection';
 
 export const metadata = {
@@ -53,6 +53,6 @@ export const metadata = {
 
 <FAQ questions={GdanskFAQ} />
 
-<Organizers city="Gdańsk" organizers={GdanskOrganizers} />
+<Organizers city="Gdańsk" organizers={getOrganizersByCity('gdansk')} />
 
 <CityEmail email="gdansk@meetjs.pl" />

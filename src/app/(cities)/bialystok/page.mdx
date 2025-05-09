@@ -4,7 +4,7 @@ import { Organizers } from '../../../components/Orginizers';
 import { FAQ } from '../../../components/FAQ';
 import { CityBanner } from '../../../components/CityBanner';
 import { BialystokFAQ } from './_FAQ';
-import { BialystokOrganizers } from './_Organizers';
+import { getOrganizersByCity } from '../../../data/organizers';
 import { EventSection } from '../../../components/EventSection';
 
 export const metadata = {
@@ -50,6 +50,6 @@ export const metadata = {
 
 <FAQ questions={BialystokFAQ} />
 
-<Organizers city="Białystok" organizers={BialystokOrganizers} />
+<Organizers city="Białystok" organizers={getOrganizersByCity('bialystok')} />
 
 <CityEmail email="hello@meetjs.bialystok.pl" />

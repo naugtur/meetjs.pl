@@ -21,6 +21,10 @@ const config: Config = {
 		'from-green-400',
 		'via-blue-500',
 		'to-purple-500',
+		'bg-yellow-400',
+		'text-yellow-900',
+		'bg-indigo-200',
+		'text-indigo-800',
 	],
 	content: [
 		'./src/components/**/*.{ts,tsx,mdx}',

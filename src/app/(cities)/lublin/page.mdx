@@ -2,11 +2,11 @@ import { env } from '../../../env';
 import { CityEmail } from '../../../components/CityEmail';
 import { Organizers } from '../../../components/Orginizers';
 import { FAQ } from '../../../components/FAQ';
-import { LocalGroups } from '../../../components/LocalGroups';
 import { CityBanner } from '../../../components/CityBanner';
 import { LublinFAQ } from './_FAQ';
-import { LublinOrganizers } from './_Organizers';
+import { getOrganizersByCity } from '../../../data/organizers';
 import { EventSection } from '../../../components/EventSection';
+import { LocalGroups } from '../../../components/LocalGroups';
 
 export const metadata = {
 	metadataBase: new URL(`${env.SITE_URL}/lublin`),
@@ -56,6 +56,6 @@ export const metadata = {
 
 <FAQ questions={LublinFAQ} />
 
-<Organizers city="Lublin" organizers={LublinOrganizers} />
+<Organizers city="Lublin" organizers={getOrganizersByCity('lublin')} />
 
 <CityEmail email="lublin@meetjs.pl" />

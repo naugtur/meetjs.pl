@@ -1,15 +1,19 @@
-import { Card, CardContent, CardFooter, CardTitle } from '@/components/ui/card';
-import Image from 'next/image';
-import Link from 'next/link';
-import { FaGithub, FaLinkedin } from 'react-icons/fa6';
+import React from 'react';
 
+// The Organizer interface needs to be exported so OrganizerCard.tsx can import it.
+// And also for src/data/organizers.ts
 export interface Organizer {
 	name: string;
 	image?: string;
 	email?: string;
 	linkedin?: string;
 	gitHub?: string;
+	role?: 'Brand Owner' | 'Core Team' | 'City Lead' | 'Organizer';
+	summitYears?: number[];
+	isBrandOwner?: boolean;
 }
+
+import { OrganizerCard } from './OrganizerCard';
 
 interface OrganizersProps {
 	city: string;
@@ -25,52 +29,7 @@ export const Organizers = ({ city, organizers }: OrganizersProps) => {
 			</p>
 			<div className="flex w-full flex-col justify-center gap-8 px-4 md:flex-row">
 				{organizers.map((organizer) => (
-					<Card
-						key={organizer.name}
-						className="w-full max-w-[15rem] overflow-hidden text-2xl font-bold md:w-1/3"
-					>
-						<CardContent className="flex items-center justify-center pt-6">
-							{organizer.image ? (
-								<Image
-									src={organizer.image}
-									alt={organizer.name}
-									width={150}
-									height={150}
-									className="rounded-md"
-								/>
-							) : (
-								<Image
-									src="/avatar-placeholder.png"
-									alt={organizer.name}
-									width={150}
-									height={150}
-									className="rounded-md"
-								/>
-							)}
-						</CardContent>
-						<CardFooter className="flex w-full flex-col items-center justify-center gap-1">
-							<CardTitle className="text-center">{organizer.name}</CardTitle>
-							<div className="flex items-center justify-center gap-1">
-								{organizer.email && (
-									<Link href={`mailto:${organizer.email}`} target="_blank">
-										<span className="sr-only">Email</span>@
-									</Link>
-								)}
-								{organizer.linkedin && (
-									<Link href={organizer.linkedin} target="_blank">
-										<span className="sr-only">Linkedin</span>
-										<FaLinkedin />
-									</Link>
-								)}
-								{organizer.gitHub && (
-									<Link href={organizer.gitHub} target="_blank">
-										<span className="sr-only">GitHub</span>
-										<FaGithub />
-									</Link>
-								)}
-							</div>
-						</CardFooter>
-					</Card>
+					<OrganizerCard key={organizer.name} organizer={organizer} />
 				))}
 			</div>
 		</section>

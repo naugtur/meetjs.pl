@@ -4,7 +4,7 @@ import { Organizers } from '../../../components/Orginizers';
 import { FAQ } from '../../../components/FAQ';
 import { CityBanner } from '../../../components/CityBanner';
 import { KatowiceFAQ } from './_FAQ';
-import { KatowiceOrganizers } from './_Organizers';
+import { getOrganizersByCity } from '../../../data/organizers';
 import { EventSection } from '../../../components/EventSection';
 
 export const metadata = {
@@ -49,4 +49,4 @@ export const metadata = {
 
 <FAQ questions={KatowiceFAQ} />
 
-<Organizers city="Katowice" organizers={KatowiceOrganizers} />
+<Organizers city="Katowice" organizers={getOrganizersByCity('katowice')} />
