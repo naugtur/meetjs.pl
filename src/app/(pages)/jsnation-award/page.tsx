@@ -77,9 +77,12 @@ export default function JSNationAwardPage() {
 							events, it&apos;s about the people who make them happen. 💚
 						</p>
 
-						<p>
+						<p className="mb-6">
 							The awards ceremony will take place on June 12 during JSNation
 							Conference in Amsterdam — keep your fingers crossed for us!
+						</p>
+						<p className="mt-6">
+							P.S. We&apos;d also like to give a big shoutout to our friends at Gdańsk TypeScript Meetup Group, who were nominated for the <Link href="https://osawards.com/react/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700">React Open Source Awards</Link> in the Community of the Year category! Congratulations to them! 🎉
 						</p>
 					</div>
 				</div>
