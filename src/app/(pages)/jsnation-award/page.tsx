@@ -1,0 +1,284 @@
+import Link from 'next/link';
+import {
+	Award,
+	Calendar,
+	MapPin,
+	ExternalLink,
+	Heart,
+	Users,
+} from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import {
+	Card,
+	CardContent,
+	CardFooter,
+	CardHeader,
+	CardTitle,
+} from '@/components/ui/card';
+
+export const metadata = {
+	title:
+		'meet.js Wrocław Nominated for JavaScript Open Source Awards | meet.js',
+	description:
+		'meet.js Wrocław has been nominated for the JavaScript Open Source Awards in the Community of the Year category for 2025!',
+};
+
+export default function JSNationAwardPage() {
+	return (
+		<div className="container mx-auto max-w-4xl py-16">
+			<div className="mb-12 text-center">
+				<div className="mb-6 flex justify-center">
+					<span className="inline-block rounded-full bg-green-100 p-3">
+						<Award className="h-12 w-12 text-green-600" />
+					</span>
+				</div>
+				<h1 className="mb-4 text-5xl font-bold tracking-tight">
+					We&apos;ve Been Nominated! 🎉
+				</h1>
+				<p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+					meet.js Wrocław has been nominated for the JavaScript Open Source
+					Awards in the{' '}
+					<span className="font-semibold text-green-600">
+						Community of the Year
+					</span>{' '}
+					category!
+				</p>
+			</div>
+
+			<div className="mb-16 overflow-hidden rounded-xl bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 p-1 shadow-xl">
+				<div className="bg-background p-8">
+					<div className="prose prose-lg mx-auto max-w-3xl">
+						<p className="lead mb-6 text-xl font-medium">
+							Grateful, surprised, and excited — meet.js Wrocław has been
+							nominated for the JavaScript Open Source Awards in the Community
+							of the Year category! 🚀
+						</p>
+
+						<p className="mb-6">
+							Thank you to everyone who&apos;s part of this community — for showing
+							up, sharing knowledge and helping build something meaningful
+							together. 🙌
+						</p>
+
+						<p className="mb-6">
+							Big appreciation goes to the people behind the scenes — doing the
+							work out of passion, after hours, consistently, and
+							wholeheartedly. Especially thanks to the organizers:
+						</p>
+
+						<ul className="mb-6 list-inside list-disc space-y-1">
+							<li>Cezary Dynak</li>
+							<li>Aleksandra Pawlus</li>
+							<li>Stanisław Synowiec</li>
+						</ul>
+
+						<p className="mb-6">
+							This is a shared success - meet.js Wrocław isn&apos;t just about
+							events, it&apos;s about the people who make them happen. 💚
+						</p>
+
+						<p>
+							The awards ceremony will take place on June 12 during JSNation
+							Conference in Amsterdam — keep your fingers crossed for us!
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-2">
+				<Card className="border-green-200 shadow-md">
+					<CardHeader className="pb-2">
+						<div className="flex items-center gap-2">
+							<Calendar className="h-5 w-5 text-green-600" />
+							<CardTitle>Award Ceremony</CardTitle>
+						</div>
+					</CardHeader>
+					<CardContent>
+						<p className="text-muted-foreground">
+							The JavaScript Open Source Awards ceremony will take place during
+							JSNation Conference 2025.
+						</p>
+						<div className="mt-4 rounded-md bg-muted p-3">
+							<p className="font-medium">June 12, 2025</p>
+							<p className="text-sm text-muted-foreground">
+								Amsterdam, Netherlands
+							</p>
+						</div>
+					</CardContent>
+					<CardFooter>
+						<Link
+							href="https://osawards.com/javascript/"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="inline-flex items-center gap-1 text-sm font-medium text-green-600 hover:text-green-700"
+						>
+							Visit JavaScript Open Source Awards{' '}
+							<ExternalLink className="h-3 w-3" />
+						</Link>
+					</CardFooter>
+				</Card>
+
+				<Card className="border-green-200 shadow-md">
+					<CardHeader className="pb-2">
+						<div className="flex items-center gap-2">
+							<Users className="h-5 w-5 text-green-600" />
+							<CardTitle>About meet.js Wrocław</CardTitle>
+						</div>
+					</CardHeader>
+					<CardContent>
+						<p className="text-muted-foreground">
+							meet.js Wrocław is a vibrant community of JavaScript developers in
+							Wrocław, Poland, organizing regular meetups, workshops, and
+							knowledge-sharing events.
+						</p>
+						<div className="mt-4 rounded-md bg-muted p-3">
+							<div className="flex items-center gap-2">
+								<MapPin className="h-4 w-4 text-muted-foreground" />
+								<p className="text-sm font-medium">Wrocław, Poland</p>
+							</div>
+							<div className="mt-2 flex items-center gap-2">
+								<Heart className="h-4 w-4 text-muted-foreground" />
+								<p className="text-sm font-medium">
+									Community-driven since 2011
+								</p>
+							</div>
+						</div>
+					</CardContent>
+					<CardFooter>
+						<Link
+							href="/city/wroclaw"
+							className="inline-flex items-center gap-1 text-sm font-medium text-green-600 hover:text-green-700"
+						>
+							Learn more about meet.js Wrocław
+						</Link>
+					</CardFooter>
+				</Card>
+			</div>
+
+			<div className="mb-16">
+				<h2 className="mb-6 text-center text-2xl font-bold">Other Nominees</h2>
+				<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+					<Card className="border-green-100 shadow-sm">
+						<CardHeader className="pb-2">
+							<CardTitle className="text-lg">JavaScript London</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p className="text-sm text-muted-foreground">
+								A community of people passionate about JavaScript. They believe
+								that the best way to learn is by doing, and it&apos;s also the most
+								rewarding.
+							</p>
+						</CardContent>
+						<CardFooter>
+							<Link
+								href="https://www.meetup.com/javascript-london/"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="inline-flex items-center gap-1 text-xs font-medium text-green-600 hover:text-green-700"
+							>
+								Visit Meetup Page <ExternalLink className="h-3 w-3" />
+							</Link>
+						</CardFooter>
+					</Card>
+
+					<Card className="border-green-100 bg-green-50 shadow-sm">
+						<CardHeader className="pb-2">
+							<CardTitle className="text-lg">meet.js Wrocław</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p className="text-sm text-muted-foreground">
+								Cyclic meetings of JavaScript and TypeScript programmers in
+								Wroclaw. You can count on lectures on both frontend (Angular,
+								React, Vue) and backend (Node.js, Deno, etc.).
+							</p>
+						</CardContent>
+						<CardFooter>
+							<Link
+								href="https://www.meetup.com/meet-js-wroclaw/"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="inline-flex items-center gap-1 text-xs font-medium text-green-600 hover:text-green-700"
+							>
+								Visit Meetup Page <ExternalLink className="h-3 w-3" />
+							</Link>
+						</CardFooter>
+					</Card>
+
+					<Card className="border-green-100 shadow-sm">
+						<CardHeader className="pb-2">
+							<CardTitle className="text-lg">AdvancedJS Amsterdam</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p className="text-sm text-muted-foreground">
+								Meetups about JavaScript, React, deep-dives, and the latest tech
+								updates to learn all tricks of the trade from the experts.
+							</p>
+						</CardContent>
+						<CardFooter>
+							<Link
+								href="https://www.meetup.com/advancedjs-amsterdam/"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="inline-flex items-center gap-1 text-xs font-medium text-green-600 hover:text-green-700"
+							>
+								Visit Meetup Page <ExternalLink className="h-3 w-3" />
+							</Link>
+						</CardFooter>
+					</Card>
+				</div>
+			</div>
+
+			<div className="mb-12 text-center">
+				<h2 className="mb-6 text-2xl font-bold">Share the News</h2>
+				<div className="flex flex-wrap justify-center gap-4">
+					<Button
+						variant="outline"
+						className="border-green-200 bg-green-50 text-green-700 hover:bg-green-100 hover:text-green-800"
+						asChild
+					>
+						<Link
+							href={`https://twitter.com/intent/tweet?text=${encodeURIComponent('Excited to share that meet.js Wrocław has been nominated for the JavaScript Open Source Awards in the Community of the Year category! 🏆 #MeetjsWroclaw #JavaScript #OpenSource #CommunityOfTheYear #JSNation')}`}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Share on Twitter
+						</Link>
+					</Button>
+					<Button
+						variant="outline"
+						className="border-green-200 bg-green-50 text-green-700 hover:bg-green-100 hover:text-green-800"
+						asChild
+					>
+						<Link
+							href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://meet.js.pl/jsnation-award')}`}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Share on LinkedIn
+						</Link>
+					</Button>
+					<Button
+						variant="outline"
+						className="border-green-200 bg-green-50 text-green-700 hover:bg-green-100 hover:text-green-800"
+						asChild
+					>
+						<Link
+							href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://meet.js.pl/jsnation-award')}`}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Share on Facebook
+						</Link>
+					</Button>
+				</div>
+			</div>
+
+			<div className="text-center">
+				<p className="text-muted-foreground">
+					Hashtags: #MeetjsWroclaw #JavaScript #OpenSource #CommunityOfTheYear
+					#JSNation #TechCommunity #Frontend
+				</p>
+			</div>
+		</div>
+	);
+}

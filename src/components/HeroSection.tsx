@@ -1,4 +1,5 @@
 import { RankingBanner } from '@/components/RankingBanner';
+import { AwardNomination } from '@/components/AwardNomination';
 import { Instagram, MessagesSquare } from 'lucide-react';
 
 export const HeroSection = () => {
@@ -9,6 +10,11 @@ export const HeroSection = () => {
 			<RankingBanner
 				href="https://crossweb.pl/blog/ranking-najpopularniejsze-wydarzenia-podcasty-wideo-cykle-w-crossweb-w-2024/"
 				text="🏆 #1 Tech Event Series in Poland (Crossweb 2024)"
+			/>
+
+			<AwardNomination
+				href="/jsnation-award"
+				text="Nominated for JavaScript Open Source Awards 2025! 🏆"
 			/>
 
 			<div className="col-start-1 row-start-1 mx-auto my-auto">
