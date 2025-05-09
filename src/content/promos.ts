@@ -2,13 +2,30 @@ import { Promo } from '../components/PromoBanners';
 
 export const promos: Promo[] = [
 	{
+		id: 'devdays-europe-2025',
+		message:
+			'DevDays Europe 2025: 15% off with code FINAL15!',
+		cta: '👉 Get 15% Off',
+		link: 'https://devdays.lt',
+		eventLink: 'https://devdays.lt',
+		expiresAt: '2025-05-19T23:59:59+02:00',
+		description:
+			'DevDays Europe is back for its 7th edition! Join us in Vilnius & online on May 20-23, 2025, for full-day workshops, 90+ content-packed sessions, global networking with 700+ participants, EXPO, and more! Use code FINAL15 for 15% off.',
+		gradient: 'bg-gradient-to-r from-indigo-600 via-blue-500 to-cyan-400',
+		icon: '👨🏻‍💻',
+		emojiRight: '🇱🇹',
+		country: 'Lithuania',
+		city: 'Vilnius',
+	},
+	{
 		id: 'cityjs-athens-2025',
 		message: 'CityJS Athens 2025: Use our promo code for a discount!',
 		cta: '👉 Get Discount',
 		link: 'https://ti.to/cityjs-conference/cityjs-athens-2025/discount/meetjs',
 		eventLink: 'https://cityjsconf.org/athens',
 		expiresAt: '2025-05-24T23:59:59+02:00',
-		description: 'CityJS Athens brings together JavaScript developers for two days of talks, workshops and networking in the heart of Greece. Join experts and enthusiasts to explore the latest in JS frameworks, tools, and best practices.',
+		description:
+			'CityJS Athens brings together JavaScript developers for two days of talks, workshops and networking in the heart of Greece. Join experts and enthusiasts to explore the latest in JS frameworks, tools, and best practices.',
 		gradient: 'bg-gradient-to-r from-blue via-purple to-green',
 		icon: '🚀',
 		emojiRight: '🇬🇷',
@@ -22,7 +39,8 @@ export const promos: Promo[] = [
 		link: 'https://ti.to/appjs/2025/discount/meetJS',
 		eventLink: 'https://appjs.co',
 		expiresAt: '2025-07-28T23:59:59+02:00',
-		description: 'App.js is Poland\'s premier conference focused on JavaScript for mobile and web applications. Join us in Kraków for hands-on workshops, in-depth technical talks, and networking with the top JS developers building modern applications.',
+		description:
+			"App.js is Poland's premier conference focused on JavaScript for mobile and web applications. Join us in Kraków for hands-on workshops, in-depth technical talks, and networking with the top JS developers building modern applications.",
 		gradient: 'bg-gradient-to-r from-indigo-500 via-blue-500 to-purple-500',
 		icon: '📱',
 		emojiRight: '🇵🇱',
@@ -36,7 +54,8 @@ export const promos: Promo[] = [
 		link: 'https://ti.to/RUC/react-universe-conf-2025/discount/meet.js10',
 		eventLink: 'https://react-universe.org',
 		expiresAt: '2025-09-02T23:59:59+02:00',
-		description: 'React Universe is the largest React conference in Central Europe, bringing together the global React community in Wrocław, Poland. Featuring speakers from Meta and leading React teams, this event covers everything from React core concepts to advanced patterns and the React ecosystem.',
+		description:
+			'React Universe is the largest React conference in Central Europe, bringing together the global React community in Wrocław, Poland. Featuring speakers from Meta and leading React teams, this event covers everything from React core concepts to advanced patterns and the React ecosystem.',
 		gradient: 'bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500',
 		icon: '🪐',
 		emojiRight: '🇵🇱',
@@ -50,7 +69,8 @@ export const promos: Promo[] = [
 		link: 'https://reg.connectevents.io/ConnectEvents/Vueconfus2025/redeem?voucher=VUE25MEETJS',
 		eventLink: 'https://vueconf.us',
 		expiresAt: '2025-05-21T23:59:59+02:00',
-		description: 'VueConf US is the premier Vue.js conference in North America, held in New Orleans on May 20-21, 2025. Join for two days of code playground, talks, and networking with the Vue community. Optional workshop day available on May 19. Save $199 with our exclusive discount!',
+		description:
+			'VueConf US is the premier Vue.js conference in North America, held in New Orleans on May 20-21, 2025. Join for two days of code playground, talks, and networking with the Vue community. Optional workshop day available on May 19. Save $199 with our exclusive discount!',
 		gradient: 'bg-gradient-to-r from-green-400 via-blue-500 to-purple-500',
 		icon: '🟩',
 		emojiRight: '🇺🇸',
