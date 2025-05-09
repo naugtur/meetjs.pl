@@ -5,6 +5,9 @@ const config: Config = {
 	safelist: [
 		'bg-gradient-to-r',
 		'from-indigo-500',
+		'from-pink-500',
+		'via-yellow-400',
+		'to-purple-500',
 		'from-indigo-600',
 		'via-blue-500',
 		'to-purple-500',

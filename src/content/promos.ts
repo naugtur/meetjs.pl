@@ -3,8 +3,7 @@ import { Promo } from '../components/PromoBanners';
 export const promos: Promo[] = [
 	{
 		id: 'devdays-europe-2025',
-		message:
-			'DevDays Europe 2025: 15% off with code FINAL15!',
+		message: 'DevDays Europe 2025: 15% off with code FINAL15!',
 		cta: '👉 Get 15% Off',
 		link: 'https://devdays.lt',
 		eventLink: 'https://devdays.lt',
@@ -76,5 +75,20 @@ export const promos: Promo[] = [
 		emojiRight: '🇺🇸',
 		country: 'USA',
 		city: 'New Orleans',
+	},
+	{
+		id: 'summit-community-partner-2025',
+		message: 'Become a Community Partner for the Women in Tech Summit!',
+		cta: '👉 Join the event',
+		link: 'https://womenintechsummit.pl',
+		eventLink: 'https://womenintechsummit.pl/join-the-event',
+		expiresAt: '2025-06-05T23:59:59+02:00',
+		description:
+			'As a Community Partner, your organisation will be promoted on our website and in our Summit ebook. You’ll receive free tickets, a package of 50% discounted tickets with a dedicated code, and more! In return, we ask for active event promotion in your community (mailings, social posts, and sharing on your website/groups). Support materials and graphics are provided for your channels.',
+		gradient: 'bg-gradient-to-r from-pink-500 via-yellow-400 to-purple-500',
+		icon: '👧',
+		emojiRight: '🇵🇱',
+		country: 'Poland',
+		city: 'Warsaw',
 	},
 ];
