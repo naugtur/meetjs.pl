@@ -67,3 +67,63 @@ export const promos: Promo[] = [
 - `emojiRight` (string): Emoji or icon on the right (optional)
 
 **After editing promos.ts, save and reload the page to see your changes.**
+
+## Brand Assets and Wallpapers
+
+The website includes a dedicated section for brand assets and wallpapers that can be easily downloaded and used by the community.
+
+You can access the brand assets page at:
+
+```
+https://meetjs.pl/brand
+```
+
+### Official Brand Assets Repository
+
+The complete collection of meet.js brand assets is available in the official GitHub repository:
+
+```
+https://github.com/meetjspl/brand-assets
+```
+
+This repository contains:
+- Multiple logo variants (SVG, PNG)
+- Monochrome versions (black, white)
+- Square logo variants
+- Logos with tagline
+- High-resolution print versions
+- Wallpapers in various resolutions
+- Social media assets
+
+### Adding Assets to the Website
+
+To add or update brand assets on the website:
+
+1. Place new logo files in `public/brand/logos/`
+2. Place new wallpaper files in `public/brand/wallpapers/`
+3. Update the assets list in `src/app/brand/page.tsx`
+
+Each asset should include:
+- Name
+- File path
+- Description
+- Dimensions (for wallpapers)
+- File size
+
+### Brand Colors
+
+#### Current Colors (Post-2023)
+
+The current official meet.js brand colors are:
+
+- Purple: `#2B1932` / rgb(43, 25, 50) - Primary background color
+- Green: `#BCD35D` / rgb(188, 211, 93) - Accent color for highlights and CTAs
+- Blue: `#219EAB` / rgb(33, 158, 171) - Secondary accent color
+
+#### Original Colors
+
+The original meet.js brand colors were:
+
+- Purple: `#2B1C34` / rgb(43, 28, 52) - Primary background color
+- Green: `#BDDB59` / rgb(189, 219, 89) - Accent color for highlights and CTAs
+- Blue: `#249FAB` / rgb(36, 159, 171) - Secondary accent color

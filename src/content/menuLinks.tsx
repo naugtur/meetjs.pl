@@ -8,6 +8,7 @@ export const menuLinks = [
 	{ name: 'events', href: '/events', current: false, external: false },
 	{ name: 'promos', href: '/promos', current: false, external: false },
 	{ name: 'about', href: '/about', current: false, external: false },
+	{ name: 'brand assets', href: '/brand', current: false, external: false },
 ];
 
 export const footerMenuLinks = [
@@ -31,6 +32,7 @@ export const footerMenuLinks = [
 		current: false,
 		external: false,
 	},
+	{ name: 'brand assets', href: '/brand', current: false, external: false },
 	{ name: 'contact', href: '#', current: false, external: false },
 	{
 		name: 'code of conduct',
