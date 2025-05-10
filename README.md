@@ -5,7 +5,7 @@ Website for meet.js community.
 ## Stack
 
 - [Next.js 15 (app router)](https://nextjs.org/docs)
-- [React 19](https://react.dev/)
+- [React 19](https://react.dev/) with [React Compiler RC](https://react.dev/blog/2025/04/21/react-compiler-rc)
 - [TypeScript](https://www.typescriptlang.org/docs)
 - [Tailwindcss](https://tailwindcss.com/docs)
 
@@ -23,6 +23,20 @@ Website for meet.js community.
 - For basic security all lifecycle scripts are disabled in .npmrc (also supported by pnpm) and in case the setting is not respected, `preinstall-always-fail` will error out to warn you.
 - Socket.dev warnings on PRs are enabled for the repo.
 
+## City Status Configuration
+
+The meet.js community is present in multiple cities across Poland. Each city status can be configured in:
+
+```
+src/content/cities.tsx
+```
+
+City statuses include:
+- **active**: Currently organizing meetups (Białystok, Gdańsk, Kraków, Łódź, Lublin, Poznań, Warszawa, Wrocław)
+- **coming-soon**: Planning to start meetups soon (Katowice)
+- **paused**: Temporarily inactive (Bielsko-Biała, Kielce, Szczecin, Toruń)
+- **typescript**: Special marker for TypeScript events (Gdańsk)
+
 ## Promo Banners: How to Add or Edit a Promo
 
 To add, edit, or remove promotional banners (e.g., for events or discounts), edit the file:
@@ -35,21 +49,25 @@ Below is an example of how multiple promo banners appear on the site:
 
 ![Example of multiple promo banners in meet.js website navigation, showing CityJS Athens, JSConf CFP, and Crossweb 2024 banners](docs/promo-banners-example.png)
 
-Each promo is an object in the exported `promos` array. Example:
+Each promo is an object in the exported `promos` array. Example of a current promo:
 
 ```ts
 import { Promo } from '../components/PromoBanners';
 
 export const promos: Promo[] = [
 	{
-		id: 'cityjs-athens-2025', // Unique string identifier
-		message: 'CityJS Athens 2025: Use our promo code for a discount!', // Banner message
+		id: 'react-universe-2025', // Unique string identifier
+		message: 'React Universe Conf 2025: 10% off with code meet.js10!', // Banner message
 		cta: '👉 Get Discount', // Call-to-action text
-		link: 'https://ti.to/cityjs-conference/cityjs-athens-2025/discount/meetjs', // Link for CTA
-		expiresAt: '2025-12-31T23:59:59+02:00', // Expiry date (ISO format)
-		gradient: 'bg-gradient-to-r from-blue via-purple to-green', // Optional Tailwind gradient class
-		icon: '🚀', // Optional emoji or icon (left side)
-		emojiRight: '🇬🇷', // Optional emoji (right side)
+		link: 'https://ti.to/RUC/react-universe-conf-2025/discount/meet.js10', // Link for CTA
+		eventLink: 'https://react-universe.org', // Link to event website
+		expiresAt: '2025-09-02T23:59:59+02:00', // Expiry date (ISO format)
+		description: 'React Universe is the largest React conference in Central Europe...', // Full description
+		gradient: 'bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500', // Optional Tailwind gradient class
+		icon: '🪐', // Optional emoji or icon (left side)
+		emojiRight: '🇵🇱', // Optional emoji (right side)
+		country: 'Poland', // Event country
+		city: 'Wrocław', // Event city
 	},
 	// Add more promos as needed
 ];
