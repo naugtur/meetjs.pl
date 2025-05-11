@@ -62,52 +62,88 @@ export const PromoBanners = ({ promos }: Props) => {
 	};
 
 	if (visiblePromos.length === 0) return null;
+
 	const promo = visiblePromos[0];
 
-	return (
-		<div className="relative">
-			<div
-				className={`relative ${promo.gradient || 'bg-gradient-to-r from-blue via-purple to-green'} animate-fade-in z-50 py-2 text-white shadow`}
-			>
-				<div className="mx-2 sm:mx-4">
-					<div className="flex flex-col items-center justify-between gap-2 text-center md:flex-row md:text-left">
-						{promo.icon ? (
-							<span className="mr-2 text-xl md:text-2xl">{promo.icon}</span>
-						) : promo.emojiLeft ? (
-							<span
-								className="mr-2 text-xl md:text-2xl"
-								role="img"
-								aria-label="emojiLeft"
-							>
-								{promo.emojiLeft}
-							</span>
-						) : null}
-						<span className="flex-1 text-sm font-medium md:text-base">
-							{promo.message}{' '}
-							{promo.emojiRight && (
-								<span role="img" aria-label="emojiRight">
-									{promo.emojiRight}
-								</span>
-							)}
-						</span>
-						<Link
-							href={promo.link}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="inline-block rounded-full bg-white px-3 py-1 text-xs font-semibold text-purple shadow transition-colors duration-150 hover:bg-purple hover:text-white md:text-sm"
-						>
-							{promo.cta}
-						</Link>
-						<button
-							onClick={() => handleClose(promo.id)}
-							aria-label="Dismiss promo banner"
-							className="absolute right-4 top-2 text-white hover:text-gray-200 focus:outline-none md:static md:right-auto md:top-auto"
-						>
-							<X className="h-6 w-6" />
-						</button>
-					</div>
+	return <PromoBanner promo={promo} close={() => handleClose(promo.id)} />;
+};
+
+const PromoBanner = ({ promo, close }: { promo: Promo; close: () => void }) => (
+	<div className="relative">
+		<div
+			className={`relative ${promo.gradient || 'bg-gradient-to-r from-blue via-purple to-green'} animate-fade-in z-50 py-2 text-white shadow`}
+		>
+			<div className="mx-2 sm:mx-4">
+				<div className="flex flex-col items-center justify-between gap-2 text-center md:flex-row md:text-left">
+					<Icon icon={promo.icon} emojiLeft={promo.emojiLeft} />
+
+					<span className="flex-1 text-sm font-medium md:text-base">
+						{promo.message} <RightEmoji emojiRight={promo.emojiRight} />
+					</span>
+
+					<LinkCTA link={promo.link}>{promo.cta}</LinkCTA>
+
+					<CloseButton close={close} />
 				</div>
 			</div>
 		</div>
-	);
+	</div>
+);
+
+const Icon = ({
+	icon,
+	emojiLeft,
+}: {
+	icon?: React.ReactNode;
+	emojiLeft?: string;
+}) => {
+	if (icon) return <span className="mr-2 text-xl md:text-2xl">{icon}</span>;
+
+	if (emojiLeft) {
+		return (
+			<span
+				className="mr-2 text-xl md:text-2xl"
+				role="img"
+				aria-label="emojiLeft"
+			>
+				{emojiLeft}
+			</span>
+		);
+	}
+
+	return null;
 };
+
+const RightEmoji = ({ emojiRight }: { emojiRight?: string }) =>
+	emojiRight ? (
+		<span role="img" aria-label="emojiRight">
+			{emojiRight}
+		</span>
+	) : null;
+
+const LinkCTA = ({
+	link,
+	children: cta,
+}: {
+	link: string;
+	children: React.ReactNode;
+}) => (
+	<Link
+		href={link}
+		target="_blank"
+		rel="noopener noreferrer"
+		className="inline-block rounded-full bg-white px-3 py-1 text-xs font-semibold text-purple shadow transition-colors duration-150 hover:bg-purple hover:text-white md:text-sm"
+	>
+		{cta}
+	</Link>
+);
+
+const CloseButton = ({ close }: { close: () => void }) => (
+	<button
+		onClick={close}
+		aria-label="Dismiss promo banner"
+		className="absolute right-4 top-2 text-white hover:text-gray-200 focus:outline-none md:static md:right-auto md:top-auto"
+	>
+		<X className="h-6 w-6" />
+	</button>
+);
