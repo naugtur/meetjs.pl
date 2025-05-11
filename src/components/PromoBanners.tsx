@@ -20,7 +20,30 @@ export type Promo = {
 	city?: string;
 };
 
-const getPromoDismissedKey = (id: string) => `promoBannerDismissed_${id}`;
+class DismissedPromo {
+	static getKey = (promoId: string) => `promoBannerDismissed_${promoId}`;
+
+	static get = (promoId: string): string | null => {
+		return typeof window !== 'undefined'
+			? localStorage.getItem(DismissedPromo.getKey(promoId))
+			: null;
+	};
+
+	static set = (promoId: string) => {
+		if (typeof window !== 'undefined') {
+			localStorage.setItem(DismissedPromo.getKey(promoId), '1');
+		}
+	};
+}
+
+const isPromoExpired = (promo: Promo) => new Date(promo.expiresAt) < new Date();
+const isPromoDismissed = (promo: Promo) =>
+	Boolean(DismissedPromo.get(promo.id));
+
+const shouldPromoBeVisible = (promo: Promo) => {
+	if (isPromoExpired(promo) || isPromoDismissed(promo)) return false;
+	return true;
+};
 
 interface Props {
 	promos: Promo[];
@@ -30,25 +53,12 @@ export const PromoBanners = ({ promos }: Props) => {
 	const [visiblePromos, setVisiblePromos] = useState<Promo[]>([]);
 
 	useEffect(() => {
-		const now = new Date();
-		setVisiblePromos(
-			promos.filter((promo) => {
-				if (new Date(promo.expiresAt) < now) return false;
-				if (
-					typeof window !== 'undefined' &&
-					localStorage.getItem(getPromoDismissedKey(promo.id))
-				)
-					return false;
-				return true;
-			}),
-		);
+		setVisiblePromos(promos.filter(shouldPromoBeVisible));
 	}, [promos]);
 
 	const handleClose = (id: string) => {
 		setVisiblePromos((prev) => prev.filter((p) => p.id !== id));
-		if (typeof window !== 'undefined') {
-			localStorage.setItem(getPromoDismissedKey(id), '1');
-		}
+		DismissedPromo.set(id);
 	};
 
 	if (visiblePromos.length === 0) return null;
@@ -57,7 +67,6 @@ export const PromoBanners = ({ promos }: Props) => {
 	return (
 		<div className="relative">
 			<div
-				key={promo.id}
 				className={`relative ${promo.gradient || 'bg-gradient-to-r from-blue via-purple to-green'} animate-fade-in z-50 py-2 text-white shadow`}
 			>
 				<div className="mx-2 sm:mx-4">
