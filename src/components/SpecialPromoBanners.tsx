@@ -1,8 +1,9 @@
 'use client';
 
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import type { Promo } from '@/components/PromoBanners';
+import type { Promo } from '@/types/promo';
+import { PromoFilters } from '@/components/PromoFilters';
+import { PromoCard } from '@/components/PromoCard';
 
 interface SpecialPromoBannersProps {
 	promos: Promo[];
@@ -10,140 +11,71 @@ interface SpecialPromoBannersProps {
 
 export function SpecialPromoBanners({ promos }: SpecialPromoBannersProps) {
 	const [visiblePromos, setVisiblePromos] = useState<Promo[]>([]);
+	const [filteredPromos, setFilteredPromos] = useState<Promo[]>([]);
+	const [selectedCountries, setSelectedCountries] = useState<string[]>([]);
+	const [availableCountries, setAvailableCountries] = useState<string[]>([]);
+
+	useEffect(() => {
+		const countries = [
+			...new Set(promos.map((promo) => promo.country).filter(Boolean)),
+		];
+		setAvailableCountries(countries as string[]);
+	}, [promos]);
 
 	useEffect(() => {
 		const now = new Date();
 		setVisiblePromos(
 			promos
 				.filter((promo) => new Date(promo.expiresAt) >= now)
-				.sort((a, b) => new Date(a.expiresAt).getTime() - new Date(b.expiresAt).getTime())
+				.sort(
+					(a, b) =>
+						new Date(a.expiresAt).getTime() - new Date(b.expiresAt).getTime(),
+				),
 		);
 	}, [promos]);
 
+	useEffect(() => {
+		if (selectedCountries.length === 0) {
+			setFilteredPromos(visiblePromos);
+		} else {
+			setFilteredPromos(
+				visiblePromos.filter(
+					(promo) => promo.country && selectedCountries.includes(promo.country),
+				),
+			);
+		}
+	}, [visiblePromos, selectedCountries]);
+
 	if (visiblePromos.length === 0) return null;
 
-	// Helper function to extract domain from URL
-	const getDomain = (url: string) => {
-		try {
-			const domain = new URL(url).hostname;
-			return domain.startsWith('www.') ? domain.substring(4) : domain;
-		} catch (e) {
-			console.error('Failed to extract domain from URL:', e);
-			return url;
-		}
+	const toggleCountry = (country: string) => {
+		setSelectedCountries((prev) =>
+			prev.includes(country)
+				? prev.filter((c) => c !== country)
+				: [...prev, country],
+		);
 	};
 
-	// Format date to be more readable
-	const formatDate = (dateString: string) => {
-		const date = new Date(dateString);
-		return date.toLocaleDateString('en-GB', {
-			year: 'numeric',
-			month: 'long',
-			day: 'numeric',
-		});
+	const clearCountryFilters = () => {
+		setSelectedCountries([]);
 	};
 
 	return (
-		<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-1">
-			{visiblePromos.map((promo) => {
-				// Get expiry date for the promo
-				const expiryDate = formatDate(promo.expiresAt);
+		<div className="space-y-6">
+			<PromoFilters
+				availableCountries={availableCountries}
+				selectedCountries={selectedCountries}
+				onCountryToggle={toggleCountry}
+				onClearFilters={clearCountryFilters}
+				filteredCount={filteredPromos.length}
+				totalCount={visiblePromos.length}
+			/>
 
-				return (
-					<div
-						key={promo.id}
-						className={`relative overflow-hidden rounded-xl border-2 border-purple ${promo.gradient || 'bg-gradient-to-r from-green-400 via-blue-500 to-purple-500'} shadow-lg transition-transform hover:scale-[1.01]`}
-					>
-						{/* Header with icon and title */}
-						<div className="flex items-center gap-3 border-b border-white/20 p-4">
-							<div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-2xl">
-								{promo.icon || '🎟️'}
-							</div>
-							<div className="flex-1">
-								<h3 className="text-xl font-bold text-white drop-shadow-md">
-									{promo.message}
-								</h3>
-							</div>
-						</div>
-
-						{/* Event details */}
-						<div className="p-4 text-white">
-							{/* Description if available */}
-							{promo.description && (
-								<div className="mb-4">
-									<p className="text-sm text-white/70">About</p>
-									<p className="text-sm leading-relaxed">{promo.description}</p>
-								</div>
-							)}
-
-							<div className="mb-4 grid grid-cols-2 gap-4">
-								{promo.city && promo.country && (
-									<div>
-										<p className="text-sm text-white/70">Location</p>
-										<div className="flex items-center gap-1">
-											<span className="font-medium">{promo.city}</span>
-											<span className="text-white/70">•</span>
-											<div className="flex items-center gap-1">
-												<span className="font-medium">{promo.country}</span>
-												<span role="img" aria-label={promo.country}>
-													{promo.emojiRight}
-												</span>
-											</div>
-										</div>
-									</div>
-								)}
-								<div>
-									<p className="text-sm text-white/70">Valid Until</p>
-									<p className="font-medium">{expiryDate}</p>
-								</div>
-							</div>
-
-							{/* Links section */}
-							<div className="mb-4 grid grid-cols-1 gap-2 sm:grid-cols-2">
-								{/* Event website link */}
-								<div>
-									<p className="text-sm text-white/70">Event Website</p>
-									<a
-										href={promo.eventLink || promo.ticketLink}
-										target="_blank"
-										rel="noopener noreferrer"
-										className="font-medium text-white underline hover:text-white/90"
-									>
-										{getDomain(promo.eventLink || promo.ticketLink)}
-									</a>
-								</div>
-
-								{/* Tickets link - only show separately if different from event link */}
-								{promo.eventLink && (
-									<div>
-										<p className="text-sm text-white/70">Tickets</p>
-										<a
-											href={promo.ticketLink}
-											target="_blank"
-											rel="noopener noreferrer"
-											className="font-medium text-white underline hover:text-white/90"
-										>
-											{getDomain(promo.ticketLink)}
-										</a>
-									</div>
-								)}
-							</div>
-						</div>
-
-						{/* CTA button */}
-						<div className="border-t border-white/20 bg-black/10 p-4">
-							<Link
-								href={promo.ticketLink}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="block w-full rounded-lg bg-white py-2 text-center font-semibold text-purple shadow transition-colors hover:bg-purple hover:text-white"
-							>
-								{promo.cta}
-							</Link>
-						</div>
-					</div>
-				);
-			})}
+			<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
+				{filteredPromos.map((promo) => (
+					<PromoCard key={promo.id} promo={promo} />
+				))}
+			</div>
 		</div>
 	);
 }

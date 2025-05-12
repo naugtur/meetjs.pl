@@ -1,4 +1,4 @@
-import { Promo } from '../components/PromoBanners';
+import { Promo } from '../types/promo';
 
 export const promos: Promo[] = [
 	{
