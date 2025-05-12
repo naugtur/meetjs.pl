@@ -14,7 +14,9 @@ export function SpecialPromoBanners({ promos }: SpecialPromoBannersProps) {
 	useEffect(() => {
 		const now = new Date();
 		setVisiblePromos(
-			promos.filter((promo) => new Date(promo.expiresAt) >= now),
+			promos
+				.filter((promo) => new Date(promo.expiresAt) >= now)
+				.sort((a, b) => new Date(a.expiresAt).getTime() - new Date(b.expiresAt).getTime())
 		);
 	}, [promos]);
 
