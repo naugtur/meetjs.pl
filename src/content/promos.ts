@@ -3,9 +3,9 @@ import { Promo } from '../components/PromoBanners';
 export const promos: Promo[] = [
 	{
 		id: 'devdays-europe-2025',
-		message: 'DevDays Europe 2025: 15% off with code FINAL15!',
+		message: 'DevDays Europe 2025: 15% off with code meet.js15!',
 		cta: '👉 Get 15% Off',
-		link: 'https://devdays.lt',
+		ticketLink: 'https://devdays.lt',
 		eventLink: 'https://devdays.lt',
 		expiresAt: '2025-05-19T23:59:59+02:00',
 		description:
@@ -15,12 +15,14 @@ export const promos: Promo[] = [
 		emojiRight: '🇱🇹',
 		country: 'Lithuania',
 		city: 'Vilnius',
+		discountCode: 'meet.js15',
 	},
 	{
 		id: 'cityjs-athens-2025',
-		message: 'CityJS Athens 2025: Use our promo code for a discount!',
+		message: 'CityJS Athens 2025: Use meet.js promo code for a discount!',
 		cta: '👉 Get Discount',
-		link: 'https://ti.to/cityjs-conference/cityjs-athens-2025/discount/meetjs',
+		ticketLink:
+			'https://ti.to/cityjs-conference/cityjs-athens-2025/discount/meetjs',
 		eventLink: 'https://cityjsconf.org/athens',
 		expiresAt: '2025-05-24T23:59:59+02:00',
 		description:
@@ -30,12 +32,13 @@ export const promos: Promo[] = [
 		emojiRight: '🇬🇷',
 		country: 'Greece',
 		city: 'Athens',
+		discountCode: 'meetjs',
 	},
 	{
 		id: 'appjs-2025',
 		message: 'App.js 2025: Exclusive 15% discount for meet.js community!',
 		cta: '👉 Get 15% Off',
-		link: 'https://ti.to/appjs/2025/discount/meetJS',
+		ticketLink: 'https://ti.to/appjs/2025/discount/meetJS',
 		eventLink: 'https://appjs.co',
 		expiresAt: '2025-07-28T23:59:59+02:00',
 		description:
@@ -45,12 +48,13 @@ export const promos: Promo[] = [
 		emojiRight: '🇵🇱',
 		country: 'Poland',
 		city: 'Kraków',
+		discountCode: 'meetJS',
 	},
 	{
 		id: 'react-universe-2025',
 		message: 'React Universe Conf 2025: 10% off with code meet.js10!',
 		cta: '👉 Get Discount',
-		link: 'https://ti.to/RUC/react-universe-conf-2025/discount/meet.js10',
+		ticketLink: 'https://ti.to/RUC/react-universe-conf-2025/discount/meet.js10',
 		eventLink: 'https://react-universe.org',
 		expiresAt: '2025-09-02T23:59:59+02:00',
 		description:
@@ -60,12 +64,14 @@ export const promos: Promo[] = [
 		emojiRight: '🇵🇱',
 		country: 'Poland',
 		city: 'Wrocław',
+		discountCode: 'meet.js10',
 	},
 	{
 		id: 'vueconfus-2025',
 		message: 'VueConf US 2025: Use code VUE25MEETJS for a special discount!',
 		cta: '👉 Redeem Voucher',
-		link: 'https://reg.connectevents.io/ConnectEvents/Vueconfus2025/redeem?voucher=VUE25MEETJS',
+		ticketLink:
+			'https://reg.connectevents.io/ConnectEvents/Vueconfus2025/redeem?voucher=VUE25MEETJS',
 		eventLink: 'https://vueconf.us',
 		expiresAt: '2025-05-21T23:59:59+02:00',
 		description:
@@ -75,20 +81,22 @@ export const promos: Promo[] = [
 		emojiRight: '🇺🇸',
 		country: 'USA',
 		city: 'New Orleans',
+		discountCode: 'VUE25MEETJS',
 	},
 	{
 		id: 'summit-community-partner-2025',
-		message: 'Become a Community Partner for the Women in Tech Summit!',
-		cta: '👉 Join the event',
-		link: 'https://womenintechsummit.pl',
+		message: 'Women in Tech Summit: Use code SUMMIT_2025MEET.JS50 by May 17!',
+		cta: '👉 Get tickets',
+		ticketLink: 'https://go.womenintechsummit.pl/buy?inperson=1',
 		eventLink: 'https://womenintechsummit.pl/join-the-event',
-		expiresAt: '2025-06-05T23:59:59+02:00',
+		expiresAt: '2025-05-17T23:59:59+02:00',
 		description:
-			'As a Community Partner, your organisation will be promoted on our website and in our Summit ebook. You’ll receive free tickets, a package of 50% discounted tickets with a dedicated code, and more! In return, we ask for active event promotion in your community (mailings, social posts, and sharing on your website/groups). Support materials and graphics are provided for your channels.',
+			'As a Community Partner for the Women in Tech Summit, meet.js members can use code SUMMIT_2025MEET.JS50 for 50% off tickets until May 17, 2025. Free tickets are also available - grab them as soon as possible for the best experience! The Summit offers networking with tech professionals, inspiring talks, and workshops. Join us and be part of this empowering event!',
 		gradient: 'bg-gradient-to-r from-pink-500 via-yellow-400 to-purple-500',
 		icon: '👧',
 		emojiRight: '🇵🇱',
 		country: 'Poland',
 		city: 'Warsaw',
+		discountCode: 'SUMMIT_2025MEET.JS50',
 	},
 ];

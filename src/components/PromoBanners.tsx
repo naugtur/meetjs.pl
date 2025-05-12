@@ -8,7 +8,7 @@ export type Promo = {
 	id: string;
 	message: string;
 	cta: string;
-	link: string; // Link to tickets/registration
+	ticketLink: string; // Link to tickets/registration
 	eventLink?: string; // Link to the main event website
 	expiresAt: string; // ISO string
 	description?: string; // Short description of the event
@@ -18,6 +18,7 @@ export type Promo = {
 	emojiRight?: string;
 	country?: string;
 	city?: string;
+	discountCode?: string; // Promo/discount code for the event
 };
 
 class DismissedPromo {
@@ -81,7 +82,7 @@ const PromoBanner = ({ promo, close }: { promo: Promo; close: () => void }) => (
 						{promo.message} <RightEmoji emojiRight={promo.emojiRight} />
 					</span>
 
-					<LinkCTA link={promo.link}>{promo.cta}</LinkCTA>
+					<LinkCTA link={promo.ticketLink}>{promo.cta}</LinkCTA>
 
 					<CloseButton close={close} />
 				</div>

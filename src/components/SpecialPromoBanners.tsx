@@ -102,12 +102,12 @@ export function SpecialPromoBanners({ promos }: SpecialPromoBannersProps) {
 								<div>
 									<p className="text-sm text-white/70">Event Website</p>
 									<a
-										href={promo.eventLink || promo.link}
+										href={promo.eventLink || promo.ticketLink}
 										target="_blank"
 										rel="noopener noreferrer"
 										className="font-medium text-white underline hover:text-white/90"
 									>
-										{getDomain(promo.eventLink || promo.link)}
+										{getDomain(promo.eventLink || promo.ticketLink)}
 									</a>
 								</div>
 
@@ -116,12 +116,12 @@ export function SpecialPromoBanners({ promos }: SpecialPromoBannersProps) {
 									<div>
 										<p className="text-sm text-white/70">Tickets</p>
 										<a
-											href={promo.link}
+											href={promo.ticketLink}
 											target="_blank"
 											rel="noopener noreferrer"
 											className="font-medium text-white underline hover:text-white/90"
 										>
-											{getDomain(promo.link)}
+											{getDomain(promo.ticketLink)}
 										</a>
 									</div>
 								)}
@@ -131,7 +131,7 @@ export function SpecialPromoBanners({ promos }: SpecialPromoBannersProps) {
 						{/* CTA button */}
 						<div className="border-t border-white/20 bg-black/10 p-4">
 							<Link
-								href={promo.link}
+								href={promo.ticketLink}
 								target="_blank"
 								rel="noopener noreferrer"
 								className="block w-full rounded-lg bg-white py-2 text-center font-semibold text-purple shadow transition-colors hover:bg-purple hover:text-white"
