@@ -2,241 +2,374 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { buttonVariants } from '@/components/ui/button';
-import { Calendar, Tag, User } from 'lucide-react';
+import { Calendar, Search, ChevronLeft, ChevronRight } from 'lucide-react';
+import { BLOG_POSTS, getAllTags, formatBlogDate } from '@/content/blogPosts';
 
-// Mock blog data - in a real implementation, this would come from a CMS or API
-const BLOG_POSTS = [
-  {
-    id: 'getting-started-with-meetjs',
-    title: 'Getting Started with meet.js: A Guide for New Attendees',
-    excerpt: 'New to meet.js? This guide will help you make the most of your first meetup experience.',
-    date: '2025-01-15',
-    author: 'Kamil Dzieniszewski',
-    authorImage: 'https://avatars.githubusercontent.com/u/12345678',
-    tags: ['community', 'beginners', 'meetups'],
-    image: '/conference.jpg',
-    readTime: '5 min read',
-  },
-  {
-    id: 'typescript-best-practices-2025',
-    title: 'TypeScript Best Practices for 2025',
-    excerpt: 'Discover the latest TypeScript patterns and practices that will make your code more maintainable.',
-    date: '2025-02-20',
-    author: 'Zbyszek Tenerowicz',
-    authorImage: 'https://avatars.githubusercontent.com/u/87654321',
-    tags: ['typescript', 'best-practices', 'development'],
-    image: '/conference.jpg',
-    readTime: '8 min read',
-  },
-  {
-    id: 'react-19-features',
-    title: 'What\'s New in React 19: Features You Should Know',
-    excerpt: 'React 19 brings exciting new features. Learn how to leverage them in your projects.',
-    date: '2025-03-10',
-    author: 'Stanisław Synowiec',
-    authorImage: 'https://avatars.githubusercontent.com/u/13579246',
-    tags: ['react', 'javascript', 'frontend'],
-    image: '/conference.jpg',
-    readTime: '7 min read',
-  },
-  {
-    id: 'meetjs-summit-2025-recap',
-    title: 'meet.js Summit 2025: Event Recap and Highlights',
-    excerpt: 'Missed the meet.js Summit? Here\'s a comprehensive recap of the talks, workshops, and networking opportunities.',
-    date: '2025-04-05',
-    author: 'Olaf Krawczyk',
-    authorImage: 'https://avatars.githubusercontent.com/u/24612562',
-    tags: ['events', 'summit', 'conference'],
-    image: '/conference.jpg',
-    readTime: '10 min read',
-  },
-];
+// Metadata for the blog page
+const metadata = {
+	title: 'Blog | meet.js - JavaScript Community in Poland',
+	description:
+		'Stay updated with the latest JavaScript trends, event recaps, and community news from the meet.js community in Poland.',
+	keywords: [
+		'JavaScript blog',
+		'meet.js',
+		'web development',
+		'frontend',
+		'Poland tech community',
+	],
+	openGraph: {
+		title: 'meet.js Blog - JavaScript Community in Poland',
+		description:
+			'Articles, tutorials and event recaps from the largest JavaScript community in Poland.',
+		url: 'https://meetjs.pl/blog',
+		siteName: 'meet.js',
+		locale: 'en_US',
+		type: 'website',
+		images: [
+			{
+				url: 'https://meetjs.pl/conference.jpg',
+				width: 1200,
+				height: 630,
+				alt: 'meet.js blog',
+			},
+		],
+	},
+	twitter: {
+		card: 'summary_large_image',
+		title: 'meet.js Blog - JavaScript Community in Poland',
+		description:
+			'Articles, tutorials and event recaps from the largest JavaScript community in Poland.',
+		images: ['https://meetjs.pl/conference.jpg'],
+	},
+};
 
-// Tags for filtering
-const ALL_TAGS = Array.from(new Set(BLOG_POSTS.flatMap(post => post.tags))).sort();
+// Constants
+const POSTS_PER_PAGE = 6;
+const ALL_TAGS = getAllTags();
 
 export default function BlogPage() {
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const [searchTerm, setSearchTerm] = useState('');
-  
-  // Filter posts based on selected tags and search term
-  const filteredPosts = BLOG_POSTS.filter(post => {
-    // Filter by tags
-    if (selectedTags.length > 0 && !selectedTags.some(tag => post.tags.includes(tag))) {
-      return false;
-    }
-    
-    // Filter by search term
-    if (searchTerm && !post.title.toLowerCase().includes(searchTerm.toLowerCase()) && 
-        !post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())) {
-      return false;
-    }
-    
-    return true;
-  });
-  
-  const toggleTag = (tag: string) => {
-    setSelectedTags(prev => 
-      prev.includes(tag) 
-        ? prev.filter(t => t !== tag) 
-        : [...prev, tag]
-    );
-  };
-  
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
+	const searchParams = useSearchParams();
+	const [selectedTags, setSelectedTags] = useState<string[]>([]);
+	const [searchTerm, setSearchTerm] = useState('');
+	const [currentPage, setCurrentPage] = useState(1);
 
-  return (
-    <div className="container mx-auto px-4 py-12">
-      <div className="mb-12 text-center">
-        <h1 className="mb-4 text-4xl font-bold">meet.js Blog</h1>
-        <p className="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-300">
-          Stay updated with the latest JavaScript trends, event recaps, and community news
-        </p>
-      </div>
-      
-      {/* Search and filters */}
-      <div className="mb-8 flex flex-col gap-6">
-        {/* Search bar */}
-        <div className="mx-auto w-full max-w-md">
-          <div className="relative">
-            <input
-              type="text"
-              placeholder="Search articles..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full rounded-full border border-gray-300 py-2 pl-10 pr-4 focus:border-blue focus:outline-none focus:ring-1 focus:ring-blue"
-              aria-label="Search articles"
-            />
-            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </span>
-          </div>
-        </div>
-        
-        {/* Tags */}
-        <div className="flex flex-wrap justify-center gap-2">
-          {ALL_TAGS.map(tag => (
-            <button
-              key={tag}
-              onClick={() => toggleTag(tag)}
-              className={`rounded-full px-3 py-1 text-sm transition-colors ${
-                selectedTags.includes(tag)
-                  ? 'bg-blue text-white'
-                  : 'bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600'
-              }`}
-            >
-              #{tag}
-            </button>
-          ))}
-          {selectedTags.length > 0 && (
-            <button
-              onClick={() => setSelectedTags([])}
-              className="rounded-full px-3 py-1 text-sm text-blue hover:underline"
-            >
-              Clear filters
-            </button>
-          )}
-        </div>
-      </div>
-      
-      {/* Blog posts grid */}
-      {filteredPosts.length > 0 ? (
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {filteredPosts.map(post => (
-            <article key={post.id} className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-gray-700 dark:bg-gray-800">
-              <div className="relative h-48 w-full">
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-5">
-                <div className="mb-3 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-                  <span className="flex items-center gap-1">
-                    <Calendar className="h-4 w-4" />
-                    {formatDate(post.date)}
-                  </span>
-                  <span>•</span>
-                  <span>{post.readTime}</span>
-                </div>
-                
-                <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
-                  <Link href={`/blog/${post.id}`} className="hover:text-blue">
-                    {post.title}
-                  </Link>
-                </h2>
-                
-                <p className="mb-4 text-gray-600 dark:text-gray-300">
-                  {post.excerpt}
-                </p>
-                
-                <div className="mb-4 flex flex-wrap gap-2">
-                  {post.tags.map(tag => (
-                    <span 
-                      key={tag} 
-                      className="cursor-pointer rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-800 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600"
-                      onClick={() => toggleTag(tag)}
-                    >
-                      #{tag}
-                    </span>
-                  ))}
-                </div>
-                
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <div className="relative h-8 w-8 overflow-hidden rounded-full">
-                      <Image
-                        src={post.authorImage}
-                        alt={post.author}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <span className="text-sm font-medium">{post.author}</span>
-                  </div>
-                  
-                  <Link 
-                    href={`/blog/${post.id}`}
-                    className={buttonVariants({
-                      variant: 'outline',
-                      size: 'sm',
-                      className: 'text-blue hover:bg-blue/10 hover:text-blue'
-                    })}
-                  >
-                    Read more
-                  </Link>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      ) : (
-        <div className="py-12 text-center">
-          <p className="mb-4 text-xl">No articles found matching your criteria</p>
-          <button 
-            onClick={() => {
-              setSelectedTags([]);
-              setSearchTerm('');
-            }}
-            className="text-blue hover:underline"
-          >
-            Clear all filters
-          </button>
-        </div>
-      )}
-    </div>
-  );
+	// Initialize from URL parameters
+	useEffect(() => {
+		const tagParam = searchParams.get('tag');
+		if (tagParam && ALL_TAGS.includes(tagParam)) {
+			setSelectedTags([tagParam]);
+		}
+
+		const searchParam = searchParams.get('search');
+		if (searchParam) {
+			setSearchTerm(searchParam);
+		}
+
+		const pageParam = searchParams.get('page');
+		if (pageParam && !isNaN(Number(pageParam))) {
+			setCurrentPage(Number(pageParam));
+		}
+	}, [searchParams]);
+
+	// Filter posts based on selected tags and search term
+	const filteredPosts = BLOG_POSTS.filter((post) => {
+		// Filter by tags
+		if (
+			selectedTags.length > 0 &&
+			!selectedTags.some((tag) => post.tags.includes(tag))
+		) {
+			return false;
+		}
+
+		// Filter by search term
+		if (
+			searchTerm &&
+			!post.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
+			!post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())
+		) {
+			return false;
+		}
+
+		return true;
+	});
+
+	// Sort posts by date (newest first)
+	const sortedPosts = [...filteredPosts].sort(
+		(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+	);
+
+	// Pagination
+	const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
+	const paginatedPosts = sortedPosts.slice(
+		(currentPage - 1) * POSTS_PER_PAGE,
+		currentPage * POSTS_PER_PAGE,
+	);
+
+	const toggleTag = (tag: string) => {
+		setSelectedTags((prev) =>
+			prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag],
+		);
+		setCurrentPage(1); // Reset to first page when changing filters
+	};
+
+	const handleSearch = (e: React.FormEvent) => {
+		e.preventDefault();
+		setCurrentPage(1); // Reset to first page when searching
+	};
+
+	const clearFilters = () => {
+		setSelectedTags([]);
+		setSearchTerm('');
+		setCurrentPage(1);
+	};
+
+	return (
+		<div className="mx-auto max-w-7xl px-4 py-12">
+			{/* JSON-LD structured data for blog */}
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{
+					__html: JSON.stringify({
+						'@context': 'https://schema.org',
+						'@type': 'Blog',
+						name: 'meet.js Blog',
+						description:
+							'Articles, tutorials and event recaps from the largest JavaScript community in Poland.',
+						url: 'https://meetjs.pl/blog',
+						publisher: {
+							'@type': 'Organization',
+							name: 'meet.js',
+							logo: {
+								'@type': 'ImageObject',
+								url: 'https://meetjs.pl/logo.png',
+							},
+						},
+						blogPost: sortedPosts.slice(0, 10).map((post) => ({
+							'@type': 'BlogPosting',
+							headline: post.title,
+							description: post.excerpt,
+							datePublished: post.date,
+							author: {
+								'@type': 'Person',
+								name: post.author,
+							},
+							url: `https://meetjs.pl/blog/${post.id}`,
+						})),
+					}),
+				}}
+			/>
+
+			<div className="mb-12 text-center">
+				<h1 className="mb-4 text-4xl font-bold">meet.js Blog</h1>
+				<p className="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-300">
+					Stay updated with the latest JavaScript trends, event recaps, and
+					community news
+				</p>
+			</div>
+
+			{/* Search and filters */}
+			<div className="mb-8 flex flex-col gap-6">
+				{/* Search bar */}
+				<div className="mx-auto w-full max-w-md">
+					<form onSubmit={handleSearch} className="relative">
+						<Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-500" />
+						<input
+							type="text"
+							placeholder="Search articles..."
+							value={searchTerm}
+							onChange={(e) => setSearchTerm(e.target.value)}
+							className="w-full rounded-full border border-gray-300 py-2 pl-10 pr-4 focus:border-blue focus:outline-none focus:ring-1 focus:ring-blue"
+							aria-label="Search articles"
+						/>
+						<button
+							type="submit"
+							className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-purple p-1 text-black dark:bg-green"
+							aria-label="Search"
+						>
+							<Search className="h-4 w-4" />
+						</button>
+					</form>
+				</div>
+
+				{/* Tags */}
+				<div className="flex flex-wrap justify-center gap-2">
+					{ALL_TAGS.map((tag) => (
+						<button
+							key={tag}
+							onClick={() => toggleTag(tag)}
+							className={`rounded-full px-3 py-1 text-sm transition-colors ${
+								selectedTags.includes(tag)
+									? 'bg-purple text-black dark:bg-green dark:text-black'
+									: 'bg-purple/20 text-purple hover:bg-purple/30 dark:bg-green/20 dark:text-green dark:hover:bg-green/30'
+							}`}
+							aria-pressed={selectedTags.includes(tag)}
+						>
+							#{tag}
+						</button>
+					))}
+					{(selectedTags.length > 0 || searchTerm) && (
+						<button
+							onClick={clearFilters}
+							className="rounded-full px-3 py-1 text-sm text-purple hover:underline dark:text-green"
+							aria-label="Clear all filters"
+						>
+							Clear filters
+						</button>
+					)}
+				</div>
+			</div>
+
+			{/* Blog posts grid */}
+			{filteredPosts.length > 0 ? (
+				<>
+					<div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+						{paginatedPosts.map((post) => (
+							<article
+								key={post.id}
+								className="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm transition-all hover:scale-[1.02] hover:shadow-md dark:border-gray-700 dark:bg-gray-800"
+							>
+								<div className="relative h-48 w-full">
+									<Image
+										src={post.image}
+										alt={post.title}
+										fill
+										sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+										className="object-cover"
+										loading="lazy"
+										placeholder="blur"
+										blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQIGAwAAAAAAAAAAAAABAgMABAUGERIhMUFRcf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AmzHMVs7vT5beW3EsSsA8bKCCPo8H7iqNQiiJJGwAHJoPQo//2Q=="
+									/>
+								</div>
+								<div className="p-5">
+									<div className="mb-3 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+										<span className="flex items-center gap-1">
+											<Calendar className="h-4 w-4" />
+											{formatBlogDate(post.date)}
+										</span>
+										<span>•</span>
+										<span>{post.readTime}</span>
+									</div>
+
+									<h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
+										<Link href={`/blog/${post.id}`} className="hover:text-blue">
+											{post.title}
+										</Link>
+									</h2>
+
+									<p className="mb-4 text-gray-600 dark:text-gray-300">
+										{post.excerpt}
+									</p>
+
+									<div className="mb-4 flex flex-wrap gap-2">
+										{post.tags.map((tag) => (
+											<span
+												key={tag}
+												className="cursor-pointer rounded-full bg-purple/20 px-2 py-1 text-xs text-purple hover:bg-purple/30 dark:bg-green/20 dark:text-green dark:hover:bg-green/30"
+												onClick={() => toggleTag(tag)}
+											>
+												#{tag}
+											</span>
+										))}
+									</div>
+
+									<div className="flex items-center justify-between">
+										<div className="flex items-center gap-2">
+											<div className="relative h-8 w-8 overflow-hidden rounded-full">
+												<Image
+													src={post.authorImage}
+													alt={post.author}
+													fill
+													className="object-cover"
+												/>
+											</div>
+											<span className="text-sm font-medium">{post.author}</span>
+										</div>
+
+										<Link
+											href={`/blog/${post.id}`}
+											className={buttonVariants({
+												size: 'sm',
+												className:
+													'bg-purple text-black hover:bg-purple/80 dark:bg-green dark:text-black dark:hover:bg-green/80',
+											})}
+										>
+											Read more
+										</Link>
+									</div>
+								</div>
+							</article>
+						))}
+					</div>
+
+					{/* Pagination */}
+					{totalPages > 1 && (
+						<div className="mt-12 flex justify-center gap-2">
+							<button
+								onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+								disabled={currentPage === 1}
+								className={`flex items-center gap-1 rounded-md px-3 py-2 ${
+									currentPage === 1
+										? 'cursor-not-allowed text-gray-400'
+										: 'text-purple hover:bg-purple/10 dark:text-green dark:hover:bg-green/10'
+								}`}
+								aria-label="Previous page"
+							>
+								<ChevronLeft className="h-4 w-4" />
+								Previous
+							</button>
+
+							{Array.from({ length: totalPages }, (_, i) => i + 1).map(
+								(page) => (
+									<button
+										key={page}
+										onClick={() => setCurrentPage(page)}
+										className={`rounded-md px-3 py-1 ${
+											currentPage === page
+												? 'bg-purple text-black dark:bg-green dark:text-black'
+												: 'text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800'
+										}`}
+										aria-label={`Page ${page}`}
+										aria-current={currentPage === page ? 'page' : undefined}
+									>
+										{page}
+									</button>
+								),
+							)}
+
+							<button
+								onClick={() =>
+									setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+								}
+								disabled={currentPage === totalPages}
+								className={`flex items-center gap-1 rounded-md px-3 py-2 ${
+									currentPage === totalPages
+										? 'cursor-not-allowed text-gray-400'
+										: 'text-purple hover:bg-purple/10 dark:text-green dark:hover:bg-green/10'
+								}`}
+								aria-label="Next page"
+							>
+								Next
+								<ChevronRight className="h-4 w-4" />
+							</button>
+						</div>
+					)}
+				</>
+			) : (
+				<div className="py-12 text-center">
+					<p className="mb-4 text-xl">
+						No articles found matching your criteria
+					</p>
+					<button
+						onClick={clearFilters}
+						className="text-purple hover:underline dark:text-green"
+					>
+						Clear all filters
+					</button>
+				</div>
+			)}
+		</div>
+	);
 }
