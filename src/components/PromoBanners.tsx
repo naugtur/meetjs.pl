@@ -3,23 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { X } from 'lucide-react';
-
-export type Promo = {
-	id: string;
-	message: string;
-	cta: string;
-	ticketLink: string; // Link to tickets/registration
-	eventLink?: string; // Link to the main event website
-	expiresAt: string; // ISO string
-	description?: string; // Short description of the event
-	gradient?: string; // Tailwind class for bg-gradient
-	icon?: React.ReactNode; // Custom icon or emoji
-	emojiLeft?: string;
-	emojiRight?: string;
-	country?: string;
-	city?: string;
-	discountCode?: string; // Promo/discount code for the event
-};
+import type { Promo } from '@/types/promo';
 
 class DismissedPromo {
 	static getKey = (promoId: string) => `promoBannerDismissed_${promoId}`;
@@ -82,7 +66,7 @@ const PromoBanner = ({ promo, close }: { promo: Promo; close: () => void }) => (
 						{promo.message} <RightEmoji emojiRight={promo.emojiRight} />
 					</span>
 
-					<LinkCTA link={promo.ticketLink}>{promo.cta}</LinkCTA>
+					<LinkCTA ticketLink={promo.ticketLink}>{promo.cta}</LinkCTA>
 
 					<CloseButton close={close} />
 				</div>
@@ -123,14 +107,14 @@ const RightEmoji = ({ emojiRight }: { emojiRight?: string }) =>
 	) : null;
 
 const LinkCTA = ({
-	link,
+	ticketLink,
 	children: cta,
 }: {
-	link: string;
+	ticketLink: string | undefined;
 	children: React.ReactNode;
 }) => (
 	<Link
-		href={link}
+		href={ticketLink || ''}
 		target="_blank"
 		rel="noopener noreferrer"
 		className="inline-block rounded-full bg-white px-3 py-1 text-xs font-semibold text-purple shadow transition-colors duration-150 hover:bg-purple hover:text-white md:text-sm"
