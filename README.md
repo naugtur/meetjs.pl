@@ -32,6 +32,7 @@ src/content/cities.tsx
 ```
 
 City statuses include:
+
 - **active**: Currently organizing meetups (Białystok, Gdańsk, Kraków, Łódź, Lublin, Poznań, Warszawa, Wrocław)
 - **coming-soon**: Planning to start meetups soon (Katowice)
 - **paused**: Temporarily inactive (Bielsko-Biała, Kielce, Szczecin, Toruń)
@@ -59,15 +60,17 @@ export const promos: Promo[] = [
 		id: 'react-universe-2025', // Unique string identifier
 		message: 'React Universe Conf 2025: 10% off with code meet.js10!', // Banner message
 		cta: '👉 Get Discount', // Call-to-action text
-		link: 'https://ti.to/RUC/react-universe-conf-2025/discount/meet.js10', // Link for CTA
+		ticketLink: 'https://ti.to/RUC/react-universe-conf-2025/discount/meet.js10', // Link for CTA
 		eventLink: 'https://react-universe.org', // Link to event website
 		expiresAt: '2025-09-02T23:59:59+02:00', // Expiry date (ISO format)
-		description: 'React Universe is the largest React conference in Central Europe...', // Full description
+		description:
+			'React Universe is the largest React conference in Central Europe...', // Full description
 		gradient: 'bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500', // Optional Tailwind gradient class
 		icon: '🪐', // Optional emoji or icon (left side)
 		emojiRight: '🇵🇱', // Optional emoji (right side)
 		country: 'Poland', // Event country
 		city: 'Wrocław', // Event city
+		discountCode: 'meet.js10', // Optional discount code
 	},
 	// Add more promos as needed
 ];
@@ -78,7 +81,7 @@ export const promos: Promo[] = [
 - `id` (string): Unique identifier for the promo (required)
 - `message` (string): The text shown in the banner (required)
 - `cta` (string): The call-to-action button text (required)
-- `link` (string): URL for the CTA button (required)
+- `ticketLink` (string): URL for the CTA button (required)
 - `expiresAt` (string): Expiration date/time in ISO 8601 format (required)
 - `gradient` (string): Tailwind CSS gradient class for background (optional)
 - `icon` (string): Emoji or icon on the left (optional)
@@ -105,6 +108,7 @@ https://github.com/meetjspl/brand-assets
 ```
 
 This repository contains:
+
 - Multiple logo variants (SVG, PNG)
 - Monochrome versions (black, white)
 - Square logo variants
@@ -122,6 +126,7 @@ To add or update brand assets on the website:
 3. Update the assets list in `src/app/brand/page.tsx`
 
 Each asset should include:
+
 - Name
 - File path
 - Description
