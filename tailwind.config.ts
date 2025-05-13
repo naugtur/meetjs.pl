@@ -24,6 +24,10 @@ const config: Config = {
 		'from-green-400',
 		'via-blue-500',
 		'to-purple-500',
+		'from-blue-600',
+		'via-indigo-500',
+		'from-red-500',
+		'to-indigo-600',
 	],
 	content: [
 		'./src/components/**/*.{ts,tsx,mdx}',
