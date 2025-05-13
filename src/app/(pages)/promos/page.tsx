@@ -9,8 +9,9 @@ import {
 	CardFooter,
 } from '@/components/ui/card';
 import { CalendarDays, Gift, Tag, Ticket } from 'lucide-react';
+import { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
 	title: 'Promos & Marketing Events | meet.js',
 	description:
 		'Special offers, discounts, and marketing events for the meet.js community.',
@@ -20,10 +21,12 @@ export default function PromosPage() {
 	return (
 		<div className="container mx-auto max-w-4xl py-16">
 			<div className="mb-12 text-center">
-				<h1 className="mb-4 text-5xl font-bold tracking-tight">Promos & Events</h1>
+				<h1 className="mb-4 text-5xl font-bold tracking-tight">
+					Promos & Events
+				</h1>
 				<p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-					Exclusive offers and special events for the meet.js community.
-					Take advantage of these limited-time opportunities!
+					Exclusive offers and special events for the meet.js community. Take
+					advantage of these limited-time opportunities!
 				</p>
 			</div>
 
@@ -40,8 +43,8 @@ export default function PromosPage() {
 								</CardTitle>
 							</div>
 							<CardDescription className="mt-2 text-base">
-								As a valued member of the meet.js community, you have access to these
-								special offers from our partners.
+								As a valued member of the meet.js community, you have access to
+								these special offers from our partners.
 							</CardDescription>
 						</CardHeader>
 						<CardContent className="pt-4">
@@ -52,7 +55,8 @@ export default function PromosPage() {
 										<h3 className="font-semibold">Event Discounts</h3>
 									</div>
 									<p className="text-sm text-muted-foreground">
-										Special pricing for conferences and workshops around the world
+										Special pricing for conferences and workshops around the
+										world
 									</p>
 								</div>
 								<div className="flex flex-col gap-2">
@@ -79,7 +83,9 @@ export default function PromosPage() {
 				</div>
 				<CardFooter className="bg-muted/50 p-6">
 					<p className="text-sm text-muted-foreground">
-						<span className="font-semibold">Note:</span> All promotions are time-limited and subject to partner terms and conditions. Check expiration dates before redeeming.
+						<span className="font-semibold">Note:</span> All promotions are
+						time-limited and subject to partner terms and conditions. Check
+						expiration dates before redeeming.
 					</p>
 				</CardFooter>
 			</Card>
