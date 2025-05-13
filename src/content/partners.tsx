@@ -6,6 +6,11 @@ export const PARTNERS = [
 		alt: 'Git Nation',
 	},
 	{
+		href: 'https://gamedevjs.com/',
+		src: '/partners/gamedevjs.png',
+		alt: 'GameDevJS',
+	},
+	{
 		href: 'https://jsnation.com/',
 		src: '/partners/JSNation.svg',
 		alt: 'JS Nation',
