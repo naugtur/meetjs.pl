@@ -55,7 +55,7 @@ export const promos: Promo[] = [
 		message: 'React Universe Conf 2025: 10% off with code meet.js10!',
 		cta: '👉 Get Discount',
 		ticketLink: 'https://ti.to/RUC/react-universe-conf-2025/discount/meet.js10',
-		eventLink: 'https://react-universe.org',
+		eventLink: 'https://www.reactuniverseconf.com/',
 		expiresAt: '2025-09-02T23:59:59+02:00',
 		description:
 			'React Universe is the largest React conference in Central Europe, bringing together the global React community in Wrocław, Poland. Featuring speakers from Meta and leading React teams, this event covers everything from React core concepts to advanced patterns and the React ecosystem.',
