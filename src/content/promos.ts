@@ -2,6 +2,22 @@ import { Promo } from '../types/promo';
 
 export const promos: Promo[] = [
 	{
+		id: 'ms-tech-summit-2025',
+		message: 'MS Tech Summit 2025: 30% off with code MSTS25xmeetjs!',
+		cta: '👉 Get 30% Off',
+		ticketLink: 'https://mstechsummit.pl/',
+		eventLink: 'https://mstechsummit.pl/',
+		expiresAt: '2025-06-10T23:59:59+02:00',
+		description:
+			'MS Tech Summit 2025 is one of the few community conferences in Poland fully dedicated to Microsoft technologies. Join online on June 11 and in-person in Warsaw on June 12, 2025. Use code MSTS25xmeetjs for 30% off Standard and Exec packages!',
+		gradient: 'bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-600',
+		icon: '🧠',
+		emojiRight: '🇵🇱',
+		country: 'Poland',
+		city: 'Warsaw',
+		discountCode: 'MSTS25xmeetjs',
+	},
+	{
 		id: 'devdays-europe-2025',
 		message: 'DevDays Europe 2025: 15% off with code meet.js15!',
 		cta: '👉 Get 15% Off',
