@@ -1,7 +1,7 @@
 import { getDiscordServerData } from '@/lib/discord';
 import { DiscordWidget } from './DiscordWidget';
 
-const DISCORD_INVITE_LINK = 'https://discord.gg/C6hEh2R4';
+const DISCORD_INVITE_LINK = 'https://discord.gg/8r9XKTeNW8';
 
 export const DiscordCommunity = async () => {
 	const { data, error } = await getDiscordServerData()
