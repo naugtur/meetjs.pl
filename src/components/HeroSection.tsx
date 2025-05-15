@@ -35,7 +35,7 @@ export const HeroSection = () => {
 						Follow us
 					</a>
 					<a
-						href="https://discord.gg/C6hEh2R4"
+						href="https://discord.gg/8r9XKTeNW8"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="flex items-center gap-2 rounded-full bg-[#5865F2] px-4 py-2 text-sm transition-all hover:bg-[#4752C4] hover:shadow-md"
