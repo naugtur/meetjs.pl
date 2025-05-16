@@ -2,14 +2,7 @@ import { Card, CardContent, CardFooter, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
-
-export interface Organizer {
-	name: string;
-	image?: string;
-	email?: string;
-	linkedin?: string;
-	gitHub?: string;
-}
+import { Organizer } from '@/types/organizer';
 
 interface OrganizersProps {
 	city: string;

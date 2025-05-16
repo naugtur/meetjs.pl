@@ -1,4 +1,4 @@
-import { Organizer } from '@/components/Orginizers';
+import { Organizer } from '@/types/organizer';
 
 export const WarsawOrganizers: Organizer[] = [
 	{
