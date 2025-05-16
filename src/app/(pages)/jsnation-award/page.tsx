@@ -2,9 +2,10 @@ import Link from 'next/link';
 import {
 	Award,
 	Calendar,
-	MapPin,
+	Clock,
 	ExternalLink,
 	Heart,
+	MapPin,
 	Users,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -15,6 +16,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
 export const metadata = {
 	title:
@@ -43,10 +45,36 @@ export default function JSNationAwardPage() {
 					</span>{' '}
 					category!
 				</p>
+				<div className="mt-8 flex justify-center">
+					<Button
+						size="lg"
+						className="bg-green-600 text-white hover:bg-green-700"
+						asChild
+					>
+						<Link
+							href="https://docs.google.com/forms/d/e/1FAIpQLScUOqQ8IFJNmSQok_Whw12vm072HmOwnfFxRPsaUWV4EzmrHQ/viewform"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="inline-flex items-center gap-2"
+						>
+							<Award className="h-5 w-5" />
+							Vote for Us Now
+						</Link>
+					</Button>
+				</div>
+				<div className="mt-4 flex justify-center">
+					<Badge
+						variant="outline"
+						className="flex items-center gap-1 bg-amber-50 text-amber-700"
+					>
+						<Clock className="h-3 w-3" /> Voting closes on May 30, 2025, 8:00am
+						CEST
+					</Badge>
+				</div>
 			</div>
 
 			<div className="mb-16 overflow-hidden rounded-xl bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 p-1 shadow-xl">
-				<div className="bg-background p-8">
+				<div className="rounded-lg bg-background p-8">
 					<div className="prose prose-lg mx-auto max-w-3xl">
 						<p className="lead mb-6 text-xl font-medium">
 							Grateful, surprised, and excited — meet.js Wrocław has been
@@ -55,9 +83,9 @@ export default function JSNationAwardPage() {
 						</p>
 
 						<p className="mb-6">
-							Thank you to everyone who&apos;s part of this community — for showing
-							up, sharing knowledge and helping build something meaningful
-							together. 🙌
+							Thank you to everyone who&apos;s part of this community — for
+							showing up, sharing knowledge and helping build something
+							meaningful together. 🙌
 						</p>
 
 						<p className="mb-6">
@@ -67,9 +95,21 @@ export default function JSNationAwardPage() {
 						</p>
 
 						<ul className="mb-6 list-inside list-disc space-y-1">
-							<li>Cezary Dynak</li>
-							<li>Aleksandra Pawlus</li>
-							<li>Stanisław Synowiec</li>
+							<li>
+								<Link href="https://www.linkedin.com/in/cdynak/?utm_source=meetjs.pl&utm_medium=referral&utm_campaign=community">
+									Cezary Dynak
+								</Link>
+							</li>
+							<li>
+								<Link href="https://www.linkedin.com/in/aleksandrapawlus/?utm_source=meetjs.pl&utm_medium=referral&utm_campaign=community">
+									Aleksandra Pawlus
+								</Link>
+							</li>
+							<li>
+								<Link href="https://www.linkedin.com/in/ssynowiecpl/?utm_source=meetjs.pl&utm_medium=referral&utm_campaign=community">
+									Stanisław Synowiec
+								</Link>
+							</li>
 						</ul>
 
 						<p className="mb-6">
@@ -82,13 +122,57 @@ export default function JSNationAwardPage() {
 							Conference in Amsterdam — keep your fingers crossed for us!
 						</p>
 						<p className="mt-6">
-							P.S. We&apos;d also like to give a big shoutout to our friends at Gdańsk TypeScript Meetup Group, who were nominated for the <Link href="https://osawards.com/react/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700">React Open Source Awards</Link> in the Community of the Year category! Congratulations to them! 🎉
+							P.S. We&apos;d also like to give a big shoutout to our friends at
+							Gdańsk TypeScript Meetup Group, who were nominated for the{' '}
+							<Link
+								href="https://osawards.com/react/"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-green-600 hover:text-green-700"
+							>
+								React Open Source Awards
+							</Link>{' '}
+							in the Community of the Year category! Congratulations to them! 🎉
 						</p>
 					</div>
 				</div>
 			</div>
 
-			<div className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-2">
+			<div className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+				<Card className="border-green-200 bg-green-50 shadow-md">
+					<CardHeader className="pb-2">
+						<div className="flex items-center gap-2">
+							<Award className="h-5 w-5 text-green-600" />
+							<CardTitle>Cast Your Vote</CardTitle>
+						</div>
+					</CardHeader>
+					<CardContent>
+						<p className="text-muted-foreground">
+							Your support means the world to us! Please take a moment to vote
+							for meet.js Wrocław in the Community of the Year category.
+						</p>
+						<div className="mt-4">
+							<Button
+								className="w-full bg-green-600 hover:bg-green-700"
+								asChild
+							>
+								<Link
+									href="https://docs.google.com/forms/d/e/1FAIpQLScUOqQ8IFJNmSQok_Whw12vm072HmOwnfFxRPsaUWV4EzmrHQ/viewform"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									Vote Now
+								</Link>
+							</Button>
+						</div>
+					</CardContent>
+					<CardFooter>
+						<p className="text-xs text-muted-foreground">
+							Voting closes on May 30, 2025, 8:00am CEST
+						</p>
+					</CardFooter>
+				</Card>
+
 				<Card className="border-green-200 shadow-md">
 					<CardHeader className="pb-2">
 						<div className="flex items-center gap-2">
@@ -168,8 +252,8 @@ export default function JSNationAwardPage() {
 						<CardContent>
 							<p className="text-sm text-muted-foreground">
 								A community of people passionate about JavaScript. They believe
-								that the best way to learn is by doing, and it&apos;s also the most
-								rewarding.
+								that the best way to learn is by doing, and it&apos;s also the
+								most rewarding.
 							</p>
 						</CardContent>
 						<CardFooter>
@@ -240,7 +324,7 @@ export default function JSNationAwardPage() {
 						asChild
 					>
 						<Link
-							href={`https://twitter.com/intent/tweet?text=${encodeURIComponent('Excited to share that meet.js Wrocław has been nominated for the JavaScript Open Source Awards in the Community of the Year category! 🏆 #MeetjsWroclaw #JavaScript #OpenSource #CommunityOfTheYear #JSNation')}`}
+							href={`https://x.com/intent/tweet?text=${encodeURIComponent('Excited to share that meet.js Wrocław has been nominated for the JavaScript Open Source Awards in the Community of the Year category! 🏆 Vote now: https://docs.google.com/forms/d/e/1FAIpQLScUOqQ8IFJNmSQok_Whw12vm072HmOwnfFxRPsaUWV4EzmrHQ/viewform #MeetjsWroclaw #JavaScript #OpenSource')}`}
 							target="_blank"
 							rel="noopener noreferrer"
 						>
