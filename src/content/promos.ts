@@ -127,7 +127,7 @@ export const promos: Promo[] = [
 		gradient: 'bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-500',
 		icon: '⚛️',
 		emojiRight: '🇳🇱',
-		country: 'Holland',
+		country: 'Netherlands',
 		city: 'Amsterdam',
 		discountCode: 'REACT',
 	},
