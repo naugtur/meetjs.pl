@@ -1,5 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { PromoBanners, Promo } from './PromoBanners';
+import { PromoBanners } from './PromoBanners';
+import { Promo } from '@/types/promo';
 import React from 'react';
 
 const promos: Promo[] = [
@@ -7,7 +8,7 @@ const promos: Promo[] = [
     id: 'test1',
     message: 'Test Promo 1',
     cta: 'CTA 1',
-    link: 'https://example.com/1',
+    ticketLink: 'https://example.com/1',
     expiresAt: '2099-12-31T23:59:59+02:00',
     icon: '🎉',
   },
@@ -15,7 +16,7 @@ const promos: Promo[] = [
     id: 'test2',
     message: 'Test Promo 2',
     cta: 'CTA 2',
-    link: 'https://example.com/2',
+    ticketLink: 'https://example.com/2',
     expiresAt: '2000-01-01T00:00:00+02:00', // expired
     icon: '🔥',
   },
