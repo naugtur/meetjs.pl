@@ -7,7 +7,11 @@ type MapProps = {
 	events?: Event[];
 };
 
-function getCityFillColor(status: City['status']): string {
+function getCityFillColor(status: City['status'], isPromoEvent = false): string {
+	if (isPromoEvent) {
+		return '#9333ea'; // Purple color for promo events
+	}
+
 	switch (status) {
 		case 'typescript':
 			return '#2563eb';
@@ -39,22 +43,46 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
 
 	const getCityEventStatus = (cityName: string) => {
 		const cityEvents = events.filter((event) => event.city === cityName);
+		const promoEvents = cityEvents.filter(event => event.serie === 'promo');
+		const regularEvents = cityEvents.filter(event => event.serie !== 'promo');
 
-		for (const event of cityEvents) {
+		// Check regular events first
+		const hasRegularEvent = regularEvents.some(event => {
 			const [day, month, year] = event.date.split('.');
 			const [hours, minutes] = event.time.split(':');
-
 			const eventDate = new Date(+year, +month - 1, +day, +hours, +minutes);
 			const eventEndDate = new Date(eventDate.getTime() + 3 * 60 * 60 * 1000);
 
-			if (now >= eventDate && now <= eventEndDate) {
-				return 'in-progress';
-			}
-			if (now < eventDate) {
-				return 'upcoming';
-			}
+			return now >= eventDate && now <= eventEndDate;
+		});
+
+		if (hasRegularEvent) {
+			return { status: 'in-progress', isPromo: false };
 		}
-		return 'none';
+
+		const hasUpcomingRegularEvent = regularEvents.some(event => {
+			const [day, month, year] = event.date.split('.');
+			const [hours, minutes] = event.time.split(':');
+			const eventDate = new Date(+year, +month - 1, +day, +hours, +minutes);
+			return now < eventDate;
+		});
+
+		if (hasUpcomingRegularEvent) {
+			return { status: 'upcoming', isPromo: false };
+		}
+
+		// Check promo events
+		const hasUpcomingPromoEvent = promoEvents.some(event => {
+			const [day, month, year] = event.date.split('.');
+			const eventDate = new Date(+year, +month - 1, +day);
+			return now < eventDate;
+		});
+
+		if (hasUpcomingPromoEvent) {
+			return { status: 'upcoming', isPromo: true };
+		}
+
+		return { status: 'none', isPromo: false };
 	};
 
 	return (
@@ -87,27 +115,43 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
 										/>
 
 										{/* Event status circle */}
-										{eventStatus !== 'none' && (
-											<circle
-												cx={city.pointPosition.x}
-												cy={city.pointPosition.y}
-												r="6"
-												fill="none"
-												stroke={
-													eventStatus === 'in-progress' ? '#9333ea' : '#219eab'
-												}
-												strokeWidth={eventStatus === 'in-progress' ? '2' : '1'}
-												className={
-													eventStatus === 'in-progress'
-														? 'dark:stroke-green-500 animate-pulse'
-														: ''
-												}
-											/>
+										{eventStatus.status !== 'none' && (
+											<>
+												<circle
+													cx={city.pointPosition.x}
+													cy={city.pointPosition.y}
+													r={eventStatus.isPromo ? '8' : '6'}
+													fill="none"
+													stroke={
+														eventStatus.status === 'in-progress'
+															? '#9333ea'
+															: eventStatus.isPromo
+																? '#9333ea'
+																: '#219eab'
+													}
+													strokeWidth={eventStatus.status === 'in-progress' || eventStatus.isPromo ? '2' : '1'}
+													strokeDasharray={eventStatus.isPromo ? '2,1' : 'none'}
+													className={
+														eventStatus.status === 'in-progress' || eventStatus.isPromo
+															? 'animate-pulse'
+															: ''
+													}
+												/>
+												{eventStatus.isPromo && (
+													<circle
+														cx={city.pointPosition.x}
+														cy={city.pointPosition.y}
+														r="3"
+														fill="#9333ea"
+														className="cursor-pointer"
+													/>
+												)}
+											</>
 										)}
 
 										{/* Coming soon dashed circle */}
 										{city.status === 'coming-soon' &&
-											eventStatus === 'none' && (
+											eventStatus.status === 'none' && (
 												<circle
 													cx={city.pointPosition.x}
 													cy={city.pointPosition.y}
@@ -164,6 +208,13 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
 					</div>
 					<span>Coming soon!</span>
 				</div>
+				<Link href="/promos" className="flex items-center gap-2 whitespace-nowrap hover:text-purple">
+					<div className="relative">
+						<div className="h-2 w-2 rounded-full bg-[#9333ea]" />
+						<div className="absolute -inset-1 rounded-full border-2 border-[#9333ea]" style={{ borderStyle: 'dashed' }} />
+					</div>
+					<span>Partner events</span>
+				</Link>
 				<div className="flex items-center gap-2 whitespace-nowrap">
 					<div className="h-2 w-2 rounded-full bg-[#9CA3AF]" />
 					<Link
