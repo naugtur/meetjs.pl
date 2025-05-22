@@ -31,6 +31,8 @@ const config: Config = {
 		'from-blue-500',
 		'via-cyan-400',
 		'to-blue-600',
+		'from-purple-600',
+		'to-indigo-600',
 	],
 	content: [
 		'./src/components/**/*.{ts,tsx,mdx}',
@@ -57,15 +59,15 @@ const config: Config = {
 			colors: {
 				purple: {
 					DEFAULT: '#2b1932',
-					500: '#2b1932'
+					500: '#2b1932',
 				},
 				blue: {
 					DEFAULT: '#219eab',
-					500: '#219eab'
+					500: '#219eab',
 				},
 				green: {
 					DEFAULT: '#bcd35d',
-					400: '#bcd35d'
+					400: '#bcd35d',
 				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
