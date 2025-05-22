@@ -2,6 +2,21 @@ import { Promo } from '../types/promo';
 
 export const promos: Promo[] = [
 	{
+		id: 'infoshare-2025',
+		message: 'InfoShare 2025: 10% off with code ISC25-MeetJS10!',
+		cta: '👉 Get 10% Off',
+		ticketLink: 'https://infoshare.pl/is-register/?discount_code=ISC25-MeetJS10',
+		eventLink: 'https://infoshare.pl',
+		expiresAt: '2025-05-24T23:59:59+02:00',
+		description: 'Join InfoShare 2025, one of the largest tech conferences in Central Europe! Use code ISC25-MeetJS10 for 10% off your ticket.',
+		gradient: 'bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600',
+		icon: '🎟️',
+		emojiRight: '🇵🇱',
+		country: 'Poland',
+		city: 'Gdańsk',
+		discountCode: 'ISC25-MeetJS10'
+	},
+	{
 		id: 'code-europe-2025',
 		message:
 			"Code Europe 2025: Join Poland's biggest tech festival with code MEETJS25!",
