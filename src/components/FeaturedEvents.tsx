@@ -10,6 +10,7 @@ import { EventsAPIPartner } from '@/components/EventsAPIPartner';
 import { EmptyEventsAlert } from '@/components/EmptyEventsAlert';
 import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
 import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
+import { isEventUpcoming } from '@/utils/eventUtils';
 
 export interface Event {
 	type: string;
@@ -29,10 +30,13 @@ export interface Event {
 
 export const FeaturedEvents = async () => {
 	const apiEvents: Event[] | null = await getUpcomingEvents();
-const events: Event[] = [
-	...(apiEvents || []),
-	...ADDITIONAL_EVENTS,
-];
+	const allEvents: Event[] = [
+		...(apiEvents || []),
+		...ADDITIONAL_EVENTS,
+	];
+
+	// Filter out past events
+	const events = allEvents.filter(isEventUpcoming);
 
 	return (
 		<section
@@ -42,7 +46,7 @@ const events: Event[] = [
 			<div className="flex w-full flex-col gap-4 p-4">
 				<h2 className="text-center text-3xl font-bold">Upcoming Events</h2>
 				<p className="text-center">Don&apos;t miss these!</p>
-				{events === null ? (
+				{events.length === 0 ? (
 					<EmptyEventsAlert />
 				) : (
 					<Carousel>
