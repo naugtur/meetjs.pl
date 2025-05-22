@@ -24,27 +24,33 @@ export function SpecialPromoBanners({ promos }: SpecialPromoBannersProps) {
 
 	useEffect(() => {
 		const now = new Date();
-		setVisiblePromos(
-			promos
-				.filter((promo) => new Date(promo.expiresAt) >= now)
-				.sort(
-					(a, b) =>
-						new Date(a.expiresAt).getTime() - new Date(b.expiresAt).getTime(),
-				),
-		);
-	}, [promos]);
+		// First filter out expired promos and sort by expiration date
+		const activePromos = promos
+			.filter((promo) => new Date(promo.expiresAt) >= now)
+			.sort(
+				(a, b) =>
+					new Date(a.expiresAt).getTime() - new Date(b.expiresAt).getTime(),
+			);
 
-	useEffect(() => {
+		setVisiblePromos(activePromos);
+
+		// Update available countries based on active promos only
+		const countries = [
+			...new Set(activePromos.map((promo) => promo.country).filter(Boolean)),
+		];
+		setAvailableCountries(countries as string[]);
+
+		// Apply country filters to active promos
 		if (selectedCountries.length === 0) {
-			setFilteredPromos(visiblePromos);
+			setFilteredPromos(activePromos);
 		} else {
 			setFilteredPromos(
-				visiblePromos.filter(
+				activePromos.filter(
 					(promo) => promo.country && selectedCountries.includes(promo.country),
 				),
 			);
 		}
-	}, [visiblePromos, selectedCountries]);
+	}, [promos, selectedCountries]);
 
 	if (visiblePromos.length === 0) return null;
 
