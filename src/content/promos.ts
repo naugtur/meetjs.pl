@@ -2,6 +2,23 @@ import { Promo } from '../types/promo';
 
 export const promos: Promo[] = [
 	{
+		id: 'code-europe-2025',
+		message:
+			"Code Europe 2025: Join Poland's biggest tech festival with code MEETJS25!",
+		cta: '👉 Get Discount',
+		ticketLink: 'https://www.codeeurope.pl/en/',
+		eventLink: 'https://www.codeeurope.pl/en/',
+		expiresAt: '2025-06-30T23:59:59+02:00',
+		description:
+			"Join Poland's biggest tech festival! Code Europe 2025 takes place on June 30 - July 1, 2025 at EXPO Kraków. Experience inspiring talks, workshops, and networking opportunities with tech leaders and innovators. Use code MEETJS25 for a special discount on tickets!",
+		gradient: 'bg-gradient-to-r from-purple-600 via-blue-500 to-indigo-600',
+		icon: '🎪',
+		emojiRight: '🇵🇱',
+		country: 'Poland',
+		city: 'Kraków',
+		discountCode: 'MEETJS25',
+	},
+	{
 		id: 'ms-tech-summit-2025',
 		message: 'MS Tech Summit 2025: 30% off with code MSTS25xmeetjs!',
 		cta: '👉 Get 30% Off',
