@@ -4,6 +4,8 @@ import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
 import { Event } from '@/components/FeaturedEvents';
 import { MessagesSquare } from 'lucide-react';
 import { DiscordCommunity } from '@/components/DiscordCommunity';
+import { promos } from '@/content/promos';
+import { getPromoEvents } from '@/utils/processPromoEvents';
 
 export const JoinUs = async () => {
 	const events: Event[] | null = await getUpcomingEvents();
@@ -19,7 +21,13 @@ export const JoinUs = async () => {
 
 			<div className="mx-auto flex w-full max-w-7xl flex-col p-4 md:flex-row">
 				<div className="w-full md:w-1/2">
-					<PolandMap cities={CITIES} events={events ?? []} />
+					<PolandMap 
+						cities={CITIES} 
+						events={[
+							...(events ?? []),
+							...getPromoEvents(promos)
+						]} 
+					/>
 				</div>
 				<div className="w-full p-4 md:w-1/2">
 					<p className="pb-6">
