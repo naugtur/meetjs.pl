@@ -20,7 +20,7 @@ export function getPromoEvents(promos: Promo[]): Event[] {
         day: '2-digit',
         month: '2-digit',
         year: 'numeric'
-      }).replace(/\./g, '.');
+      });
 
       const event: Event = {
         type: 'meetup',
