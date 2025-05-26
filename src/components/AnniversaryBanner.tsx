@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import styles from './AnniversaryBanner.module.css';
 import { FaTimes } from 'react-icons/fa';
 
@@ -21,7 +21,7 @@ const AnniversaryBanner = () => {
 				</span>
 				<span className={styles.message}>
 					<strong>JavaScript is 30!</strong> Join us in celebrating 3 decades of
-					web magic. Let's make the next 30 years even more amazing! 🚀
+					web magic. Let&apos;s make the next 30 years even more amazing! 🚀
 				</span>
 				<a href="/30-years-of-javascript" className={styles.cta}>
 					Explore the Journey
