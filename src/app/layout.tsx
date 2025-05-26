@@ -8,6 +8,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { env } from '@/env';
+import AnniversaryBannerWrapper from '@/components/AnniversaryBannerWrapper';
 
 const montserrat = Montserrat({
 	subsets: ['latin'],
@@ -18,9 +19,17 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
 	metadataBase: new URL(env.SITE_URL),
 	title: 'meet.js - JavaScript Meetups in Poland',
-	description: 'Join the largest JavaScript community in Poland. Regular meetups, expert talks, networking opportunities and knowledge sharing.',
+	description:
+		'Join the largest JavaScript community in Poland. Regular meetups, expert talks, networking opportunities and knowledge sharing.',
 	applicationName: 'meet.js',
-	keywords: ['JavaScript', 'meetup', 'Poland', 'programming', 'web development', 'tech events'],
+	keywords: [
+		'JavaScript',
+		'meetup',
+		'Poland',
+		'programming',
+		'web development',
+		'tech events',
+	],
 	authors: [{ name: 'meet.js community' }],
 	creator: 'meet.js',
 	publisher: 'meet.js',
@@ -55,31 +64,37 @@ export const metadata: Metadata = {
 	},
 	openGraph: {
 		title: 'meet.js - JavaScript Meetups in Poland',
-		description: 'Join the largest JavaScript community in Poland. Regular meetups, expert talks, networking opportunities and knowledge sharing.',
+		description:
+			'Join the largest JavaScript community in Poland. Regular meetups, expert talks, networking opportunities and knowledge sharing.',
 		type: 'website',
 		locale: 'en_US',
 		url: env.SITE_URL,
 		siteName: 'meet.js',
-		images: [{
-			url: `${env.SITE_URL}/og-image.png`,
-			width: 1200,
-			height: 630,
-			alt: 'meet.js | JavaScript meetups in Poland',
-			type: 'image/png',
-		}],
+		images: [
+			{
+				url: `${env.SITE_URL}/og-image.png`,
+				width: 1200,
+				height: 630,
+				alt: 'meet.js | JavaScript meetups in Poland',
+				type: 'image/png',
+			},
+		],
 	},
 	twitter: {
 		card: 'summary_large_image',
 		site: '@meetjs',
 		creator: '@meetjs',
 		title: 'meet.js - JavaScript Meetups in Poland',
-		description: 'Join the largest JavaScript community in Poland. Regular meetups, expert talks, networking opportunities and knowledge sharing.',
-		images: [{
-			url: `${env.SITE_URL}/og-image.png`,
-			width: 1200,
-			height: 630,
-			alt: 'meet.js | JavaScript meetups in Poland',
-		}],
+		description:
+			'Join the largest JavaScript community in Poland. Regular meetups, expert talks, networking opportunities and knowledge sharing.',
+		images: [
+			{
+				url: `${env.SITE_URL}/og-image.png`,
+				width: 1200,
+				height: 630,
+				alt: 'meet.js | JavaScript meetups in Poland',
+			},
+		],
 	},
 	alternates: {
 		canonical: env.SITE_URL,
@@ -110,6 +125,7 @@ const RootLayout = ({
 					enableSystem
 					disableTransitionOnChange
 				>
+					<AnniversaryBannerWrapper />
 					<Navigation />
 					{children}
 					<Footer />
