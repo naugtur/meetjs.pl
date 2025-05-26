@@ -1,25 +1,5 @@
-import { Metadata } from 'next';
 import JavaScriptTimeline from '@/components/JavaScriptTimeline';
 import Link from 'next/link';
-
-export const metadata: Metadata = {
-	title: '30 Years of JavaScript | meet.js',
-	description:
-		'Celebrating 30 years of JavaScript - from its creation in 1995 to becoming the most widely used programming language in the world.',
-	openGraph: {
-		title: '30 Years of JavaScript | meet.js',
-		description:
-			'Celebrating 30 years of JavaScript - from its creation in 1995 to becoming the most widely used programming language in the world.',
-		images: [
-			{
-				url: '/images/javascript-30-years-og.jpg',
-				width: 1200,
-				height: 630,
-				alt: '30 Years of JavaScript',
-			},
-		],
-	},
-};
 
 export default function JavaScript30Years() {
 	return (
