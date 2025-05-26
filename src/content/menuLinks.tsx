@@ -1,5 +1,11 @@
 export const menuLinks = [
 	{
+		name: '🎉 30 Years of JS',
+		href: '/30-years-of-javascript',
+		current: false,
+		external: false,
+	},
+	{
 		name: 'summit',
 		href: 'https://summit.meetjs.pl',
 		current: false,
