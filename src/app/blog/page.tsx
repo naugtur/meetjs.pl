@@ -8,44 +8,6 @@ import { buttonVariants } from '@/components/ui/button';
 import { Calendar, Search, ChevronLeft, ChevronRight } from 'lucide-react';
 import { BLOG_POSTS, getAllTags, formatBlogDate } from '@/content/blogPosts';
 
-// Metadata for the blog page
-const metadata = {
-	title: 'Blog | meet.js - JavaScript Community in Poland',
-	description:
-		'Stay updated with the latest JavaScript trends, event recaps, and community news from the meet.js community in Poland.',
-	keywords: [
-		'JavaScript blog',
-		'meet.js',
-		'web development',
-		'frontend',
-		'Poland tech community',
-	],
-	openGraph: {
-		title: 'meet.js Blog - JavaScript Community in Poland',
-		description:
-			'Articles, tutorials and event recaps from the largest JavaScript community in Poland.',
-		url: 'https://meetjs.pl/blog',
-		siteName: 'meet.js',
-		locale: 'en_US',
-		type: 'website',
-		images: [
-			{
-				url: 'https://meetjs.pl/conference.jpg',
-				width: 1200,
-				height: 630,
-				alt: 'meet.js blog',
-			},
-		],
-	},
-	twitter: {
-		card: 'summary_large_image',
-		title: 'meet.js Blog - JavaScript Community in Poland',
-		description:
-			'Articles, tutorials and event recaps from the largest JavaScript community in Poland.',
-		images: ['https://meetjs.pl/conference.jpg'],
-	},
-};
-
 // Constants
 const POSTS_PER_PAGE = 6;
 const ALL_TAGS = getAllTags();
@@ -200,11 +162,10 @@ export default function BlogPage() {
 						<button
 							key={tag}
 							onClick={() => toggleTag(tag)}
-							className={`rounded-full px-3 py-1 text-sm transition-colors ${
-								selectedTags.includes(tag)
-									? 'bg-purple text-black dark:bg-green dark:text-black'
-									: 'bg-purple/20 text-purple hover:bg-purple/30 dark:bg-green/20 dark:text-green dark:hover:bg-green/30'
-							}`}
+							className={`rounded-full px-3 py-1 text-sm transition-colors ${selectedTags.includes(tag)
+								? 'bg-purple text-black dark:bg-green dark:text-black'
+								: 'bg-purple/20 text-purple hover:bg-purple/30 dark:bg-green/20 dark:text-green dark:hover:bg-green/30'
+								}`}
 							aria-pressed={selectedTags.includes(tag)}
 						>
 							#{tag}
@@ -310,11 +271,10 @@ export default function BlogPage() {
 							<button
 								onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
 								disabled={currentPage === 1}
-								className={`flex items-center gap-1 rounded-md px-3 py-2 ${
-									currentPage === 1
-										? 'cursor-not-allowed text-gray-400'
-										: 'text-purple hover:bg-purple/10 dark:text-green dark:hover:bg-green/10'
-								}`}
+								className={`flex items-center gap-1 rounded-md px-3 py-2 ${currentPage === 1
+									? 'cursor-not-allowed text-gray-400'
+									: 'text-purple hover:bg-purple/10 dark:text-green dark:hover:bg-green/10'
+									}`}
 								aria-label="Previous page"
 							>
 								<ChevronLeft className="h-4 w-4" />
@@ -326,11 +286,10 @@ export default function BlogPage() {
 									<button
 										key={page}
 										onClick={() => setCurrentPage(page)}
-										className={`rounded-md px-3 py-1 ${
-											currentPage === page
-												? 'bg-purple text-black dark:bg-green dark:text-black'
-												: 'text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800'
-										}`}
+										className={`rounded-md px-3 py-1 ${currentPage === page
+											? 'bg-purple text-black dark:bg-green dark:text-black'
+											: 'text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800'
+											}`}
 										aria-label={`Page ${page}`}
 										aria-current={currentPage === page ? 'page' : undefined}
 									>
@@ -344,11 +303,10 @@ export default function BlogPage() {
 									setCurrentPage((prev) => Math.min(prev + 1, totalPages))
 								}
 								disabled={currentPage === totalPages}
-								className={`flex items-center gap-1 rounded-md px-3 py-2 ${
-									currentPage === totalPages
-										? 'cursor-not-allowed text-gray-400'
-										: 'text-purple hover:bg-purple/10 dark:text-green dark:hover:bg-green/10'
-								}`}
+								className={`flex items-center gap-1 rounded-md px-3 py-2 ${currentPage === totalPages
+									? 'cursor-not-allowed text-gray-400'
+									: 'text-purple hover:bg-purple/10 dark:text-green dark:hover:bg-green/10'
+									}`}
 								aria-label="Next page"
 							>
 								Next

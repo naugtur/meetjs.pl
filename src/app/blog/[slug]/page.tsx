@@ -6,8 +6,6 @@ import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import {
 	Calendar,
-	Tag,
-	User,
 	ArrowLeft,
 	Share2,
 	Clock,
@@ -20,55 +18,6 @@ import {
 	getRelatedPosts,
 	formatBlogDate,
 } from '@/content/blogPosts';
-
-// Metadata generator function
-async function generateMetadata({ params }: { params: { slug: string } }) {
-	const post = BLOG_POSTS.find((post) => post.id === params.slug);
-
-	if (!post) {
-		return {
-			title: 'Post Not Found | meet.js Blog',
-			description: 'The requested blog post could not be found.',
-		};
-	}
-
-	return {
-		title: `${post.title} | meet.js Blog`,
-		description: post.excerpt,
-		keywords: [
-			...post.tags,
-			'JavaScript',
-			'meet.js',
-			'Poland',
-			'web development',
-		],
-		openGraph: {
-			title: post.title,
-			description: post.excerpt,
-			url: `https://meetjs.pl/blog/${post.id}`,
-			siteName: 'meet.js',
-			locale: 'en_US',
-			type: 'article',
-			publishedTime: post.date,
-			authors: [post.author],
-			tags: post.tags,
-			images: [
-				{
-					url: `https://meetjs.pl${post.image}`,
-					width: 1200,
-					height: 630,
-					alt: post.title,
-				},
-			],
-		},
-		twitter: {
-			card: 'summary_large_image',
-			title: post.title,
-			description: post.excerpt,
-			images: [`https://meetjs.pl${post.image}`],
-		},
-	};
-}
 
 export default function BlogPostPage() {
 	const { slug } = useParams();
@@ -121,15 +70,6 @@ export default function BlogPostPage() {
 				.then(() => alert('Link copied to clipboard!'))
 				.catch((error) => console.log('Error copying link', error));
 		}
-	};
-
-	// Calculate estimated reading time
-	const calculateReadingTime = (content: string): string => {
-		const wordsPerMinute = 200;
-		const textOnly = content.replace(/<[^>]*>/g, '');
-		const wordCount = textOnly.split(/\s+/).length;
-		const readingTime = Math.ceil(wordCount / wordsPerMinute);
-		return `${readingTime} min read`;
 	};
 
 	return (
