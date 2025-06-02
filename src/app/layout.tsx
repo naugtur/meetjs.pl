@@ -8,7 +8,6 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { env } from '@/env';
-import AnniversaryBannerWrapper from '@/components/AnniversaryBannerWrapper';
 
 const montserrat = Montserrat({
 	subsets: ['latin'],
@@ -125,7 +124,6 @@ const RootLayout = ({
 					enableSystem
 					disableTransitionOnChange
 				>
-					<AnniversaryBannerWrapper />
 					<Navigation />
 					{children}
 					<Footer />
