@@ -19,10 +19,9 @@ import {
 import { Badge } from '@/components/ui/badge';
 
 export const metadata = {
-	title:
-		'meet.js Wrocław Nominated for JavaScript Open Source Awards | meet.js',
+	title: 'meet.js Wrocław - Thank You for Your Support | meet.js',
 	description:
-		'meet.js Wrocław has been nominated for the JavaScript Open Source Awards in the Community of the Year category for 2025!',
+		'Thank you for supporting meet.js Wrocław in the JavaScript Open Source Awards 2025 Community of the Year category!',
 };
 
 export default function JSNationAwardPage() {
@@ -35,11 +34,11 @@ export default function JSNationAwardPage() {
 					</span>
 				</div>
 				<h1 className="mb-4 text-5xl font-bold tracking-tight">
-					We&apos;ve Been Nominated! 🎉
+					Thank You for Your Support! 🙏
 				</h1>
 				<p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-					meet.js Wrocław has been nominated for the JavaScript Open Source
-					Awards in the{' '}
+					meet.js Wrocław was nominated for the JavaScript Open Source Awards in
+					the{' '}
 					<span className="font-semibold text-green-600">
 						Community of the Year
 					</span>{' '}
@@ -48,27 +47,20 @@ export default function JSNationAwardPage() {
 				<div className="mt-8 flex justify-center">
 					<Button
 						size="lg"
-						className="bg-green-600 text-white hover:bg-green-700"
-						asChild
+						variant="outline"
+						className="border-green-200 bg-green-50 text-green-700 hover:bg-green-100"
+						disabled
 					>
-						<Link
-							href="https://docs.google.com/forms/d/e/1FAIpQLScUOqQ8IFJNmSQok_Whw12vm072HmOwnfFxRPsaUWV4EzmrHQ/viewform"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="inline-flex items-center gap-2"
-						>
-							<Award className="h-5 w-5" />
-							Vote for Us Now
-						</Link>
+						<Award className="h-5 w-5" />
+						Voting has ended
 					</Button>
 				</div>
 				<div className="mt-4 flex justify-center">
 					<Badge
 						variant="outline"
-						className="flex items-center gap-1 bg-amber-50 text-amber-700"
+						className="flex items-center gap-1 bg-gray-100 text-gray-700"
 					>
-						<Clock className="h-3 w-3" /> Voting closes on May 30, 2025, 8:00am
-						CEST
+						<Clock className="h-3 w-3" /> Voting ended on May 30, 2025
 					</Badge>
 				</div>
 			</div>
@@ -119,7 +111,8 @@ export default function JSNationAwardPage() {
 
 						<p className="mb-6">
 							The awards ceremony will take place on June 12 during JSNation
-							Conference in Amsterdam — keep your fingers crossed for us!
+							Conference in Amsterdam. We&apos;ll update this page with the
+							results after the ceremony!
 						</p>
 						<p className="mt-6">
 							P.S. We&apos;d also like to give a big shoutout to our friends at
@@ -143,37 +136,33 @@ export default function JSNationAwardPage() {
 					<CardHeader className="pb-2">
 						<div className="flex items-center gap-2">
 							<Award className="h-5 w-5 text-green-600" />
-							<CardTitle>Cast Your Vote</CardTitle>
+							<CardTitle>Voting Has Ended</CardTitle>
 						</div>
 					</CardHeader>
 					<CardContent>
 						<p className="text-muted-foreground">
-							Your support means the world to us! Please take a moment to vote
-							for meet.js Wrocław in the Community of the Year category.
+							Thank you to everyone who voted for meet.js Wrocław in the
+							Community of the Year category! Your support means the world to
+							us.
 						</p>
 						<div className="mt-4">
 							<Button
-								className="w-full bg-green-600 hover:bg-green-700"
-								asChild
+								variant="outline"
+								className="w-full border-green-200 bg-white text-green-700"
+								disabled
 							>
-								<Link
-									href="https://docs.google.com/forms/d/e/1FAIpQLScUOqQ8IFJNmSQok_Whw12vm072HmOwnfFxRPsaUWV4EzmrHQ/viewform"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									Vote Now
-								</Link>
+								Voting has ended
 							</Button>
 						</div>
 					</CardContent>
 					<CardFooter>
 						<p className="text-xs text-muted-foreground">
-							Voting closes on May 30, 2025, 8:00am CEST
+							Voting ended on May 30, 2025
 						</p>
 					</CardFooter>
 				</Card>
 
-				<Card className="border-green-200 shadow-md">
+				<Card className="border-green-200 bg-green-50 shadow-md">
 					<CardHeader className="pb-2">
 						<div className="flex items-center gap-2">
 							<Calendar className="h-5 w-5 text-green-600" />
@@ -183,23 +172,32 @@ export default function JSNationAwardPage() {
 					<CardContent>
 						<p className="text-muted-foreground">
 							The JavaScript Open Source Awards ceremony will take place during
-							JSNation Conference 2025.
+							JSNation Conference 2025. Check back here after the event for
+							updates!
 						</p>
-						<div className="mt-4 rounded-md bg-muted p-3">
+						<div className="mt-4 rounded-md border border-green-100 bg-white p-3">
 							<p className="font-medium">June 12, 2025</p>
 							<p className="text-sm text-muted-foreground">
 								Amsterdam, Netherlands
 							</p>
 						</div>
 					</CardContent>
-					<CardFooter>
+					<CardFooter className="flex-col items-start gap-2">
 						<Link
 							href="https://osawards.com/javascript/"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="inline-flex items-center gap-1 text-sm font-medium text-green-600 hover:text-green-700"
 						>
-							Visit JavaScript Open Source Awards{' '}
+							JavaScript Open Source Awards <ExternalLink className="h-3 w-3" />
+						</Link>
+						<Link
+							href="https://jsnation.com/"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="inline-flex items-center gap-1 text-sm font-medium text-green-600 hover:text-green-700"
+						>
+							JSNation Conference
 							<ExternalLink className="h-3 w-3" />
 						</Link>
 					</CardFooter>
@@ -316,7 +314,9 @@ export default function JSNationAwardPage() {
 			</div>
 
 			<div className="mb-12 text-center">
-				<h2 className="mb-6 text-2xl font-bold">Share the News</h2>
+				<h2 className="mb-6 text-center text-2xl font-bold">
+					Thank You for Your Support!
+				</h2>
 				<div className="flex flex-wrap justify-center gap-4">
 					<Button
 						variant="outline"
@@ -324,7 +324,7 @@ export default function JSNationAwardPage() {
 						asChild
 					>
 						<Link
-							href={`https://x.com/intent/tweet?text=${encodeURIComponent('Excited to share that meet.js Wrocław has been nominated for the JavaScript Open Source Awards in the Community of the Year category! 🏆 Vote now: https://docs.google.com/forms/d/e/1FAIpQLScUOqQ8IFJNmSQok_Whw12vm072HmOwnfFxRPsaUWV4EzmrHQ/viewform #MeetjsWroclaw #JavaScript #OpenSource')}`}
+							href={`https://x.com/intent/tweet?text=${encodeURIComponent('meet.js Wrocław was nominated for the JavaScript Open Source Awards in the Community of the Year category! 🏆 #MeetjsWroclaw #JavaScript #OpenSource')}`}
 							target="_blank"
 							rel="noopener noreferrer"
 						>
@@ -362,8 +362,11 @@ export default function JSNationAwardPage() {
 
 			<div className="text-center">
 				<p className="text-muted-foreground">
-					Hashtags: #MeetjsWroclaw #JavaScript #OpenSource #CommunityOfTheYear
-					#JSNation #TechCommunity #Frontend
+					Thank you for being part of our community! ❤️
+				</p>
+				<p className="mt-2 text-sm text-muted-foreground">
+					#MeetjsWroclaw #JavaScript #OpenSource #CommunityOfTheYear #JSNation
+					#TechCommunity
 				</p>
 			</div>
 		</div>
