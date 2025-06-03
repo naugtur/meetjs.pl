@@ -1,14 +1,14 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-	title: 'Promos & Marketing Events | meet.js',
+	title: 'Discounts & Special Offers | meet.js',
 	description:
-		'Special offers, discounts, and marketing events for the meet.js community.',
+		'Exclusive discounts and special offers for software tools, events, and conferences for the meet.js community.',
 	openGraph: {
-		title: 'Promos & Marketing Events | meet.js',
+		title: 'Discounts & Special Offers | meet.js',
 		description:
-			'Special offers, discounts, and marketing events for the meet.js community.',
-		url: 'https://meetjs.pl/promos',
+			'Exclusive discounts and special offers for software tools, events, and conferences for the meet.js community.',
+		url: 'https://meetjs.pl/discounts',
 		siteName: 'meet.js',
 		images: [
 			{
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 	},
 };
 
-export default function PromosLayout({
+export default function DiscountsLayout({
 	children,
 }: {
 	children: React.ReactNode;
