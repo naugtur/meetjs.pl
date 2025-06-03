@@ -6,16 +6,18 @@ export const discounts: Promo[] = [
 		name: 'InfoShare 2025',
 		message: '10% off with code ISC25-MeetJS10!',
 		cta: '👉 Get 10% Off',
-		ticketLink: 'https://infoshare.pl/is-register/?discount_code=ISC25-MeetJS10',
+		ticketLink:
+			'https://infoshare.pl/is-register/?discount_code=ISC25-MeetJS10',
 		eventLink: 'https://infoshare.pl',
 		expiresAt: '2025-05-24T23:59:59+02:00',
-		description: 'Join InfoShare 2025, one of the largest tech conferences in Central Europe! Use code ISC25-MeetJS10 for 10% off your ticket.',
+		description:
+			'Join InfoShare 2025, one of the largest tech conferences in Central Europe! Use code ISC25-MeetJS10 for 10% off your ticket.',
 		gradient: 'bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600',
 		icon: '🎟️',
 		emojiRight: '🇵🇱',
 		country: 'Poland',
 		city: 'Gdańsk',
-		discountCode: 'ISC25-MeetJS10'
+		discountCode: 'ISC25-MeetJS10',
 	},
 	{
 		id: 'code-europe-2025',
@@ -119,6 +121,23 @@ export const discounts: Promo[] = [
 		country: 'Poland',
 		city: 'Wrocław',
 		discountCode: 'meet.js10',
+	},
+	{
+		id: 'wearedevelopers-2025',
+		name: 'WeAreDevelopers World Congress 2025',
+		message: '10% off with code Community_MeetJs!',
+		cta: '👉 Get 10% Off',
+		ticketLink: 'https://www.wearedevelopers.com/world-congress?discount=Community_MeetJs',
+		eventLink: 'https://www.wearedevelopers.com/world-congress',
+		expiresAt: '2025-07-11T23:59:59+02:00',
+		description:
+			'Join the WeAreDevelopers World Congress 2025 (July 10-11), the world\'s leading event for developers, AI innovators & tech leaders! Connect with 15,000+ developers, 500+ speakers including GitHub CEO Thomas Dohmke, Amazon CTO Dr. Werner Vogels, and legendary game creator John Romero. Experience cutting-edge talks on AI, software development, and the future of technology. Use code Community_MeetJs for 10% off your ticket.',
+		gradient: 'bg-gradient-to-r from-orange-500 via-red-500 to-pink-600',
+		icon: '🌍',
+		emojiRight: '🇩🇪',
+		country: 'Germany',
+		city: 'Berlin',
+		discountCode: 'Community_MeetJs',
 	},
 	{
 		id: 'vueconfus-2025',
