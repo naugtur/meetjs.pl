@@ -38,24 +38,30 @@ City statuses include:
 - **paused**: Temporarily inactive (Bielsko-Biała, Kielce, Szczecin, Toruń)
 - **typescript**: Special marker for TypeScript events (Gdańsk)
 
-## Promo Banners: How to Add or Edit a Promo
+## Discount Banners & Special Offers: How to Add or Edit
 
-To add, edit, or remove promotional banners (e.g., for events or discounts), edit the file:
+To add, edit, or remove promotional banners and discount offers, edit the appropriate files:
 
+**For Software & Tools Discounts:**
 ```
-src/content/promos.ts
+src/content/software-discounts.ts
 ```
 
-Below is an example of how multiple promo banners appear on the site:
+**For Events & Conferences Discounts:**
+```
+src/content/discounts.ts
+```
 
-![Example of multiple promo banners in meet.js website navigation, showing CityJS Athens, JSConf CFP, and Crossweb 2024 banners](docs/promo-banners-example.png)
+Below is an example of how multiple discount banners appear on the site:
 
-Each promo is an object in the exported `promos` array. Example of a current promo:
+![Example of multiple discount banners in meet.js website navigation, showing CityJS Athens, JSConf CFP, and Crossweb 2024 banners](docs/promo-banners-example.png)
+
+Each discount is an object in the exported `discounts` or `softwareDiscounts` array. Example of a current discount:
 
 ```ts
-import { Promo } from '../components/PromoBanners';
+import { Promo } from '@/types/promo';
 
-export const promos: Promo[] = [
+export const discounts: Promo[] = [
 	{
 		id: 'react-universe-2025', // Unique string identifier
 		message: 'React Universe Conf 2025: 10% off with code meet.js10!', // Banner message
@@ -72,13 +78,13 @@ export const promos: Promo[] = [
 		city: 'Wrocław', // Event city
 		discountCode: 'meet.js10', // Optional discount code
 	},
-	// Add more promos as needed
+	// Add more discounts as needed
 ];
 ```
 
 **Field descriptions:**
 
-- `id` (string): Unique identifier for the promo (required)
+- `id` (string): Unique identifier for the discount (required)
 - `message` (string): The text shown in the banner (required)
 - `cta` (string): The call-to-action button text (required)
 - `ticketLink` (string): URL for the CTA button (required)
@@ -87,7 +93,11 @@ export const promos: Promo[] = [
 - `icon` (string): Emoji or icon on the left (optional)
 - `emojiRight` (string): Emoji or icon on the right (optional)
 
-**After editing promos.ts, save and reload the page to see your changes.**
+### Contact for Discounts
+
+If you're organizing an event, conference, or offering software tools and would like to provide discounts to the meet.js community, please reach out to us at **contact@meetjs.pl**. We're always happy to feature relevant offers that benefit our developer community.
+
+**After editing discounts.ts or software-discounts.ts, save and reload the page to see your changes.**
 
 ## Brand Assets and Wallpapers
 
