@@ -1,5 +1,5 @@
-import { SpecialPromoBanners } from '@/components/SpecialPromoBanners';
-import { promos } from '@/content/promos';
+import { discounts } from '@/content/discounts';
+import { softwareDiscounts } from '@/content/software-discounts';
 import {
 	Card,
 	CardContent,
@@ -8,25 +8,27 @@ import {
 	CardDescription,
 	CardFooter,
 } from '@/components/ui/card';
-import { CalendarDays, Gift, Tag, Ticket } from 'lucide-react';
+import { CalendarDays, Gift, Tag, Ticket, Monitor } from 'lucide-react';
 import { Metadata } from 'next';
+import { SoftwarePromoCard } from '@/components/SoftwarePromoCard';
+import { EventDiscountCard } from '@/components/EventDiscountCard';
 
 export const metadata: Metadata = {
-	title: 'Promos & Marketing Events | meet.js',
+	title: 'Software & Event Discounts | meet.js',
 	description:
-		'Special offers, discounts, and marketing events for the meet.js community.',
+		'Exclusive discounts on software tools and event tickets for the meet.js community.',
 };
 
-export default function PromosPage() {
+export default function DiscountsPage() {
 	return (
 		<div className="container mx-auto max-w-4xl py-16">
 			<div className="mb-12 text-center">
 				<h1 className="mb-4 text-5xl font-bold tracking-tight">
-					Promos & Events
+					Community Discounts
 				</h1>
 				<p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-					Exclusive offers and special events for the meet.js community. Take
-					advantage of these limited-time opportunities!
+					Exclusive discounts on software tools and event tickets for the
+					meet.js community. Take advantage of these limited-time opportunities!
 				</p>
 			</div>
 
@@ -44,11 +46,11 @@ export default function PromosPage() {
 							</div>
 							<CardDescription className="mt-2 text-base">
 								As a valued member of the meet.js community, you have access to
-								these special offers from our partners.
+								these special discounts from our partners.
 							</CardDescription>
 						</CardHeader>
 						<CardContent className="pt-4">
-							<div className="grid gap-6 md:grid-cols-3">
+							<div className="grid gap-6 md:grid-cols-4">
 								<div className="flex flex-col gap-2">
 									<div className="flex items-center gap-2">
 										<Ticket className="h-5 w-5 text-purple" />
@@ -57,6 +59,15 @@ export default function PromosPage() {
 									<p className="text-sm text-muted-foreground">
 										Special pricing for conferences and workshops around the
 										world
+									</p>
+								</div>
+								<div className="flex flex-col gap-2">
+									<div className="flex items-center gap-2">
+										<Monitor className="text-indigo h-5 w-5" />
+										<h3 className="font-semibold">Software Tools</h3>
+									</div>
+									<p className="text-sm text-muted-foreground">
+										Premium software and developer tools at discounted rates
 									</p>
 								</div>
 								<div className="flex flex-col gap-2">
@@ -83,17 +94,36 @@ export default function PromosPage() {
 				</div>
 				<CardFooter className="bg-muted/50 p-6">
 					<p className="text-sm text-muted-foreground">
-						<span className="font-semibold">Note:</span> All promotions are
+						<span className="font-semibold">Note:</span> All discounts are
 						time-limited and subject to partner terms and conditions. Check
 						expiration dates before redeeming.
 					</p>
 				</CardFooter>
 			</Card>
 
-			<div className="mb-8">
-				<h2 className="mb-6 text-2xl font-bold">Current Promotions</h2>
-				<SpecialPromoBanners promos={promos} />
-			</div>
+			{softwareDiscounts.length > 0 && (
+				<div className="mb-8">
+					<div className="mb-6 flex items-center gap-3">
+						<Monitor className="text-indigo h-6 w-6" />
+						<h2 className="text-2xl font-bold">Software & Tools</h2>
+					</div>
+					<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+						{softwareDiscounts.map((promo) => (
+							<SoftwarePromoCard key={promo.id} promo={promo} />
+						))}
+					</div>
+				</div>
+			)}
+
+			{discounts.length > 0 && (
+				<div className="mb-8">
+					<div className="mb-6 flex items-center gap-3">
+						<Ticket className="h-6 w-6 text-purple" />
+						<h2 className="text-2xl font-bold">Events & Conferences</h2>
+					</div>
+					<EventDiscountCard promos={discounts} />
+				</div>
+			)}
 		</div>
 	);
 }

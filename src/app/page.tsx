@@ -6,14 +6,16 @@ import { FeaturedEvents } from '@/components/FeaturedEvents';
 import { HeroSection } from '@/components/HeroSection';
 import { PartnersSection } from '@/components/PartnersSection';
 import { PromoBanners } from '@/components/PromoBanners';
-import { promos } from '@/content/promos';
+// import { discounts } from '@/content/discounts';
+import { softwareDiscounts } from '@/content/software-discounts';
 
 export const dynamic = 'force-dynamic';
 
 const Home = () => {
 	return (
 		<>
-			<PromoBanners promos={promos} />
+			{/* <PromoBanners promos={discounts} /> */}
+			<PromoBanners promos={softwareDiscounts} />
 			<HeroSection />
 			<FeaturedEvents />
 			<main className="flex min-h-screen flex-col items-center">

@@ -1,9 +1,10 @@
 import { Promo } from '../types/promo';
 
-export const promos: Promo[] = [
+export const discounts: Promo[] = [
 	{
 		id: 'infoshare-2025',
-		message: 'InfoShare 2025: 10% off with code ISC25-MeetJS10!',
+		name: 'InfoShare 2025',
+		message: '10% off with code ISC25-MeetJS10!',
 		cta: '👉 Get 10% Off',
 		ticketLink: 'https://infoshare.pl/is-register/?discount_code=ISC25-MeetJS10',
 		eventLink: 'https://infoshare.pl',
@@ -18,8 +19,8 @@ export const promos: Promo[] = [
 	},
 	{
 		id: 'code-europe-2025',
-		message:
-			"Code Europe 2025: Join Poland's biggest tech festival with code MEETJS25!",
+		name: 'Code Europe 2025',
+		message: "Join Poland's biggest tech festival with code MEETJS25!",
 		cta: '👉 Get Discount',
 		ticketLink: 'https://www.codeeurope.pl/en/',
 		eventLink: 'https://www.codeeurope.pl/en/',
@@ -35,7 +36,8 @@ export const promos: Promo[] = [
 	},
 	{
 		id: 'ms-tech-summit-2025',
-		message: 'MS Tech Summit 2025: 30% off with code MSTS25xmeetjs!',
+		name: 'MS Tech Summit 2025',
+		message: '30% off with code MSTS25xmeetjs!',
 		cta: '👉 Get 30% Off',
 		ticketLink: 'https://mstechsummit.pl/',
 		eventLink: 'https://mstechsummit.pl/',
@@ -51,7 +53,8 @@ export const promos: Promo[] = [
 	},
 	{
 		id: 'devdays-europe-2025',
-		message: 'DevDays Europe 2025: 15% off with code meet.js15!',
+		name: 'DevDays Europe 2025',
+		message: '15% off with code meet.js15!',
 		cta: '👉 Get 15% Off',
 		ticketLink: 'https://devdays.lt',
 		eventLink: 'https://devdays.lt',
@@ -67,7 +70,8 @@ export const promos: Promo[] = [
 	},
 	{
 		id: 'cityjs-athens-2025',
-		message: 'CityJS Athens 2025: Use meet.js promo code for a discount!',
+		name: 'CityJS Athens 2025',
+		message: 'Use meet.js promo code for a discount!',
 		cta: '👉 Get Discount',
 		ticketLink:
 			'https://ti.to/cityjs-conference/cityjs-athens-2025/discount/meetjs',
@@ -84,11 +88,12 @@ export const promos: Promo[] = [
 	},
 	{
 		id: 'appjs-2025',
-		message: 'App.js 2025: Exclusive 15% discount for meet.js community!',
+		name: 'App.js 2025',
+		message: 'Exclusive 15% discount for meet.js community!',
 		cta: '👉 Get 15% Off',
 		ticketLink: 'https://ti.to/appjs/2025/discount/meetJS',
 		eventLink: 'https://appjs.co',
-		expiresAt: '2025-07-28T23:59:59+02:00',
+		expiresAt: '2025-05-27T23:59:59+02:00',
 		description:
 			"App.js is Poland's premier conference focused on JavaScript for mobile and web applications. Join us in Kraków for hands-on workshops, in-depth technical talks, and networking with the top JS developers building modern applications.",
 		gradient: 'bg-gradient-to-r from-indigo-500 via-blue-500 to-purple-500',
@@ -100,7 +105,8 @@ export const promos: Promo[] = [
 	},
 	{
 		id: 'react-universe-2025',
-		message: 'React Universe Conf 2025: 10% off with code meet.js10!',
+		name: 'React Universe Conf 2025',
+		message: '10% off with code meet.js10!',
 		cta: '👉 Get Discount',
 		ticketLink: 'https://ti.to/RUC/react-universe-conf-2025/discount/meet.js10',
 		eventLink: 'https://www.reactuniverseconf.com/',
@@ -116,7 +122,8 @@ export const promos: Promo[] = [
 	},
 	{
 		id: 'vueconfus-2025',
-		message: 'VueConf US 2025: Use code VUE25MEETJS for a special discount!',
+		name: 'VueConf US 2025',
+		message: 'Use code VUE25MEETJS for a special discount!',
 		cta: '👉 Redeem Voucher',
 		ticketLink:
 			'https://reg.connectevents.io/ConnectEvents/Vueconfus2025/redeem?voucher=VUE25MEETJS',
@@ -133,7 +140,8 @@ export const promos: Promo[] = [
 	},
 	{
 		id: 'summit-community-partner-2025',
-		message: 'Women in Tech Summit: Use code SUMMIT_2025MEET.JS50 by May 17!',
+		name: 'Women in Tech Summit',
+		message: 'Use code SUMMIT_2025MEET.JS50 by May 17!',
 		cta: '👉 Get tickets',
 		ticketLink: 'https://go.womenintechsummit.pl/buy?inperson=1',
 		eventLink: 'https://womenintechsummit.pl/join-the-event',
@@ -149,7 +157,8 @@ export const promos: Promo[] = [
 	},
 	{
 		id: 'react-summit-2025',
-		message: 'React Summit 2025: 10% off with code REACT!',
+		name: 'React Summit 2025',
+		message: '10% off with code REACT!',
 		cta: '👉 Get 10% Off',
 		ticketLink: 'https://ti.to/gitnation/react-summit-2025/discount/REACT',
 		eventLink: 'https://gitnation.com/events/react-summit-2025',
@@ -165,13 +174,14 @@ export const promos: Promo[] = [
 	},
 	{
 		id: 'react-summit-us-2025',
-		message: 'React Summit US 2025: 10% off with code FRIENDS!',
+		name: 'React Summit US 2025',
+		message: '10% off with code FRIENDS!',
 		cta: '👉 Get 10% Off',
 		ticketLink: 'https://ti.to/gitnation/react-summit-us-2025/discount/FRIENDS',
 		eventLink: 'https://gitnation.com/events/react-summit-us-2025',
-		expiresAt: '2025-09-30T23:59:59+02:00',
+		expiresAt: '2025-11-17T23:59:59+02:00',
 		description:
-			'React Summit US 2025 is the premier React conference in North America. Join the global React community for expert-led sessions and networking. Use code FRIENDS for 10% off on tickets (available from July 1st)!',
+			'React Summit US 2025 is the premier React conference in North America taking place November 18-21, 2025 in New York & Online. Join the global React community for expert-led sessions and networking. Use code FRIENDS for 10% off on tickets!',
 		gradient: 'bg-gradient-to-r from-red-500 via-blue-500 to-indigo-600',
 		icon: '⚛️',
 		emojiRight: '🇺🇸',

@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 
 export interface Promo {
 	id: string;
+	name: string;
 	message: string;
 	description?: string;
 	ticketLink: string;
@@ -12,6 +13,7 @@ export interface Promo {
 	emojiRight?: string;
 	emojiLeft?: string;
 	icon?: ReactNode;
+	image?: string;
 	gradient?: string;
 	cta: string;
 	discountCode?: string;

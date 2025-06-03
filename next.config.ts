@@ -95,6 +95,11 @@ const nextConfig: NextConfig = {
 				destination: '/how-to-become-an-organizer',
 				permanent: true,
 			},
+			{
+				source: '/promos',
+				destination: '/discounts',
+				permanent: true,
+			},
 		];
 	},
 };
