@@ -3,6 +3,7 @@ import { Stats } from '@/components/Stats';
 
 import { JoinUs } from '@/components/JoinUs';
 import { FeaturedEvents } from '@/components/FeaturedEvents';
+import { FeaturedBlogPosts } from '@/components/FeaturedBlogPosts';
 import { HeroSection } from '@/components/HeroSection';
 import { PartnersSection } from '@/components/PartnersSection';
 import { PromoBanners } from '@/components/PromoBanners';
@@ -22,6 +23,7 @@ const Home = () => {
 					<AboutSection />
 					<Stats />
 				</div>
+				<FeaturedBlogPosts />
 				<PartnersSection />
 			</main>
 		</>
