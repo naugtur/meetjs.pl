@@ -56,19 +56,22 @@ export const PromoBanners = ({ promos }: Props) => {
 const PromoBanner = ({ promo, close }: { promo: Promo; close: () => void }) => (
 	<div className="relative">
 		<div
-			className={`relative ${promo.gradient || 'bg-gradient-to-r from-blue via-purple to-green'} animate-fade-in z-50 py-2 text-white shadow`}
+			className={`relative ${promo.gradient || 'bg-gradient-to-r from-blue via-purple to-green'} animate-fade-in z-50 py-1.5 md:py-2 text-white shadow`}
 		>
 			<div className="mx-2 sm:mx-4">
-				<div className="flex flex-col items-center justify-between gap-2 text-center md:flex-row md:text-left">
-					<Icon icon={promo.icon} emojiLeft={promo.emojiLeft} />
+				<div className="flex flex-col items-center justify-between gap-1 md:gap-2 text-center md:flex-row md:text-left">
+					<div className="hidden md:block">
+						<Icon icon={promo.icon} emojiLeft={promo.emojiLeft} />
+					</div>
 
-					<span className="flex-1 text-sm font-medium md:text-base">
-						{promo.message} <RightEmoji emojiRight={promo.emojiRight} />
+					<span className="flex-1 text-xs md:text-sm font-medium leading-tight">
+						<span className="font-semibold">{promo.name}</span> - {promo.message} <RightEmoji emojiRight={promo.emojiRight} />
 					</span>
 
-					<LinkCTA ticketLink={promo.ticketLink}>{promo.cta}</LinkCTA>
-
-					<CloseButton close={close} />
+					<div className="flex items-center gap-2">
+						<LinkCTA ticketLink={promo.ticketLink}>{promo.cta}</LinkCTA>
+						<CloseButton close={close} />
+					</div>
 				</div>
 			</div>
 		</div>
