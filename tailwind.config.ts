@@ -36,6 +36,9 @@ const config: Config = {
 		'to-blue-600',
 		'from-purple-600',
 		'to-indigo-600',
+		'from-purple-600',
+		'via-pink-500',
+		'to-red-500',
 	],
 	content: [
 		'./src/components/**/*.{ts,tsx,mdx}',
@@ -63,6 +66,15 @@ const config: Config = {
 				purple: {
 					DEFAULT: '#2b1932',
 					500: '#2b1932',
+					600: '#7c3aed',
+				},
+				pink: {
+					DEFAULT: '#ec4899',
+					500: '#ec4899',
+				},
+				red: {
+					DEFAULT: '#ef4444',
+					500: '#ef4444',
 				},
 				blue: {
 					DEFAULT: '#219eab',
