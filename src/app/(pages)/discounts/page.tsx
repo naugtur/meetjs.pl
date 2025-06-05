@@ -1,5 +1,7 @@
 import { discounts } from '@/content/discounts';
 import { softwareDiscounts } from '@/content/software-discounts';
+import { learningDiscounts } from '@/content/learning-discounts';
+import type { Promo } from '@/types/promo';
 import {
 	Card,
 	CardContent,
@@ -8,15 +10,15 @@ import {
 	CardDescription,
 	CardFooter,
 } from '@/components/ui/card';
-import { CalendarDays, Gift, Tag, Ticket, Monitor } from 'lucide-react';
+import { Gift, Ticket, Monitor, BookOpen } from 'lucide-react';
 import { Metadata } from 'next';
 import { SoftwarePromoCard } from '@/components/SoftwarePromoCard';
 import { EventDiscountCard } from '@/components/EventDiscountCard';
 
 export const metadata: Metadata = {
-	title: 'Software & Event Discounts | meet.js',
+	title: 'Exclusive Discounts | meet.js',
 	description:
-		'Exclusive discounts on software tools and event tickets for the meet.js community.',
+		'Exclusive discounts on courses, software tools, and event tickets for the meet.js community.',
 };
 
 export default function DiscountsPage() {
@@ -50,42 +52,35 @@ export default function DiscountsPage() {
 							</CardDescription>
 						</CardHeader>
 						<CardContent className="pt-4">
-							<div className="grid gap-6 md:grid-cols-4">
+							<div className="grid gap-6 md:grid-cols-3">
 								<div className="flex flex-col gap-2">
 									<div className="flex items-center gap-2">
-										<Ticket className="h-5 w-5 text-purple" />
-										<h3 className="font-semibold">Event Discounts</h3>
+										<Ticket className="h-5 w-5 text-purple-600" />
+										<h3 className="font-semibold">Events & Conferences</h3>
 									</div>
 									<p className="text-sm text-muted-foreground">
-										Special pricing for conferences and workshops around the
-										world
+										Special pricing for conferences, workshops, and meetups
+										around the world
 									</p>
 								</div>
 								<div className="flex flex-col gap-2">
 									<div className="flex items-center gap-2">
-										<Monitor className="text-indigo h-5 w-5" />
-										<h3 className="font-semibold">Software Tools</h3>
+										<Monitor className="h-5 w-5 text-indigo-600" />
+										<h3 className="font-semibold">Software & Tools</h3>
 									</div>
 									<p className="text-sm text-muted-foreground">
-										Premium software and developer tools at discounted rates
+										Premium developer tools, IDEs, and services at exclusive
+										rates
 									</p>
 								</div>
 								<div className="flex flex-col gap-2">
 									<div className="flex items-center gap-2">
-										<Tag className="h-5 w-5 text-blue" />
-										<h3 className="font-semibold">Partner Perks</h3>
+										<BookOpen className="h-5 w-5 text-green-600" />
+										<h3 className="font-semibold">Courses & Learning</h3>
 									</div>
 									<p className="text-sm text-muted-foreground">
-										Exclusive offers from our technology and education partners
-									</p>
-								</div>
-								<div className="flex flex-col gap-2">
-									<div className="flex items-center gap-2">
-										<CalendarDays className="h-5 w-5 text-green" />
-										<h3 className="font-semibold">Early Access</h3>
-									</div>
-									<p className="text-sm text-muted-foreground">
-										Be the first to know about upcoming events and opportunities
+										Discounts on courses, books, and educational content from
+										top instructors
 									</p>
 								</div>
 							</div>
@@ -101,10 +96,20 @@ export default function DiscountsPage() {
 				</CardFooter>
 			</Card>
 
+			{discounts.length > 0 && (
+				<div className="mb-8">
+					<div className="mb-6 flex items-center gap-3">
+						<Ticket className="h-6 w-6 text-purple-600" />
+						<h2 className="text-2xl font-bold">Events & Conferences</h2>
+					</div>
+					<EventDiscountCard promos={discounts} />
+				</div>
+			)}
+
 			{softwareDiscounts.length > 0 && (
 				<div className="mb-8">
 					<div className="mb-6 flex items-center gap-3">
-						<Monitor className="text-indigo h-6 w-6" />
+						<Monitor className="h-6 w-6 text-indigo-600" />
 						<h2 className="text-2xl font-bold">Software & Tools</h2>
 					</div>
 					<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
@@ -115,13 +120,17 @@ export default function DiscountsPage() {
 				</div>
 			)}
 
-			{discounts.length > 0 && (
+			{learningDiscounts.length > 0 && (
 				<div className="mb-8">
 					<div className="mb-6 flex items-center gap-3">
-						<Ticket className="h-6 w-6 text-purple" />
-						<h2 className="text-2xl font-bold">Events & Conferences</h2>
+						<BookOpen className="h-6 w-6 text-green-600" />
+						<h2 className="text-2xl font-bold">Courses & Learning</h2>
 					</div>
-					<EventDiscountCard promos={discounts} />
+					<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+						{learningDiscounts.map((promo: Promo) => (
+							<SoftwarePromoCard key={promo.id} promo={promo} />
+						))}
+					</div>
 				</div>
 			)}
 		</div>
