@@ -16,23 +16,12 @@ const getDomain = (url: string) => {
 	}
 };
 
-// Format date to be more readable
-const formatDate = (dateString: string) => {
-	const date = new Date(dateString);
-	return date.toLocaleDateString('en-GB', {
-		year: 'numeric',
-		month: 'long',
-		day: 'numeric',
-	});
-};
-
 interface SoftwarePromoCardProps {
 	promo: Promo;
 }
 
 export function SoftwarePromoCard({ promo }: SoftwarePromoCardProps) {
 	const [copied, setCopied] = useState(false);
-	const expiryDate = formatDate(promo.expiresAt);
 
 	const copyDiscountCode = async () => {
 		if (promo.discountCode) {
@@ -100,25 +89,6 @@ export function SoftwarePromoCard({ promo }: SoftwarePromoCardProps) {
 						</div>
 					</div>
 				)}
-
-				<div className="mb-6 grid grid-cols-2 gap-4">
-					<div>
-						<p className="text-sm font-medium text-gray-500 dark:text-gray-400">
-							Valid Until
-						</p>
-						<p className="font-medium text-gray-900 dark:text-white">
-							{expiryDate}
-						</p>
-					</div>
-					<div>
-						<p className="text-sm font-medium text-gray-500 dark:text-gray-400">
-							Availability
-						</p>
-						<p className="font-medium text-gray-900 dark:text-white">
-							{promo.country || 'Global'}
-						</p>
-					</div>
-				</div>
 
 				<div className="mb-6 space-y-3">
 					{promo.eventLink && (
