@@ -127,11 +127,12 @@ export const discounts: Promo[] = [
 		name: 'WeAreDevelopers World Congress 2025',
 		message: '10% off with code Community_MeetJs!',
 		cta: '👉 Get 10% Off',
-		ticketLink: 'https://www.wearedevelopers.com/world-congress?discount=Community_MeetJs',
+		ticketLink:
+			'https://www.wearedevelopers.com/world-congress?discount=Community_MeetJs',
 		eventLink: 'https://www.wearedevelopers.com/world-congress',
 		expiresAt: '2025-07-11T23:59:59+02:00',
 		description:
-			'Join the WeAreDevelopers World Congress 2025 (July 10-11), the world\'s leading event for developers, AI innovators & tech leaders! Connect with 15,000+ developers, 500+ speakers including GitHub CEO Thomas Dohmke, Amazon CTO Dr. Werner Vogels, and legendary game creator John Romero. Experience cutting-edge talks on AI, software development, and the future of technology. Use code Community_MeetJs for 10% off your ticket.',
+			"Join the WeAreDevelopers World Congress 2025 (July 10-11), the world's leading event for developers, AI innovators & tech leaders! Connect with 15,000+ developers, 500+ speakers including GitHub CEO Thomas Dohmke, Amazon CTO Dr. Werner Vogels, and legendary game creator John Romero. Experience cutting-edge talks on AI, software development, and the future of technology. Use code Community_MeetJs for 10% off your ticket.",
 		gradient: 'bg-gradient-to-r from-orange-500 via-red-500 to-pink-600',
 		icon: '🌍',
 		emojiRight: '🇩🇪',
@@ -207,5 +208,25 @@ export const discounts: Promo[] = [
 		country: 'USA',
 		city: 'New York',
 		discountCode: 'FRIENDS',
+	},
+	{
+		id: 'warsawjs-2025',
+		name: 'WarsawJS',
+		message: '40% off with code JScommunity!',
+		cta: '👉 Get 40% Off',
+		ticketLink:
+			'https://app.easycart.pl/checkout/warsawjs/meetup-127?promo=JScommunity',
+		eventLink: 'https://warsawjs.com/',
+		expiresAt: '2025-06-09T23:59:59+02:00',
+		description:
+			'Our friendly meetup friends, WarsawJS, offer a 40% discount with code JScommunity for their meetup!',
+		gradient: 'bg-gradient-to-r from-red-500 via-pink-500 to-purple-600',
+		icon: '🤝',
+		image:
+			'https://warsawjs.com/static/images/logos/logo-warsawjs-with-white-text.svg',
+		emojiRight: '🇵🇱',
+		country: 'Poland',
+		city: 'Warsaw',
+		discountCode: 'JScommunity',
 	},
 ];
