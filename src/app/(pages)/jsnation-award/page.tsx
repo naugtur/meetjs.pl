@@ -1,12 +1,12 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import {
-	Award,
-	Calendar,
-	Clock,
 	ExternalLink,
 	Heart,
 	MapPin,
 	Users,
+	Camera,
+	Video,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -19,9 +19,9 @@ import {
 import { Badge } from '@/components/ui/badge';
 
 export const metadata = {
-	title: 'meet.js Wrocław - Thank You for Your Support | meet.js',
+	title: 'WE WON! meet.js Wrocław - Community of the Year 2025 | meet.js',
 	description:
-		'Thank you for supporting meet.js Wrocław in the JavaScript Open Source Awards 2025 Community of the Year category!',
+		'meet.js Wrocław has WON the JavaScript Open Source Award for Community of the Year 2025! Thank you for your incredible support!',
 };
 
 export default function JSNationAwardPage() {
@@ -29,39 +29,105 @@ export default function JSNationAwardPage() {
 		<div className="container mx-auto max-w-4xl py-16">
 			<div className="mb-12 text-center">
 				<div className="mb-6 flex justify-center">
-					<span className="inline-block rounded-full bg-green-100 p-3">
-						<Award className="h-12 w-12 text-green-600" />
-					</span>
+					<span className="text-5xl">🏆</span>
 				</div>
 				<h1 className="mb-4 text-5xl font-bold tracking-tight">
-					Thank You for Your Support! 🙏
+					We Won! Community of the Year!
 				</h1>
 				<p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-					meet.js Wrocław was nominated for the JavaScript Open Source Awards in
-					the{' '}
-					<span className="font-semibold text-green-600">
-						Community of the Year
-					</span>{' '}
-					category!
+					meet.js Wrocław has WON the JavaScript Open Source Award for{' '}
+					<span className="font-semibold text-yellow-500">
+						Community of the Year 2025
+					</span>
+					! A huge thank you to our amazing community!
 				</p>
-				<div className="mt-8 flex justify-center">
-					<Button
-						size="lg"
-						variant="outline"
-						className="border-green-200 bg-green-50 text-green-700 hover:bg-green-100"
-						disabled
-					>
-						<Award className="h-5 w-5" />
-						Voting has ended
-					</Button>
-				</div>
+
 				<div className="mt-4 flex justify-center">
 					<Badge
-						variant="outline"
-						className="flex items-center gap-1 bg-gray-100 text-gray-700"
+						variant="default"
+						className="flex items-center gap-1 border-yellow-300 bg-yellow-100 text-yellow-700"
 					>
-						<Clock className="h-3 w-3" /> Voting ended on May 30, 2025
+						🏆 Awarded on June 12, 2025
 					</Badge>
+				</div>
+			</div>
+
+			<div id="celebration" className="my-12 scroll-mt-20">
+				{' '}
+				
+				<h2 className="mb-8 text-center text-4xl font-bold tracking-tight text-yellow-600">
+					Celebrating Our Victory! 🎉
+				</h2>
+				<div className="flex flex-col items-center gap-8">
+					<Card className="w-full max-w-2xl overflow-hidden shadow-lg">
+						<CardHeader className="relative aspect-video p-0">
+							
+							<Image
+								src="/jsnation-award/ceremony.jpeg"
+								alt="meet.js Wrocław Team Receiving Award"
+								fill
+								className="object-cover"
+							/>
+						</CardHeader>
+						<CardContent className="p-6">
+							<div className="mb-2 flex items-center gap-2">
+								<Camera className="h-5 w-5 text-yellow-600" />
+								<CardTitle className="text-xl">
+									Team Receiving the Award
+								</CardTitle>
+							</div>
+							<p className="text-muted-foreground">
+								A snapshot of the moment we received the Community of the Year
+								award at JSNation 2025.
+							</p>
+						</CardContent>
+					</Card>
+
+					<Card className="w-full max-w-2xl overflow-hidden shadow-lg">
+						<CardHeader className="relative aspect-video p-0">
+							
+							<Image
+								src="/jsnation-award/award.jpeg"
+								alt="JSNation Community of the Year Award"
+								fill
+								className="object-cover"
+							/>
+						</CardHeader>
+						<CardContent className="p-6">
+							<div className="mb-2 flex items-center gap-2">
+								<span className="text-xl">🏆</span>
+								<CardTitle className="text-xl">The Award Itself</CardTitle>
+							</div>
+							<p className="text-muted-foreground">
+								Our prestigious Community of the Year 2025 award from JSNation!
+							</p>
+						</CardContent>
+					</Card>
+
+					<Card className="w-full max-w-2xl overflow-hidden shadow-lg">
+						<CardHeader className="p-0">
+							
+							<div className="aspect-video h-auto w-full">
+								<iframe
+									className="h-full w-full rounded-t-lg"
+									src="https://www.youtube.com/embed/mQ9jSzh7gtE?start=1192"
+									title="YouTube video player - JSNation Awards"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+									allowFullScreen
+								></iframe>
+							</div>
+						</CardHeader>
+						<CardContent className="p-6">
+							<div className="mb-2 flex items-center gap-2">
+								<Video className="h-5 w-5 text-yellow-600" />
+								<CardTitle className="text-xl">Video from the Event</CardTitle>
+							</div>
+							<p className="text-muted-foreground">
+								Watch highlights from the JSNation award ceremony and our
+								acceptance speech!
+							</p>
+						</CardContent>
+					</Card>
 				</div>
 			</div>
 
@@ -69,15 +135,19 @@ export default function JSNationAwardPage() {
 				<div className="rounded-lg bg-background p-8">
 					<div className="prose prose-lg mx-auto max-w-3xl">
 						<p className="lead mb-6 text-xl font-medium">
-							Grateful, surprised, and excited — meet.js Wrocław has been
-							nominated for the JavaScript Open Source Awards in the Community
-							of the Year category! 🚀
+							WE WON! 🎉 We are incredibly honored and thrilled to announce that
+							meet.js Wrocław has been awarded the{' '}
+							<strong className="text-yellow-600">
+								Community of the Year 2025
+							</strong>{' '}
+							at the JavaScript Open Source Awards! 🚀
 						</p>
 
 						<p className="mb-6">
-							Thank you to everyone who&apos;s part of this community — for
-							showing up, sharing knowledge and helping build something
-							meaningful together. 🙌
+							This incredible achievement wouldn&apos;t be possible without
+							every single one of you — our attendees, speakers, sponsors, and
+							supporters. Thank you for showing up, sharing knowledge, and
+							helping build something truly special together. 🙌
 						</p>
 
 						<p className="mb-6">
@@ -110,9 +180,9 @@ export default function JSNationAwardPage() {
 						</p>
 
 						<p className="mb-6">
-							The awards ceremony will take place on June 12 during JSNation
-							Conference in Amsterdam. We&apos;ll update this page with the
-							results after the ceremony!
+							The award was presented on June 12 during the JSNation Conference
+							in Amsterdam. It was an unforgettable moment for our team and
+							community!
 						</p>
 						<p className="mt-6">
 							P.S. We&apos;d also like to give a big shoutout to our friends at
@@ -121,7 +191,7 @@ export default function JSNationAwardPage() {
 								href="https://osawards.com/react/"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="text-green-600 hover:text-green-700"
+								className="text-yellow-600 hover:text-yellow-700"
 							>
 								React Open Source Awards
 							</Link>{' '}
@@ -132,53 +202,43 @@ export default function JSNationAwardPage() {
 			</div>
 
 			<div className="mb-16 grid grid-cols-1 gap-8 md:grid-cols-3">
-				<Card className="border-green-200 bg-green-50 shadow-md">
+				<Card className="border-yellow-300 bg-yellow-50 shadow-md">
 					<CardHeader className="pb-2">
 						<div className="flex items-center gap-2">
-							<Award className="h-5 w-5 text-green-600" />
-							<CardTitle>Voting Has Ended</CardTitle>
+							<Heart className="h-5 w-5 text-yellow-600" />
+							<CardTitle>Thank You, Community!</CardTitle>
 						</div>
 					</CardHeader>
 					<CardContent>
 						<p className="text-muted-foreground">
-							Thank you to everyone who voted for meet.js Wrocław in the
-							Community of the Year category! Your support means the world to
-							us.
+							We are overjoyed to be named Community of the Year! This award
+							belongs to every member of the meet.js Wrocław family. Your
+							passion and engagement make us who we are.
 						</p>
-						<div className="mt-4">
-							<Button
-								variant="outline"
-								className="w-full border-green-200 bg-white text-green-700"
-								disabled
-							>
-								Voting has ended
-							</Button>
-						</div>
 					</CardContent>
 					<CardFooter>
 						<p className="text-xs text-muted-foreground">
-							Voting ended on May 30, 2025
+							Awarded at JSNation, June 12, 2025
 						</p>
 					</CardFooter>
 				</Card>
 
-				<Card className="border-green-200 bg-green-50 shadow-md">
+				<Card className="border-yellow-300 bg-yellow-50 shadow-md">
 					<CardHeader className="pb-2">
 						<div className="flex items-center gap-2">
-							<Calendar className="h-5 w-5 text-green-600" />
-							<CardTitle>Award Ceremony</CardTitle>
+							<span className="text-xl">🏆</span>
+							<CardTitle>Award Ceremony Highlights</CardTitle>
 						</div>
 					</CardHeader>
 					<CardContent>
 						<p className="text-muted-foreground">
-							The JavaScript Open Source Awards ceremony will take place during
-							JSNation Conference 2025. Check back here after the event for
-							updates!
+							meet.js Wrocław was honored with the Community of the Year award
+							at the JSNation Conference 2025 in Amsterdam!
 						</p>
-						<div className="mt-4 rounded-md border border-green-100 bg-white p-3">
-							<p className="font-medium">June 12, 2025</p>
+						<div className="mt-4 rounded-md border border-yellow-200 bg-white p-3">
+							<p className="font-medium">Awarded: June 12, 2025</p>
 							<p className="text-sm text-muted-foreground">
-								Amsterdam, Netherlands
+								JSNation Conference, Amsterdam, Netherlands
 							</p>
 						</div>
 					</CardContent>
@@ -243,15 +303,15 @@ export default function JSNationAwardPage() {
 			<div className="mb-16">
 				<h2 className="mb-6 text-center text-2xl font-bold">Other Nominees</h2>
 				<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-					<Card className="border-green-100 shadow-sm">
+					<Card className="border-gray-200 shadow-sm">
 						<CardHeader className="pb-2">
 							<CardTitle className="text-lg">JavaScript London</CardTitle>
 						</CardHeader>
 						<CardContent>
 							<p className="text-sm text-muted-foreground">
-								A community of people passionate about JavaScript. They believe
-								that the best way to learn is by doing, and it&apos;s also the
-								most rewarding.
+								This is a community of people passionate about JavaScript. We
+								believe that the best way to learn is by doing, and it&apos;s
+								also the most rewarding.
 							</p>
 						</CardContent>
 						<CardFooter>
@@ -259,37 +319,14 @@ export default function JSNationAwardPage() {
 								href="https://www.meetup.com/javascript-london/"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="inline-flex items-center gap-1 text-xs font-medium text-green-600 hover:text-green-700"
+								className="inline-flex items-center gap-1 text-xs font-medium text-yellow-600 hover:text-yellow-700"
 							>
 								Visit Meetup Page <ExternalLink className="h-3 w-3" />
 							</Link>
 						</CardFooter>
 					</Card>
 
-					<Card className="border-green-100 bg-green-50 shadow-sm">
-						<CardHeader className="pb-2">
-							<CardTitle className="text-lg">meet.js Wrocław</CardTitle>
-						</CardHeader>
-						<CardContent>
-							<p className="text-sm text-muted-foreground">
-								Cyclic meetings of JavaScript and TypeScript programmers in
-								Wroclaw. You can count on lectures on both frontend (Angular,
-								React, Vue) and backend (Node.js, Deno, etc.).
-							</p>
-						</CardContent>
-						<CardFooter>
-							<Link
-								href="https://www.meetup.com/meet-js-wroclaw/"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="inline-flex items-center gap-1 text-xs font-medium text-green-600 hover:text-green-700"
-							>
-								Visit Meetup Page <ExternalLink className="h-3 w-3" />
-							</Link>
-						</CardFooter>
-					</Card>
-
-					<Card className="border-green-100 shadow-sm">
+					<Card className="border-gray-200 shadow-sm">
 						<CardHeader className="pb-2">
 							<CardTitle className="text-lg">AdvancedJS Amsterdam</CardTitle>
 						</CardHeader>
@@ -304,7 +341,30 @@ export default function JSNationAwardPage() {
 								href="https://www.meetup.com/advancedjs-amsterdam/"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="inline-flex items-center gap-1 text-xs font-medium text-green-600 hover:text-green-700"
+								className="inline-flex items-center gap-1 text-xs font-medium text-yellow-600 hover:text-yellow-700"
+							>
+								Visit Meetup Page <ExternalLink className="h-3 w-3" />
+							</Link>
+						</CardFooter>
+					</Card>
+
+					<Card className="border-gray-200 shadow-sm">
+						<CardHeader className="pb-2">
+							<CardTitle className="text-lg">CopenhagenJS</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p className="text-sm text-muted-foreground">
+								CopenhagenJS is a monthly meetup group about JavaScript and all
+								web technologies. It is a group focused on community building
+								and sharing information.
+							</p>
+						</CardContent>
+						<CardFooter>
+							<Link
+								href="https://www.meetup.com/copenhagenjs"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="inline-flex items-center gap-1 text-xs font-medium text-yellow-600 hover:text-yellow-700"
 							>
 								Visit Meetup Page <ExternalLink className="h-3 w-3" />
 							</Link>
@@ -315,16 +375,16 @@ export default function JSNationAwardPage() {
 
 			<div className="mb-12 text-center">
 				<h2 className="mb-6 text-center text-2xl font-bold">
-					Thank You for Your Support!
+					Share the Great News!
 				</h2>
 				<div className="flex flex-wrap justify-center gap-4">
 					<Button
 						variant="outline"
-						className="border-green-200 bg-green-50 text-green-700 hover:bg-green-100 hover:text-green-800"
+						className="border-yellow-300 bg-yellow-100 text-yellow-700 hover:bg-yellow-200 hover:text-yellow-800"
 						asChild
 					>
 						<Link
-							href={`https://x.com/intent/tweet?text=${encodeURIComponent('meet.js Wrocław was nominated for the JavaScript Open Source Awards in the Community of the Year category! 🏆 #MeetjsWroclaw #JavaScript #OpenSource')}`}
+							href={`https://x.com/intent/tweet?text=${encodeURIComponent('WE WON! meet.js Wrocław is the JavaScript Open Source Awards Community of the Year 2025! 🏆 So proud of our amazing community! #MeetjsWroclaw #JSAwardsWinner #CommunityOfTheYear #JavaScript')}`}
 							target="_blank"
 							rel="noopener noreferrer"
 						>
@@ -333,7 +393,7 @@ export default function JSNationAwardPage() {
 					</Button>
 					<Button
 						variant="outline"
-						className="border-green-200 bg-green-50 text-green-700 hover:bg-green-100 hover:text-green-800"
+						className="border-yellow-300 bg-yellow-100 text-yellow-700 hover:bg-yellow-200 hover:text-yellow-800"
 						asChild
 					>
 						<Link
@@ -346,7 +406,7 @@ export default function JSNationAwardPage() {
 					</Button>
 					<Button
 						variant="outline"
-						className="border-green-200 bg-green-50 text-green-700 hover:bg-green-100 hover:text-green-800"
+						className="border-yellow-300 bg-yellow-100 text-yellow-700 hover:bg-yellow-200 hover:text-yellow-800"
 						asChild
 					>
 						<Link
@@ -362,11 +422,11 @@ export default function JSNationAwardPage() {
 
 			<div className="text-center">
 				<p className="text-muted-foreground">
-					Thank you for being part of our community! ❤️
+					Thank you for making this possible! We are incredibly grateful! ❤️
 				</p>
 				<p className="mt-2 text-sm text-muted-foreground">
-					#MeetjsWroclaw #JavaScript #OpenSource #CommunityOfTheYear #JSNation
-					#TechCommunity
+					#MeetjsWroclaw #JSAwardsWinner #CommunityOfTheYear #JavaScript
+					#OpenSource #JSNation #TechCommunity #Grateful
 				</p>
 			</div>
 		</div>

@@ -14,7 +14,7 @@ export const HeroSection = () => {
 
 			<AwardNomination
 				href="/jsnation-award"
-				text="Nominated for JavaScript Open Source Awards 2025! 🏆"
+				text="We Won! Community of the Year 2025"
 			/>
 
 			<div className="col-start-1 row-start-1 mx-auto my-auto">
@@ -23,7 +23,6 @@ export const HeroSection = () => {
 					JavaScript meetups in Poland
 				</h1>
 
-				{/* Social Media Buttons */}
 				<div className="mt-6 flex justify-center gap-4">
 					<a
 						href="https://instagram.com/meet.js_poland"
