@@ -18,10 +18,10 @@ export const HeroSection = () => {
 			/>
 
 			<div className="col-start-1 row-start-1 mx-auto my-auto">
-				<p className="-rotate-2 bg-blue p-2 text-6xl font-bold">meet.js</p>
-				<h1 className="p-4 text-xl font-medium">
+				<h1 className="-rotate-2 bg-blue p-2 text-6xl font-bold">meet.js</h1>
+				<h2 className="p-4 text-xl font-medium">
 					JavaScript meetups in Poland
-				</h1>
+				</h2>
 
 				<div className="mt-6 flex justify-center gap-4">
 					<a
