@@ -20,9 +20,7 @@ export const Navigation = () => {
 					<div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
 						<div className="relative flex h-16 items-center justify-between">
 							<div className="flex flex-1 items-center justify-between sm:items-stretch">
-								<Link href="/" className="flex items-center">
-									<Logo />
-								</Link>
+								<Logo />
 								{/* Desktop navigation */}
 								<nav aria-label="Main" className="hidden sm:flex">
 									<ul className="flex items-center justify-center gap-4">
