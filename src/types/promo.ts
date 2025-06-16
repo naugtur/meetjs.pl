@@ -14,7 +14,7 @@ export interface Promo {
 	emojiLeft?: string;
 	icon?: ReactNode;
 	image?: string;
-	gradient?: string;
+	gradient: string;
 	cta: string;
 	discountCode?: string;
 }

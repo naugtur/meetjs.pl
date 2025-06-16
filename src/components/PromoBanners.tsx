@@ -34,12 +34,49 @@ interface Props {
 	promos: Promo[];
 }
 
+// Helper to categorize promos (based on the memory about software vs event discounts)  
+const categorizePromos = (promo: Promo): 'event' | 'software' => {
+	// If it has an eventLink or country/city, it's likely an event
+	if (promo.eventLink || promo.country || promo.city) return 'event';
+	// Otherwise assume it's software
+	return 'software';
+};
+
+// Helper to prioritize promos (events with closer expiration dates first)
+const prioritizePromos = (promos: Promo[]): Promo[] => {
+	return [...promos].sort((a, b) => {
+		// First sort by category (events first)
+		const catA = categorizePromos(a);
+		const catB = categorizePromos(b);
+		if (catA !== catB) return catA === 'event' ? -1 : 1;
+		
+		// Then sort by expiration date (sooner first)
+		return new Date(a.expiresAt).getTime() - new Date(b.expiresAt).getTime();
+	});
+};
+
 export const PromoBanners = ({ promos }: Props) => {
 	const [visiblePromos, setVisiblePromos] = useState<Promo[]>([]);
+	const [currentIndex, setCurrentIndex] = useState(0);
 
 	useEffect(() => {
-		setVisiblePromos(promos.filter(shouldPromoBeVisible));
+		// Filter and prioritize promos
+		const filtered = promos.filter(shouldPromoBeVisible);
+		const prioritized = prioritizePromos(filtered);
+		setVisiblePromos(prioritized);
+		setCurrentIndex(0); // Reset index when promos change
 	}, [promos]);
+
+	// Auto-rotate banners every 8 seconds if there are multiple
+	useEffect(() => {
+		if (visiblePromos.length <= 1) return;
+		
+		const interval = setInterval(() => {
+			setCurrentIndex((prev) => (prev + 1) % visiblePromos.length);
+		}, 8000);
+		
+		return () => clearInterval(interval);
+	}, [visiblePromos.length]);
 
 	const handleClose = (id: string) => {
 		setVisiblePromos((prev) => prev.filter((p) => p.id !== id));
@@ -48,7 +85,7 @@ export const PromoBanners = ({ promos }: Props) => {
 
 	if (visiblePromos.length === 0) return null;
 
-	const promo = visiblePromos[0];
+	const promo = visiblePromos[currentIndex];
 
 	return <PromoBanner promo={promo} close={() => handleClose(promo.id)} />;
 };
@@ -56,7 +93,7 @@ export const PromoBanners = ({ promos }: Props) => {
 const PromoBanner = ({ promo, close }: { promo: Promo; close: () => void }) => (
 	<div className="relative">
 		<div
-			className={`relative ${promo.gradient || 'bg-gradient-to-r from-blue via-purple to-green'} animate-fade-in z-50 py-1.5 md:py-2 text-white shadow`}
+			className={`relative ${promo.gradient || 'bg-gradient-to-r from-blue via-purple to-green'} animate-fade-in z-0 py-1.5 md:py-2 text-white shadow`}
 		>
 			<div className="mx-2 sm:mx-4">
 				<div className="flex flex-col items-center justify-between gap-1 md:gap-2 text-center md:flex-row md:text-left">
