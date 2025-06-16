@@ -14,7 +14,6 @@ export const menuLinks = [
 	{ name: 'events', href: '/events', current: false, external: false },
 	{ name: 'discounts', href: '/discounts', current: false, external: false },
 	{ name: 'about', href: '/about', current: false, external: false },
-	{ name: 'brand assets', href: '/brand', current: false, external: false },
 ];
 
 export const footerMenuLinks = [

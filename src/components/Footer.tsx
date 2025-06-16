@@ -13,7 +13,7 @@ export const Footer = () => {
 				<div className="grid grid-cols-1 gap-8 md:grid-cols-3">
 					{/* First column */}
 					<div className="space-y-8">
-						<Logo />
+						<Logo clickable={false} />
 						<SocialLinks />
 						<ul className="space-y-4">
 							{instagramLinksData.map((socialLink) => (
@@ -77,7 +77,7 @@ export const Footer = () => {
 
 				{/* Copyright */}
 				<div className="mt-12 border-t border-white/10 pt-8">
-					<p className="text-center">© {new Date().getFullYear()} meet.js. All rights reserved.</p>
+					<p className="text-center"> {new Date().getFullYear()} meet.js. All rights reserved.</p>
 				</div>
 			</div>
 		</footer>
