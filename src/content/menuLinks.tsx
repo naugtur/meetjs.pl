@@ -12,6 +12,7 @@ export const menuLinks = [
 		external: true,
 	},
 	{ name: 'events', href: '/events', current: false, external: false },
+	{ name: 'sponsors', href: '/sponsors', current: false, external: false },
 	{ name: 'discounts', href: '/discounts', current: false, external: false },
 	{ name: 'about', href: '/about', current: false, external: false },
 ];
@@ -30,6 +31,7 @@ export const footerMenuLinks = [
 		external: true,
 	},
 	{ name: 'events', href: '/events', current: false, external: false },
+	{ name: 'sponsors', href: '/sponsors', current: false, external: false },
 	{ name: 'about', href: '/about', current: false, external: false },
 	{
 		name: '14 birthday',
