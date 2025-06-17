@@ -4,7 +4,6 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Montserrat } from 'next/font/google';
 import './globals.css';
 import type { ReactNode } from 'react';
-import { ThemeProvider } from '@/components/theme-provider';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { SchemaMarkup } from '@/components/SchemaMarkup';
@@ -115,16 +114,9 @@ const RootLayout = ({
 	return (
 		<html lang="en" className={`${montserrat.variable} scroll-smooth`}>
 			<body>
-				<ThemeProvider
-					attribute="class"
-					defaultTheme="light"
-					enableSystem
-					disableTransitionOnChange
-				>
-					<Navigation />
-					{children}
-					<Footer />
-				</ThemeProvider>
+				<Navigation />
+				{children}
+				<Footer />
 				<Analytics />
 				<SpeedInsights />
 				<SchemaMarkup />
