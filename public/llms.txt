@@ -1,0 +1,36 @@
+# meet.js
+
+> Poland's largest JavaScript community founded in 2011, organizing regular meetups, conferences, and knowledge sharing events across multiple cities. A non-profit, volunteer-driven initiative focused on JavaScript, TypeScript, React, Node.js, and related web technologies.
+
+meet.js was established in Poznań in 2011 and has since expanded to multiple cities across Poland. Our community brings together developers, enthusiasts, and companies interested in JavaScript and web development technologies. We operate as a non-profit organization with all events organized by volunteers passionate about sharing knowledge and building connections within the tech community.
+
+## Main Resources
+
+- [Home](https://meetjs.pl/): Overview of the community and upcoming events
+- [Events](https://meetjs.pl/events): Calendar of upcoming and past meetups
+- [About](https://meetjs.pl/about): History and mission of meet.js
+- [Discounts](https://meetjs.pl/discounts): Special offers for community members
+- [30 Years of JavaScript](https://meetjs.pl/30-years-of-javascript): Celebrating JavaScript's history
+- [JSNation Award](https://meetjs.pl/jsnation-award): Recognition of our community contribution
+
+## Community Chapters
+
+- [Poznań Chapter](https://meetjs.pl/team#poznan): The first meet.js chapter, founded in 2011
+- [Warsaw Chapter](https://meetjs.pl/team#warsaw): JavaScript community in Poland's capital
+- [Wrocław Chapter](https://meetjs.pl/team#wroclaw): Active JavaScript community in Lower Silesia
+- [Kraków Chapter](https://meetjs.pl/team#krakow): JavaScript enthusiasts in Poland's cultural center
+- [Katowice Chapter](https://meetjs.pl/team#katowice): Silesian JavaScript community
+- [Other Chapters](https://meetjs.pl/team): Including Łódź, Gdańsk, Lublin, and Szczecin
+
+## Partnerships
+
+- [WeAreDevelopers](https://meetjs.pl/discounts#wearedevelopers): World Congress partnership with special discounts
+- [ChatBeat](https://meetjs.pl/discounts#chatbeat): AI visibility tools for developers
+- [Warp Terminal](https://meetjs.pl/discounts#warp-terminal): Developer productivity tools
+- [Conference Partnerships](https://meetjs.pl/discounts): Various tech conference collaborations
+
+## Optional
+
+- [Become an Organizer](https://meetjs.pl/how-to-become-an-organizer): Information on how to start a meet.js group in your city
+- [Brand Assets](https://meetjs.pl/brand): Logo and branding guidelines
+- [Contact](mailto:contact@meetjs.pl): For partnership and sponsorship inquiries
