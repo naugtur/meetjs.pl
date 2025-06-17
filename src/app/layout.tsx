@@ -7,6 +7,7 @@ import type { ReactNode } from 'react';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
+import { SchemaMarkup } from '@/components/SchemaMarkup';
 import { env } from '@/env';
 
 const montserrat = Montserrat({
@@ -112,11 +113,7 @@ const RootLayout = ({
 	children: ReactNode;
 }>) => {
 	return (
-		<html
-			lang="en"
-			className={`${montserrat.variable} scroll-smooth`}
-			suppressHydrationWarning
-		>
+		<html lang="en" className={`${montserrat.variable} scroll-smooth`}>
 			<body>
 				<ThemeProvider
 					attribute="class"
@@ -130,6 +127,7 @@ const RootLayout = ({
 				</ThemeProvider>
 				<Analytics />
 				<SpeedInsights />
+				<SchemaMarkup />
 			</body>
 		</html>
 	);
