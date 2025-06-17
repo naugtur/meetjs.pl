@@ -4,7 +4,6 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Montserrat } from 'next/font/google';
 import './globals.css';
 import type { ReactNode } from 'react';
-import { ThemeProvider } from '@/components/theme-provider';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { env } from '@/env';
@@ -118,16 +117,9 @@ const RootLayout = ({
 			suppressHydrationWarning
 		>
 			<body>
-				<ThemeProvider
-					attribute="class"
-					defaultTheme="light"
-					enableSystem
-					disableTransitionOnChange
-				>
-					<Navigation />
-					{children}
-					<Footer />
-				</ThemeProvider>
+				<Navigation />
+				{children}
+				<Footer />
 				<Analytics />
 				<SpeedInsights />
 			</body>
