@@ -81,13 +81,6 @@ export function SchemaMarkup() {
 				description: 'JavaScript community in Szczecin',
 			},
 		],
-		award: {
-			'@type': 'Award',
-			name: 'JSNation Community Award',
-			description:
-				'Recognition for outstanding contribution to the JavaScript community',
-			url: `${env.SITE_URL}/jsnation-award`,
-		},
 		events: [
 			{
 				'@type': 'EventSeries',
@@ -95,36 +88,12 @@ export function SchemaMarkup() {
 				description: 'Regular JavaScript community meetups across Poland',
 				url: `${env.SITE_URL}/events`,
 			},
-			{
-				'@type': 'Event',
-				name: 'meet.js Summit',
-				description:
-					'Annual JavaScript conference organized by the meet.js community',
-				url: `${env.SITE_URL}/events`,
-			},
-		],
-		offers: [
-			{
-				'@type': 'Offer',
-				name: 'Sponsorship Opportunities',
-				description:
-					'Partner with meet.js to reach the JavaScript community in Poland',
-				url: `${env.SITE_URL}/sponsors`,
-			},
-			{
-				'@type': 'Offer',
-				name: 'Community Discounts',
-				description:
-					'Exclusive discounts on software tools and event tickets for the meet.js community',
-				url: `${env.SITE_URL}/discounts`,
-			},
 		],
 		memberOf: {
 			'@type': 'Organization',
 			name: 'Global JavaScript Community',
 			description: 'Part of the worldwide JavaScript ecosystem',
 		},
-		specialty: 'JavaScript community building and knowledge sharing',
 		slogan: 'JavaScript Meetups in Poland',
 	};
 
