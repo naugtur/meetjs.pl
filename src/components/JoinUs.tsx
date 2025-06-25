@@ -2,8 +2,6 @@ import { CITIES } from '@/content/cities';
 import { PolandMap } from './PolandMap';
 import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
 import { Event } from '@/components/FeaturedEvents';
-import { MessagesSquare } from 'lucide-react';
-import { DiscordCommunity } from '@/components/DiscordCommunity';
 
 export const JoinUs = async () => {
 	const events: Event[] | null = await getUpcomingEvents();
@@ -39,14 +37,7 @@ export const JoinUs = async () => {
 						local meet.js!
 					</p>
 
-					<div className="mt-4 border-t pt-6">
-						<h3 className="mb-4 flex items-center gap-2 text-xl font-semibold">
-							<MessagesSquare className="h-5 w-5 text-[#5865F2]" />
-							Join our Discord Community
-						</h3>
 
-						<DiscordCommunity />
-					</div>
 				</div>
 			</div>
 		</section>
