@@ -16,6 +16,11 @@ export const PARTNERS = [
 		alt: 'JS Nation',
 	},
 	{
+		href: 'https://elevenlabs.io/',
+		src: '/partners/elevenlabs-logo-white.png',
+		alt: 'Eleven Labs',
+	},
+	{
 		href: 'https://www.meetup.com/gdansk-typescript/',
 		src: '/partners/TSWrocław.png',
 		alt: 'Gdańsk TypeScript',
