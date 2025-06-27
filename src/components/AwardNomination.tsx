@@ -1,20 +1,19 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
-interface AwardNominationProps {
-	href: string;
-	text: string;
-}
-
-export const AwardNomination = ({ href, text }: AwardNominationProps) => {
+export const AwardNomination = () => {
 	return (
 		<Link
-			href={href}
-			className="group absolute bottom-6 left-1/2 flex w-11/12 max-w-[320px] -translate-x-1/2 transform items-center gap-2 rounded-full bg-amber-500/90 px-4 py-2 text-white shadow-lg backdrop-blur-sm transition-all hover:scale-105 hover:bg-amber-600/90 md:bottom-12 md:w-auto md:max-w-none"
+			href="/jsnation-award"
+			className="mx-auto mt-8 block text-center transition-transform hover:scale-105"
 		>
-			<div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20">
-				<span className="text-lg">🏆</span>
-			</div>
-			<p className="text-sm font-medium md:text-base">{text}</p>
+			<Image
+				src="/javascript-os-award-2025.png"
+				alt="JavaScript OS Award 2025 - Community of the Year"
+				width={250}
+				height={85}
+				className="mx-auto"
+			/>
 		</Link>
 	);
 };

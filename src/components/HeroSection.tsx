@@ -12,11 +12,6 @@ export const HeroSection = () => {
 				text="🏆 #1 Tech Event Series in Poland (Crossweb 2024)"
 			/>
 
-			<AwardNomination
-				href="/jsnation-award"
-				text="We Won! Community of the Year 2025"
-			/>
-
 			<div className="col-start-1 row-start-1 mx-auto my-auto">
 				<h1 className="-rotate-2 bg-blue p-2 text-6xl font-bold">meet.js</h1>
 				<h2 className="p-4 text-xl font-medium">
@@ -43,6 +38,8 @@ export const HeroSection = () => {
 						Join Discord
 					</a>
 				</div>
+
+				<AwardNomination />
 			</div>
 		</header>
 	);
