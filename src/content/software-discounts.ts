@@ -2,6 +2,22 @@ import { Promo } from '../types/promo';
 
 export const softwareDiscounts: Promo[] = [
 	{
+		id: 'windsurf-2025',
+		name: 'Windsurf',
+		message: 'Get 1 month FREE of Cascade Pro!',
+		cta: '🌊 Claim 1 Month Free',
+		ticketLink: 'https://windsurf.com/pricing?coupon=MEETJS-WINDSURF',
+		eventLink: 'https://windsurf.com',
+		expiresAt: '2025-12-31T23:59:59+02:00',
+		description:
+			"Windsurf's Cascade is a revolutionary AI coding assistant that helps developers write better code faster. With agentic capabilities and advanced code understanding, Cascade works as your pair programming partner. Use code MEETJS-WINDSURF at checkout to receive 1 month free of Cascade Pro ($15/month value) with 500 prompt credits and access to all premium AI models including SWE-1.",
+		gradient: 'bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-600',
+		icon: '🌊',
+		image: '/partners/Windsurf-white-symbol.png',
+		emojiRight: '💻',
+		discountCode: 'MEETJS-WINDSURF',
+	},
+	{
 		id: 'elevenlabs-2025',
 		name: 'ElevenLabs',
 		message: 'Get 3 months of Creator tier FREE!',
