@@ -10,20 +10,20 @@ import { PartnersSection } from '@/components/PartnersSection';
 export const dynamic = 'force-dynamic';
 
 const Home = () => {
-	return (
-		<main>
-			<HeroSection />
-			<div className="flex min-h-screen flex-col items-center">
-				<FeaturedEvents />
-				<JoinUs />
-				<div className="w-full">
-					<AboutSection />
-					<Stats />
-				</div>
-				<PartnersSection />
-			</div>
-		</main>
-	);
+  return (
+    <main>
+      <HeroSection />
+      <div className="flex min-h-screen flex-col items-center">
+        <FeaturedEvents />
+        <JoinUs />
+        <div className="w-full">
+          <AboutSection />
+          <Stats />
+        </div>
+        <PartnersSection />
+      </div>
+    </main>
+  );
 };
 
 export default Home;

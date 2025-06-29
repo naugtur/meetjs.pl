@@ -1,6 +1,6 @@
-import { getUpcomingEvents } from "@/utils/getUpcomingEvents";
-import { EventsList } from "./EventsList";
-import { ADDITIONAL_EVENTS } from "@/content/additionalEvents";
+import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
+import { EventsList } from './EventsList';
+import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
 
 interface EventSectionProps {
   city: string;
@@ -9,9 +9,9 @@ interface EventSectionProps {
 export async function EventSection({ city }: EventSectionProps) {
   const events = await getUpcomingEvents();
   // Merge API events with additional events for this city
-  const extraEvents = ADDITIONAL_EVENTS.filter(event => event.city === city);
+  const extraEvents = ADDITIONAL_EVENTS.filter((event) => event.city === city);
   const cityEvents = [
-    ...(events?.filter(event => event.city === city) || []),
+    ...(events?.filter((event) => event.city === city) || []),
     ...extraEvents,
   ];
 
