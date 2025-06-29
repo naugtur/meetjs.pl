@@ -9,40 +9,40 @@ import { GdanskOrganizers } from './_Organizers';
 import { EventSection } from '../../../components/EventSection';
 
 export const metadata = {
-	metadataBase: new URL(`${env.SITE_URL}/gdansk`),
-	title: 'meet.js Gdańsk',
-	description: 'JavaScript meetups in Gdańsk',
-	keywords: 'meet.js, Gdańsk, JavaScript, meetup',
-	openGraph: {
-		title: 'meet.js Gdańsk',
-		description: 'JavaScript meetups in Gdańsk',
-		type: 'website',
-		locale: 'en_US',
-		url: `${env.SITE_URL}/gdansk`,
-		siteName: 'meet.js',
-		images: [
-			{
-				url: `${env.SITE_URL}/api/og?city=Gdansk`,
-				width: 1200,
-				height: 630,
-				alt: 'meet.js | JavaScript meetups in Gdańsk',
-			},
-		],
-	},
-	twitter: {
-		card: 'summary_large_image',
-		site: '@meetjs',
-		title: 'meet.js',
-		description: 'JavaScript meetups in Gdańsk',
-		images: [
-			{
-				url: `${env.SITE_URL}/api/og?city=Gdansk`,
-				width: 1200,
-				height: 630,
-				alt: 'meet.js | JavaScript meetups in Gdańsk',
-			},
-		],
-	},
+  metadataBase: new URL(`${env.SITE_URL}/gdansk`),
+  title: 'meet.js Gdańsk',
+  description: 'JavaScript meetups in Gdańsk',
+  keywords: 'meet.js, Gdańsk, JavaScript, meetup',
+  openGraph: {
+    title: 'meet.js Gdańsk',
+    description: 'JavaScript meetups in Gdańsk',
+    type: 'website',
+    locale: 'en_US',
+    url: `${env.SITE_URL}/gdansk`,
+    siteName: 'meet.js',
+    images: [
+      {
+        url: `${env.SITE_URL}/api/og?city=Gdansk`,
+        width: 1200,
+        height: 630,
+        alt: 'meet.js | JavaScript meetups in Gdańsk',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@meetjs',
+    title: 'meet.js',
+    description: 'JavaScript meetups in Gdańsk',
+    images: [
+      {
+        url: `${env.SITE_URL}/api/og?city=Gdansk`,
+        width: 1200,
+        height: 630,
+        alt: 'meet.js | JavaScript meetups in Gdańsk',
+      },
+    ],
+  },
 };
 
 <CityBanner city="Gdańsk" background="city/gdansk.png" />

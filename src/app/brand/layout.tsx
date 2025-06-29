@@ -2,10 +2,12 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Brand Assets | meet.js',
-  description: 'Download meet.js brand assets, logos, and wallpapers for your use.',
+  description:
+    'Download meet.js brand assets, logos, and wallpapers for your use.',
   openGraph: {
     title: 'Brand Assets | meet.js',
-    description: 'Download meet.js brand assets, logos, and wallpapers for your use.',
+    description:
+      'Download meet.js brand assets, logos, and wallpapers for your use.',
     url: 'https://meetjs.pl/brand',
     siteName: 'meet.js',
     images: [
@@ -25,9 +27,5 @@ export default function BrandLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <>
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }

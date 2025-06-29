@@ -43,11 +43,13 @@ City statuses include:
 To add, edit, or remove promotional banners and discount offers, edit the appropriate files:
 
 **For Software & Tools Discounts:**
+
 ```
 src/content/software-discounts.ts
 ```
 
 **For Events & Conferences Discounts:**
+
 ```
 src/content/discounts.ts
 ```
@@ -62,23 +64,23 @@ Each discount is an object in the exported `discounts` or `softwareDiscounts` ar
 import { Promo } from '@/types/promo';
 
 export const discounts: Promo[] = [
-	{
-		id: 'react-universe-2025', // Unique string identifier
-		message: 'React Universe Conf 2025: 10% off with code meet.js10!', // Banner message
-		cta: '👉 Get Discount', // Call-to-action text
-		ticketLink: 'https://ti.to/RUC/react-universe-conf-2025/discount/meet.js10', // Link for CTA
-		eventLink: 'https://react-universe.org', // Link to event website
-		expiresAt: '2025-09-02T23:59:59+02:00', // Expiry date (ISO format)
-		description:
-			'React Universe is the largest React conference in Central Europe...', // Full description
-		gradient: 'bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500', // Optional Tailwind gradient class
-		icon: '🪐', // Optional emoji or icon (left side)
-		emojiRight: '🇵🇱', // Optional emoji (right side)
-		country: 'Poland', // Event country
-		city: 'Wrocław', // Event city
-		discountCode: 'meet.js10', // Optional discount code
-	},
-	// Add more discounts as needed
+  {
+    id: 'react-universe-2025', // Unique string identifier
+    message: 'React Universe Conf 2025: 10% off with code meet.js10!', // Banner message
+    cta: '👉 Get Discount', // Call-to-action text
+    ticketLink: 'https://ti.to/RUC/react-universe-conf-2025/discount/meet.js10', // Link for CTA
+    eventLink: 'https://react-universe.org', // Link to event website
+    expiresAt: '2025-09-02T23:59:59+02:00', // Expiry date (ISO format)
+    description:
+      'React Universe is the largest React conference in Central Europe...', // Full description
+    gradient: 'bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500', // Optional Tailwind gradient class
+    icon: '🪐', // Optional emoji or icon (left side)
+    emojiRight: '🇵🇱', // Optional emoji (right side)
+    country: 'Poland', // Event country
+    city: 'Wrocław', // Event city
+    discountCode: 'meet.js10', // Optional discount code
+  },
+  // Add more discounts as needed
 ];
 ```
 

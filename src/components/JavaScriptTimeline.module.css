@@ -130,9 +130,15 @@
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .timelineContent {
@@ -238,17 +244,17 @@
   .title {
     font-size: 2rem;
   }
-  
+
   .subtitle {
     font-size: 1rem;
     padding: 0 20px;
   }
-  
+
   .filterButtons {
     padding: 0 20px;
     gap: 8px;
   }
-  
+
   .filterBtn {
     padding: 8px 16px;
     font-size: 0.8rem;
@@ -269,7 +275,7 @@
   .timelineItem:nth-child(even) {
     left: 0;
   }
-  
+
   .timelineItem:nth-child(odd)::after,
   .timelineItem:nth-child(even)::after {
     left: 21px;
@@ -280,19 +286,19 @@
     width: 40px;
     height: 40px;
   }
-  
+
   .icon {
     font-size: 1.2rem;
   }
-  
+
   .year {
     font-size: 1.4rem;
   }
-  
+
   .eventTitle {
     font-size: 1.1rem;
   }
-  
+
   .eventDescription {
     font-size: 0.9rem;
   }
