@@ -28,13 +28,13 @@ export const menuLinks: MenuLink[] = [
     external: true,
   },
   {
-    name: 'events',
+    name: '🏙️ cities',
     href: '/events',
     current: false,
     external: false,
     dropdown: [
       {
-        name: 'All Events',
+        name: 'All Cities',
         href: '/events',
         type: 'link',
       },
@@ -51,7 +51,7 @@ export const menuLinks: MenuLink[] = [
     ],
   },
   {
-    name: 'discounts',
+    name: '💰 discounts',
     href: '/discounts',
     current: false,
     external: false,

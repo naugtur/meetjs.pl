@@ -37,7 +37,7 @@ export const DesktopNavigation = () => {
                   <FaChevronDown className="ml-1 h-4 w-4" aria-hidden="true" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent
-                  align="end"
+                  align="start"
                   className={item.name === 'events' ? 'max-h-[60vh] w-56 overflow-y-auto' : 'w-56'}
                 >
                   {item.dropdown.map((dropdownItem, index) => {
