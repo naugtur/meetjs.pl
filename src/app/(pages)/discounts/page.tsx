@@ -97,7 +97,7 @@ export default function DiscountsPage() {
       </Card>
 
       {discounts.length > 0 && (
-        <div className="mb-8">
+        <div id="events" className="mb-8">
           <div className="mb-6 flex items-center gap-3">
             <Ticket className="h-6 w-6 text-purple-600" />
             <h2 className="text-2xl font-bold">Events & Conferences</h2>
@@ -107,7 +107,7 @@ export default function DiscountsPage() {
       )}
 
       {softwareDiscounts.length > 0 && (
-        <div className="mb-8">
+        <div id="software" className="mb-8">
           <div className="mb-6 flex items-center gap-3">
             <Monitor className="h-6 w-6 text-indigo-600" />
             <h2 className="text-2xl font-bold">Software & Tools</h2>
@@ -121,7 +121,7 @@ export default function DiscountsPage() {
       )}
 
       {learningDiscounts.length > 0 && (
-        <div className="mb-8">
+        <div id="learning" className="mb-8">
           <div className="mb-6 flex items-center gap-3">
             <BookOpen className="h-6 w-6 text-green-600" />
             <h2 className="text-2xl font-bold">Courses & Learning</h2>
