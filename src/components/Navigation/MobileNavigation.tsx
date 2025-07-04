@@ -69,7 +69,9 @@ export const MobileNavigation = () => {
                                         <FaMapMarkerAlt className="mr-2 h-4 w-4" />
                                         {city.name}
                                       </span>
-                                      <CityStatusIndicator status={city.status} />
+                                      <CityStatusIndicator
+                                        status={city.status}
+                                      />
                                     </DisclosureButton>
                                   ))}
                                 </div>
@@ -80,12 +82,14 @@ export const MobileNavigation = () => {
                               return (
                                 <div
                                   key={dropdownItem.name}
-                                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 cursor-not-allowed"
+                                  className="block cursor-not-allowed rounded-md px-3 py-2 text-base font-medium text-gray-400"
                                   aria-disabled="true"
                                 >
                                   <span className="flex items-center justify-between">
                                     {dropdownItem.name}
-                                    <span className="text-xs">(Coming Soon)</span>
+                                    <span className="text-xs">
+                                      (Coming Soon)
+                                    </span>
                                   </span>
                                 </div>
                               );
@@ -125,30 +129,30 @@ export const MobileNavigation = () => {
               return (
                 <li key={item.name}>
                   <DisclosureButton
-                  as="a"
-                  href={item.href}
-                  className={classNames(
-                    item.current
-                      ? 'bg-gray-900 text-white'
-                      : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'block rounded-md px-3 py-2 text-base font-medium',
-                  )}
-                  aria-current={item.current ? 'page' : undefined}
-                  target={item.external ? '_blank' : undefined}
-                  rel={item.external ? 'noopener noreferrer' : undefined}
-                  {...(item.external && {
-                    'aria-label': `${item.name} (opens in a new tab)`,
-                  })}
-                >
-                  {item.name}
-                  {item.external && (
-                    <FaArrowUpRightFromSquare
-                      className="mb-1 ml-2 inline-block"
-                      aria-hidden="true"
-                    />
-                  )}
-                </DisclosureButton>
-              </li>
+                    as="a"
+                    href={item.href}
+                    className={classNames(
+                      item.current
+                        ? 'bg-gray-900 text-white'
+                        : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                      'block rounded-md px-3 py-2 text-base font-medium',
+                    )}
+                    aria-current={item.current ? 'page' : undefined}
+                    target={item.external ? '_blank' : undefined}
+                    rel={item.external ? 'noopener noreferrer' : undefined}
+                    {...(item.external && {
+                      'aria-label': `${item.name} (opens in a new tab)`,
+                    })}
+                  >
+                    {item.name}
+                    {item.external && (
+                      <FaArrowUpRightFromSquare
+                        className="mb-1 ml-2 inline-block"
+                        aria-hidden="true"
+                      />
+                    )}
+                  </DisclosureButton>
+                </li>
               );
             }
           })}
