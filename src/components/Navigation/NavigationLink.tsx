@@ -9,7 +9,12 @@ interface NavigationLinkProps {
   external?: boolean;
 }
 
-export const NavigationLink = ({ name, href, current = false, external = false }: NavigationLinkProps) => {
+export const NavigationLink = ({
+  name,
+  href,
+  current = false,
+  external = false,
+}: NavigationLinkProps) => {
   return (
     <Link
       href={href}

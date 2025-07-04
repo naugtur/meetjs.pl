@@ -14,8 +14,8 @@ const statusColors = {
 
 export const CityStatusIndicator = ({ status }: CityStatusIndicatorProps) => {
   return (
-    <span 
-      className={`ml-2 inline-block h-2 w-2 rounded-full ${statusColors[status]}`} 
+    <span
+      className={`ml-2 inline-block h-2 w-2 rounded-full ${statusColors[status]}`}
     />
   );
 };

@@ -15,8 +15,8 @@ export const Navigation = () => {
     <>
       <PromoBanners promos={[...discounts, ...softwareDiscounts]} />
       <header role="banner">
-        <Disclosure 
-          as="nav" 
+        <Disclosure
+          as="nav"
           className="sticky top-0 z-20 bg-purple"
           aria-label="Main navigation"
         >
@@ -27,7 +27,10 @@ export const Navigation = () => {
                   <div className="flex flex-1 items-center justify-between sm:items-stretch">
                     <Logo />
                     <DesktopNavigation />
-                    <aside className="hidden items-center justify-center md:flex" aria-label="Social media links">
+                    <aside
+                      className="hidden items-center justify-center md:flex"
+                      aria-label="Social media links"
+                    >
                       <SocialLinks />
                     </aside>
                   </div>
