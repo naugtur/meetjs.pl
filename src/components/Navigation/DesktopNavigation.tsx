@@ -28,7 +28,7 @@ export const DesktopNavigation = () => {
           <li key={item.name} role="none">
             {item.dropdown ? (
               <DropdownMenu>
-                <DropdownMenuTrigger 
+                <DropdownMenuTrigger
                   className="flex items-center rounded-md px-3 py-2 font-medium text-white hover:bg-green/80 hover:text-purple"
                   aria-haspopup="true"
                   aria-expanded="false"
@@ -38,20 +38,26 @@ export const DesktopNavigation = () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent
                   align="start"
-                  className={item.name === 'events' ? 'max-h-[60vh] w-56 overflow-y-auto' : 'w-56'}
+                  className={
+                    item.name === 'events'
+                      ? 'max-h-[60vh] w-56 overflow-y-auto'
+                      : 'w-56'
+                  }
                 >
                   {item.dropdown.map((dropdownItem, index) => {
                     if (dropdownItem.type === 'separator') {
                       return <DropdownMenuSeparator key={index} />;
                     }
-                    
+
                     if (dropdownItem.type === 'cities') {
                       return (
                         <div key={index}>
                           <DropdownMenuLabel className="text-xs font-semibold uppercase tracking-wide text-gray-500">
                             Cities
                           </DropdownMenuLabel>
-                          {CITIES.sort((a, b) => a.name.localeCompare(b.name)).map((city) => (
+                          {CITIES.sort((a, b) =>
+                            a.name.localeCompare(b.name),
+                          ).map((city) => (
                             <DropdownMenuItem key={city.name} asChild>
                               <Link
                                 href={city.href}
@@ -68,23 +74,29 @@ export const DesktopNavigation = () => {
                         </div>
                       );
                     }
-                    
+
                     return (
-                      <DropdownMenuItem 
-                        key={dropdownItem.name} 
+                      <DropdownMenuItem
+                        key={dropdownItem.name}
                         asChild={!dropdownItem.disabled}
                         disabled={dropdownItem.disabled}
                       >
                         {dropdownItem.disabled ? (
-                          <span className="flex items-center text-gray-400 cursor-not-allowed">
+                          <span className="flex cursor-not-allowed items-center text-gray-400">
                             {dropdownItem.name}
                             <span className="ml-2 text-xs">(Coming Soon)</span>
                           </span>
                         ) : (
                           <Link
                             href={dropdownItem.href}
-                            target={dropdownItem.external ? '_blank' : undefined}
-                            rel={dropdownItem.external ? 'noopener noreferrer' : undefined}
+                            target={
+                              dropdownItem.external ? '_blank' : undefined
+                            }
+                            rel={
+                              dropdownItem.external
+                                ? 'noopener noreferrer'
+                                : undefined
+                            }
                             className="flex items-center"
                           >
                             {dropdownItem.name}
