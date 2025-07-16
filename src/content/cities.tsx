@@ -37,7 +37,7 @@ export const CITIES: City[] = [
       x: 120,
       y: 222,
     },
-    status: 'paused',
+    status: 'active',
   },
   // Special marker for TypeScript Gdańsk event
   {
