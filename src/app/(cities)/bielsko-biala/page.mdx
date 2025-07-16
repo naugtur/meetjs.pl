@@ -1,10 +1,48 @@
+import { env } from '../../../env';
+import { CityEmail } from '../../../components/CityEmail';
+import { Organizers } from '../../../components/Organizers';
+import { FAQ } from '../../../components/FAQ';
+import { LocalGroups } from '../../../components/LocalGroups';
+import { CityBanner } from '../../../components/CityBanner';
+import { BielskoBialaFAQ } from './_FAQ';
+import { BielskoBialaOrganizers } from './_Organizers';
+import { EventSection } from '../../../components/EventSection';
+
 export const metadata = {
+  metadataBase: new URL(`${env.SITE_URL}/bielsko-biala`),
   title: 'meet.js Bielsko-Biała',
-};
+  description: 'JavaScript meetups in Bielsko-Biała',
+  keywords: 'meet.js, Bielsko-Biała, JavaScript, meetup',
+  openGraph: {
+    title: 'meet.js Bielsko-Biała',
+    description: 'JavaScript meetups in Bielsko-Biała',
+    type: 'website',
+    locale: 'en_US',
+    url: `${env.SITE_URL}/city/bielsko-biala`,
+    siteName: 'meet.js',
+    images: [
+      {
+        url: `${env.SITE_URL}/api/og?city=bielsko-biala`,
+        width: 1200,
+        height: 630,
+        alt: 'meet.js | JavaScript meetups in Bielsko-Biała',
+      },
+    ],
+  },
+}
 
-<div className="prose dark:prose-invert max-w-none space-y-8 my-8">
-  # Bielsko-Biała
+<CityBanner city="Bielsko-Biała" background="city/bielsko-biala.jpeg" />
 
-We're looking for organizers! [Let us know if you want to help.](mailto:contact@meetjs.pl)
+<EventSection city="Bielsko-Biała" />
 
-</div>
+<LocalGroups
+  localGroups={[
+    'https://www.meetup.com/meet-js-bielsko-biala/',
+  ]}
+/>
+
+<FAQ questions={BielskoBialaFAQ} />
+
+<Organizers city="Bielsko-Biała" organizers={BielskoBialaOrganizers} />
+
+<CityEmail email="d.wylon@selleo.com" />
