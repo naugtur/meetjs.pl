@@ -40,6 +40,12 @@ const sitemap = (): MetadataRoute.Sitemap => {
       priority: 0.8,
     },
     {
+      url: `${env.SITE_URL}/jobs`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
       url: `${env.SITE_URL}/30-years-of-javascript`,
       lastModified: currentDate,
       changeFrequency: 'monthly',

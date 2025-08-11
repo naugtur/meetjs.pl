@@ -84,6 +84,12 @@ export const menuLinks: MenuLink[] = [
     ],
   },
   {
+    name: '💼 jobs',
+    href: '/jobs',
+    current: false,
+    external: false,
+  },
+  {
     name: 'about',
     href: '/about',
     current: false,
