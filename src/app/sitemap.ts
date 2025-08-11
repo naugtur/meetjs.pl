@@ -63,6 +63,12 @@ const sitemap = (): MetadataRoute.Sitemap => {
       changeFrequency: 'monthly',
       priority: 0.6,
     },
+    {
+      url: `${env.SITE_URL}/community-partnerships`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
   ];
 
   return [...mainPages, ...cities];

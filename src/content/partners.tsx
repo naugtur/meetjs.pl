@@ -61,4 +61,9 @@ export const PARTNERS = [
     src: '/partners/sesja-linuksowa.png',
     alt: 'Sesja Linuksowa',
   },
+  {
+    href: 'https://www.mlodzi4it.com/',
+    src: '/partners/mlodzi4it.svg',
+    alt: 'Młodzi 4IT 2.0',
+  },
 ];
