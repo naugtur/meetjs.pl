@@ -17,4 +17,7 @@ export interface Promo {
   gradient: string;
   cta: string;
   discountCode?: string;
+  workshopLink?: string;
+  workshopDescription?: string;
+  workshopDiscountCode?: string;
 }
