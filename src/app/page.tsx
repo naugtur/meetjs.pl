@@ -13,6 +13,7 @@ import { PartnersSection } from '@/components/PartnersSection';
 import { CommunityParticipation } from '@/components/CommunityParticipationServer';
 import { YouTubeSubscribeBanner } from '@/components/YouTubeSubscribeBanner';
 import { SpeakerFaces } from '@/components/SpeakerFaces';
+import { JobsSection } from '@/components/JobsSection';
 
 export const dynamic = 'force-dynamic';
 
@@ -33,6 +34,7 @@ const Home = () => {
         <JoinUs />
         <YouTubeSubscribeBanner />
         <CommunityParticipation />
+        <JobsSection />
         <div className="w-full">
           <AboutSection />
           <Stats />

@@ -33,9 +33,10 @@ export default function JobsPage() {
         </h2>
         <div className="mb-6 space-y-4">
           <p>
-            Starting your career in tech can be challenging. We've curated this
-            list of junior-friendly positions to help you find opportunities
-            that value your potential and are committed to your growth.
+            Starting your career in tech can be challenging. We&apos;ve curated
+            this list of junior-friendly positions to help you find
+            opportunities that value your potential and are committed to your
+            growth.
           </p>
         </div>
 
@@ -134,7 +135,7 @@ export default function JobsPage() {
           📧 Want to post a job here?
         </h2>
         <p className="mb-4">
-          We're happy to help connect you with talented junior developers.
+          We&apos;re happy to help connect you with talented junior developers.
           Contact us to list your position.
         </p>
         <p>

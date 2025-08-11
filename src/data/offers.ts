@@ -35,7 +35,7 @@ export const jobOffers: JobOffer[] = [
   //   email: "contact@company.com",
   //   theme: {
   //     primary: "color-900",
-  //     secondary: "color-800", 
+  //     secondary: "color-800",
   //     background: "from-color-50 to-color-100",
   //     border: "color-200",
   //     text: "color-700",
