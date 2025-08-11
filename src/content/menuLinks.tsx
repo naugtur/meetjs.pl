@@ -107,6 +107,11 @@ export const menuLinks: MenuLink[] = [
         disabled: true,
       },
       {
+        name: 'Community Partnerships',
+        href: '/community-partnerships',
+        type: 'link',
+      },
+      {
         name: 'separator',
         href: '#',
         type: 'separator',
