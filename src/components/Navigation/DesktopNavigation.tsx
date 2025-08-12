@@ -15,6 +15,7 @@ import Link from 'next/link';
 import type { Route } from 'next';
 import { useTranslate } from '@tolgee/react';
 import { useTranslatedMenuLinks } from '@/hooks/useTranslatedMenuLinks';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 
 export const DesktopNavigation = () => {
   const { t } = useTranslate();
@@ -132,6 +133,9 @@ export const DesktopNavigation = () => {
             )}
           </li>
         ))}
+        <li role="none" className="ml-4">
+          <LanguageSwitcher variant="desktop" />
+        </li>
       </ul>
     </nav>
   );
