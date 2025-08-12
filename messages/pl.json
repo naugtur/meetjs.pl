@@ -10,9 +10,34 @@
     "sponsors": "Sponsorzy"
   },
   "hero": {
-    "title": "Społeczność JavaScript w Polsce",
-    "subtitle": "Dołącz do największej społeczności meetupów JavaScript w Polsce",
+    "title": "meet.js",
+    "subtitle": "Meetupy JavaScript w Polsce",
+    "ranking_banner": "#1 Seria Wydarzeń Tech w Polsce (Crossweb 2024)",
+    "follow_us": "Śledź nas",
+    "join_discord": "Dołącz do Discord",
     "cta": "Znajdź Swój Lokalny Meetup"
+  },
+  "about": {
+    "title": "O meet.js",
+    "description": "meet.js to największa i najdłużej działająca społeczność JavaScript w Polsce, łącząca programistów i entuzjastów od 2011 roku.",
+    "features": {
+      "non_commercial": "100% Niekomercyjne i Darmowe",
+      "regular_meetups": "Regularne meetupy w całej Polsce",
+      "summit": "Półroczna konferencja meet.js Summit"
+    },
+    "learn_more": "Dowiedz się więcej o nas"
+  },
+  "join_us": {
+    "title": "Dołącz do nas",
+    "description": "meet.js to rodzina lokalnych meetupów w całej Polsce. Są dla społeczności i przez społeczność, niekomercyjne i organizowane przez pasjonatów. Bezpłatne lub charytatywne. Głównym celem jest połączenie społeczności Web Developerów i ułatwienie wymiany wiedzy oraz koleżeństwa.",
+    "click_city": "Kliknij swoje miasto, aby dowiedzieć się, jak dołączyć do lokalnego wydarzenia jako uczestnik, prelegent lub sponsor.",
+    "start_local": "Jeśli nie widzisz swojego miasta na mapie, rozważ założenie lokalnego meet.js!",
+    "discord_title": "Dołącz do naszej społeczności Discord"
+  },
+  "stats": {
+    "summits": "summitów",
+    "since": "od",
+    "cities": "miast"
   },
   "footer": {
     "copyright": "© 2025 meet.js Polska. Wszelkie prawa zastrzeżone.",
