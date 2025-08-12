@@ -5,13 +5,15 @@ import { clsx } from 'clsx';
 import { Suspense } from 'react';
 import { EventsList } from '@/components/EventsList';
 import Link from 'next/link';
+import { getTranslate } from '@/tolgee/server';
 
 interface FilterEventsProps {
   events: EventType[] | null;
   filter: string | null;
 }
 
-const FilterEventsContent = ({ events, filter }: FilterEventsProps) => {
+const FilterEventsContent = async ({ events, filter }: FilterEventsProps) => {
+  const t = await getTranslate();
   const linkClassNames = (city: string | null) =>
     clsx(
       badgeVariants({
@@ -22,7 +24,7 @@ const FilterEventsContent = ({ events, filter }: FilterEventsProps) => {
     );
 
   if (!events) {
-    return <div>Events not found</div>;
+    return <div>{t('events_page.filter.events_not_found')}</div>;
   }
 
   const filteredEvents = filter
@@ -32,7 +34,7 @@ const FilterEventsContent = ({ events, filter }: FilterEventsProps) => {
   return (
     <>
       <div className="flex flex-col gap-2">
-        <p className="text-center text-lg">Filter events by city</p>
+        <p className="text-center text-lg">{t('events_page.filter.filter_by_city')}</p>
         <div className="flex max-w-4xl flex-wrap justify-center gap-2">
           <Link
             href={{ pathname: '/events' }}
@@ -40,7 +42,7 @@ const FilterEventsContent = ({ events, filter }: FilterEventsProps) => {
             replace
             className={linkClassNames(null)}
           >
-            All ({events.length})
+            {t('events_page.filter.all')} ({events.length})
           </Link>
           <Link
             href={{
@@ -53,7 +55,7 @@ const FilterEventsContent = ({ events, filter }: FilterEventsProps) => {
             scroll={false}
             className={linkClassNames('On-line')}
           >
-            On-line ({events.filter((event) => event.city === 'On-line').length}
+            {t('events_page.filter.online')} ({events.filter((event) => event.city === 'On-line').length}
             )
           </Link>
           {CITIES.map((city) => {
@@ -81,9 +83,10 @@ const FilterEventsContent = ({ events, filter }: FilterEventsProps) => {
   );
 };
 
-export const FilterEvents = ({ events, filter }: FilterEventsProps) => {
+export const FilterEvents = async ({ events, filter }: FilterEventsProps) => {
+  const t = await getTranslate();
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div>{t('events_page.filter.loading')}</div>}>
       <FilterEventsContent events={events} filter={filter} />
     </Suspense>
   );
