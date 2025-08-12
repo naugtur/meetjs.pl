@@ -145,6 +145,21 @@
       "learning": "Courses & Learning"
     }
   },
+  "events_page": {
+    "meta_title": "All Events | meet.js",
+    "meta_description": "All meet.js events in one place.",
+    "page_title": "All events",
+    "subtitle": "All meet.js events in one place. Check past and upcoming meetups.",
+    "upcoming_events": "Upcoming events",
+    "past_events": "Past events",
+    "filter": {
+      "filter_by_city": "Filter events by city",
+      "all": "All",
+      "online": "On-line",
+      "events_not_found": "Events not found",
+      "loading": "Loading..."
+    }
+  },
   "stats": {
     "cities": "cities",
     "since": "since",
