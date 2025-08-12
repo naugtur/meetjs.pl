@@ -1,0 +1,21 @@
+{
+  "hello_world": "Hello World",
+  "welcome": "Welcome to meet.js",
+  "navigation": {
+    "home": "Home",
+    "events": "Events",
+    "about": "About",
+    "discounts": "Discounts",
+    "team": "Team",
+    "sponsors": "Sponsors"
+  },
+  "hero": {
+    "title": "JavaScript Community in Poland",
+    "subtitle": "Join the largest JavaScript meetup community in Poland",
+    "cta": "Find Your Local Meetup"
+  },
+  "footer": {
+    "copyright": "© 2025 meet.js. All rights reserved.",
+    "contact": "Contact us"
+  }
+}
