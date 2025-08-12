@@ -3,12 +3,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { useTranslate } from '@tolgee/react';
 
 interface LogoProps {
   clickable?: boolean;
 }
 
 export const Logo = ({ clickable = true }: LogoProps) => {
+  const { t } = useTranslate();
   const [showContextMenu, setShowContextMenu] = useState(false);
   const [contextMenuPosition, setContextMenuPosition] = useState({
     x: 0,
@@ -59,9 +61,9 @@ export const Logo = ({ clickable = true }: LogoProps) => {
             }}
           >
             <div className="border-b border-gray-100 px-4 py-2 text-sm text-gray-700">
-              <div className="font-medium">meet.js Logo</div>
+              <div className="font-medium">{t('logo_component.context_menu_title')}</div>
               <div className="mt-1 text-xs text-gray-500">
-                Want to download our logo?
+                {t('logo_component.context_menu_subtitle')}
               </div>
             </div>
             <Link
@@ -69,7 +71,7 @@ export const Logo = ({ clickable = true }: LogoProps) => {
               onClick={handleClickOutside}
               className="block w-full cursor-pointer px-4 py-2 text-left text-sm text-gray-700 transition-colors hover:bg-gray-50"
             >
-              📦 Go to Brand Assets
+              📦 {t('logo_component.go_to_brand_assets')}
             </Link>
           </div>
         </>
