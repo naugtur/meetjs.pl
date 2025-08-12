@@ -11,6 +11,7 @@ import { EmptyEventsAlert } from '@/components/EmptyEventsAlert';
 import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
 import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
 import { filterUpcomingEvents } from '@/utils/eventUtils';
+import { getTranslate } from '@/tolgee/server';
 
 export interface Event {
   type: string;
@@ -29,6 +30,7 @@ export interface Event {
 }
 
 export const FeaturedEvents = async () => {
+  const t = await getTranslate();
   const apiEvents: Event[] | null = await getUpcomingEvents();
   const allEvents: Event[] = [...(apiEvents || []), ...ADDITIONAL_EVENTS];
 
@@ -41,8 +43,10 @@ export const FeaturedEvents = async () => {
       id="events"
     >
       <div className="flex w-full flex-col gap-4 p-4">
-        <h2 className="text-center text-3xl font-bold">Upcoming Events</h2>
-        <p className="text-center">Don&apos;t miss these!</p>
+        <h2 className="text-center text-3xl font-bold">
+          {t('featured_events.title')}
+        </h2>
+        <p className="text-center">{t('featured_events.subtitle')}</p>
         {events.length === 0 ? (
           <EmptyEventsAlert />
         ) : (
@@ -70,7 +74,7 @@ export const FeaturedEvents = async () => {
                 'w-full bg-purple text-black hover:bg-purple/80 md:w-auto dark:bg-green dark:hover:bg-green/80',
             })}
           >
-            All events
+            {t('featured_events.all_events')}
           </Link>
         </div>
 
