@@ -241,3 +241,143 @@ The original meet.js brand colors were:
 - Purple: `#2B1C34` / rgb(43, 28, 52) - Primary background color
 - Green: `#BDDB59` / rgb(189, 219, 89) - Accent color for highlights and CTAs
 - Blue: `#249FAB` / rgb(36, 159, 171) - Secondary accent color
+
+## Internationalization (i18n) with Tolgee
+
+This project uses [Tolgee](https://tolgee.io) for internationalization, supporting English (`en`) and Polish (`pl`) languages.
+
+### Setup
+
+1. **Create a Tolgee account** at [https://app.tolgee.io](https://app.tolgee.io)
+2. **Create a new project** in your Tolgee dashboard
+3. **Get your API key** from the project settings
+4. **Add environment variables** to your `.env` or `.env.development.local`:
+   ```bash
+   NEXT_PUBLIC_TOLGEE_API_KEY=your_actual_api_key_here
+   NEXT_PUBLIC_TOLGEE_API_URL=https://app.tolgee.io
+   ```
+
+### Initial Translation Setup
+
+1. **Upload translation files** to your Tolgee project:
+   - Import `messages/en.json` for English translations
+   - Import `messages/pl.json` for Polish translations
+   - Use the Tolgee dashboard's import feature
+
+2. **Configure languages** in your Tolgee project:
+   - Set English (`en`) as the base language
+   - Add Polish (`pl`) as a target language
+
+### Using Translations in Components
+
+**Server Components:**
+
+```tsx
+import { getTranslate } from '@/tolgee/server';
+
+export default async function MyComponent() {
+  const t = await getTranslate();
+
+  return (
+    <div>
+      <h1>{t('hero.title')}</h1>
+      <p>{t('hero.subtitle')}</p>
+    </div>
+  );
+}
+```
+
+**Client Components:**
+
+```tsx
+'use client';
+import { useTranslate } from '@tolgee/react';
+
+export default function MyClientComponent() {
+  const { t } = useTranslate();
+
+  return (
+    <div>
+      <h1>{t('navigation.home')}</h1>
+      <button>{t('hero.cta')}</button>
+    </div>
+  );
+}
+```
+
+### Language Switching
+
+The `LanguageSwitcher` component is available for language switching:
+
+```tsx
+import LanguageSwitcher from '@/components/LanguageSwitcher';
+
+export default function Header() {
+  return (
+    <header>
+      <nav>
+        {/* Your navigation */}
+        <LanguageSwitcher />
+      </nav>
+    </header>
+  );
+}
+```
+
+### Translation Keys Structure
+
+Translation keys are organized by sections:
+
+```json
+{
+  "navigation": {
+    "home": "Home",
+    "events": "Events",
+    "about": "About",
+    "discounts": "Discounts",
+    "team": "Team",
+    "sponsors": "Sponsors"
+  },
+  "hero": {
+    "title": "JavaScript Community in Poland",
+    "subtitle": "Join the largest JavaScript community in Poland",
+    "cta": "Join Us"
+  },
+  "footer": {
+    "copyright": "© 2024 meet.js. All rights reserved.",
+    "contact": "Contact us"
+  }
+}
+```
+
+### In-Context Translation
+
+With Tolgee's in-context translation feature:
+
+1. **Hold Alt** and **click on any translated text** to edit it directly
+2. Changes are saved to your Tolgee project automatically
+3. Perfect for content managers and translators
+
+### Testing Translations
+
+Visit `/tolgee-demo` to test the translation integration:
+
+- View all translation keys in action
+- Test language switching
+- Verify in-context editing (Alt+click)
+
+### Translation Workflow
+
+1. **Developers**: Add translation keys using `t('key.name')` in components
+2. **Content Team**: Use Tolgee dashboard or in-context editing to manage translations
+3. **Translators**: Use Tolgee's translation interface for Polish translations
+4. **Deployment**: Translations are automatically fetched from Tolgee in production
+
+### Configuration Files
+
+- `src/tolgee/shared.ts` - Base Tolgee configuration
+- `src/tolgee/server.tsx` - Server-side Tolgee instance
+- `src/tolgee/client.tsx` - Client-side Tolgee provider
+- `src/tolgee/language.ts` - Language management and cookies
+- `messages/en.json` - English translations (for import to Tolgee)
+- `messages/pl.json` - Polish translations (for import to Tolgee)
