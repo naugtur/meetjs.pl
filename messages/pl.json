@@ -116,6 +116,35 @@
     },
     "requirements_title": "Co musisz mieć:"
   },
+  "discounts": {
+    "page_title": "Zniżki Społeczności",
+    "meta_title": "Ekskluzywne Zniżki | meet.js",
+    "meta_description": "Ekskluzywne zniżki na kursy, narzędzia programistyczne i bilety na wydarzenia dla społeczności meet.js.",
+    "subtitle": "Ekskluzywne zniżki na narzędzia programistyczne i bilety na wydarzenia dla społeczności meet.js. Skorzystaj z tych ograniczonych czasowo okazji!",
+    "benefits_card": {
+      "title": "Ekskluzywne Korzyści dla Społeczności",
+      "description": "Jako ceniony członek społeczności meet.js, masz dostęp do tych specjalnych zniżek od naszych partnerów.",
+      "events": {
+        "title": "Wydarzenia i Konferencje",
+        "description": "Specjalne ceny na konferencje, warsztaty i meetupy na całym świecie"
+      },
+      "software": {
+        "title": "Oprogramowanie i Narzędzia",
+        "description": "Premium narzędzia deweloperskie, IDE i usługi w ekskluzywnych cenach"
+      },
+      "learning": {
+        "title": "Kursy i Nauka",
+        "description": "Zniżki na kursy, książki i treści edukacyjne od najlepszych instruktorów"
+      },
+      "note": "Wszystkie zniżki są ograniczone czasowo i podlegają warunkom partnerów. Sprawdź daty wygaśnięcia przed wykorzystaniem.",
+      "note_label": "Uwaga:"
+    },
+    "sections": {
+      "events": "Wydarzenia i Konferencje",
+      "software": "Oprogramowanie i Narzędzia",
+      "learning": "Kursy i Nauka"
+    }
+  },
   "stats": {
     "cities": "miast",
     "since": "od",
