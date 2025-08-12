@@ -145,6 +145,21 @@
       "learning": "Kursy i Nauka"
     }
   },
+  "events_page": {
+    "meta_title": "Wszystkie Wydarzenia | meet.js",
+    "meta_description": "Wszystkie wydarzenia meet.js w jednym miejscu.",
+    "page_title": "Wszystkie wydarzenia",
+    "subtitle": "Wszystkie wydarzenia meet.js w jednym miejscu. Sprawdź przeszłe i nadchodzące meetupy.",
+    "upcoming_events": "Nadchodzące wydarzenia",
+    "past_events": "Przeszłe wydarzenia",
+    "filter": {
+      "filter_by_city": "Filtruj wydarzenia według miasta",
+      "all": "Wszystkie",
+      "online": "Online",
+      "events_not_found": "Nie znaleziono wydarzeń",
+      "loading": "Ładowanie..."
+    }
+  },
   "stats": {
     "cities": "miast",
     "since": "od",
