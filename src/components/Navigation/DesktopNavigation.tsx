@@ -1,6 +1,5 @@
 import { FaChevronDown, FaArrowUpRightFromSquare } from 'react-icons/fa6';
 import { FaMapMarkerAlt } from 'react-icons/fa';
-import { menuLinks } from '@/content/menuLinks';
 import { CITIES } from '@/content/cities';
 import { NavigationLink } from './NavigationLink';
 import { CityStatusIndicator } from './CityStatusIndicator';
@@ -14,8 +13,13 @@ import {
 } from '@/components/ui/dropdown-menu';
 import Link from 'next/link';
 import type { Route } from 'next';
+import { useTranslate } from '@tolgee/react';
+import { useTranslatedMenuLinks } from '@/hooks/useTranslatedMenuLinks';
 
 export const DesktopNavigation = () => {
+  const { t } = useTranslate();
+  const menuLinks = useTranslatedMenuLinks();
+
   return (
     <nav
       aria-label="Primary navigation"
@@ -54,7 +58,7 @@ export const DesktopNavigation = () => {
                       return (
                         <div key={index}>
                           <DropdownMenuLabel className="text-xs font-semibold uppercase tracking-wide text-gray-500">
-                            Cities
+                            {t('navigation.dropdown.cities_label')}
                           </DropdownMenuLabel>
                           {CITIES.sort((a, b) =>
                             a.name.localeCompare(b.name),
@@ -85,45 +89,46 @@ export const DesktopNavigation = () => {
                         {dropdownItem.disabled ? (
                           <span className="flex cursor-not-allowed items-center text-gray-400">
                             {dropdownItem.name}
-                            <span className="ml-2 text-xs">(Coming Soon)</span>
+                            <span className="ml-2 text-xs">
+                              {t('navigation.dropdown.coming_soon')}
+                            </span>
                           </span>
+                        ) : dropdownItem.external ? (
+                          <a
+                            href={dropdownItem.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center"
+                          >
+                            {dropdownItem.name}
+                            <FaArrowUpRightFromSquare className="ml-2 h-3 w-3" />
+                          </a>
                         ) : (
-                          dropdownItem.external ? (
-                            <a
-                              href={dropdownItem.href}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center"
-                            >
-                              {dropdownItem.name}
-                              <FaArrowUpRightFromSquare className="ml-2 h-3 w-3" />
-                            </a>
-                          ) : (
-                            <Link href={dropdownItem.href as Route} className="flex items-center">
-                              {dropdownItem.name}
-                            </Link>
-                          )
+                          <Link
+                            href={dropdownItem.href as Route}
+                            className="flex items-center"
+                          >
+                            {dropdownItem.name}
+                          </Link>
                         )}
                       </DropdownMenuItem>
                     );
                   })}
                 </DropdownMenuContent>
               </DropdownMenu>
+            ) : item.external ? (
+              <NavigationLink
+                href={item.href}
+                current={item.current}
+                external={true}
+                name={item.name}
+              />
             ) : (
-              item.external ? (
-                <NavigationLink
-                  href={item.href}
-                  current={item.current}
-                  external={true}
-                  name={item.name}
-                />
-              ) : (
-                <NavigationLink
-                  href={item.href as Route}
-                  current={item.current}
-                  name={item.name}
-                />
-              )
+              <NavigationLink
+                href={item.href as Route}
+                current={item.current}
+                name={item.name}
+              />
             )}
           </li>
         ))}
@@ -131,4 +136,3 @@ export const DesktopNavigation = () => {
     </nav>
   );
 };
-

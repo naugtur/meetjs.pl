@@ -38,7 +38,7 @@ importers:
         version: 0.13.8(typescript@5.8.3)(zod@3.24.2)
       '@tolgee/react':
         specifier: ^6.2.7
-        version: 6.2.7(react@19.1.0)
+        version: 6.2.7(react@19.1.1)
       '@tolgee/web':
         specifier: ^6.2.7
         version: 6.2.7
@@ -5493,10 +5493,10 @@ snapshots:
 
   '@tolgee/core@6.2.7': {}
 
-  '@tolgee/react@6.2.7(react@19.1.0)':
+  '@tolgee/react@6.2.7(react@19.1.1)':
     dependencies:
       '@tolgee/web': 6.2.7
-      react: 19.1.0
+      react: 19.1.1
 
   '@tolgee/web@6.2.7':
     dependencies:
