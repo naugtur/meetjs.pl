@@ -1,88 +1,125 @@
 {
-  "hello_world": "Witaj Świecie",
-  "welcome": "Witamy w meet.js",
-  "navigation": {
-    "home": "Strona główna",
-    "events": "Wydarzenia",
-    "about": "O nas",
-    "discounts": "Zniżki",
-    "team": "Zespół",
-    "sponsors": "Sponsorzy"
-  },
-  "hero": {
-    "title": "meet.js",
-    "subtitle": "Meetupy JavaScript w Polsce",
-    "ranking_banner": "#1 Seria Wydarzeń Tech w Polsce (Crossweb 2024)",
-    "follow_us": "Śledź nas",
-    "join_discord": "Dołącz do Discord",
-    "cta": "Znajdź Swój Lokalny Meetup"
-  },
-
-  "join_us": {
-    "title": "Dołącz do nas",
-    "description": "meet.js to rodzina lokalnych meetupów w całej Polsce. Są dla społeczności i przez społeczność, niekomercyjne i organizowane przez pasjonatów. Bezpłatne lub charytatywne. Głównym celem jest połączenie społeczności Web Developerów i ułatwienie wymiany wiedzy oraz koleżeństwa.",
-    "click_city": "Kliknij swoje miasto, aby dowiedzieć się, jak dołączyć do lokalnego wydarzenia jako uczestnik, prelegent lub sponsor.",
-    "start_local": "Jeśli nie widzisz swojego miasta na mapie, rozważ założenie lokalnego meet.js!",
-    "discord_title": "Dołącz do naszej społeczności Discord"
-  },
-  "stats": {
-    "summits": "summitów",
-    "since": "od",
-    "cities": "miast"
-  },
-  "footer": {
-    "copyright": "© 2025 meet.js Polska. Wszelkie prawa zastrzeżone.",
-    "contact": "Skontaktuj się z nami"
-  },
-  "events": {
-    "upcoming_in_city": "Nadchodzące wydarzenia w",
-    "no_events": "Brak nadchodzących wydarzeń w {{city}} w tym momencie."
-  },
   "about": {
-    "page_title": "✨ O meet.js",
-    "meetup_caption": "Jeden z naszych regularnych meetupów w akcji",
-    "intro_p1": "meet.js to największa i najdłużej działająca społeczność JavaScript w Polsce, łącząca programistów, entuzjastów i ekspertów branżowych od 2011 roku.",
-    "intro_p2": "Wszystko zaczęło się w wigilię Walentynek w 2011 roku, kiedy grupa entuzjastów JavaScript zebrała się w poznańskim pubie. To, co zaczęło się jako zwykły meetup, przekształciło się w ogólnokrajowy ruch, który ukształtował ekosystem JavaScript w Polsce.",
-    "values_title": "💎 Nasze Wartości",
-    "values": {
-      "non_commercial": "🚫💰 100% Niekomercyjne - Działamy bez nadzoru korporacyjnego czy motywów zysku",
-      "free_open": "✅ Darmowe i Otwarte - Wszystkie nasze wydarzenia są darmowe i otwarte dla każdego zainteresowanego technologiami web",
-      "community_driven": "🤝 Napędzane przez Społeczność - Zasilane przez pasjonatów lokalnych organizatorów w całej Polsce",
-      "knowledge_sharing": "💡 Dzielenie się Wiedzą - Skupienie na praktycznej nauce i możliwościach networkingu"
-    },
-    "summit_caption": "Konferencja meet.js Summit",
-    "networking_caption": "Networking społeczności",
-    "what_we_do_title": "🚀 Co Robimy",
     "activities": {
-      "local_meetups": {
-        "title": "Lokalne Meetupy",
-        "description": "Regularne lokalne meetupy w wielu polskich miastach."
-      },
-      "summit": {
-        "title": "meet.js Summit",
-        "description": "Półroczna",
-        "conference_link": "konferencja"
-      },
       "charity": {
-        "title": "Partnerstwa Charytatywne",
-        "description": "Współpracujemy z organizacjami charytatywnymi, w tym z"
+        "description": "Współpracujemy z organizacjami charytatywnymi, w tym z",
+        "title": "Partnerstwa Charytatywne"
+      },
+      "local_meetups": {
+        "description": "Regularne lokalne meetupy w wielu polskich miastach.",
+        "title": "Lokalne Meetupy"
       },
       "networking": {
-        "title": "Networking",
-        "description": "Możliwości networkingu dla entuzjastów JavaScript."
+        "description": "Możliwości networkingu dla entuzjastów JavaScript.",
+        "title": "Networking"
+      },
+      "summit": {
+        "conference_link": "konferencja",
+        "description": "Półroczna",
+        "title": "meet.js Summit"
       },
       "tech_talks": {
-        "title": "Tech Talki",
-        "description": "Sesje dzielenia się wiedzą i prezentacje techniczne."
+        "description": "Sesje dzielenia się wiedzą i prezentacje techniczne.",
+        "title": "Tech Talki"
       }
     },
-    "get_involved_title": "👋 Dołącz do Nas",
+    "contact_text": "Masz pytania? Skontaktuj się z nami pod adresem",
+    "contact_title": "\uD83D\uDCE7 Skontaktuj się z Nami",
+    "description": "meet.js to największa i najdłużej działająca społeczność JavaScript w Polsce, łącząca programistów i entuzjastów od 2011 roku.",
+    "features": {
+      "non_commercial": "100% Niekomercyjne i Darmowe",
+      "regular_meetups": "Regularne meetupy w całej Polsce",
+      "summit": "Półroczna konferencja meet.js Summit"
+    },
     "get_involved_p1": "Niezależnie od tego, czy jesteś doświadczonym programistą, czy dopiero zaczynasz swoją przygodę z JavaScript, meet.js zaprasza Cię do dołączenia do naszej żywej społeczności.",
     "get_involved_p2": "Znajdź swój lokalny oddział meet.js lub sprawdź",
-    "organizer_link": "jak zostać organizatorem",
     "get_involved_p3": "aby pomóc rozwijać najbardziej odporną społeczność tech w Polsce!",
+    "get_involved_title": "\uD83D\uDC4B Dołącz do Nas",
+    "intro_p1": "meet.js to największa i najdłużej działająca społeczność JavaScript w Polsce, łącząca programistów, entuzjastów i ekspertów branżowych od 2011 roku.",
+    "intro_p2": "Wszystko zaczęło się w wigilię Walentynek w 2011 roku, kiedy grupa entuzjastów JavaScript zebrała się w poznańskim pubie. To, co zaczęło się jako zwykły meetup, przekształciło się w ogólnokrajowy ruch, który ukształtował ekosystem JavaScript w Polsce.",
+    "learn_more": "Dowiedz się więcej o nas",
+    "meetup_caption": "Jeden z naszych regularnych meetupów w akcji",
+    "networking_caption": "Networking społeczności",
+    "organizer_link": "jak zostać organizatorem",
     "organizers_caption": "Nasz niesamowity zespół organizatorów",
-    "contact_title": "📧 Skontaktuj się z Nami",
-    "contact_text": "Masz pytania? Skontaktuj się z nami pod adresem"
-  }
+    "page_title": "✨ O meet.js",
+    "summit_caption": "Konferencja meet.js Summit",
+    "title": "O meet.js",
+    "values": {
+      "community_driven": "\uD83E\uDD1D Napędzane przez Społeczność - Zasilane przez pasjonatów lokalnych organizatorów w całej Polsce",
+      "free_open": "✅ Darmowe i Otwarte - Wszystkie nasze wydarzenia są darmowe i otwarte dla każdego zainteresowanego technologiami web",
+      "knowledge_sharing": "\uD83D\uDCA1 Dzielenie się Wiedzą - Skupienie na praktycznej nauce i możliwościach networkingu",
+      "non_commercial": "\uD83D\uDEAB\uD83D\uDCB0 100% Niekomercyjne - Działamy bez nadzoru korporacyjnego czy motywów zysku"
+    },
+    "values_title": "\uD83D\uDC8E Nasze Wartości",
+    "what_we_do_title": "\uD83D\uDE80 Co Robimy"
+  },
+  "events": {
+    "no_events": "Brak nadchodzących wydarzeń w {city} w tym momencie.",
+    "upcoming_in_city": "Nadchodzące wydarzenia w"
+  },
+  "example-key-in-client-component": "test PL",
+  "footer": {
+    "contact": "Skontaktuj się z nami",
+    "copyright": "© 2025 meet.js Polska. Wszelkie prawa zastrzeżone."
+  },
+  "hello_world": "Witaj Świecie",
+  "hero": {
+    "cta": "Znajdź Swój Lokalny Meetup",
+    "follow_us": "Śledź nas",
+    "join_discord": "Dołącz do Discord",
+    "ranking_banner": "#1 Seria Wydarzeń Tech w Polsce (Crossweb 2024)",
+    "subtitle": "Dołącz do największej społeczności meetupów JavaScript w Polsce",
+    "title": "meet.js"
+  },
+  "join_us": {
+    "click_city": "Kliknij swoje miasto, aby dowiedzieć się, jak dołączyć do lokalnego wydarzenia jako uczestnik, prelegent lub sponsor.",
+    "description": "meet.js to rodzina lokalnych meetupów w całej Polsce. Są dla społeczności i przez społeczność, niekomercyjne i organizowane przez pasjonatów. Bezpłatne lub charytatywne. Głównym celem jest połączenie społeczności Web Developerów i ułatwienie wymiany wiedzy oraz koleżeństwa.",
+    "discord_title": "Dołącz do naszej społeczności Discord",
+    "start_local": "Jeśli nie widzisz swojego miasta na mapie, rozważ założenie lokalnego meet.js!",
+    "title": "Dołącz do nas"
+  },
+  "navigation": {
+    "about": "O nas",
+    "discounts": "Zniżki",
+    "events": "Wydarzenia",
+    "home": "Strona główna",
+    "sponsors": "Sponsorzy",
+    "team": "Zespół"
+  },
+  "organizer": {
+    "benefits": {
+      "access": "Dostęp do innych organizatorów i ich doświadczenia",
+      "brand_access": "Dostęp do marki i obecności w mediach społecznościowych, którą mamy",
+      "intro_call": "Rozmowa wprowadzająca ze Zbyszkiem z całą wiedzą potrzebną do zorganizowania pierwszego meetupu",
+      "network": "Dostęp do naszej sieci, w tym prelegentów, którzy mogą chcieć odwiedzić Twoje miasto",
+      "sponsor_help": "Pomoc w rozmowach ze sponsorami i miejscami"
+    },
+    "benefits_title": "Co otrzymasz:",
+    "contact_email": "contact@meetjs.pl",
+    "contact_heading": "Aby rozpocząć, skontaktuj się z",
+    "contact_subject": "z tematem \"meet.js TWOJEMIASTO\"",
+    "intro_p1": "Chcesz zostać organizatorem i potrzebujesz pomocy w rozpoczęciu? Po to tu jesteśmy!",
+    "intro_p2": "Jeśli w Twoim mieście już istnieje meet.js, skontaktuj się z organizatorami, aby zobaczyć, jak możesz dołączyć.",
+    "intro_p3": "Jeśli w Twoim mieście jest społeczność JavaScript, która nie jest jeszcze zorganizowana, lub lokalne meetupy są organizowane przez firmy w celach krótkoterminowych komercyjnych lub rekrutacyjnych, zdecydowanie powinieneś założyć meet.js w swoim mieście.",
+    "meta_description": "Jak zostać organizatorem meet.js.",
+    "meta_title": "Jak zostać organizatorem | meet.js",
+    "no_benefits": {
+      "money": "Pieniędzy ani niczego o znacznej wartości komercyjnej"
+    },
+    "no_benefits_title": "Czego nie otrzymasz:",
+    "page_title": "Jak zostać organizatorem",
+    "requirements": {
+      "involvement": "Pewne zaangażowanie w społeczność JavaScript i programowania (bycie deweloperem i entuzjastą innych ludzi)",
+      "non_commercial": "Brak interesu komercyjnego lub wsparcia firmy w Twoim zaangażowaniu jako organizator",
+      "time": "Trochę czasu i ambicji"
+    },
+    "requirements_title": "Co musisz mieć:"
+  },
+  "stats": {
+    "cities": "miast",
+    "since": "od",
+    "summits": "summitów"
+  },
+  "welcome": "Witamy w meet.js"
 }
