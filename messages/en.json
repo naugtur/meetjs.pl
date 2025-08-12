@@ -98,6 +98,8 @@
     "allowed_uses": "Permitted Uses",
     "prohibited_uses": "Prohibited Uses",
     "contact_for_questions": "For questions about usage or licensing, please contact us at",
+    "brand_name_note": "Brand Name Usage",
+    "brand_name_lowercase": "Always write \"meet.js\" with lowercase letters, including the \"m\" at the beginning.",
     "allowed_list": {
       "educational": "Educational content and presentations about meet.js",
       "community": "Community projects and meetup organization",
