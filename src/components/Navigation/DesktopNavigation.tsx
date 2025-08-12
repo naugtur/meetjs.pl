@@ -1,6 +1,5 @@
 import { FaChevronDown, FaArrowUpRightFromSquare } from 'react-icons/fa6';
 import { FaMapMarkerAlt } from 'react-icons/fa';
-import { menuLinks } from '@/content/menuLinks';
 import { CITIES } from '@/content/cities';
 import { NavigationLink } from './NavigationLink';
 import { CityStatusIndicator } from './CityStatusIndicator';
@@ -13,8 +12,13 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import Link from 'next/link';
+import { useTranslate } from '@tolgee/react';
+import { useTranslatedMenuLinks } from '@/hooks/useTranslatedMenuLinks';
 
 export const DesktopNavigation = () => {
+  const { t } = useTranslate();
+  const menuLinks = useTranslatedMenuLinks();
+
   return (
     <nav
       aria-label="Primary navigation"
@@ -53,7 +57,7 @@ export const DesktopNavigation = () => {
                       return (
                         <div key={index}>
                           <DropdownMenuLabel className="text-xs font-semibold uppercase tracking-wide text-gray-500">
-                            Cities
+                            {t('navigation.dropdown.cities_label')}
                           </DropdownMenuLabel>
                           {CITIES.sort((a, b) =>
                             a.name.localeCompare(b.name),
@@ -84,7 +88,9 @@ export const DesktopNavigation = () => {
                         {dropdownItem.disabled ? (
                           <span className="flex cursor-not-allowed items-center text-gray-400">
                             {dropdownItem.name}
-                            <span className="ml-2 text-xs">(Coming Soon)</span>
+                            <span className="ml-2 text-xs">
+                              {t('navigation.dropdown.coming_soon')}
+                            </span>
                           </span>
                         ) : (
                           <Link
