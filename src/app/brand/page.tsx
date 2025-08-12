@@ -361,6 +361,16 @@ const BrandPage = async () => {
             </ul>
           </div>
         </div>
+
+        {/* Brand Name Usage Note */}
+        <div className="mt-8 rounded-lg border border-blue-200 bg-blue-50 p-6">
+          <h3 className="mb-3 text-xl font-bold text-blue-800">
+            {t('brand.brand_name_note')}
+          </h3>
+          <p className="text-blue-700">
+            {t('brand.brand_name_lowercase')}
+          </p>
+        </div>
       </section>
 
       <section id="logos" className="mb-16">
@@ -558,7 +568,7 @@ const BrandPage = async () => {
             className="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-gray-800"
           >
             <FaGithub />
-            <span>View complete collection on GitHub</span>
+            <span>{t('brand.view_complete_collection_github')}</span>
           </Link>
         </div>
       </section>
@@ -581,8 +591,8 @@ const BrandPage = async () => {
                 <h3 className="text-lg font-bold">{color.name}</h3>
                 <p className="mt-1 text-gray-600">{color.description}</p>
                 <div className="mt-2 space-y-1">
-                  <p className="font-mono text-sm">HEX: {color.hex}</p>
-                  <p className="font-mono text-sm">RGB: {color.rgb}</p>
+                  <p className="font-mono text-sm">{t('brand.hex')}: {color.hex}</p>
+                  <p className="font-mono text-sm">{t('brand.rgb')}: {color.rgb}</p>
                 </div>
               </div>
             </div>
@@ -619,7 +629,7 @@ const BrandPage = async () => {
       </section>
 
       <section id="wallpapers" className="mb-16">
-        <h2 className="mb-6 border-b pb-2 text-3xl font-bold">Wallpapers</h2>
+        <h2 className="mb-6 border-b pb-2 text-3xl font-bold">{t('brand.wallpapers')}</h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {wallpapers.map((wallpaper) => (
             <div
@@ -653,12 +663,12 @@ const BrandPage = async () => {
                 )}
                 {wallpaper.dimensions && (
                   <p className="mt-1 text-sm text-gray-500">
-                    Dimensions: {wallpaper.dimensions}
+                    {t('brand.dimensions')}: {wallpaper.dimensions}
                   </p>
                 )}
                 {wallpaper.fileSize && (
                   <p className="mt-1 text-sm text-gray-500">
-                    Size: {wallpaper.fileSize}
+                    {t('brand.size')}: {wallpaper.fileSize}
                   </p>
                 )}
                 <a
