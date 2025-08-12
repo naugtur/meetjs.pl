@@ -116,6 +116,35 @@
     },
     "requirements_title": "What you need to have:"
   },
+  "discounts": {
+    "page_title": "Community Discounts",
+    "meta_title": "Exclusive Discounts | meet.js",
+    "meta_description": "Exclusive discounts on courses, software tools, and event tickets for the meet.js community.",
+    "subtitle": "Exclusive discounts on software tools and event tickets for the meet.js community. Take advantage of these limited-time opportunities!",
+    "benefits_card": {
+      "title": "Exclusive Community Benefits",
+      "description": "As a valued member of the meet.js community, you have access to these special discounts from our partners.",
+      "events": {
+        "title": "Events & Conferences",
+        "description": "Special pricing for conferences, workshops, and meetups around the world"
+      },
+      "software": {
+        "title": "Software & Tools",
+        "description": "Premium developer tools, IDEs, and services at exclusive rates"
+      },
+      "learning": {
+        "title": "Courses & Learning",
+        "description": "Discounts on courses, books, and educational content from top instructors"
+      },
+      "note": "All discounts are time-limited and subject to partner terms and conditions. Check expiration dates before redeeming.",
+      "note_label": "Note:"
+    },
+    "sections": {
+      "events": "Events & Conferences",
+      "software": "Software & Tools",
+      "learning": "Courses & Learning"
+    }
+  },
   "stats": {
     "cities": "cities",
     "since": "since",
