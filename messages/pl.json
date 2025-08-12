@@ -145,6 +145,26 @@
     "context_menu_subtitle": "Chcesz pobrać nasze logo?",
     "go_to_brand_assets": "Przejdź do Logo i kolory"
   },
+  "discord_widget": {
+    "connect_with_developers": "Połącz się z programistami JavaScript"
+  },
+  "poland_map": {
+    "coming_soon": "Wkrótce!",
+    "paused_join_organizer": "Wstrzymane (dołącz jako organizator)",
+    "active_upcoming_progress": "Aktywne / nadchodzące / w trakcie",
+    "typescript_gdansk": "TypeScript Gdańsk"
+  },
+  "featured_events": {
+    "title": "Nadchodzące wydarzenia",
+    "subtitle": "Nie przegap ich!",
+    "all_events": "Wszystkie wydarzenia"
+  },
+  "empty_events_alert": {
+    "message": "Nic jeszcze nie zaplanowano. Skontaktuj się z lokalnymi organizatorami, jeśli chcesz pomóc to zorganizować!"
+  },
+  "events_api_partner": {
+    "powered_by": "API wydarzeń wspierane przez"
+  },
   "hello_world": "Witaj świecie",
   "hero": {
     "cta": "Znajdź Swój Lokalny Meetup",

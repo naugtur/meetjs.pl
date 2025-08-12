@@ -3,6 +3,7 @@ import type { Route } from 'next';
 import { City } from '@/content/cities';
 import { Event } from '@/components/FeaturedEvents';
 import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
+import { getTranslate } from '@/tolgee/server';
 
 type MapProps = {
   cities: City[];
@@ -34,7 +35,8 @@ function getCityTextFillColor(status: City['status']): string {
   }
 }
 
-export const PolandMap = ({ cities, events = [] }: MapProps) => {
+export const PolandMap = async ({ cities, events = [] }: MapProps) => {
+  const t = await getTranslate();
   const now = new Date();
 
   const getCityEventStatus = (cityName: string) => {
@@ -194,7 +196,7 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
               style={{ borderStyle: 'dashed' }}
             />
           </div>
-          <span>Coming soon!</span>
+          <span>{t('poland_map.coming_soon')}</span>
         </div>
         <div className="flex items-center gap-2 whitespace-nowrap">
           <div className="h-2 w-2 rounded-full bg-[#9CA3AF]" />
@@ -202,7 +204,7 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
             href={'/how-to-become-an-organizer' as Route}
             className="hover:text-purple"
           >
-            Paused (join as organizer)
+            {t('poland_map.paused_join_organizer')}
           </Link>
         </div>
       </div>

@@ -1,8 +1,11 @@
-export const EmptyEventsAlert = () => {
+import { getTranslate } from '@/tolgee/server';
+
+export const EmptyEventsAlert = async () => {
+  const t = await getTranslate();
+  
   return (
     <p className="text-center font-bold">
-      Nothing planned yet. Contact your local orgnizers if you want to help make
-      it happen!
+      {t('empty_events_alert.message')}
     </p>
   );
 };
