@@ -1,13 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Metadata } from 'next';
 import { FaGithub, FaDownload } from 'react-icons/fa6';
-
-export const metadata: Metadata = {
-  title: 'Brand Assets | meet.js',
-  description:
-    'Download meet.js brand assets, logos, and wallpapers for your use.',
-};
+import { getTranslate } from '@/tolgee/server';
 
 type AssetItem = {
   name: string;
@@ -24,7 +18,8 @@ type ColorItem = {
   description?: string;
 };
 
-const BrandPage = () => {
+const BrandPage = async () => {
+  const t = await getTranslate();
   const officialLogos: AssetItem[] = [
     // Light/Official Variants (Primary)
     {
@@ -228,15 +223,15 @@ const BrandPage = () => {
     <div className="container mx-auto px-4 py-12">
       <div className="mx-auto max-w-6xl px-4 py-8">
         <div className="mb-8 text-center">
-          <h1 className="mb-4 text-4xl font-bold">Brand Assets</h1>
+          <h1 className="mb-4 text-4xl font-bold">{t('brand.page_title')}</h1>
           <p className="text-xl text-gray-600">
-            Download official meet.js logos, colors, and other brand materials
+            {t('brand.page_subtitle')}
           </p>
         </div>
 
         {/* Table of Contents */}
         <div className="mb-12 rounded-lg bg-gray-50 p-6">
-          <h2 className="mb-4 text-xl font-semibold">Page Contents</h2>
+          <h2 className="mb-4 text-xl font-semibold">{t('brand.page_contents')}</h2>
           <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
             <a
               href="#guidelines"
@@ -244,8 +239,8 @@ const BrandPage = () => {
             >
               <span className="text-2xl">📋</span>
               <div>
-                <div className="font-medium">Usage Guidelines</div>
-                <div className="text-sm text-gray-600">Brand usage rules</div>
+                <div className="font-medium">{t('brand.usage_guidelines')}</div>
+                <div className="text-sm text-gray-600">{t('brand.brand_usage_rules')}</div>
               </div>
             </a>
             <a
@@ -254,9 +249,9 @@ const BrandPage = () => {
             >
               <span className="text-2xl">🎨</span>
               <div>
-                <div className="font-medium">Logos</div>
+                <div className="font-medium">{t('brand.logos_section')}</div>
                 <div className="text-sm text-gray-600">
-                  Official & print variants
+                  {t('brand.official_print_variants')}
                 </div>
               </div>
             </a>
@@ -266,9 +261,9 @@ const BrandPage = () => {
             >
               <span className="text-2xl">🎨</span>
               <div>
-                <div className="font-medium">Brand Colors</div>
+                <div className="font-medium">{t('brand.colors')}</div>
                 <div className="text-sm text-gray-600">
-                  Current & legacy colors
+                  {t('brand.current_legacy_colors')}
                 </div>
               </div>
             </a>
@@ -278,8 +273,8 @@ const BrandPage = () => {
             >
               <span className="text-2xl">🖼️</span>
               <div>
-                <div className="font-medium">Wallpapers</div>
-                <div className="text-sm text-gray-600">Desktop backgrounds</div>
+                <div className="font-medium">{t('brand.wallpapers')}</div>
+                <div className="text-sm text-gray-600">{t('brand.desktop_backgrounds')}</div>
               </div>
             </a>
           </div>
@@ -288,14 +283,12 @@ const BrandPage = () => {
 
       <section id="guidelines" className="mb-16">
         <h2 className="mb-6 border-b pb-2 text-3xl font-bold">
-          Brand Usage Guidelines
+          {t('brand.brand_usage_guidelines')}
         </h2>
 
         <div className="mb-8">
           <p className="mb-6 text-lg text-gray-700">
-            These guidelines ensure consistent and appropriate use of meet.js
-            brand assets. Please review them carefully before using any
-            materials.
+            {t('brand.usage_intro')}
           </p>
         </div>
 
@@ -305,32 +298,31 @@ const BrandPage = () => {
             <div className="mb-4 flex items-center gap-2">
               <span className="text-2xl">✅</span>
               <h3 className="text-xl font-bold text-green-800">
-                Permitted Uses
+                {t('brand.allowed_uses')}
               </h3>
             </div>
             <ul className="space-y-3 text-green-700">
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-green-600">•</span>
                 <span>
-                  Use logos in presentations, websites, and promotional
-                  materials about meet.js events
+                  {t('brand.allowed_list.educational')}
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-green-600">•</span>
                 <span>
-                  Include logos when crediting or referencing meet.js community
+                  {t('brand.allowed_list.community')}
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-green-600">•</span>
                 <span>
-                  Use appropriate logo variant based on background (light/bold)
+                  {t('brand.allowed_list.social_media')}
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-green-600">•</span>
-                <span>Maintain original proportions and colors</span>
+                <span>{t('brand.allowed_list.press')}</span>
               </li>
             </ul>
           </div>
@@ -340,31 +332,30 @@ const BrandPage = () => {
             <div className="mb-4 flex items-center gap-2">
               <span className="text-2xl">❌</span>
               <h3 className="text-xl font-bold text-red-800">
-                Prohibited Uses
+                {t('brand.prohibited_uses')}
               </h3>
             </div>
             <ul className="space-y-3 text-red-700">
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-red-600">•</span>
                 <span>
-                  Do not modify, distort, or alter the logo in any way
+                  {t('brand.prohibited_list.modification')}
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-red-600">•</span>
-                <span>Do not change logo colors or add effects</span>
+                <span>{t('brand.prohibited_list.commercial')}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-red-600">•</span>
                 <span>
-                  Do not use the logo to represent your own product or service
+                  {t('brand.prohibited_list.misleading')}
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-red-600">•</span>
                 <span>
-                  Do not use for commercial merchandise without explicit
-                  permission
+                  {t('brand.prohibited_list.inappropriate')}
                 </span>
               </li>
             </ul>
@@ -373,50 +364,46 @@ const BrandPage = () => {
       </section>
 
       <section id="logos" className="mb-16">
-        <h2 className="mb-6 border-b pb-2 text-3xl font-bold">Logos</h2>
+        <h2 className="mb-6 border-b pb-2 text-3xl font-bold">{t('brand.logos_section')}</h2>
 
-        <h3 className="mb-6 text-2xl font-bold">Logo Usage Guidelines</h3>
+        <h3 className="mb-6 text-2xl font-bold">{t('brand.logo_usage_guidelines')}</h3>
         <div className="mb-8 rounded-lg bg-blue-50 p-6">
           <p className="mb-4">
-            The meet.js logo is available in two main variants:{' '}
-            <strong>light (official)</strong> and <strong>bold</strong>. Each
-            variant serves different purposes and use cases:
+            {t('brand.logo_variants_intro')}
           </p>
           <div className="grid gap-6 md:grid-cols-2">
             <div className="rounded-lg bg-white p-4 shadow-sm">
               <h4 className="mb-2 text-lg font-semibold text-green-700">
-                Light Logos (Official)
+                {t('brand.light_logos_official')}
               </h4>
               <p className="mb-2 text-sm text-gray-700">
-                The official meet.js logo designed for digital use and is the
-                primary logo for meet.js.
+                {t('brand.light_logos_description')}
               </p>
               <ul className="text-sm text-gray-600">
-                <li>• Primary choice for digital applications</li>
-                <li>• Websites, social media, presentations</li>
-                <li>• Available in SVG and PNG formats</li>
-                <li>• Includes square variants for icons</li>
+                <li>• {t('brand.light_logos_use_1')}</li>
+                <li>• {t('brand.light_logos_use_2')}</li>
+                <li>• {t('brand.light_logos_use_3')}</li>
+                <li>• {t('brand.light_logos_use_4')}</li>
               </ul>
             </div>
             <div className="rounded-lg bg-white p-4 shadow-sm">
               <h4 className="mb-2 text-lg font-semibold text-orange-700">
-                Bold Logos (Print)
+                {t('brand.bold_logos_print')}
               </h4>
               <p className="mb-2 text-sm text-gray-700">
-                The bold meet.js logo designed for print materials and
-                situations where the light logo would not be visible enough.
+                {t('brand.bold_logos_description')}
               </p>
               <ul className="text-sm text-gray-600">
-                <li>• Print materials and physical media</li>
-                <li>• Low contrast or visibility situations</li>
-                <li>• Available in SVG and PNG formats</li>
-                <li>• Includes square variants for small spaces</li>
+                <li>• {t('brand.bold_logos_use_1')}</li>
+                <li>• {t('brand.bold_logos_use_2')}</li>
+                <li>• {t('brand.bold_logos_use_3')}</li>
+                <li>• {t('brand.bold_logos_use_4')}</li>
               </ul>
             </div>
           </div>
         </div>
 
-        <h3 className="mb-4 text-2xl font-bold">Light Logos</h3>
+        <h3 className="mb-4 text-2xl font-bold">{t('brand.light_logos')}</h3>
         <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {officialLogos.map((logo) => (
             <div
@@ -462,7 +449,7 @@ const BrandPage = () => {
           ))}
         </div>
 
-        <h3 className="mb-4 text-2xl font-bold">Bold Print Logos</h3>
+        <h3 className="mb-4 text-2xl font-bold">{t('brand.bold_print_logos')}</h3>
         <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {boldLogos.map((logo) => (
             <div
@@ -511,7 +498,7 @@ const BrandPage = () => {
         <div className="mb-6 rounded-lg bg-gray-50 p-4">
           <details>
             <summary className="cursor-pointer text-lg font-medium">
-              Legacy Logos (Obsolete)
+              {t('brand.legacy_logos_obsolete')}
             </summary>
             <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
               {legacyLogos.map((logo) => (
@@ -546,7 +533,7 @@ const BrandPage = () => {
                     )}
                     {logo.fileSize && (
                       <p className="mt-1 text-xs text-gray-500">
-                        Size: {logo.fileSize}
+                        {t('brand.size')}: {logo.fileSize}
                       </p>
                     )}
                     <a
@@ -555,7 +542,7 @@ const BrandPage = () => {
                       className="mt-2 inline-flex items-center gap-1 rounded-md bg-blue-600 px-3 py-1 text-sm text-white transition-colors hover:bg-blue-700"
                     >
                       <FaDownload className="text-xs" />
-                      <span>Download</span>
+                      <span>{t('brand.download')}</span>
                     </a>
                   </div>
                 </div>
@@ -577,9 +564,9 @@ const BrandPage = () => {
       </section>
 
       <section id="colors" className="mb-16">
-        <h2 className="mb-6 border-b pb-2 text-3xl font-bold">Brand Colors</h2>
+        <h2 className="mb-6 border-b pb-2 text-3xl font-bold">{t('brand.colors')}</h2>
 
-        <h3 className="mb-4 text-2xl font-bold">Current Colors (Post 2023)</h3>
+        <h3 className="mb-4 text-2xl font-bold">{t('brand.current_colors_post_2023')}</h3>
         <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-3">
           {currentColors.map((color) => (
             <div
@@ -605,7 +592,7 @@ const BrandPage = () => {
         <div className="mb-6 rounded-lg bg-gray-50 p-4">
           <details>
             <summary className="cursor-pointer text-lg font-medium">
-              Original Colors (Obsolete)
+              {t('brand.original_colors_obsolete')}
             </summary>
             <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3">
               {originalColors.map((color) => (
