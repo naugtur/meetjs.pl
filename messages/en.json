@@ -145,6 +145,26 @@
     "context_menu_subtitle": "Want to download our logo?",
     "go_to_brand_assets": "Go to Brand Assets"
   },
+  "discord_widget": {
+    "connect_with_developers": "Connect with JavaScript developers"
+  },
+  "poland_map": {
+    "coming_soon": "Coming soon!",
+    "paused_join_organizer": "Paused (join as organizer)",
+    "active_upcoming_progress": "Active / upcoming / in progress",
+    "typescript_gdansk": "TypeScript Gdańsk"
+  },
+  "featured_events": {
+    "title": "Upcoming Events",
+    "subtitle": "Don't miss these!",
+    "all_events": "All events"
+  },
+  "empty_events_alert": {
+    "message": "Nothing planned yet. Contact your local organizers if you want to help make it happen!"
+  },
+  "events_api_partner": {
+    "powered_by": "Events API powered by"
+  },
   "hello_world": "Hello World",
   "hero": {
     "cta": "Find Your Local Meetup",
