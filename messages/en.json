@@ -1,87 +1,125 @@
 {
-  "hello_world": "Hello World",
-  "welcome": "Welcome to meet.js",
-  "navigation": {
-    "home": "Home",
-    "events": "Events",
-    "about": "About",
-    "discounts": "Discounts",
-    "team": "Team",
-    "sponsors": "Sponsors"
-  },
-  "hero": {
-    "title": "meet.js",
-    "subtitle": "JavaScript meetups in Poland",
-    "ranking_banner": "#1 Tech Event Series in Poland (Crossweb 2024)",
-    "follow_us": "Follow us",
-    "join_discord": "Join Discord"
-  },
-
-  "join_us": {
-    "title": "Join Us",
-    "description": "meet.js is a family of local meetups all around Poland. They're for-community and by-community, non-commercial and organized by passionate individuals. Free to attend or for-charity. With the main goal of getting the Web Developers community together and facilitating knowledge exchange and camraderie.",
-    "click_city": "Click your city to learn how to join your local event as an attendee, speaker or sponsor.",
-    "start_local": "If you don't see your city on the map, consider starting a local meet.js!",
-    "discord_title": "Join our Discord Community"
-  },
-  "stats": {
-    "summits": "summits",
-    "since": "since",
-    "cities": "cities"
-  },
-  "footer": {
-    "copyright": "© 2025 meet.js Polska. All rights reserved.",
-    "contact": "Contact us"
-  },
-  "events": {
-    "upcoming_in_city": "Upcoming events in",
-    "no_events": "No upcoming events in {{city}} at the moment."
-  },
   "about": {
-    "page_title": "✨ About meet.js",
-    "meetup_caption": "One of our regular meetups in action",
-    "intro_p1": "meet.js is Poland's largest and longest-running JavaScript community, bringing together developers, enthusiasts, and industry experts since 2011.",
-    "intro_p2": "It all began on a Valentine's Day eve in 2011, when a group of JavaScript enthusiasts gathered in a Poznań pub. What started as a casual meetup has evolved into a nationwide movement that has shaped Poland's JavaScript ecosystem.",
-    "values_title": "💎 Our Values",
-    "values": {
-      "non_commercial": "🚫💰 100% Non-Commercial - We operate without corporate oversight or profit motives",
-      "free_open": "✅ Free and Open - All our events are free and open to everyone interested in web technologies",
-      "community_driven": "🤝 Community-Driven - Powered by passionate local organizers across Poland",
-      "knowledge_sharing": "💡 Knowledge Sharing - Focus on practical learning and networking opportunities"
-    },
-    "summit_caption": "meet.js Summit conference",
-    "networking_caption": "Community networking",
-    "what_we_do_title": "🚀 What We Do",
     "activities": {
-      "local_meetups": {
-        "title": "Local Meetups",
-        "description": "Regular local meetups across multiple Polish cities."
-      },
-      "summit": {
-        "title": "meet.js Summit",
-        "description": "Semi-annual",
-        "conference_link": "conference"
-      },
       "charity": {
-        "title": "Charity Partnerships",
-        "description": "We partner with charity organizations, including"
+        "description": "We partner with charity organizations, including",
+        "title": "Charity Partnerships"
+      },
+      "local_meetups": {
+        "description": "Regular local meetups across multiple Polish cities.",
+        "title": "Local Meetups"
       },
       "networking": {
-        "title": "Networking",
-        "description": "Networking opportunities for JavaScript enthusiasts."
+        "description": "Networking opportunities for JavaScript enthusiasts.",
+        "title": "Networking"
+      },
+      "summit": {
+        "conference_link": "conference",
+        "description": "Semi-annual",
+        "title": "meet.js Summit"
       },
       "tech_talks": {
-        "title": "Tech Talks",
-        "description": "Knowledge sharing sessions and tech talks."
+        "description": "Knowledge sharing sessions and tech talks.",
+        "title": "Tech Talks"
       }
     },
-    "get_involved_title": "👋 Get Involved",
+    "contact_text": "Have questions? Reach out to us at",
+    "contact_title": "\uD83D\uDCE7 Contact Us",
+    "description": "meet.js is Poland's largest and longest-running JavaScript community, bringing together developers and enthusiasts since 2011.",
+    "features": {
+      "non_commercial": "100% Non-Commercial & Free",
+      "regular_meetups": "Regular meetups across Poland",
+      "summit": "Semi-annual meet.js Summit conference"
+    },
     "get_involved_p1": "Whether you're a seasoned developer or just starting your journey with JavaScript, meet.js welcomes you to join our vibrant community.",
     "get_involved_p2": "Find your local meet.js chapter or check out",
-    "organizer_link": "how to become an organizer",
     "get_involved_p3": "to help grow Poland's most resilient tech community!",
+    "get_involved_title": "\uD83D\uDC4B Get Involved",
+    "intro_p1": "meet.js is Poland's largest and longest-running JavaScript community, bringing together developers, enthusiasts, and industry experts since 2011.",
+    "intro_p2": "It all began on a Valentine's Day eve in 2011, when a group of JavaScript enthusiasts gathered in a Poznań pub. What started as a casual meetup has evolved into a nationwide movement that has shaped Poland's JavaScript ecosystem.",
+    "learn_more": "Learn more about us",
+    "meetup_caption": "One of our regular meetups in action",
+    "networking_caption": "Community networking",
+    "organizer_link": "how to become an organizer",
     "organizers_caption": "Our amazing organizers team",
-    "contact_title": "📧 Contact Us",
-    "contact_text": "Have questions? Reach out to us at"
-  }
+    "page_title": "✨ About meet.js",
+    "summit_caption": "meet.js Summit conference",
+    "title": "About meet.js",
+    "values": {
+      "community_driven": "\uD83E\uDD1D Community-Driven - Powered by passionate local organizers across Poland",
+      "free_open": "✅ Free and Open - All our events are free and open to everyone interested in web technologies",
+      "knowledge_sharing": "\uD83D\uDCA1 Knowledge Sharing - Focus on practical learning and networking opportunities",
+      "non_commercial": "\uD83D\uDEAB\uD83D\uDCB0 100% Non-Commercial - We operate without corporate oversight or profit motives"
+    },
+    "values_title": "\uD83D\uDC8E Our Values",
+    "what_we_do_title": "\uD83D\uDE80 What We Do"
+  },
+  "events": {
+    "no_events": "No upcoming events in {city} at the moment.",
+    "upcoming_in_city": "Upcoming events in"
+  },
+  "example-key-in-client-component": "test EN",
+  "footer": {
+    "contact": "Contact us",
+    "copyright": "© 2025 meet.js. All rights reserved."
+  },
+  "hello_world": "Hello World",
+  "hero": {
+    "cta": "Find Your Local Meetup",
+    "follow_us": "Follow us",
+    "join_discord": "Join Discord",
+    "ranking_banner": "#1 Tech Event Series in Poland (Crossweb 2024)",
+    "subtitle": "Join the largest JavaScript meetup community in Poland",
+    "title": "meet.js"
+  },
+  "join_us": {
+    "click_city": "Click your city to learn how to join your local event as an attendee, speaker or sponsor.",
+    "description": "meet.js is a family of local meetups all around Poland. They're for-community and by-community, non-commercial and organized by passionate individuals. Free to attend or for-charity. With the main goal of getting the Web Developers community together and facilitating knowledge exchange and camraderie.",
+    "discord_title": "Join our Discord Community",
+    "start_local": "If you don't see your city on the map, consider starting a local meet.js!",
+    "title": "Join Us"
+  },
+  "navigation": {
+    "about": "About",
+    "discounts": "Discounts",
+    "events": "Events",
+    "home": "Home",
+    "sponsors": "Sponsors",
+    "team": "Team"
+  },
+  "organizer": {
+    "benefits": {
+      "access": "Access to other organizers and their experience",
+      "brand_access": "Access to the brand and the social media presence we have",
+      "intro_call": "Intro call with Zbyszek with all the knowledge you need to get the first meetup to happen",
+      "network": "Exposure to our network, including speakers that might want to visit your city",
+      "sponsor_help": "Help when talking to sponsors and venues"
+    },
+    "benefits_title": "What you'll get:",
+    "contact_email": "contact@meetjs.pl",
+    "contact_heading": "To start, reach out to",
+    "contact_subject": "with the subject \"meet.js YOURCITY\"",
+    "intro_p1": "Do you wish to become an organizer and you need some help getting started? That's what we're here for!",
+    "intro_p2": "If there's a meet.js in your city already, get in touch with the organizers to see how you can join.",
+    "intro_p3": "If your city has a JavaScript crowd that's not organized yet or the local meetups are hosted by companies for short-term commercial or hiring reasons, you should definitely set up a meet.js in your city.",
+    "meta_description": "How to become an organizer for meet.js.",
+    "meta_title": "How to become an organizer | meet.js",
+    "no_benefits": {
+      "money": "Money or anything of notable commercial value"
+    },
+    "no_benefits_title": "What you don't get:",
+    "page_title": "How to become an organizer",
+    "requirements": {
+      "involvement": "Some involvement with JavaScript and programming community (being a dev yourself and enthusiastic about other humans)",
+      "non_commercial": "No commercial interest or a company backing your engagement as an organizer",
+      "time": "A bit of time and ambition"
+    },
+    "requirements_title": "What you need to have:"
+  },
+  "stats": {
+    "cities": "cities",
+    "since": "since",
+    "summits": "summits"
+  },
+  "welcome": "Welcome to meet.js"
 }

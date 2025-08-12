@@ -1,72 +1,68 @@
-export default function Page() {
+import { getTranslate } from '@/tolgee/server';
+
+export default async function Page() {
+  const t = await getTranslate();
+
   return (
     <div className="container mx-auto max-w-3xl py-16">
-      <h1 className="mb-8 text-4xl font-bold">How to become an organizer</h1>
+      <h1 className="mb-8 text-4xl font-bold">{t('organizer.page_title')}</h1>
 
       <div className="mb-8 space-y-4">
         <p>
-          Do you wish to become an organizer and you need some help getting
-          started? That&apos;s what we&apos;re here for!
+          {t('organizer.intro_p1')}
         </p>
         <p>
-          If there&apos;s a meet.js in your city already, get in touch with the
-          organizers to see how you can join.
+          {t('organizer.intro_p2')}
         </p>
         <p>
-          If your city has a JavaScript crowd that&apos;s not organized yet or
-          the local meetups are hosted by companies for short-term commercial or
-          hiring reasons, you should definitely set up a meet.js in your city.
+          {t('organizer.intro_p3')}
         </p>
       </div>
 
       <div className="mb-8">
         <h2 className="text-xl font-semibold">
-          To start, reach out to{' '}
+          {t('organizer.contact_heading')}{' '}
           <a href="mailto:contact@meetjs.pl?subject=meet.js%20YOURCITY">
-            <strong>contact@meetjs.pl</strong>
+            <strong>{t('organizer.contact_email')}</strong>
           </a>{' '}
-          with the subject &quot;meet.js YOURCITY&quot;
+          {t('organizer.contact_subject')}
         </h2>
       </div>
 
       <div className="mb-8">
-        <h2 className="mb-4 text-2xl font-semibold">What you need to have:</h2>
+        <h2 className="mb-4 text-2xl font-semibold">{t('organizer.requirements_title')}</h2>
         <ul className="list-disc space-y-2 pl-6">
-          <li>A bit of time and ambition</li>
+          <li>{t('organizer.requirements.time')}</li>
           <li>
-            No commercial interest or a company backing your engagement as an
-            organizer
+            {t('organizer.requirements.non_commercial')}
           </li>
           <li>
-            Some involvement with JavaScript and programming community (being a
-            dev yourself and enthusiastic about other humans)
+            {t('organizer.requirements.involvement')}
           </li>
         </ul>
       </div>
 
       <div className="mb-8">
-        <h2 className="mb-4 text-2xl font-semibold">What you&apos;ll get:</h2>
+        <h2 className="mb-4 text-2xl font-semibold">{t('organizer.benefits_title')}</h2>
         <ul className="list-disc space-y-2 pl-6">
-          <li>Access to other organizers and their experience</li>
+          <li>{t('organizer.benefits.access')}</li>
           <li>
-            Intro call with Zbyszek with all the knowledge you need to get the
-            first meetup to happen
+            {t('organizer.benefits.intro_call')}
           </li>
-          <li>Help when talking to sponsors and venues</li>
-          <li>Access to the brand and the social media presence we have</li>
+          <li>{t('organizer.benefits.sponsor_help')}</li>
+          <li>{t('organizer.benefits.brand_access')}</li>
           <li>
-            Exposure to our network, including speakers that might want to visit
-            your city
+            {t('organizer.benefits.network')}
           </li>
         </ul>
       </div>
 
       <div>
         <h2 className="mb-4 text-2xl font-semibold">
-          What you don&apos;t get:
+          {t('organizer.no_benefits_title')}
         </h2>
         <ul className="list-disc space-y-2 pl-6">
-          <li>Money or anything of notable commercial value</li>
+          <li>{t('organizer.no_benefits.money')}</li>
         </ul>
       </div>
     </div>
