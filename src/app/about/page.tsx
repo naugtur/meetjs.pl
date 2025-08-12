@@ -7,11 +7,13 @@ import {
   FaComments,
   FaMicrophone,
 } from 'react-icons/fa6';
+import { getTranslate } from '@/tolgee/server';
 
-export default function Page() {
+export default async function Page() {
+  const t = await getTranslate();
   return (
     <div className="container mx-auto max-w-3xl py-16">
-      <h1 className="mb-8 text-4xl font-bold">✨ About meet.js</h1>
+      <h1 className="mb-8 text-4xl font-bold">{t('about.page_title')}</h1>
 
       <div className="mb-12">
         <Image
@@ -22,42 +24,33 @@ export default function Page() {
           className="mb-2 h-64 w-full rounded-lg object-cover shadow-lg"
         />
         <p className="text-center text-sm text-gray-600">
-          One of our regular meetups in action
+          {t('about.meetup_caption')}
         </p>
       </div>
 
       <div className="mb-8 space-y-4">
         <p>
-          meet.js is Poland&apos;s largest and longest-running JavaScript
-          community, bringing together developers, enthusiasts, and industry
-          experts since 2011.
+          {t('about.intro_p1')}
         </p>
         <p>
-          It all began on a Valentine&apos;s Day eve in 2011, when a group of
-          JavaScript enthusiasts gathered in a Poznań pub. What started as a
-          casual meetup has evolved into a nationwide movement that has shaped
-          Poland&apos;s JavaScript ecosystem.
+          {t('about.intro_p2')}
         </p>
       </div>
 
       <div className="mb-8">
-        <h2 className="mb-4 text-2xl font-semibold">💎 Our Values</h2>
+        <h2 className="mb-4 text-2xl font-semibold">{t('about.values_title')}</h2>
         <ul className="list-disc space-y-2 pl-6">
           <li>
-            🚫💰 100% Non-Commercial - We operate without corporate oversight or
-            profit motives
+            {t('about.values.non_commercial')}
           </li>
           <li>
-            ✅ Free and Open - All our events are free and open to everyone
-            interested in web technologies
+            {t('about.values.free_open')}
           </li>
           <li>
-            🤝 Community-Driven - Powered by passionate local organizers across
-            Poland
+            {t('about.values.community_driven')}
           </li>
           <li>
-            💡 Knowledge Sharing - Focus on practical learning and networking
-            opportunities
+            {t('about.values.knowledge_sharing')}
           </li>
         </ul>
       </div>
@@ -72,7 +65,7 @@ export default function Page() {
             className="h-48 w-full rounded-lg object-cover shadow-lg"
           />
           <p className="mt-2 text-center text-sm text-gray-600">
-            meet.js Summit conference
+            {t('about.summit_caption')}
           </p>
         </div>
         <div>
@@ -84,38 +77,38 @@ export default function Page() {
             className="h-48 w-full rounded-lg object-cover shadow-lg"
           />
           <p className="mt-2 text-center text-sm text-gray-600">
-            Community networking
+            {t('about.networking_caption')}
           </p>
         </div>
       </div>
 
       <div className="mb-12">
-        <h2 className="mb-6 text-2xl font-semibold">🚀 What We Do</h2>
+        <h2 className="mb-6 text-2xl font-semibold">{t('about.what_we_do_title')}</h2>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg">
             <h3 className="mb-2 flex items-center gap-2 font-semibold">
               <FaUsers className="text-purple" />
-              Local Meetups
+              {t('about.activities.local_meetups.title')}
             </h3>
             <p className="text-sm text-gray-700">
-              Regular local meetups across multiple Polish cities.
+              {t('about.activities.local_meetups.description')}
             </p>
           </div>
 
           <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg">
             <h3 className="mb-2 flex items-center gap-2 font-semibold">
               <FaTrophy className="text-purple" />
-              meet.js Summit
+              {t('about.activities.summit.title')}
             </h3>
             <p className="text-sm text-gray-700">
-              Semi-annual{' '}
+              {t('about.activities.summit.description')}{' '}
               <a
                 href="https://summit.meetjs.pl"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:underline"
               >
-                conference
+                {t('about.activities.summit.conference_link')}
                 <FaArrowUpRightFromSquare
                   className="mb-1 ml-1 inline-block h-3 w-3"
                   aria-hidden="true"
@@ -128,10 +121,10 @@ export default function Page() {
           <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg">
             <h3 className="mb-2 flex items-center gap-2 font-semibold">
               <FaHeart className="text-purple" />
-              Charity Partnerships
+              {t('about.activities.charity.title')}
             </h3>
             <p className="text-sm text-gray-700">
-              We partner with charity organizations, including{' '}
+              {t('about.activities.charity.description')}{' '}
               <a
                 href="https://www.siepomaga.pl/pomagacze/meetjs"
                 target="_blank"
@@ -151,40 +144,39 @@ export default function Page() {
           <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg">
             <h3 className="mb-2 flex items-center gap-2 font-semibold">
               <FaComments className="text-purple" />
-              Networking
+              {t('about.activities.networking.title')}
             </h3>
             <p className="text-sm text-gray-700">
-              Networking opportunities for JavaScript enthusiasts.
+              {t('about.activities.networking.description')}
             </p>
           </div>
 
           <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg">
             <h3 className="mb-2 flex items-center gap-2 font-semibold">
               <FaMicrophone className="text-purple" />
-              Tech Talks
+              {t('about.activities.tech_talks.title')}
             </h3>
             <p className="text-sm text-gray-700">
-              Knowledge sharing sessions and tech talks.
+              {t('about.activities.tech_talks.description')}
             </p>
           </div>
         </div>
       </div>
 
       <div className="mb-8">
-        <h2 className="mb-4 text-2xl font-semibold">👋 Get Involved</h2>
+        <h2 className="mb-4 text-2xl font-semibold">{t('about.get_involved_title')}</h2>
         <p className="mb-4">
-          Whether you&apos;re a seasoned developer or just starting your journey
-          with JavaScript, meet.js welcomes you to join our vibrant community.
+          {t('about.get_involved_p1')}
         </p>
         <p className="mb-4">
-          Find your local meet.js chapter or check out{' '}
+          {t('about.get_involved_p2')}{' '}
           <a
             href="/how-to-become-an-organizer"
             className="font-bold text-blue-600 hover:underline"
           >
-            how to become an organizer
+            {t('about.organizer_link')}
           </a>{' '}
-          to help grow Poland&apos;s most resilient tech community!
+          {t('about.get_involved_p3')}
         </p>
         <Image
           src="/about/meetjs-organizers.jpg"
@@ -194,14 +186,14 @@ export default function Page() {
           className="mt-4 h-48 w-full rounded-lg object-cover shadow-lg"
         />
         <p className="mt-2 text-center text-sm text-gray-600">
-          Our amazing organizers team
+          {t('about.organizers_caption')}
         </p>
       </div>
 
       <div>
-        <h2 className="mb-4 text-2xl font-semibold">📧 Contact Us</h2>
+        <h2 className="mb-4 text-2xl font-semibold">{t('about.contact_title')}</h2>
         <p>
-          Have questions? Reach out to us at{' '}
+          {t('about.contact_text')}{' '}
           <a
             href="mailto:contact@meetjs.pl"
             className="text-blue-600 hover:underline"
