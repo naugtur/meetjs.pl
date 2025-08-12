@@ -3,11 +3,15 @@ import { SocialLinks } from '@/components/SocialLinks';
 import Link from 'next/link';
 import { instagramLinksData } from '@/content/socialLinks';
 import { CITIES } from '@/content/cities';
-import { footerMenuLinks } from '@/content/menuLinks';
 import { FaRegEnvelope, FaArrowUpRightFromSquare } from 'react-icons/fa6';
 import type { Route } from 'next';
+import { getTranslate } from '@/tolgee/server';
+import { getTranslatedFooterMenuLinks } from '@/hooks/useTranslatedMenuLinks';
 
-export const Footer = () => {
+export const Footer = async () => {
+  const t = await getTranslate();
+  const footerMenuLinks = await getTranslatedFooterMenuLinks();
+
   return (
     <footer className="bg-purple text-white">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -43,11 +47,14 @@ export const Footer = () => {
 
           {/* Cities column */}
           <div>
-            <h3 className="text-xl font-semibold">Cities</h3>
+            <h3 className="text-xl font-semibold">{t('footer.cities')}</h3>
             <ul className="mt-4 space-y-2">
               {CITIES.map((city) => (
                 <li key={city.name}>
-                  <Link href={city.href as Route} className="hover:text-gray-300">
+                  <Link
+                    href={city.href as Route}
+                    className="hover:text-gray-300"
+                  >
                     {city.name}
                     {city.status && (
                       <span
@@ -68,7 +75,7 @@ export const Footer = () => {
 
           {/* Menu column */}
           <nav aria-label="Footer">
-            <h3 className="text-xl font-semibold">Menu</h3>
+            <h3 className="text-xl font-semibold">{t('footer.menu')}</h3>
             <ul className="mt-4 space-y-2">
               {footerMenuLinks.map((link) => (
                 <li key={link.name}>
@@ -86,7 +93,10 @@ export const Footer = () => {
                       />
                     </a>
                   ) : (
-                    <Link href={link.href as Route} className="hover:text-gray-300">
+                    <Link
+                      href={link.href as Route}
+                      className="hover:text-gray-300"
+                    >
                       {link.name}
                     </Link>
                   )}
@@ -99,8 +109,7 @@ export const Footer = () => {
         {/* Copyright */}
         <div className="mt-12 border-t border-white/10 pt-8">
           <p className="text-center">
-            {' '}
-            {new Date().getFullYear()} meet.js. All rights reserved.
+            © {new Date().getFullYear()} meet.js. {t('footer.copyright')}
           </p>
         </div>
       </div>
