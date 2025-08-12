@@ -5,13 +5,18 @@ import {
 } from '@headlessui/react';
 import { FaArrowUpRightFromSquare, FaChevronDown } from 'react-icons/fa6';
 import { FaMapMarkerAlt } from 'react-icons/fa';
-import { menuLinks } from '@/content/menuLinks';
+
 import { CITIES } from '@/content/cities';
 import { classNames } from '@/utils/classNames';
 import { SocialLinks } from '@/components/SocialLinks';
 import { CityStatusIndicator } from './CityStatusIndicator';
+import { useTranslate } from '@tolgee/react';
+import { useTranslatedMenuLinks } from '@/hooks/useTranslatedMenuLinks';
 
 export const MobileNavigation = () => {
+  const { t } = useTranslate();
+  const menuLinks = useTranslatedMenuLinks();
+  
   return (
     <DisclosurePanel className="sm:hidden">
       <nav
@@ -54,7 +59,7 @@ export const MobileNavigation = () => {
                               return (
                                 <div key={index}>
                                   <div className="px-3 py-2 text-xs font-semibold uppercase tracking-wide text-gray-500">
-                                    Cities
+                                    {t('navigation.dropdown.cities_label')}
                                   </div>
                                   {CITIES.sort((a, b) =>
                                     a.name.localeCompare(b.name),
@@ -88,7 +93,7 @@ export const MobileNavigation = () => {
                                   <span className="flex items-center justify-between">
                                     {dropdownItem.name}
                                     <span className="text-xs">
-                                      (Coming Soon)
+                                      {t('navigation.dropdown.coming_soon')}
                                     </span>
                                   </span>
                                 </div>

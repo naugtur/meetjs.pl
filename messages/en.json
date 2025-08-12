@@ -80,12 +80,35 @@
     "title": "Join Us"
   },
   "navigation": {
-    "about": "About",
-    "discounts": "Discounts",
-    "events": "Events",
     "home": "Home",
-    "sponsors": "Sponsors",
-    "team": "Team"
+    "about": "About",
+    "events": "Events",
+    "contact": "Contact",
+    "menu_items": {
+      "30_years_js": "🎉 30 Years of JS",
+      "summit": "summit",
+      "cities": "🏙️ cities",
+      "discounts": "💰 discounts",
+      "about": "about",
+      "wdi_2025": "WDI 2025",
+      "14_birthday": "14 birthday",
+      "brand_assets": "brand assets",
+      "code_of_conduct": "code of conduct"
+    },
+    "dropdown": {
+      "all_cities": "All Cities",
+      "cities_label": "Cities",
+      "all_discounts": "All Discounts",
+      "event_discounts": "Event Discounts",
+      "software_discounts": "Software Discounts",
+      "learning_discounts": "Learning Discounts",
+      "about_meetjs": "About meet.js",
+      "our_team": "Our Team",
+      "sponsors": "Sponsors",
+      "brand_assets": "Brand Assets",
+      "code_of_conduct": "Code of Conduct",
+      "coming_soon": "(Coming Soon)"
+    }
   },
   "organizer": {
     "benefits": {

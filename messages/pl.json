@@ -80,12 +80,35 @@
     "title": "Dołącz do nas"
   },
   "navigation": {
-    "about": "O nas",
-    "discounts": "Zniżki",
-    "events": "Wydarzenia",
     "home": "Strona główna",
-    "sponsors": "Sponsorzy",
-    "team": "Zespół"
+    "about": "O nas",
+    "events": "Wydarzenia",
+    "contact": "Kontakt",
+    "menu_items": {
+      "30_years_js": "🎉 30 lat JS",
+      "summit": "summit",
+      "cities": "🏙️ miasta",
+      "discounts": "💰 zniżki",
+      "about": "o nas",
+      "wdi_2025": "WDI 2025",
+      "14_birthday": "14 urodziny",
+      "brand_assets": "zasoby marki",
+      "code_of_conduct": "kodeks postępowania"
+    },
+    "dropdown": {
+      "all_cities": "Wszystkie miasta",
+      "cities_label": "Miasta",
+      "all_discounts": "Wszystkie zniżki",
+      "event_discounts": "Zniżki na wydarzenia",
+      "software_discounts": "Zniżki na oprogramowanie",
+      "learning_discounts": "Zniżki na naukę",
+      "about_meetjs": "O meet.js",
+      "our_team": "Nasz zespół",
+      "sponsors": "Sponsorzy",
+      "brand_assets": "Zasoby marki",
+      "code_of_conduct": "Kodeks postępowania",
+      "coming_soon": "(Wkrótce)"
+    }
   },
   "organizer": {
     "benefits": {
