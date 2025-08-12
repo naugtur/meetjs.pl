@@ -30,7 +30,7 @@ export const TolgeeNextProvider = ({
       router.refresh();
     });
     return () => unsubscribe();
-  }, [tolgee, router]);
+  }, [router]);
 
   return (
     <TolgeeProvider
