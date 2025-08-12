@@ -16,12 +16,6 @@ export interface DropdownItem {
 
 export const menuLinks: MenuLink[] = [
   {
-    name: '🎉 30 Years of JS',
-    href: '/30-years-of-javascript',
-    current: false,
-    external: false,
-  },
-  {
     name: 'summit',
     href: 'https://summit.meetjs.pl',
     current: false,
@@ -132,6 +126,12 @@ export const menuLinks: MenuLink[] = [
 ];
 
 export const footerMenuLinks: MenuLink[] = [
+  {
+    name: '30 Years of JS',
+    href: '/30-years-of-javascript',
+    current: false,
+    external: false,
+  },
   {
     name: 'WDI 2025',
     href: '/wdi',
