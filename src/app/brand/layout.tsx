@@ -1,13 +1,15 @@
 import { Metadata } from 'next';
+import { getTranslate } from '@/tolgee/server';
 
-export const metadata: Metadata = {
-  title: 'Brand Assets | meet.js',
-  description:
-    'Download meet.js brand assets, logos, and wallpapers for your use.',
-  openGraph: {
-    title: 'Brand Assets | meet.js',
-    description:
-      'Download meet.js brand assets, logos, and wallpapers for your use.',
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslate();
+
+  return {
+    title: t('brand.title'),
+    description: t('brand.description'),
+    openGraph: {
+      title: t('brand.title'),
+      description: t('brand.description'),
     url: 'https://meetjs.pl/brand',
     siteName: 'meet.js',
     images: [
@@ -17,10 +19,11 @@ export const metadata: Metadata = {
         height: 630,
       },
     ],
-    locale: 'en_US',
-    type: 'website',
-  },
-};
+      locale: 'en_US',
+      type: 'website',
+    },
+  };
+}
 
 export default function BrandLayout({
   children,
