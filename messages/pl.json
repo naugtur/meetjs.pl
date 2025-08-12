@@ -1,0 +1,21 @@
+{
+  "hello_world": "Witaj Świecie",
+  "welcome": "Witamy w meet.js",
+  "navigation": {
+    "home": "Strona główna",
+    "events": "Wydarzenia",
+    "about": "O nas",
+    "discounts": "Zniżki",
+    "team": "Zespół",
+    "sponsors": "Sponsorzy"
+  },
+  "hero": {
+    "title": "Społeczność JavaScript w Polsce",
+    "subtitle": "Dołącz do największej społeczności meetupów JavaScript w Polsce",
+    "cta": "Znajdź Swój Lokalny Meetup"
+  },
+  "footer": {
+    "copyright": "© 2025 meet.js Polska. Wszelkie prawa zastrzeżone.",
+    "contact": "Skontaktuj się z nami"
+  }
+}
