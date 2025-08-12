@@ -12,6 +12,7 @@ import { SocialLinks } from '@/components/SocialLinks';
 import { CityStatusIndicator } from './CityStatusIndicator';
 import { useTranslate } from '@tolgee/react';
 import { useTranslatedMenuLinks } from '@/hooks/useTranslatedMenuLinks';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 
 export const MobileNavigation = () => {
   const { t } = useTranslate();
@@ -162,7 +163,10 @@ export const MobileNavigation = () => {
             }
           })}
         </ul>
-        <div className="flex justify-center px-2 pt-4">
+        <div className="border-t border-gray-600 px-2 pt-4">
+          <LanguageSwitcher variant="mobile" className="mb-4" />
+        </div>
+        <div className="flex justify-center px-2">
           <SocialLinks />
         </div>
       </nav>
