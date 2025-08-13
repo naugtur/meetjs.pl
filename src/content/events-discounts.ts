@@ -1,6 +1,6 @@
 import { Promo } from '../types/promo';
 
-export const discounts: Promo[] = [
+export const eventsDiscounts: Promo[] = [
   {
     id: 'infoshare-2025',
     name: 'InfoShare 2025',

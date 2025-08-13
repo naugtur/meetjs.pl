@@ -5,15 +5,22 @@ import { Logo } from '@/components/Logo';
 import { SocialLinks } from '@/components/SocialLinks';
 import { PromoBanners } from '@/components/PromoBanners';
 import { softwareDiscounts } from '@/content/software-discounts';
-import { discounts } from '@/content/discounts';
+import { eventsDiscounts } from '@/content/events-discounts';
 import { DesktopNavigation } from './Navigation/DesktopNavigation';
 import { MobileNavigation } from './Navigation/MobileNavigation';
 import { MobileMenuButton } from './Navigation/MobileMenuButton';
+import { learningDiscounts } from '@/content/learning-discounts';
 
 export const Navigation = () => {
   return (
     <>
-      <PromoBanners promos={[...discounts, ...softwareDiscounts]} />
+      <PromoBanners
+        promos={[
+          ...eventsDiscounts,
+          ...softwareDiscounts,
+          ...learningDiscounts,
+        ]}
+      />
       <header role="banner">
         <Disclosure
           as="nav"
