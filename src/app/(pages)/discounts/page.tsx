@@ -1,4 +1,4 @@
-import { discounts } from '@/content/discounts';
+import { eventsDiscounts } from '@/content/events-discounts';
 import { softwareDiscounts } from '@/content/software-discounts';
 import { learningDiscounts } from '@/content/learning-discounts';
 import type { Promo } from '@/types/promo';
@@ -12,8 +12,8 @@ import {
 } from '@/components/ui/card';
 import { Gift, Ticket, Monitor, BookOpen } from 'lucide-react';
 import { Metadata } from 'next';
-import { SoftwarePromoCard } from '@/components/SoftwarePromoCard';
-import { EventDiscountCard } from '@/components/EventDiscountCard';
+import UnifiedPromoCard from '@/components/UnifiedPromoCard';
+import { EventDiscountSection } from '@/components/EventDiscountSection';
 
 export const metadata: Metadata = {
   title: 'Exclusive Discounts | meet.js',
@@ -96,13 +96,13 @@ export default function DiscountsPage() {
         </CardFooter>
       </Card>
 
-      {discounts.length > 0 && (
+      {eventsDiscounts.length > 0 && (
         <div id="events" className="mb-8">
           <div className="mb-6 flex items-center gap-3">
             <Ticket className="h-6 w-6 text-purple-600" />
             <h2 className="text-2xl font-bold">Events & Conferences</h2>
           </div>
-          <EventDiscountCard promos={discounts} />
+          <EventDiscountSection promos={eventsDiscounts} />
         </div>
       )}
 
@@ -114,7 +114,11 @@ export default function DiscountsPage() {
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
             {softwareDiscounts.map((promo) => (
-              <SoftwarePromoCard key={promo.id} promo={promo} />
+              <UnifiedPromoCard
+                key={promo.id}
+                promo={promo}
+                variant="software"
+              />
             ))}
           </div>
         </div>
@@ -128,7 +132,11 @@ export default function DiscountsPage() {
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
             {learningDiscounts.map((promo: Promo) => (
-              <SoftwarePromoCard key={promo.id} promo={promo} />
+              <UnifiedPromoCard
+                key={promo.id}
+                promo={promo}
+                variant="learning"
+              />
             ))}
           </div>
         </div>
