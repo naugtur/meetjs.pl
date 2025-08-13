@@ -46,7 +46,7 @@ export const softwareDiscounts: Promo[] = [
     gradient: 'bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500',
     icon: '⚡',
     image:
-      'https://media.licdn.com/dms/image/v2/D4E0BAQED1pjiTaXRFw/company-logo_200_200/company-logo_200_200/0/1729172001472/warpdotdev_logo?e=1754524800&v=beta&t=Hz3yvhhrTTelJa6SchJEC3xGB8zhtEGGYxYeL_a3Nsc',
+      'https://media.licdn.com/dms/image/v2/D4E0BAQED1pjiTaXRFw/company-logo_200_200/company-logo_200_200/0/1729172001472/warpdotdev_logo?e=1758153600&v=beta&t=swdtaf-e77NUe3BQ6o4fF6LWvgoHDoejnXK9OZTOVzo',
     emojiRight: '💻',
     discountCode: 'MEETJS25',
   },
