@@ -14,7 +14,7 @@ export const learningDiscounts: Promo[] = [
     gradient: 'bg-gradient-to-r from-purple-600 via-pink-500 to-red-500',
     icon: '💻',
     image:
-      'https://media.licdn.com/dms/image/v2/D560BAQEISUxvs5Lm1g/company-logo_200_200/company-logo_200_200/0/1709987232513/greatfrontend_logo?e=1754524800&v=beta&t=vEmqtugj9XO39eu9WCZa8X4s2lU5AJr7V_iKcF8aG-8',
+      'https://media.licdn.com/dms/image/v2/D560BAQEISUxvs5Lm1g/company-logo_200_200/company-logo_200_200/0/1709987232513/greatfrontend_logo?e=1758153600&v=beta&t=lt1HBjwrYRh6FQqx9eFL_6Ne0G377VeGiXXgpGhefug',
     emojiRight: '🌐',
     discountCode: 'MEETJSPL',
   },
