@@ -207,6 +207,7 @@
       "about_meetjs": "O meet.js",
       "our_team": "Nasz zespół",
       "sponsors": "Sponsorzy",
+      "community_partnerships": "Partnerstwa Społeczne",
       "brand_assets": "Logo i kolory",
       "code_of_conduct": "Kodeks postępowania",
       "coming_soon": "(Wkrótce)"
@@ -289,6 +290,64 @@
     "cities": "miast",
     "since": "od",
     "summits": "summitów"
+  },
+  "community_partnerships": {
+    "meta_title": "Partnerstwa Społeczne | meet.js",
+    "meta_description": "Inicjatywy edukacyjne i społeczne wspierane przez meet.js - budujemy silniejszą społeczność tech razem.",
+    "page_title": "Partnerstwa Społeczne",
+    "subtitle": "Wspieramy inicjatywy edukacyjne i projekty społeczne, które wzmacniają ekosystem technologiczny",
+    "our_partners_title": "Nasi Partnerzy Społeczni",
+    "our_partners_description": "Z dumą wspieramy inicjatywy edukacyjne i społeczne, które są zgodne z naszą misją budowania silniejszej, bardziej inkluzywnej społeczności tech.",
+    "what_they_do": "Co Robią",
+    "their_goals": "Ich Cele",
+    "workshop_photos": "Zdjęcia z Warsztatów",
+    "visit_website": "Odwiedź Stronę",
+    "contact_project": "Skontaktuj się z Projektem",
+    "cta_title": "Chcesz Zostać Naszym Partnerem?",
+    "cta_description": "Jeśli prowadzisz inicjatywę edukacyjną lub społeczną zgodną z naszymi wartościami, chętnie się z Tobą skontaktujemy.",
+    "get_in_touch": "Skontaktuj się z Nami",
+    "partnerships": {
+      "mlodzi4it": {
+        "name": "Młodzi 4IT 2.0",
+        "description": "Projekt edukacyjny skupiony na świadomości cyfrowej i bezpiecznym korzystaniu z technologii dla młodzieży i seniorów.",
+        "location": "Bielsko-Biała i okolice",
+        "details": [
+          "Bezpłatne warsztaty edukacyjne w szkołach, bibliotekach i ośrodkach kultury",
+          "Edukacja w zakresie ochrony danych osobowych i prywatności w internecie",
+          "Szkolenia z odpowiedzialnego korzystania z AI",
+          "Zapobieganie cyberprzestępczości (w tym oszustwom telefonicznym i fałszywym wiadomościom)",
+          "Tworzenie bezpłatnych materiałów edukacyjnych (ulotki, quizy, e-booki, prezentacje)"
+        ],
+        "goals": [
+          "Budowanie świadomości cyfrowej wśród dzieci i seniorów",
+          "Nauczanie bezpiecznego korzystania z internetu i ochrony danych",
+          "Wyjaśnianie technologii AI i jej odpowiedzialnego wykorzystania",
+          "Zapobieganie cyberprzestępczości poprzez edukację"
+        ],
+        "photos": [
+          {
+            "alt": "Warsztaty Młodzi 4IT z uczniami w klasie",
+            "caption": "Warsztat edukacyjny o świadomości cyfrowej i cyberbezpieczeństwie"
+          },
+          {
+            "alt": "Interaktywna prezentacja o AI i technologii",
+            "caption": "Nauczanie odpowiedzialnego korzystania z AI młodych uczniów"
+          },
+          {
+            "alt": "Uczniowie uczestniczący w szkoleniu z cyberbezpieczeństwa",
+            "caption": "Praktyczne zajęcia z edukacji cyberbezpieczeństwa"
+          },
+          {
+            "alt": "Aktywność grupowa podczas warsztatów cyfrowej alfabetyzacji",
+            "caption": "Interaktywna nauka o bezpieczeństwie w internecie"
+          },
+          {
+            "alt": "Zespół Młodzi 4IT prezentujący materiały edukacyjne",
+            "caption": "Prezentacja materiałów i zasobów edukacyjnych"
+          }
+        ]
+      }
+    }
   },
   "welcome": "Witamy w meet.js"
 }
