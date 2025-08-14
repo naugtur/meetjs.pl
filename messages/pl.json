@@ -311,41 +311,41 @@
         "name": "Młodzi 4IT 2.0",
         "description": "Projekt edukacyjny skupiony na świadomości cyfrowej i bezpiecznym korzystaniu z technologii dla młodzieży i seniorów.",
         "location": "Bielsko-Biała i okolice",
-        "details": [
-          "Bezpłatne warsztaty edukacyjne w szkołach, bibliotekach i ośrodkach kultury",
-          "Edukacja w zakresie ochrony danych osobowych i prywatności w internecie",
-          "Szkolenia z odpowiedzialnego korzystania z AI",
-          "Zapobieganie cyberprzestępczości (w tym oszustwom telefonicznym i fałszywym wiadomościom)",
-          "Tworzenie bezpłatnych materiałów edukacyjnych (ulotki, quizy, e-booki, prezentacje)"
-        ],
-        "goals": [
-          "Budowanie świadomości cyfrowej wśród dzieci i seniorów",
-          "Nauczanie bezpiecznego korzystania z internetu i ochrony danych",
-          "Wyjaśnianie technologii AI i jej odpowiedzialnego wykorzystania",
-          "Zapobieganie cyberprzestępczości poprzez edukację"
-        ],
-        "photos": [
-          {
+        "details": {
+          "0": "Bezpłatne warsztaty edukacyjne w szkołach, bibliotekach i ośrodkach kultury",
+          "1": "Edukacja w zakresie ochrony danych osobowych i prywatności w internecie",
+          "2": "Szkolenia z odpowiedzialnego korzystania z AI",
+          "3": "Zapobieganie cyberprzestępczości (w tym oszustwom telefonicznym i fałszywym wiadomościom)",
+          "4": "Tworzenie bezpłatnych materiałów edukacyjnych (ulotki, quizy, e-booki, prezentacje)"
+        },
+        "goals": {
+          "0": "Budowanie świadomości cyfrowej wśród dzieci i seniorów",
+          "1": "Nauczanie bezpiecznego korzystania z internetu i ochrony danych",
+          "2": "Wyjaśnianie technologii AI i jej odpowiedzialnego wykorzystania",
+          "3": "Zapobieganie cyberprzestępczości poprzez edukację"
+        },
+        "photos": {
+          "0": {
             "alt": "Warsztaty Młodzi 4IT z uczniami w klasie",
             "caption": "Warsztat edukacyjny o świadomości cyfrowej i cyberbezpieczeństwie"
           },
-          {
+          "1": {
             "alt": "Interaktywna prezentacja o AI i technologii",
             "caption": "Nauczanie odpowiedzialnego korzystania z AI młodych uczniów"
           },
-          {
+          "2": {
             "alt": "Uczniowie uczestniczący w szkoleniu z cyberbezpieczeństwa",
             "caption": "Praktyczne zajęcia z edukacji cyberbezpieczeństwa"
           },
-          {
+          "3": {
             "alt": "Aktywność grupowa podczas warsztatów cyfrowej alfabetyzacji",
             "caption": "Interaktywna nauka o bezpieczeństwie w internecie"
           },
-          {
+          "4": {
             "alt": "Zespół Młodzi 4IT prezentujący materiały edukacyjne",
             "caption": "Prezentacja materiałów i zasobów edukacyjnych"
           }
-        ]
+        }
       }
     }
   },
