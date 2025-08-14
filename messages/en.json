@@ -311,41 +311,41 @@
         "name": "Młodzi 4IT 2.0",
         "description": "Educational project focused on digital awareness and safe technology usage for youth and seniors.",
         "location": "Bielsko-Biała and surrounding areas",
-        "details": [
-          "Free educational workshops in schools, libraries, and cultural centers",
-          "Personal data protection and internet privacy education",
-          "Responsible AI usage training",
-          "Cybercrime prevention (including phone scams and fake messages)",
-          "Creating free educational materials (flyers, quizzes, e-books, presentations)"
-        ],
-        "goals": [
-          "Building digital awareness among children and seniors",
-          "Teaching safe internet usage and data protection",
-          "Explaining AI technology and its responsible use",
-          "Preventing cybercrime through education"
-        ],
-        "photos": [
-          {
+        "details": {
+          "0": "Free educational workshops in schools, libraries, and cultural centers",
+          "1": "Personal data protection and internet privacy education",
+          "2": "Responsible AI usage training",
+          "3": "Cybercrime prevention (including phone scams and fake messages)",
+          "4": "Creating free educational materials (flyers, quizzes, e-books, presentations)"
+        },
+        "goals": {
+          "0": "Building digital awareness among children and seniors",
+          "1": "Teaching safe internet usage and data protection",
+          "2": "Explaining AI technology and its responsible use",
+          "3": "Preventing cybercrime through education"
+        },
+        "photos": {
+          "0": {
             "alt": "Młodzi 4IT workshop with students in classroom",
             "caption": "Educational workshop on digital awareness and cybersecurity"
           },
-          {
+          "1": {
             "alt": "Interactive presentation about AI and technology",
             "caption": "Teaching responsible AI usage to young students"
           },
-          {
+          "2": {
             "alt": "Students participating in cybersecurity training",
             "caption": "Hands-on cybersecurity education session"
           },
-          {
+          "3": {
             "alt": "Group activity during digital literacy workshop",
             "caption": "Interactive learning about internet safety"
           },
-          {
+          "4": {
             "alt": "Młodzi 4IT team presenting educational materials",
             "caption": "Presenting educational materials and resources"
           }
-        ]
+        }
       }
     }
   },
