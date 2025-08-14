@@ -7,12 +7,6 @@ export const useTranslatedMenuLinks = (): MenuLink[] => {
 
   return [
     {
-      name: t('navigation.menu_items.30_years_js'),
-      href: '/30-years-of-javascript',
-      current: false,
-      external: false,
-    },
-    {
       name: t('navigation.menu_items.summit'),
       href: 'https://summit.meetjs.pl',
       current: false,
@@ -98,6 +92,11 @@ export const useTranslatedMenuLinks = (): MenuLink[] => {
           disabled: true,
         },
         {
+          name: t('navigation.dropdown.community_partnerships'),
+          href: '/community-partnerships',
+          type: 'link',
+        },
+        {
           name: 'separator',
           href: '#',
           type: 'separator',
@@ -134,17 +133,17 @@ export const useTranslatedFooterMenuLinks = (): MenuLink[] => {
       current: false,
       external: true,
     },
-    { 
-      name: t('footer.menu_links.events'), 
-      href: '/events', 
-      current: false, 
-      external: false 
+    {
+      name: t('footer.menu_links.events'),
+      href: '/events',
+      current: false,
+      external: false,
     },
-    { 
-      name: t('footer.menu_links.about'), 
-      href: '/about', 
-      current: false, 
-      external: false 
+    {
+      name: t('footer.menu_links.about'),
+      href: '/about',
+      current: false,
+      external: false,
     },
     {
       name: t('footer.menu_links.14_birthday'),
@@ -152,17 +151,17 @@ export const useTranslatedFooterMenuLinks = (): MenuLink[] => {
       current: false,
       external: false,
     },
-    { 
-      name: t('footer.menu_links.brand_assets'), 
-      href: '/brand', 
-      current: false, 
-      external: false 
+    {
+      name: t('footer.menu_links.brand_assets'),
+      href: '/brand',
+      current: false,
+      external: false,
     },
-    { 
-      name: t('footer.menu_links.contact_link'), 
-      href: '#', 
-      current: false, 
-      external: false 
+    {
+      name: t('footer.menu_links.contact_link'),
+      href: '#',
+      current: false,
+      external: false,
     },
     {
       name: t('footer.menu_links.code_of_conduct'),
