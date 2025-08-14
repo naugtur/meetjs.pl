@@ -28,7 +28,8 @@ export const partnerships: Partnership[] = [
   {
     name: 'FutureConf 2025',
     website: 'https://futureconf.tech/',
-    description: 'Two-day AI conference in Kraków focused on "AI in Production" with industry experts and practical use cases.',
+    description:
+      'Two-day AI conference in Kraków focused on "AI in Production" with industry experts and practical use cases.',
     details: [
       'Expert talks on ML/AI, security, and practical AI production use cases',
       'Speakers from Hugging Face, Docker, Qdrant, mBank, and AGH University',
@@ -50,35 +51,36 @@ export const partnerships: Partnership[] = [
       {
         src: 'https://futureconf.tech/assets/rozek.webp',
         alt: 'FutureConf 2024 conference atmosphere',
-        caption: 'Conference atmosphere with hundreds of AI enthusiasts'
+        caption: 'Conference atmosphere with hundreds of AI enthusiasts',
       },
       {
         src: 'https://futureconf.tech/assets/photobooth/uczestnik2.webp',
         alt: 'Conference speakers at FutureConf',
-        caption: 'Industry experts sharing AI knowledge'
+        caption: 'Industry experts sharing AI knowledge',
       },
       {
         src: 'https://futureconf.tech/assets/photobooth/uczestnik.webp',
         alt: 'Conference attendees networking',
-        caption: 'Active networking and knowledge exchange'
+        caption: 'Active networking and knowledge exchange',
       },
       {
         src: 'https://futureconf.tech/assets/ludzie-10.webp',
         alt: 'FutureConf community gathering',
-        caption: 'Building the AI community in Poland'
-      }
+        caption: 'Building the AI community in Poland',
+      },
     ],
     specialOffer: {
       title: 'Group Discount System',
       description: 'Up to 50% off through meet.js partnership',
       link: 'https://futureconf.tech/meetjs/',
-      linkText: 'Get Group Discount'
-    }
+      linkText: 'Get Group Discount',
+    },
   },
   {
     name: 'Młodzi 4IT 2.0',
     website: 'https://www.mlodzi4it.com/',
-    description: 'Educational project focused on digital awareness and safe technology usage for youth and seniors.',
+    description:
+      'Educational project focused on digital awareness and safe technology usage for youth and seniors.',
     details: [
       'Free educational workshops in schools, libraries, and cultural centers',
       'Personal data protection and internet privacy education',
@@ -100,34 +102,35 @@ export const partnerships: Partnership[] = [
       {
         src: '/partnerships/mlodzi4it-workshop-1.jpg',
         alt: 'Młodzi 4IT workshop with students in classroom',
-        caption: 'Educational workshop on digital awareness and cybersecurity'
+        caption: 'Educational workshop on digital awareness and cybersecurity',
       },
       {
         src: '/partnerships/mlodzi4it-workshop-2.jpg',
         alt: 'Interactive presentation about AI and technology',
-        caption: 'Teaching responsible AI usage to young students'
+        caption: 'Teaching responsible AI usage to young students',
       },
       {
         src: '/partnerships/mlodzi4it-workshop-3.jpg',
         alt: 'Students participating in cybersecurity training',
-        caption: 'Hands-on cybersecurity education session'
+        caption: 'Hands-on cybersecurity education session',
       },
       {
         src: '/partnerships/mlodzi4it-workshop-4.jpg',
         alt: 'Group activity during digital literacy workshop',
-        caption: 'Interactive learning about internet safety'
+        caption: 'Interactive learning about internet safety',
       },
       {
         src: '/partnerships/mlodzi4it-workshop-5.jpg',
         alt: 'Młodzi 4IT team presenting educational materials',
-        caption: 'Presenting educational materials and resources'
-      }
+        caption: 'Presenting educational materials and resources',
+      },
     ],
   },
   {
     name: 'HackYeah 2025',
     website: 'https://hackyeah.pl/',
-    description: 'Europe\'s largest in-person hackathon bringing together hundreds of programmers, designers, and tech enthusiasts for 24 hours of coding and innovation.',
+    description:
+      "Europe's largest in-person hackathon bringing together hundreds of programmers, designers, and tech enthusiasts for 24 hours of coding and innovation.",
     details: [
       '24-hour hackathon with challenges in biohacking, travel, defense, and real-world solutions',
       'Parallel tech conference with IT experts and industry leaders',
@@ -139,7 +142,7 @@ export const partnerships: Partnership[] = [
       'Fostering innovation and creative problem-solving',
       'Building connections between developers, designers, and tech enthusiasts',
       'Providing platform for rapid prototyping and idea validation',
-      'Supporting the growth of Poland\'s tech ecosystem',
+      "Supporting the growth of Poland's tech ecosystem",
     ],
     location: 'Kraków, Poland',
     contact: 'https://hackyeah.pl/',
@@ -149,7 +152,7 @@ export const partnerships: Partnership[] = [
       title: 'Free Participation',
       description: 'Completely free to participate - just register early!',
       link: 'https://hackyeah.pl/',
-      linkText: 'Register Now'
-    }
+      linkText: 'Register Now',
+    },
   },
 ];

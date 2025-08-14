@@ -207,6 +207,7 @@
       "about_meetjs": "About meet.js",
       "our_team": "Our Team",
       "sponsors": "Sponsors",
+      "community_partnerships": "Community Partnerships",
       "brand_assets": "Brand Assets",
       "code_of_conduct": "Code of Conduct",
       "coming_soon": "(Coming Soon)"
@@ -289,6 +290,64 @@
     "cities": "cities",
     "since": "since",
     "summits": "summits"
+  },
+  "community_partnerships": {
+    "meta_title": "Community Partnerships | meet.js",
+    "meta_description": "Educational and community initiatives supported by meet.js - building a stronger tech community together.",
+    "page_title": "Community Partnerships",
+    "subtitle": "Supporting educational initiatives and community projects that strengthen the tech ecosystem",
+    "our_partners_title": "Our Community Partners",
+    "our_partners_description": "We proudly support educational and community initiatives that align with our mission of building a stronger, more inclusive tech community.",
+    "what_they_do": "What They Do",
+    "their_goals": "Their Goals",
+    "workshop_photos": "Workshop Photos",
+    "visit_website": "Visit Website",
+    "contact_project": "Contact Project",
+    "cta_title": "Want to Partner With Us?",
+    "cta_description": "If you're running an educational or community initiative that aligns with our values, we'd love to hear from you.",
+    "get_in_touch": "Get in Touch",
+    "partnerships": {
+      "mlodzi4it": {
+        "name": "Młodzi 4IT 2.0",
+        "description": "Educational project focused on digital awareness and safe technology usage for youth and seniors.",
+        "location": "Bielsko-Biała and surrounding areas",
+        "details": [
+          "Free educational workshops in schools, libraries, and cultural centers",
+          "Personal data protection and internet privacy education",
+          "Responsible AI usage training",
+          "Cybercrime prevention (including phone scams and fake messages)",
+          "Creating free educational materials (flyers, quizzes, e-books, presentations)"
+        ],
+        "goals": [
+          "Building digital awareness among children and seniors",
+          "Teaching safe internet usage and data protection",
+          "Explaining AI technology and its responsible use",
+          "Preventing cybercrime through education"
+        ],
+        "photos": [
+          {
+            "alt": "Młodzi 4IT workshop with students in classroom",
+            "caption": "Educational workshop on digital awareness and cybersecurity"
+          },
+          {
+            "alt": "Interactive presentation about AI and technology",
+            "caption": "Teaching responsible AI usage to young students"
+          },
+          {
+            "alt": "Students participating in cybersecurity training",
+            "caption": "Hands-on cybersecurity education session"
+          },
+          {
+            "alt": "Group activity during digital literacy workshop",
+            "caption": "Interactive learning about internet safety"
+          },
+          {
+            "alt": "Młodzi 4IT team presenting educational materials",
+            "caption": "Presenting educational materials and resources"
+          }
+        ]
+      }
+    }
   },
   "welcome": "Welcome to meet.js"
 }
