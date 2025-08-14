@@ -26,18 +26,18 @@ export interface Partnership {
 
 export function getPartnerships(t: (key: string) => string): Partnership[] {
   const mlodzi4itDetails = [
-    t('community_partnerships.partnerships.mlodzi4it.details[0]'),
-    t('community_partnerships.partnerships.mlodzi4it.details[1]'),
-    t('community_partnerships.partnerships.mlodzi4it.details[2]'),
-    t('community_partnerships.partnerships.mlodzi4it.details[3]'),
-    t('community_partnerships.partnerships.mlodzi4it.details[4]'),
+    t('community_partnerships.partnerships.mlodzi4it.details.0'),
+    t('community_partnerships.partnerships.mlodzi4it.details.1'),
+    t('community_partnerships.partnerships.mlodzi4it.details.2'),
+    t('community_partnerships.partnerships.mlodzi4it.details.3'),
+    t('community_partnerships.partnerships.mlodzi4it.details.4'),
   ];
 
   const mlodzi4itGoals = [
-    t('community_partnerships.partnerships.mlodzi4it.goals[0]'),
-    t('community_partnerships.partnerships.mlodzi4it.goals[1]'),
-    t('community_partnerships.partnerships.mlodzi4it.goals[2]'),
-    t('community_partnerships.partnerships.mlodzi4it.goals[3]'),
+    t('community_partnerships.partnerships.mlodzi4it.goals.0'),
+    t('community_partnerships.partnerships.mlodzi4it.goals.1'),
+    t('community_partnerships.partnerships.mlodzi4it.goals.2'),
+    t('community_partnerships.partnerships.mlodzi4it.goals.3'),
   ];
 
   return [
@@ -108,37 +108,37 @@ export function getPartnerships(t: (key: string) => string): Partnership[] {
       photos: [
         {
           src: '/partnerships/mlodzi4it-workshop-1.jpg',
-          alt: t('community_partnerships.partnerships.mlodzi4it.photos[0].alt'),
+          alt: t('community_partnerships.partnerships.mlodzi4it.photos.0.alt'),
           caption: t(
-            'community_partnerships.partnerships.mlodzi4it.photos[0].caption',
+            'community_partnerships.partnerships.mlodzi4it.photos.0.caption',
           ),
         },
         {
           src: '/partnerships/mlodzi4it-workshop-2.jpg',
-          alt: t('community_partnerships.partnerships.mlodzi4it.photos[1].alt'),
+          alt: t('community_partnerships.partnerships.mlodzi4it.photos.1.alt'),
           caption: t(
-            'community_partnerships.partnerships.mlodzi4it.photos[1].caption',
+            'community_partnerships.partnerships.mlodzi4it.photos.1.caption',
           ),
         },
         {
           src: '/partnerships/mlodzi4it-workshop-3.jpg',
-          alt: t('community_partnerships.partnerships.mlodzi4it.photos[2].alt'),
+          alt: t('community_partnerships.partnerships.mlodzi4it.photos.2.alt'),
           caption: t(
-            'community_partnerships.partnerships.mlodzi4it.photos[2].caption',
+            'community_partnerships.partnerships.mlodzi4it.photos.2.caption',
           ),
         },
         {
           src: '/partnerships/mlodzi4it-workshop-4.jpg',
-          alt: t('community_partnerships.partnerships.mlodzi4it.photos[3].alt'),
+          alt: t('community_partnerships.partnerships.mlodzi4it.photos.3.alt'),
           caption: t(
-            'community_partnerships.partnerships.mlodzi4it.photos[3].caption',
+            'community_partnerships.partnerships.mlodzi4it.photos.3.caption',
           ),
         },
         {
           src: '/partnerships/mlodzi4it-workshop-5.jpg',
-          alt: t('community_partnerships.partnerships.mlodzi4it.photos[4].alt'),
+          alt: t('community_partnerships.partnerships.mlodzi4it.photos.4.alt'),
           caption: t(
-            'community_partnerships.partnerships.mlodzi4it.photos[4].caption',
+            'community_partnerships.partnerships.mlodzi4it.photos.4.caption',
           ),
         },
       ],
