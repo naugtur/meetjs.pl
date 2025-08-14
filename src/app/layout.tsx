@@ -8,6 +8,9 @@ import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { SchemaMarkup } from '@/components/SchemaMarkup';
 import { env } from '@/env';
+import { TolgeeNextProvider } from '@/tolgee/client';
+import { getTolgee } from '@/tolgee/server';
+import { getLanguage } from '@/tolgee/language';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -106,17 +109,25 @@ export const metadata: Metadata = {
   category: 'technology',
 };
 
-const RootLayout = ({
+const RootLayout = async ({
   children,
 }: Readonly<{
   children: ReactNode;
 }>) => {
+  const locale = await getLanguage();
+  const tolgee = await getTolgee();
+  
+  // serializable data that are passed to client components
+  const staticData = await tolgee.loadRequired();
+
   return (
-    <html lang="en" className={`${montserrat.variable} scroll-smooth`}>
+    <html lang={locale} className={`${montserrat.variable} scroll-smooth`}>
       <body>
-        <Navigation />
-        {children}
-        <Footer />
+        <TolgeeNextProvider language={locale} staticData={staticData}>
+          <Navigation />
+          {children}
+          <Footer />
+        </TolgeeNextProvider>
         <Analytics />
         <SpeedInsights />
         <SchemaMarkup />
