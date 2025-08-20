@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import type { Route } from 'next';
 import { City } from '@/content/cities';
 import { Event } from '@/components/FeaturedEvents';
 
@@ -75,7 +76,7 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
             const eventStatus = getCityEventStatus(city.name);
             return (
               <g key={index}>
-                <Link href={city.href}>
+                <Link href={city.href as Route}>
                   <g className="city-marker group">
                     {/* City dot */}
                     <circle
@@ -167,7 +168,7 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
         <div className="flex items-center gap-2 whitespace-nowrap">
           <div className="h-2 w-2 rounded-full bg-[#9CA3AF]" />
           <Link
-            href="/how-to-become-an-organizer"
+            href={"/how-to-become-an-organizer" as Route}
             className="hover:text-purple"
           >
             Paused (join as organizer)
