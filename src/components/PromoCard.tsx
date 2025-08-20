@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import type { Promo } from '@/types/promo';
 
 const getDomain = (url: string) => {
@@ -108,14 +107,20 @@ export function PromoCard({ promo }: PromoCardProps) {
       </div>
 
       <div className="mt-auto border-t border-white/20 bg-black/10 p-4">
-        <Link
-          href={promo.ticketLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block w-full rounded-lg bg-white py-2 text-center font-semibold text-purple shadow transition-colors hover:bg-purple hover:text-white"
-        >
-          {promo.cta}
-        </Link>
+        {promo.ticketLink ? (
+          <a
+            href={promo.ticketLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full rounded-lg bg-white py-2 text-center font-semibold text-purple shadow transition-colors hover:bg-purple hover:text-white"
+          >
+            {promo.cta}
+          </a>
+        ) : (
+          <span className="block w-full rounded-lg bg-white/60 py-2 text-center font-semibold text-purple opacity-60">
+            {promo.cta}
+          </span>
+        )}
       </div>
     </div>
   );

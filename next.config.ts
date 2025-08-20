@@ -11,6 +11,7 @@ jiti('./src/env.ts');
 /** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  typedRoutes: true,
   turbopack: {},
   experimental: {
     reactCompiler: {

@@ -1,6 +1,5 @@
 import { Card, CardContent, CardFooter, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
-import Link from 'next/link';
 import { FaGithub, FaLinkedin } from 'react-icons/fa6';
 import { Organizer } from '@/types/organizer';
 
@@ -45,21 +44,21 @@ export const Organizers = ({ city, organizers }: OrganizersProps) => {
               <CardTitle className="text-center">{organizer.name}</CardTitle>
               <div className="flex items-center justify-center gap-1">
                 {organizer.email && (
-                  <Link href={`mailto:${organizer.email}`} target="_blank">
+                  <a href={`mailto:${organizer.email}`} target="_blank" rel="noopener noreferrer">
                     <span className="sr-only">Email</span>@
-                  </Link>
+                  </a>
                 )}
                 {organizer.linkedin && (
-                  <Link href={organizer.linkedin} target="_blank">
+                  <a href={organizer.linkedin} target="_blank" rel="noopener noreferrer">
                     <span className="sr-only">Linkedin</span>
                     <FaLinkedin />
-                  </Link>
+                  </a>
                 )}
                 {organizer.gitHub && (
-                  <Link href={organizer.gitHub} target="_blank">
+                  <a href={organizer.gitHub} target="_blank" rel="noopener noreferrer">
                     <span className="sr-only">GitHub</span>
                     <FaGithub />
-                  </Link>
+                  </a>
                 )}
               </div>
             </CardFooter>

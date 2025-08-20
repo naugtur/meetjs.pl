@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import Image from 'next/image';
 import type { Promo } from '@/types/promo';
 import { Calendar, MapPin, ExternalLink } from 'lucide-react';
@@ -211,14 +210,20 @@ export default function UnifiedPromoCard({
 
       {/* CTA Button */}
       <div className="border-t border-gray-100 p-6 dark:border-gray-700">
-        <Link
-          href={promo.ticketLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`block w-full rounded-lg py-3 text-center font-semibold text-white shadow transition-all hover:shadow-lg ${config.ctaGradient}`}
-        >
-          {promo.cta}
-        </Link>
+        {promo.ticketLink ? (
+          <a
+            href={promo.ticketLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`block w-full rounded-lg py-3 text-center font-semibold text-white shadow transition-all hover:shadow-lg ${config.ctaGradient}`}
+          >
+            {promo.cta}
+          </a>
+        ) : (
+          <span className={`block w-full rounded-lg py-3 text-center font-semibold text-white/80 shadow ${config.ctaGradient} opacity-60`}>
+            {promo.cta}
+          </span>
+        )}
       </div>
     </div>
   );
