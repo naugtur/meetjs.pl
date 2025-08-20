@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import type { Promo } from '@/types/promo';
 import { PromoFilters } from '@/components/PromoFilters';
@@ -139,14 +138,20 @@ function EventPromoCard({ promo }: { promo: Promo }) {
 
       {/* CTA Footer */}
       <div className="border-t border-gray-100 p-6 dark:border-gray-700">
-        <Link
-          href={promo.ticketLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block w-full rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 py-3 text-center font-semibold text-white shadow transition-all duration-200 hover:-translate-y-0.5 hover:from-purple-700 hover:to-pink-700 hover:shadow-lg active:scale-95"
-        >
-          {promo.cta}
-        </Link>
+        {promo.ticketLink ? (
+          <a
+            href={promo.ticketLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 py-3 text-center font-semibold text-white shadow transition-all duration-200 hover:-translate-y-0.5 hover:from-purple-700 hover:to-pink-700 hover:shadow-lg active:scale-95"
+          >
+            {promo.cta}
+          </a>
+        ) : (
+          <span className="block w-full rounded-lg bg-gradient-to-r from-purple-600/70 to-pink-600/70 py-3 text-center font-semibold text-white/80 shadow opacity-60">
+            {promo.cta}
+          </span>
+        )}
       </div>
     </div>
   );

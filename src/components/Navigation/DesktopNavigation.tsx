@@ -13,6 +13,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import Link from 'next/link';
+import type { Route } from 'next';
 
 export const DesktopNavigation = () => {
   return (
@@ -60,7 +61,7 @@ export const DesktopNavigation = () => {
                           ).map((city) => (
                             <DropdownMenuItem key={city.name} asChild>
                               <Link
-                                href={city.href}
+                                href={city.href as Route}
                                 className="flex items-center justify-between"
                               >
                                 <span className="flex items-center">
@@ -87,23 +88,21 @@ export const DesktopNavigation = () => {
                             <span className="ml-2 text-xs">(Coming Soon)</span>
                           </span>
                         ) : (
-                          <Link
-                            href={dropdownItem.href}
-                            target={
-                              dropdownItem.external ? '_blank' : undefined
-                            }
-                            rel={
-                              dropdownItem.external
-                                ? 'noopener noreferrer'
-                                : undefined
-                            }
-                            className="flex items-center"
-                          >
-                            {dropdownItem.name}
-                            {dropdownItem.external && (
+                          dropdownItem.external ? (
+                            <a
+                              href={dropdownItem.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center"
+                            >
+                              {dropdownItem.name}
                               <FaArrowUpRightFromSquare className="ml-2 h-3 w-3" />
-                            )}
-                          </Link>
+                            </a>
+                          ) : (
+                            <Link href={dropdownItem.href as Route} className="flex items-center">
+                              {dropdownItem.name}
+                            </Link>
+                          )
                         )}
                       </DropdownMenuItem>
                     );
@@ -111,12 +110,20 @@ export const DesktopNavigation = () => {
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <NavigationLink
-                href={item.href}
-                current={item.current}
-                external={item.external}
-                name={item.name}
-              />
+              item.external ? (
+                <NavigationLink
+                  href={item.href}
+                  current={item.current}
+                  external={true}
+                  name={item.name}
+                />
+              ) : (
+                <NavigationLink
+                  href={item.href as Route}
+                  current={item.current}
+                  name={item.name}
+                />
+              )
             )}
           </li>
         ))}
@@ -124,3 +131,4 @@ export const DesktopNavigation = () => {
     </nav>
   );
 };
+

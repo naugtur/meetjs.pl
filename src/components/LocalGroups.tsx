@@ -1,5 +1,4 @@
 import { FaFacebook, FaGithub, FaMeetup } from 'react-icons/fa6';
-import Link from 'next/link';
 import Image from 'next/image';
 
 interface LocalGroupProps {
@@ -64,13 +63,15 @@ export const LocalGroups = ({ localGroups }: LocalGroupProps) => {
       <h2 className="text-center text-2xl font-bold">Join our local groups</h2>
       <div className="flex gap-2">
         {localGroups.map((localGroup) => (
-          <Link
+          <a
             href={localGroup}
             key={localGroup}
             className="flex items-center justify-center gap-1"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {detectIcon(localGroup)}
-          </Link>
+          </a>
         ))}
       </div>
     </section>

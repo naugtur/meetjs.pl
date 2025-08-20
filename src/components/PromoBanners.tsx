@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { X } from 'lucide-react';
 import type { Promo } from '@/types/promo';
 
@@ -154,14 +153,20 @@ const LinkCTA = ({
   ticketLink: string | undefined;
   children: React.ReactNode;
 }) => (
-  <Link
-    href={ticketLink || ''}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-block rounded-full bg-white px-3 py-1 text-xs font-semibold text-purple shadow transition-colors duration-150 hover:bg-purple hover:text-white md:text-sm"
-  >
-    {cta}
-  </Link>
+  ticketLink ? (
+    <a
+      href={ticketLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block rounded-full bg-white px-3 py-1 text-xs font-semibold text-purple shadow transition-colors duration-150 hover:bg-purple hover:text-white md:text-sm"
+    >
+      {cta}
+    </a>
+  ) : (
+    <span className="inline-block rounded-full bg-white/70 px-3 py-1 text-xs font-semibold text-purple opacity-70 md:text-sm">
+      {cta}
+    </span>
+  )
 );
 
 const CloseButton = ({ close }: { close: () => void }) => (

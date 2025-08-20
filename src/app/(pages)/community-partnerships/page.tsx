@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
 import Image from 'next/image';
 import { ExternalLink, Users, BookOpen, Shield, Camera } from 'lucide-react';
 
@@ -182,7 +181,7 @@ export default function CommunityPartnershipsPage() {
                   )}
 
                   <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                    <Link
+                    <a
                       href={partnership.website}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -190,13 +189,13 @@ export default function CommunityPartnershipsPage() {
                     >
                       Visit Website
                       <ExternalLink className="h-4 w-4" />
-                    </Link>
-                    <Link
+                    </a>
+                    <a
                       href={`mailto:${partnership.contact}`}
                       className="inline-flex items-center gap-2 border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors duration-200"
                     >
                       Contact Project
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -215,12 +214,12 @@ export default function CommunityPartnershipsPage() {
             If you&apos;re running an educational or community initiative that aligns with our values, 
             we&apos;d love to hear from you.
           </p>
-          <Link
+          <a
             href="mailto:hello@meetjs.pl"
             className="inline-flex items-center gap-2 bg-purple-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-purple-700 transition-colors duration-200"
           >
             Get in Touch
-          </Link>
+          </a>
         </div>
       </section>
     </div>
