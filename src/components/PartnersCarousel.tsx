@@ -6,7 +6,6 @@ import {
   CarouselContent,
   CarouselItem,
 } from '@/components/ui/carousel';
-import Link from 'next/link';
 import Image from 'next/image';
 import { PARTNERS } from '@/content/partners';
 
@@ -21,10 +20,11 @@ export const PartnersCarousel = () => {
       <CarouselContent className="items-center">
         {PARTNERS.map((partner) => (
           <CarouselItem className="basis-full md:basis-1/6" key={partner.alt}>
-            <Link
+            <a
               href={partner.href}
               className="flex items-center justify-center"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <Image
                 src={partner.src}
@@ -32,10 +32,11 @@ export const PartnersCarousel = () => {
                 width={114}
                 height={48}
               />
-            </Link>
+            </a>
           </CarouselItem>
         ))}
       </CarouselContent>
     </Carousel>
   );
 };
+

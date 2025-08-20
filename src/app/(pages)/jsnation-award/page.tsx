@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import type { Route } from 'next';
 import {
   ExternalLink,
   Heart,
@@ -154,19 +155,19 @@ export default function JSNationAwardPage() {
 
             <ul className="mb-6 list-inside list-disc space-y-1">
               <li>
-                <Link href="https://www.linkedin.com/in/cdynak/?utm_source=meetjs.pl&utm_medium=referral&utm_campaign=community">
+                <a href="https://www.linkedin.com/in/cdynak/?utm_source=meetjs.pl&utm_medium=referral&utm_campaign=community" target="_blank" rel="noopener noreferrer">
                   Cezary Dynak
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="https://www.linkedin.com/in/aleksandrapawlus/?utm_source=meetjs.pl&utm_medium=referral&utm_campaign=community">
+                <a href="https://www.linkedin.com/in/aleksandrapawlus/?utm_source=meetjs.pl&utm_medium=referral&utm_campaign=community" target="_blank" rel="noopener noreferrer">
                   Aleksandra Pawlus
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="https://www.linkedin.com/in/ssynowiecpl/?utm_source=meetjs.pl&utm_medium=referral&utm_campaign=community">
+                <a href="https://www.linkedin.com/in/ssynowiecpl/?utm_source=meetjs.pl&utm_medium=referral&utm_campaign=community" target="_blank" rel="noopener noreferrer">
                   Stanisław Synowiec
-                </Link>
+                </a>
               </li>
             </ul>
 
@@ -183,14 +184,14 @@ export default function JSNationAwardPage() {
             <p className="mt-6">
               P.S. We&apos;d also like to give a big shoutout to our friends at
               Gdańsk TypeScript Meetup Group, who were nominated for the{' '}
-              <Link
+              <a
                 href="https://osawards.com/react/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-yellow-600 hover:text-yellow-700"
               >
                 React Open Source Awards
-              </Link>{' '}
+              </a>{' '}
               in the Community of the Year category! Congratulations to them! 🎉
             </p>
           </div>
@@ -239,15 +240,15 @@ export default function JSNationAwardPage() {
             </div>
           </CardContent>
           <CardFooter className="flex-col items-start gap-2">
-            <Link
+            <a
               href="https://osawards.com/javascript/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 text-sm font-medium text-green-600 hover:text-green-700"
             >
               JavaScript Open Source Awards <ExternalLink className="h-3 w-3" />
-            </Link>
-            <Link
+            </a>
+            <a
               href="https://jsnation.com/"
               target="_blank"
               rel="noopener noreferrer"
@@ -255,7 +256,7 @@ export default function JSNationAwardPage() {
             >
               JSNation Conference
               <ExternalLink className="h-3 w-3" />
-            </Link>
+            </a>
           </CardFooter>
         </Card>
 
@@ -279,15 +280,13 @@ export default function JSNationAwardPage() {
               </div>
               <div className="mt-2 flex items-center gap-2">
                 <Heart className="h-4 w-4 text-muted-foreground" />
-                <p className="text-sm font-medium">
-                  Community-driven since 2011
-                </p>
+                <p className="text-sm font-medium">Community-driven since 2011</p>
               </div>
             </div>
           </CardContent>
           <CardFooter>
             <Link
-              href="/city/wroclaw"
+              href={"/city/wroclaw" as Route}
               className="inline-flex items-center gap-1 text-sm font-medium text-green-600 hover:text-green-700"
             >
               Learn more about meet.js Wrocław
@@ -311,14 +310,14 @@ export default function JSNationAwardPage() {
               </p>
             </CardContent>
             <CardFooter>
-              <Link
+              <a
                 href="https://www.meetup.com/javascript-london/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-xs font-medium text-yellow-600 hover:text-yellow-700"
               >
                 Visit Meetup Page <ExternalLink className="h-3 w-3" />
-              </Link>
+              </a>
             </CardFooter>
           </Card>
 
@@ -333,14 +332,14 @@ export default function JSNationAwardPage() {
               </p>
             </CardContent>
             <CardFooter>
-              <Link
+              <a
                 href="https://www.meetup.com/advancedjs-amsterdam/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-xs font-medium text-yellow-600 hover:text-yellow-700"
               >
                 Visit Meetup Page <ExternalLink className="h-3 w-3" />
-              </Link>
+              </a>
             </CardFooter>
           </Card>
 
@@ -356,14 +355,14 @@ export default function JSNationAwardPage() {
               </p>
             </CardContent>
             <CardFooter>
-              <Link
+              <a
                 href="https://www.meetup.com/copenhagenjs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-xs font-medium text-yellow-600 hover:text-yellow-700"
               >
                 Visit Meetup Page <ExternalLink className="h-3 w-3" />
-              </Link>
+              </a>
             </CardFooter>
           </Card>
         </div>
@@ -379,39 +378,39 @@ export default function JSNationAwardPage() {
             className="border-yellow-300 bg-yellow-100 text-yellow-700 hover:bg-yellow-200 hover:text-yellow-800"
             asChild
           >
-            <Link
+            <a
               href={`https://x.com/intent/tweet?text=${encodeURIComponent('WE WON! meet.js Wrocław is the JavaScript Open Source Awards Community of the Year 2025! 🏆 So proud of our amazing community! #MeetjsWroclaw #JSAwardsWinner #CommunityOfTheYear #JavaScript')}`}
               target="_blank"
               rel="noopener noreferrer"
             >
               Share on Twitter
-            </Link>
+            </a>
           </Button>
           <Button
             variant="outline"
             className="border-yellow-300 bg-yellow-100 text-yellow-700 hover:bg-yellow-200 hover:text-yellow-800"
             asChild
           >
-            <Link
+            <a
               href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://meet.js.pl/jsnation-award')}`}
               target="_blank"
               rel="noopener noreferrer"
             >
               Share on LinkedIn
-            </Link>
+            </a>
           </Button>
           <Button
             variant="outline"
             className="border-yellow-300 bg-yellow-100 text-yellow-700 hover:bg-yellow-200 hover:text-yellow-800"
             asChild
           >
-            <Link
+            <a
               href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://meet.js.pl/jsnation-award')}`}
               target="_blank"
               rel="noopener noreferrer"
             >
               Share on Facebook
-            </Link>
+            </a>
           </Button>
         </div>
       </div>

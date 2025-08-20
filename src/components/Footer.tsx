@@ -5,6 +5,7 @@ import { instagramLinksData } from '@/content/socialLinks';
 import { CITIES } from '@/content/cities';
 import { footerMenuLinks } from '@/content/menuLinks';
 import { FaRegEnvelope, FaArrowUpRightFromSquare } from 'react-icons/fa6';
+import type { Route } from 'next';
 
 export const Footer = () => {
   return (
@@ -29,13 +30,13 @@ export const Footer = () => {
                 </li>
               ))}
               <li>
-                <Link
+                <a
                   href="mailto:contact@meetjs.pl"
                   className="flex items-center gap-2 hover:text-gray-300"
                 >
                   <FaRegEnvelope />
                   contact@meetjs.pl
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -46,7 +47,7 @@ export const Footer = () => {
             <ul className="mt-4 space-y-2">
               {CITIES.map((city) => (
                 <li key={city.name}>
-                  <Link href={city.href} className="hover:text-gray-300">
+                  <Link href={city.href as Route} className="hover:text-gray-300">
                     {city.name}
                     {city.status && (
                       <span
@@ -71,19 +72,24 @@ export const Footer = () => {
             <ul className="mt-4 space-y-2">
               {footerMenuLinks.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="hover:text-gray-300"
-                    target={link.external ? '_blank' : undefined}
-                  >
-                    {link.name}
-                    {link.external && (
+                  {link.external ? (
+                    <a
+                      href={link.href}
+                      className="hover:text-gray-300"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {link.name}
                       <FaArrowUpRightFromSquare
                         className="mb-1 ml-2 inline-block h-3 w-3"
                         aria-hidden="true"
                       />
-                    )}
-                  </Link>
+                    </a>
+                  ) : (
+                    <Link href={link.href as Route} className="hover:text-gray-300">
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

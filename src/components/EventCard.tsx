@@ -1,5 +1,4 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import Link from 'next/link';
 import { buttonVariants } from '@/components/ui/button';
 import { FaClock, FaLocationDot } from 'react-icons/fa6';
 import type { EventType } from '@/types/event';
@@ -42,12 +41,14 @@ export const EventCard = ({ event }: EventCardProps) => {
       <CardHeader>
         <div className="flex items-start justify-between gap-2">
           <CardTitle>
-            <Link
+            <a
               href={event.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="transition-colors hover:text-purple dark:hover:text-green"
             >
               {event.name}
-            </Link>
+            </a>
           </CardTitle>
         </div>
         {eventDate.getTime() > 0 && (
@@ -97,7 +98,7 @@ export const EventCard = ({ event }: EventCardProps) => {
         </div>
 
         {isUpcoming && event.rsvp && (
-          <Link
+          <a
             href={event.rsvp}
             target="_blank"
             rel="noopener noreferrer"
@@ -109,7 +110,7 @@ export const EventCard = ({ event }: EventCardProps) => {
             )}
           >
             RSVP
-          </Link>
+          </a>
         )}
       </CardContent>
     </Card>

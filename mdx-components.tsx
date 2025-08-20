@@ -1,5 +1,5 @@
 import type { MDXComponents } from 'mdx/types';
-import Link, { LinkProps } from 'next/link';
+// MDX links can be external or internal; using <a> avoids typed routes constraints
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -38,11 +38,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         <>{children}</>
       </span>
     ),
-    a: (props) => (
-      <Link {...(props as LinkProps)} className="font-bold">
-        <>{props.children}</>
-      </Link>
-    ),
+    a: (props) => <a {...props} className="font-bold" />,
     ...components,
   };
 }
