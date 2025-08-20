@@ -54,7 +54,10 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "prepare": "husky",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "tolgee:pull": "tolgee pull",
+    "tolgee:push": "tolgee push",
+    "tolgee:sync": "tolgee sync"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.4",
