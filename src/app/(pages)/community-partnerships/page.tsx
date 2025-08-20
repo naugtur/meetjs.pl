@@ -12,7 +12,7 @@ import { getPartnerships } from '@/content/partnerships';
 
 export default async function CommunityPartnershipsPage() {
   const t = await getTranslate();
-  const partnerships = getPartnerships(t);
+  const partnerships = await getPartnerships();
 
   return (
     <div className="min-h-screen bg-gray-50">

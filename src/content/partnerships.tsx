@@ -1,4 +1,5 @@
 import { BookOpen, Bot } from 'lucide-react';
+import { getTranslate } from '@/tolgee/server';
 
 export interface Partnership {
   key: string;
@@ -24,7 +25,9 @@ export interface Partnership {
   };
 }
 
-export function getPartnerships(t: (key: string) => string): Partnership[] {
+export async function getPartnerships(): Promise<Partnership[]> {
+  const t = await getTranslate();
+
   const mlodzi4itDetails = [
     t('community_partnerships.partnerships.mlodzi4it.details.0'),
     t('community_partnerships.partnerships.mlodzi4it.details.1'),
@@ -45,7 +48,8 @@ export function getPartnerships(t: (key: string) => string): Partnership[] {
       key: 'futureconf',
       name: 'FutureConf 2025',
       website: 'https://futureconf.tech/',
-      description: 'Two-day AI conference in Kraków focused on "AI in Production" with industry experts and practical use cases.',
+      description:
+        'Two-day AI conference in Kraków focused on "AI in Production" with industry experts and practical use cases.',
       details: [
         'Expert talks on ML/AI, security, and practical AI production use cases',
         'Speakers from Hugging Face, Docker, Qdrant, mBank, and AGH University',
@@ -67,30 +71,30 @@ export function getPartnerships(t: (key: string) => string): Partnership[] {
         {
           src: 'https://futureconf.tech/assets/rozek.webp',
           alt: 'FutureConf 2024 conference atmosphere',
-          caption: 'Conference atmosphere with hundreds of AI enthusiasts'
+          caption: 'Conference atmosphere with hundreds of AI enthusiasts',
         },
         {
           src: 'https://futureconf.tech/assets/photobooth/uczestnik2.webp',
           alt: 'Conference speakers at FutureConf',
-          caption: 'Industry experts sharing AI knowledge'
+          caption: 'Industry experts sharing AI knowledge',
         },
         {
           src: 'https://futureconf.tech/assets/photobooth/uczestnik.webp',
           alt: 'Conference attendees networking',
-          caption: 'Active networking and knowledge exchange'
+          caption: 'Active networking and knowledge exchange',
         },
         {
           src: 'https://futureconf.tech/assets/ludzie-10.webp',
           alt: 'FutureConf community gathering',
-          caption: 'Building the AI community in Poland'
-        }
+          caption: 'Building the AI community in Poland',
+        },
       ],
       specialOffer: {
         title: 'Group Discount System',
         description: 'Up to 50% off through meet.js partnership',
         link: 'https://futureconf.tech/meetjs/',
-        linkText: 'Get Group Discount'
-      }
+        linkText: 'Get Group Discount',
+      },
     },
     {
       key: 'mlodzi4it',
