@@ -1,3 +1,4 @@
+import { getTranslate } from '@/tolgee/server';
 import { BookOpen } from 'lucide-react';
 
 export interface Partnership {
@@ -18,7 +19,9 @@ export interface Partnership {
   }[];
 }
 
-export function getPartnerships(t: (key: string) => string): Partnership[] {
+export async function getPartnerships(): Promise<Partnership[]> {
+  const t = await getTranslate();
+
   const mlodzi4itDetails = [
     t('community_partnerships.partnerships.mlodzi4it.details.0'),
     t('community_partnerships.partnerships.mlodzi4it.details.1'),
