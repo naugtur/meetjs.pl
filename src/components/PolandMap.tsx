@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { City } from '@/content/cities';
 import { Event } from '@/components/FeaturedEvents';
+import { getTranslate } from '@/tolgee/server';
 
 type MapProps = {
   cities: City[];
@@ -34,7 +35,8 @@ function getCityTextFillColor(status: City['status']): string {
   }
 }
 
-export const PolandMap = ({ cities, events = [] }: MapProps) => {
+export const PolandMap = async ({ cities, events = [] }: MapProps) => {
+  const t = await getTranslate();
   const now = new Date();
 
   const getCityEventStatus = (cityName: string) => {
@@ -148,11 +150,11 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
               <div className="absolute -inset-1 animate-pulse rounded-full border-2 border-[#9333ea] dark:border-green-500" />
             </div>
           </div>
-          <span>Active / upcoming / in progress</span>
+          <span>{t('poland_map.active_upcoming_progress')}</span>
         </div>
         <div className="flex items-center gap-2 whitespace-nowrap">
           <div className="h-2 w-2 rounded-full bg-[#2563eb]" />
-          <span>TypeScript Gdańsk</span>
+          <span>{t('poland_map.typescript_gdansk')}</span>
         </div>
         <div className="flex items-center gap-2 whitespace-nowrap">
           <div className="relative">
@@ -162,7 +164,7 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
               style={{ borderStyle: 'dashed' }}
             />
           </div>
-          <span>Coming soon!</span>
+          <span>{t('poland_map.coming_soon')}</span>
         </div>
         <div className="flex items-center gap-2 whitespace-nowrap">
           <div className="h-2 w-2 rounded-full bg-[#9CA3AF]" />
@@ -170,7 +172,7 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
             href="/how-to-become-an-organizer"
             className="hover:text-purple"
           >
-            Paused (join as organizer)
+            {t('poland_map.paused_join_organizer')}
           </Link>
         </div>
       </div>

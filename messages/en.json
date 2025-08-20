@@ -1,0 +1,353 @@
+{
+  "about": {
+    "activities": {
+      "charity": {
+        "description": "We partner with charity organizations, including",
+        "title": "Charity Partnerships"
+      },
+      "local_meetups": {
+        "description": "Regular local meetups across multiple Polish cities.",
+        "title": "Local Meetups"
+      },
+      "networking": {
+        "description": "Networking opportunities for JavaScript enthusiasts.",
+        "title": "Networking"
+      },
+      "summit": {
+        "conference_link": "conference",
+        "description": "Semi-annual",
+        "title": "meet.js Summit"
+      },
+      "tech_talks": {
+        "description": "Knowledge sharing sessions and tech talks.",
+        "title": "Tech Talks"
+      }
+    },
+    "contact_text": "Have questions? Reach out to us at",
+    "contact_title": "\uD83D\uDCE7 Contact Us",
+    "description": "meet.js is Poland's largest and longest-running JavaScript community, bringing together developers and enthusiasts since 2011.",
+    "features": {
+      "non_commercial": "100% Non-Commercial & Free",
+      "regular_meetups": "Regular meetups across Poland",
+      "summit": "Semi-annual meet.js Summit conference"
+    },
+    "get_involved_p1": "Whether you're a seasoned developer or just starting your journey with JavaScript, meet.js welcomes you to join our vibrant community.",
+    "get_involved_p2": "Find your local meet.js chapter or check out",
+    "get_involved_p3": "to help grow Poland's most resilient tech community!",
+    "get_involved_title": "\uD83D\uDC4B Get Involved",
+    "intro_p1": "meet.js is Poland's largest and longest-running JavaScript community, bringing together developers, enthusiasts, and industry experts since 2011.",
+    "intro_p2": "It all began on a Valentine's Day eve in 2011, when a group of JavaScript enthusiasts gathered in a Poznań pub. What started as a casual meetup has evolved into a nationwide movement that has shaped Poland's JavaScript ecosystem.",
+    "learn_more": "Learn more about us",
+    "meetup_caption": "One of our regular meetups in action",
+    "networking_caption": "Community networking",
+    "organizer_link": "how to become an organizer",
+    "organizers_caption": "Our amazing organizers team",
+    "page_title": "✨ About meet.js",
+    "summit_caption": "meet.js Summit conference",
+    "title": "About meet.js",
+    "values": {
+      "community_driven": "\uD83E\uDD1D Community-Driven - Powered by passionate local organizers across Poland",
+      "free_open": "✅ Free and Open - All our events are free and open to everyone interested in web technologies",
+      "knowledge_sharing": "\uD83D\uDCA1 Knowledge Sharing - Focus on practical learning and networking opportunities",
+      "non_commercial": "\uD83D\uDEAB\uD83D\uDCB0 100% Non-Commercial - We operate without corporate oversight or profit motives"
+    },
+    "values_title": "\uD83D\uDC8E Our Values",
+    "what_we_do_title": "\uD83D\uDE80 What We Do"
+  },
+  "events": {
+    "no_events": "No upcoming events in {city} at the moment.",
+    "upcoming_in_city": "Upcoming events in"
+  },
+  "example-key-in-client-component": "test EN",
+  "footer": {
+    "contact": "Contact us",
+    "copyright": "All rights reserved.",
+    "cities": "Cities",
+    "menu": "Menu",
+    "menu_links": {
+      "wdi_2025": "WDI 2025",
+      "summit": "Summit",
+      "events": "Events",
+      "about": "About",
+      "14_birthday": "14 Birthday",
+      "brand_assets": "Brand Assets",
+      "contact_link": "Contact",
+      "code_of_conduct": "Code of Conduct"
+    }
+  },
+  "brand": {
+    "title": "Brand Assets | meet.js",
+    "description": "Download meet.js brand assets, logos, and wallpapers for your use.",
+    "page_title": "Brand Assets",
+    "page_subtitle": "Download our logos, brand colors, and wallpapers for your projects and presentations.",
+    "official_logos": "Official Logos",
+    "colors": "Brand Colors",
+    "wallpapers": "Wallpapers",
+    "original_colors": "Original Colors (Obsolete)",
+    "usage_guidelines": "Usage Guidelines",
+    "usage_text": "Please use these assets responsibly and in accordance with our brand guidelines. For commercial use or questions about usage, please contact us.",
+    "github_link": "View on GitHub",
+    "page_contents": "Page Contents",
+    "brand_usage_rules": "Brand usage rules",
+    "logos_section": "Logos",
+    "official_print_variants": "Official & print variants",
+    "current_legacy_colors": "Current & legacy colors",
+    "desktop_backgrounds": "Desktop backgrounds",
+    "brand_usage_guidelines": "Brand Usage Guidelines",
+    "usage_intro": "Please use these brand assets responsibly. Here are the key guidelines:",
+    "allowed_uses": "Permitted Uses",
+    "prohibited_uses": "Prohibited Uses",
+    "contact_for_questions": "For questions about usage or licensing, please contact us at",
+    "brand_name_note": "Brand Name Usage",
+    "brand_name_lowercase": "Always write \"meet.js\" with lowercase letters, including the \"m\" at the beginning.",
+    "allowed_list": {
+      "educational": "Educational content and presentations about meet.js",
+      "community": "Community projects and meetup organization",
+      "social_media": "Social media posts promoting meet.js events",
+      "press": "Press and media coverage with proper attribution"
+    },
+    "prohibited_list": {
+      "commercial": "Commercial use without permission",
+      "modification": "Modifying or altering the logos",
+      "misleading": "Using in a way that suggests official endorsement",
+      "inappropriate": "Association with inappropriate or offensive content"
+    },
+    "logo_usage_guidelines": "Logo Usage Guidelines",
+    "logo_variants_intro": "The meet.js logo is available in two main variants: light (official) and bold. Each variant serves different purposes and use cases:",
+    "light_logos_official": "Light Logos (Official)",
+    "light_logos_description": "The official meet.js logo designed for digital use and is the primary logo for meet.js.",
+    "light_logos_use_1": "Primary choice for digital applications",
+    "light_logos_use_2": "Websites, social media, presentations",
+    "light_logos_use_3": "Available in SVG and PNG formats",
+    "light_logos_use_4": "Includes square variants for icons",
+    "bold_logos_print": "Bold Logos (Print)",
+    "bold_logos_description": "Bold variant for prints and places where the official light logo would not be visible enough.",
+    "bold_logos_use_1": "Print materials and merchandise",
+    "bold_logos_use_2": "High-contrast backgrounds",
+    "bold_logos_use_3": "Small sizes where visibility matters",
+    "bold_logos_use_4": "Available in SVG and PNG formats",
+    "light_logos": "Light Logos",
+    "bold_logos": "Bold Logos",
+    "bold_print_logos": "Bold Print Logos",
+    "legacy_logos_obsolete": "Legacy Logos (Obsolete)",
+    "view_complete_collection_github": "View complete collection on GitHub",
+    "current_colors_post_2023": "Current Colors (Post 2023)",
+    "original_colors_obsolete": "Original Colors (Obsolete)",
+    "hex": "HEX",
+    "rgb": "RGB",
+    "dimensions": "Dimensions",
+    "download": "Download",
+    "format": "Format",
+    "size": "Size"
+  },
+  "logo_component": {
+    "context_menu_title": "meet.js Logo",
+    "context_menu_subtitle": "Want to download our logo?",
+    "go_to_brand_assets": "Go to Brand Assets"
+  },
+  "discord_widget": {
+    "connect_with_developers": "Connect with JavaScript developers"
+  },
+  "poland_map": {
+    "coming_soon": "Coming soon!",
+    "paused_join_organizer": "Paused (join as organizer)",
+    "active_upcoming_progress": "Active / upcoming / in progress",
+    "typescript_gdansk": "TypeScript Gdańsk"
+  },
+  "featured_events": {
+    "title": "Upcoming Events",
+    "subtitle": "Don't miss these!",
+    "all_events": "All events"
+  },
+  "empty_events_alert": {
+    "message": "Nothing planned yet. Contact your local organizers if you want to help make it happen!"
+  },
+  "events_api_partner": {
+    "powered_by": "Events API powered by"
+  },
+  "hello_world": "Hello World",
+  "hero": {
+    "cta": "Find Your Local Meetup",
+    "follow_us": "Follow us",
+    "join_discord": "Join Discord",
+    "ranking_banner": "#1 Tech Event Series in Poland (Crossweb 2024)",
+    "subtitle": "Join the largest JavaScript meetup community in Poland",
+    "title": "meet.js"
+  },
+  "join_us": {
+    "click_city": "Click your city to learn how to join your local event as an attendee, speaker or sponsor.",
+    "description": "meet.js is a family of local meetups all around Poland. They're for-community and by-community, non-commercial and organized by passionate individuals. Free to attend or for-charity. With the main goal of getting the Web Developers community together and facilitating knowledge exchange and camraderie.",
+    "discord_title": "Join our Discord Community",
+    "start_local": "If you don't see your city on the map, consider starting a local meet.js!",
+    "title": "Join Us"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "events": "Events",
+    "contact": "Contact",
+    "menu_items": {
+      "30_years_js": "🎉 30 Years of JS",
+      "summit": "summit",
+      "cities": "🏙️ cities",
+      "discounts": "💰 discounts",
+      "about": "about",
+      "wdi_2025": "WDI 2025",
+      "14_birthday": "14 birthday",
+      "brand_assets": "brand assets",
+      "code_of_conduct": "code of conduct"
+    },
+    "dropdown": {
+      "all_cities": "All Cities",
+      "cities_label": "Cities",
+      "all_discounts": "All Discounts",
+      "event_discounts": "Event Discounts",
+      "software_discounts": "Software Discounts",
+      "learning_discounts": "Learning Discounts",
+      "about_meetjs": "About meet.js",
+      "our_team": "Our Team",
+      "sponsors": "Sponsors",
+      "community_partnerships": "Community Partnerships",
+      "brand_assets": "Brand Assets",
+      "code_of_conduct": "Code of Conduct",
+      "coming_soon": "(Coming Soon)"
+    }
+  },
+  "organizer": {
+    "benefits": {
+      "access": "Access to other organizers and their experience",
+      "brand_access": "Access to the brand and the social media presence we have",
+      "intro_call": "Intro call with Zbyszek with all the knowledge you need to get the first meetup to happen",
+      "network": "Exposure to our network, including speakers that might want to visit your city",
+      "sponsor_help": "Help when talking to sponsors and venues"
+    },
+    "benefits_title": "What you'll get:",
+    "contact_email": "contact@meetjs.pl",
+    "contact_heading": "To start, reach out to",
+    "contact_subject": "with the subject \"meet.js YOURCITY\"",
+    "intro_p1": "Do you wish to become an organizer and you need some help getting started? That's what we're here for!",
+    "intro_p2": "If there's a meet.js in your city already, get in touch with the organizers to see how you can join.",
+    "intro_p3": "If your city has a JavaScript crowd that's not organized yet or the local meetups are hosted by companies for short-term commercial or hiring reasons, you should definitely set up a meet.js in your city.",
+    "meta_description": "How to become an organizer for meet.js.",
+    "meta_title": "How to become an organizer | meet.js",
+    "no_benefits": {
+      "money": "Money or anything of notable commercial value"
+    },
+    "no_benefits_title": "What you don't get:",
+    "page_title": "How to become an organizer",
+    "requirements": {
+      "involvement": "Some involvement with JavaScript and programming community (being a dev yourself and enthusiastic about other humans)",
+      "non_commercial": "No commercial interest or a company backing your engagement as an organizer",
+      "time": "A bit of time and ambition"
+    },
+    "requirements_title": "What you need to have:"
+  },
+  "discounts": {
+    "page_title": "Community Discounts",
+    "meta_title": "Exclusive Discounts | meet.js",
+    "meta_description": "Exclusive discounts on courses, software tools, and event tickets for the meet.js community.",
+    "subtitle": "Exclusive discounts on software tools and event tickets for the meet.js community. Take advantage of these limited-time opportunities!",
+    "benefits_card": {
+      "title": "Exclusive Community Benefits",
+      "description": "As a valued member of the meet.js community, you have access to these special discounts from our partners.",
+      "events": {
+        "title": "Events & Conferences",
+        "description": "Special pricing for conferences, workshops, and meetups around the world"
+      },
+      "software": {
+        "title": "Software & Tools",
+        "description": "Premium developer tools, IDEs, and services at exclusive rates"
+      },
+      "learning": {
+        "title": "Courses & Learning",
+        "description": "Discounts on courses, books, and educational content from top instructors"
+      },
+      "note": "All discounts are time-limited and subject to partner terms and conditions. Check expiration dates before redeeming.",
+      "note_label": "Note:"
+    },
+    "sections": {
+      "events": "Events & Conferences",
+      "software": "Software & Tools",
+      "learning": "Courses & Learning"
+    }
+  },
+  "events_page": {
+    "meta_title": "All Events | meet.js",
+    "meta_description": "All meet.js events in one place.",
+    "page_title": "All events",
+    "subtitle": "All meet.js events in one place. Check past and upcoming meetups.",
+    "upcoming_events": "Upcoming events",
+    "past_events": "Past events",
+    "filter": {
+      "filter_by_city": "Filter events by city",
+      "all": "All",
+      "online": "On-line",
+      "events_not_found": "Events not found",
+      "loading": "Loading..."
+    }
+  },
+  "stats": {
+    "cities": "cities",
+    "since": "since",
+    "summits": "summits"
+  },
+  "community_partnerships": {
+    "meta_title": "Community Partnerships | meet.js",
+    "meta_description": "Educational and community initiatives supported by meet.js - building a stronger tech community together.",
+    "page_title": "Community Partnerships",
+    "subtitle": "Supporting educational initiatives and community projects that strengthen the tech ecosystem",
+    "our_partners_title": "Our Community Partners",
+    "our_partners_description": "We proudly support educational and community initiatives that align with our mission of building a stronger, more inclusive tech community.",
+    "what_they_do": "What They Do",
+    "their_goals": "Their Goals",
+    "workshop_photos": "Workshop Photos",
+    "visit_website": "Visit Website",
+    "contact_project": "Contact Project",
+    "cta_title": "Want to Partner With Us?",
+    "cta_description": "If you're running an educational or community initiative that aligns with our values, we'd love to hear from you.",
+    "get_in_touch": "Get in Touch",
+    "partnerships": {
+      "mlodzi4it": {
+        "name": "Młodzi 4IT 2.0",
+        "description": "Educational project focused on digital awareness and safe technology usage for youth and seniors.",
+        "location": "Bielsko-Biała and surrounding areas",
+        "details": {
+          "0": "Free educational workshops in schools, libraries, and cultural centers",
+          "1": "Personal data protection and internet privacy education",
+          "2": "Responsible AI usage training",
+          "3": "Cybercrime prevention (including phone scams and fake messages)",
+          "4": "Creating free educational materials (flyers, quizzes, e-books, presentations)"
+        },
+        "goals": {
+          "0": "Building digital awareness among children and seniors",
+          "1": "Teaching safe internet usage and data protection",
+          "2": "Explaining AI technology and its responsible use",
+          "3": "Preventing cybercrime through education"
+        },
+        "photos": {
+          "0": {
+            "alt": "Młodzi 4IT workshop with students in classroom",
+            "caption": "Educational workshop on digital awareness and cybersecurity"
+          },
+          "1": {
+            "alt": "Interactive presentation about AI and technology",
+            "caption": "Teaching responsible AI usage to young students"
+          },
+          "2": {
+            "alt": "Students participating in cybersecurity training",
+            "caption": "Hands-on cybersecurity education session"
+          },
+          "3": {
+            "alt": "Group activity during digital literacy workshop",
+            "caption": "Interactive learning about internet safety"
+          },
+          "4": {
+            "alt": "Młodzi 4IT team presenting educational materials",
+            "caption": "Presenting educational materials and resources"
+          }
+        }
+      }
+    }
+  },
+  "welcome": "Welcome to meet.js"
+}

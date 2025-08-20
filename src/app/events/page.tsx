@@ -7,11 +7,16 @@ import { EmptyEventsAlert } from '@/components/EmptyEventsAlert';
 import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
 import { changeCityName } from '@/utils/changeCityName';
 import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
+import { getTranslate } from '@/tolgee/server';
 
-export const metadata: Metadata = {
-  title: 'All Events | meet.js',
-  description: 'All meet.js events in one place.',
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslate();
+
+  return {
+    title: t('events_page.meta_title'),
+    description: t('events_page.meta_description'),
+  };
+}
 
 const getPastEvents = async () => {
   try {
@@ -45,6 +50,7 @@ const EventsPage = async ({ searchParams }: EventsPageProps) => {
   const city = resolvedSearchParams?.city ?? null;
   const upcomingEvents = await getUpcomingEvents();
   const pastEvents = await getPastEvents();
+  const t = await getTranslate();
 
   // Merge additional events with upcomingEvents
   const allUpcomingEvents = [...(upcomingEvents || []), ...ADDITIONAL_EVENTS];
@@ -52,15 +58,15 @@ const EventsPage = async ({ searchParams }: EventsPageProps) => {
   return (
     <main className="mx-auto flex min-h-screen max-w-7xl flex-col items-center gap-6 p-5 px-5 sm:px-6 lg:px-8">
       <section className="flex w-full flex-col items-center justify-center gap-6">
-        <h1 className="py-4 text-4xl font-bold">All events</h1>
+        <h1 className="py-4 text-4xl font-bold">{t('events_page.page_title')}</h1>
         <p className="text-center text-lg">
-          All meet.js events in one place. Check past and upcoming meetups.
+          {t('events_page.subtitle')}
         </p>
         <EventsAPIPartner />
       </section>
 
       <section className="flex w-full flex-col items-center justify-center gap-6">
-        <h2 className="text-2xl font-bold">Upcoming events</h2>
+        <h2 className="text-2xl font-bold">{t('events_page.upcoming_events')}</h2>
         {allUpcomingEvents.length > 0 ? (
           <FilterEvents events={allUpcomingEvents} filter={city} />
         ) : (
@@ -69,7 +75,7 @@ const EventsPage = async ({ searchParams }: EventsPageProps) => {
       </section>
 
       <section className="flex w-full flex-col items-center justify-center gap-6">
-        <h2 className="text-2xl font-bold">Past events</h2>
+        <h2 className="text-2xl font-bold">{t('events_page.past_events')}</h2>
         <FilterEvents events={pastEvents} filter={city} />
       </section>
     </main>
