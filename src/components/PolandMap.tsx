@@ -9,14 +9,12 @@ type MapProps = {
 
 function getCityFillColor(status: City['status']): string {
   switch (status) {
-    case 'typescript':
-      return '#2563eb';
     case 'active':
+    case 'new':
       return '#219eab';
     case 'coming-soon':
       return '#EAB308';
-    case 'new':
-      return '#219eab';
+    case 'paused':
     default:
       return '#9CA3AF';
   }
@@ -25,10 +23,10 @@ function getCityFillColor(status: City['status']): string {
 function getCityTextFillColor(status: City['status']): string {
   switch (status) {
     case 'active':
-    case 'typescript':
     case 'coming-soon':
     case 'new':
       return '#2b1932';
+    case 'paused':
     default:
       return '#6B7280';
   }
@@ -77,14 +75,34 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
               <g key={index}>
                 <Link href={city.href}>
                   <g className="city-marker group">
-                    {/* City dot */}
-                    <circle
-                      cx={city.pointPosition.x}
-                      cy={city.pointPosition.y}
-                      r="3"
-                      fill={getCityFillColor(city.status)}
-                      className="cursor-pointer hover:opacity-80"
-                    />
+                    {/* City dot - split if has additional events */}
+                    {eventStatus !== 'none' ? (
+                      <foreignObject
+                        x={city.pointPosition.x - 3}
+                        y={city.pointPosition.y - 3}
+                        width="6"
+                        height="6"
+                        className="cursor-pointer hover:opacity-80"
+                      >
+                        <div className="flex h-[6px] w-[6px]">
+                          <div
+                            className="h-[6px] w-[3px] rounded-l-full"
+                            style={{
+                              backgroundColor: getCityFillColor(city.status),
+                            }}
+                          />
+                          <div className="h-[6px] w-[3px] rounded-r-full bg-[#9333ea]" />
+                        </div>
+                      </foreignObject>
+                    ) : (
+                      <circle
+                        cx={city.pointPosition.x}
+                        cy={city.pointPosition.y}
+                        r="3"
+                        fill={getCityFillColor(city.status)}
+                        className="cursor-pointer hover:opacity-80"
+                      />
+                    )}
 
                     {/* Event status circle */}
                     {eventStatus !== 'none' && (
@@ -144,15 +162,14 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
               <div className="absolute -inset-1 rounded-full border border-[#219eab]" />
             </div>
             <div className="relative">
-              <div className="h-2 w-2 rounded-full bg-[#219eab]" />
+              <div className="flex h-2 w-2">
+                <div className="h-2 w-1 rounded-l-full bg-[#219eab]" />
+                <div className="h-2 w-1 rounded-r-full bg-[#9333ea]" />
+              </div>
               <div className="absolute -inset-1 animate-pulse rounded-full border-2 border-[#9333ea] dark:border-green-500" />
             </div>
           </div>
-          <span>Active / upcoming / in progress</span>
-        </div>
-        <div className="flex items-center gap-2 whitespace-nowrap">
-          <div className="h-2 w-2 rounded-full bg-[#2563eb]" />
-          <span>TypeScript Gdańsk</span>
+          <span>Active / with upcoming / with in-progress events</span>
         </div>
         <div className="flex items-center gap-2 whitespace-nowrap">
           <div className="relative">
