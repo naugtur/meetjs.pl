@@ -19,4 +19,19 @@ export const ADDITIONAL_EVENTS: Event[] = [
     serie: 'TypeScript',
     topic: ['TypeScript', 'JavaScript'],
   },
+  {
+    type: 'Meetup',
+    id: 99999, // unique id
+    date_add: Date.now(),
+    date: '02.09.2025',
+    time: '18:00',
+    name: 'AI Meetup in Wroclaw with Callstack & Vercel',
+    url: 'https://www.callstack.com/events/ai-meetup-in-wroclaw-first-edition',
+    rsvp: 'https://www.callstack.com/events/ai-meetup-in-wroclaw-first-edition',
+    city: 'Wrocław',
+    address: 'Concordia Design',
+    image: '',
+    serie: 'AI',
+    topic: ['AI', 'React Native', 'JavaScript', 'React'],
+  },
 ];
