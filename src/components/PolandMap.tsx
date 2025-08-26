@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { City } from '@/content/cities';
 import { Event } from '@/components/FeaturedEvents';
+import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
 
 type MapProps = {
   cities: City[];
@@ -55,6 +56,10 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
     return 'none';
   };
 
+  const hasPartnershipEvent = (cityName: string) => {
+    return ADDITIONAL_EVENTS.some((event) => event.city === cityName);
+  };
+
   return (
     <div className="flex flex-col gap-2">
       <div className="relative h-full">
@@ -71,12 +76,13 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
           />
           {cities.map((city, index) => {
             const eventStatus = getCityEventStatus(city.name);
+            const hasPartnership = hasPartnershipEvent(city.name);
             return (
               <g key={index}>
                 <Link href={city.href}>
                   <g className="city-marker group">
-                    {/* City dot - split if has additional events */}
-                    {eventStatus !== 'none' ? (
+                    {/* City dot - split if has partnership events */}
+                    {eventStatus !== 'none' && hasPartnership ? (
                       <foreignObject
                         x={city.pointPosition.x - 3}
                         y={city.pointPosition.y - 3}
