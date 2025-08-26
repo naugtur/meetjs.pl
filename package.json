@@ -57,7 +57,7 @@
     "@headlessui/react": "^2.2.4",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
-    "@next/mdx": "15.4.1",
+    "@next/mdx": "15.4.6",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-dropdown-menu": "2.1.15",
     "@radix-ui/react-slot": "1.2.3",
@@ -71,10 +71,10 @@
     "embla-carousel-react": "^8.6.0",
     "lucide-react": "^0.525.0",
     "motion": "^12.23.0",
-    "next": "15.4.1",
-    "react": "19.1.0",
+    "next": "15.4.6",
+    "react": "19.1.1",
     "react-confetti": "^6.4.0",
-    "react-dom": "19.1.0",
+    "react-dom": "19.1.1",
     "react-icons": "^5.5.0",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
@@ -86,12 +86,12 @@
     "@testing-library/react": "^16.3.0",
     "@types/mdx": "^2.0.13",
     "@types/node": "^22.3.0",
-    "@types/react": "19.1.8",
-    "@types/react-dom": "19.1.6",
+    "@types/react": "19.1.10",
+    "@types/react-dom": "19.1.7",
     "@vitejs/plugin-react": "^4.4.0",
     "babel-plugin-react-compiler": "19.1.0-rc.2",
     "eslint": "9.31.0",
-    "eslint-config-next": "15.4.1",
+    "eslint-config-next": "15.4.6",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react-compiler": "19.1.0-rc.2",
     "eslint-plugin-react-hooks": "5.2.0",
@@ -115,8 +115,8 @@
   "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0",
   "pnpm": {
     "overrides": {
-      "@types/react": "19.1.8",
-      "@types/react-dom": "19.1.6"
+      "@types/react": "19.1.10",
+      "@types/react-dom": "19.1.7"
     }
   }
 }
