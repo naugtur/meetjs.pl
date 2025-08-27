@@ -34,4 +34,19 @@ export const ADDITIONAL_EVENTS: Event[] = [
     serie: 'AI',
     topic: ['AI', 'React Native', 'JavaScript', 'React'],
   },
+  {
+    type: 'Conference',
+    id: 100000, // unique id
+    date_add: Date.now(),
+    date: '27.10.2025',
+    time: '8:30',
+    name: 'FutureConf 2025',
+    url: 'https://futureconf.tech/',
+    rsvp: 'https://futureconf.tech/',
+    city: 'Kraków',
+    address: 'Międzynarodowe Centrum Kultury\nRynek Główny 25',
+    image: '',
+    serie: 'AI & Future Tech',
+    topic: ['AI', 'Machine Learning', 'JavaScript', 'Future Technologies'],
+  },
 ];
