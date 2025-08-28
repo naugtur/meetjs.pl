@@ -54,116 +54,236 @@
     "values_title": "\uD83D\uDC8E Our Values",
     "what_we_do_title": "\uD83D\uDE80 What We Do"
   },
-  "events": {
-    "no_events": "No upcoming events in {city} at the moment.",
-    "upcoming_in_city": "Upcoming events in"
-  },
-  "example-key-in-client-component": "test EN",
-  "footer": {
-    "contact": "Contact us",
-    "copyright": "All rights reserved.",
-    "cities": "Cities",
-    "menu": "Menu",
-    "menu_links": {
-      "wdi_2025": "WDI 2025",
-      "summit": "Summit",
-      "events": "Events",
-      "about": "About",
-      "14_birthday": "14 Birthday",
-      "brand_assets": "Brand Assets",
-      "contact_link": "Contact",
-      "code_of_conduct": "Code of Conduct"
-    }
-  },
   "brand": {
-    "title": "Brand Assets | meet.js",
-    "description": "Download meet.js brand assets, logos, and wallpapers for your use.",
-    "page_title": "Brand Assets",
-    "page_subtitle": "Download our logos, brand colors, and wallpapers for your projects and presentations.",
-    "official_logos": "Official Logos",
-    "colors": "Brand Colors",
-    "wallpapers": "Wallpapers",
-    "original_colors": "Original Colors (Obsolete)",
-    "usage_guidelines": "Usage Guidelines",
-    "usage_text": "Please use these assets responsibly and in accordance with our brand guidelines. For commercial use or questions about usage, please contact us.",
-    "github_link": "View on GitHub",
-    "page_contents": "Page Contents",
-    "brand_usage_rules": "Brand usage rules",
-    "logos_section": "Logos",
-    "official_print_variants": "Official & print variants",
-    "current_legacy_colors": "Current & legacy colors",
-    "desktop_backgrounds": "Desktop backgrounds",
-    "brand_usage_guidelines": "Brand Usage Guidelines",
-    "usage_intro": "Please use these brand assets responsibly. Here are the key guidelines:",
-    "allowed_uses": "Permitted Uses",
-    "prohibited_uses": "Prohibited Uses",
-    "contact_for_questions": "For questions about usage or licensing, please contact us at",
-    "brand_name_note": "Brand Name Usage",
-    "brand_name_lowercase": "Always write \"meet.js\" with lowercase letters, including the \"m\" at the beginning.",
     "allowed_list": {
-      "educational": "Educational content and presentations about meet.js",
       "community": "Community projects and meetup organization",
-      "social_media": "Social media posts promoting meet.js events",
-      "press": "Press and media coverage with proper attribution"
+      "educational": "Educational content and presentations about meet.js",
+      "press": "Press and media coverage with proper attribution",
+      "social_media": "Social media posts promoting meet.js events"
     },
-    "prohibited_list": {
-      "commercial": "Commercial use without permission",
-      "modification": "Modifying or altering the logos",
-      "misleading": "Using in a way that suggests official endorsement",
-      "inappropriate": "Association with inappropriate or offensive content"
-    },
-    "logo_usage_guidelines": "Logo Usage Guidelines",
-    "logo_variants_intro": "The meet.js logo is available in two main variants: light (official) and bold. Each variant serves different purposes and use cases:",
-    "light_logos_official": "Light Logos (Official)",
-    "light_logos_description": "The official meet.js logo designed for digital use and is the primary logo for meet.js.",
-    "light_logos_use_1": "Primary choice for digital applications",
-    "light_logos_use_2": "Websites, social media, presentations",
-    "light_logos_use_3": "Available in SVG and PNG formats",
-    "light_logos_use_4": "Includes square variants for icons",
-    "bold_logos_print": "Bold Logos (Print)",
+    "allowed_uses": "Permitted Uses",
+    "bold_logos": "Bold Logos",
     "bold_logos_description": "Bold variant for prints and places where the official light logo would not be visible enough.",
+    "bold_logos_print": "Bold Logos (Print)",
     "bold_logos_use_1": "Print materials and merchandise",
     "bold_logos_use_2": "High-contrast backgrounds",
     "bold_logos_use_3": "Small sizes where visibility matters",
     "bold_logos_use_4": "Available in SVG and PNG formats",
-    "light_logos": "Light Logos",
-    "bold_logos": "Bold Logos",
     "bold_print_logos": "Bold Print Logos",
-    "legacy_logos_obsolete": "Legacy Logos (Obsolete)",
-    "view_complete_collection_github": "View complete collection on GitHub",
+    "brand_name_lowercase": "Always write \"meet.js\" with lowercase letters, including the \"m\" at the beginning.",
+    "brand_name_note": "Brand Name Usage",
+    "brand_usage_guidelines": "Brand Usage Guidelines",
+    "brand_usage_rules": "Brand usage rules",
+    "colors": "Brand Colors",
+    "contact_for_questions": "For questions about usage or licensing, please contact us at",
     "current_colors_post_2023": "Current Colors (Post 2023)",
-    "original_colors_obsolete": "Original Colors (Obsolete)",
-    "hex": "HEX",
-    "rgb": "RGB",
+    "current_legacy_colors": "Current & legacy colors",
+    "description": "Download meet.js brand assets, logos, and wallpapers for your use.",
+    "desktop_backgrounds": "Desktop backgrounds",
     "dimensions": "Dimensions",
     "download": "Download",
     "format": "Format",
-    "size": "Size"
+    "github_link": "View on GitHub",
+    "hex": "HEX",
+    "legacy_logos_obsolete": "Legacy Logos (Obsolete)",
+    "light_logos": "Light Logos",
+    "light_logos_description": "The official meet.js logo designed for digital use and is the primary logo for meet.js.",
+    "light_logos_official": "Light Logos (Official)",
+    "light_logos_use_1": "Primary choice for digital applications",
+    "light_logos_use_2": "Websites, social media, presentations",
+    "light_logos_use_3": "Available in SVG and PNG formats",
+    "light_logos_use_4": "Includes square variants for icons",
+    "logos_section": "Logos",
+    "logo_usage_guidelines": "Logo Usage Guidelines",
+    "logo_variants_intro": "The meet.js logo is available in two main variants: light (official) and bold. Each variant serves different purposes and use cases:",
+    "official_logos": "Official Logos",
+    "official_print_variants": "Official & print variants",
+    "original_colors": "Original Colors (Obsolete)",
+    "original_colors_obsolete": "Original Colors (Obsolete)",
+    "page_contents": "Page Contents",
+    "page_subtitle": "Download our logos, brand colors, and wallpapers for your projects and presentations.",
+    "page_title": "Brand Assets",
+    "prohibited_list": {
+      "commercial": "Commercial use without permission",
+      "inappropriate": "Association with inappropriate or offensive content",
+      "misleading": "Using in a way that suggests official endorsement",
+      "modification": "Modifying or altering the logos"
+    },
+    "prohibited_uses": "Prohibited Uses",
+    "rgb": "RGB",
+    "size": "Size",
+    "title": "Brand Assets | meet.js",
+    "usage_guidelines": "Usage Guidelines",
+    "usage_intro": "Please use these brand assets responsibly. Here are the key guidelines:",
+    "usage_text": "Please use these assets responsibly and in accordance with our brand guidelines. For commercial use or questions about usage, please contact us.",
+    "view_complete_collection_github": "View complete collection on GitHub",
+    "wallpapers": "Wallpapers"
   },
-  "logo_component": {
-    "context_menu_title": "meet.js Logo",
-    "context_menu_subtitle": "Want to download our logo?",
-    "go_to_brand_assets": "Go to Brand Assets"
+  "community_partnerships": {
+    "contact_project": "Contact Project",
+    "cta_description": "If you're running an educational or community initiative that aligns with our values, we'd love to hear from you.",
+    "cta_title": "Want to Partner With Us?",
+    "get_in_touch": "Get in Touch",
+    "meta_description": "Educational and community initiatives supported by meet.js - building a stronger tech community together.",
+    "meta_title": "Community Partnerships | meet.js",
+    "our_partners_description": "We proudly support educational and community initiatives that align with our mission of building a stronger, more inclusive tech community.",
+    "our_partners_title": "Our Community Partners",
+    "page_title": "Community Partnerships",
+    "partnerships": {
+      "mlodzi4it": {
+        "description": "Educational project focused on digital awareness and safe technology usage for youth and seniors.",
+        "details": {
+          "0": "Free educational workshops in schools, libraries, and cultural centers",
+          "1": "Personal data protection and internet privacy education",
+          "2": "Responsible AI usage training",
+          "3": "Cybercrime prevention (including phone scams and fake messages)",
+          "4": "Creating free educational materials (flyers, quizzes, e-books, presentations)"
+        },
+        "details[0]": "Free educational workshops in schools, libraries, and cultural centers",
+        "details[1]": "Personal data protection and internet privacy education",
+        "details[2]": "Responsible AI usage training",
+        "details[3]": "Cybercrime prevention (including phone scams and fake messages)",
+        "details[4]": "Creating free educational materials (flyers, quizzes, e-books, presentations)",
+        "goals": {
+          "0": "Building digital awareness among children and seniors",
+          "1": "Teaching safe internet usage and data protection",
+          "2": "Explaining AI technology and its responsible use",
+          "3": "Preventing cybercrime through education"
+        },
+        "goals[0]": "Building digital awareness among children and seniors",
+        "goals[1]": "Teaching safe internet usage and data protection",
+        "goals[2]": "Explaining AI technology and its responsible use",
+        "goals[3]": "Preventing cybercrime through education",
+        "location": "Bielsko-Biała and surrounding areas",
+        "name": "Młodzi 4IT 2.0",
+        "photos": {
+          "0": {
+            "alt": "Młodzi 4IT workshop with students in classroom",
+            "caption": "Educational workshop on digital awareness and cybersecurity"
+          },
+          "1": {
+            "alt": "Interactive presentation about AI and technology",
+            "caption": "Teaching responsible AI usage to young students"
+          },
+          "2": {
+            "alt": "Students participating in cybersecurity training",
+            "caption": "Hands-on cybersecurity education session"
+          },
+          "3": {
+            "alt": "Group activity during digital literacy workshop",
+            "caption": "Interactive learning about internet safety"
+          },
+          "4": {
+            "alt": "Młodzi 4IT team presenting educational materials",
+            "caption": "Presenting educational materials and resources"
+          }
+        },
+        "photos[0]": {
+          "alt": "Młodzi 4IT workshop with students in classroom",
+          "caption": "Educational workshop on digital awareness and cybersecurity"
+        },
+        "photos[1]": {
+          "alt": "Interactive presentation about AI and technology",
+          "caption": "Teaching responsible AI usage to young students"
+        },
+        "photos[2]": {
+          "alt": "Students participating in cybersecurity training",
+          "caption": "Hands-on cybersecurity education session"
+        },
+        "photos[3]": {
+          "alt": "Group activity during digital literacy workshop",
+          "caption": "Interactive learning about internet safety"
+        },
+        "photos[4]": {
+          "alt": "Młodzi 4IT team presenting educational materials",
+          "caption": "Presenting educational materials and resources"
+        }
+      }
+    },
+    "subtitle": "Supporting educational initiatives and community projects that strengthen the tech ecosystem",
+    "their_goals": "Their Goals",
+    "visit_website": "Visit Website",
+    "what_they_do": "What They Do",
+    "workshop_photos": "Workshop Photos"
   },
   "discord_widget": {
     "connect_with_developers": "Connect with JavaScript developers"
   },
-  "poland_map": {
-    "coming_soon": "Coming soon!",
-    "paused_join_organizer": "Paused (join as organizer)",
-    "active_upcoming_progress": "Active / upcoming / in progress",
-    "typescript_gdansk": "TypeScript Gdańsk"
-  },
-  "featured_events": {
-    "title": "Upcoming Events",
-    "subtitle": "Don't miss these!",
-    "all_events": "All events"
+  "discounts": {
+    "benefits_card": {
+      "description": "As a valued member of the meet.js community, you have access to these special discounts from our partners.",
+      "events": {
+        "description": "Special pricing for conferences, workshops, and meetups around the world",
+        "title": "Events & Conferences"
+      },
+      "learning": {
+        "description": "Discounts on courses, books, and educational content from top instructors",
+        "title": "Courses & Learning"
+      },
+      "note": "All discounts are time-limited and subject to partner terms and conditions. Check expiration dates before redeeming.",
+      "note_label": "Note:",
+      "software": {
+        "description": "Premium developer tools, IDEs, and services at exclusive rates",
+        "title": "Software & Tools"
+      },
+      "title": "Exclusive Community Benefits"
+    },
+    "meta_description": "Exclusive discounts on courses, software tools, and event tickets for the meet.js community.",
+    "meta_title": "Exclusive Discounts | meet.js",
+    "page_title": "Community Discounts",
+    "sections": {
+      "events": "Events & Conferences",
+      "learning": "Courses & Learning",
+      "software": "Software & Tools"
+    },
+    "subtitle": "Exclusive discounts on software tools and event tickets for the meet.js community. Take advantage of these limited-time opportunities!"
   },
   "empty_events_alert": {
     "message": "Nothing planned yet. Contact your local organizers if you want to help make it happen!"
   },
   "events_api_partner": {
     "powered_by": "Events API powered by"
+  },
+  "events": {
+    "no_events": "No upcoming events in {city} at the moment.",
+    "upcoming_in_city": "Upcoming events in"
+  },
+  "events_page": {
+    "filter": {
+      "all": "All",
+      "events_not_found": "Events not found",
+      "filter_by_city": "Filter events by city",
+      "loading": "Loading...",
+      "online": "On-line"
+    },
+    "meta_description": "All meet.js events in one place.",
+    "meta_title": "All Events | meet.js",
+    "page_title": "All events",
+    "past_events": "Past events",
+    "subtitle": "All meet.js events in one place. Check past and upcoming meetups.",
+    "upcoming_events": "Upcoming events"
+  },
+  "example-key-in-client-component": "test EN",
+  "featured_events": {
+    "all_events": "All events",
+    "subtitle": "Don't miss these!",
+    "title": "Upcoming Events"
+  },
+  "footer": {
+    "cities": "Cities",
+    "contact": "Contact us",
+    "copyright": "All rights reserved.",
+    "menu": "Menu",
+    "menu_links": {
+      "14_birthday": "14 Birthday",
+      "about": "About",
+      "brand_assets": "Brand Assets",
+      "code_of_conduct": "Code of Conduct",
+      "contact_link": "Contact",
+      "events": "Events",
+      "summit": "Summit",
+      "wdi_2025": "WDI 2025"
+    }
   },
   "hello_world": "Hello World",
   "hero": {
@@ -181,37 +301,45 @@
     "start_local": "If you don't see your city on the map, consider starting a local meet.js!",
     "title": "Join Us"
   },
+  "logo_component": {
+    "context_menu_subtitle": "Want to download our logo?",
+    "context_menu_title": "meet.js Logo",
+    "go_to_brand_assets": "Go to Brand Assets"
+  },
   "navigation": {
-    "home": "Home",
     "about": "About",
-    "events": "Events",
     "contact": "Contact",
-    "menu_items": {
-      "30_years_js": "🎉 30 Years of JS",
-      "summit": "summit",
-      "cities": "🏙️ cities",
-      "discounts": "💰 discounts",
-      "about": "about",
-      "wdi_2025": "WDI 2025",
-      "14_birthday": "14 birthday",
-      "brand_assets": "brand assets",
-      "code_of_conduct": "code of conduct"
-    },
+    "discounts": "Discounts",
     "dropdown": {
-      "all_cities": "All Cities",
-      "cities_label": "Cities",
-      "all_discounts": "All Discounts",
-      "event_discounts": "Event Discounts",
-      "software_discounts": "Software Discounts",
-      "learning_discounts": "Learning Discounts",
       "about_meetjs": "About meet.js",
-      "our_team": "Our Team",
-      "sponsors": "Sponsors",
-      "community_partnerships": "Community Partnerships",
+      "all_cities": "All Cities",
+      "all_discounts": "All Discounts",
       "brand_assets": "Brand Assets",
+      "cities_label": "Cities",
       "code_of_conduct": "Code of Conduct",
-      "coming_soon": "(Coming Soon)"
-    }
+      "coming_soon": "(Coming Soon)",
+      "community_partnerships": "Community Partnerships",
+      "event_discounts": "Event Discounts",
+      "learning_discounts": "Learning Discounts",
+      "our_team": "Our Team",
+      "software_discounts": "Software Discounts",
+      "sponsors": "Sponsors"
+    },
+    "events": "Events",
+    "home": "Home",
+    "menu_items": {
+      "14_birthday": "14 birthday",
+      "30_years_js": "\uD83C\uDF89 30 Years of JS",
+      "about": "about",
+      "brand_assets": "brand assets",
+      "cities": "\uD83C\uDFD9️ cities",
+      "code_of_conduct": "code of conduct",
+      "discounts": "\uD83D\uDCB0 discounts",
+      "summit": "summit",
+      "wdi_2025": "WDI 2025"
+    },
+    "sponsors": "Sponsors",
+    "team": "Team"
   },
   "organizer": {
     "benefits": {
@@ -242,112 +370,16 @@
     },
     "requirements_title": "What you need to have:"
   },
-  "discounts": {
-    "page_title": "Community Discounts",
-    "meta_title": "Exclusive Discounts | meet.js",
-    "meta_description": "Exclusive discounts on courses, software tools, and event tickets for the meet.js community.",
-    "subtitle": "Exclusive discounts on software tools and event tickets for the meet.js community. Take advantage of these limited-time opportunities!",
-    "benefits_card": {
-      "title": "Exclusive Community Benefits",
-      "description": "As a valued member of the meet.js community, you have access to these special discounts from our partners.",
-      "events": {
-        "title": "Events & Conferences",
-        "description": "Special pricing for conferences, workshops, and meetups around the world"
-      },
-      "software": {
-        "title": "Software & Tools",
-        "description": "Premium developer tools, IDEs, and services at exclusive rates"
-      },
-      "learning": {
-        "title": "Courses & Learning",
-        "description": "Discounts on courses, books, and educational content from top instructors"
-      },
-      "note": "All discounts are time-limited and subject to partner terms and conditions. Check expiration dates before redeeming.",
-      "note_label": "Note:"
-    },
-    "sections": {
-      "events": "Events & Conferences",
-      "software": "Software & Tools",
-      "learning": "Courses & Learning"
-    }
-  },
-  "events_page": {
-    "meta_title": "All Events | meet.js",
-    "meta_description": "All meet.js events in one place.",
-    "page_title": "All events",
-    "subtitle": "All meet.js events in one place. Check past and upcoming meetups.",
-    "upcoming_events": "Upcoming events",
-    "past_events": "Past events",
-    "filter": {
-      "filter_by_city": "Filter events by city",
-      "all": "All",
-      "online": "On-line",
-      "events_not_found": "Events not found",
-      "loading": "Loading..."
-    }
+  "poland_map": {
+    "active_upcoming_progress": "Active / upcoming / in progress",
+    "coming_soon": "Coming soon!",
+    "paused_join_organizer": "Paused (join as organizer)",
+    "typescript_gdansk": "TypeScript Gdańsk"
   },
   "stats": {
     "cities": "cities",
     "since": "since",
     "summits": "summits"
-  },
-  "community_partnerships": {
-    "meta_title": "Community Partnerships | meet.js",
-    "meta_description": "Educational and community initiatives supported by meet.js - building a stronger tech community together.",
-    "page_title": "Community Partnerships",
-    "subtitle": "Supporting educational initiatives and community projects that strengthen the tech ecosystem",
-    "our_partners_title": "Our Community Partners",
-    "our_partners_description": "We proudly support educational and community initiatives that align with our mission of building a stronger, more inclusive tech community.",
-    "what_they_do": "What They Do",
-    "their_goals": "Their Goals",
-    "workshop_photos": "Workshop Photos",
-    "visit_website": "Visit Website",
-    "contact_project": "Contact Project",
-    "cta_title": "Want to Partner With Us?",
-    "cta_description": "If you're running an educational or community initiative that aligns with our values, we'd love to hear from you.",
-    "get_in_touch": "Get in Touch",
-    "partnerships": {
-      "mlodzi4it": {
-        "name": "Młodzi 4IT 2.0",
-        "description": "Educational project focused on digital awareness and safe technology usage for youth and seniors.",
-        "location": "Bielsko-Biała and surrounding areas",
-        "details": {
-          "0": "Free educational workshops in schools, libraries, and cultural centers",
-          "1": "Personal data protection and internet privacy education",
-          "2": "Responsible AI usage training",
-          "3": "Cybercrime prevention (including phone scams and fake messages)",
-          "4": "Creating free educational materials (flyers, quizzes, e-books, presentations)"
-        },
-        "goals": {
-          "0": "Building digital awareness among children and seniors",
-          "1": "Teaching safe internet usage and data protection",
-          "2": "Explaining AI technology and its responsible use",
-          "3": "Preventing cybercrime through education"
-        },
-        "photos": {
-          "0": {
-            "alt": "Młodzi 4IT workshop with students in classroom",
-            "caption": "Educational workshop on digital awareness and cybersecurity"
-          },
-          "1": {
-            "alt": "Interactive presentation about AI and technology",
-            "caption": "Teaching responsible AI usage to young students"
-          },
-          "2": {
-            "alt": "Students participating in cybersecurity training",
-            "caption": "Hands-on cybersecurity education session"
-          },
-          "3": {
-            "alt": "Group activity during digital literacy workshop",
-            "caption": "Interactive learning about internet safety"
-          },
-          "4": {
-            "alt": "Młodzi 4IT team presenting educational materials",
-            "caption": "Presenting educational materials and resources"
-          }
-        }
-      }
-    }
   },
   "welcome": "Welcome to meet.js"
 }
