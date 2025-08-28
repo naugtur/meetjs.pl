@@ -7,6 +7,7 @@ import { EmptyEventsAlert } from '@/components/EmptyEventsAlert';
 import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
 import { changeCityName } from '@/utils/changeCityName';
 import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
+import { filterUpcomingEvents, sortEventsByDate } from '@/utils/eventUtils';
 
 export const metadata: Metadata = {
   title: 'All Events | meet.js',
@@ -29,7 +30,8 @@ const getPastEvents = async () => {
     const pastEventsJson = await pastEventsRes.json();
     const data = EventsSchema.parse(pastEventsJson);
 
-    return Object.values(data ?? {}).map(changeCityName);
+    const pastEvents = Object.values(data ?? {}).map(changeCityName);
+    return sortEventsByDate(pastEvents, false); // false = descending order
   } catch (error) {
     console.error('Error fetching past events:', error);
     return [];
@@ -46,8 +48,9 @@ const EventsPage = async ({ searchParams }: EventsPageProps) => {
   const upcomingEvents = await getUpcomingEvents();
   const pastEvents = await getPastEvents();
 
-  // Merge additional events with upcomingEvents
-  const allUpcomingEvents = [...(upcomingEvents || []), ...ADDITIONAL_EVENTS];
+  // Merge additional events with upcomingEvents and filter by date
+  const mergedEvents = [...(upcomingEvents || []), ...ADDITIONAL_EVENTS];
+  const allUpcomingEvents = filterUpcomingEvents(mergedEvents);
 
   return (
     <main className="mx-auto flex min-h-screen max-w-7xl flex-col items-center gap-6 p-5 px-5 sm:px-6 lg:px-8">
