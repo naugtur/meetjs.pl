@@ -76,4 +76,9 @@ export const PARTNERS = [
     src: '/partners/hackyeah.png',
     alt: 'HackYeah',
   },
+  {
+    href: 'https://tolgee.io/',
+    src: '/partners/tolgee.svg',
+    alt: 'Tolgee',
+  },
 ];
