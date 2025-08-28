@@ -54,7 +54,10 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "prepare": "husky",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "tolgee:pull": "tolgee pull",
+    "tolgee:push": "tolgee push",
+    "tolgee:sync": "tolgee sync"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.4",
@@ -65,6 +68,8 @@
     "@radix-ui/react-dropdown-menu": "2.1.15",
     "@radix-ui/react-slot": "1.2.3",
     "@t3-oss/env-nextjs": "^0.13.8",
+    "@tolgee/react": "^6.2.7",
+    "@tolgee/web": "^6.2.7",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "class-variance-authority": "^0.7.0",
