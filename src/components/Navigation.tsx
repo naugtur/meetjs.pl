@@ -10,6 +10,7 @@ import { DesktopNavigation } from './Navigation/DesktopNavigation';
 import { MobileNavigation } from './Navigation/MobileNavigation';
 import { MobileMenuButton } from './Navigation/MobileMenuButton';
 import { learningDiscounts } from '@/content/learning-discounts';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 export const Navigation = () => {
   return (
@@ -39,6 +40,7 @@ export const Navigation = () => {
                       aria-label="Social media links"
                     >
                       <SocialLinks />
+                      <LanguageSwitcher variant="desktop" />
                     </aside>
                   </div>
                   <MobileMenuButton open={open} />

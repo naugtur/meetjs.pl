@@ -133,9 +133,6 @@ export const DesktopNavigation = () => {
             )}
           </li>
         ))}
-        <li role="none" className="ml-4">
-          <LanguageSwitcher variant="desktop" />
-        </li>
       </ul>
     </nav>
   );

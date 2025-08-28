@@ -305,25 +305,6 @@ export default function MyClientComponent() {
 }
 ```
 
-### Language Switching
-
-The `LanguageSwitcher` component is available for language switching:
-
-```tsx
-import LanguageSwitcher from '@/components/LanguageSwitcher';
-
-export default function Header() {
-  return (
-    <header>
-      <nav>
-        {/* Your navigation */}
-        <LanguageSwitcher />
-      </nav>
-    </header>
-  );
-}
-```
-
 ### Translation Keys Structure
 
 Translation keys are organized by sections:
