@@ -10,7 +10,7 @@ import { EventsAPIPartner } from '@/components/EventsAPIPartner';
 import { EmptyEventsAlert } from '@/components/EmptyEventsAlert';
 import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
 import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
-import { isEventUpcoming } from '@/utils/eventUtils';
+import { filterUpcomingEvents } from '@/utils/eventUtils';
 
 export interface Event {
   type: string;
@@ -32,8 +32,8 @@ export const FeaturedEvents = async () => {
   const apiEvents: Event[] | null = await getUpcomingEvents();
   const allEvents: Event[] = [...(apiEvents || []), ...ADDITIONAL_EVENTS];
 
-  // Filter out past events
-  const events = allEvents.filter(isEventUpcoming);
+  // Filter out past events and events too far in the future
+  const events = filterUpcomingEvents(allEvents);
 
   return (
     <section
