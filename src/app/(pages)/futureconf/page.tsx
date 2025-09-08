@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Calendar, MapPin, Users, Zap, ExternalLink, Star } from 'lucide-react';
+import Image from 'next/image';
+import { Calendar, MapPin, ExternalLink, Star } from 'lucide-react';
 
 export default function FutureConfPage() {
   return (
@@ -34,14 +35,18 @@ export default function FutureConfPage() {
                 href="https://futureconf.tech/meetjs/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center rounded-lg bg-white px-8 py-4 text-lg font-semibold text-purple-600 transition-all hover:bg-purple-50 hover:scale-105"
+                className="inline-flex items-center rounded-lg bg-white px-8 py-4 text-lg font-semibold text-purple-600 transition-all hover:scale-105 hover:bg-purple-50"
               >
                 Get Group Discount
                 <ExternalLink className="ml-2 h-5 w-5" />
               </a>
               <div className="text-center">
-                <div className="text-2xl font-bold text-yellow-300">Up to 50% OFF</div>
-                <div className="text-sm text-purple-100">with group discount system</div>
+                <div className="text-2xl font-bold text-yellow-300">
+                  Up to 50% OFF
+                </div>
+                <div className="text-sm text-purple-100">
+                  with group discount system
+                </div>
               </div>
             </div>
           </div>
@@ -59,18 +64,22 @@ export default function FutureConfPage() {
             <div className="prose prose-lg text-gray-600">
               <p>
                 A two-day conference in the heart of Kraków at the{' '}
-                <strong>International Cultural Centre on the Main Square</strong>. 
-                The theme of Future 2025 is <strong>"AI in Production"</strong>.
+                <strong>
+                  International Cultural Centre on the Main Square
+                </strong>
+                . The theme of Future 2025 is{' '}
+                <strong>&ldquo;AI in Production&rdquo;</strong>.
               </p>
               <p>
-                The agenda features a mix of topics: from ML/AI to security and 
-                practical AI production use cases. This is your chance to learn 
-                from industry experts and discover tools that can transform your work.
+                The agenda features a mix of topics: from ML/AI to security and
+                practical AI production use cases. This is your chance to learn
+                from industry experts and discover tools that can transform your
+                work.
               </p>
               <p>
-                Future is not just about technology talks — it's an opportunity 
-                to network with people who really matter in the industry and 
-                discover tools that can change your way of working.
+                Future is not just about technology talks — it&apos;s an
+                opportunity to network with people who really matter in the
+                industry and discover tools that can change your way of working.
               </p>
             </div>
           </div>
@@ -82,16 +91,18 @@ export default function FutureConfPage() {
             </h2>
             <div className="space-y-4">
               <div className="flex items-start">
-                <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-purple-600 text-white font-bold">
+                <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-purple-600 font-bold text-white">
                   1
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">Visit the Special Link</h3>
+                  <h3 className="font-semibold text-gray-900">
+                    Visit the Special Link
+                  </h3>
                   <p className="text-gray-600">
                     Go to{' '}
-                    <a 
-                      href="https://futureconf.tech/meetjs/" 
-                      target="_blank" 
+                    <a
+                      href="https://futureconf.tech/meetjs/"
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="text-purple-600 hover:underline"
                     >
@@ -101,22 +112,26 @@ export default function FutureConfPage() {
                 </div>
               </div>
               <div className="flex items-start">
-                <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-purple-600 text-white font-bold">
+                <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-purple-600 font-bold text-white">
                   2
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">Buy Your Ticket</h3>
+                  <h3 className="font-semibold text-gray-900">
+                    Buy Your Ticket
+                  </h3>
                   <p className="text-gray-600">Purchase your Future ticket</p>
                 </div>
               </div>
               <div className="flex items-start">
-                <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-purple-600 text-white font-bold">
+                <div className="mr-4 flex h-8 w-8 items-center justify-center rounded-full bg-purple-600 font-bold text-white">
                   3
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">Share with Friends</h3>
+                  <h3 className="font-semibold text-gray-900">
+                    Share with Friends
+                  </h3>
                   <p className="text-gray-600">
-                    Send the page to your friends. Each person who buys a ticket 
+                    Send the page to your friends. Each person who buys a ticket
                     increases your discount up to 50%!
                   </p>
                 </div>
@@ -124,7 +139,7 @@ export default function FutureConfPage() {
             </div>
             <div className="mt-6 rounded-lg bg-yellow-100 p-4">
               <p className="text-sm text-yellow-800">
-                <strong>💡 Pro tip:</strong> Buy tickets as soon as possible. 
+                <strong>💡 Pro tip:</strong> Buy tickets as soon as possible.
                 Prices increase month by month!
               </p>
             </div>
@@ -134,15 +149,19 @@ export default function FutureConfPage() {
         {/* Hero Image Section */}
         <div className="mt-16">
           <div className="relative overflow-hidden rounded-2xl">
-            <img
+            <Image
               src="https://futureconf.tech/assets/rozek.webp"
               alt="FutureConf 2024 Conference Atmosphere"
+              width={1200}
+              height={320}
               className="h-64 w-full object-cover sm:h-80"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
             <div className="absolute bottom-6 left-6 text-white">
               <p className="text-lg font-semibold">Experience the Energy</p>
-              <p className="text-sm opacity-90">Join hundreds of AI enthusiasts in Kraków</p>
+              <p className="text-sm opacity-90">
+                Join hundreds of AI enthusiasts in Kraków
+              </p>
             </div>
           </div>
         </div>
@@ -154,69 +173,74 @@ export default function FutureConfPage() {
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { 
-                name: 'Mateusz Chrobok', 
+              {
+                name: 'Mateusz Chrobok',
                 role: 'AI & Security Specialist',
                 company: 'www.chrobok.eu',
-                image: 'https://futureconf.tech/assets/speakers/mateusz.webp'
+                image: 'https://futureconf.tech/assets/speakers/mateusz.webp',
               },
-              { 
-                name: 'Vladimir Alekseichenko', 
+              {
+                name: 'Vladimir Alekseichenko',
                 role: 'ML/AI Trainer & Mentor',
                 company: 'DataWorkshop',
-                image: 'https://futureconf.tech/assets/speakers/vladimir.jpeg'
+                image: 'https://futureconf.tech/assets/speakers/vladimir.jpeg',
               },
-              { 
-                name: 'Ziemowit Dworakowski', 
+              {
+                name: 'Ziemowit Dworakowski',
                 role: 'PhD, Academic Lecturer',
                 company: 'AGH University',
-                image: 'https://futureconf.tech/assets/speakers/ziemowit.webp'
+                image: 'https://futureconf.tech/assets/speakers/ziemowit.webp',
               },
-              { 
-                name: 'Merve Noyan', 
+              {
+                name: 'Merve Noyan',
                 role: 'Open-sourceress',
                 company: '🤗 Hugging Face',
-                image: 'https://futureconf.tech/assets/speakers/merve.jpg'
+                image: 'https://futureconf.tech/assets/speakers/merve.jpg',
               },
-              { 
-                name: 'Sacha Bron', 
+              {
+                name: 'Sacha Bron',
                 role: 'Founding AI Software Engineer',
                 company: 'Llamaindex',
-                image: 'https://futureconf.tech/assets/speakers/sacha.jpeg'
+                image: 'https://futureconf.tech/assets/speakers/sacha.jpeg',
               },
-              { 
-                name: 'Kacper Milan', 
+              {
+                name: 'Kacper Milan',
                 role: 'ML & NLP Engineer',
                 company: 'Co-creator PLLuM & Bielik',
-                image: 'https://futureconf.tech/assets/speakers/kacper-milan.jpeg'
+                image:
+                  'https://futureconf.tech/assets/speakers/kacper-milan.jpeg',
               },
-              { 
-                name: 'Kacper Łukawski', 
+              {
+                name: 'Kacper Łukawski',
                 role: 'Developer Advocate',
                 company: 'Qdrant, AI Embassy Founder',
-                image: 'https://futureconf.tech/assets/speakers/kacper-lukawski.jpeg'
+                image:
+                  'https://futureconf.tech/assets/speakers/kacper-lukawski.jpeg',
               },
-              { 
-                name: 'Paweł Gronowski', 
+              {
+                name: 'Paweł Gronowski',
                 role: 'Senior Software Engineer',
                 company: 'Docker',
-                image: 'https://futureconf.tech/assets/speakers/gronowski.jpg'
+                image: 'https://futureconf.tech/assets/speakers/gronowski.jpg',
               },
-              { 
-                name: 'Mateusz Jarzębowski-Bownik', 
+              {
+                name: 'Mateusz Jarzębowski-Bownik',
                 role: 'Software Engineer',
                 company: 'Box',
-                image: 'https://futureconf.tech/assets/speakers/mateusz-jarzebowski-bownik.webp'
+                image:
+                  'https://futureconf.tech/assets/speakers/mateusz-jarzebowski-bownik.webp',
               },
             ].map((speaker, index) => (
               <div
                 key={index}
-                className="rounded-lg bg-white p-6 shadow-md transition-all hover:shadow-lg hover:scale-105"
+                className="rounded-lg bg-white p-6 shadow-md transition-all hover:scale-105 hover:shadow-lg"
               >
                 <div className="mb-4 flex justify-center">
-                  <img
+                  <Image
                     src={speaker.image}
                     alt={speaker.name}
+                    width={80}
+                    height={80}
                     className="h-20 w-20 rounded-full object-cover"
                   />
                 </div>
@@ -224,14 +248,19 @@ export default function FutureConfPage() {
                   <div className="mb-2 text-lg font-semibold text-gray-900">
                     {speaker.name}
                   </div>
-                  <div className="mb-1 text-sm text-purple-600">{speaker.role}</div>
+                  <div className="mb-1 text-sm text-purple-600">
+                    {speaker.role}
+                  </div>
                   <div className="text-xs text-gray-500">{speaker.company}</div>
                 </div>
               </div>
             ))}
           </div>
           <div className="mt-6 text-center text-gray-600">
-            <p>Plus specialists from Przeprogramowani, VirtusLab, APN Promise, and more!</p>
+            <p>
+              Plus specialists from Przeprogramowani, VirtusLab, APN Promise,
+              and more!
+            </p>
           </div>
         </div>
 
@@ -242,35 +271,41 @@ export default function FutureConfPage() {
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <div className="relative overflow-hidden rounded-lg">
-              <img
+              <Image
                 src="https://futureconf.tech/assets/photobooth/uczestnik2.webp"
                 alt="Conference Speakers"
+                width={400}
+                height={192}
                 className="h-48 w-full object-cover transition-transform hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-              <div className="absolute bottom-3 left-3 text-white text-sm font-medium">
+              <div className="absolute bottom-3 left-3 text-sm font-medium text-white">
                 Inspiring Speakers
               </div>
             </div>
             <div className="relative overflow-hidden rounded-lg">
-              <img
+              <Image
                 src="https://futureconf.tech/assets/photobooth/uczestnik.webp"
                 alt="Conference Attendees"
+                width={400}
+                height={192}
                 className="h-48 w-full object-cover transition-transform hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-              <div className="absolute bottom-3 left-3 text-white text-sm font-medium">
+              <div className="absolute bottom-3 left-3 text-sm font-medium text-white">
                 Engaged Community
               </div>
             </div>
             <div className="relative overflow-hidden rounded-lg">
-              <img
+              <Image
                 src="https://futureconf.tech/assets/ludzie-10.webp"
                 alt="Networking"
+                width={400}
+                height={192}
                 className="h-48 w-full object-cover transition-transform hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-              <div className="absolute bottom-3 left-3 text-white text-sm font-medium">
+              <div className="absolute bottom-3 left-3 text-sm font-medium text-white">
                 Networking Opportunities
               </div>
             </div>
@@ -279,16 +314,19 @@ export default function FutureConfPage() {
 
         {/* CTA Section */}
         <div className="mt-16 rounded-2xl bg-gradient-to-r from-purple-600 via-indigo-500 to-blue-600 p-8 text-center text-white">
-          <h2 className="mb-4 text-3xl font-bold">Ready to Join FutureConf 2025?</h2>
+          <h2 className="mb-4 text-3xl font-bold">
+            Ready to Join FutureConf 2025?
+          </h2>
           <p className="mb-6 text-lg text-purple-100">
-            Don't miss this opportunity to learn about AI in production from industry experts
+            Don&apos;t miss this opportunity to learn about AI in production from
+            industry experts
           </p>
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <a
               href="https://futureconf.tech/meetjs/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center rounded-lg bg-white px-8 py-4 text-lg font-semibold text-purple-600 transition-all hover:bg-purple-50 hover:scale-105"
+              className="inline-flex items-center rounded-lg bg-white px-8 py-4 text-lg font-semibold text-purple-600 transition-all hover:scale-105 hover:bg-purple-50"
             >
               Get Group Discount Now
               <ExternalLink className="ml-2 h-5 w-5" />
