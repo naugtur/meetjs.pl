@@ -31,6 +31,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'media.licdn.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'futureconf.tech',
+      },
     ],
   },
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],

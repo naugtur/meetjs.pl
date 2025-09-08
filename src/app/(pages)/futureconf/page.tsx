@@ -131,6 +131,22 @@ export default function FutureConfPage() {
           </div>
         </div>
 
+        {/* Hero Image Section */}
+        <div className="mt-16">
+          <div className="relative overflow-hidden rounded-2xl">
+            <img
+              src="https://futureconf.tech/assets/rozek.webp"
+              alt="FutureConf 2024 Conference Atmosphere"
+              className="h-64 w-full object-cover sm:h-80"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+            <div className="absolute bottom-6 left-6 text-white">
+              <p className="text-lg font-semibold">Experience the Energy</p>
+              <p className="text-sm opacity-90">Join hundreds of AI enthusiasts in Kraków</p>
+            </div>
+          </div>
+        </div>
+
         {/* Speakers Section */}
         <div className="mt-16">
           <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
@@ -138,26 +154,126 @@ export default function FutureConfPage() {
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { name: 'Mateusz Chrobok', role: 'AI Expert' },
-              { name: 'Vladimir Alekseichenko', role: 'ML Specialist' },
-              { name: 'Ziemowit Dworakowski', role: 'AGH University' },
-              { name: 'Merve Noyan', role: 'Hugging Face' },
-              { name: 'Sacha Bron', role: 'Llamaindex' },
-              { name: 'Kacper Milan', role: 'mBank' },
+              { 
+                name: 'Mateusz Chrobok', 
+                role: 'AI & Security Specialist',
+                company: 'www.chrobok.eu',
+                image: 'https://futureconf.tech/assets/speakers/mateusz.webp'
+              },
+              { 
+                name: 'Vladimir Alekseichenko', 
+                role: 'ML/AI Trainer & Mentor',
+                company: 'DataWorkshop',
+                image: 'https://futureconf.tech/assets/speakers/vladimir.jpeg'
+              },
+              { 
+                name: 'Ziemowit Dworakowski', 
+                role: 'PhD, Academic Lecturer',
+                company: 'AGH University',
+                image: 'https://futureconf.tech/assets/speakers/ziemowit.webp'
+              },
+              { 
+                name: 'Merve Noyan', 
+                role: 'Open-sourceress',
+                company: '🤗 Hugging Face',
+                image: 'https://futureconf.tech/assets/speakers/merve.jpg'
+              },
+              { 
+                name: 'Sacha Bron', 
+                role: 'Founding AI Software Engineer',
+                company: 'Llamaindex',
+                image: 'https://futureconf.tech/assets/speakers/sacha.jpeg'
+              },
+              { 
+                name: 'Kacper Milan', 
+                role: 'ML & NLP Engineer',
+                company: 'Co-creator PLLuM & Bielik',
+                image: 'https://futureconf.tech/assets/speakers/kacper-milan.jpeg'
+              },
+              { 
+                name: 'Kacper Łukawski', 
+                role: 'Developer Advocate',
+                company: 'Qdrant, AI Embassy Founder',
+                image: 'https://futureconf.tech/assets/speakers/kacper-lukawski.jpeg'
+              },
+              { 
+                name: 'Paweł Gronowski', 
+                role: 'Senior Software Engineer',
+                company: 'Docker',
+                image: 'https://futureconf.tech/assets/speakers/gronowski.jpg'
+              },
+              { 
+                name: 'Mateusz Jarzębowski-Bownik', 
+                role: 'Software Engineer',
+                company: 'Box',
+                image: 'https://futureconf.tech/assets/speakers/mateusz-jarzebowski-bownik.webp'
+              },
             ].map((speaker, index) => (
               <div
                 key={index}
-                className="rounded-lg bg-white p-6 shadow-md transition-shadow hover:shadow-lg"
+                className="rounded-lg bg-white p-6 shadow-md transition-all hover:shadow-lg hover:scale-105"
               >
-                <div className="mb-2 text-lg font-semibold text-gray-900">
-                  {speaker.name}
+                <div className="mb-4 flex justify-center">
+                  <img
+                    src={speaker.image}
+                    alt={speaker.name}
+                    className="h-20 w-20 rounded-full object-cover"
+                  />
                 </div>
-                <div className="text-purple-600">{speaker.role}</div>
+                <div className="text-center">
+                  <div className="mb-2 text-lg font-semibold text-gray-900">
+                    {speaker.name}
+                  </div>
+                  <div className="mb-1 text-sm text-purple-600">{speaker.role}</div>
+                  <div className="text-xs text-gray-500">{speaker.company}</div>
+                </div>
               </div>
             ))}
           </div>
           <div className="mt-6 text-center text-gray-600">
-            <p>Plus specialists from Docker, Qdrant, Box, and more!</p>
+            <p>Plus specialists from Przeprogramowani, VirtusLab, APN Promise, and more!</p>
+          </div>
+        </div>
+
+        {/* Photo Gallery Preview */}
+        <div className="mt-16">
+          <h2 className="mb-8 text-center text-3xl font-bold text-gray-900">
+            FutureConf 2024 Highlights
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="relative overflow-hidden rounded-lg">
+              <img
+                src="https://futureconf.tech/assets/photobooth/uczestnik2.webp"
+                alt="Conference Speakers"
+                className="h-48 w-full object-cover transition-transform hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+              <div className="absolute bottom-3 left-3 text-white text-sm font-medium">
+                Inspiring Speakers
+              </div>
+            </div>
+            <div className="relative overflow-hidden rounded-lg">
+              <img
+                src="https://futureconf.tech/assets/photobooth/uczestnik.webp"
+                alt="Conference Attendees"
+                className="h-48 w-full object-cover transition-transform hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+              <div className="absolute bottom-3 left-3 text-white text-sm font-medium">
+                Engaged Community
+              </div>
+            </div>
+            <div className="relative overflow-hidden rounded-lg">
+              <img
+                src="https://futureconf.tech/assets/ludzie-10.webp"
+                alt="Networking"
+                className="h-48 w-full object-cover transition-transform hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+              <div className="absolute bottom-3 left-3 text-white text-sm font-medium">
+                Networking Opportunities
+              </div>
+            </div>
           </div>
         </div>
 
