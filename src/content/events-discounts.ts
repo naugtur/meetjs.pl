@@ -233,4 +233,21 @@ export const eventsDiscounts: Promo[] = [
     city: 'Warsaw',
     discountCode: 'JScommunity',
   },
+  {
+    id: 'futureconf-2025',
+    name: 'FutureConf 2025',
+    message: 'Up to 50% off with group discount system!',
+    cta: '👉 Get Group Discount',
+    ticketLink: 'https://futureconf.tech/meetjs/',
+    eventLink: 'https://futureconf.tech/',
+    expiresAt: '2025-10-28T23:59:59+02:00',
+    description:
+      'A two-day conference in the heart of Kraków – FutureConf 2025 takes place October 27-28 at the International Cultural Centre on the Main Square. The theme of Future 2025 is "AI in Production". The agenda features a mix of topics: from ML/AI to security and practical AI production use cases. Speakers include Mateusz Chrobok, Vladimir Alekseichenko, Ziemowit Dworakowski from AGH, Merve Noyan from Hugging Face, Sacha Bron from Llamaindex, Kacper Milan from mBank, and specialists from Docker, Qdrant, and Box. Buy your ticket and share with friends – each additional person increases the discount up to 50%!',
+    gradient: 'bg-gradient-to-r from-purple-600 via-indigo-500 to-blue-600',
+    icon: '🤖',
+    emojiRight: '🇵🇱',
+    country: 'Poland',
+    city: 'Kraków',
+    discountCode: 'Group discount system',
+  },
 ];
