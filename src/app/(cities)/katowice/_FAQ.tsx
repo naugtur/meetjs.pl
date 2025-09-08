@@ -24,7 +24,7 @@ export const KatowiceFAQ: FAQQuestion[] = [
     ),
   },
   {
-    id: '1',
+    id: '3',
     question: 'What does it cost to join event?',
     answer: (
       <>
