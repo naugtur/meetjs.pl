@@ -58,7 +58,14 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
   };
 
   const hasPartnershipEvent = (cityName: string) => {
-    return ADDITIONAL_EVENTS.some((event) => event.city === cityName);
+    // Check if there are any additional events (partnerships) for this city that are also in the filtered events
+    return events.some(
+      (event) =>
+        event.city === cityName &&
+        ADDITIONAL_EVENTS.some(
+          (additionalEvent) => additionalEvent.id === event.id,
+        ),
+    );
   };
 
   return (
@@ -78,6 +85,7 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
           {cities.map((city, index) => {
             const eventStatus = getCityEventStatus(city.name);
             const hasPartnership = hasPartnershipEvent(city.name);
+
             return (
               <g key={index}>
                 <Link href={city.href as Route}>
@@ -176,7 +184,7 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
               <div className="absolute -inset-1 animate-pulse rounded-full border-2 border-[#9333ea] dark:border-green-500" />
             </div>
           </div>
-          <span>Active / with upcoming / with in-progress events</span>
+          <span>Active / Upcoming / In-progress events</span>
         </div>
         <div className="flex items-center gap-2 whitespace-nowrap">
           <div className="relative">
@@ -191,7 +199,7 @@ export const PolandMap = ({ cities, events = [] }: MapProps) => {
         <div className="flex items-center gap-2 whitespace-nowrap">
           <div className="h-2 w-2 rounded-full bg-[#9CA3AF]" />
           <Link
-            href={"/how-to-become-an-organizer" as Route}
+            href={'/how-to-become-an-organizer' as Route}
             className="hover:text-purple"
           >
             Paused (join as organizer)

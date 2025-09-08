@@ -1,19 +1,19 @@
 import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
 import { EventsList } from './EventsList';
 import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
+import { filterUpcomingEvents } from '@/utils/eventUtils';
 
 interface EventSectionProps {
   city: string;
 }
 
 export async function EventSection({ city }: EventSectionProps) {
-  const events = await getUpcomingEvents();
-  // Merge API events with additional events for this city
-  const extraEvents = ADDITIONAL_EVENTS.filter((event) => event.city === city);
-  const cityEvents = [
-    ...(events?.filter((event) => event.city === city) || []),
-    ...extraEvents,
-  ];
+  const apiEvents = await getUpcomingEvents();
+  const allEvents = [...(apiEvents || []), ...ADDITIONAL_EVENTS];
+  
+  // Filter out past events and events too far in the future, then filter by city
+  const upcomingEvents = filterUpcomingEvents(allEvents);
+  const cityEvents = upcomingEvents.filter((event) => event.city === city);
 
   return (
     <section className="flex flex-col items-center justify-center gap-12 pt-12">
