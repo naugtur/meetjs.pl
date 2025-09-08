@@ -5,10 +5,13 @@ import { Event } from '@/components/FeaturedEvents';
 import { MessagesSquare } from 'lucide-react';
 import { DiscordCommunity } from '@/components/DiscordCommunity';
 import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
+import { filterUpcomingEvents } from '@/utils/eventUtils';
 
 export const JoinUs = async () => {
   const apiEvents: Event[] | null = await getUpcomingEvents();
   const allEvents: Event[] = [...(apiEvents || []), ...ADDITIONAL_EVENTS];
+
+  const events = filterUpcomingEvents(allEvents);
 
   return (
     <section
@@ -21,7 +24,7 @@ export const JoinUs = async () => {
 
       <div className="mx-auto flex w-full max-w-7xl flex-col p-4 md:flex-row">
         <div className="w-full md:w-1/2">
-          <PolandMap cities={CITIES} events={allEvents} />
+          <PolandMap cities={CITIES} events={events} />
         </div>
         <div className="w-full p-4 md:w-1/2">
           <p className="pb-6">
