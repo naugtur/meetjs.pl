@@ -1,12 +1,5 @@
 import Image from 'next/image';
-import {
-  ExternalLink,
-  Users,
-  BookOpen,
-  Shield,
-  Camera,
-  Bot,
-} from 'lucide-react';
+import { ExternalLink, Users, BookOpen, Shield, Camera } from 'lucide-react';
 import { getTranslate } from '@/tolgee/server';
 import { getPartnerships } from '@/content/partnerships';
 
