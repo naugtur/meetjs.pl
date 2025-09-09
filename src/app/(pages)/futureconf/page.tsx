@@ -174,28 +174,16 @@ export default function FutureConfPage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                name: 'Mateusz Chrobok',
-                role: 'AI & Security Specialist',
-                company: 'www.chrobok.eu',
-                image: 'https://futureconf.tech/assets/speakers/mateusz.webp',
-              },
-              {
                 name: 'Vladimir Alekseichenko',
                 role: 'ML/AI Trainer & Mentor',
                 company: 'DataWorkshop',
                 image: 'https://futureconf.tech/assets/speakers/vladimir.jpeg',
               },
               {
-                name: 'Ziemowit Dworakowski',
-                role: 'PhD, Academic Lecturer',
-                company: 'AGH University',
-                image: 'https://futureconf.tech/assets/speakers/ziemowit.webp',
-              },
-              {
-                name: 'Merve Noyan',
-                role: 'Open-sourceress',
-                company: '🤗 Hugging Face',
-                image: 'https://futureconf.tech/assets/speakers/merve.jpg',
+                name: 'Mateusz Chrobok',
+                role: 'AI & Security Specialist',
+                company: 'www.chrobok.eu',
+                image: 'https://futureconf.tech/assets/speakers/mateusz.webp',
               },
               {
                 name: 'Sacha Bron',
@@ -204,18 +192,64 @@ export default function FutureConfPage() {
                 image: 'https://futureconf.tech/assets/speakers/sacha.jpeg',
               },
               {
+                name: 'Merve Noyan',
+                role: 'Open-sourceress',
+                company: '🤗 Hugging Face',
+                image: 'https://futureconf.tech/assets/speakers/merve.jpg',
+              },
+              {
                 name: 'Kacper Milan',
                 role: 'ML & NLP Engineer',
                 company: 'Co-creator PLLuM & Bielik',
-                image:
-                  'https://futureconf.tech/assets/speakers/kacper-milan.jpeg',
+                image: 'https://futureconf.tech/assets/speakers/kacper-milan.jpeg',
+              },
+              {
+                name: 'Bartosz Pampuch',
+                role: 'C-level Manager, 17+ years experience',
+                company: 'Infinity CEO, Ex-Microsoft MVP',
+                image: 'https://futureconf.tech/assets/speakers/bartosz.jpeg',
               },
               {
                 name: 'Kacper Łukawski',
                 role: 'Developer Advocate',
                 company: 'Qdrant, AI Embassy Founder',
-                image:
-                  'https://futureconf.tech/assets/speakers/kacper-lukawski.jpeg',
+                image: 'https://futureconf.tech/assets/speakers/kacper-lukawski.jpeg',
+              },
+              {
+                name: 'Ziemowit Dworakowski',
+                role: 'PhD, Academic Lecturer',
+                company: 'AGH University of Science and Technology',
+                image: 'https://futureconf.tech/assets/speakers/ziemowit.webp',
+              },
+              {
+                name: 'Zbigniew Tenerowicz',
+                role: 'Sr Staff Security Engineer & Security Lab Team Lead',
+                company: 'Consensys, meet.js Poland Organizer',
+                image: 'https://futureconf.tech/assets/speakers/zbigniew.jpeg',
+              },
+              {
+                name: 'Artur Skowroński',
+                role: 'Head of Java & Kotlin Engineering',
+                company: 'VirtusLab',
+                image: 'https://futureconf.tech/assets/speakers/artur.webp',
+              },
+              {
+                name: 'Mateusz Jarzębowski-Bownik',
+                role: 'Software Engineer',
+                company: 'Box',
+                image: 'https://futureconf.tech/assets/speakers/mateusz-jarzebowski-bownik.webp',
+              },
+              {
+                name: 'Przemek Smyrdek',
+                role: 'Lead Front-End Engineer, Co-founder, Educator',
+                company: 'Przeprogramowani',
+                image: 'https://futureconf.tech/assets/speakers/smyrdek.webp',
+              },
+              {
+                name: 'Marcin Czarkowski',
+                role: 'Front-End Tech Lead, Co-founder, Educator',
+                company: 'Przeprogramowani',
+                image: 'https://futureconf.tech/assets/speakers/czarkowski.webp',
               },
               {
                 name: 'Paweł Gronowski',
@@ -224,11 +258,16 @@ export default function FutureConfPage() {
                 image: 'https://futureconf.tech/assets/speakers/gronowski.jpg',
               },
               {
-                name: 'Mateusz Jarzębowski-Bownik',
-                role: 'Software Engineer',
-                company: 'Box',
-                image:
-                  'https://futureconf.tech/assets/speakers/mateusz-jarzebowski-bownik.webp',
+                name: 'Jakub Banaszkiewicz',
+                role: 'Data & AI Solutions Advisor',
+                company: 'APN Promise',
+                image: 'https://futureconf.tech/assets/speakers/kuba_b.webp',
+              },
+              {
+                name: 'Mateusz Zapart',
+                role: 'Solution Advisor in Data',
+                company: 'APN Promise',
+                image: 'https://futureconf.tech/assets/speakers/mateusz_z.webp',
               },
             ].map((speaker, index) => (
               <div
