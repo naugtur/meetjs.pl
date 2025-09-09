@@ -9,6 +9,8 @@ interface EventSectionProps {
 }
 
 export async function EventSection({ city }: EventSectionProps) {
+  const t = await getTranslate();
+
   const apiEvents = await getUpcomingEvents();
   const allEvents = [...(apiEvents || []), ...ADDITIONAL_EVENTS];
 
