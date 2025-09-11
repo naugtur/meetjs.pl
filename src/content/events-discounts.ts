@@ -250,4 +250,21 @@ export const eventsDiscounts: Promo[] = [
     city: 'Kraków',
     discountCode: 'Group discount system',
   },
+  {
+    id: 'ai-miners-2025',
+    name: 'AI Miners',
+    message: '10% off with code MEETJS-10!',
+    cta: '👉 Get 10% Off',
+    ticketLink: 'https://luma.com/35s646kw?coupon=MEETJS-10',
+    eventLink: 'https://aiminers.pl',
+    expiresAt: '2025-09-17T23:59:59+02:00',
+    description:
+      'AI Miners to spotkania praktyków AI z biznesem w Katowicach. Realne wdrożenia, konkretne rozwiązania, wartościowe dyskusje. Wydarzenie łączy praktyków - developerów, inżynierów, founderów - z przedstawicielami biznesu, którzy chcą zrozumieć, jak naprawdę działa sztuczna inteligencja w produktach i procesach. Use code MEETJS-10 for 10% off your ticket!',
+    gradient: 'bg-gradient-to-r from-orange-500 via-red-500 to-purple-600',
+    icon: '⛏️',
+    emojiRight: '🇵🇱',
+    country: 'Poland',
+    city: 'Katowice',
+    discountCode: 'MEETJS-10',
+  },
 ];
