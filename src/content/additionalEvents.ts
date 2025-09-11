@@ -6,7 +6,7 @@ import type { Event } from '@/components/FeaturedEvents';
 export const ADDITIONAL_EVENTS: Event[] = [
   {
     type: 'Meetup',
-    id: 99999, // unique id
+    id: 99998, // unique id
     date_add: Date.now(),
     date: '15.05.2025',
     time: '17:30',
@@ -48,5 +48,20 @@ export const ADDITIONAL_EVENTS: Event[] = [
     image: '',
     serie: 'AI & Future Tech',
     topic: ['AI', 'Machine Learning', 'JavaScript', 'Future Technologies'],
+  },
+  {
+    type: 'Meetup',
+    id: 100001, // unique id
+    date_add: Date.now(),
+    date: '17.09.2025',
+    time: '17:00',
+    name: 'AI Miners',
+    url: 'https://aiminers.pl',
+    rsvp: 'https://luma.com/35s646kw',
+    city: 'Katowice',
+    address: 'Rawa.Ink',
+    image: '',
+    serie: 'AI',
+    topic: ['AI', 'Machine Learning', 'Business', 'Networking'],
   },
 ];
