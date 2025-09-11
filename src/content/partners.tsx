@@ -66,4 +66,9 @@ export const PARTNERS = [
     src: '/partners/mlodzi4it.svg',
     alt: 'Młodzi 4IT 2.0',
   },
+  {
+    href: 'https://aiminers.pl',
+    src: '/partners/ai-miners.png',
+    alt: 'AI Miners',
+  },
 ];
