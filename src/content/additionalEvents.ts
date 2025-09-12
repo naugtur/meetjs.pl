@@ -64,4 +64,19 @@ export const ADDITIONAL_EVENTS: Event[] = [
     serie: 'AI',
     topic: ['AI', 'Machine Learning', 'Business', 'Networking'],
   },
+  {
+    type: 'Meetup',
+    id: 100002, // unique id
+    date_add: Date.now(),
+    date: '2025-01-16', // Date format needs to be confirmed from the actual event
+    time: '17:30',
+    name: 'Gdańsk TypeScript Meetup #16 / meet.js by Handsontable',
+    url: 'https://www.meetup.com/gdansk-typescript/events/310970083/',
+    rsvp: 'https://www.meetup.com/gdansk-typescript/events/310970083/',
+    city: 'Gdańsk',
+    address: 'DevOne Hub, Aleja Grunwaldzka 411',
+    image: '',
+    serie: 'TypeScript',
+    topic: ['TypeScript', 'JavaScript', 'Accessibility', 'Architecture'],
+  },
 ];
