@@ -68,7 +68,7 @@ export const ADDITIONAL_EVENTS: Event[] = [
     type: 'Meetup',
     id: 100002, // unique id
     date_add: Date.now(),
-    date: '2025-01-16', // Date format needs to be confirmed from the actual event
+    date: '02.10.2025', // Thursday, October 2, 2025
     time: '17:30',
     name: 'Gdańsk TypeScript Meetup #16 / meet.js by Handsontable',
     url: 'https://www.meetup.com/gdansk-typescript/events/310970083/',
