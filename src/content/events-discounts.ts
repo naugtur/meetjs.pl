@@ -267,4 +267,21 @@ export const eventsDiscounts: Promo[] = [
     city: 'Katowice',
     discountCode: 'MEETJS-10',
   },
+  {
+    id: 'testing-ground-2025',
+    name: 'Testing Ground Conference 2025',
+    message: '15% off with code meet.js15!',
+    cta: '👉 Get 15% Off',
+    ticketLink: 'https://testingground.pl/',
+    eventLink: 'https://testingground.pl/',
+    expiresAt: '2025-10-06T23:59:59+02:00',
+    description:
+      'Testing Ground Conference 2025 is a prestigious two-day event taking place October 6-7, 2025 in Warsaw. The conference theme is "Quality without compromise, security without exceptions, accessibility for everyone." Join 16 inspiring presentations and 6 practical workshops led by recognized experts. Perfect for QA professionals, security specialists, and those passionate about creating accessible digital products. Use code meet.js15 for 15% off your ticket!',
+    gradient: 'bg-gradient-to-r from-green-500 via-teal-500 to-blue-600',
+    icon: '🧪',
+    emojiRight: '🇵🇱',
+    country: 'Poland',
+    city: 'Warsaw',
+    discountCode: 'meet.js15',
+  },
 ];
