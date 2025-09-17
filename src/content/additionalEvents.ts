@@ -79,4 +79,19 @@ export const ADDITIONAL_EVENTS: Event[] = [
     serie: 'TypeScript',
     topic: ['TypeScript', 'JavaScript', 'Accessibility', 'Architecture'],
   },
+  {
+    type: 'Conference',
+    id: 100003, // unique id
+    date_add: Date.now(),
+    date: '06.10.2025',
+    time: '9:00',
+    name: 'Testing Ground Conference 2025',
+    url: 'https://testingground.pl/',
+    rsvp: 'https://testingground.pl/',
+    city: 'Warszawa',
+    address: 'Sound Garden Hotel\nŻwirki i Wigury 18, 02-092 Warszawa',
+    image: '',
+    serie: 'Quality & Testing',
+    topic: ['Testing', 'QA', 'Security', 'Accessibility', 'Quality Assurance'],
+  },
 ];
