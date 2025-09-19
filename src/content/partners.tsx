@@ -71,4 +71,9 @@ export const PARTNERS = [
     src: '/partners/ai-miners.png',
     alt: 'AI Miners',
   },
+  {
+    href: 'https://hackyeah.pl/',
+    src: '/partners/hackyeah.png',
+    alt: 'HackYeah',
+  },
 ];

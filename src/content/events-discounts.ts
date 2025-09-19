@@ -284,4 +284,21 @@ export const eventsDiscounts: Promo[] = [
     city: 'Warsaw',
     discountCode: 'meet.js15',
   },
+  {
+    id: 'hackyeah-2025',
+    name: 'HackYeah 2025',
+    message: 'Największy stacjonarny hackathon w Europie - darmowy udział!',
+    cta: '👉 Zarejestruj się',
+    ticketLink: 'https://hackyeah.pl/',
+    eventLink: 'https://hackyeah.pl/',
+    expiresAt: '2025-10-05T23:59:59+02:00',
+    description:
+      'HackYeah 2025 to największy w Europie stacjonarny hackathon, który odbędzie się 4-5 października 2025 roku w TAURON Arena w Krakowie. Przez 24 godziny setki programistów, designerów i pasjonatów nowych technologii zmierzą się z wyzwaniami wymagającymi szybkiego myślenia, współpracy i niebanalnych rozwiązań. Wydarzenie obejmuje biohacking, podróże, obronność oraz rozwiązania mające realny wpływ na codzienne życie. Równolegle odbędzie się konferencja technologiczna z ekspertami IT. Udział jest całkowicie darmowy - wystarczy wcześniejsza rejestracja. Mogą uczestniczyć osoby pełnoletnie indywidualnie lub w zespołach do 6 osób.',
+    gradient: 'bg-gradient-to-r from-orange-600 to-pink-600',
+    icon: '💻',
+    emojiRight: '🇵🇱',
+    country: 'Poland',
+    city: 'Kraków',
+    discountCode: 'FREE',
+  },
 ];

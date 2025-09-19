@@ -6,7 +6,7 @@ import type { Event } from '@/components/FeaturedEvents';
 export const ADDITIONAL_EVENTS: Event[] = [
   {
     type: 'Meetup',
-    id: 99998, // unique id
+    id: 99998,
     date_add: Date.now(),
     date: '15.05.2025',
     time: '17:30',
@@ -21,7 +21,7 @@ export const ADDITIONAL_EVENTS: Event[] = [
   },
   {
     type: 'Meetup',
-    id: 99999, // unique id
+    id: 99999,
     date_add: Date.now(),
     date: '02.09.2025',
     time: '18:00',
@@ -36,7 +36,7 @@ export const ADDITIONAL_EVENTS: Event[] = [
   },
   {
     type: 'Conference',
-    id: 100000, // unique id
+    id: 100000,
     date_add: Date.now(),
     date: '27.10.2025',
     time: '8:30',
@@ -51,7 +51,7 @@ export const ADDITIONAL_EVENTS: Event[] = [
   },
   {
     type: 'Meetup',
-    id: 100001, // unique id
+    id: 100001,
     date_add: Date.now(),
     date: '17.09.2025',
     time: '17:00',
@@ -66,9 +66,9 @@ export const ADDITIONAL_EVENTS: Event[] = [
   },
   {
     type: 'Meetup',
-    id: 100002, // unique id
+    id: 100002,
     date_add: Date.now(),
-    date: '02.10.2025', // Thursday, October 2, 2025
+    date: '02.10.2025',
     time: '17:30',
     name: 'Gdańsk TypeScript Meetup #16 / meet.js by Handsontable',
     url: 'https://www.meetup.com/gdansk-typescript/events/310970083/',
@@ -81,7 +81,7 @@ export const ADDITIONAL_EVENTS: Event[] = [
   },
   {
     type: 'Conference',
-    id: 100003, // unique id
+    id: 100003,
     date_add: Date.now(),
     date: '06.10.2025',
     time: '9:00',
@@ -93,5 +93,27 @@ export const ADDITIONAL_EVENTS: Event[] = [
     image: '',
     serie: 'Quality & Testing',
     topic: ['Testing', 'QA', 'Security', 'Accessibility', 'Quality Assurance'],
+  },
+  {
+    type: 'Conference',
+    id: 100004,
+    date_add: Date.now(),
+    date: '04.10.2025',
+    time: '18:00',
+    name: 'HackYeah 2025',
+    url: 'https://hackyeah.pl/',
+    rsvp: 'https://hackyeah.pl/',
+    city: 'Kraków',
+    address: 'TAURON Arena Kraków\nul. Stanisława Lema 7, 31-571 Kraków',
+    image: '',
+    serie: 'Hackathon',
+    topic: [
+      'Hackathon',
+      'Programming',
+      'Innovation',
+      'Collaboration',
+      'AI',
+      'Biohacking',
+    ],
   },
 ];

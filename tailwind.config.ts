@@ -43,8 +43,10 @@ const config: Config = {
     'via-pink-500',
     'to-red-500',
     'from-orange-500',
+    'from-orange-600',
     'from-violet-600',
     'to-purple-600',
+    'to-pink-600',
   ],
   content: [
     './src/components/**/*.{ts,tsx,mdx}',
