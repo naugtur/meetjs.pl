@@ -36,13 +36,13 @@ export const softwareDiscounts: Promo[] = [
   {
     id: 'warp-terminal-2025',
     name: 'Warp Terminal',
-    message: 'Get 2 months of Warp Pro FREE!',
-    cta: '🚀 Claim 2 Months Free',
+    message: 'Get Warp Pro for only $5 first month!',
+    cta: '🚀 Get Warp Pro for $5',
     ticketLink: 'https://warp.dev/meetjs',
     eventLink: 'https://warp.dev',
     expiresAt: '2025-12-31T23:59:59+02:00',
     description:
-      'Warp is the terminal reimagined with AI and collaborative features built-in. Experience lightning-fast performance, intelligent completions, and modern workflows. Get 2 full months of Warp Pro absolutely free - no trial limitations!',
+      'Warp is the terminal reimagined with AI and collaborative features built-in. Experience lightning-fast performance, intelligent completions, and modern workflows. Get Warp Pro for just $5 for your first month with code MEETJS25!',
     gradient: 'bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500',
     icon: '⚡',
     image:
