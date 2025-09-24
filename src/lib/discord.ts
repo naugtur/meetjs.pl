@@ -1,4 +1,5 @@
 import { cache } from 'react';
+import { env } from '@/env';
 
 interface DiscordServerData {
   id: string;
@@ -11,7 +12,7 @@ const ONE_HOUR = 3_600;
 export const getDiscordServerData = cache(
   async (): Promise<DiscordServerData | null> => {
     try {
-      const serverId = process.env.DISCORD_SERVER_ID;
+      const serverId = env.DISCORD_SERVER_ID;
 
       console.log('Fetching Discord widget data for server:', serverId);
 
