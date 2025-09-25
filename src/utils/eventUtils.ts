@@ -56,3 +56,8 @@ export const filterUpcomingEvents = (events: EventType[]): EventType[] => {
 
   return sortEventsByDate(filteredEvents);
 };
+
+export const getEventWeekDay = (event: EventType): string => {
+  const eventDate = parseEventDate(event.date);
+  return eventDate.toLocaleDateString('en-US', { weekday: 'long' });
+};
