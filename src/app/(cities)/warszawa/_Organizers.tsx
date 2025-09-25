@@ -15,4 +15,11 @@ export const WarsawOrganizers: Organizer[] = [
     linkedin: 'https://www.linkedin.com/in/dzieniszewski/',
     gitHub: 'https://github.com/dzienisz',
   },
+  {
+    name: 'Wojtek Jeremi Połowniak',
+    image: 'https://avatars.githubusercontent.com/u/6313514?v=4',
+    email: 'wojciech.polowniak@gmail.com',
+    linkedin: 'https://www.linkedin.com/in/wojciech-po%C5%82owniak/',
+    gitHub: 'https://github.com/Worie',
+  },
 ];
