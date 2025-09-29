@@ -101,6 +101,85 @@ If you're organizing an event, conference, or offering software tools and would 
 
 **After editing discounts.ts or software-discounts.ts, save and reload the page to see your changes.**
 
+## Community Participation Section
+
+The website features a dedicated Community Participation section that showcases surveys, research initiatives, and collaborative projects that benefit the JavaScript community. This section appears prominently on the homepage between Join Us and About sections.
+
+### Configuration
+
+Community participation items are configured in:
+
+```
+src/content/communityParticipation.ts
+```
+
+### Card Types
+
+The system supports multiple types of community participation cards:
+
+#### Current Types:
+- **survey** 📊 (Blue theme) - Developer surveys, community polls, feedback collection
+- **initiative** 🤝 (Green theme) - Community projects, open source initiatives, volunteer programs  
+- **research** 🔬 (Purple theme) - Academic studies, industry research, data collection
+- **collaboration** 🤝 (Orange theme) - Partnership opportunities, joint projects, community building
+
+#### Potential Additional Types:
+- **event** 🎪 (Red theme) - Hackathons, conferences, special meetups, workshops
+- **learning** 📚 (Indigo theme) - Free courses, tutorials, certification programs, mentorship
+- **contest** 🏆 (Yellow theme) - Coding competitions, design contests, innovation challenges
+- **feedback** 💬 (Teal theme) - Beta testing, product feedback, community input requests
+- **volunteer** 🙋 (Pink theme) - Conference organizing, mentoring, content creation
+- **sponsorship** 💼 (Gray theme) - Sponsor opportunities, partnership calls, funding requests
+
+### Adding Community Items
+
+Each community item is an object in the `COMMUNITY_PARTICIPATION` array:
+
+```typescript
+{
+  id: 'state-of-js-2025',
+  title: 'State of JS 2025 Survey',
+  description: 'Help shape the future of JavaScript by sharing your experience with the latest tools, frameworks, and trends in the JS ecosystem.',
+  url: 'https://survey.devographics.com/en-US/survey/state-of-js/2025',
+  type: 'survey',
+  status: 'active',
+  startDate: '2025-01-01',
+  endDate: '2025-02-28',
+  organization: 'Devographics',
+  impact: 'Your input helps developers worldwide understand JS trends and make informed technology decisions.',
+  ctaText: 'Take the Survey',
+  featured: true,
+  tags: ['JavaScript', 'Survey', 'Community', 'Trends', 'Ecosystem']
+}
+```
+
+### Field Descriptions
+
+- `id` (string): Unique identifier for the item (required)
+- `title` (string): Display title for the card (required)
+- `description` (string): Main description text (required)
+- `url` (string): External link for the call-to-action (required)
+- `type` (string): Card type - determines icon and color theme (required)
+- `status` (string): 'active', 'upcoming', or 'completed' (required)
+- `startDate` (string): Start date in YYYY-MM-DD format (optional)
+- `endDate` (string): End date in YYYY-MM-DD format (optional)
+- `organization` (string): Organization or entity behind the initiative (required)
+- `impact` (string): Description of the impact or benefit (required)
+- `ctaText` (string): Call-to-action button text (required)
+- `featured` (boolean): Whether to display on homepage (optional, default: false)
+- `tags` (string[]): Array of relevant tags for categorization (required)
+
+### Display Logic
+
+- Only items with `status: 'active'` and `featured: true` appear on the homepage
+- The section automatically hides when no featured active items exist
+- Cards are responsive and center-aligned in a grid layout
+- Dark mode styling is fully supported
+
+### Contact for Community Initiatives
+
+If you're organizing surveys, research projects, or community initiatives that would benefit JavaScript developers, please reach out to us at **contact@meetjs.pl**. We're always interested in featuring valuable community participation opportunities.
+
 ## Brand Assets and Wallpapers
 
 The website includes a dedicated section for brand assets and wallpapers that can be easily downloaded and used by the community.
