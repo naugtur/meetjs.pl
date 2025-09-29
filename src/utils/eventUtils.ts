@@ -5,18 +5,21 @@ import type { EventType } from '@/types/event';
  */
 const parseEventDate = (dateStr: string): Date => {
   const [day, month, year] = dateStr.split('.').map(Number);
-  
+
   if (!day || !month || !year || day > 31 || month > 12) {
     throw new Error(`Invalid date format: ${dateStr}`);
   }
-  
+
   return new Date(year, month - 1, day); // month is 0-indexed in Date constructor
 };
 
 /**
  * Sorts events by date with configurable order
  */
-export const sortEventsByDate = (events: EventType[], ascending = true): EventType[] => {
+export const sortEventsByDate = (
+  events: EventType[],
+  ascending = true,
+): EventType[] => {
   return [...events].sort((a, b) => {
     try {
       const dateA = parseEventDate(a.date);
@@ -24,7 +27,9 @@ export const sortEventsByDate = (events: EventType[], ascending = true): EventTy
       const diff = dateA.getTime() - dateB.getTime();
       return ascending ? diff : -diff;
     } catch {
-      console.warn(`Error sorting events: ${a.name} or ${b.name} has invalid date format`);
+      console.warn(
+        `Error sorting events: ${a.name} or ${b.name} has invalid date format`,
+      );
       return 0;
     }
   });
@@ -39,20 +44,27 @@ export const sortEventsByDate = (events: EventType[], ascending = true): EventTy
 export const filterUpcomingEvents = (events: EventType[]): EventType[] => {
   const now = new Date();
   const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  
+
   // Set max date to 6 months from now
   const maxDate = new Date();
   maxDate.setMonth(maxDate.getMonth() + 6);
-  
+
   const filteredEvents = events.filter((event) => {
     try {
       const eventDate = parseEventDate(event.date);
       return eventDate >= today && eventDate <= maxDate;
     } catch {
-      console.warn(`Invalid date format for event: ${event.name} - ${event.date}`);
+      console.warn(
+        `Invalid date format for event: ${event.name} - ${event.date}`,
+      );
       return false;
     }
   });
 
   return sortEventsByDate(filteredEvents);
+};
+
+export const getEventWeekDay = (event: EventType): string => {
+  const eventDate = parseEventDate(event.date);
+  return eventDate.toLocaleDateString('en-US', { weekday: 'long' });
 };
