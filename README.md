@@ -101,6 +101,79 @@ If you're organizing an event, conference, or offering software tools and would 
 
 **After editing discounts.ts or software-discounts.ts, save and reload the page to see your changes.**
 
+## Junior Developer Jobs Page
+
+The website includes a dedicated jobs page focused on junior developer opportunities. The page is designed to help companies post entry-level positions and connect with the meet.js community.
+
+You can access the jobs page at:
+
+```
+https://meetjs.pl/jobs
+```
+
+### Managing Job Offers
+
+Job offers are managed through a structured data file and reusable components:
+
+**Job Offers Data:**
+
+```
+src/data/offers.ts
+```
+
+**Reusable Job Card Component:**
+
+```
+src/components/JobOfferCard.tsx
+```
+
+### Adding New Job Offers
+
+To add new job offers to the page:
+
+1. Edit `src/data/offers.ts`
+2. Add a new job object to the `jobOffers` array following this structure:
+
+```ts
+{
+  id: "unique-job-id",
+  title: "Job Title",
+  company: "Company Name", 
+  location: "City",
+  description: "Job description...",
+  technologies: ["Tech1", "Tech2", "Benefit1"],
+  salaryMin: 8000,
+  salaryMax: 12000,
+  currency: "PLN",
+  email: "contact@company.com",
+  theme: {
+    primary: "color-900",
+    secondary: "color-800",
+    background: "from-color-50 to-color-100", 
+    border: "color-200",
+    text: "color-700",
+    textSecondary: "color-800",
+  },
+}
+```
+
+**Field descriptions:**
+
+- `id` (string): Unique identifier for the job offer (required)
+- `title` (string): Job position title (required)
+- `company` (string): Company name (required)
+- `location` (string): City or location (required)
+- `description` (string): Job description and details (required)
+- `technologies` (array): Tech stack and benefits/perks (required)
+- `salaryMin/Max` (number): Salary range (required)
+- `currency` (string): Currency code (required)
+- `email` (string): Contact email for applications (required)
+- `theme` (object): Color theme for the job card styling (required)
+
+### Job Posting Contact
+
+Companies interested in posting junior developer positions can contact us at **contact@meetjs.pl**. We focus on entry-level opportunities that provide mentorship and learning opportunities for new developers.
+
 ## Brand Assets and Wallpapers
 
 The website includes a dedicated section for brand assets and wallpapers that can be easily downloaded and used by the community.
