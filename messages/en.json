@@ -381,5 +381,13 @@
     "since": "since",
     "summits": "summits"
   },
-  "welcome": "Welcome to meet.js"
+  "welcome": "Welcome to meet.js",
+  "communityParticipation": {
+    "title": "Community Participation",
+    "description": "Join the JavaScript community in shaping the future of web development. Your voice matters in surveys, research, and collaborative initiatives.",
+    "help_text": "Help us build a stronger JavaScript community together 🚀",
+    "impact_label": "Impact:",
+    "by_label": "By:",
+    "until_date": "Until"
+  }
 }

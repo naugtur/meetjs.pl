@@ -381,5 +381,13 @@
     "since": "od",
     "summits": "summitów"
   },
-  "welcome": "Witamy w meet.js"
+  "welcome": "Witamy w meet.js",
+  "communityParticipation": {
+    "title": "Udział Społeczności",
+    "description": "Dołącz do społeczności JavaScript w kształtowaniu przyszłości tworzenia stron internetowych. Twój głos ma znaczenie w ankietach, badaniach i wspólnych inicjatywach.",
+    "help_text": "Pomóżmy razem zbudować silniejszą społeczność JavaScript 🚀",
+    "impact_label": "Wpływ:",
+    "by_label": "Przez:",
+    "until_date": "Do"
+  }
 }

@@ -118,12 +118,14 @@ src/content/communityParticipation.ts
 The system supports multiple types of community participation cards:
 
 #### Current Types:
+
 - **survey** 📊 (Blue theme) - Developer surveys, community polls, feedback collection
-- **initiative** 🤝 (Green theme) - Community projects, open source initiatives, volunteer programs  
+- **initiative** 🤝 (Green theme) - Community projects, open source initiatives, volunteer programs
 - **research** 🔬 (Purple theme) - Academic studies, industry research, data collection
 - **collaboration** 🤝 (Orange theme) - Partnership opportunities, joint projects, community building
 
 #### Potential Additional Types:
+
 - **event** 🎪 (Red theme) - Hackathons, conferences, special meetups, workshops
 - **learning** 📚 (Indigo theme) - Free courses, tutorials, certification programs, mentorship
 - **contest** 🏆 (Yellow theme) - Coding competitions, design contests, innovation challenges

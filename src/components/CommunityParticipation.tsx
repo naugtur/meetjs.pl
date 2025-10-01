@@ -1,3 +1,5 @@
+'use client';
+
 import {
   getFeaturedCommunityItems,
   type CommunityItem,
@@ -5,8 +7,10 @@ import {
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Users, TrendingUp, Calendar } from 'lucide-react';
+import { useTranslate } from '@tolgee/react';
 
 const CommunityItemCard = ({ item }: { item: CommunityItem }) => {
+  const { t } = useTranslate();
   const getTypeIcon = (type: CommunityItem['type']) => {
     switch (type) {
       case 'survey':
@@ -49,7 +53,7 @@ const CommunityItemCard = ({ item }: { item: CommunityItem }) => {
         {item.endDate && (
           <div className="flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400">
             <Calendar className="h-4 w-4" />
-            <span>Until {new Date(item.endDate).toLocaleDateString()}</span>
+            <span>{t('communityParticipation.until_date')} {new Date(item.endDate).toLocaleDateString()}</span>
           </div>
         )}
       </div>
@@ -64,11 +68,11 @@ const CommunityItemCard = ({ item }: { item: CommunityItem }) => {
 
       <div className="mb-4">
         <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-          <strong className="text-gray-700 dark:text-gray-300">Impact:</strong>{' '}
+          <strong className="text-gray-700 dark:text-gray-300">{t('communityParticipation.impact_label')}</strong>{' '}
           {item.impact}
         </p>
         <p className="text-sm text-gray-500 dark:text-gray-400">
-          <strong className="text-gray-700 dark:text-gray-300">By:</strong>{' '}
+          <strong className="text-gray-700 dark:text-gray-300">{t('communityParticipation.by_label')}</strong>{' '}
           {item.organization}
         </p>
       </div>
@@ -104,6 +108,7 @@ const CommunityItemCard = ({ item }: { item: CommunityItem }) => {
 };
 
 export const CommunityParticipation = () => {
+  const { t } = useTranslate();
   const featuredItems = getFeaturedCommunityItems();
 
   if (featuredItems.length === 0) {
@@ -115,12 +120,10 @@ export const CommunityParticipation = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
-            Community Participation
+            {t('communityParticipation.title')}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600 dark:text-gray-300">
-            Join the JavaScript community in shaping the future of web
-            development. Your voice matters in surveys, research, and
-            collaborative initiatives.
+            {t('communityParticipation.description')}
           </p>
         </div>
 
@@ -133,7 +136,7 @@ export const CommunityParticipation = () => {
         {featuredItems.length > 0 && (
           <div className="mt-12 text-center">
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              Help us build a stronger JavaScript community together 🚀
+              {t('communityParticipation.help_text')}
             </p>
           </div>
         )}
