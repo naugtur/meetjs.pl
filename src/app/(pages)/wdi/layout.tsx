@@ -1,9 +1,13 @@
 import { Metadata } from 'next';
+import { env } from '@/env';
 
 export const metadata: Metadata = {
   title: 'WDI | meet.js',
   description:
     'WDI is a free, open-source, and community-driven initiative to support women in the field of JavaScript.',
+  alternates: {
+    canonical: `${env.SITE_URL}/wdi`,
+  },
   openGraph: {
     title: 'WDI | meet.js',
     description:

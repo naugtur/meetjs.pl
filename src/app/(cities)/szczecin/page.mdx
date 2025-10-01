@@ -1,5 +1,11 @@
+import { env } from '../../../env';
+
 export const metadata = {
   title: 'meet.js Szczecin',
+  description: 'JavaScript meetups in Szczecin',
+  alternates: {
+    canonical: `${env.SITE_URL}/szczecin`,
+  },
 };
 
 <div className="prose dark:prose-invert max-w-none space-y-8 my-8">

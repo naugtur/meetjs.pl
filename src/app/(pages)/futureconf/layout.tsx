@@ -1,9 +1,13 @@
 import { Metadata } from 'next';
+import { env } from '@/env';
 
 export const metadata: Metadata = {
   title: 'FutureConf 2025 - AI in Production | meet.js Partnership',
   description:
     'Join FutureConf 2025 in Kraków (October 27-28) with up to 50% off through our group discount system. AI in Production conference featuring speakers from Hugging Face, mBank, Docker, and more.',
+  alternates: {
+    canonical: `${env.SITE_URL}/futureconf`,
+  },
   keywords: [
     'FutureConf 2025',
     'AI conference',

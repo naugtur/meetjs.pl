@@ -11,16 +11,9 @@ import {
   CardFooter,
 } from '@/components/ui/card';
 import { Gift, Ticket, Monitor, BookOpen } from 'lucide-react';
-import { Metadata } from 'next';
 import UnifiedPromoCard from '@/components/UnifiedPromoCard';
 import { EventDiscountSection } from '@/components/EventDiscountSection';
 import { getTranslate } from '@/tolgee/server';
-
-export const metadata: Metadata = {
-  title: 'Exclusive Discounts | meet.js',
-  description:
-    'Exclusive discounts on courses, software tools, and event tickets for the meet.js community.',
-};
 
 export default async function DiscountsPage() {
   const t = await getTranslate();

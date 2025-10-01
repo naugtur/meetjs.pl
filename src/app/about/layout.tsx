@@ -1,9 +1,13 @@
 import { Metadata } from 'next';
+import { env } from '@/env';
 
 export const metadata: Metadata = {
   title: 'About meet.js',
   description:
     'Learn more about meet.js, the community-driven JavaScript meetup in Wrocław.',
+  alternates: {
+    canonical: `${env.SITE_URL}/about`,
+  },
   openGraph: {
     title: 'About meet.js',
     description:
