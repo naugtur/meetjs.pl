@@ -19,12 +19,6 @@ import {
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
-export const metadata = {
-  title: 'WE WON! meet.js Wrocław - Community of the Year 2025 | meet.js',
-  description:
-    'meet.js Wrocław has WON the JavaScript Open Source Award for Community of the Year 2025! Thank you for your incredible support!',
-};
-
 export default function JSNationAwardPage() {
   return (
     <div className="container mx-auto max-w-4xl py-16">

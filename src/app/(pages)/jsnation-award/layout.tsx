@@ -1,15 +1,17 @@
 import { Metadata } from 'next';
+import { env } from '@/env';
 
 export const metadata: Metadata = {
-  title:
-    'meet.js Wrocław Nominated for JavaScript Open Source Awards | meet.js',
+  title: 'WE WON! meet.js Wrocław - Community of the Year 2025 | meet.js',
   description:
-    'meet.js Wrocław has been nominated for the JavaScript Open Source Awards in the Community of the Year category for 2025!',
+    'meet.js Wrocław has WON the JavaScript Open Source Award for Community of the Year 2025! Thank you for your incredible support!',
+  alternates: {
+    canonical: `${env.SITE_URL}/jsnation-award`,
+  },
   openGraph: {
-    title:
-      'meet.js Wrocław Nominated for JavaScript Open Source Awards | meet.js',
+    title: 'WE WON! meet.js Wrocław - Community of the Year 2025 | meet.js',
     description:
-      'meet.js Wrocław has been nominated for the JavaScript Open Source Awards in the Community of the Year category for 2025!',
+      'meet.js Wrocław has WON the JavaScript Open Source Award for Community of the Year 2025! Thank you for your incredible support!',
     url: 'https://meetjs.pl/jsnation-award',
     siteName: 'meet.js',
     images: [

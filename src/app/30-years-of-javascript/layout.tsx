@@ -1,9 +1,13 @@
 import { Metadata } from 'next';
+import { env } from '@/env';
 
 export const metadata: Metadata = {
   title: '30 Years of JavaScript | meet.js',
   description:
     'Celebrating 30 years of JavaScript - from its creation in 1995 to becoming the most widely used programming language in the world.',
+  alternates: {
+    canonical: `${env.SITE_URL}/30-years-of-javascript`,
+  },
   openGraph: {
     title: '30 Years of JavaScript | meet.js',
     description:
