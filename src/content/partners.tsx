@@ -6,6 +6,11 @@ export const PARTNERS = [
     alt: 'Git Nation',
   },
   {
+    href: 'https://tolgee.io/',
+    src: '/partners/tolgee.svg',
+    alt: 'Tolgee',
+  },
+  {
     href: 'https://gamedevjs.com/',
     src: '/partners/gamedevjs.png',
     alt: 'GameDevJS',
@@ -75,11 +80,6 @@ export const PARTNERS = [
     href: 'https://hackyeah.pl/',
     src: '/partners/hackyeah.png',
     alt: 'HackYeah',
-  },
-  {
-    href: 'https://tolgee.io/',
-    src: '/partners/tolgee.svg',
-    alt: 'Tolgee',
   },
   {
     href: 'https://thehacksummit.com/',
