@@ -81,4 +81,9 @@ export const PARTNERS = [
     src: '/partners/tolgee.svg',
     alt: 'Tolgee',
   },
+  {
+    href: 'https://thehacksummit.com/',
+    src: '/partners/thehacksummit.svg',
+    alt: 'The Hack Summit',
+  },
 ];
