@@ -301,4 +301,21 @@ export const eventsDiscounts: Promo[] = [
     city: 'Kraków',
     discountCode: 'FREE',
   },
+  {
+    id: 'the-hack-summit-2025',
+    name: 'The Hack Summit 2025',
+    message: '10% off with code PARTNER!',
+    cta: '👉 Get 10% Off',
+    ticketLink: 'https://thehacksummit.com/',
+    eventLink: 'https://thehacksummit.com/',
+    expiresAt: '2025-10-14T23:59:59+02:00',
+    description:
+      'The Hack Summit 2025 to VIII edycja wiodącej konferencji środowiska cybersec. Wydarzenie odbędzie się w formule hybrydowej: 13.10 Online oraz 14.10 na PGE Narodowym w Warszawie. Ponad 150 praktycznych prelekcji, 10+ ścieżek tematycznych obejmujących AI & Trends, Hacking, Defending, SoftwareDevSec, SecOps, CloudSec, OSINT, Forensics, Strategy, Governance, Audit, Risk, Legal & Compliance. Konferencji towarzyszy CyberSec Expo – targi pracy, produktów i usług. Networking wspierany aplikacją z funkcją matchmaking oraz wieczorne preparty i afterparty. Use code PARTNER for 10% off Standard or Exec packages!',
+    gradient: 'bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500',
+    icon: '🔐',
+    emojiRight: '🇵🇱',
+    country: 'Poland',
+    city: 'Warsaw',
+    discountCode: 'PARTNER',
+  },
 ];
