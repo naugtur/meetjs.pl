@@ -14,6 +14,60 @@ const parseEventDate = (dateStr: string): Date => {
 };
 
 /**
+ * Parses event time string and returns start and end times in minutes since midnight
+ * Supports formats: "HH:MM", "HH:MM-HH:MM"
+ */
+const parseEventTime = (timeStr: string): { start: number; end: number | null } => {
+  const timeRange = timeStr.split('-');
+  const startTime = timeRange[0]?.trim();
+  const endTime = timeRange[1]?.trim();
+  
+  if (!startTime) {
+    return { start: 0, end: null };
+  }
+  
+  const [startHour, startMin] = startTime.split(':').map(Number);
+  const start = (startHour || 0) * 60 + (startMin || 0);
+  
+  let end: number | null = null;
+  if (endTime) {
+    const [endHour, endMin] = endTime.split(':').map(Number);
+    end = (endHour || 0) * 60 + (endMin || 0);
+  }
+  
+  return { start, end };
+};
+
+/**
+ * Checks if an event is currently in progress
+ */
+const isEventInProgress = (event: EventType): boolean => {
+  try {
+    const eventDate = parseEventDate(event.date);
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    
+    // Event must be today
+    if (eventDate.getTime() !== today.getTime()) {
+      return false;
+    }
+    
+    const { start, end } = parseEventTime(event.time);
+    const currentMinutes = now.getHours() * 60 + now.getMinutes();
+    
+    // Event is in progress if current time is after start and before end (if end exists)
+    if (end !== null) {
+      return currentMinutes >= start && currentMinutes <= end;
+    } else {
+      // If no end time, consider in progress for 3 hours after start
+      return currentMinutes >= start && currentMinutes <= start + 180;
+    }
+  } catch {
+    return false;
+  }
+};
+
+/**
  * Sorts events by date with configurable order
  */
 export const sortEventsByDate = (events: EventType[], ascending = true): EventType[] => {
@@ -34,7 +88,7 @@ export const sortEventsByDate = (events: EventType[], ascending = true): EventTy
  * Filters events to only include those that are:
  * 1. Today or in the future
  * 2. Not more than 6 months in the future (to avoid showing events too far ahead)
- * Then sorts them by date
+ * Then sorts them with in-progress events first, followed by upcoming events by date
  */
 export const filterUpcomingEvents = (events: EventType[]): EventType[] => {
   const now = new Date();
@@ -54,5 +108,22 @@ export const filterUpcomingEvents = (events: EventType[]): EventType[] => {
     }
   });
 
-  return sortEventsByDate(filteredEvents);
+  // Sort with in-progress events first, then by date
+  return [...filteredEvents].sort((a, b) => {
+    const aInProgress = isEventInProgress(a);
+    const bInProgress = isEventInProgress(b);
+    
+    // In-progress events come first
+    if (aInProgress && !bInProgress) return -1;
+    if (!aInProgress && bInProgress) return 1;
+    
+    // If both in progress or both not in progress, sort by date
+    try {
+      const dateA = parseEventDate(a.date);
+      const dateB = parseEventDate(b.date);
+      return dateA.getTime() - dateB.getTime();
+    } catch {
+      return 0;
+    }
+  });
 };
