@@ -63,7 +63,9 @@ describe('EventCard Component', () => {
 
     // Check title, date, time, location
     expect(screen.getByText(testEvent.name)).toBeInTheDocument();
-    expect(screen.getByText(testEvent.date)).toBeInTheDocument();
+    expect(
+      screen.getByText(`${testEvent.date} (Wednesday)`),
+    ).toBeInTheDocument();
     expect(screen.getByText(testEvent.time)).toBeInTheDocument();
     expect(screen.getByText(testEvent.address!)).toBeInTheDocument();
     expect(screen.getByText(testEvent.city)).toBeInTheDocument();
