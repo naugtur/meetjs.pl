@@ -3,26 +3,22 @@ import { Organizer } from '@/types/organizer';
 export const BialystokOrganizers: Organizer[] = [
   {
     name: 'Kasia Paszko',
-    image:
-      'https://media.licdn.com/dms/image/v2/C5603AQHH_qKNNVLnpg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1587825233990?e=1737590400&v=beta&t=uLFZefzHs_a4Psr0Gw5PVDLXZL5oNLetkXIvLoTh70o',
+    image: '/city/bialystok/organizers/katarzyna.jpeg',
     linkedin: 'https://www.linkedin.com/in/katarzyna-paszko/',
   },
   {
     name: 'Kacper Lewko',
-    image:
-      'https://media.licdn.com/dms/image/v2/D4D03AQFZy4d5hzbDwA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1723033408880?e=1738195200&v=beta&t=XhbH5quWnhjzMXS2DXngrVmNhPOxTqdcOtONydXP1tg',
+    image: '/city/bialystok/organizers/kacper.jpeg',
     linkedin: 'https://pl.linkedin.com/in/kacper-lewko-66a165273',
   },
   {
     name: 'Krzysztof Kondracikowski',
-    image:
-      'https://media.licdn.com/dms/image/v2/C5603AQFv3ht2Mpp3zQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1662368294098?e=1737590400&v=beta&t=wYIudvUPW3nz7BA_6KxN68eJDA2JK9t1Ym7jkzRUSes',
+    image: '/city/bialystok/organizers/krzysztof.jpeg',
     linkedin: `https://www.linkedin.com/in/krzysztof-kondracikowski-87a3491b3/`,
   },
   {
     name: 'Mateusz Butkiewicz',
-    image:
-      'https://media.licdn.com/dms/image/v2/C4E03AQEvThc2J3-nvQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1642884417355?e=1737590400&v=beta&t=vjl0p0x8WNJblNWf8p4P-HQwJO3Cp0oyrUuqL-oqY28',
+    image: '/city/bialystok/organizers/mateusz.jpeg',
     linkedin: 'https://www.linkedin.com/in/mat-btk/',
   },
 ];
