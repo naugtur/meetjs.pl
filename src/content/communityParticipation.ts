@@ -16,26 +16,51 @@ export interface CommunityItem {
 
 export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
   {
+    id: 'react-conf',
+    title: 'React Conference - Live Now!',
+    description:
+      'The official React Conference is happening today and tomorrow. Join the virtual event to learn about the latest React developments, best practices, and future roadmap.',
+    url: 'https://conf.react.dev/',
+    type: 'collaboration',
+    status: 'active',
+    organization: 'React Team',
+    impact:
+      'Learn directly from the React core team and community experts about the future of React.',
+    ctaText: 'Join the Conference',
+    featured: true,
+    tags: [
+      'React',
+      'Conference',
+      'Live Event',
+      'JavaScript',
+      'Web Development',
+    ],
+  },
+  {
     id: 'state-of-js-2025',
     title: 'State of JS 2025 Survey',
-    description: 'Help shape the future of JavaScript by sharing your experience with the latest tools, frameworks, and trends in the JS ecosystem.',
+    description:
+      'Help shape the future of JavaScript by sharing your experience with the latest tools, frameworks, and trends in the JS ecosystem.',
     url: 'https://survey.devographics.com/en-US/survey/state-of-js/2025',
     type: 'survey',
     status: 'active',
     startDate: '2025-01-01',
     endDate: '2025-02-28',
     organization: 'Devographics',
-    impact: 'Your input helps developers worldwide understand JS trends and make informed technology decisions.',
+    impact:
+      'Your input helps developers worldwide understand JS trends and make informed technology decisions.',
     ctaText: 'Take the Survey',
     featured: true,
-    tags: ['JavaScript', 'Survey', 'Community', 'Trends', 'Ecosystem']
-  }
+    tags: ['JavaScript', 'Survey', 'Community', 'Trends', 'Ecosystem'],
+  },
 ];
 
 export const getActiveCommunityItems = (): CommunityItem[] => {
-  return COMMUNITY_PARTICIPATION.filter(item => item.status === 'active');
+  return COMMUNITY_PARTICIPATION.filter((item) => item.status === 'active');
 };
 
 export const getFeaturedCommunityItems = (): CommunityItem[] => {
-  return COMMUNITY_PARTICIPATION.filter(item => item.featured && item.status === 'active');
+  return COMMUNITY_PARTICIPATION.filter(
+    (item) => item.featured && item.status === 'active',
+  );
 };
