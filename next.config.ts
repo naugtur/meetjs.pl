@@ -13,10 +13,10 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   typedRoutes: true,
   turbopack: {},
+  reactCompiler: {
+    compilationMode: 'annotation',
+  },
   experimental: {
-    reactCompiler: {
-      compilationMode: 'annotation',
-    },
     staleTimes: {
       dynamic: 30,
     },
