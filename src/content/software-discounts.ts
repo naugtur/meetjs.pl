@@ -18,22 +18,6 @@ export const softwareDiscounts: Promo[] = [
     discountCode: 'MEETJS-WS',
   },
   {
-    id: 'elevenlabs-2025',
-    name: 'ElevenLabs',
-    message: 'Get 3 months of Creator tier FREE!',
-    cta: '🎙️ Claim 3 Months Free',
-    ticketLink: 'https://elevenlabs.io/?coupon=KASM7T',
-    eventLink: 'https://elevenlabs.io',
-    expiresAt: '2025-12-31T23:59:59+02:00',
-    description:
-      'ElevenLabs offers state-of-the-art AI voice technology. After signing up (choose developer category), click the link to redeem the coupon. Then navigate to My Workspace > Subscription, select Creator tier, and the coupon will be applied at checkout. Remember to downgrade before the coupon expires to avoid charges.',
-    gradient: 'bg-gradient-to-r from-violet-600 via-blue-500 to-purple-600',
-    icon: '🔊',
-    image: '/partners/elevenlabs-symbol.png',
-    emojiRight: '🤖',
-    discountCode: 'KASM7T',
-  },
-  {
     id: 'warp-terminal-2025',
     name: 'Warp Terminal',
     message: 'Get Warp Pro for only $5 first month!',
