@@ -2,7 +2,7 @@ import { FaFacebook, FaGithub, FaMeetup } from 'react-icons/fa6';
 import Image from 'next/image';
 
 interface LocalGroupProps {
-  localGroups: string[];
+  localGroups?: string[];
 }
 
 const detectIcon = (link: string) => {
@@ -58,7 +58,7 @@ const detectIcon = (link: string) => {
 };
 
 export const LocalGroups = ({ localGroups }: LocalGroupProps) => {
-  return (
+  return localGroups?.length ? (
     <section className="flex flex-col items-center justify-center gap-4 p-8">
       <h2 className="text-center text-2xl font-bold">Join our local groups</h2>
       <div className="flex gap-2">
@@ -75,5 +75,5 @@ export const LocalGroups = ({ localGroups }: LocalGroupProps) => {
         ))}
       </div>
     </section>
-  );
+  ) : null;
 };
