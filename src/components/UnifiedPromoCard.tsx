@@ -31,6 +31,7 @@ interface VariantConfig {
   defaultIcon: string;
   discountVariant: 'event' | 'software';
   ctaGradient: string;
+  ctaTextColor?: string;
   linkColor: string;
   websiteLabel: string;
 }
@@ -57,6 +58,7 @@ const variantConfigs: Record<PromoVariant, VariantConfig> = {
     defaultIcon: '📚',
     discountVariant: 'software',
     ctaGradient: 'bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700',
+    ctaTextColor: 'text-white',
     linkColor: 'text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300',
     websiteLabel: 'Course Website',
   },
@@ -73,6 +75,10 @@ export default function UnifiedPromoCard({
 }: UnifiedPromoCardProps) {
   const config = variantConfigs[variant];
   const isEventVariant = variant === 'event';
+  
+  // Use promo-specific gradient and text color if provided, otherwise use variant defaults
+  const ctaGradient = promo.gradient || config.ctaGradient;
+  const ctaTextColor = promo.textColor || config.ctaTextColor || 'text-white';
   
   return (
     <div className="group relative overflow-hidden rounded-xl border border-gray-200 bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800">
@@ -215,12 +221,12 @@ export default function UnifiedPromoCard({
             href={promo.ticketLink}
             target="_blank"
             rel="noopener noreferrer"
-            className={`block w-full rounded-lg py-3 text-center font-semibold text-white shadow transition-all hover:shadow-lg ${config.ctaGradient}`}
+            className={`block w-full rounded-lg py-3 text-center font-semibold shadow transition-all hover:shadow-lg ${ctaTextColor} ${ctaGradient}`}
           >
             {promo.cta}
           </a>
         ) : (
-          <span className={`block w-full rounded-lg py-3 text-center font-semibold text-white/80 shadow ${config.ctaGradient} opacity-60`}>
+          <span className={`block w-full rounded-lg py-3 text-center font-semibold shadow opacity-60 ${ctaTextColor}/80 ${ctaGradient}`}>
             {promo.cta}
           </span>
         )}

@@ -35,6 +35,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'futureconf.tech',
       },
+      {
+        protocol: 'https',
+        hostname: 'piccalil.li',
+      },
     ],
   },
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],

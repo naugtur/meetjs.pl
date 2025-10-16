@@ -33,4 +33,21 @@ export const learningDiscounts: Promo[] = [
     emojiRight: '🌐',
     discountCode: 'MEETJS',
   },
+  {
+    id: 'piccalilli-2025',
+    name: 'Piccalilli',
+    message: '40% off all courses with code MEETJS!',
+    cta: '📚 Get 40% Off',
+    ticketLink: 'https://piccalil.li/courses/',
+    eventLink: 'https://piccalil.li',
+    expiresAt: '2025-12-31T23:59:59+02:00',
+    description:
+      'Get 40% off all Piccalilli courses with code MEETJS! Learn modern CSS, accessibility, progressive enhancement, and web performance from industry experts. Piccalilli also offers automatic 40% PPP (Purchasing Power Parity) discounts for developers in Poland. Perfect for frontend developers who want to build better, more accessible websites.',
+    gradient: 'bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500',
+    textColor: 'text-gray-900',
+    image: 'https://piccalil.li/favicons/favicon-32x32.png',
+    icon: 'https://piccalil.li/favicons/favicon-32x32.png',
+    emojiRight: '✨',
+    discountCode: 'MEETJS',
+  },
 ];

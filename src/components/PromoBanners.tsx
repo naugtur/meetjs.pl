@@ -89,11 +89,14 @@ export const PromoBanners = ({ promos }: Props) => {
   return <PromoBanner promo={promo} close={() => handleClose(promo.id)} />;
 };
 
-const PromoBanner = ({ promo, close }: { promo: Promo; close: () => void }) => (
-  <div className="relative">
-    <div
-      className={`relative ${promo.gradient || 'bg-gradient-to-r from-blue via-purple to-green'} animate-fade-in z-0 py-1.5 text-white shadow md:py-2`}
-    >
+const PromoBanner = ({ promo, close }: { promo: Promo; close: () => void }) => {
+  const textColor = promo.textColor || 'text-white';
+  
+  return (
+    <div className="relative">
+      <div
+        className={`relative ${promo.gradient || 'bg-gradient-to-r from-blue via-purple to-green'} animate-fade-in z-0 py-1.5 shadow md:py-2 ${textColor}`}
+      >
       <div className="mx-2 sm:mx-4">
         <div className="flex flex-col items-center justify-between gap-1 text-center md:flex-row md:gap-2 md:text-left">
           <div className="hidden md:block">
@@ -107,22 +110,35 @@ const PromoBanner = ({ promo, close }: { promo: Promo; close: () => void }) => (
 
           <div className="flex items-center gap-2">
             <LinkCTA ticketLink={promo.ticketLink}>{promo.cta}</LinkCTA>
-            <CloseButton close={close} />
+            <CloseButton close={close} textColor={textColor} />
           </div>
         </div>
       </div>
     </div>
   </div>
-);
+  );
+};
 
 const Icon = ({
   icon,
   emojiLeft,
 }: {
-  icon?: React.ReactNode;
+  icon?: React.ReactNode | string;
   emojiLeft?: string;
 }) => {
-  if (icon) return <span className="mr-2 text-xl md:text-2xl">{icon}</span>;
+  if (icon) {
+    // Check if icon is a string URL
+    if (typeof icon === 'string' && (icon.startsWith('http://') || icon.startsWith('https://'))) {
+      return (
+        <img 
+          src={icon} 
+          alt="Icon" 
+          className="mr-2 h-5 w-5 md:h-6 md:w-6 object-contain"
+        />
+      );
+    }
+    return <span className="mr-2 text-xl md:text-2xl">{icon}</span>;
+  }
 
   if (emojiLeft) {
     return (
@@ -169,12 +185,17 @@ const LinkCTA = ({
   )
 );
 
-const CloseButton = ({ close }: { close: () => void }) => (
-  <button
-    onClick={close}
-    aria-label="Dismiss promo banner"
-    className="absolute right-4 top-2 text-white hover:text-gray-200 focus:outline-none md:static md:right-auto md:top-auto"
-  >
-    <X className="h-6 w-6" />
-  </button>
-);
+const CloseButton = ({ close, textColor }: { close: () => void; textColor: string }) => {
+  // Derive hover color based on text color
+  const hoverColor = textColor === 'text-white' ? 'hover:text-gray-200' : 'hover:opacity-70';
+  
+  return (
+    <button
+      onClick={close}
+      aria-label="Dismiss promo banner"
+      className={`absolute right-4 top-2 focus:outline-none md:static md:right-auto md:top-auto ${textColor} ${hoverColor}`}
+    >
+      <X className="h-6 w-6" />
+    </button>
+  );
+};
