@@ -12,9 +12,10 @@ export interface Promo {
   city?: string;
   emojiRight?: string;
   emojiLeft?: string;
-  icon?: ReactNode;
+  icon?: ReactNode | string;
   image?: string;
   gradient: string;
+  textColor?: string;
   cta: string;
   discountCode?: string;
   workshopLink?: string;
