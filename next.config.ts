@@ -39,6 +39,14 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'piccalil.li',
       },
+      {
+        protocol: 'https',
+        hostname: 'assets.devographics.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'conf.react.dev',
+      },
     ],
   },
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],

@@ -97,6 +97,11 @@ export const useTranslatedMenuLinks = (): MenuLink[] => {
           type: 'link',
         },
         {
+          name: t('navigation.dropdown.community_participation'),
+          href: '/community',
+          type: 'link',
+        },
+        {
           name: 'separator',
           href: '#',
           type: 'separator',

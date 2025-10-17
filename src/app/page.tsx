@@ -5,8 +5,7 @@ import { JoinUs } from '@/components/JoinUs';
 import { FeaturedEvents } from '@/components/FeaturedEvents';
 import { HeroSection } from '@/components/HeroSection';
 import { PartnersSection } from '@/components/PartnersSection';
-import { CommunityParticipation } from '@/components/CommunityParticipation';
-// import { discounts } from '@/content/discounts';
+import { CommunityParticipation } from '@/components/CommunityParticipationServer';
 
 export const dynamic = 'force-dynamic';
 
