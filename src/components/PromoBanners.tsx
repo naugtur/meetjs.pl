@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { X } from 'lucide-react';
+import Image from 'next/image';
 import type { Promo } from '@/types/promo';
 
 class DismissedPromo {
@@ -66,80 +66,102 @@ export const PromoBanners = ({ promos }: Props) => {
     setCurrentIndex(0); // Reset index when promos change
   }, [promos]);
 
-  // Auto-rotate banners every 8 seconds if there are multiple
+  // Auto-rotate banners every 6 seconds if there are multiple
   useEffect(() => {
     if (visiblePromos.length <= 1) return;
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % visiblePromos.length);
-    }, 8000);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, [visiblePromos.length]);
-
-  const handleClose = (id: string) => {
-    setVisiblePromos((prev) => prev.filter((p) => p.id !== id));
-    DismissedPromo.set(id);
-  };
 
   if (visiblePromos.length === 0) return null;
 
   const promo = visiblePromos[currentIndex];
 
-  return <PromoBanner promo={promo} close={() => handleClose(promo.id)} />;
+  return <PromoBanner promo={promo} />;
 };
 
-const PromoBanner = ({ promo, close }: { promo: Promo; close: () => void }) => {
+const PromoBanner = ({ promo }: { promo: Promo }) => {
   const textColor = promo.textColor || 'text-white';
-  
+
   return (
     <div className="relative">
       <div
         className={`relative ${promo.gradient || 'bg-gradient-to-r from-blue via-purple to-green'} animate-fade-in z-0 py-1.5 shadow md:py-2 ${textColor}`}
       >
-      <div className="mx-2 sm:mx-4">
-        <div className="flex flex-col items-center justify-between gap-1 text-center md:flex-row md:gap-2 md:text-left">
-          <div className="hidden md:block">
-            <Icon icon={promo.icon} emojiLeft={promo.emojiLeft} />
-          </div>
+        <div className="mx-2 sm:mx-4">
+          <div className="flex flex-col items-center justify-between gap-1 text-center md:flex-row md:gap-2 md:text-left">
+            <div className="hidden md:block">
+              <Icon
+                icon={promo.icon}
+                image={promo.image}
+                emojiLeft={promo.emojiLeft}
+              />
+            </div>
 
-          <span className="flex-1 text-xs font-medium leading-tight md:text-sm">
-            <span className="font-semibold">{promo.name}</span> -{' '}
-            {promo.message} <RightEmoji emojiRight={promo.emojiRight} />
-          </span>
+            <span className="flex-1 text-xs font-medium leading-tight md:text-sm">
+              <span className="font-semibold">{promo.name}</span> -{' '}
+              {promo.message} <RightEmoji emojiRight={promo.emojiRight} />
+            </span>
 
-          <div className="flex items-center gap-2">
-            <LinkCTA ticketLink={promo.ticketLink}>{promo.cta}</LinkCTA>
-            <CloseButton close={close} textColor={textColor} />
+            <div className="flex items-center gap-2">
+              <LinkCTA ticketLink={promo.ticketLink}>{promo.cta}</LinkCTA>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   );
 };
 
 const Icon = ({
   icon,
+  image,
   emojiLeft,
 }: {
   icon?: React.ReactNode | string;
+  image?: string;
   emojiLeft?: string;
 }) => {
+  // Priority 1: Show image if available (for all types)
+  if (image) {
+    return (
+      <Image
+        src={image}
+        alt="Logo"
+        width={24}
+        height={24}
+        className="mr-2 h-5 w-5 object-contain md:h-6 md:w-6"
+      />
+    );
+  }
+
+  // Priority 2: Show icon (emoji or image URL)
   if (icon) {
     // Check if icon is a string URL
-    if (typeof icon === 'string' && (icon.startsWith('http://') || icon.startsWith('https://'))) {
+    if (
+      typeof icon === 'string' &&
+      (icon.startsWith('http://') ||
+        icon.startsWith('https://') ||
+        icon.startsWith('/'))
+    ) {
       return (
-        <img 
-          src={icon} 
-          alt="Icon" 
-          className="mr-2 h-5 w-5 md:h-6 md:w-6 object-contain"
+        <Image
+          src={icon}
+          alt="Icon"
+          width={24}
+          height={24}
+          className="mr-2 h-5 w-5 object-contain md:h-6 md:w-6"
         />
       );
     }
     return <span className="mr-2 text-xl md:text-2xl">{icon}</span>;
   }
 
+  // Priority 3: Show emojiLeft as fallback
   if (emojiLeft) {
     return (
       <span
@@ -168,7 +190,7 @@ const LinkCTA = ({
 }: {
   ticketLink: string | undefined;
   children: React.ReactNode;
-}) => (
+}) =>
   ticketLink ? (
     <a
       href={ticketLink}
@@ -182,20 +204,4 @@ const LinkCTA = ({
     <span className="inline-block rounded-full bg-white/70 px-3 py-1 text-xs font-semibold text-purple opacity-70 md:text-sm">
       {cta}
     </span>
-  )
-);
-
-const CloseButton = ({ close, textColor }: { close: () => void; textColor: string }) => {
-  // Derive hover color based on text color
-  const hoverColor = textColor === 'text-white' ? 'hover:text-gray-200' : 'hover:opacity-70';
-  
-  return (
-    <button
-      onClick={close}
-      aria-label="Dismiss promo banner"
-      className={`absolute right-4 top-2 focus:outline-none md:static md:right-auto md:top-auto ${textColor} ${hoverColor}`}
-    >
-      <X className="h-6 w-6" />
-    </button>
   );
-};
