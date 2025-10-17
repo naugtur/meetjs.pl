@@ -118,6 +118,11 @@ export const useTranslatedMenuLinks = (): MenuLink[] => {
           type: 'link',
         },
         {
+          name: t('navigation.dropdown.memories'),
+          href: '/memories',
+          type: 'link',
+        },
+        {
           name: 'separator',
           href: '#',
           type: 'separator',
