@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { X } from 'lucide-react';
 import type { Promo } from '@/types/promo';
+import Image from 'next/image';
 
 class DismissedPromo {
   static getKey = (promoId: string) => `promoBannerDismissed_${promoId}`;
@@ -93,31 +94,31 @@ export const PromoBanners = ({ promos }: Props) => {
 
 const PromoBanner = ({ promo, close }: { promo: Promo; close: () => void }) => {
   const textColor = promo.textColor || 'text-white';
-  
+
   return (
     <div className="relative">
       <div
         className={`relative ${promo.gradient || 'bg-gradient-to-r from-blue via-purple to-green'} animate-fade-in z-0 py-1.5 shadow md:py-2 ${textColor}`}
       >
-      <div className="mx-2 sm:mx-4">
-        <div className="flex flex-col items-center justify-between gap-1 text-center md:flex-row md:gap-2 md:text-left">
-          <div className="hidden md:block">
-            <Icon icon={promo.icon} emojiLeft={promo.emojiLeft} />
-          </div>
+        <div className="mx-2 sm:mx-4">
+          <div className="flex flex-col items-center justify-between gap-1 text-center md:flex-row md:gap-2 md:text-left">
+            <div className="hidden md:block">
+              <Icon icon={promo.icon} emojiLeft={promo.emojiLeft} />
+            </div>
 
-          <span className="flex-1 text-xs font-medium leading-tight md:text-sm">
-            <span className="font-semibold">{promo.name}</span> -{' '}
-            {promo.message} <RightEmoji emojiRight={promo.emojiRight} />
-          </span>
+            <span className="flex-1 text-xs font-medium leading-tight md:text-sm">
+              <span className="font-semibold">{promo.name}</span> -{' '}
+              {promo.message} <RightEmoji emojiRight={promo.emojiRight} />
+            </span>
 
-          <div className="flex items-center gap-2">
-            <LinkCTA ticketLink={promo.ticketLink}>{promo.cta}</LinkCTA>
-            <CloseButton close={close} textColor={textColor} />
+            <div className="flex items-center gap-2">
+              <LinkCTA ticketLink={promo.ticketLink}>{promo.cta}</LinkCTA>
+              <CloseButton close={close} textColor={textColor} />
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   );
 };
 
@@ -130,12 +131,17 @@ const Icon = ({
 }) => {
   if (icon) {
     // Check if icon is a string URL
-    if (typeof icon === 'string' && (icon.startsWith('http://') || icon.startsWith('https://'))) {
+    if (
+      typeof icon === 'string' &&
+      (icon.startsWith('http://') || icon.startsWith('https://'))
+    ) {
       return (
-        <img 
-          src={icon} 
-          alt="Icon" 
-          className="mr-2 h-5 w-5 md:h-6 md:w-6 object-contain"
+        <Image
+          src={icon}
+          alt="Icon"
+          className="mr-2 h-5 w-5 object-contain md:h-6 md:w-6"
+          width={20}
+          height={20}
         />
       );
     }
@@ -170,7 +176,7 @@ const LinkCTA = ({
 }: {
   ticketLink: string | undefined;
   children: React.ReactNode;
-}) => (
+}) =>
   ticketLink ? (
     <a
       href={ticketLink}
@@ -184,13 +190,19 @@ const LinkCTA = ({
     <span className="inline-block rounded-full bg-white/70 px-3 py-1 text-xs font-semibold text-purple opacity-70 md:text-sm">
       {cta}
     </span>
-  )
-);
+  );
 
-const CloseButton = ({ close, textColor }: { close: () => void; textColor: string }) => {
+const CloseButton = ({
+  close,
+  textColor,
+}: {
+  close: () => void;
+  textColor: string;
+}) => {
   // Derive hover color based on text color
-  const hoverColor = textColor === 'text-white' ? 'hover:text-gray-200' : 'hover:opacity-70';
-  
+  const hoverColor =
+    textColor === 'text-white' ? 'hover:text-gray-200' : 'hover:opacity-70';
+
   return (
     <button
       onClick={close}
