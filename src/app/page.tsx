@@ -13,6 +13,7 @@ import { PartnersSection } from '@/components/PartnersSection';
 import { CommunityParticipation } from '@/components/CommunityParticipationServer';
 import { YouTubeSubscribeBanner } from '@/components/YouTubeSubscribeBanner';
 import { SpeakerFaces } from '@/components/SpeakerFaces';
+import { FeaturedBlogPosts } from '@/components/FeaturedBlogPosts';
 
 export const dynamic = 'force-dynamic';
 
@@ -38,6 +39,7 @@ const Home = () => {
           <Stats />
         </div>
         <SpeakerFaces />
+        <FeaturedBlogPosts />
         <PartnersSection />
       </div>
       {/*<FloatingSummitCTA />*/}
