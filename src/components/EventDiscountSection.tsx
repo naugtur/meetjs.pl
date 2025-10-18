@@ -31,20 +31,25 @@ const formatDate = (dateString: string) => {
 function EventPromoCard({ promo }: { promo: Promo }) {
 
   return (
-    <div className="group relative overflow-hidden rounded-xl border border-gray-200 bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800">
+    <a
+      href={promo.eventLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group relative block overflow-hidden rounded-xl border border-gray-200 bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
+    >
       {/* Header with Logo/Image */}
       <div className="flex items-center gap-4 border-b border-gray-100 p-6 dark:border-gray-700">
         {promo.image ? (
-          <div className="relative h-16 w-16 overflow-hidden rounded-lg bg-gray-100 ring-2 ring-gray-100 dark:bg-gray-700 dark:ring-gray-600">
+          <div className="relative h-20 w-20 overflow-hidden rounded-lg bg-gray-100 ring-2 ring-gray-100 dark:bg-gray-700 dark:ring-gray-600">
             <Image
               src={promo.image}
               alt={`${promo.name} logo`}
               fill
-              className="object-contain transition-transform duration-300 group-hover:scale-105"
+              className="object-contain p-3 transition-transform duration-300 group-hover:scale-105"
             />
           </div>
         ) : (
-          <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 to-pink-600 text-3xl text-white shadow-md transition-transform duration-300 group-hover:scale-105">
+          <div className="flex h-20 w-20 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 to-pink-600 text-3xl text-white shadow-md transition-transform duration-300 group-hover:scale-105">
             {promo.icon || '🎟️'}
           </div>
         )}
@@ -153,7 +158,7 @@ function EventPromoCard({ promo }: { promo: Promo }) {
           </span>
         )}
       </div>
-    </div>
+    </a>
   );
 }
 

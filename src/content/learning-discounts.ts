@@ -13,8 +13,7 @@ export const learningDiscounts: Promo[] = [
       'Get 20% off GreatFrontEnd Premium plan with code MEETJSPL. As a community partner, you can also earn 15% commission on every Premium plan purchase through your referral link. Perfect for developers looking to master frontend development with high-quality coding problems and system design questions.',
     gradient: 'bg-gradient-to-r from-purple-600 via-pink-500 to-red-500',
     icon: '💻',
-    image:
-      'https://media.licdn.com/dms/image/v2/D560BAQEISUxvs5Lm1g/company-logo_200_200/company-logo_200_200/0/1709987232513/greatfrontend_logo?e=1758153600&v=beta&t=lt1HBjwrYRh6FQqx9eFL_6Ne0G377VeGiXXgpGhefug',
+    image: '/partners/greatfrontend-logo.svg',
     emojiRight: '🌐',
     discountCode: 'MEETJSPL',
   },
