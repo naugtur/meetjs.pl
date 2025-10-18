@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { env } from '@/env';
 import CITIES from '@/content/cities';
+import { BLOG_POSTS } from '@/content/blogPosts';
 
 const sitemap = (): MetadataRoute.Sitemap => {
   const currentDate = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
@@ -11,6 +12,14 @@ const sitemap = (): MetadataRoute.Sitemap => {
     lastModified: currentDate,
     changeFrequency: 'monthly',
     priority: 0.8,
+  }));
+
+  // Blog posts
+  const blogPosts: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
+    url: `${env.SITE_URL}/blog/${post.id}`,
+    lastModified: post.date,
+    changeFrequency: 'monthly',
+    priority: 0.7,
   }));
 
   // Main pages
@@ -35,6 +44,12 @@ const sitemap = (): MetadataRoute.Sitemap => {
     },
     {
       url: `${env.SITE_URL}/discounts`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${env.SITE_URL}/blog`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.8,
@@ -71,7 +86,7 @@ const sitemap = (): MetadataRoute.Sitemap => {
     },
   ];
 
-  return [...mainPages, ...cities];
+  return [...mainPages, ...cities, ...blogPosts];
 };
 
 export default sitemap;
