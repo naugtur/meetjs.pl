@@ -13,6 +13,12 @@ export const useTranslatedMenuLinks = (): MenuLink[] => {
       external: true,
     },
     {
+      name: t('navigation.menu_items.videos'),
+      href: '/videos',
+      current: false,
+      external: false,
+    },
+    {
       name: t('navigation.menu_items.cities'),
       href: '/events',
       current: false,
