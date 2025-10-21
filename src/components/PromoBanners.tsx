@@ -85,6 +85,8 @@ export const PromoBanners = ({ promos }: Props) => {
   if (visiblePromos.length === 0) return null;
 
   const promo = visiblePromos[currentIndex];
+  
+  if (!promo) return null;
 
   return <PromoBanner promo={promo} close={() => handleClose(promo.id)} />;
 };
