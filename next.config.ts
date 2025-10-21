@@ -42,6 +42,7 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'aiminers.pl',
+        pathname: '/logo.png',
       },
     ],
   },
