@@ -39,6 +39,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'piccalil.li',
       },
+      {
+        protocol: 'https',
+        hostname: 'aiminers.pl',
+      },
     ],
   },
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
