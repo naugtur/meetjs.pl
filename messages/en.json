@@ -119,6 +119,14 @@
     "view_complete_collection_github": "View complete collection on GitHub",
     "wallpapers": "Wallpapers"
   },
+  "communityParticipation": {
+    "by_label": "By:",
+    "description": "Join the JavaScript community in shaping the future of web development. Your voice matters in surveys, research, and collaborative initiatives.",
+    "help_text": "Help us build a stronger JavaScript community together \uD83D\uDE80",
+    "impact_label": "Impact:",
+    "title": "Community Participation",
+    "until_date": "Until"
+  },
   "community_partnerships": {
     "contact_project": "Contact Project",
     "cta_description": "If you're running an educational or community initiative that aligns with our values, we'd love to hear from you.",
@@ -382,13 +390,5 @@
     "since": "since",
     "summits": "summits"
   },
-  "welcome": "Welcome to meet.js",
-  "communityParticipation": {
-    "title": "Community Participation",
-    "description": "Join the JavaScript community in shaping the future of web development. Your voice matters in surveys, research, and collaborative initiatives.",
-    "help_text": "Help us build a stronger JavaScript community together 🚀",
-    "impact_label": "Impact:",
-    "by_label": "By:",
-    "until_date": "Until"
-  }
+  "welcome": "Welcome to meet.js"
 }

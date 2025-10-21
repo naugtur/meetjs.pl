@@ -119,6 +119,14 @@
     "view_complete_collection_github": "Zobacz pełną kolekcję na GitHub",
     "wallpapers": "Tapety"
   },
+  "communityParticipation": {
+    "by_label": "Przez:",
+    "description": "Dołącz do społeczności JavaScript w kształtowaniu przyszłości tworzenia stron internetowych. Twój głos ma znaczenie w ankietach, badaniach i wspólnych inicjatywach.",
+    "help_text": "Pomóżmy razem zbudować silniejszą społeczność JavaScript \uD83D\uDE80",
+    "impact_label": "Wpływ:",
+    "title": "Udział Społeczności",
+    "until_date": "Do"
+  },
   "community_partnerships": {
     "contact_project": "Skontaktuj się z Projektem",
     "cta_description": "Jeśli prowadzisz inicjatywę edukacyjną lub społeczną zgodną z naszymi wartościami, chętnie się z Tobą skontaktujemy.",
@@ -382,13 +390,5 @@
     "since": "od",
     "summits": "summitów"
   },
-  "welcome": "Witamy w meet.js",
-  "communityParticipation": {
-    "title": "Udział Społeczności",
-    "description": "Dołącz do społeczności JavaScript w kształtowaniu przyszłości tworzenia stron internetowych. Twój głos ma znaczenie w ankietach, badaniach i wspólnych inicjatywach.",
-    "help_text": "Pomóżmy razem zbudować silniejszą społeczność JavaScript 🚀",
-    "impact_label": "Wpływ:",
-    "by_label": "Przez:",
-    "until_date": "Do"
-  }
+  "welcome": "Witamy w meet.js"
 }
