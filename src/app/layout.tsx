@@ -116,7 +116,7 @@ const RootLayout = async ({
 }>) => {
   const locale = await getLanguage();
   const tolgee = await getTolgee();
-  
+
   // serializable data that are passed to client components
   const staticData = await tolgee.loadRequired();
 
