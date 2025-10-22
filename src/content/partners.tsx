@@ -86,4 +86,19 @@ export const PARTNERS = [
     src: '/partners/thehacksummit.svg',
     alt: 'The Hack Summit',
   },
+  {
+    href: 'https://ng-poland.pl',
+    src: 'https://ng-poland.pl/images/ng-logo-white.png',
+    alt: 'NG Poland',
+  },
+  {
+    href: 'https://js-poland.pl',
+    src: 'https://js-poland.pl/images/js-logo-white.png',
+    alt: 'JS Poland',
+  },
+  {
+    href: 'http://ai-poland.pl',
+    src: 'https://ai-poland.pl/images/ai-logo-white.png',
+    alt: 'AI Poland',
+  },
 ];

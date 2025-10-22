@@ -46,6 +46,18 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'ng-poland.pl',
+      },
+      {
+        protocol: 'https',
+        hostname: 'js-poland.pl',
+      },
+      {
+        protocol: 'https',
+        hostname: 'ai-poland.pl',
+      },
+      {
+        protocol: 'https',
         hostname: 'assets.devographics.com',
       },
       {
