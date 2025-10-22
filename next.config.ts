@@ -44,6 +44,18 @@ const nextConfig: NextConfig = {
         hostname: 'aiminers.pl',
         pathname: '/logo.png',
       },
+      {
+        protocol: 'https',
+        hostname: 'assets.devographics.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'conf.react.dev',
+      },
+      {
+        protocol: 'https',
+        hostname: 'nextjs.org',
+      },
     ],
     // Next.js 16 defaults: minimumCacheTTL changed from 60s to 4 hours (14400s)
     // qualities default changed from [1..100] to [75]
