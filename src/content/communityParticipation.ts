@@ -37,6 +37,28 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
     ],
   },
   {
+    id: 'nextjs-conf-2025',
+    title: 'Next.js Conf 2025 - Today!',
+    description:
+      'Join the official Next.js Conference happening today! Watch live keynotes, technical talks, and learn about the latest Next.js features and best practices from the Vercel team.',
+    url: 'https://nextjs.org/conf',
+    type: 'collaboration',
+    status: 'active',
+    organization: 'Vercel',
+    impact:
+      'Learn about the future of Next.js and React development directly from the core team and community leaders.',
+    ctaText: 'Watch Live',
+    featured: true,
+    tags: [
+      'Next.js',
+      'Conference',
+      'Live Event',
+      'React',
+      'Web Development',
+      'Vercel',
+    ],
+  },
+  {
     id: 'state-of-js-2025',
     title: 'State of JS 2025 Survey',
     description:
