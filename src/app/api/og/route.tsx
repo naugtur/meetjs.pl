@@ -8,10 +8,6 @@ export const GET = async (request: Request) => {
     const hasCity = searchParams.has('city');
     const city = hasCity ? searchParams.get('city')?.slice(0, 100) : 'Poland';
 
-    const fontData = await fetch(
-      new URL(`${env.SITE_URL}/assets/Montserrat-Bold.ttf`, import.meta.url),
-    ).then((res) => res.arrayBuffer());
-
     return new ImageResponse(
       (
         <div
@@ -39,7 +35,6 @@ export const GET = async (request: Request) => {
       {
         width: 1200,
         height: 630,
-        fonts: [{ name: 'Montserrat-Bold', data: fontData, style: 'normal' }],
       },
     );
   } catch (e) {
