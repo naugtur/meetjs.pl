@@ -300,7 +300,7 @@ export const ADDITIONAL_EVENTS: Event[] = [
     rsvp: 'https://nextjs.org/conf/eyJoYXNTZXNzaW9uIjpmYWxzZX0',
     city: 'On-line',
     address: 'Virtual Event',
-    image: '',
+    image: '/nextjs-logo.svg',
     serie: 'Next.js',
     topic: ['Next.js', 'React', 'JavaScript', 'Web Development', 'Frontend'],
   },
