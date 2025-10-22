@@ -44,12 +44,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
+    "dev:webpack": "next dev --webpack",
     "build": "next build",
-    "build:tp": "next build --turbopack",
+    "build:webpack": "next build --webpack",
     "start": "next start",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
     "typegen": "next typegen && tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -63,7 +64,7 @@
     "@headlessui/react": "^2.2.9",
     "@mdx-js/loader": "^3.1.1",
     "@mdx-js/react": "^3.1.1",
-    "@next/mdx": "15.5.6",
+    "@next/mdx": "16.0.0",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-dropdown-menu": "2.1.15",
     "@radix-ui/react-slot": "1.2.3",
@@ -79,7 +80,7 @@
     "embla-carousel-react": "^8.6.0",
     "lucide-react": "^0.525.0",
     "motion": "^12.23.0",
-    "next": "15.5.6",
+    "next": "16.0.0",
     "react": "19.2.0",
     "react-confetti": "^6.4.0",
     "react-dom": "19.2.0",
@@ -89,6 +90,7 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
     "@lavamoat/preinstall-always-fail": "^2.1.1",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
@@ -96,14 +98,13 @@
     "@types/mdx": "^2.0.13",
     "@types/node": "^22.3.0",
     "@types/react": "19.2.2",
-    "@types/react-dom": "19.2.1",
+    "@types/react-dom": "19.2.2",
     "@vitejs/plugin-react": "^4.4.0",
     "babel-plugin-react-compiler": "19.1.0-rc.2",
     "eslint": "9.31.0",
-    "eslint-config-next": "15.5.6",
+    "eslint-config-next": "16.0.0",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-react-compiler": "19.1.0-rc.2",
-    "eslint-plugin-react-hooks": "5.2.0",
+    "eslint-plugin-react-hooks": "^7.0.0",
     "husky": "^9.1.4",
     "jiti": "^1.21.6",
     "jsdom": "^26.1.0",
@@ -113,7 +114,7 @@
     "prettier-plugin-tailwindcss": "^0.6.6",
     "tailwindcss": "^3.4.17",
     "typescript": "5.8.3",
-    "typescript-eslint": "^8.26.1",
+    "typescript-eslint": "^8.46.0",
     "vitest": "^3.1.1"
   },
   "engines": {
@@ -125,7 +126,7 @@
   "pnpm": {
     "overrides": {
       "@types/react": "19.2.2",
-      "@types/react-dom": "19.2.1"
+      "@types/react-dom": "19.2.2"
     }
   }
 }

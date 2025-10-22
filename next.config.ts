@@ -13,10 +13,10 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   typedRoutes: true,
   turbopack: {},
+  reactCompiler: {
+    compilationMode: 'annotation',
+  },
   experimental: {
-    reactCompiler: {
-      compilationMode: 'annotation',
-    },
     staleTimes: {
       dynamic: 30,
     },
@@ -45,6 +45,11 @@ const nextConfig: NextConfig = {
         pathname: '/logo.png',
       },
     ],
+    // Next.js 16 defaults: minimumCacheTTL changed from 60s to 4 hours (14400s)
+    // qualities default changed from [1..100] to [75]
+    // Explicitly setting these to be aware of the defaults
+    minimumCacheTTL: 14400, // 4 hours - new default
+    qualities: [75, 90], // Adding 90 for high-quality images when needed
   },
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   async redirects() {
