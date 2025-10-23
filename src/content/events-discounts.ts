@@ -389,4 +389,22 @@ export const eventsDiscounts: Promo[] = [
     country: 'Poland',
     city: 'Warsaw',
   },
+  {
+    id: 'github-universe-2025',
+    name: 'GitHub Universe 2025',
+    message: 'Free virtual pass - always free!',
+    cta: '👉 Get Free Virtual Pass',
+    ticketLink: 'https://githubuniverse.com/pricing',
+    eventLink: 'https://githubuniverse.com',
+    expiresAt: '2025-10-29T23:59:59+02:00',
+    description:
+      'GitHub Universe 2025 takes place October 28-29 at Fort Mason in San Francisco. Join the global developer community online with a free virtual pass! Watch keynotes live and catch available sessions on-demand. Get full access to live-streamed keynotes and content, plus full access to recorded sessions once they\'re available. The virtual pass is always free - no discount code needed!',
+    gradient: 'bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900',
+    icon: '🐙',
+    image: 'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png',
+    emojiRight: '🇺🇸',
+    country: 'USA',
+    city: 'San Francisco',
+    discountCode: 'FREE',
+  },
 ];
