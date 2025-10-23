@@ -49,4 +49,20 @@ export const learningDiscounts: Promo[] = [
     emojiRight: '✨',
     discountCode: 'MEETJS',
   },
+  {
+    id: 'uczmnie-2025',
+    name: 'Uczmnie.pl',
+    message: '10% zniżki na kurs "Dziecko w sieci" z kodem meetjs!',
+    cta: '🛡️ Zdobądź 10% zniżki',
+    ticketLink: 'https://www.uczmnie.pl/kursy/dziecko-w-sieci/',
+    eventLink: 'https://www.uczmnie.pl',
+    expiresAt: '2025-12-31T23:59:59+02:00',
+    description:
+      'Otrzymaj 10% zniżki na kurs "Dziecko w sieci" z kodem meetjs. Kurs pomoże rodzicom i opiekunom nauczyć dzieci bezpiecznego korzystania z internetu, ochrony prywatności i rozpoznawania zagrożeń online. Idealne dla rodzin, które chcą zapewnić dzieciom bezpieczne doświadczenia w świecie cyfrowym.',
+    gradient: 'bg-gradient-to-r from-blue-600 via-cyan-500 to-teal-500',
+    icon: '🛡️',
+    image: 'https://www.uczmnie.pl/wp-content/uploads/2025/01/fav-1.svg',
+    emojiRight: '👨‍👩‍👧‍👦',
+    discountCode: 'meetjs',
+  },
 ];
