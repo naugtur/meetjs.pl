@@ -42,6 +42,39 @@ export const useTranslatedMenuLinks = (): MenuLink[] => {
       ],
     },
     {
+      name: t('navigation.menu_items.speakers'),
+      href: '/speakers/2025',
+      current: false,
+      external: false,
+      dropdown: [
+        {
+          name: '2025',
+          href: '/speakers/2025',
+          type: 'link',
+        },
+        {
+          name: '2024',
+          href: '/speakers/2024',
+          type: 'link',
+        },
+        {
+          name: '2023',
+          href: '/speakers/2023',
+          type: 'link',
+        },
+        {
+          name: '2022',
+          href: '/speakers/2022',
+          type: 'link',
+        },
+        {
+          name: '2021',
+          href: '/speakers/2021',
+          type: 'link',
+        },
+      ],
+    },
+    {
       name: t('navigation.menu_items.discounts'),
       href: '/discounts',
       current: false,

@@ -33,7 +33,7 @@ export const NavigationLink = ({
           current
             ? 'bg-gray-900 text-white'
             : 'text-white hover:bg-green/80 hover:text-purple',
-          'rounded-md px-3 py-2 font-medium',
+          'whitespace-nowrap rounded-md px-3 py-2 font-medium',
         )}
         aria-current={current ? 'page' : undefined}
         target="_blank"
@@ -54,7 +54,7 @@ export const NavigationLink = ({
           current
             ? 'bg-gray-900 text-white'
             : 'text-white hover:bg-green/80 hover:text-purple',
-          'rounded-md px-3 py-2 font-medium',
+          'whitespace-nowrap rounded-md px-3 py-2 font-medium',
         )}
         aria-current={current ? 'page' : undefined}
         itemProp="url"
