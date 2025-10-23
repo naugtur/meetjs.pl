@@ -14,9 +14,10 @@ Website for meet.js community.
 1. Clone the repository `git clone git@github.com:naugtur/meetjs.pl.git`
 2. Enter the repository `cd meetjs.pl`
 3. Install dependencies `pnpm install`
-4. Setup env variables `cp .env.example .env`
-5. Run development server `pnpm dev`
-6. Open [http://localhost:3000](http://localhost:3000) in your browser
+4. Setup git hooks `pnpm prepare`
+5. Setup env variables `cp .env.example .env`
+6. Run development server `pnpm dev`
+7. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## Security
 
