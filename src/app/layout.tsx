@@ -56,13 +56,7 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
-    other: [
-      {
-        rel: 'apple-touch-icon-precomposed',
-        url: '/apple-touch-icon-precomposed.png',
-      },
-    ],
+    apple: '/favicon.ico',
   },
   openGraph: {
     title: 'meet.js - JavaScript Meetups in Poland',
