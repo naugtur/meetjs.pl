@@ -10,6 +10,8 @@ const config: Config = {
     'from-blue-500',
     'from-blue-600',
     'from-blue-700',
+    'from-gray-700',
+    'from-gray-800',
     'from-green-400',
     'from-indigo-500',
     'from-indigo-600',
@@ -26,6 +28,7 @@ const config: Config = {
     'via-blue-500',
     'via-cyan-400',
     'via-emerald-500',
+    'via-gray-700',
     'via-indigo-500',
     'via-indigo-600',
     'via-orange-500',
@@ -37,6 +40,7 @@ const config: Config = {
     // To colors
     'to-blue-600',
     'to-cyan-400',
+    'to-gray-900',
     'to-green',
     'to-indigo-600',
     'to-orange-500',
@@ -99,6 +103,16 @@ const config: Config = {
         green: {
           DEFAULT: '#bcd35d',
           400: '#bcd35d',
+        },
+        gray: {
+          700: '#374151',
+          800: '#1f2937',
+          900: '#111827',
+        },
+        github: {
+          DEFAULT: '#24292f',
+          dark: '#0d1117',
+          light: '#f6f8fa',
         },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
