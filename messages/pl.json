@@ -386,6 +386,17 @@
     "paused_join_organizer": "Wstrzymane (dołącz jako organizator)",
     "typescript_gdansk": "TypeScript Gdańsk"
   },
+  "social_feed": {
+    "title": "Co u społeczności",
+    "subtitle": "Najnowsze posty naszej społeczności z",
+    "view_all": "Zobacz Wszystkie Posty",
+    "view_post": "Zobacz post",
+    "just_now": "przed chwilą",
+    "minutes_ago": "{count} min temu",
+    "hours_ago": "{count}h temu",
+    "days_ago": "{count}d temu",
+    "weeks_ago": "{count}t temu"
+  },
   "stats": {
     "cities": "miast",
     "since": "od",
