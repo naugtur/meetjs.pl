@@ -76,6 +76,35 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'www.uczmnie.pl',
       },
+      // Mastodon instances for social feed
+      {
+        protocol: 'https',
+        hostname: 'cdn.fosstodon.org',
+      },
+      {
+        protocol: 'https',
+        hostname: 'fosstodon.org',
+      },
+      {
+        protocol: 'https',
+        hostname: 'files.mastodon.social',
+      },
+      {
+        protocol: 'https',
+        hostname: 'mastodon.social',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.masto.host',
+      },
+      {
+        protocol: 'https',
+        hostname: 'media.mas.to',
+      },
+      {
+        protocol: 'https',
+        hostname: 'mas.to',
+      },
     ],
     // Next.js 16 defaults: minimumCacheTTL changed from 60s to 4 hours (14400s)
     // qualities default changed from [1..100] to [75]

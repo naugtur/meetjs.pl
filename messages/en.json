@@ -386,6 +386,17 @@
     "paused_join_organizer": "Paused (join as organizer)",
     "typescript_gdansk": "TypeScript Gdańsk"
   },
+  "social_feed": {
+    "title": "Community Buzz",
+    "subtitle": "Latest posts from our community using",
+    "view_all": "View All Posts",
+    "view_post": "View post",
+    "just_now": "just now",
+    "minutes_ago": "{count}m ago",
+    "hours_ago": "{count}h ago",
+    "days_ago": "{count}d ago",
+    "weeks_ago": "{count}w ago"
+  },
   "stats": {
     "cities": "cities",
     "since": "since",
