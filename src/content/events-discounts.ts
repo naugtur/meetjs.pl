@@ -407,4 +407,22 @@ export const eventsDiscounts: Promo[] = [
     city: 'San Francisco',
     discountCode: 'FREE',
   },
+  {
+    id: 'wawtech-2025',
+    name: 'WAWTECH 2025',
+    message: '10% off with code MEETJS10!',
+    cta: '👉 Get 10% Off',
+    ticketLink: 'https://bit.ly/4oNvGaM',
+    eventLink: 'https://wawtech.io/',
+    expiresAt: '2025-12-17T23:59:59+01:00',
+    description:
+      'WAWTECH 2025 is a new international tech conference in Warsaw gathering over 5,000 developers, startups, CEOs, and investors from across Europe. Organized by DOU, the largest IT community in CEE, it features 3 stages and 6 tracks: AI, Highload, Dev, Startup, SciTech, and Product. Speakers will include representatives from companies such as OpenAI, Asana, Agoda, and Netflix. The main language is English and the event aims to become a central meeting point for the CEE tech community. December 16-17, 2025 at EXPO XXI, Warsaw. Use code MEETJS10 for 10% off any ticket type!',
+    gradient: 'bg-gradient-to-r from-gray-100 via-gray-50 to-white',
+    icon: '🚀',
+    image: 'https://cdn.prod.website-files.com/68f89c19dc49271dca84d03f/68f8a10a207aff19953a1401_waw.png',
+    emojiRight: '🇵🇱',
+    country: 'Poland',
+    city: 'Warsaw',
+    discountCode: 'MEETJS10',
+  },
 ];

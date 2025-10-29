@@ -76,6 +76,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'www.uczmnie.pl',
       },
+      {
+        protocol: 'https',
+        hostname: 'cdn.prod.website-files.com',
+      },
     ],
     // Next.js 16 defaults: minimumCacheTTL changed from 60s to 4 hours (14400s)
     // qualities default changed from [1..100] to [75]
