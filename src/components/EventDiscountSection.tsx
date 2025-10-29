@@ -29,7 +29,6 @@ const formatDate = (dateString: string) => {
 };
 
 function EventPromoCard({ promo }: { promo: Promo }) {
-
   return (
     <a
       href={promo.eventLink}
@@ -45,7 +44,7 @@ function EventPromoCard({ promo }: { promo: Promo }) {
               src={promo.image}
               alt={`${promo.name} logo`}
               fill
-              className="object-contain p-3 transition-transform duration-300 group-hover:scale-105"
+              className="object-contain p-1 transition-transform duration-300 group-hover:scale-105"
             />
           </div>
         ) : (
@@ -153,7 +152,7 @@ function EventPromoCard({ promo }: { promo: Promo }) {
             {promo.cta}
           </a>
         ) : (
-          <span className="block w-full rounded-lg bg-gradient-to-r from-purple-600/70 to-pink-600/70 py-3 text-center font-semibold text-white/80 shadow opacity-60">
+          <span className="block w-full rounded-lg bg-gradient-to-r from-purple-600/70 to-pink-600/70 py-3 text-center font-semibold text-white/80 opacity-60 shadow">
             {promo.cta}
           </span>
         )}
