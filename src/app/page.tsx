@@ -13,10 +13,16 @@ import { PartnersSection } from '@/components/PartnersSection';
 import { CommunityParticipation } from '@/components/CommunityParticipationServer';
 import { YouTubeSubscribeBanner } from '@/components/YouTubeSubscribeBanner';
 import { SpeakerFaces } from '@/components/SpeakerFaces';
+import SocialFeed from '@/components/SocialFeed';
+import { fetchSocialPosts } from '@/lib/social';
 
 export const dynamic = 'force-dynamic';
 
-const Home = () => {
+const Home = async () => {
+  // Fetch social posts from all configured platforms
+  // Limit to 6 posts total (show 3, expand to 6 with "Show More")
+  const socialPosts = await fetchSocialPosts(6);
+
   return (
     <main>
       <HeroSection />
@@ -30,6 +36,7 @@ const Home = () => {
       <div className="flex min-h-screen flex-col items-center">
         <FeaturedEvents />
         <JavaScript30YearsPromo />
+        <SocialFeed posts={socialPosts} />
         <JoinUs />
         <YouTubeSubscribeBanner />
         <CommunityParticipation />

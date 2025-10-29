@@ -62,6 +62,7 @@
     "screenshots:generate": "node scripts/generate-media-screenshots.js"
   },
   "dependencies": {
+    "@atproto/api": "^0.17.5",
     "@headlessui/react": "^2.2.10",
     "@mdx-js/loader": "^3.1.1",
     "@mdx-js/react": "^3.1.1",
