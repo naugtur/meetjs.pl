@@ -1,12 +1,7 @@
 import { fileURLToPath } from 'node:url';
-import createJiti from 'jiti';
 
 import createMDX from '@next/mdx';
 import { NextConfig } from 'next';
-
-const jiti = createJiti(fileURLToPath(import.meta.url));
-
-jiti('./src/env.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
