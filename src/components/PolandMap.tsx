@@ -186,7 +186,7 @@ export const PolandMap = async ({ cities, events = [] }: MapProps) => {
               <div className="absolute -inset-1 animate-pulse rounded-full border-2 border-[#9333ea] dark:border-green-500" />
             </div>
           </div>
-          <span>Active / Upcoming / In-progress events</span>
+          <span>{t('poland_map.active_upcoming_progress')}</span>
         </div>
         <div className="flex items-center gap-2 whitespace-nowrap">
           <div className="relative">

@@ -7,6 +7,7 @@ import { FaRegEnvelope, FaArrowUpRightFromSquare } from 'react-icons/fa6';
 import type { Route } from 'next';
 import { getTranslate } from '@/tolgee/server';
 import { getTranslatedFooterMenuLinks } from '@/hooks/useTranslatedMenuLinks';
+import { CityStatusIndicator } from '@/components/Navigation/CityStatusIndicator';
 
 export const Footer = async () => {
   const t = await getTranslate();
@@ -57,20 +58,31 @@ export const Footer = async () => {
                   >
                     {city.name}
                     {city.status && (
-                      <span
-                        className={`ml-2 inline-block h-2 w-2 rounded-full ${
-                          city.status === 'active'
-                            ? 'bg-green'
-                            : city.status === 'coming-soon'
-                              ? 'bg-yellow-400'
-                              : 'bg-gray-400'
-                        }`}
-                      />
+                      <CityStatusIndicator status={city.status} />
                     )}
                   </Link>
                 </li>
               ))}
             </ul>
+            <div className="mt-4 flex flex-wrap items-center gap-4 text-xs text-white/80">
+              <span>{t('footer.status_legend_label')}</span>
+              <span className="flex items-center gap-2">
+                <CityStatusIndicator status={'active'} />
+                {t('footer.status.active')}
+              </span>
+              <span className="flex items-center gap-2">
+                <CityStatusIndicator status={'coming-soon'} />
+                {t('footer.status.coming_soon')}
+              </span>
+              <span className="flex items-center gap-2">
+                <CityStatusIndicator status={'paused'} />
+                {t('footer.status.paused')}
+              </span>
+              <span className="flex items-center gap-2">
+                <CityStatusIndicator status={'new'} />
+                {t('footer.status.new')}
+              </span>
+            </div>
           </div>
 
           {/* Menu column */}

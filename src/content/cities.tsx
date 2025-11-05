@@ -63,7 +63,7 @@ export const CITIES: City[] = [
       x: 134,
       y: 200,
     },
-    status: 'coming-soon',
+    status: 'new',
   },
   {
     name: 'Kielce',

@@ -282,6 +282,13 @@
     "contact": "Skontaktuj się z nami",
     "copyright": "Wszelkie prawa zastrzeżone.",
     "menu": "Menu",
+    "status_legend_label": "Status:",
+    "status": {
+      "active": "Aktywne",
+      "coming_soon": "Wkrótce",
+      "paused": "Wstrzymane",
+      "new": "Nowe"
+    },
     "menu_links": {
       "14_birthday": "14 urodziny",
       "about": "O nas",
