@@ -282,6 +282,13 @@
     "contact": "Contact us",
     "copyright": "All rights reserved.",
     "menu": "Menu",
+    "status_legend_label": "Status:",
+    "status": {
+      "active": "Active",
+      "coming_soon": "Coming soon",
+      "paused": "Paused",
+      "new": "New"
+    },
     "menu_links": {
       "14_birthday": "14 Birthday",
       "about": "About",
