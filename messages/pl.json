@@ -117,7 +117,15 @@
     "usage_intro": "Prosimy o odpowiedzialne używanie tych zasobów marki. Oto kluczowe wytyczne:",
     "usage_text": "Prosimy o odpowiedzialne używanie tych zasobów zgodnie z naszymi wytycznymi marki. W przypadku użytku komercyjnego lub pytań dotyczących użytkowania, skontaktuj się z nami.",
     "view_complete_collection_github": "Zobacz pełną kolekcję na GitHub",
-    "wallpapers": "Tapety"
+    "wallpapers": "Tapety",
+    "assets_generator": "Generator obrazów wydarzeń",
+    "assets_generator_description_short": "Szybko twórz grafiki wydarzeń",
+    "assets_generator_title": "Generator obrazów wydarzeń",
+    "assets_generator_subtitle": "Twórz grafiki meetupów do social mediów i banerów.",
+    "assets_generator_description": "Skorzystaj z generatora online, aby tworzyć grafiki dla wydarzeń meet.js. Wybierz typ wsparcia, dodaj logotypy partnerów i eksportuj gotowe obrazy.",
+    "assets_generator_cta": "Otwórz generator",
+    "organizers_only_note": "Zasób tylko dla organizatorów:",
+    "organizers_tools_cta": "Narzędzia dla organizatorów"
   },
   "communityParticipation": {
     "by_label": "Przez:",
@@ -292,6 +300,7 @@
     "menu_links": {
       "14_birthday": "14 urodziny",
       "about": "O nas",
+      "organizer_tools": "Narzędzia dla organizatorów",
       "brand_assets": "Logo i kolory",
       "code_of_conduct": "Kodeks postępowania",
       "contact_link": "Kontakt",
@@ -339,7 +348,8 @@
       "learning_discounts": "Zniżki na naukę",
       "our_team": "Nasz zespół",
       "software_discounts": "Zniżki na oprogramowanie",
-      "sponsors": "Sponsorzy"
+      "sponsors": "Sponsorzy",
+      "organizer_tools": "Narzędzia dla organizatorów"
     },
     "events": "Wydarzenia",
     "home": "Strona główna",
@@ -385,7 +395,14 @@
       "non_commercial": "Brak interesu komercyjnego lub wsparcia firmy w Twoim zaangażowaniu jako organizator",
       "time": "Trochę czasu i ambicji"
     },
-    "requirements_title": "Co musisz mieć:"
+    "requirements_title": "Co musisz mieć:",
+    "tools_page_title": "Narzędzia dla organizatorów",
+    "tools_intro": "Zasoby dla organizatorów meet.js do tworzenia grafik i materiałów.",
+    "generator_title": "Generator obrazów wydarzeń",
+    "generator_description": "Łatwo twórz grafiki meetupów do social mediów i banerów.",
+    "generator_cta": "Otwórz generator",
+    "back_to_main": "Powrót do",
+    "back_to_main_link": "Jak zostać organizatorem"
   },
   "poland_map": {
     "active_upcoming_progress": "Aktywne / nadchodzące / w trakcie",

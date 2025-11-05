@@ -227,6 +227,15 @@ const BrandPage = async () => {
           <p className="text-xl text-gray-600">
             {t('brand.page_subtitle')}
           </p>
+          <div className="mt-4 inline-flex items-center gap-2 rounded-md border border-blue-200 bg-blue-50 px-3 py-2 text-sm text-blue-800">
+            <span>👥</span>
+            <span>
+              {t('brand.organizers_only_note')}{' '}
+              <Link href="/how-to-become-an-organizer/tools" className="underline hover:no-underline">
+                {t('brand.organizers_tools_cta')}
+              </Link>
+            </span>
+          </div>
         </div>
 
         {/* Table of Contents */}
@@ -255,6 +264,7 @@ const BrandPage = async () => {
                 </div>
               </div>
             </a>
+            
             <a
               href="#colors"
               className="flex items-center gap-2 rounded-md bg-white p-3 shadow-sm transition-all hover:bg-blue-50 hover:shadow-md"
@@ -572,6 +582,8 @@ const BrandPage = async () => {
           </Link>
         </div>
       </section>
+
+      
 
       <section id="colors" className="mb-16">
         <h2 className="mb-6 border-b pb-2 text-3xl font-bold">{t('brand.colors')}</h2>
