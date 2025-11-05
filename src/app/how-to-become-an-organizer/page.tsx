@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { getTranslate } from '@/tolgee/server';
 
 export default async function Page() {
@@ -64,6 +65,14 @@ export default async function Page() {
         <ul className="list-disc space-y-2 pl-6">
           <li>{t('organizer.no_benefits.money')}</li>
         </ul>
+      </div>
+
+      <div className="mt-12 rounded-lg border bg-white p-6 shadow-sm">
+        <h2 className="mb-2 text-2xl font-semibold">{t('organizer.tools_page_title')}</h2>
+        <p className="mb-4 text-gray-700">{t('organizer.tools_intro')}</p>
+        <Link href="/how-to-become-an-organizer/tools" className="inline-block rounded-md bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-700">
+          {t('organizer.tools_page_title')}
+        </Link>
       </div>
     </div>
   );

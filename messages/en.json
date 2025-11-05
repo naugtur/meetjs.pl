@@ -117,7 +117,15 @@
     "usage_intro": "Please use these brand assets responsibly. Here are the key guidelines:",
     "usage_text": "Please use these assets responsibly and in accordance with our brand guidelines. For commercial use or questions about usage, please contact us.",
     "view_complete_collection_github": "View complete collection on GitHub",
-    "wallpapers": "Wallpapers"
+    "wallpapers": "Wallpapers",
+    "assets_generator": "Event Image Generator",
+    "assets_generator_description_short": "Create event visuals quickly",
+    "assets_generator_title": "Event Image Generator",
+    "assets_generator_subtitle": "Create meetup images for social media and banners.",
+    "assets_generator_description": "Use the online generator to create visuals for meet.js events. Choose supporter type, add partner logos, and export ready-to-share images.",
+    "assets_generator_cta": "Open Generator",
+    "organizers_only_note": "Organizer-only resource:",
+    "organizers_tools_cta": "Organizer Tools"
   },
   "communityParticipation": {
     "by_label": "By:",
@@ -285,6 +293,7 @@
     "menu_links": {
       "14_birthday": "14 Birthday",
       "about": "About",
+      "organizer_tools": "Organizer Tools",
       "brand_assets": "Brand Assets",
       "code_of_conduct": "Code of Conduct",
       "contact_link": "Contact",
@@ -332,7 +341,8 @@
       "learning_discounts": "Learning Discounts",
       "our_team": "Our Team",
       "software_discounts": "Software Discounts",
-      "sponsors": "Sponsors"
+      "sponsors": "Sponsors",
+      "organizer_tools": "Organizer Tools"
     },
     "events": "Events",
     "home": "Home",
@@ -351,6 +361,7 @@
     "sponsors": "Sponsors",
     "team": "Team"
   },
+  
   "organizer": {
     "benefits": {
       "access": "Access to other organizers and their experience",
@@ -378,7 +389,14 @@
       "non_commercial": "No commercial interest or a company backing your engagement as an organizer",
       "time": "A bit of time and ambition"
     },
-    "requirements_title": "What you need to have:"
+    "requirements_title": "What you need to have:",
+    "tools_page_title": "Organizer Tools",
+    "tools_intro": "Resources for meet.js organizers to create event visuals and assets.",
+    "generator_title": "Event Image Generator",
+    "generator_description": "Create meetup visuals for social media and banners with ease.",
+    "generator_cta": "Open Generator",
+    "back_to_main": "Back to",
+    "back_to_main_link": "How to become an organizer"
   },
   "poland_map": {
     "active_upcoming_progress": "Active / upcoming / in progress",
