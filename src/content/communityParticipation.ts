@@ -93,26 +93,14 @@ export const getFeaturedCommunityItems = (): CommunityItem[] => {
   );
 };
 
-export const getCombinedCommunityItems = async (): Promise<CommunityItem[]> => {
-  // Import dynamically to avoid issues with server-only code
-  const { fetchDevographicsSurveys } = await import('@/lib/devographics');
-  
-  const devographicsSurveys = await fetchDevographicsSurveys();
-  const manualItems = COMMUNITY_PARTICIPATION;
-
-  // Combine and deduplicate (manual items take precedence)
-  const manualIds = new Set(manualItems.map((item) => item.id));
-  const autoSurveys = devographicsSurveys.filter(
-    (survey) => !manualIds.has(survey.id),
-  );
-
-  return [...manualItems, ...autoSurveys];
+export const getCombinedCommunityItems = (): CommunityItem[] => {
+  return COMMUNITY_PARTICIPATION;
 };
 
-export const getNewestCommunityItems = async (
+export const getNewestCommunityItems = (
   limit: number = 3,
-): Promise<CommunityItem[]> => {
-  const allItems = await getCombinedCommunityItems();
+): CommunityItem[] => {
+  const allItems = getCombinedCommunityItems();
   
   // Sort by start date (newest first), then filter featured
   return allItems

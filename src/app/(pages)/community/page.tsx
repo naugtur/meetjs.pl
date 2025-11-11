@@ -7,8 +7,8 @@ export const metadata = {
     'Join our community initiatives, surveys, and collaborations. Help shape the future of JavaScript development.',
 };
 
-export default async function CommunityPage() {
-  const allItems = await getCombinedCommunityItems();
+export default function CommunityPage() {
+  const allItems = getCombinedCommunityItems();
   const featuredItems = allItems.filter((item) => item.featured);
 
   return (
