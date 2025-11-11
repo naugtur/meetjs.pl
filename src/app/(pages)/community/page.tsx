@@ -9,11 +9,10 @@ export const metadata = {
 
 export default function CommunityPage() {
   const allItems = getCombinedCommunityItems();
-  const featuredItems = allItems.filter((item) => item.featured);
 
   return (
     <main>
-      <CommunityParticipationClient items={featuredItems} />
+      <CommunityParticipationClient items={allItems} />
     </main>
   );
 }
