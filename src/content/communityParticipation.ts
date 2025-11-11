@@ -32,13 +32,7 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
     ctaText: 'Watch Recordings',
     featured: true,
     image: 'https://conf.react.dev/logo.svg',
-    tags: [
-      'React',
-      'Conference',
-      'Archive',
-      'JavaScript',
-      'Web Development',
-    ],
+    tags: ['React', 'Conference', 'Archive', 'JavaScript', 'Web Development'],
   },
   {
     id: 'nextjs-conf-2025',
@@ -48,6 +42,8 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
     url: 'https://nextjs.org/conf',
     type: 'collaboration',
     status: 'completed',
+    startDate: '2025-10-24',
+    endDate: '2025-10-24',
     organization: 'Vercel',
     impact:
       'Learn about the future of Next.js and React development directly from the core team and community leaders.',
@@ -67,48 +63,69 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
     id: 'state-of-js-2025',
     title: 'State of JS 2025 Survey',
     description:
-      'Help shape the future of JavaScript by sharing your experience with the latest tools, frameworks, and trends in the JS ecosystem.',
+      'The State of JS 2025 survey has concluded. Results are being compiled and will be published soon. Check back to see the latest trends and insights from the JavaScript community.',
     url: 'https://survey.devographics.com/en-US/survey/state-of-js/2025',
     type: 'survey',
-    status: 'active',
-    startDate: '2025-01-01',
-    endDate: '2025-02-28',
+    status: 'completed',
+    startDate: '2025-08-01',
+    endDate: '2025-11-11',
     organization: 'Devographics',
     impact:
       'Your input helps developers worldwide understand JS trends and make informed technology decisions.',
-    ctaText: 'Take the Survey',
-    featured: true,
+    ctaText: 'View Survey',
+    featured: false,
     image: 'https://assets.devographics.com/surveys/js2025.png',
     tags: ['JavaScript', 'Survey', 'Community', 'Trends', 'Ecosystem'],
   },
+  {
+    id: 'state-of-react-2025',
+    title: 'State of React 2025 Survey',
+    description:
+      'Share your experience with React, its ecosystem, and the latest tools and patterns. Help the community understand how React is being used in 2025.',
+    url: 'https://survey.devographics.com/en-US/survey/state-of-react/2025',
+    type: 'survey',
+    status: 'active',
+    startDate: '2025-11-01',
+    endDate: '2025-11-30',
+    organization: 'Devographics',
+    impact:
+      'Your insights help React developers worldwide understand trends and make informed decisions about tools and practices.',
+    ctaText: 'Take the Survey',
+    featured: true,
+    image: 'https://assets.devographics.com/surveys/react2025.png',
+    tags: ['React', 'Survey', 'Community', 'Trends', 'Ecosystem'],
+  },
 ];
 
+const sortByNewest = (items: CommunityItem[]): CommunityItem[] => {
+  return items.sort((a, b) => {
+    const dateA = new Date(a.startDate || 0).getTime();
+    const dateB = new Date(b.startDate || 0).getTime();
+    return dateB - dateA; // Newest first
+  });
+};
+
 export const getActiveCommunityItems = (): CommunityItem[] => {
-  return COMMUNITY_PARTICIPATION.filter((item) => item.status === 'active');
+  return sortByNewest(
+    COMMUNITY_PARTICIPATION.filter((item) => item.status === 'active'),
+  );
 };
 
 export const getFeaturedCommunityItems = (): CommunityItem[] => {
-  return COMMUNITY_PARTICIPATION.filter(
-    (item) => item.featured && item.status === 'active',
+  return sortByNewest(
+    COMMUNITY_PARTICIPATION.filter(
+      (item) => item.featured && item.status === 'active',
+    ),
   );
 };
 
 export const getCombinedCommunityItems = (): CommunityItem[] => {
-  return COMMUNITY_PARTICIPATION;
+  return sortByNewest([...COMMUNITY_PARTICIPATION]);
 };
 
-export const getNewestCommunityItems = (
-  limit: number = 3,
-): CommunityItem[] => {
+export const getNewestCommunityItems = (limit: number = 3): CommunityItem[] => {
   const allItems = getCombinedCommunityItems();
   
-  // Sort by start date (newest first), then filter featured
-  return allItems
-    .filter((item) => item.featured)
-    .sort((a, b) => {
-      const dateA = new Date(a.startDate || 0).getTime();
-      const dateB = new Date(b.startDate || 0).getTime();
-      return dateB - dateA; // Newest first
-    })
-    .slice(0, limit);
+  // Filter featured items and slice (already sorted by getCombinedCommunityItems)
+  return allItems.filter((item) => item.featured).slice(0, limit);
 };
