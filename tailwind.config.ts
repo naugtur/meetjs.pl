@@ -98,11 +98,17 @@ const config: Config = {
         },
         blue: {
           DEFAULT: '#219eab',
-          500: '#219eab',
+          500: '#3b82f6',
+        },
+        indigo: {
+          600: '#4f46e5',
         },
         green: {
           DEFAULT: '#bcd35d',
           400: '#bcd35d',
+        },
+        cyan: {
+          400: '#22d3ee',
         },
         gray: {
           700: '#374151',

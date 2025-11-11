@@ -89,6 +89,24 @@ export const eventsDiscounts: Promo[] = [
     discountCode: 'meetjs',
   },
   {
+    id: 'cityjs-london-2026',
+    name: 'CityJS London 2026',
+    message: 'Early bird tickets available until end of November!',
+    cta: '👉 Get Early Bird Tickets',
+    ticketLink:
+      'https://ti.to/cityjsconf-london/cityjs-london-2026/with/community-free-ticket-prompt-engineering-community',
+    eventLink: 'https://ti.to/cityjsconf-london/cityjs-london-2026',
+    expiresAt: '2025-11-30T23:59:59+00:00',
+    description:
+      'Join one of the biggest JavaScript conferences in the world! CityJS London 2026 features legendary speakers including Douglas Crockford (Creator of JSON), Matteo Collina (Founder & CTO, Platformatic), Tejas Kumar (Director, Developer Relations @ IBM), Anna Henningsen (Staff Engineer @ MongoDB), Rich Harris (Vercel), and Kitze (Sizzy). If you\'ve ever written JSON.parse() or JSON.stringify(), you already know this lineup is legendary! Early bird tickets available until the end of November. Call for papers is also open - submit your talk!',
+    gradient: 'bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600',
+    icon: '🏙️',
+    image: '/partners/cityjs.jpg',
+    emojiRight: '🇬🇧',
+    country: 'United Kingdom',
+    city: 'London',
+  },
+  {
     id: 'appjs-2025',
     name: 'App.js 2025',
     message: 'Exclusive 15% discount for meet.js community!',
@@ -417,7 +435,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-12-17T23:59:59+01:00',
     description:
       'WAWTECH 2025 is a new international tech conference in Warsaw gathering over 5,000 developers, startups, CEOs, and investors from across Europe. Organized by DOU, the largest IT community in CEE, it features 3 stages and 6 tracks: AI, Highload, Dev, Startup, SciTech, and Product. Speakers will include representatives from companies such as OpenAI, Asana, Agoda, and Netflix. The main language is English and the event aims to become a central meeting point for the CEE tech community. December 16-17, 2025 at EXPO XXI, Warsaw. Use code MEETJS10 for 10% off any ticket type!',
-    gradient: 'bg-gradient-to-r from-gray-100 via-gray-50 to-white',
+    gradient: 'bg-gradient-to-r from-indigo-600 via-blue-500 to-cyan-400',
     icon: '🚀',
     image: 'https://cdn.prod.website-files.com/68f89c19dc49271dca84d03f/68f8a10a207aff19953a1401_waw.png',
     emojiRight: '🇵🇱',
