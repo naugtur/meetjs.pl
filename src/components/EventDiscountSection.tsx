@@ -30,10 +30,7 @@ const formatDate = (dateString: string) => {
 
 function EventPromoCard({ promo }: { promo: Promo }) {
   return (
-    <a
-      href={promo.eventLink}
-      target="_blank"
-      rel="noopener noreferrer"
+    <div
       className="group relative block overflow-hidden rounded-xl border border-gray-200 bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
     >
       {/* Header with Logo/Image */}
@@ -125,6 +122,7 @@ function EventPromoCard({ promo }: { promo: Promo }) {
               rel="noopener noreferrer"
               className="group flex cursor-pointer items-center justify-between rounded-lg border border-gray-200 p-3 transition-all duration-200 hover:border-purple-300 hover:bg-purple-50/50 dark:border-gray-600 dark:hover:border-purple-600 dark:hover:bg-purple-900/10"
               aria-label={`Visit ${promo.name} website`}
+              onClick={(e) => e.stopPropagation()}
             >
               <div className="min-w-0 flex-1">
                 <p className="text-sm font-medium text-gray-700 transition-colors duration-200 group-hover:text-purple-600 dark:text-gray-300 dark:group-hover:text-purple-400">
@@ -148,6 +146,7 @@ function EventPromoCard({ promo }: { promo: Promo }) {
             target="_blank"
             rel="noopener noreferrer"
             className="block w-full rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 py-3 text-center font-semibold text-white shadow transition-all duration-200 hover:-translate-y-0.5 hover:from-purple-700 hover:to-pink-700 hover:shadow-lg active:scale-95"
+            onClick={(e) => e.stopPropagation()}
           >
             {promo.cta}
           </a>
@@ -157,7 +156,7 @@ function EventPromoCard({ promo }: { promo: Promo }) {
           </span>
         )}
       </div>
-    </a>
+    </div>
   );
 }
 
