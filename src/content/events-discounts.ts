@@ -2,6 +2,24 @@ import { Promo } from '../types/promo';
 
 export const eventsDiscounts: Promo[] = [
   {
+    id: 'infoshare-katowice-2025',
+    name: 'Infoshare Katowice 2025',
+    message: '10% off with code ISK25-meetjs10!',
+    cta: '👉 Get 10% Off',
+    ticketLink:
+      'https://katowice.infoshare.pl/rejestracja/?discount_code=ISK25-meetjs10&utm_source=meet_js&utm_medium=community_partner&utm_campaign=isk2025',
+    eventLink: 'https://katowice.infoshare.pl/?utm_source=meet_js&utm_medium=community_partner&utm_campaign=isk2025',
+    expiresAt: '2025-11-25T23:59:59+01:00',
+    description:
+      'Druga edycja Infoshare na Śląsku! Wydarzenie technologiczno-biznesowe łączące technologie, biznes i ludzi. 3 sceny tematyczne (Growth, AI, R&D), formaty networkingowe (Round Tables, Matchmaking, Speed Dating), spotkania z ekspertami oraz wieczorne Networking Party. Use code ISK25-meetjs10 for 10% off your ticket!',
+    gradient: 'bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600',
+    icon: '🎟️',
+    emojiRight: '🇵🇱',
+    country: 'Poland',
+    city: 'Katowice',
+    discountCode: 'ISK25-meetjs10',
+  },
+  {
     id: 'infoshare-2025',
     name: 'InfoShare 2025',
     message: '10% off with code ISC25-MeetJS10!',
