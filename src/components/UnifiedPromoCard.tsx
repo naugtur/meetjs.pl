@@ -81,10 +81,7 @@ export default function UnifiedPromoCard({
   const ctaTextColor = promo.textColor || config.ctaTextColor || 'text-white';
   
   return (
-    <a
-      href={promo.eventLink}
-      target="_blank"
-      rel="noopener noreferrer"
+    <div
       className="group relative block overflow-hidden rounded-xl border border-gray-200 bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
     >
       {/* Header with Logo/Image */}
@@ -186,6 +183,7 @@ export default function UnifiedPromoCard({
                   target="_blank"
                   rel="noopener noreferrer"
                   className={config.linkColor}
+                  onClick={(e) => e.stopPropagation()}
                 >
                   <ExternalLink className="h-4 w-4" />
                 </a>
@@ -211,6 +209,7 @@ export default function UnifiedPromoCard({
                 target="_blank"
                 rel="noopener noreferrer"
                 className={config.linkColor}
+                onClick={(e) => e.stopPropagation()}
               >
                 <ExternalLink className="h-4 w-4" />
               </a>
@@ -227,6 +226,7 @@ export default function UnifiedPromoCard({
             target="_blank"
             rel="noopener noreferrer"
             className={`block w-full rounded-lg py-3 text-center font-semibold shadow transition-all hover:shadow-lg ${ctaTextColor} ${ctaGradient}`}
+            onClick={(e) => e.stopPropagation()}
           >
             {promo.cta}
           </a>
@@ -236,6 +236,6 @@ export default function UnifiedPromoCard({
           </span>
         )}
       </div>
-    </a>
+    </div>
   );
 }
