@@ -64,30 +64,30 @@ export const EventCard = ({ event }: EventCardProps) => {
         )}
       </CardHeader>
 
-      <CardContent className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-        <div className="flex flex-col gap-4">
-          {(event.address || event.city) && (
-            <div className="mt-3 flex items-center gap-2">
-              <FaLocationDot className="h-4 w-4 flex-shrink-0" />
-              {event.address ? (
-                <div>
-                  <div className="text-sm font-medium hover:underline">
-                    {event.address}
+      <CardContent className="flex flex-col gap-4">
+        {(event.address || event.city) && (
+          <div className="mt-3 flex items-center gap-2">
+            <FaLocationDot className="h-4 w-4 flex-shrink-0" />
+            {event.address ? (
+              <div>
+                <div className="text-sm font-medium hover:underline">
+                  {event.address}
+                </div>
+                {event.city && (
+                  <div className="text-sm text-muted-foreground hover:underline">
+                    {event.city}
                   </div>
-                  {event.city && (
-                    <div className="text-sm text-muted-foreground hover:underline">
-                      {event.city}
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <div className="text-sm font-medium text-muted-foreground">
-                  Location TBA
-                </div>
-              )}
-            </div>
-          )}
+                )}
+              </div>
+            ) : (
+              <div className="text-sm font-medium text-muted-foreground">
+                Location TBA
+              </div>
+            )}
+          </div>
+        )}
 
+        <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-2">
             <FaClock className="h-4 w-4 flex-shrink-0" />
             <div>
@@ -95,23 +95,23 @@ export const EventCard = ({ event }: EventCardProps) => {
               <div className="text-sm text-muted-foreground">{event.time}</div>
             </div>
           </div>
-        </div>
 
-        {isUpcoming && event.rsvp && (
-          <a
-            href={event.rsvp}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={cn(
-              buttonVariants({
-                size: 'sm',
-              }),
-              'w-full bg-purple text-white transition-colors hover:bg-purple/90 md:w-auto dark:bg-green dark:hover:bg-green/90',
-            )}
-          >
-            RSVP
-          </a>
-        )}
+          {isUpcoming && event.rsvp && (
+            <a
+              href={event.rsvp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                buttonVariants({
+                  size: 'sm',
+                }),
+                'bg-purple text-white transition-colors hover:bg-purple/90 dark:bg-green dark:hover:bg-green/90',
+              )}
+            >
+              RSVP
+            </a>
+          )}
+        </div>
       </CardContent>
     </Card>
   );
