@@ -9,7 +9,6 @@ import Link from 'next/link';
 import { EventsAPIPartner } from '@/components/EventsAPIPartner';
 import { EmptyEventsAlert } from '@/components/EmptyEventsAlert';
 import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
-import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
 import { filterUpcomingEvents } from '@/utils/eventUtils';
 import { getTranslate } from '@/tolgee/server';
 
@@ -32,7 +31,7 @@ export interface Event {
 export const FeaturedEvents = async () => {
   const t = await getTranslate();
   const apiEvents: Event[] | null = await getUpcomingEvents();
-  const allEvents: Event[] = [...(apiEvents || []), ...ADDITIONAL_EVENTS];
+  const allEvents: Event[] = apiEvents || [];
 
   // Filter out past events and events too far in the future
   const events = filterUpcomingEvents(allEvents);
