@@ -54,7 +54,7 @@ export const FeaturedEvents = async () => {
               {events.map((event) => {
                 return (
                   <CarouselItem
-                    className="basis-full md:basis-1/2 lg:basis-1/3"
+                    className="basis-[85%] md:basis-[45%] lg:basis-[30%]"
                     key={event.id}
                   >
                     <EventCard event={event} />
