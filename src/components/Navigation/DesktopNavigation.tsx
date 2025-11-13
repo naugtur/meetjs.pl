@@ -34,7 +34,7 @@ export const DesktopNavigation = () => {
             {item.dropdown ? (
               <DropdownMenu>
                 <DropdownMenuTrigger
-                  className="flex items-center rounded-md px-3 py-2 font-medium text-white hover:bg-green/80 hover:text-purple"
+                  className="flex items-center whitespace-nowrap rounded-md px-3 py-2 font-medium text-white hover:bg-green/80 hover:text-purple"
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
