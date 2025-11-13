@@ -87,7 +87,15 @@ export const PromoBanners = ({ promos }: Props) => {
 };
 
 const PromoBanner = ({ promo }: { promo: Promo }) => {
+  const [isVisible, setIsVisible] = useState(true);
   const textColor = promo.textColor || 'text-white';
+
+  const handleDismiss = () => {
+    DismissedPromo.set(promo.id);
+    setIsVisible(false);
+  };
+
+  if (!isVisible) return null;
 
   return (
     <div className="relative">
@@ -111,6 +119,26 @@ const PromoBanner = ({ promo }: { promo: Promo }) => {
 
             <div className="flex items-center gap-2">
               <LinkCTA ticketLink={promo.ticketLink}>{promo.cta}</LinkCTA>
+              <button
+                onClick={handleDismiss}
+                aria-label="Dismiss promo banner"
+                className={`ml-2 rounded-full p-1 transition-colors hover:bg-white/20 ${textColor}`}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
