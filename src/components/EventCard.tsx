@@ -1,3 +1,5 @@
+'use client';
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { buttonVariants } from '@/components/ui/button';
 import { FaClock, FaLocationDot } from 'react-icons/fa6';
@@ -5,12 +7,14 @@ import type { EventType } from '@/types/event';
 import { cn } from '@/lib/utils';
 import { formatDistanceToNow } from 'date-fns';
 import { getEventWeekDay } from '@/utils/eventUtils';
+import { useLocale } from '@/hooks/useLocale';
 
 interface EventCardProps {
   event: EventType;
 }
 
 export const EventCard = ({ event }: EventCardProps) => {
+  const { locale } = useLocale();
   const now = new Date();
   const [day, month, year] = event.date.split('.');
   const [hours, minutes] = event.time.split(':');
@@ -91,7 +95,7 @@ export const EventCard = ({ event }: EventCardProps) => {
             <FaClock className="h-4 w-4 flex-shrink-0" />
             <div>
               <div className="text-sm font-medium">
-                {event.date} ({getEventWeekDay(event)})
+                {event.date} ({getEventWeekDay(event, locale)})
               </div>
               <div className="text-sm text-muted-foreground">{event.time}</div>
             </div>
