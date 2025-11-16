@@ -4,6 +4,7 @@ import { FaClock, FaLocationDot } from 'react-icons/fa6';
 import type { EventType } from '@/types/event';
 import { cn } from '@/lib/utils';
 import { formatDistanceToNow } from 'date-fns';
+import { getEventWeekDay } from '@/utils/eventUtils';
 
 interface EventCardProps {
   event: EventType;
@@ -70,11 +71,9 @@ export const EventCard = ({ event }: EventCardProps) => {
             <FaLocationDot className="h-4 w-4 flex-shrink-0" />
             {event.address ? (
               <div>
-                <div className="text-sm font-medium hover:underline">
-                  {event.address}
-                </div>
+                <div className="text-sm font-medium">{event.address}</div>
                 {event.city && (
-                  <div className="text-sm text-muted-foreground hover:underline">
+                  <div className="text-sm text-muted-foreground">
                     {event.city}
                   </div>
                 )}
@@ -91,7 +90,9 @@ export const EventCard = ({ event }: EventCardProps) => {
           <div className="flex items-center gap-2">
             <FaClock className="h-4 w-4 flex-shrink-0" />
             <div>
-              <div className="text-sm font-medium">{event.date}</div>
+              <div className="text-sm font-medium">
+                {event.date} ({getEventWeekDay(event)})
+              </div>
               <div className="text-sm text-muted-foreground">{event.time}</div>
             </div>
           </div>
