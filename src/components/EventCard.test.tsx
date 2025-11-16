@@ -3,6 +3,14 @@ import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { EventCard } from '@/components/EventCard';
 import type { EventType } from '@/types/event';
 
+// Mock useLocale hook
+vi.mock('@/hooks/useLocale', () => ({
+  useLocale: () => ({
+    language: 'en',
+    locale: 'en-US',
+  }),
+}));
+
 // Base mock event data (modify as needed)
 const baseEvent: EventType = {
   id: 1,
