@@ -68,6 +68,7 @@ export const CommunityItemCard = ({ item }: { item: CommunityItem }) => {
                   src={item.image}
                   alt={item.title}
                   fill
+                  sizes="112px"
                   className="object-contain p-4"
                   priority
                 />
