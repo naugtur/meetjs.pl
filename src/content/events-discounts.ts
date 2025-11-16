@@ -8,7 +8,8 @@ export const eventsDiscounts: Promo[] = [
     cta: '👉 Get 10% Off',
     ticketLink:
       'https://katowice.infoshare.pl/rejestracja/?discount_code=ISK25-meetjs10&utm_source=meet_js&utm_medium=community_partner&utm_campaign=isk2025',
-    eventLink: 'https://katowice.infoshare.pl/?utm_source=meet_js&utm_medium=community_partner&utm_campaign=isk2025',
+    eventLink:
+      'https://katowice.infoshare.pl/?utm_source=meet_js&utm_medium=community_partner&utm_campaign=isk2025',
     expiresAt: '2025-11-25T23:59:59+01:00',
     description:
       'Druga edycja Infoshare na Śląsku! Wydarzenie technologiczno-biznesowe łączące technologie, biznes i ludzi. 3 sceny tematyczne (Growth, AI, R&D), formaty networkingowe (Round Tables, Matchmaking, Speed Dating), spotkania z ekspertami oraz wieczorne Networking Party. Use code ISK25-meetjs10 for 10% off your ticket!',
@@ -116,7 +117,7 @@ export const eventsDiscounts: Promo[] = [
     eventLink: 'https://ti.to/cityjsconf-london/cityjs-london-2026',
     expiresAt: '2025-11-30T23:59:59+00:00',
     description:
-      'Join one of the biggest JavaScript conferences in the world! CityJS London 2026 features legendary speakers including Douglas Crockford (Creator of JSON), Matteo Collina (Founder & CTO, Platformatic), Tejas Kumar (Director, Developer Relations @ IBM), Anna Henningsen (Staff Engineer @ MongoDB), Rich Harris (Vercel), and Kitze (Sizzy). If you\'ve ever written JSON.parse() or JSON.stringify(), you already know this lineup is legendary! Early bird tickets available until the end of November. Call for papers is also open - submit your talk!',
+      "Join one of the biggest JavaScript conferences in the world! CityJS London 2026 features legendary speakers including Douglas Crockford (Creator of JSON), Matteo Collina (Founder & CTO, Platformatic), Tejas Kumar (Director, Developer Relations @ IBM), Anna Henningsen (Staff Engineer @ MongoDB), Rich Harris (Vercel), and Kitze (Sizzy). If you've ever written JSON.parse() or JSON.stringify(), you already know this lineup is legendary! Early bird tickets available until the end of November. Call for papers is also open - submit your talk!",
     gradient: 'bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600',
     icon: '🏙️',
     image: '/partners/cityjs.jpg',
@@ -434,10 +435,11 @@ export const eventsDiscounts: Promo[] = [
     eventLink: 'https://githubuniverse.com',
     expiresAt: '2025-10-29T23:59:59+02:00',
     description:
-      'GitHub Universe 2025 takes place October 28-29 at Fort Mason in San Francisco. Join the global developer community online with a free virtual pass! Watch keynotes live and catch available sessions on-demand. Get full access to live-streamed keynotes and content, plus full access to recorded sessions once they\'re available. The virtual pass is always free - no discount code needed!',
+      "GitHub Universe 2025 takes place October 28-29 at Fort Mason in San Francisco. Join the global developer community online with a free virtual pass! Watch keynotes live and catch available sessions on-demand. Get full access to live-streamed keynotes and content, plus full access to recorded sessions once they're available. The virtual pass is always free - no discount code needed!",
     gradient: 'bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900',
     icon: '🐙',
-    image: 'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png',
+    image:
+      'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png',
     emojiRight: '🇺🇸',
     country: 'USA',
     city: 'San Francisco',
@@ -455,10 +457,29 @@ export const eventsDiscounts: Promo[] = [
       'WAWTECH 2025 is a new international tech conference in Warsaw gathering over 5,000 developers, startups, CEOs, and investors from across Europe. Organized by DOU, the largest IT community in CEE, it features 3 stages and 6 tracks: AI, Highload, Dev, Startup, SciTech, and Product. Speakers will include representatives from companies such as OpenAI, Asana, Agoda, and Netflix. The main language is English and the event aims to become a central meeting point for the CEE tech community. December 16-17, 2025 at EXPO XXI, Warsaw. Use code MEETJS10 for 10% off any ticket type!',
     gradient: 'bg-gradient-to-r from-indigo-600 via-blue-500 to-cyan-400',
     icon: '🚀',
-    image: 'https://cdn.prod.website-files.com/68f89c19dc49271dca84d03f/68f8a10a207aff19953a1401_waw.png',
+    image:
+      'https://cdn.prod.website-files.com/68f89c19dc49271dca84d03f/68f8a10a207aff19953a1401_waw.png',
     emojiRight: '🇵🇱',
     country: 'Poland',
     city: 'Warsaw',
     discountCode: 'MEETJS10',
+  },
+  {
+    id: 'hacknation-2025',
+    name: 'HackNation 2025',
+    message: 'Pierwszy hackathon wdrożeniowy w Polsce - darmowy udział!',
+    cta: '👉 Zarejestruj się',
+    ticketLink: 'https://hacknation.pl',
+    eventLink: 'https://hacknation.pl',
+    expiresAt: '2025-12-07T23:59:59+01:00',
+    description:
+      'HackNation 2025 to pierwszy w Polsce hackathon wdrożeniowy organizowany przez Ministerstwo Cyfryzacji. 24 godziny kodowania, 500 000 PLN w puli nagród, wyzwania od ministerstw i instytucji publicznych. Wydarzenie łączy świeże, technologiczne umysły z administracją publiczną, by wspólnie stworzyć realne usprawnienia dla państwa. Finaliści otrzymają realną szansę na wdrożenie swoich pomysłów do urzędów, szkół i systemów, z których korzystają miliony Polaków. Udział jest całkowicie darmowy - wystarczy wcześniejsza rejestracja. 6-7 grudnia 2025, Bydgoskie Centrum Targowo-Wystawiennicze, Bydgoszcz.',
+    gradient: 'bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600',
+    icon: '🏛️',
+    image: '/partners/hacknation.jpg',
+    emojiRight: '🇵🇱',
+    country: 'Poland',
+    city: 'Bydgoszcz',
+    discountCode: 'FREE',
   },
 ];
