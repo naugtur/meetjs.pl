@@ -137,7 +137,11 @@ export const filterUpcomingEvents = (events: EventType[]): EventType[] => {
   });
 };
 
-export const getEventWeekDay = (event: EventType): string => {
+export type Localization = 'en-US' | 'pl-PL';
+export const getEventWeekDay = (
+  event: EventType,
+  localization: Localization,
+): string => {
   const eventDate = parseEventDate(event.date);
-  return eventDate.toLocaleDateString('en-US', { weekday: 'long' });
+  return eventDate.toLocaleDateString(localization, { weekday: 'long' });
 };
