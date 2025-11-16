@@ -1,5 +1,3 @@
-import { fileURLToPath } from 'node:url';
-
 import createMDX from '@next/mdx';
 import { NextConfig } from 'next';
 
@@ -15,6 +13,7 @@ const nextConfig: NextConfig = {
     staleTimes: {
       dynamic: 30,
     },
+    typedEnv: true,
   },
   images: {
     remotePatterns: [
