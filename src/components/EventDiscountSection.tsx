@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useMemo, useState } from 'react';
 import Image from 'next/image';
 import type { Promo } from '@/types/promo';
 import { PromoFilters } from '@/components/PromoFilters';
@@ -30,9 +30,7 @@ const formatDate = (dateString: string) => {
 
 function EventPromoCard({ promo }: { promo: Promo }) {
   return (
-    <div
-      className="group relative block overflow-hidden rounded-xl border border-gray-200 bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
-    >
+    <div className="group relative block overflow-hidden rounded-xl border border-gray-200 bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800">
       {/* Header with Logo/Image */}
       <div className="flex items-center gap-4 border-b border-gray-100 p-6 dark:border-gray-700">
         {promo.image ? (
@@ -161,47 +159,35 @@ function EventPromoCard({ promo }: { promo: Promo }) {
 }
 
 export function EventDiscountSection({ promos }: EventDiscountSectionProps) {
-  const [visiblePromos, setVisiblePromos] = useState<Promo[]>([]);
-  const [filteredPromos, setFilteredPromos] = useState<Promo[]>([]);
   const [selectedCountries, setSelectedCountries] = useState<string[]>([]);
-  const [availableCountries, setAvailableCountries] = useState<string[]>([]);
 
-  useEffect(() => {
-    const countries = [
-      ...new Set(promos.map((promo) => promo.country).filter(Boolean)),
-    ];
-    setAvailableCountries(countries as string[]);
-  }, [promos]);
-
-  useEffect(() => {
+  // Filter out expired promos and sort by expiration date
+  const visiblePromos = useMemo(() => {
     const now = new Date();
-    // First filter out expired promos and sort by expiration date
-    const activePromos = promos
+    return promos
       .filter((promo) => new Date(promo.expiresAt) >= now)
       .sort(
         (a, b) =>
           new Date(a.expiresAt).getTime() - new Date(b.expiresAt).getTime(),
       );
+  }, [promos]);
 
-    setVisiblePromos(activePromos);
+  // Get available countries from active promos
+  const availableCountries = useMemo(() => {
+    return [
+      ...new Set(visiblePromos.map((promo) => promo.country).filter(Boolean)),
+    ] as string[];
+  }, [visiblePromos]);
 
-    // Update available countries based on active promos only
-    const countries = [
-      ...new Set(activePromos.map((promo) => promo.country).filter(Boolean)),
-    ];
-    setAvailableCountries(countries as string[]);
-
-    // Apply country filters to active promos
+  // Apply country filters to active promos
+  const filteredPromos = useMemo(() => {
     if (selectedCountries.length === 0) {
-      setFilteredPromos(activePromos);
-    } else {
-      setFilteredPromos(
-        activePromos.filter(
-          (promo) => promo.country && selectedCountries.includes(promo.country),
-        ),
-      );
+      return visiblePromos;
     }
-  }, [promos, selectedCountries]);
+    return visiblePromos.filter(
+      (promo) => promo.country && selectedCountries.includes(promo.country),
+    );
+  }, [visiblePromos, selectedCountries]);
 
   if (visiblePromos.length === 0) return null;
 

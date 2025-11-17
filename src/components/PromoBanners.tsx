@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
 import type { Promo } from '@/types/promo';
 
@@ -55,16 +55,34 @@ const prioritizePromos = (promos: Promo[]): Promo[] => {
 };
 
 export const PromoBanners = ({ promos }: Props) => {
-  const [visiblePromos, setVisiblePromos] = useState<Promo[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [dismissedPromos, setDismissedPromos] = useState<Set<string>>(
+    new Set(),
+  );
 
+  // Load dismissed promos from localStorage on mount (client-side only)
+  // This is a legitimate use of setState in useEffect to sync with external storage
   useEffect(() => {
-    // Filter and prioritize promos
-    const filtered = promos.filter(shouldPromoBeVisible);
-    const prioritized = prioritizePromos(filtered);
-    setVisiblePromos(prioritized);
-    setCurrentIndex(0); // Reset index when promos change
-  }, [promos]);
+    const dismissed = new Set<string>();
+    promos.forEach((promo) => {
+      if (isPromoDismissed(promo)) {
+        dismissed.add(promo.id);
+      }
+    });
+    setDismissedPromos(dismissed);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Only run once on mount to avoid hydration issues
+
+  // Filter and prioritize promos
+  const visiblePromos = useMemo(() => {
+    const filtered = promos.filter((promo) => {
+      if (isPromoExpired(promo)) return false;
+      // Check against our state instead of localStorage directly
+      if (dismissedPromos.has(promo.id)) return false;
+      return true;
+    });
+    return prioritizePromos(filtered);
+  }, [promos, dismissedPromos]);
 
   // Auto-rotate banners every 6 seconds if there are multiple
   useEffect(() => {
@@ -79,7 +97,9 @@ export const PromoBanners = ({ promos }: Props) => {
 
   if (visiblePromos.length === 0) return null;
 
-  const promo = visiblePromos[currentIndex];
+  // Ensure index is valid (in case promos changed)
+  const safeIndex = currentIndex % visiblePromos.length || 0;
+  const promo = visiblePromos[safeIndex];
 
   if (!promo) return null;
 

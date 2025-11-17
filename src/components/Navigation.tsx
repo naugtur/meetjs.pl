@@ -22,7 +22,7 @@ export const Navigation = () => {
           ...learningDiscounts,
         ]}
       />
-      <header role="banner">
+      <header role="banner" suppressHydrationWarning>
         <Disclosure
           as="nav"
           className="sticky top-0 z-20 bg-purple"
