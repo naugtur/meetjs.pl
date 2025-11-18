@@ -101,4 +101,9 @@ export const PARTNERS = [
     src: 'https://ai-poland.pl/images/ai-logo-white.png',
     alt: 'AI Poland',
   },
+  {
+    href: 'https://kalendarzprogramisty.pl',
+    src: '/partners/skkp.png',
+    alt: 'Świąteczny Kalendarz Kariery Programisty',
+  },
 ];
