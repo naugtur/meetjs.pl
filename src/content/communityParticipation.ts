@@ -95,6 +95,23 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
     image: 'https://assets.devographics.com/surveys/react2025.png',
     tags: ['React', 'Survey', 'Community', 'Trends', 'Ecosystem'],
   },
+  {
+    id: 'skkp-2025',
+    title: 'Świąteczny Kalendarz Kariery Programisty 2025',
+    description:
+      'Darmowa wiedza przez 24 dni, każdego dnia przez innego eksperta z branży. Działamy przy tym charytatywnie.',
+    url: 'https://kalendarzprogramisty.pl',
+    type: 'initiative',
+    status: 'active',
+    startDate: '2025-12-01',
+    endDate: '2025-12-24',
+    organization: 'Kalendarz Programisty',
+    impact: 'Promocja wiedzy i wsparcie charytatywne.',
+    ctaText: 'Dołącz do akcji',
+    featured: true,
+    image: '/partners/skkp.png',
+    tags: ['Christmas', 'Education', 'Charity', 'Community'],
+  },
 ];
 
 const sortByNewest = (items: CommunityItem[]): CommunityItem[] => {
