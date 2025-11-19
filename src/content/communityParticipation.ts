@@ -112,6 +112,24 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
     image: '/partners/skkp.png',
     tags: ['Christmas', 'Education', 'Charity', 'Community'],
   },
+  {
+    id: 'the5-live-initiative',
+    title: 'THE 5. LIVE - Wielka Premiera Książki Tomka Karwatki',
+    description:
+      'Największe dobroczynne wydarzenie biznesowe roku. 10 grudnia od 12:00-20:00 na YouTube. 30+ super gości, 50 000 przedsiębiorców. Poznaj nieopowiedziane historie founderów firm wartych setki milionów.',
+    url: 'https://the5.live?r=5VqoY',
+    type: 'initiative',
+    status: 'active',
+    startDate: '2025-12-10',
+    endDate: '2025-12-10',
+    organization: 'The 5. / BRAVE.courses',
+    impact:
+      'Cały zysk z książki "The 5." przekazywany na projekt Połączona Puszcza Polska i ratowanie polskich lasów. Uzbrojenie polskich przedsiębiorców w wiedzę do budowy globalnych firm.',
+    ctaText: 'ZAPISZ SIĘ BEZPŁATNIE',
+    featured: true,
+    image: '/partners/the5.png',
+    tags: ['Entrepreneurship', 'Charity', 'Book Launch', 'Business', 'Polish Market', 'Forest Protection'],
+  },
 ];
 
 const sortByNewest = (items: CommunityItem[]): CommunityItem[] => {
