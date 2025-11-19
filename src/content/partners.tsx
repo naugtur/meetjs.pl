@@ -106,4 +106,9 @@ export const PARTNERS = [
     src: '/partners/skkp.png',
     alt: 'Świąteczny Kalendarz Kariery Programisty',
   },
+  {
+    href: 'https://brave.courses/',
+    src: '/partners/brave-white-logo.svg',
+    alt: 'BRAVE.courses',
+  },
 ];
