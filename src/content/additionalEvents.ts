@@ -405,7 +405,8 @@ export const ADDITIONAL_EVENTS: Event[] = [
     rsvp: 'https://githubuniverse.com/pricing',
     city: 'On-line',
     address: 'Free Virtual Pass (9:00 AM PDT / 18:00 CEST)',
-    image: 'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png',
+    image:
+      'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png',
     serie: 'GitHub',
     topic: [
       'GitHub',
@@ -427,7 +428,8 @@ export const ADDITIONAL_EVENTS: Event[] = [
     rsvp: 'https://githubuniverse.com/pricing',
     city: 'On-line',
     address: 'Free Virtual Pass (9:00 AM PDT / 18:00 CEST)',
-    image: 'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png',
+    image:
+      'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png',
     serie: 'GitHub',
     topic: [
       'GitHub',
@@ -451,7 +453,13 @@ export const ADDITIONAL_EVENTS: Event[] = [
     address: 'CIC Warsaw, Chmielna 73, 00-801 Warszawa, Poland',
     image: '',
     serie: 'Windsurf',
-    topic: ['AI', 'Windsurf', 'Developer Tools', 'AI-powered Development', 'Networking'],
+    topic: [
+      'AI',
+      'Windsurf',
+      'Developer Tools',
+      'AI-powered Development',
+      'Networking',
+    ],
   },
   {
     type: 'Conference',
@@ -482,5 +490,20 @@ export const ADDITIONAL_EVENTS: Event[] = [
     image: '/partners/inforshare-kwadrat.png',
     serie: 'Infoshare',
     topic: ['Technology', 'Business', 'AI', 'Growth', 'R&D', 'Networking'],
+  },
+  {
+    type: 'Meetup',
+    id: 100025,
+    date_add: Date.now(),
+    date: '10.12.2025',
+    time: '17:00',
+    name: 'AI Miners #3',
+    url: 'https://aiminers.pl',
+    rsvp: 'https://aiminers.pl',
+    city: 'Katowice',
+    address: 'Miejski Inkubator Przedsiębiorczości Rawa.Ink',
+    image: 'https://aiminers.pl/logo.png',
+    serie: 'AI',
+    topic: ['AI', 'Machine Learning', 'Business', 'Networking', 'Automation'],
   },
 ];
