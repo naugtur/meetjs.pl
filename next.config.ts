@@ -1,5 +1,3 @@
-import { fileURLToPath } from 'node:url';
-
 import createMDX from '@next/mdx';
 import { NextConfig } from 'next';
 
@@ -133,16 +131,6 @@ const nextConfig: NextConfig = {
       {
         source: '/youtube',
         destination: 'https://www.youtube.com/@meetjs',
-        permanent: true,
-      },
-      {
-        source: '/organizers',
-        destination: '/how-to-become-an-organizer',
-        permanent: true,
-      },
-      {
-        source: '/organization',
-        destination: '/how-to-become-an-organizer',
         permanent: true,
       },
       {
