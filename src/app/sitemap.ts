@@ -75,6 +75,12 @@ const sitemap = (): MetadataRoute.Sitemap => {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+    {
+      url: `${env.SITE_URL}/organizers`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
   ];
 
   return [...mainPages, ...cities];

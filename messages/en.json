@@ -62,6 +62,12 @@
       "social_media": "Social media posts promoting meet.js events"
     },
     "allowed_uses": "Permitted Uses",
+    "assets_generator": "Event Image Generator",
+    "assets_generator_cta": "Open Generator",
+    "assets_generator_description": "Use the online generator to create visuals for meet.js events. Choose supporter type, add partner logos, and export ready-to-share images.",
+    "assets_generator_description_short": "Create event visuals quickly",
+    "assets_generator_subtitle": "Create meetup images for social media and banners.",
+    "assets_generator_title": "Event Image Generator",
     "bold_logos": "Bold Logos",
     "bold_logos_description": "Bold variant for prints and places where the official light logo would not be visible enough.",
     "bold_logos_print": "Bold Logos (Print)",
@@ -98,6 +104,8 @@
     "logo_variants_intro": "The meet.js logo is available in two main variants: light (official) and bold. Each variant serves different purposes and use cases:",
     "official_logos": "Official Logos",
     "official_print_variants": "Official & print variants",
+    "organizers_only_note": "Organizer-only resource:",
+    "organizers_tools_cta": "Organizer Tools",
     "original_colors": "Original Colors (Obsolete)",
     "original_colors_obsolete": "Original Colors (Obsolete)",
     "page_contents": "Page Contents",
@@ -117,15 +125,7 @@
     "usage_intro": "Please use these brand assets responsibly. Here are the key guidelines:",
     "usage_text": "Please use these assets responsibly and in accordance with our brand guidelines. For commercial use or questions about usage, please contact us.",
     "view_complete_collection_github": "View complete collection on GitHub",
-    "wallpapers": "Wallpapers",
-    "assets_generator": "Event Image Generator",
-    "assets_generator_description_short": "Create event visuals quickly",
-    "assets_generator_title": "Event Image Generator",
-    "assets_generator_subtitle": "Create meetup images for social media and banners.",
-    "assets_generator_description": "Use the online generator to create visuals for meet.js events. Choose supporter type, add partner logos, and export ready-to-share images.",
-    "assets_generator_cta": "Open Generator",
-    "organizers_only_note": "Organizer-only resource:",
-    "organizers_tools_cta": "Organizer Tools"
+    "wallpapers": "Wallpapers"
   },
   "communityParticipation": {
     "by_label": "By:",
@@ -290,24 +290,24 @@
     "contact": "Contact us",
     "copyright": "All rights reserved.",
     "menu": "Menu",
-    "status_legend_label": "Status:",
-    "status": {
-      "active": "Active",
-      "coming_soon": "Coming soon",
-      "paused": "Paused",
-      "new": "New"
-    },
     "menu_links": {
       "14_birthday": "14 Birthday",
       "about": "About",
-      "organizer_tools": "Organizer Tools",
       "brand_assets": "Brand Assets",
       "code_of_conduct": "Code of Conduct",
       "contact_link": "Contact",
       "events": "Events",
+      "organizer_tools": "Organizer Tools",
       "summit": "Summit",
       "wdi_2025": "WDI 2025"
-    }
+    },
+    "status": {
+      "active": "Active",
+      "coming_soon": "Coming soon",
+      "new": "New",
+      "paused": "Paused"
+    },
+    "status_legend_label": "Status:"
   },
   "hello_world": "Hello World",
   "hero": {
@@ -315,6 +315,7 @@
     "follow_us": "Follow us",
     "join_discord": "Join Discord",
     "ranking_banner": "#1 Tech Event Series in Poland (Crossweb 2024)",
+    "reach_conf_banner": "LIVE NOW: Reach Conference 2025 - Watch the stream!",
     "subtitle": "Join the largest JavaScript meetup community in Poland",
     "title": "meet.js"
   },
@@ -342,14 +343,14 @@
       "cities_label": "Cities",
       "code_of_conduct": "Code of Conduct",
       "coming_soon": "(Coming Soon)",
-      "community_partnerships": "Community Partnerships",
       "community_participation": "Community Participation",
+      "community_partnerships": "Community Partnerships",
       "event_discounts": "Event Discounts",
       "learning_discounts": "Learning Discounts",
+      "organizer_tools": "Organizer Tools",
       "our_team": "Our Team",
       "software_discounts": "Software Discounts",
-      "sponsors": "Sponsors",
-      "organizer_tools": "Organizer Tools"
+      "sponsors": "Sponsors"
     },
     "events": "Events",
     "home": "Home",
@@ -368,8 +369,28 @@
     "sponsors": "Sponsors",
     "team": "Team"
   },
-  
   "organizer": {
+    "assets_section": {
+      "current_logos": {
+        "available_formats": "Available formats:",
+        "description": "Download the official meet.js logos in various formats and colors for your events and materials.",
+        "title": "Current Logos"
+      },
+      "legacy_assets": {
+        "description": "Download historical meet.js branding materials including the original purple logos and summit-specific designs.",
+        "includes": "Includes:",
+        "title": "Legacy Assets"
+      },
+      "subtitle": "Download brand assets, logos, and visual materials for your meetups",
+      "title": "Brand Assets",
+      "wallpapers": {
+        "available": "Available:",
+        "description": "High-resolution desktop wallpapers featuring meet.js branding for your events and presentations.",
+        "title": "Desktop Wallpapers"
+      }
+    },
+    "back_to_main": "Back to",
+    "back_to_main_link": "How to become an organizer",
     "benefits": {
       "access": "Access to other organizers and their experience",
       "brand_access": "Access to the brand and the social media presence we have",
@@ -377,10 +398,43 @@
       "network": "Exposure to our network, including speakers that might want to visit your city",
       "sponsor_help": "Help when talking to sponsors and venues"
     },
+    "benefits_labels": {
+      "complete_toolkit": "Complete Organizer Toolkit",
+      "network_access": "Network Access & Intro Call",
+      "event_support": "Event Support & Sponsorship Help"
+    },
     "benefits_title": "What you'll get:",
+    "cities_section": {
+      "browse_cities": "Browse All Cities",
+      "description": "Explore meet.js communities across Poland and see where we're making an impact.",
+      "subtitle": "Active communities across Poland",
+      "title": "meet.js Cities"
+    },
+    "community_heart_description": "We're the heart of the JavaScript community in your city, bringing developers together for knowledge sharing, networking, and building lasting connections.",
     "contact_email": "contact@meetjs.pl",
     "contact_heading": "To start, reach out to",
     "contact_subject": "with the subject \"meet.js YOURCITY\"",
+    "cta_section": {
+      "description": "Ready to start organizing meetups and building the JavaScript community in your city? Let's get you started with all the resources and support you need.",
+      "start_journey": "Start Organizing Today",
+      "title": "Ready to Become a meet.js Organizer?"
+    },
+    "final_cta": {
+      "description": "Ready to bring meet.js to your city? Let's start building an amazing JavaScript community together!",
+      "title": "Ready to Start Your meet.js Journey?",
+      "view_resources": "View Organizer Resources"
+    },
+    "generator_cta": "Open Generator",
+    "generator_description": "Create meetup visuals for social media and banners with ease.",
+    "generator_title": "Event Image Generator",
+    "hub_page_subtitle": "Tools, resources, and support for meet.js organizers to build stronger JavaScript communities.",
+    "hub_page_title": "Organizer Resources",
+    "impact_items": {
+      "build_community": "Build a strong local JavaScript community",
+      "connect_developers": "Connect developers and foster collaboration",
+      "share_knowledge": "Share knowledge through talks and workshops",
+      "shape_future": "Shape the future of web development in your region"
+    },
     "intro_p1": "Do you wish to become an organizer and you need some help getting started? That's what we're here for!",
     "intro_p2": "If there's a meet.js in your city already, get in touch with the organizers to see how you can join.",
     "intro_p3": "If your city has a JavaScript crowd that's not organized yet or the local meetups are hosted by companies for short-term commercial or hiring reasons, you should definitely set up a meet.js in your city.",
@@ -390,20 +444,81 @@
       "money": "Money or anything of notable commercial value"
     },
     "no_benefits_title": "What you don't get:",
+    "organizer_description": "An organizer is a passionate individual who brings the JavaScript community together in their city. You don't need to be the most technical person – just someone who cares about connecting developers and building an amazing community.",
+    "organizer_impact": "Why Your Role Matters",
+    "page_subtitle": "Join our network of passionate organizers and help build stronger JavaScript communities across Poland.",
     "page_title": "How to become an organizer",
+    "process_steps": {
+      "contact_us": {
+        "description": "Reach out to our team with your city and motivation. We'll guide you through the next steps.",
+        "title": "Contact Us"
+      },
+      "first_event": {
+        "description": "Plan and host your first meetup with our support and guidance from experienced organizers.",
+        "title": "Host Your First Event"
+      },
+      "get_access": {
+        "description": "Get access to our organizer toolkit, brand assets, and connect with other organizers across Poland.",
+        "title": "Get Organizer Access"
+      },
+      "intro_call": {
+        "description": "Schedule a call with our team to discuss your city, expectations, and how we can support you.",
+        "title": "Intro Call"
+      },
+      "title": "Your Path to Becoming a meet.js Organizer"
+    },
+    "quick_actions": {
+      "become_organizer": "Become an Organizer",
+      "browse_events": "Browse Events",
+      "get_help": "Get Help",
+      "join_discord": "Join Discord"
+    },
+    "ready_to_start_cta": {
+      "description": "Ready to bring the meet.js community to your city? It only takes a few minutes to get started.",
+      "title": "Ready to Start?"
+    },
     "requirements": {
       "involvement": "Some involvement with JavaScript and programming community (being a dev yourself and enthusiastic about other humans)",
       "non_commercial": "No commercial interest or a company backing your engagement as an organizer",
       "time": "A bit of time and ambition"
     },
+    "requirements_labels": {
+      "community_spirit": "Community Spirit",
+      "non_commercial_approach": "Non-Commercial Approach",
+      "time_commitment": "Time Commitment"
+    },
     "requirements_title": "What you need to have:",
-    "tools_page_title": "Organizer Tools",
     "tools_intro": "Resources for meet.js organizers to create event visuals and assets.",
-    "generator_title": "Event Image Generator",
-    "generator_description": "Create meetup visuals for social media and banners with ease.",
-    "generator_cta": "Open Generator",
-    "back_to_main": "Back to",
-    "back_to_main_link": "How to become an organizer"
+    "tools_page_title": "Organizer Tools",
+    "tools_section": {
+      "event_management": {
+        "about_meetjs": "About meet.js",
+        "description": "Everything you need to know about organizing successful meet.js events, from planning to execution.",
+        "event_planning_guide": "Event Planning Guide",
+        "title": "Event Management"
+      },
+      "image_generator": {
+        "cta": "Open Generator",
+        "description": "Create professional event images with meet.js branding, partner logos, and customizable layouts.",
+        "title": "Image Generator"
+      },
+      "subtitle": "Essential tools to help you create amazing meetups",
+      "title": "Organizer Tools"
+    },
+    "what_is_organizer": "What is a meet.js Organizer?"
+  },
+  "organizers_hub": {
+    "cities_section": {
+      "browse_cities": "Browse All Cities",
+      "description": "Explore meet.js communities across Poland and see where we're making an impact.",
+      "subtitle": "Active communities across Poland",
+      "title": "meet.js Cities"
+    },
+    "cta_section": {
+      "description": "Ready to start organizing meetups and building the JavaScript community in your city? Let's get you started with all the resources and support you need.",
+      "start_journey": "Start Organizing Today",
+      "title": "Ready to Become a meet.js Organizer?"
+    }
   },
   "poland_map": {
     "active_upcoming_progress": "Active / upcoming / in progress",

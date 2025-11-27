@@ -109,7 +109,7 @@ export const useTranslatedMenuLinks = (): MenuLink[] => {
         },
         {
           name: t('navigation.dropdown.organizer_tools'),
-          href: '/how-to-become-an-organizer/tools',
+          href: '/organizers',
           type: 'link',
         },
         {
@@ -163,7 +163,7 @@ export const useTranslatedFooterMenuLinks = (): MenuLink[] => {
     },
     {
       name: t('footer.menu_links.organizer_tools'),
-      href: '/how-to-become-an-organizer/tools',
+      href: '/organizers',
       current: false,
       external: false,
     },
@@ -225,7 +225,7 @@ export const getTranslatedFooterMenuLinks = async (): Promise<MenuLink[]> => {
     },
     {
       name: t('footer.menu_links.organizer_tools'),
-      href: '/how-to-become-an-organizer/tools',
+      href: '/organizers',
       current: false,
       external: false,
     },
