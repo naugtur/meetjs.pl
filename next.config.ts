@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
     staleTimes: {
       dynamic: 30,
     },
+    typedEnv: true,
   },
   images: {
     remotePatterns: [
