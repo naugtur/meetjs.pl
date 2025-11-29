@@ -65,4 +65,20 @@ export const learningDiscounts: Promo[] = [
     emojiRight: '👨‍👩‍👧‍👦',
     discountCode: 'meetjs',
   },
+  {
+    id: 'certificates-dev-black-friday-2025',
+    name: '🔥 Certificates.dev - Black Friday',
+    message: 'Special Black Friday offer for meet.js community!',
+    cta: '🛍️ Get Black Friday Deal',
+    ticketLink: 'https://certificates.dev',
+    eventLink: 'https://certificates.dev',
+    expiresAt: '2025-12-02T23:59:59+01:00',
+    description:
+      "Get professional certificates and courses at exclusive Black Friday prices! Certificates.dev offers industry-recognized certifications in web development, programming, and tech skills. Perfect for developers looking to advance their careers with verified credentials. Limited time Black Friday offer - don't miss out on this opportunity to invest in your professional growth!",
+    gradient: 'bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500',
+    icon: '🔥',
+    image: '/partners/certificates-dev-logo.png',
+    emojiRight: '🎓',
+    discountCode: 'BLACKFRIDAY',
+  },
 ];
