@@ -128,7 +128,39 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
     ctaText: 'ZAPISZ SIĘ BEZPŁATNIE',
     featured: true,
     image: '/partners/the5.png',
-    tags: ['Entrepreneurship', 'Charity', 'Book Launch', 'Business', 'Polish Market', 'Forest Protection'],
+    tags: [
+      'Entrepreneurship',
+      'Charity',
+      'Book Launch',
+      'Business',
+      'Polish Market',
+      'Forest Protection',
+    ],
+  },
+  {
+    id: 'advent-of-code-2025',
+    title: 'Advent of Code 2025',
+    description:
+      'Join the annual Advent of Code programming challenge! Starting this year, there will be 12 days of puzzles in December. Solve daily puzzles, improve your problem-solving skills, and compete with developers worldwide.',
+    url: 'https://adventofcode.com/2025',
+    type: 'collaboration',
+    status: 'active',
+    startDate: '2025-12-01',
+    endDate: '2025-12-12',
+    organization: 'Advent of Code',
+    impact:
+      'Sharpen your programming skills with daily algorithmic challenges and join a global community of developers solving puzzles together.',
+    ctaText: 'Start Solving',
+    featured: true,
+    image: 'https://adventofcode.com/favicon.png',
+    tags: [
+      'Programming',
+      'Algorithms',
+      'Challenge',
+      'Community',
+      'Daily Puzzles',
+      'Problem Solving',
+    ],
   },
 ];
 
@@ -160,7 +192,7 @@ export const getCombinedCommunityItems = (): CommunityItem[] => {
 
 export const getNewestCommunityItems = (limit: number = 3): CommunityItem[] => {
   const allItems = getCombinedCommunityItems();
-  
+
   // Filter featured items and slice (already sorted by getCombinedCommunityItems)
   return allItems.filter((item) => item.featured).slice(0, limit);
 };
