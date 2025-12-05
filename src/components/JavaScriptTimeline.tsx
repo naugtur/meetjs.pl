@@ -103,6 +103,20 @@ const timelineEvents = [
     icon: '🔺',
   },
   {
+    year: '2016',
+    title: 'Svelte',
+    description:
+      'Rich Harris creates Svelte, a compiler that turns components into highly efficient imperative code at build time.',
+    icon: '🔥',
+  },
+  {
+    year: '2016',
+    title: 'Next.js',
+    description:
+      'Vercel releases Next.js, a React framework for server-side rendering and static site generation.',
+    icon: '▲',
+  },
+  {
     year: '2017',
     title: 'WebAssembly',
     description:
@@ -115,6 +129,13 @@ const timelineEvents = [
     description:
       'React introduces Hooks, revolutionizing state management in functional components.',
     icon: '🪝',
+  },
+  {
+    year: '2018',
+    title: 'Deno',
+    description:
+      'Ryan Dahl releases Deno, a secure runtime for JavaScript and TypeScript, addressing Node.js design flaws.',
+    icon: '🦕',
   },
   {
     year: '2020',
@@ -150,18 +171,64 @@ const timelineEvents = [
 const JavaScriptTimeline = () => {
   const [activeIndex, setActiveIndex] = useState(timelineEvents.length - 1);
   const [filter, setFilter] = useState('all');
+  const [focusedFilterIndex, setFocusedFilterIndex] = useState(0);
+
+  const filters = [
+    {
+      key: 'all',
+      label: 'All Events',
+      description: 'Show all JavaScript milestones',
+    },
+    {
+      key: 'early',
+      label: 'Early Years',
+      description: 'JavaScript from 1995-2005',
+    },
+    {
+      key: 'frameworks',
+      label: 'Frameworks Era',
+      description: 'Major frameworks and tools',
+    },
+    {
+      key: 'modern',
+      label: 'Modern JS',
+      description: 'JavaScript from 2015 onwards',
+    },
+  ];
 
   const filteredEvents = timelineEvents.filter((event) => {
     if (filter === 'all') return true;
     if (filter === 'early' && parseInt(event.year) <= 2005) return true;
     if (
       filter === 'frameworks' &&
-      ['2006', '2010', '2013', '2014', '2016'].includes(event.year)
+      ['2006', '2010', '2013', '2014', '2016', '2018'].includes(event.year)
     )
       return true;
     if (filter === 'modern' && parseInt(event.year) >= 2015) return true;
     return false;
   });
+
+  const handleKeyDown = (e: React.KeyboardEvent, filterIndex: number) => {
+    switch (e.key) {
+      case 'ArrowRight':
+        e.preventDefault();
+        const nextIndex = (filterIndex + 1) % filters.length;
+        setFocusedFilterIndex(nextIndex);
+        setFilter(filters[nextIndex].key);
+        break;
+      case 'ArrowLeft':
+        e.preventDefault();
+        const prevIndex = (filterIndex - 1 + filters.length) % filters.length;
+        setFocusedFilterIndex(prevIndex);
+        setFilter(filters[prevIndex].key);
+        break;
+      case 'Enter':
+      case ' ':
+        e.preventDefault();
+        setFilter(filters[filterIndex].key);
+        break;
+    }
+  };
 
   return (
     <div className={styles.timelineContainer}>
@@ -172,43 +239,60 @@ const JavaScriptTimeline = () => {
           language
         </p>
 
-        <div className={styles.filterButtons}>
-          <button
-            className={`${styles.filterBtn} ${filter === 'all' ? styles.active : ''}`}
-            onClick={() => setFilter('all')}
-          >
-            All Events
-          </button>
-          <button
-            className={`${styles.filterBtn} ${filter === 'early' ? styles.active : ''}`}
-            onClick={() => setFilter('early')}
-          >
-            Early Years
-          </button>
-          <button
-            className={`${styles.filterBtn} ${filter === 'frameworks' ? styles.active : ''}`}
-            onClick={() => setFilter('frameworks')}
-          >
-            Frameworks Era
-          </button>
-          <button
-            className={`${styles.filterBtn} ${filter === 'modern' ? styles.active : ''}`}
-            onClick={() => setFilter('modern')}
-          >
-            Modern JS
-          </button>
+        <div
+          className={styles.filterButtons}
+          role="tablist"
+          aria-label="Filter timeline events"
+        >
+          {filters.map((filterItem, index) => (
+            <button
+              key={filterItem.key}
+              className={`${styles.filterBtn} ${filter === filterItem.key ? styles.active : ''}`}
+              onClick={() => {
+                setFilter(filterItem.key);
+                setFocusedFilterIndex(index);
+              }}
+              onKeyDown={(e) => handleKeyDown(e, index)}
+              role="tab"
+              aria-selected={filter === filterItem.key}
+              aria-controls="timeline-events"
+              aria-describedby={`filter-${filterItem.key}-desc`}
+              tabIndex={focusedFilterIndex === index ? 0 : -1}
+            >
+              {filterItem.label}
+              <span id={`filter-${filterItem.key}-desc`} className="sr-only">
+                {filterItem.description}
+              </span>
+            </button>
+          ))}
         </div>
       </div>
 
-      <div className={styles.timeline}>
+      <div
+        className={styles.timeline}
+        role="region"
+        aria-label="JavaScript timeline events"
+        id="timeline-events"
+      >
         {filteredEvents.map((event, index) => (
           <div
             key={event.year}
             className={`${styles.timelineItem} ${activeIndex === index ? styles.active : ''} ${event.highlight ? styles.highlight : ''}`}
             onClick={() => setActiveIndex(index)}
+            role="article"
+            aria-label={`${event.year}: ${event.title}`}
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                setActiveIndex(index);
+              }
+            }}
           >
             <div className={styles.timelineDot}>
-              <span className={styles.icon}>{event.icon}</span>
+              <span className={styles.icon} aria-hidden="true">
+                {event.icon}
+              </span>
             </div>
             <div className={styles.timelineContent}>
               <h3 className={styles.year}>{event.year}</h3>
