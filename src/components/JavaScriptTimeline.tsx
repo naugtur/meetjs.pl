@@ -36,7 +36,7 @@ const timelineEvents = [
     year: '2005',
     title: 'AJAX Revolution',
     description:
-      'Google Maps and Gmail popularize AJAX, showcasing JavaScript&#39;s potential for rich web applications.',
+      "Google Maps and Gmail popularize AJAX, showcasing JavaScript's potential for rich web applications.",
     icon: '🌐',
   },
   {
@@ -120,7 +120,7 @@ const timelineEvents = [
     year: '2020',
     title: 'JavaScript Everywhere',
     description:
-      'JavaScript dominates web development with frameworks like React, Vue, and Angular. Node.js powers backend services, and JavaScript runs on mobile, desktop, and IoT devices. It&#39;s truly everywhere in the tech stack.',
+      "JavaScript dominates web development with frameworks like React, Vue, and Angular. Node.js powers backend services, and JavaScript runs on mobile, desktop, and IoT devices. It's truly everywhere in the tech stack.",
     icon: '🌐',
   },
   {
