@@ -25,7 +25,7 @@ const getPastEvents = async () => {
     url.searchParams.set('old', '1');
 
     const pastEventsRes = await fetch(url, {
-      cache: 'no-store',
+      next: { revalidate: 3600 },
     });
 
     if (!pastEventsRes.ok) {
