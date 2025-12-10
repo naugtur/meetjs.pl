@@ -115,7 +115,11 @@ const RootLayout = async ({
   const staticData = await tolgee.loadRequired();
 
   return (
-    <html lang={locale} className={`${montserrat.variable} scroll-smooth`}>
+    <html
+      lang={locale}
+      className={`${montserrat.variable} scroll-smooth`}
+      data-scroll-behavior="smooth"
+    >
       <body>
         <TolgeeNextProvider language={locale} staticData={staticData}>
           <Navigation />
