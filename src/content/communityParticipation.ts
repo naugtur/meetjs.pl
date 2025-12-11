@@ -114,19 +114,19 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
   },
   {
     id: 'the5-live-initiative',
-    title: 'THE 5. LIVE - Wielka Premiera Książki Tomka Karwatki',
+    title: 'THE 5. LIVE – Kup książkę i wesprzyj polskie lasy',
     description:
-      'Największe dobroczynne wydarzenie biznesowe roku. 10 grudnia od 12:00-20:00 na YouTube. 30+ super gości, 50 000 przedsiębiorców. Poznaj nieopowiedziane historie founderów firm wartych setki milionów.',
+      'Premiera książki "The 5." już za nami, ale wciąż możesz dołączyć do misji ratowania polskich lasów. Cały zysk ze sprzedaży trafia na projekt Połączona Puszcza Polska.',
     url: 'https://the5.live?r=5VqoY',
     type: 'initiative',
-    status: 'active',
+    status: 'completed',
     startDate: '2025-12-10',
     endDate: '2025-12-10',
     organization: 'The 5. / BRAVE.courses',
     impact:
-      'Cały zysk z książki "The 5." przekazywany na projekt Połączona Puszcza Polska i ratowanie polskich lasów. Uzbrojenie polskich przedsiębiorców w wiedzę do budowy globalnych firm.',
-    ctaText: 'ZAPISZ SIĘ BEZPŁATNIE',
-    featured: true,
+      'Kupując książkę wspierasz działania na rzecz ochrony polskich lasów i rozwój przedsiębiorczości w Polsce.',
+    ctaText: 'Kup książkę i wspieraj lasy',
+    featured: false,
     image: '/partners/the5.png',
     tags: [
       'Entrepreneurship',
