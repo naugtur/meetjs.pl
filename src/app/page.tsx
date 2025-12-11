@@ -7,7 +7,6 @@ import { HeroSection } from '@/components/HeroSection';
 import { PartnersSection } from '@/components/PartnersSection';
 import { CommunityParticipation } from '@/components/CommunityParticipationServer';
 import { YouTubeSubscribeBanner } from '@/components/YouTubeSubscribeBanner';
-import { The5ContestBanner } from '@/components/The5ContestBanner';
 
 export const dynamic = 'force-dynamic';
 
@@ -16,7 +15,6 @@ const Home = () => {
     <main>
       <HeroSection />
       <div className="flex min-h-screen flex-col items-center">
-        <The5ContestBanner />
         <FeaturedEvents />
         <YouTubeSubscribeBanner />
         <JoinUs />
