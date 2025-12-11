@@ -1,16 +1,14 @@
 import { Metadata } from 'next';
-import Image from 'next/image';
-import { 
-  Users, 
-  Calendar, 
-  Palette, 
-  FileText, 
+import {
+  Users,
+  Calendar,
+  FileText,
   Download,
   Mail,
   ExternalLink,
   Image as ImageIcon,
   CalendarDays,
-  Heart
+  Heart,
 } from 'lucide-react';
 import { getTranslate } from '@/tolgee/server';
 
@@ -25,58 +23,74 @@ export default async function OrganizersPage() {
   return (
     <div className="container mx-auto max-w-6xl py-16">
       <div className="mb-12 text-center">
-        <h1 className="mb-4 text-4xl font-bold">{t('organizer.hub_page_title')}</h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <h1 className="mb-4 text-4xl font-bold">
+          {t('organizer.hub_page_title')}
+        </h1>
+        <p className="mx-auto max-w-2xl text-lg text-gray-600">
           {t('organizer.hub_page_subtitle')}
         </p>
       </div>
 
       {/* Quick Actions */}
       <div className="mb-16 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <a 
+        <a
           href="/how-to-become-an-organizer"
           className="rounded-lg border bg-blue-50 p-4 text-center transition-colors hover:bg-blue-100"
         >
           <Users className="mx-auto mb-2 h-6 w-6 text-blue-600" />
-          <p className="font-medium text-blue-800">{t('organizer.quick_actions.become_organizer')}</p>
+          <p className="font-medium text-blue-800">
+            {t('organizer.quick_actions.become_organizer')}
+          </p>
         </a>
-        <a 
+        <a
           href="/events"
           className="rounded-lg border bg-green-50 p-4 text-center transition-colors hover:bg-green-100"
         >
           <Calendar className="mx-auto mb-2 h-6 w-6 text-green-600" />
-          <p className="font-medium text-green-800">{t('organizer.quick_actions.browse_events')}</p>
+          <p className="font-medium text-green-800">
+            {t('organizer.quick_actions.browse_events')}
+          </p>
         </a>
-        <a 
+        <a
           href="https://discord.gg/8r9XKTeNW8"
           target="_blank"
           rel="noopener noreferrer"
           className="rounded-lg border bg-purple-50 p-4 text-center transition-colors hover:bg-purple-100"
         >
           <ExternalLink className="mx-auto mb-2 h-6 w-6 text-purple-600" />
-          <p className="font-medium text-purple-800">{t('organizer.quick_actions.join_discord')}</p>
+          <p className="font-medium text-purple-800">
+            {t('organizer.quick_actions.join_discord')}
+          </p>
         </a>
-        <a 
+        <a
           href="mailto:contact@meetjs.pl"
           className="rounded-lg border bg-orange-50 p-4 text-center transition-colors hover:bg-orange-100"
         >
           <Mail className="mx-auto mb-2 h-6 w-6 text-orange-600" />
-          <p className="font-medium text-orange-800">{t('organizer.quick_actions.get_help')}</p>
+          <p className="font-medium text-orange-800">
+            {t('organizer.quick_actions.get_help')}
+          </p>
         </a>
       </div>
 
       {/* Tools Section */}
       <section id="tools" className="mb-16">
         <div className="mb-8 text-center">
-          <h2 className="mb-4 text-3xl font-bold">{t('organizer.tools_section.title')}</h2>
-          <p className="text-gray-600">{t('organizer.tools_section.subtitle')}</p>
+          <h2 className="mb-4 text-3xl font-bold">
+            {t('organizer.tools_section.title')}
+          </h2>
+          <p className="text-gray-600">
+            {t('organizer.tools_section.subtitle')}
+          </p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
           <div className="rounded-lg border bg-white p-6 shadow-sm">
             <div className="mb-4 flex items-center gap-3">
               <ImageIcon className="h-6 w-6 text-purple-600" />
-              <h3 className="text-xl font-semibold">{t('organizer.tools_section.image_generator.title')}</h3>
+              <h3 className="text-xl font-semibold">
+                {t('organizer.tools_section.image_generator.title')}
+              </h3>
             </div>
             <p className="mb-4 text-gray-600">
               {t('organizer.tools_section.image_generator.description')}
@@ -96,22 +110,24 @@ export default async function OrganizersPage() {
           <div className="rounded-lg border bg-white p-6 shadow-sm">
             <div className="mb-4 flex items-center gap-3">
               <CalendarDays className="h-6 w-6 text-blue-600" />
-              <h3 className="text-xl font-semibold">{t('organizer.tools_section.event_management.title')}</h3>
+              <h3 className="text-xl font-semibold">
+                {t('organizer.tools_section.event_management.title')}
+              </h3>
             </div>
             <p className="mb-4 text-gray-600">
               {t('organizer.tools_section.event_management.description')}
             </p>
             <div className="space-y-2">
-              <a 
+              <a
                 href="/how-to-become-an-organizer"
                 className="block text-blue-600 hover:underline"
               >
-                {t('organizer.tools_section.event_management.event_planning_guide')} →
+                {t(
+                  'organizer.tools_section.event_management.event_planning_guide',
+                )}{' '}
+                →
               </a>
-              <a 
-                href="/about"
-                className="block text-blue-600 hover:underline"
-              >
+              <a href="/about" className="block text-blue-600 hover:underline">
                 {t('organizer.tools_section.event_management.about_meetjs')} →
               </a>
             </div>
@@ -122,21 +138,29 @@ export default async function OrganizersPage() {
       {/* Assets Section */}
       <section id="assets" className="mb-16">
         <div className="mb-8 text-center">
-          <h2 className="mb-4 text-3xl font-bold">{t('organizer.assets_section.title')}</h2>
-          <p className="text-gray-600">{t('organizer.assets_section.subtitle')}</p>
+          <h2 className="mb-4 text-3xl font-bold">
+            {t('organizer.assets_section.title')}
+          </h2>
+          <p className="text-gray-600">
+            {t('organizer.assets_section.subtitle')}
+          </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <div className="rounded-lg border bg-white p-6 shadow-sm">
             <div className="mb-4 flex items-center gap-3">
               <FileText className="h-6 w-6 text-green-600" />
-              <h3 className="text-lg font-semibold">{t('organizer.assets_section.current_logos.title')}</h3>
+              <h3 className="text-lg font-semibold">
+                {t('organizer.assets_section.current_logos.title')}
+              </h3>
             </div>
             <p className="mb-4 text-sm text-gray-600">
               {t('organizer.assets_section.current_logos.description')}
             </p>
             <div className="space-y-2 text-sm">
-              <p className="text-gray-500">{t('organizer.assets_section.current_logos.available_formats')}</p>
+              <p className="text-gray-500">
+                {t('organizer.assets_section.current_logos.available_formats')}
+              </p>
               <ul className="list-disc pl-4 text-gray-600">
                 <li>SVG format</li>
                 <li>PNG format</li>
@@ -149,13 +173,17 @@ export default async function OrganizersPage() {
           <div className="rounded-lg border bg-white p-6 shadow-sm">
             <div className="mb-4 flex items-center gap-3">
               <Heart className="h-6 w-6 text-red-600" />
-              <h3 className="text-lg font-semibold">{t('organizer.assets_section.legacy_assets.title')}</h3>
+              <h3 className="text-lg font-semibold">
+                {t('organizer.assets_section.legacy_assets.title')}
+              </h3>
             </div>
             <p className="mb-4 text-sm text-gray-600">
               {t('organizer.assets_section.legacy_assets.description')}
             </p>
             <div className="space-y-2 text-sm">
-              <p className="text-gray-500">{t('organizer.assets_section.legacy_assets.includes')}</p>
+              <p className="text-gray-500">
+                {t('organizer.assets_section.legacy_assets.includes')}
+              </p>
               <ul className="list-disc pl-4 text-gray-600">
                 <li>Purple logo variants</li>
                 <li>Summit specific logos</li>
@@ -168,13 +196,17 @@ export default async function OrganizersPage() {
           <div className="rounded-lg border bg-white p-6 shadow-sm">
             <div className="mb-4 flex items-center gap-3">
               <ImageIcon className="h-6 w-6 text-blue-600" />
-              <h3 className="text-lg font-semibold">{t('organizer.assets_section.wallpapers.title')}</h3>
+              <h3 className="text-lg font-semibold">
+                {t('organizer.assets_section.wallpapers.title')}
+              </h3>
             </div>
             <p className="mb-4 text-sm text-gray-600">
               {t('organizer.assets_section.wallpapers.description')}
             </p>
             <div className="space-y-2 text-sm">
-              <p className="text-gray-500">{t('organizer.assets_section.wallpapers.available')}</p>
+              <p className="text-gray-500">
+                {t('organizer.assets_section.wallpapers.available')}
+              </p>
               <ul className="list-disc pl-4 text-gray-600">
                 <li>1920x1080 resolution</li>
                 <li>Meet.js cover images</li>
@@ -189,8 +221,12 @@ export default async function OrganizersPage() {
       {/* Cities Section */}
       <section id="cities" className="mb-16">
         <div className="mb-8 text-center">
-          <h2 className="mb-4 text-3xl font-bold">{t('organizers_hub.cities_section.title')}</h2>
-          <p className="text-gray-600">{t('organizers_hub.cities_section.subtitle')}</p>
+          <h2 className="mb-4 text-3xl font-bold">
+            {t('organizers_hub.cities_section.title')}
+          </h2>
+          <p className="text-gray-600">
+            {t('organizers_hub.cities_section.subtitle')}
+          </p>
         </div>
 
         <div className="rounded-lg border bg-white p-8">
@@ -211,11 +247,13 @@ export default async function OrganizersPage() {
       {/* New Organizer CTA */}
       <div className="rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 p-8 text-white">
         <div className="text-center">
-          <h2 className="mb-4 text-2xl font-bold">{t('organizers_hub.cta_section.title')}</h2>
-          <p className="mb-6 max-w-2xl mx-auto text-blue-100">
+          <h2 className="mb-4 text-2xl font-bold">
+            {t('organizers_hub.cta_section.title')}
+          </h2>
+          <p className="mx-auto mb-6 max-w-2xl text-blue-100">
             {t('organizers_hub.cta_section.description')}
           </p>
-          <a 
+          <a
             href="/how-to-become-an-organizer"
             className="inline-flex items-center rounded-md bg-white px-6 py-3 text-blue-600 transition-colors hover:bg-gray-100"
           >

@@ -201,7 +201,8 @@ export default function FutureConfPage() {
                 name: 'Kacper Milan',
                 role: 'ML & NLP Engineer',
                 company: 'Co-creator PLLuM & Bielik',
-                image: 'https://futureconf.tech/assets/speakers/kacper-milan.jpeg',
+                image:
+                  'https://futureconf.tech/assets/speakers/kacper-milan.jpeg',
               },
               {
                 name: 'Bartosz Pampuch',
@@ -213,7 +214,8 @@ export default function FutureConfPage() {
                 name: 'Kacper Łukawski',
                 role: 'Developer Advocate',
                 company: 'Qdrant, AI Embassy Founder',
-                image: 'https://futureconf.tech/assets/speakers/kacper-lukawski.jpeg',
+                image:
+                  'https://futureconf.tech/assets/speakers/kacper-lukawski.jpeg',
               },
               {
                 name: 'Ziemowit Dworakowski',
@@ -237,7 +239,8 @@ export default function FutureConfPage() {
                 name: 'Mateusz Jarzębowski-Bownik',
                 role: 'Software Engineer',
                 company: 'Box',
-                image: 'https://futureconf.tech/assets/speakers/mateusz-jarzebowski-bownik.webp',
+                image:
+                  'https://futureconf.tech/assets/speakers/mateusz-jarzebowski-bownik.webp',
               },
               {
                 name: 'Przemek Smyrdek',
@@ -249,7 +252,8 @@ export default function FutureConfPage() {
                 name: 'Marcin Czarkowski',
                 role: 'Front-End Tech Lead, Co-founder, Educator',
                 company: 'Przeprogramowani',
-                image: 'https://futureconf.tech/assets/speakers/czarkowski.webp',
+                image:
+                  'https://futureconf.tech/assets/speakers/czarkowski.webp',
               },
               {
                 name: 'Paweł Gronowski',
@@ -357,8 +361,8 @@ export default function FutureConfPage() {
             Ready to Join FutureConf 2025?
           </h2>
           <p className="mb-6 text-lg text-purple-100">
-            Don&apos;t miss this opportunity to learn about AI in production from
-            industry experts
+            Don&apos;t miss this opportunity to learn about AI in production
+            from industry experts
           </p>
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <a

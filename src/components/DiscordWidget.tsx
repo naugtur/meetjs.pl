@@ -12,7 +12,7 @@ interface Props {
 
 export const DiscordWidget = ({ name, membersCount, inviteUrl }: Props) => {
   const { t } = useTranslate();
-  
+
   return (
     <div className="flex flex-col items-center">
       <div className="group relative mb-4 w-full max-w-md overflow-hidden rounded-lg bg-gradient-to-br from-[#2f3136] to-[#1e1f22] p-6 text-white shadow-xl transition-all duration-300 hover:shadow-2xl">
