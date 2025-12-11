@@ -24,11 +24,6 @@ const isPromoExpired = (promo: Promo) => new Date(promo.expiresAt) < new Date();
 const isPromoDismissed = (promo: Promo) =>
   Boolean(DismissedPromo.get(promo.id));
 
-const shouldPromoBeVisible = (promo: Promo) => {
-  if (isPromoExpired(promo) || isPromoDismissed(promo)) return false;
-  return true;
-};
-
 interface Props {
   promos: Promo[];
 }

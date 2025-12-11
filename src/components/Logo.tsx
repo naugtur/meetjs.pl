@@ -61,7 +61,9 @@ export const Logo = ({ clickable = true }: LogoProps) => {
             }}
           >
             <div className="border-b border-gray-100 px-4 py-2 text-sm text-gray-700">
-              <div className="font-medium">{t('logo_component.context_menu_title')}</div>
+              <div className="font-medium">
+                {t('logo_component.context_menu_title')}
+              </div>
               <div className="mt-1 text-xs text-gray-500">
                 {t('logo_component.context_menu_subtitle')}
               </div>

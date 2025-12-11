@@ -224,14 +224,15 @@ const BrandPage = async () => {
       <div className="mx-auto max-w-6xl px-4 py-8">
         <div className="mb-8 text-center">
           <h1 className="mb-4 text-4xl font-bold">{t('brand.page_title')}</h1>
-          <p className="text-xl text-gray-600">
-            {t('brand.page_subtitle')}
-          </p>
+          <p className="text-xl text-gray-600">{t('brand.page_subtitle')}</p>
           <div className="mt-4 inline-flex items-center gap-2 rounded-md border border-blue-200 bg-blue-50 px-3 py-2 text-sm text-blue-800">
             <span>👥</span>
             <span>
               {t('brand.organizers_only_note')}{' '}
-              <Link href="/how-to-become-an-organizer/tools" className="underline hover:no-underline">
+              <Link
+                href="/how-to-become-an-organizer/tools"
+                className="underline hover:no-underline"
+              >
                 {t('brand.organizers_tools_cta')}
               </Link>
             </span>
@@ -240,7 +241,9 @@ const BrandPage = async () => {
 
         {/* Table of Contents */}
         <div className="mb-12 rounded-lg bg-gray-50 p-6">
-          <h2 className="mb-4 text-xl font-semibold">{t('brand.page_contents')}</h2>
+          <h2 className="mb-4 text-xl font-semibold">
+            {t('brand.page_contents')}
+          </h2>
           <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
             <a
               href="#guidelines"
@@ -249,7 +252,9 @@ const BrandPage = async () => {
               <span className="text-2xl">📋</span>
               <div>
                 <div className="font-medium">{t('brand.usage_guidelines')}</div>
-                <div className="text-sm text-gray-600">{t('brand.brand_usage_rules')}</div>
+                <div className="text-sm text-gray-600">
+                  {t('brand.brand_usage_rules')}
+                </div>
               </div>
             </a>
             <a
@@ -264,7 +269,7 @@ const BrandPage = async () => {
                 </div>
               </div>
             </a>
-            
+
             <a
               href="#colors"
               className="flex items-center gap-2 rounded-md bg-white p-3 shadow-sm transition-all hover:bg-blue-50 hover:shadow-md"
@@ -284,7 +289,9 @@ const BrandPage = async () => {
               <span className="text-2xl">🖼️</span>
               <div>
                 <div className="font-medium">{t('brand.wallpapers')}</div>
-                <div className="text-sm text-gray-600">{t('brand.desktop_backgrounds')}</div>
+                <div className="text-sm text-gray-600">
+                  {t('brand.desktop_backgrounds')}
+                </div>
               </div>
             </a>
           </div>
@@ -297,9 +304,7 @@ const BrandPage = async () => {
         </h2>
 
         <div className="mb-8">
-          <p className="mb-6 text-lg text-gray-700">
-            {t('brand.usage_intro')}
-          </p>
+          <p className="mb-6 text-lg text-gray-700">{t('brand.usage_intro')}</p>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-2">
@@ -314,21 +319,15 @@ const BrandPage = async () => {
             <ul className="space-y-3 text-green-700">
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-green-600">•</span>
-                <span>
-                  {t('brand.allowed_list.educational')}
-                </span>
+                <span>{t('brand.allowed_list.educational')}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-green-600">•</span>
-                <span>
-                  {t('brand.allowed_list.community')}
-                </span>
+                <span>{t('brand.allowed_list.community')}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-green-600">•</span>
-                <span>
-                  {t('brand.allowed_list.social_media')}
-                </span>
+                <span>{t('brand.allowed_list.social_media')}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-green-600">•</span>
@@ -348,9 +347,7 @@ const BrandPage = async () => {
             <ul className="space-y-3 text-red-700">
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-red-600">•</span>
-                <span>
-                  {t('brand.prohibited_list.modification')}
-                </span>
+                <span>{t('brand.prohibited_list.modification')}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-red-600">•</span>
@@ -358,15 +355,11 @@ const BrandPage = async () => {
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-red-600">•</span>
-                <span>
-                  {t('brand.prohibited_list.misleading')}
-                </span>
+                <span>{t('brand.prohibited_list.misleading')}</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 text-red-600">•</span>
-                <span>
-                  {t('brand.prohibited_list.inappropriate')}
-                </span>
+                <span>{t('brand.prohibited_list.inappropriate')}</span>
               </li>
             </ul>
           </div>
@@ -377,20 +370,20 @@ const BrandPage = async () => {
           <h3 className="mb-3 text-xl font-bold text-blue-800">
             {t('brand.brand_name_note')}
           </h3>
-          <p className="text-blue-700">
-            {t('brand.brand_name_lowercase')}
-          </p>
+          <p className="text-blue-700">{t('brand.brand_name_lowercase')}</p>
         </div>
       </section>
 
       <section id="logos" className="mb-16">
-        <h2 className="mb-6 border-b pb-2 text-3xl font-bold">{t('brand.logos_section')}</h2>
+        <h2 className="mb-6 border-b pb-2 text-3xl font-bold">
+          {t('brand.logos_section')}
+        </h2>
 
-        <h3 className="mb-6 text-2xl font-bold">{t('brand.logo_usage_guidelines')}</h3>
+        <h3 className="mb-6 text-2xl font-bold">
+          {t('brand.logo_usage_guidelines')}
+        </h3>
         <div className="mb-8 rounded-lg bg-blue-50 p-6">
-          <p className="mb-4">
-            {t('brand.logo_variants_intro')}
-          </p>
+          <p className="mb-4">{t('brand.logo_variants_intro')}</p>
           <div className="grid gap-6 md:grid-cols-2">
             <div className="rounded-lg bg-white p-4 shadow-sm">
               <h4 className="mb-2 text-lg font-semibold text-green-700">
@@ -469,7 +462,9 @@ const BrandPage = async () => {
           ))}
         </div>
 
-        <h3 className="mb-4 text-2xl font-bold">{t('brand.bold_print_logos')}</h3>
+        <h3 className="mb-4 text-2xl font-bold">
+          {t('brand.bold_print_logos')}
+        </h3>
         <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {boldLogos.map((logo) => (
             <div
@@ -583,12 +578,14 @@ const BrandPage = async () => {
         </div>
       </section>
 
-      
-
       <section id="colors" className="mb-16">
-        <h2 className="mb-6 border-b pb-2 text-3xl font-bold">{t('brand.colors')}</h2>
+        <h2 className="mb-6 border-b pb-2 text-3xl font-bold">
+          {t('brand.colors')}
+        </h2>
 
-        <h3 className="mb-4 text-2xl font-bold">{t('brand.current_colors_post_2023')}</h3>
+        <h3 className="mb-4 text-2xl font-bold">
+          {t('brand.current_colors_post_2023')}
+        </h3>
         <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-3">
           {currentColors.map((color) => (
             <div
@@ -603,8 +600,12 @@ const BrandPage = async () => {
                 <h3 className="text-lg font-bold">{color.name}</h3>
                 <p className="mt-1 text-gray-600">{color.description}</p>
                 <div className="mt-2 space-y-1">
-                  <p className="font-mono text-sm">{t('brand.hex')}: {color.hex}</p>
-                  <p className="font-mono text-sm">{t('brand.rgb')}: {color.rgb}</p>
+                  <p className="font-mono text-sm">
+                    {t('brand.hex')}: {color.hex}
+                  </p>
+                  <p className="font-mono text-sm">
+                    {t('brand.rgb')}: {color.rgb}
+                  </p>
                 </div>
               </div>
             </div>
@@ -641,7 +642,9 @@ const BrandPage = async () => {
       </section>
 
       <section id="wallpapers" className="mb-16">
-        <h2 className="mb-6 border-b pb-2 text-3xl font-bold">{t('brand.wallpapers')}</h2>
+        <h2 className="mb-6 border-b pb-2 text-3xl font-bold">
+          {t('brand.wallpapers')}
+        </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {wallpapers.map((wallpaper) => (
             <div

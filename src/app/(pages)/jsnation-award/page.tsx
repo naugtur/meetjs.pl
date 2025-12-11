@@ -149,17 +149,29 @@ export default function JSNationAwardPage() {
 
             <ul className="mb-6 list-inside list-disc space-y-1">
               <li>
-                <a href="https://www.linkedin.com/in/cdynak/?utm_source=meetjs.pl&utm_medium=referral&utm_campaign=community" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.linkedin.com/in/cdynak/?utm_source=meetjs.pl&utm_medium=referral&utm_campaign=community"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Cezary Dynak
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/aleksandrapawlus/?utm_source=meetjs.pl&utm_medium=referral&utm_campaign=community" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.linkedin.com/in/aleksandrapawlus/?utm_source=meetjs.pl&utm_medium=referral&utm_campaign=community"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Aleksandra Pawlus
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/ssynowiecpl/?utm_source=meetjs.pl&utm_medium=referral&utm_campaign=community" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.linkedin.com/in/ssynowiecpl/?utm_source=meetjs.pl&utm_medium=referral&utm_campaign=community"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Stanisław Synowiec
                 </a>
               </li>
@@ -274,13 +286,15 @@ export default function JSNationAwardPage() {
               </div>
               <div className="mt-2 flex items-center gap-2">
                 <Heart className="h-4 w-4 text-muted-foreground" />
-                <p className="text-sm font-medium">Community-driven since 2011</p>
+                <p className="text-sm font-medium">
+                  Community-driven since 2011
+                </p>
               </div>
             </div>
           </CardContent>
           <CardFooter>
             <Link
-              href={"/city/wroclaw" as Route}
+              href={'/city/wroclaw' as Route}
               className="inline-flex items-center gap-1 text-sm font-medium text-green-600 hover:text-green-700"
             >
               Learn more about meet.js Wrocław

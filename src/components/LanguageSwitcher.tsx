@@ -16,9 +16,9 @@ interface LanguageSwitcherProps {
   className?: string;
 }
 
-export const LanguageSwitcher = ({ 
-  variant = 'desktop', 
-  className = '' 
+export const LanguageSwitcher = ({
+  variant = 'desktop',
+  className = '',
 }: LanguageSwitcherProps) => {
   const tolgee = useTolgee(['language']);
   const currentLanguage = tolgee.getLanguage() || 'en';
@@ -31,17 +31,23 @@ export const LanguageSwitcher = ({
 
   const getLanguageLabel = (lang: string) => {
     switch (lang) {
-      case 'en': return 'English';
-      case 'pl': return 'Polski';
-      default: return lang.toUpperCase();
+      case 'en':
+        return 'English';
+      case 'pl':
+        return 'Polski';
+      default:
+        return lang.toUpperCase();
     }
   };
 
   const getLanguageFlag = (lang: string) => {
     switch (lang) {
-      case 'en': return '🇺🇸';
-      case 'pl': return '🇵🇱';
-      default: return '🌐';
+      case 'en':
+        return '🇺🇸';
+      case 'pl':
+        return '🇵🇱';
+      default:
+        return '🌐';
     }
   };
 
@@ -56,7 +62,7 @@ export const LanguageSwitcher = ({
           <button
             key={lang}
             onClick={() => handleLanguageChange(lang)}
-            className={`flex items-center px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+            className={`flex items-center rounded-md px-3 py-2 text-sm font-medium transition-colors ${
               currentLanguage === lang
                 ? 'bg-purple text-white'
                 : 'text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700'
@@ -86,9 +92,9 @@ export const LanguageSwitcher = ({
           <DropdownMenuItem
             key={lang}
             onClick={() => handleLanguageChange(lang)}
-            className={`flex items-center cursor-pointer ${
+            className={`flex cursor-pointer items-center ${
               currentLanguage === lang
-                ? 'bg-purple/10 text-purple font-medium'
+                ? 'bg-purple/10 font-medium text-purple'
                 : ''
             }`}
           >

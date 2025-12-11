@@ -9,5 +9,7 @@ export function CommunityParticipation() {
     return null;
   }
 
-  return <CommunityParticipationClient items={newestItems} showViewAll={true} />;
+  return (
+    <CommunityParticipationClient items={newestItems} showViewAll={true} />
+  );
 }

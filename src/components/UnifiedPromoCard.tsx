@@ -41,25 +41,31 @@ const variantConfigs: Record<PromoVariant, VariantConfig> = {
     iconBg: 'bg-gradient-to-br from-purple-500 to-pink-600',
     defaultIcon: '🎟️',
     discountVariant: 'event',
-    ctaGradient: 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700',
-    linkColor: 'text-purple-600 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-300',
+    ctaGradient:
+      'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700',
+    linkColor:
+      'text-purple-600 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-300',
     websiteLabel: 'Event Website',
   },
   software: {
     iconBg: 'bg-gradient-to-br from-indigo-500 to-purple-600',
     defaultIcon: '🖥️',
     discountVariant: 'software',
-    ctaGradient: 'bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700',
-    linkColor: 'text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300',
+    ctaGradient:
+      'bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700',
+    linkColor:
+      'text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300',
     websiteLabel: 'Product Website',
   },
   learning: {
     iconBg: 'bg-gradient-to-br from-green-500 to-teal-600',
     defaultIcon: '📚',
     discountVariant: 'software',
-    ctaGradient: 'bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700',
+    ctaGradient:
+      'bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700',
     ctaTextColor: 'text-white',
-    linkColor: 'text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300',
+    linkColor:
+      'text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300',
     websiteLabel: 'Course Website',
   },
 };
@@ -75,15 +81,13 @@ export default function UnifiedPromoCard({
 }: UnifiedPromoCardProps) {
   const config = variantConfigs[variant];
   const isEventVariant = variant === 'event';
-  
+
   // Use promo-specific gradient and text color if provided, otherwise use variant defaults
   const ctaGradient = promo.gradient || config.ctaGradient;
   const ctaTextColor = promo.textColor || config.ctaTextColor || 'text-white';
-  
+
   return (
-    <div
-      className="group relative block overflow-hidden rounded-xl border border-gray-200 bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
-    >
+    <div className="group relative block overflow-hidden rounded-xl border border-gray-200 bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800">
       {/* Header with Logo/Image */}
       <div className="flex items-center gap-4 border-b border-gray-100 p-6 dark:border-gray-700">
         {promo.image ? (
@@ -96,7 +100,9 @@ export default function UnifiedPromoCard({
             />
           </div>
         ) : (
-          <div className={`flex h-20 w-20 items-center justify-center rounded-lg text-3xl text-white ${config.iconBg}`}>
+          <div
+            className={`flex h-20 w-20 items-center justify-center rounded-lg text-3xl text-white ${config.iconBg}`}
+          >
             {promo.icon || config.defaultIcon}
           </div>
         )}
@@ -193,29 +199,32 @@ export default function UnifiedPromoCard({
         )}
 
         {/* Additional Event Links */}
-        {isEventVariant && promo.eventLink && promo.ticketLink && promo.eventLink !== promo.ticketLink && (
-          <div className="mb-6">
-            <div className="flex items-center justify-between rounded-lg border border-gray-200 p-3 dark:border-gray-600">
-              <div>
-                <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                  {config.websiteLabel}
-                </p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  {getDomain(promo.eventLink)}
-                </p>
+        {isEventVariant &&
+          promo.eventLink &&
+          promo.ticketLink &&
+          promo.eventLink !== promo.ticketLink && (
+            <div className="mb-6">
+              <div className="flex items-center justify-between rounded-lg border border-gray-200 p-3 dark:border-gray-600">
+                <div>
+                  <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                    {config.websiteLabel}
+                  </p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    {getDomain(promo.eventLink)}
+                  </p>
+                </div>
+                <a
+                  href={promo.eventLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={config.linkColor}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <ExternalLink className="h-4 w-4" />
+                </a>
               </div>
-              <a
-                href={promo.eventLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={config.linkColor}
-                onClick={(e) => e.stopPropagation()}
-              >
-                <ExternalLink className="h-4 w-4" />
-              </a>
             </div>
-          </div>
-        )}
+          )}
       </div>
 
       {/* CTA Button */}
@@ -231,7 +240,9 @@ export default function UnifiedPromoCard({
             {promo.cta}
           </a>
         ) : (
-          <span className={`block w-full rounded-lg py-3 text-center font-semibold shadow opacity-60 ${ctaTextColor}/80 ${ctaGradient}`}>
+          <span
+            className={`block w-full rounded-lg py-3 text-center font-semibold opacity-60 shadow ${ctaTextColor}/80 ${ctaGradient}`}
+          >
             {promo.cta}
           </span>
         )}

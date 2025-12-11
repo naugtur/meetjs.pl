@@ -10,15 +10,15 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: t('brand.title'),
       description: t('brand.description'),
-    url: 'https://meetjs.pl/brand',
-    siteName: 'meet.js',
-    images: [
-      {
-        url: 'https://meetjs.pl/og-image.png',
-        width: 1200,
-        height: 630,
-      },
-    ],
+      url: 'https://meetjs.pl/brand',
+      siteName: 'meet.js',
+      images: [
+        {
+          url: 'https://meetjs.pl/og-image.png',
+          width: 1200,
+          height: 630,
+        },
+      ],
       locale: 'en_US',
       type: 'website',
     },

@@ -15,10 +15,10 @@ export const HeroSection = async () => {
       />
 
       <div className="col-start-1 row-start-1 mx-auto my-auto">
-        <h1 className="-rotate-2 bg-blue p-2 text-6xl font-bold">{t('hero.title')}</h1>
-        <h2 className="p-4 text-xl font-medium">
-          {t('hero.subtitle')}
-        </h2>
+        <h1 className="-rotate-2 bg-blue p-2 text-6xl font-bold">
+          {t('hero.title')}
+        </h1>
+        <h2 className="p-4 text-xl font-medium">{t('hero.subtitle')}</h2>
 
         <div className="mt-6 flex justify-center gap-4">
           <a

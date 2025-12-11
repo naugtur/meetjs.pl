@@ -23,9 +23,7 @@ export const AboutSection = async () => {
       <div className="w-full p-8 md:w-1/2 md:p-12">
         <h2 className="mb-6 text-3xl font-bold">{t('about.title')}</h2>
         <div className="flex flex-col gap-4">
-          <p>
-            {t('about.description')}
-          </p>
+          <p>{t('about.description')}</p>
           <ul className="mb-6 list-disc space-y-2 pl-6">
             <li>{t('about.features.non_commercial')}</li>
             <li>{t('about.features.regular_meetups')}</li>
