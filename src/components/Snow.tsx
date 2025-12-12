@@ -23,5 +23,6 @@ export const Snow = () => {
     });
   }, []);
 
+  // @ts-ignore
   return init && <Particles id="tsparticles" options={snowConfig} />;
 };
