@@ -28,9 +28,13 @@ export const Logo = ({ clickable = true }: LogoProps) => {
     setShowContextMenu(false);
   };
 
+  const now = new Date();
+  const isChristmasSeason =
+    now.getMonth() === 11 || (now.getMonth() === 0 && now.getDate() <= 15);
+
   const logoImage = (
     <Image
-      src="./logo.svg"
+      src={isChristmasSeason ? './christmas_logo.svg' : './logo.svg'}
       alt="meet.js Logo"
       width={150}
       height={40}
@@ -61,7 +65,9 @@ export const Logo = ({ clickable = true }: LogoProps) => {
             }}
           >
             <div className="border-b border-gray-100 px-4 py-2 text-sm text-gray-700">
-              <div className="font-medium">{t('logo_component.context_menu_title')}</div>
+              <div className="font-medium">
+                {t('logo_component.context_menu_title')}
+              </div>
               <div className="mt-1 text-xs text-gray-500">
                 {t('logo_component.context_menu_subtitle')}
               </div>

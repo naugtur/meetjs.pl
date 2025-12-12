@@ -11,6 +11,7 @@ import { env } from '@/env';
 import { TolgeeNextProvider } from '@/tolgee/client';
 import { getTolgee } from '@/tolgee/server';
 import { getLanguage } from '@/tolgee/language';
+import { Snow } from '@/components/Snow';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -129,6 +130,7 @@ const RootLayout = async ({
         <Analytics />
         <SpeedInsights />
         <SchemaMarkup />
+        <Snow />
       </body>
     </html>
   );
