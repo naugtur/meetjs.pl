@@ -23,6 +23,7 @@ export const Snow = () => {
     });
   }, []);
 
-  // @ts-ignore
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
   return init && <Particles id="tsparticles" options={snowConfig} />;
 };
