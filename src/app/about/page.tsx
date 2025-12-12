@@ -29,29 +29,19 @@ export default async function Page() {
       </div>
 
       <div className="mb-8 space-y-4">
-        <p>
-          {t('about.intro_p1')}
-        </p>
-        <p>
-          {t('about.intro_p2')}
-        </p>
+        <p>{t('about.intro_p1')}</p>
+        <p>{t('about.intro_p2')}</p>
       </div>
 
       <div className="mb-8">
-        <h2 className="mb-4 text-2xl font-semibold">{t('about.values_title')}</h2>
+        <h2 className="mb-4 text-2xl font-semibold">
+          {t('about.values_title')}
+        </h2>
         <ul className="list-disc space-y-2 pl-6">
-          <li>
-            {t('about.values.non_commercial')}
-          </li>
-          <li>
-            {t('about.values.free_open')}
-          </li>
-          <li>
-            {t('about.values.community_driven')}
-          </li>
-          <li>
-            {t('about.values.knowledge_sharing')}
-          </li>
+          <li>{t('about.values.non_commercial')}</li>
+          <li>{t('about.values.free_open')}</li>
+          <li>{t('about.values.community_driven')}</li>
+          <li>{t('about.values.knowledge_sharing')}</li>
         </ul>
       </div>
 
@@ -83,7 +73,9 @@ export default async function Page() {
       </div>
 
       <div className="mb-12">
-        <h2 className="mb-6 text-2xl font-semibold">{t('about.what_we_do_title')}</h2>
+        <h2 className="mb-6 text-2xl font-semibold">
+          {t('about.what_we_do_title')}
+        </h2>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg">
             <h3 className="mb-2 flex items-center gap-2 font-semibold">
@@ -164,10 +156,10 @@ export default async function Page() {
       </div>
 
       <div className="mb-8">
-        <h2 className="mb-4 text-2xl font-semibold">{t('about.get_involved_title')}</h2>
-        <p className="mb-4">
-          {t('about.get_involved_p1')}
-        </p>
+        <h2 className="mb-4 text-2xl font-semibold">
+          {t('about.get_involved_title')}
+        </h2>
+        <p className="mb-4">{t('about.get_involved_p1')}</p>
         <p className="mb-4">
           {t('about.get_involved_p2')}{' '}
           <a
@@ -191,7 +183,9 @@ export default async function Page() {
       </div>
 
       <div>
-        <h2 className="mb-4 text-2xl font-semibold">{t('about.contact_title')}</h2>
+        <h2 className="mb-4 text-2xl font-semibold">
+          {t('about.contact_title')}
+        </h2>
         <p>
           {t('about.contact_text')}{' '}
           <a

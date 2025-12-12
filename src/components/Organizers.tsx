@@ -44,18 +44,30 @@ export const Organizers = ({ city, organizers }: OrganizersProps) => {
               <CardTitle className="text-center">{organizer.name}</CardTitle>
               <div className="flex items-center justify-center gap-1">
                 {organizer.email && (
-                  <a href={`mailto:${organizer.email}`} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={`mailto:${organizer.email}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <span className="sr-only">Email</span>@
                   </a>
                 )}
                 {organizer.linkedin && (
-                  <a href={organizer.linkedin} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={organizer.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <span className="sr-only">Linkedin</span>
                     <FaLinkedin />
                   </a>
                 )}
                 {organizer.gitHub && (
-                  <a href={organizer.gitHub} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={organizer.gitHub}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <span className="sr-only">GitHub</span>
                     <FaGithub />
                   </a>

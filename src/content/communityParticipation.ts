@@ -13,6 +13,7 @@ export interface CommunityItem {
   featured?: boolean;
   image?: string;
   tags: string[];
+  pinned?: boolean;
 }
 
 export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
@@ -162,10 +163,33 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
       'Problem Solving',
     ],
   },
+  {
+    id: 'ugotit-contest-2025',
+    title: 'Konkurs technologiczny UGotIT',
+    description:
+      'Masz pomysł na projekt technologiczny? UGotIT to konkurs dla entuzjastów IT, biznesu i AI z pulą nagród 42 000 zł. Stwórz PoC, zmierz się z realnymi wyzwaniami biznesowymi i skorzystaj ze wsparcia mentorów oraz AWS.',
+    url: 'https://www.ugotit.pl',
+    type: 'initiative',
+    status: 'active',
+    startDate: '2025-11-24',
+    endDate: '2026-03-26',
+    organization: 'UGotIT',
+    impact:
+      'Możliwość wdrożenia projektu, nagrody finansowe i rozwój kompetencji chmurowych oraz biznesowych.',
+    ctaText: 'Zgłoś się',
+    featured: true,
+    image: 'https://ugotit.pl/static/svg/u-got-it-logo.svg',
+    tags: ['Contest', 'AI', 'Business', 'AWS', 'Innovation'],
+    pinned: true,
+  },
 ];
 
 const sortByNewest = (items: CommunityItem[]): CommunityItem[] => {
   return items.sort((a, b) => {
+    // Check for pinned items first
+    if (a.pinned && !b.pinned) return -1;
+    if (!a.pinned && b.pinned) return 1;
+
     const dateA = new Date(a.startDate || 0).getTime();
     const dateB = new Date(b.startDate || 0).getTime();
     return dateB - dateA; // Newest first

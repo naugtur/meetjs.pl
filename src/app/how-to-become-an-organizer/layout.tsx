@@ -3,7 +3,7 @@ import { getTranslate } from '@/tolgee/server';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslate();
-  
+
   return {
     title: t('organizer.meta_title'),
     description: t('organizer.meta_description'),

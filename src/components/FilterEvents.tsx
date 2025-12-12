@@ -34,7 +34,9 @@ const FilterEventsContent = async ({ events, filter }: FilterEventsProps) => {
   return (
     <>
       <div className="flex flex-col gap-2">
-        <p className="text-center text-lg">{t('events_page.filter.filter_by_city')}</p>
+        <p className="text-center text-lg">
+          {t('events_page.filter.filter_by_city')}
+        </p>
         <div className="flex max-w-4xl flex-wrap justify-center gap-2">
           <Link
             href={{ pathname: '/events' }}
@@ -55,8 +57,8 @@ const FilterEventsContent = async ({ events, filter }: FilterEventsProps) => {
             scroll={false}
             className={linkClassNames('On-line')}
           >
-            {t('events_page.filter.online')} ({events.filter((event) => event.city === 'On-line').length}
-            )
+            {t('events_page.filter.online')} (
+            {events.filter((event) => event.city === 'On-line').length})
           </Link>
           {CITIES.map((city) => {
             return (

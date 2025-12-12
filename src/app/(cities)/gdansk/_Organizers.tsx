@@ -9,7 +9,7 @@ export const GdanskOrganizers: Organizer[] = [
   },
   {
     name: 'Michał Michalczuk',
-    image:'/city/gdansk/organizers/michal.jpeg',
+    image: '/city/gdansk/organizers/michal.jpeg',
     linkedin: 'https://www.linkedin.com/in/michalczukm/',
     gitHub: 'https://github.com/michalczukm',
     email: 'michal@michalczukm.xyz',

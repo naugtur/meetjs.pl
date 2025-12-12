@@ -1,5 +1,6 @@
 import { AboutSection } from '@/components/AboutSection';
 import { Stats } from '@/components/Stats';
+import { JavaScript30YearsPromo } from '@/components/JavaScript30YearsPromo';
 
 import { JoinUs } from '@/components/JoinUs';
 import { FeaturedEvents } from '@/components/FeaturedEvents';
@@ -16,8 +17,9 @@ const Home = () => {
       <HeroSection />
       <div className="flex min-h-screen flex-col items-center">
         <FeaturedEvents />
-        <YouTubeSubscribeBanner />
+        <JavaScript30YearsPromo />
         <JoinUs />
+        <YouTubeSubscribeBanner />
         <CommunityParticipation />
         <div className="w-full">
           <AboutSection />

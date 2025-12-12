@@ -17,7 +17,7 @@ import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 export const MobileNavigation = () => {
   const { t } = useTranslate();
   const menuLinks = useTranslatedMenuLinks();
-  
+
   return (
     <DisclosurePanel className="sm:hidden">
       <nav
