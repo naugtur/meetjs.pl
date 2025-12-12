@@ -28,9 +28,13 @@ export const Logo = ({ clickable = true }: LogoProps) => {
     setShowContextMenu(false);
   };
 
+  const now = new Date();
+  const isChristmasSeason =
+    now.getMonth() === 11 || (now.getMonth() === 0 && now.getDate() <= 15);
+
   const logoImage = (
     <Image
-      src="./logo.svg"
+      src={isChristmasSeason ? './christmas_logo.svg' : './logo.svg'}
       alt="meet.js Logo"
       width={150}
       height={40}
