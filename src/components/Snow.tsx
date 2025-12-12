@@ -1,7 +1,7 @@
 'use client';
 
 import Particles, { initParticlesEngine } from '@tsparticles/react';
-import snowConfig from '../snow.config.json';
+import snowConfig from '@/snow.config';
 import { useEffect, useState } from 'react';
 import { loadSlim } from '@tsparticles/slim';
 
