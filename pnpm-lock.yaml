@@ -47,7 +47,7 @@ importers:
         version: 3.9.1
       '@tsparticles/react':
         specifier: ^3.0.0
-        version: 3.0.0(@tsparticles/engine@3.9.1)(react-dom@19.2.0(react@19.2.1))(react@19.2.1)
+        version: 3.0.0(@tsparticles/engine@3.9.1)(react-dom@19.2.2(react@19.2.2))(react@19.2.2)
       '@tsparticles/slim':
         specifier: ^3.9.1
         version: 3.9.1
@@ -5927,11 +5927,11 @@ snapshots:
     dependencies:
       '@tsparticles/engine': 3.9.1
 
-  '@tsparticles/react@3.0.0(@tsparticles/engine@3.9.1)(react-dom@19.2.0(react@19.2.1))(react@19.2.1)':
+  '@tsparticles/react@3.0.0(@tsparticles/engine@3.9.1)(react-dom@19.2.2(react@19.2.2))(react@19.2.2)':
     dependencies:
       '@tsparticles/engine': 3.9.1
-      react: 19.2.1
-      react-dom: 19.2.0(react@19.2.1)
+      react: 19.2.2
+      react-dom: 19.2.2(react@19.2.2)
 
   '@tsparticles/shape-circle@3.9.1':
     dependencies:
