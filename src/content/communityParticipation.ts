@@ -79,6 +79,24 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
     tags: ['JavaScript', 'Survey', 'Community', 'Trends', 'Ecosystem'],
   },
   {
+    id: 'state-of-html-2025-results',
+    title: 'State of HTML 2025 Survey Results',
+    description:
+      'The State of HTML 2025 survey results are now available. The release took a bit longer due to the large amount of data collected, which enabled new ways of processing and browsing big question datasets.',
+    url: 'https://survey.devographics.com/en-US/survey/state-of-html/2025',
+    type: 'survey',
+    startDate: '2025-12-16',
+    endDate: '2025-12-16',
+    status: 'completed',
+    organization: 'Devographics',
+    impact:
+      'Browse the results to learn about HTML pain points and trends—and help spread the word so the community can benefit from the insights.',
+    ctaText: 'View Results',
+    featured: false,
+    image: 'https://assets.devographics.com/surveys/html2025.png',
+    tags: ['HTML', 'Survey', 'Results', 'Community', 'Web Platform'],
+  },
+  {
     id: 'state-of-react-2025',
     title: 'State of React 2025 Survey',
     description:
