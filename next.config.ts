@@ -60,6 +60,10 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'survey.stateofreactnative.com',
+      },
+      {
+        protocol: 'https',
         hostname: 'nextjs.org',
       },
       {
