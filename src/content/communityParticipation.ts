@@ -36,6 +36,31 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
     tags: ['React', 'Conference', 'Archive', 'JavaScript', 'Web Development'],
   },
   {
+    id: 'state-of-react-native-2025',
+    title: 'State of React Native 2025 Survey',
+    description:
+      "Let's wrap up 2025 — React Native marked 10 years, the New Architecture is now the default, React Foundation has been established, and React Native hit 4 million weekly downloads. Share how this impacts the way you build with React Native.",
+    url: 'https://survey.stateofreactnative.com/',
+    type: 'survey',
+    status: 'active',
+    startDate: '2025-12-05',
+    organization: 'React Native Team',
+    impact:
+      'Your input helps the React Native community understand how the platform is used today and where it should go next.',
+    ctaText: 'Fill out the survey',
+    featured: true,
+    image:
+      'https://survey.stateofreactnative.com/surveys/state-of-react-native-logo.png',
+    tags: [
+      'React Native',
+      'Survey',
+      'Mobile',
+      'Community',
+      'New Architecture',
+      'React Foundation',
+    ],
+  },
+  {
     id: 'nextjs-conf-2025',
     title: 'Next.js Conf 2025',
     description:
