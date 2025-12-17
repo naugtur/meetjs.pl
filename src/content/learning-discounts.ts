@@ -50,6 +50,22 @@ export const learningDiscounts: Promo[] = [
     discountCode: 'MEETJS',
   },
   {
+    id: 'certificates-dev-2026',
+    name: 'Certificates.dev',
+    message:
+      '$10 off mid-level and senior certificate packages with code MEETJS10!',
+    cta: '🏅 Get $10 Off',
+    ticketLink: 'https://certificates.dev',
+    eventLink: 'https://certificates.dev',
+    expiresAt: '2026-01-31T23:59:59+01:00',
+    description:
+      'Get $10 off any mid-level or senior certificate packages available on Certificates.dev with code MEETJS10. Coupon expires on 31 Jan 2026.',
+    gradient: 'bg-gradient-to-r from-emerald-600 via-teal-500 to-cyan-500',
+    icon: '🏅',
+    emojiRight: '📜',
+    discountCode: 'MEETJS10',
+  },
+  {
     id: 'uczmnie-2025',
     name: 'Uczmnie.pl',
     message: '10% zniżki na kurs "Dziecko w sieci" z kodem meetjs!',
