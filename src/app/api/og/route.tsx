@@ -9,29 +9,27 @@ export const GET = async (request: Request) => {
     const city = hasCity ? searchParams.get('city')?.slice(0, 100) : 'Poland';
 
     return new ImageResponse(
-      (
-        <div
+      <div
+        style={{
+          display: 'flex',
+          position: 'relative',
+        }}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          width="1200"
+          height="630"
+          src={`${env.SITE_URL}/assets/og-image-city.png`}
           style={{
-            display: 'flex',
-            position: 'relative',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            zIndex: 1,
           }}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            width="1200"
-            height="630"
-            src={`${env.SITE_URL}/assets/og-image-city.png`}
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              zIndex: 1,
-            }}
-            alt=""
-          />
-          <p tw="text-white font-bold pt-77 pl-62 text-8xl">{city}</p>
-        </div>
-      ),
+          alt=""
+        />
+        <p tw="text-white font-bold pt-77 pl-62 text-8xl">{city}</p>
+      </div>,
       {
         width: 1200,
         height: 630,

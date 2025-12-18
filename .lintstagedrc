@@ -1,3 +1,3 @@
 {
-  "*.{js,mjs,ts,tsx,css,md,json,yml,yaml,json}": "prettier --write"
+  "*.{js,mjs,ts,tsx,css,md,json,yml,yaml}": "prettier --write"
 }
