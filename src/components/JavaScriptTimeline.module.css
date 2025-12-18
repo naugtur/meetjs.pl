@@ -14,7 +14,9 @@
 /* Performance optimizations */
 .timelineItem {
   will-change: transform;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 /* Mobile optimizations - disable glassmorphism effects */
@@ -254,16 +256,36 @@
 }
 
 /* Staggered animation delays */
-.timelineItem:nth-child(1) { animation-delay: 0.1s; }
-.timelineItem:nth-child(2) { animation-delay: 0.2s; }
-.timelineItem:nth-child(3) { animation-delay: 0.3s; }
-.timelineItem:nth-child(4) { animation-delay: 0.4s; }
-.timelineItem:nth-child(5) { animation-delay: 0.5s; }
-.timelineItem:nth-child(6) { animation-delay: 0.6s; }
-.timelineItem:nth-child(7) { animation-delay: 0.7s; }
-.timelineItem:nth-child(8) { animation-delay: 0.8s; }
-.timelineItem:nth-child(9) { animation-delay: 0.9s; }
-.timelineItem:nth-child(10) { animation-delay: 1.0s; }
+.timelineItem:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.timelineItem:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.timelineItem:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.timelineItem:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.timelineItem:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.timelineItem:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.timelineItem:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.timelineItem:nth-child(8) {
+  animation-delay: 0.8s;
+}
+.timelineItem:nth-child(9) {
+  animation-delay: 0.9s;
+}
+.timelineItem:nth-child(10) {
+  animation-delay: 1s;
+}
 
 @keyframes fadeInUp {
   from {
