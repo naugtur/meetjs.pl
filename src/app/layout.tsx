@@ -12,6 +12,10 @@ import { TolgeeNextProvider } from '@/tolgee/client';
 import { getTolgee } from '@/tolgee/server';
 import { getLanguage } from '@/tolgee/language';
 import { Snow } from '@/components/Snow';
+import { PromoBanners } from '@/components/PromoBanners';
+import { softwareDiscounts } from '@/content/software-discounts';
+import { eventsDiscounts } from '@/content/events-discounts';
+import { learningDiscounts } from '@/content/learning-discounts';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -123,6 +127,13 @@ const RootLayout = async ({
     >
       <body>
         <TolgeeNextProvider language={locale} staticData={staticData}>
+          <PromoBanners
+            promos={[
+              ...eventsDiscounts,
+              ...softwareDiscounts,
+              ...learningDiscounts,
+            ]}
+          />
           <Navigation />
           {children}
           <Footer />
