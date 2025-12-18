@@ -21,7 +21,7 @@ export const BirthdayConfetti = () => {
   }, []);
 
   return showConfetti ? (
-    <div className="pointer-events-none fixed inset-0 z-50">
+    <div className="pointer-events-none fixed inset-0 z-[80]">
       <Confetti
         numberOfPieces={200}
         recycle={true}
