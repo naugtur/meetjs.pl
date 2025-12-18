@@ -12,7 +12,7 @@ import { LanguageSwitcher } from './LanguageSwitcher';
 export const Navigation = () => {
   return (
     <>
-      <header role="banner" className="sticky top-0 z-50">
+      <header role="banner" className="sticky top-0 z-40">
         <Disclosure as="nav" className="bg-purple" aria-label="Main navigation">
           {({ open }) => (
             <>
