@@ -3,31 +3,17 @@
 import { Disclosure } from '@headlessui/react';
 import { Logo } from '@/components/Logo';
 import { SocialLinks } from '@/components/SocialLinks';
-import { PromoBanners } from '@/components/PromoBanners';
-import { softwareDiscounts } from '@/content/software-discounts';
-import { eventsDiscounts } from '@/content/events-discounts';
+
 import { DesktopNavigation } from './Navigation/DesktopNavigation';
 import { MobileNavigation } from './Navigation/MobileNavigation';
 import { MobileMenuButton } from './Navigation/MobileMenuButton';
-import { learningDiscounts } from '@/content/learning-discounts';
 import { LanguageSwitcher } from './LanguageSwitcher';
 
 export const Navigation = () => {
   return (
     <>
-      <PromoBanners
-        promos={[
-          ...eventsDiscounts,
-          ...softwareDiscounts,
-          ...learningDiscounts,
-        ]}
-      />
-      <header role="banner" suppressHydrationWarning>
-        <Disclosure
-          as="nav"
-          className="sticky top-0 z-20 bg-purple"
-          aria-label="Main navigation"
-        >
+      <header role="banner" className="sticky top-0 z-50">
+        <Disclosure as="nav" className="bg-purple" aria-label="Main navigation">
           {({ open }) => (
             <>
               <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
