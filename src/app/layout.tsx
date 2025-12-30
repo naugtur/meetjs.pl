@@ -16,6 +16,7 @@ import { PromoBanners } from '@/components/PromoBanners';
 import { softwareDiscounts } from '@/content/software-discounts';
 import { eventsDiscounts } from '@/content/events-discounts';
 import { learningDiscounts } from '@/content/learning-discounts';
+import { getSeasonalTheme } from '@/lib/seasonalTheme';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -116,6 +117,8 @@ const RootLayout = async ({
   const locale = await getLanguage();
   const tolgee = await getTolgee();
 
+  const { enableSnow } = getSeasonalTheme();
+
   // serializable data that are passed to client components
   const staticData = await tolgee.loadRequired();
 
@@ -141,7 +144,7 @@ const RootLayout = async ({
         <Analytics />
         <SpeedInsights />
         <SchemaMarkup />
-        <Snow />
+        {enableSnow && <Snow />}
       </body>
     </html>
   );
