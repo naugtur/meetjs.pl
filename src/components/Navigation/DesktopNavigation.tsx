@@ -122,12 +122,14 @@ export const DesktopNavigation = () => {
                 current={item.current}
                 external={true}
                 name={item.name}
+                highlight={item.highlight}
               />
             ) : (
               <NavigationLink
                 href={item.href as Route}
                 current={item.current}
                 name={item.name}
+                highlight={item.highlight}
               />
             )}
           </li>

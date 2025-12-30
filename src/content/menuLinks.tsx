@@ -4,6 +4,7 @@ export interface MenuLink {
   current: boolean;
   external: boolean;
   dropdown?: DropdownItem[];
+  highlight?: boolean;
 }
 
 export interface DropdownItem {

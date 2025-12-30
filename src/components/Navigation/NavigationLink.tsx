@@ -8,6 +8,7 @@ type InternalNavLinkProps = {
   href: Route;
   current?: boolean;
   external?: false;
+  highlight?: boolean;
 };
 
 type ExternalNavLinkProps = {
@@ -15,6 +16,7 @@ type ExternalNavLinkProps = {
   href: string;
   current?: boolean;
   external: true;
+  highlight?: boolean;
 };
 
 type NavigationLinkProps = InternalNavLinkProps | ExternalNavLinkProps;
@@ -24,16 +26,18 @@ export const NavigationLink = ({
   href,
   current = false,
   external,
+  highlight = false,
 }: NavigationLinkProps) => {
+  const baseClasses = highlight
+    ? 'bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white hover:from-purple-600 hover:via-pink-600 hover:to-orange-500 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300'
+    : current
+      ? 'bg-gray-900 text-white'
+      : 'text-white hover:bg-green/80 hover:text-purple';
+
   return external ? (
     <a
       href={href}
-      className={classNames(
-        current
-          ? 'bg-gray-900 text-white'
-          : 'text-white hover:bg-green/80 hover:text-purple',
-        'rounded-md px-3 py-2 font-medium',
-      )}
+      className={classNames(baseClasses, 'rounded-md px-3 py-2 font-medium')}
       aria-current={current ? 'page' : undefined}
       target="_blank"
       rel="noopener noreferrer"
@@ -49,12 +53,7 @@ export const NavigationLink = ({
   ) : (
     <Link
       href={href}
-      className={classNames(
-        current
-          ? 'bg-gray-900 text-white'
-          : 'text-white hover:bg-green/80 hover:text-purple',
-        'rounded-md px-3 py-2 font-medium',
-      )}
+      className={classNames(baseClasses, 'rounded-md px-3 py-2 font-medium')}
       aria-current={current ? 'page' : undefined}
       itemProp="url"
     >

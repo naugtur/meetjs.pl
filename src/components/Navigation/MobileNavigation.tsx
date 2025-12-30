@@ -138,9 +138,11 @@ export const MobileNavigation = () => {
                     as="a"
                     href={item.href}
                     className={classNames(
-                      item.current
-                        ? 'bg-gray-900 text-white'
-                        : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                      item.highlight
+                        ? 'bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white shadow-lg'
+                        : item.current
+                          ? 'bg-gray-900 text-white'
+                          : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                       'block rounded-md px-3 py-2 text-base font-medium',
                     )}
                     aria-current={item.current ? 'page' : undefined}
