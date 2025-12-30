@@ -3,6 +3,8 @@ export type SeasonalTheme = {
   enableSnow: boolean;
 };
 
+export type SeasonalThemeMode = 'auto' | 'default' | 'christmas';
+
 const isChristmasSeason = (date: Date) => {
   const month = date.getMonth();
   const day = date.getDate();
@@ -22,4 +24,25 @@ export const getSeasonalTheme = (date: Date = new Date()): SeasonalTheme => {
     logoSrc: '/logo.svg',
     enableSnow: false,
   };
+};
+
+export const getSeasonalThemeWithMode = (
+  date: Date = new Date(),
+  mode: SeasonalThemeMode = 'auto',
+): SeasonalTheme => {
+  if (mode === 'christmas') {
+    return {
+      logoSrc: '/christmas_logo.svg',
+      enableSnow: true,
+    };
+  }
+
+  if (mode === 'default') {
+    return {
+      logoSrc: '/logo.svg',
+      enableSnow: false,
+    };
+  }
+
+  return getSeasonalTheme(date);
 };

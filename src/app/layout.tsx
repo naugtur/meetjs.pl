@@ -11,12 +11,12 @@ import { env } from '@/env';
 import { TolgeeNextProvider } from '@/tolgee/client';
 import { getTolgee } from '@/tolgee/server';
 import { getLanguage } from '@/tolgee/language';
-import { Snow } from '@/components/Snow';
 import { PromoBanners } from '@/components/PromoBanners';
 import { softwareDiscounts } from '@/content/software-discounts';
 import { eventsDiscounts } from '@/content/events-discounts';
 import { learningDiscounts } from '@/content/learning-discounts';
-import { getSeasonalTheme } from '@/lib/seasonalTheme';
+import { SeasonalEffects } from '@/components/SeasonalEffects';
+import { SeasonalControls } from '@/components/SeasonalControls';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -117,8 +117,6 @@ const RootLayout = async ({
   const locale = await getLanguage();
   const tolgee = await getTolgee();
 
-  const { enableSnow } = getSeasonalTheme();
-
   // serializable data that are passed to client components
   const staticData = await tolgee.loadRequired();
 
@@ -144,7 +142,8 @@ const RootLayout = async ({
         <Analytics />
         <SpeedInsights />
         <SchemaMarkup />
-        {enableSnow && <Snow />}
+        <SeasonalEffects />
+        <SeasonalControls />
       </body>
     </html>
   );
