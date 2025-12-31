@@ -311,6 +311,7 @@
   },
   "hello_world": "Hello World",
   "hero": {
+    "2025_wrapped": "2025 Wrapped",
     "cta": "Find Your Local Meetup",
     "follow_us": "Follow us",
     "join_discord": "Join Discord",
@@ -336,6 +337,7 @@
     "contact": "Contact",
     "discounts": "Discounts",
     "dropdown": {
+      "2025_review": "🎆 2025 Wrapped",
       "about_meetjs": "About meet.js",
       "all_cities": "All Cities",
       "all_discounts": "All Discounts",
@@ -356,6 +358,7 @@
     "home": "Home",
     "menu_items": {
       "14_birthday": "14 birthday",
+      "2025_review": "🎆 2025 Wrapped",
       "30_years_js": "\uD83C\uDF89 30 Years of JS",
       "about": "about",
       "brand_assets": "brand assets",
