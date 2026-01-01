@@ -14,9 +14,28 @@ import { useTranslate } from '@tolgee/react';
 import { useTranslatedMenuLinks } from '@/hooks/useTranslatedMenuLinks';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 
-export const MobileNavigation = () => {
+export const MobileNavigation = ({
+  mode = 'regular',
+}: {
+  mode?: 'regular' | 'admin';
+}) => {
   const { t } = useTranslate();
   const menuLinks = useTranslatedMenuLinks();
+
+  // Admin menu items
+  const adminMenuItems = [
+    { name: 'Dashboard', href: '/admin' },
+    { name: 'Cities', href: '/admin/cities' },
+    { name: 'Events', href: '/admin/events', disabled: true, comingSoon: true },
+    {
+      name: 'Discounts',
+      href: '/admin/discounts',
+      disabled: true,
+      comingSoon: true,
+    },
+  ];
+
+  const itemsToRender = mode === 'admin' ? adminMenuItems : menuLinks;
 
   return (
     <DisclosurePanel className="sm:hidden">
@@ -28,140 +47,174 @@ export const MobileNavigation = () => {
         role="navigation"
       >
         <ul className="space-y-1 px-2 pb-3 pt-2" role="menu">
-          {menuLinks.map((item) => {
-            if (item.dropdown) {
+          {itemsToRender.map((item: any) => {
+            if (mode === 'admin') {
+              // Admin menu items - simple links
               return (
-                <li key={item.name} className="first:pt-0">
-                  <Disclosure>
-                    {({ open }) => (
-                      <div>
-                        <DisclosureButton className="flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-base font-medium text-white hover:bg-green/80 hover:text-purple">
-                          <span>{item.name}</span>
-                          <FaChevronDown
-                            className={classNames(
-                              open ? 'rotate-180' : '',
-                              'h-4 w-4 transform transition-transform duration-200',
-                            )}
-                            aria-hidden="true"
-                          />
-                        </DisclosureButton>
-                        <DisclosurePanel className="space-y-1">
-                          {item.dropdown?.map((dropdownItem, index) => {
-                            if (dropdownItem.type === 'separator') {
-                              return (
-                                <div
-                                  key={index}
-                                  className="my-2 border-t border-gray-200"
-                                />
-                              );
-                            }
-
-                            if (dropdownItem.type === 'cities') {
-                              return (
-                                <div key={index}>
-                                  <div className="px-3 py-2 text-xs font-semibold uppercase tracking-wide text-gray-500">
-                                    {t('navigation.dropdown.cities_label')}
-                                  </div>
-                                  {CITIES.sort((a, b) =>
-                                    a.name.localeCompare(b.name),
-                                  ).map((city) => (
-                                    <DisclosureButton
-                                      key={city.name}
-                                      as="a"
-                                      href={city.href}
-                                      className="flex items-center justify-between rounded-md px-3 py-2 text-base font-medium text-white hover:bg-green/80 hover:text-purple"
-                                    >
-                                      <span className="flex items-center">
-                                        <FaMapMarkerAlt className="mr-2 h-4 w-4" />
-                                        {city.name}
-                                      </span>
-                                      <CityStatusIndicator
-                                        status={city.status}
-                                      />
-                                    </DisclosureButton>
-                                  ))}
-                                </div>
-                              );
-                            }
-
-                            if (dropdownItem.disabled) {
-                              return (
-                                <div
-                                  key={dropdownItem.name}
-                                  className="block cursor-not-allowed rounded-md px-3 py-2 text-base font-medium text-gray-400"
-                                  aria-disabled="true"
-                                >
-                                  <span className="flex items-center justify-between">
-                                    {dropdownItem.name}
-                                    <span className="text-xs">
-                                      {t('navigation.dropdown.coming_soon')}
-                                    </span>
-                                  </span>
-                                </div>
-                              );
-                            }
-
-                            return (
-                              <DisclosureButton
-                                key={dropdownItem.name}
-                                as="a"
-                                href={dropdownItem.href}
-                                className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-green/80 hover:text-purple"
-                                target={
-                                  dropdownItem.external ? '_blank' : undefined
-                                }
-                                rel={
-                                  dropdownItem.external
-                                    ? 'noopener noreferrer'
-                                    : undefined
-                                }
-                              >
-                                <span className="flex items-center">
-                                  {dropdownItem.name}
-                                  {dropdownItem.external && (
-                                    <FaArrowUpRightFromSquare className="ml-2 h-4 w-4" />
-                                  )}
-                                </span>
-                              </DisclosureButton>
-                            );
-                          })}
-                        </DisclosurePanel>
-                      </div>
-                    )}
-                  </Disclosure>
+                <li key={item.name}>
+                  {item.disabled ? (
+                    <div
+                      className="block cursor-not-allowed rounded-md px-3 py-2 text-base font-medium text-gray-400"
+                      aria-disabled="true"
+                    >
+                      <span className="flex items-center justify-between">
+                        {item.name}
+                        {item.comingSoon && (
+                          <span className="text-xs">
+                            {t('navigation.dropdown.coming_soon')}
+                          </span>
+                        )}
+                      </span>
+                    </div>
+                  ) : (
+                    <DisclosureButton
+                      as="a"
+                      href={item.href}
+                      className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-green/80 hover:text-purple"
+                    >
+                      {item.name}
+                    </DisclosureButton>
+                  )}
                 </li>
               );
             } else {
-              return (
-                <li key={item.name}>
-                  <DisclosureButton
-                    as="a"
-                    href={item.href}
-                    className={classNames(
-                      item.highlight
-                        ? 'bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white shadow-lg'
-                        : item.current
+              // Regular menu items - original logic
+              if (item.dropdown) {
+                return (
+                  <li key={item.name} className="first:pt-0">
+                    <Disclosure>
+                      {({ open }) => (
+                        <div>
+                          <DisclosureButton className="flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-base font-medium text-white hover:bg-green/80 hover:text-purple">
+                            <span>{item.name}</span>
+                            <FaChevronDown
+                              className={classNames(
+                                open ? 'rotate-180' : '',
+                                'h-4 w-4 transform transition-transform duration-200',
+                              )}
+                              aria-hidden="true"
+                            />
+                          </DisclosureButton>
+                          <DisclosurePanel className="space-y-1">
+                            {item.dropdown?.map(
+                              (dropdownItem: any, index: number) => {
+                                if (dropdownItem.type === 'separator') {
+                                  return (
+                                    <div
+                                      key={index}
+                                      className="my-2 border-t border-gray-200"
+                                    />
+                                  );
+                                }
+
+                                if (dropdownItem.type === 'cities') {
+                                  return (
+                                    <div key={index}>
+                                      <div className="px-3 py-2 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                                        {t('navigation.dropdown.cities_label')}
+                                      </div>
+                                      {CITIES.sort((a, b) =>
+                                        a.name.localeCompare(b.name),
+                                      ).map((city) => (
+                                        <DisclosureButton
+                                          key={city.name}
+                                          as="a"
+                                          href={city.href}
+                                          className="flex items-center justify-between rounded-md px-3 py-2 text-base font-medium text-white hover:bg-green/80 hover:text-purple"
+                                        >
+                                          <span className="flex items-center">
+                                            <FaMapMarkerAlt className="mr-2 h-4 w-4" />
+                                            {city.name}
+                                          </span>
+                                          <CityStatusIndicator
+                                            status={city.status}
+                                          />
+                                        </DisclosureButton>
+                                      ))}
+                                    </div>
+                                  );
+                                }
+
+                                if (dropdownItem.disabled) {
+                                  return (
+                                    <div
+                                      key={dropdownItem.name}
+                                      className="block cursor-not-allowed rounded-md px-3 py-2 text-base font-medium text-gray-400"
+                                      aria-disabled="true"
+                                    >
+                                      <span className="flex items-center justify-between">
+                                        {dropdownItem.name}
+                                        <span className="text-xs">
+                                          {t('navigation.dropdown.coming_soon')}
+                                        </span>
+                                      </span>
+                                    </div>
+                                  );
+                                }
+
+                                return (
+                                  <DisclosureButton
+                                    key={dropdownItem.name}
+                                    as="a"
+                                    href={dropdownItem.href}
+                                    className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-green/80 hover:text-purple"
+                                    target={
+                                      dropdownItem.external
+                                        ? '_blank'
+                                        : undefined
+                                    }
+                                    rel={
+                                      dropdownItem.external
+                                        ? 'noopener noreferrer'
+                                        : undefined
+                                    }
+                                  >
+                                    <span className="flex items-center">
+                                      {dropdownItem.name}
+                                      {dropdownItem.external && (
+                                        <FaArrowUpRightFromSquare className="ml-2 h-4 w-4" />
+                                      )}
+                                    </span>
+                                  </DisclosureButton>
+                                );
+                              },
+                            )}
+                          </DisclosurePanel>
+                        </div>
+                      )}
+                    </Disclosure>
+                  </li>
+                );
+              } else {
+                return (
+                  <li key={item.name}>
+                    <DisclosureButton
+                      as="a"
+                      href={item.href}
+                      className={classNames(
+                        item.current
                           ? 'bg-gray-900 text-white'
                           : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                      'block rounded-md px-3 py-2 text-base font-medium',
-                    )}
-                    aria-current={item.current ? 'page' : undefined}
-                    target={item.external ? '_blank' : undefined}
-                    rel={item.external ? 'noopener noreferrer' : undefined}
-                    {...(item.external && {
-                      'aria-label': `${item.name} (opens in a new tab)`,
-                    })}
-                  >
-                    {item.name}
-                    {item.external && (
-                      <FaArrowUpRightFromSquare
-                        className="mb-1 ml-2 inline-block"
-                        aria-hidden="true"
-                      />
-                    )}
-                  </DisclosureButton>
-                </li>
-              );
+                        'block rounded-md px-3 py-2 text-base font-medium',
+                      )}
+                      aria-current={item.current ? 'page' : undefined}
+                      target={item.external ? '_blank' : undefined}
+                      rel={item.external ? 'noopener noreferrer' : undefined}
+                      {...(item.external && {
+                        'aria-label': `${item.name} (opens in a new tab)`,
+                      })}
+                    >
+                      {item.name}
+                      {item.external && (
+                        <FaArrowUpRightFromSquare
+                          className="mb-1 ml-2 inline-block"
+                          aria-hidden="true"
+                        />
+                      )}
+                    </DisclosureButton>
+                  </li>
+                );
+              }
             }
           })}
         </ul>

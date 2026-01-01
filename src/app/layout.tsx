@@ -1,10 +1,9 @@
 import type { Metadata } from 'next';
+import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Montserrat } from 'next/font/google';
-import './globals.css';
-import type { ReactNode } from 'react';
-import { Navigation } from '@/components/Navigation';
+import { Navigation as MainNavigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { SchemaMarkup } from '@/components/SchemaMarkup';
 import { env } from '@/env';
@@ -16,12 +15,6 @@ import { PromoBanners } from '@/components/PromoBanners';
 import { softwareDiscounts } from '@/content/software-discounts';
 import { eventsDiscounts } from '@/content/events-discounts';
 import { learningDiscounts } from '@/content/learning-discounts';
-
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-montserrat',
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.SITE_URL),
@@ -108,11 +101,17 @@ export const metadata: Metadata = {
   category: 'technology',
 };
 
-const RootLayout = async ({
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-montserrat',
+});
+
+export default async function RootLayout({
   children,
 }: Readonly<{
-  children: ReactNode;
-}>) => {
+  children: React.ReactNode;
+}>) {
   const locale = await getLanguage();
   const tolgee = await getTolgee();
 
@@ -134,7 +133,7 @@ const RootLayout = async ({
               ...learningDiscounts,
             ]}
           />
-          <Navigation />
+          <MainNavigation />
           {children}
           <Footer />
         </TolgeeNextProvider>
@@ -145,6 +144,4 @@ const RootLayout = async ({
       </body>
     </html>
   );
-};
-
-export default RootLayout;
+}

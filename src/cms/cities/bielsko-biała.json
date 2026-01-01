@@ -1,0 +1,40 @@
+{
+  "id": "bielsko-biała",
+  "name": "Bielsko-Biała",
+  "href": "/bielsko-biala",
+  "status": "active",
+  "coordinates": {
+    "lat": 210,
+    "lng": 120
+  },
+  "organizers": [],
+  "sponsors": [],
+  "events": [],
+  "description": "Meet.js Bielsko-Biała community",
+  "coverImage": "/city//bielsko-biala/cover.jpg",
+  "lastUpdated": "2025-12-30T18:47:11.738Z",
+  "updatedBy": "admin-interface",
+  "statusHistory": [
+    {
+      "previousStatus": "new",
+      "newStatus": "active",
+      "changedBy": "system",
+      "changedAt": "2025-12-30T17:56:28.943Z",
+      "reason": "City created"
+    },
+    {
+      "previousStatus": "active",
+      "newStatus": "paused",
+      "changedBy": "admin-interface",
+      "changedAt": "2025-12-30T18:47:01.472Z",
+      "reason": "Status updated to paused"
+    },
+    {
+      "previousStatus": "paused",
+      "newStatus": "active",
+      "changedBy": "admin-interface",
+      "changedAt": "2025-12-30T18:47:11.738Z",
+      "reason": "Status updated to active"
+    }
+  ]
+}

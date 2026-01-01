@@ -16,9 +16,30 @@ import type { Route } from 'next';
 import { useTranslate } from '@tolgee/react';
 import { useTranslatedMenuLinks } from '@/hooks/useTranslatedMenuLinks';
 
-export const DesktopNavigation = () => {
+export type NavigationMode = 'regular' | 'admin';
+
+export const DesktopNavigation = ({
+  mode = 'regular',
+}: {
+  mode?: NavigationMode;
+}) => {
   const { t } = useTranslate();
   const menuLinks = useTranslatedMenuLinks();
+
+  // Admin menu items
+  const adminMenuItems = [
+    { name: 'Dashboard', href: '/admin' },
+    { name: 'Cities', href: '/admin/cities' },
+    { name: 'Events', href: '/admin/events', disabled: true, comingSoon: true },
+    {
+      name: 'Discounts',
+      href: '/admin/discounts',
+      disabled: true,
+      comingSoon: true,
+    },
+  ];
+
+  const itemsToRender = mode === 'admin' ? adminMenuItems : menuLinks;
 
   return (
     <nav
@@ -29,9 +50,28 @@ export const DesktopNavigation = () => {
       role="navigation"
     >
       <ul className="flex items-center justify-center gap-4" role="menubar">
-        {menuLinks.map((item) => (
+        {itemsToRender.map((item: any) => (
           <li key={item.name} role="none">
-            {item.dropdown ? (
+            {mode === 'admin' ? (
+              // Admin menu items - simple links
+              item.disabled ? (
+                <div className="flex cursor-not-allowed items-center rounded-md px-3 py-2 font-medium text-white/60">
+                  {item.name}
+                  {item.comingSoon && (
+                    <span className="ml-2 text-xs text-white/80">
+                      {t('navigation.dropdown.coming_soon')}
+                    </span>
+                  )}
+                </div>
+              ) : (
+                <NavigationLink
+                  href={item.href}
+                  current={item.current}
+                  name={item.name}
+                />
+              )
+            ) : // Regular menu items - original logic
+            item.dropdown ? (
               <DropdownMenu>
                 <DropdownMenuTrigger
                   className="flex items-center rounded-md px-3 py-2 font-medium text-white hover:bg-green/80 hover:text-purple"
@@ -49,7 +89,7 @@ export const DesktopNavigation = () => {
                       : 'w-56'
                   }
                 >
-                  {item.dropdown.map((dropdownItem, index) => {
+                  {item.dropdown.map((dropdownItem: any, index: number) => {
                     if (dropdownItem.type === 'separator') {
                       return <DropdownMenuSeparator key={index} />;
                     }
@@ -122,14 +162,12 @@ export const DesktopNavigation = () => {
                 current={item.current}
                 external={true}
                 name={item.name}
-                highlight={item.highlight}
               />
             ) : (
               <NavigationLink
                 href={item.href as Route}
                 current={item.current}
                 name={item.name}
-                highlight={item.highlight}
               />
             )}
           </li>
