@@ -1,0 +1,26 @@
+{
+  "id": "lublin",
+  "name": "Lublin",
+  "href": "/lublin",
+  "status": "active",
+  "coordinates": {
+    "lat": 160,
+    "lng": 190
+  },
+  "organizers": [],
+  "sponsors": [],
+  "events": [],
+  "description": "Meet.js Lublin community",
+  "coverImage": "/city//lublin/cover.jpg",
+  "lastUpdated": "2025-12-30T17:56:28.944Z",
+  "updatedBy": "system",
+  "statusHistory": [
+    {
+      "previousStatus": "new",
+      "newStatus": "active",
+      "changedBy": "system",
+      "changedAt": "2025-12-30T17:56:28.944Z",
+      "reason": "City created"
+    }
+  ]
+}

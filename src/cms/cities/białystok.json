@@ -1,0 +1,40 @@
+{
+  "id": "białystok",
+  "name": "Białystok",
+  "href": "/bialystok",
+  "status": "active",
+  "coordinates": {
+    "lat": 80,
+    "lng": 220
+  },
+  "organizers": [],
+  "sponsors": [],
+  "events": [],
+  "description": "Meet.js Białystok community",
+  "coverImage": "/city//bialystok/cover.jpg",
+  "lastUpdated": "2025-12-30T18:49:59.205Z",
+  "updatedBy": "admin-interface",
+  "statusHistory": [
+    {
+      "previousStatus": "new",
+      "newStatus": "active",
+      "changedBy": "system",
+      "changedAt": "2025-12-30T17:56:28.942Z",
+      "reason": "City created"
+    },
+    {
+      "previousStatus": "active",
+      "newStatus": "paused",
+      "changedBy": "admin-interface",
+      "changedAt": "2025-12-30T18:49:37.511Z",
+      "reason": "Status updated to paused"
+    },
+    {
+      "previousStatus": "paused",
+      "newStatus": "active",
+      "changedBy": "admin-interface",
+      "changedAt": "2025-12-30T18:49:59.205Z",
+      "reason": "Status updated to active"
+    }
+  ]
+}

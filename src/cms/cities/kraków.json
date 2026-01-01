@@ -1,0 +1,26 @@
+{
+  "id": "kraków",
+  "name": "Kraków",
+  "href": "/krakow",
+  "status": "active",
+  "coordinates": {
+    "lat": 210,
+    "lng": 150
+  },
+  "organizers": [],
+  "sponsors": [],
+  "events": [],
+  "description": "Meet.js Kraków community",
+  "coverImage": "/city//krakow/cover.jpg",
+  "lastUpdated": "2025-12-30T17:56:28.943Z",
+  "updatedBy": "system",
+  "statusHistory": [
+    {
+      "previousStatus": "new",
+      "newStatus": "active",
+      "changedBy": "system",
+      "changedAt": "2025-12-30T17:56:28.943Z",
+      "reason": "City created"
+    }
+  ]
+}

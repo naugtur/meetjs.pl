@@ -1,0 +1,68 @@
+{
+  "id": "katowice",
+  "name": "Katowice",
+  "href": "/katowice",
+  "status": "new",
+  "coordinates": {
+    "lat": 200,
+    "lng": 130
+  },
+  "organizers": [],
+  "sponsors": [],
+  "events": [],
+  "description": "Meet.js Katowice community",
+  "coverImage": "/city//katowice/cover.jpg",
+  "lastUpdated": "2025-12-30T18:07:02.735Z",
+  "updatedBy": "test-script",
+  "statusHistory": [
+    {
+      "previousStatus": "new",
+      "newStatus": "new",
+      "changedBy": "system",
+      "changedAt": "2025-12-30T17:56:28.943Z",
+      "reason": "City created"
+    },
+    {
+      "previousStatus": "new",
+      "newStatus": "active",
+      "changedBy": "test-script",
+      "changedAt": "2025-12-30T17:56:48.076Z",
+      "reason": "Status updated to active"
+    },
+    {
+      "previousStatus": "active",
+      "newStatus": "new",
+      "changedBy": "test-script",
+      "changedAt": "2025-12-30T17:56:48.077Z",
+      "reason": "Status updated to new"
+    },
+    {
+      "previousStatus": "new",
+      "newStatus": "active",
+      "changedBy": "test-script",
+      "changedAt": "2025-12-30T18:05:22.789Z",
+      "reason": "Status updated to active"
+    },
+    {
+      "previousStatus": "active",
+      "newStatus": "new",
+      "changedBy": "test-script",
+      "changedAt": "2025-12-30T18:05:22.790Z",
+      "reason": "Status updated to new"
+    },
+    {
+      "previousStatus": "new",
+      "newStatus": "active",
+      "changedBy": "test-script",
+      "changedAt": "2025-12-30T18:07:02.734Z",
+      "reason": "Status updated to active"
+    },
+    {
+      "previousStatus": "active",
+      "newStatus": "new",
+      "changedBy": "test-script",
+      "changedAt": "2025-12-30T18:07:02.735Z",
+      "reason": "Status updated to new"
+    }
+  ]
+}

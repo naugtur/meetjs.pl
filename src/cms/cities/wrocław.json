@@ -1,0 +1,26 @@
+{
+  "id": "wrocław",
+  "name": "Wrocław",
+  "href": "/wroclaw",
+  "status": "active",
+  "coordinates": {
+    "lat": 170,
+    "lng": 70
+  },
+  "organizers": [],
+  "sponsors": [],
+  "events": [],
+  "description": "Meet.js Wrocław community",
+  "coverImage": "/city//wroclaw/cover.jpg",
+  "lastUpdated": "2025-12-30T17:56:28.944Z",
+  "updatedBy": "system",
+  "statusHistory": [
+    {
+      "previousStatus": "new",
+      "newStatus": "active",
+      "changedBy": "system",
+      "changedAt": "2025-12-30T17:56:28.944Z",
+      "reason": "City created"
+    }
+  ]
+}

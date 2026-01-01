@@ -1,0 +1,26 @@
+{
+  "id": "warszawa",
+  "name": "Warszawa",
+  "href": "/warszawa",
+  "status": "active",
+  "coordinates": {
+    "lat": 110,
+    "lng": 160
+  },
+  "organizers": [],
+  "sponsors": [],
+  "events": [],
+  "description": "Meet.js Warszawa community",
+  "coverImage": "/city//warszawa/cover.jpg",
+  "lastUpdated": "2025-12-30T17:56:28.944Z",
+  "updatedBy": "system",
+  "statusHistory": [
+    {
+      "previousStatus": "new",
+      "newStatus": "active",
+      "changedBy": "system",
+      "changedAt": "2025-12-30T17:56:28.944Z",
+      "reason": "City created"
+    }
+  ]
+}

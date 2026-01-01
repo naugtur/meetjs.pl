@@ -1,4 +1,3 @@
-import { CITIES } from '@/content/cities';
 import { PolandMap } from './PolandMap';
 import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
 import { Event } from '@/components/FeaturedEvents';
@@ -7,10 +6,16 @@ import { DiscordCommunity } from '@/components/DiscordCommunity';
 import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
 import { filterUpcomingEvents } from '@/utils/eventUtils';
 import { getTranslate } from '@/tolgee/server';
+import { getAllCities } from '@/lib/cms/city';
+import { adaptCmsCitiesToLegacy } from '@/lib/cms/adapters';
 
 export const JoinUs = async () => {
   const t = await getTranslate();
 
+  // Load cities from CMS and adapt to legacy format
+  const cmsCities = await getAllCities();
+  const cities = adaptCmsCitiesToLegacy(cmsCities);
+  
   const apiEvents: Event[] | null = await getUpcomingEvents();
   const allEvents: Event[] = [...(apiEvents || []), ...ADDITIONAL_EVENTS];
 
@@ -27,7 +32,7 @@ export const JoinUs = async () => {
 
       <div className="mx-auto flex w-full max-w-7xl flex-col p-4 md:flex-row">
         <div className="w-full md:w-1/2">
-          <PolandMap cities={CITIES} events={events} />
+          <PolandMap cities={cities} events={events} />
         </div>
         <div className="w-full p-4 md:w-1/2">
           <p className="pb-6">{t('join_us.description')}</p>

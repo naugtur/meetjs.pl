@@ -1,0 +1,26 @@
+{
+  "id": "szczecin",
+  "name": "Szczecin",
+  "href": "/szczecin",
+  "status": "paused",
+  "coordinates": {
+    "lat": 50,
+    "lng": 20
+  },
+  "organizers": [],
+  "sponsors": [],
+  "events": [],
+  "description": "Meet.js Szczecin community",
+  "coverImage": "/city//szczecin/cover.jpg",
+  "lastUpdated": "2025-12-30T17:56:28.945Z",
+  "updatedBy": "system",
+  "statusHistory": [
+    {
+      "previousStatus": "new",
+      "newStatus": "paused",
+      "changedBy": "system",
+      "changedAt": "2025-12-30T17:56:28.945Z",
+      "reason": "City created"
+    }
+  ]
+}
