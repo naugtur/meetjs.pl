@@ -12,7 +12,7 @@ export const HeroSection = async () => {
       <div className="col-start-1 row-start-1 h-full w-full bg-gray-800 bg-opacity-70"></div>
 
       <RankingBanner
-        href="https://crossweb.pl/blog/ranking-najpopularniejsze-wydarzenia-podcasty-wideo-cykle-w-crossweb-w-2024/"
+        href="https://crossweb.pl/blog/ranking-najpopularniejsze-wydarzenia-i-cykle-wydarzen-w-crossweb-w-2025/"
         text={`🏆 ${t('hero.ranking_banner')}`}
       />
 
