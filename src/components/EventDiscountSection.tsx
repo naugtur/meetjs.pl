@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react';
 import Image from 'next/image';
 import type { Promo } from '@/types/promo';
+import EmptyDiscountState from './EmptyDiscountState';
 import { PromoFilters } from '@/components/PromoFilters';
 import { Calendar, MapPin, ExternalLink } from 'lucide-react';
 import WorkshopInfo from './WorkshopInfo';
@@ -189,7 +190,9 @@ export function EventDiscountSection({ promos }: EventDiscountSectionProps) {
     );
   }, [visiblePromos, selectedCountries]);
 
-  if (visiblePromos.length === 0) return null;
+  if (visiblePromos.length === 0) {
+    return <EmptyDiscountState type="events" />;
+  }
 
   const toggleCountry = (country: string) => {
     setSelectedCountries((prev) =>
