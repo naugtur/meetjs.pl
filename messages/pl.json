@@ -252,7 +252,21 @@
       "learning": "Kursy i Nauka",
       "software": "Oprogramowanie i Narzędzia"
     },
-    "subtitle": "Ekskluzywne zniżki na narzędzia programistyczne i bilety na wydarzenia dla społeczności meet.js. Skorzystaj z tych ograniczonych czasowo okazji!"
+    "subtitle": "Ekskluzywne zniżki na narzędzia programistyczne i bilety na wydarzenia dla społeczności meet.js. Skorzystaj z tych ograniczonych czasowo okazji!",
+    "empty": {
+      "events": {
+        "title": "Brak aktywnych zniżek na wydarzenia",
+        "description": "Wkrótce nowe zniżki na konferencje i wydarzenia! Chcesz zaoferować zniżkę? Skontaktuj się z nami pod adresem contact@meetjs.pl"
+      },
+      "software": {
+        "title": "Brak aktywnych zniżek na oprogramowanie",
+        "description": "Wkrótce nowe zniżki na narzędzia developerskie! Chcesz zaoferować zniżkę? Skontaktuj się z nami pod adresem contact@meetjs.pl"
+      },
+      "learning": {
+        "title": "Brak aktywnych zniżek edukacyjnych",
+        "description": "Nowe zniżki na kursy i szkolenia już wkrótce! Jesteś zainteresowany współpracą? Napisz do nas: contact@meetjs.pl"
+      }
+    }
   },
   "empty_events_alert": {
     "message": "Nic jeszcze nie zaplanowano. Skontaktuj się z lokalnymi organizatorami, jeśli chcesz pomóc to zorganizować!"

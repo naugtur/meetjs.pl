@@ -252,7 +252,21 @@
       "learning": "Courses & Learning",
       "software": "Software & Tools"
     },
-    "subtitle": "Exclusive discounts on software tools and event tickets for the meet.js community. Take advantage of these limited-time opportunities!"
+    "subtitle": "Exclusive discounts on software tools and event tickets for the meet.js community. Take advantage of these limited-time opportunities!",
+    "empty": {
+      "events": {
+        "title": "No Active Event Discounts",
+        "description": "Check back soon for new conference and event discounts! Want to offer a discount? Contact us at contact@meetjs.pl"
+      },
+      "software": {
+        "title": "No Active Software Discounts",
+        "description": "Check back soon for new developer tool discounts! Want to offer a discount? Contact us at contact@meetjs.pl"
+      },
+      "learning": {
+        "title": "No Active Learning Discounts",
+        "description": "New educational discounts coming soon! Interested in partnering? Reach out to contact@meetjs.pl"
+      }
+    }
   },
   "empty_events_alert": {
     "message": "Nothing planned yet. Contact your local organizers if you want to help make it happen!"

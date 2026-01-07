@@ -13,10 +13,21 @@ import {
 import { Gift, Ticket, Monitor, BookOpen } from 'lucide-react';
 import UnifiedPromoCard from '@/components/UnifiedPromoCard';
 import { EventDiscountSection } from '@/components/EventDiscountSection';
+import ServerEmptyDiscountState from '@/components/ServerEmptyDiscountState';
 import { getTranslate } from '@/tolgee/server';
+
+// Filter out expired promos
+const filterActivePromos = (promos: Promo[]): Promo[] => {
+  const now = new Date();
+  return promos.filter((promo) => new Date(promo.expiresAt) >= now);
+};
 
 export default async function DiscountsPage() {
   const t = await getTranslate();
+
+  // Filter active promos
+  const activeSoftwareDiscounts = filterActivePromos(softwareDiscounts);
+  const activeLearningDiscounts = filterActivePromos(learningDiscounts);
   return (
     <div className="container mx-auto max-w-4xl py-16">
       <div className="mb-12 text-center">
@@ -93,28 +104,26 @@ export default async function DiscountsPage() {
         </CardFooter>
       </Card>
 
-      {eventsDiscounts.length > 0 && (
-        <div id="events" className="mb-8">
-          <div className="mb-6 flex items-center gap-3">
-            <Ticket className="h-6 w-6 text-purple-600" />
-            <h2 className="text-2xl font-bold">
-              {t('discounts.sections.events')}
-            </h2>
-          </div>
-          <EventDiscountSection promos={eventsDiscounts} />
+      <div id="events" className="mb-8">
+        <div className="mb-6 flex items-center gap-3">
+          <Ticket className="h-6 w-6 text-purple-600" />
+          <h2 className="text-2xl font-bold">
+            {t('discounts.sections.events')}
+          </h2>
         </div>
-      )}
+        <EventDiscountSection promos={eventsDiscounts} />
+      </div>
 
-      {softwareDiscounts.length > 0 && (
-        <div id="software" className="mb-8">
-          <div className="mb-6 flex items-center gap-3">
-            <Monitor className="h-6 w-6 text-indigo-600" />
-            <h2 className="text-2xl font-bold">
-              {t('discounts.sections.software')}
-            </h2>
-          </div>
+      <div id="software" className="mb-8">
+        <div className="mb-6 flex items-center gap-3">
+          <Monitor className="h-6 w-6 text-indigo-600" />
+          <h2 className="text-2xl font-bold">
+            {t('discounts.sections.software')}
+          </h2>
+        </div>
+        {activeSoftwareDiscounts.length > 0 ? (
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
-            {softwareDiscounts.map((promo) => (
+            {activeSoftwareDiscounts.map((promo) => (
               <UnifiedPromoCard
                 key={promo.id}
                 promo={promo}
@@ -122,19 +131,25 @@ export default async function DiscountsPage() {
               />
             ))}
           </div>
-        </div>
-      )}
+        ) : (
+          <ServerEmptyDiscountState
+            type="software"
+            title={t('discounts.empty.software.title')}
+            description={t('discounts.empty.software.description')}
+          />
+        )}
+      </div>
 
-      {learningDiscounts.length > 0 && (
-        <div id="learning" className="mb-8">
-          <div className="mb-6 flex items-center gap-3">
-            <BookOpen className="h-6 w-6 text-green-600" />
-            <h2 className="text-2xl font-bold">
-              {t('discounts.sections.learning')}
-            </h2>
-          </div>
+      <div id="learning" className="mb-8">
+        <div className="mb-6 flex items-center gap-3">
+          <BookOpen className="h-6 w-6 text-green-600" />
+          <h2 className="text-2xl font-bold">
+            {t('discounts.sections.learning')}
+          </h2>
+        </div>
+        {activeLearningDiscounts.length > 0 ? (
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
-            {learningDiscounts.map((promo: Promo) => (
+            {activeLearningDiscounts.map((promo: Promo) => (
               <UnifiedPromoCard
                 key={promo.id}
                 promo={promo}
@@ -142,8 +157,14 @@ export default async function DiscountsPage() {
               />
             ))}
           </div>
-        </div>
-      )}
+        ) : (
+          <ServerEmptyDiscountState
+            type="learning"
+            title={t('discounts.empty.learning.title')}
+            description={t('discounts.empty.learning.description')}
+          />
+        )}
+      </div>
     </div>
   );
 }
