@@ -108,6 +108,11 @@ export const useTranslatedMenuLinks = (): MenuLink[] => {
           type: 'link',
         },
         {
+          name: t('navigation.dropdown.open_source'),
+          href: '/open-source',
+          type: 'link',
+        },
+        {
           name: t('navigation.dropdown.organizer_tools'),
           href: '/organizers',
           type: 'link',

@@ -361,6 +361,7 @@
       "coming_soon": "(Coming Soon)",
       "community_participation": "Community Participation",
       "community_partnerships": "Community Partnerships",
+      "open_source": "Open Source Support",
       "event_discounts": "Event Discounts",
       "learning_discounts": "Learning Discounts",
       "organizer_tools": "Organizer Tools",
@@ -523,6 +524,37 @@
       "title": "Organizer Tools"
     },
     "what_is_organizer": "What is a meet.js Organizer?"
+  },
+  "open_source": {
+    "meta_description": "Support Open Source and find projects to contribute to. Join meet.js community in building better software.",
+    "meta_title": "Open Source Support | meet.js",
+    "description": {
+      "content": "At meet.js, we believe that Open Source is the backbone of modern software development. We encourage our community members to contribute to open source projects, share their knowledge, and support the tools they use every day.",
+      "title": "Why Open Source?"
+    },
+    "hero": {
+      "subtitle": "Supporting the code that powers our world",
+      "title": "Open Source"
+    },
+    "projects": {
+      "coming_soon": "Project list coming soon...",
+      "description": "Discover projects maintained by our community members or recommended by meet.js.",
+      "title": "Community Projects"
+    },
+    "support": {
+      "description": "There are many ways to support open source, not just by writing code.",
+      "title": "How to Support",
+      "ways": {
+        "0": "Contribute code or documentation",
+        "1": "Sponsor projects or maintainers",
+        "2": "Report bugs and help triage issues"
+      },
+      "platforms": {
+        "title": "Where to donate",
+        "github": "GitHub Sponsors",
+        "opencollective": "Open Collective"
+      }
+    }
   },
   "organizers_hub": {
     "cities_section": {
