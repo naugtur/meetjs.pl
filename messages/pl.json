@@ -361,6 +361,7 @@
       "coming_soon": "(Wkrótce)",
       "community_participation": "Udział w Społeczności",
       "community_partnerships": "Partnerstwa Społeczne",
+      "open_source": "Wsparcie Open Source",
       "event_discounts": "Zniżki na wydarzenia",
       "learning_discounts": "Zniżki na naukę",
       "organizer_tools": "Narzędzia dla organizatorów",
@@ -523,6 +524,37 @@
       "title": "Narzędzia dla Organizatorów"
     },
     "what_is_organizer": "Kim jest Organizator meet.js?"
+  },
+  "open_source": {
+    "meta_description": "Wspieraj Open Source i znajdź projekty do kontrybucji. Dołącz do społeczności meet.js w tworzeniu lepszego oprogramowania.",
+    "meta_title": "Wsparcie Open Source | meet.js",
+    "description": {
+      "content": "W meet.js wierzymy, że Open Source jest kręgosłupem nowoczesnego tworzenia oprogramowania. Zachęcamy członków naszej społeczności do kontrybuowania do projektów open source, dzielenia się wiedzą i wspierania narzędzi, których używają na co dzień.",
+      "title": "Dlaczego Open Source?"
+    },
+    "hero": {
+      "subtitle": "Wspieramy kod, który napędza nasz świat",
+      "title": "Open Source"
+    },
+    "projects": {
+      "coming_soon": "Lista projektów wkrótce...",
+      "description": "Odkryj projekty utrzymywane przez członków naszej społeczności lub polecane przez meet.js.",
+      "title": "Projekty Społeczności"
+    },
+    "support": {
+      "description": "Jest wiele sposobów na wspieranie open source, nie tylko poprzez pisanie kodu.",
+      "title": "Jak Wspierać",
+      "ways": {
+        "0": "Kontrybuuj kod lub dokumentację",
+        "1": "Sponsoruj projekty lub opiekunów",
+        "2": "Zgłaszaj błędy i pomagaj w ich weryfikacji"
+      },
+      "platforms": {
+        "title": "Gdzie wpłacać",
+        "github": "GitHub Sponsors",
+        "opencollective": "Open Collective"
+      }
+    }
   },
   "organizers_hub": {
     "cities_section": {
