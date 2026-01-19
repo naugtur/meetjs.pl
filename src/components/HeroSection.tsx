@@ -1,9 +1,7 @@
 import { RankingBanner } from '@/components/RankingBanner';
 import { AwardNomination } from '@/components/AwardNomination';
-import { Instagram, MessagesSquare, Sparkles } from 'lucide-react';
+import { Instagram, MessagesSquare } from 'lucide-react';
 import { getTranslate } from '@/tolgee/server';
-import Link from 'next/link';
-import type { Route } from 'next';
 
 export const HeroSection = async () => {
   const t = await getTranslate();
@@ -21,18 +19,6 @@ export const HeroSection = async () => {
           {t('hero.title')}
         </h1>
         <h2 className="p-4 text-xl font-medium">{t('hero.subtitle')}</h2>
-
-        {/* 2025 Wrapped - Standalone prominent button */}
-        <div className="mt-6">
-          <Link
-            href={'/2025-review' as Route}
-            className="inline-flex animate-[pulse-scale_2s_ease-in-out_infinite] items-center gap-2 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 px-6 py-3 text-base font-bold shadow-lg shadow-purple-500/30 transition-all hover:scale-110 hover:animate-none hover:shadow-xl hover:shadow-pink-500/40"
-          >
-            <Sparkles className="h-5 w-5" />
-            {t('hero.2025_wrapped')}
-            <span className="ml-1">→</span>
-          </Link>
-        </div>
 
         {/* Social links - separate row */}
         <div className="mt-4 flex flex-wrap justify-center gap-3">
