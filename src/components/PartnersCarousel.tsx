@@ -31,7 +31,7 @@ export const PartnersCarousel = () => {
                 alt={partner.alt}
                 width={114}
                 height={48}
-                className="h-auto max-h-12 w-auto max-w-[114px] object-contain"
+                className="h-auto max-h-12 w-auto max-w-[114px] object-contain brightness-0 invert"
               />
             </a>
           </CarouselItem>
