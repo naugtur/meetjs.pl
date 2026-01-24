@@ -90,6 +90,15 @@ export const PolandMap = async ({ cities, events = [] }: MapProps) => {
     );
   };
 
+  const hasAnySummit = events.some(
+    (event) =>
+      event.type?.toLowerCase() === 'conference' ||
+      event.type?.toLowerCase() === 'konferencja' ||
+      event.type?.toLowerCase() === 'summit' ||
+      event.serie?.toLowerCase().includes('summit') ||
+      event.name?.toLowerCase().includes('summit'),
+  );
+
   return (
     <div className="flex flex-col gap-2">
       <div className="relative h-full">
@@ -113,7 +122,6 @@ export const PolandMap = async ({ cities, events = [] }: MapProps) => {
               <g key={index}>
                 <Link href={city.href as Route}>
                   <g className="city-marker group">
-                    {/* City dot - split if has partnership events and NO conference */}
                     {eventStatus !== 'none' &&
                     hasPartnership &&
                     !hasConference ? (
@@ -144,12 +152,10 @@ export const PolandMap = async ({ cities, events = [] }: MapProps) => {
                       />
                     )}
 
-                    {/* Summit premium pinnacle - Vibrant Purple Hexagon with Glow */}
                     {hasConference && (
                       <g
                         transform={`translate(${city.pointPosition.x}, ${city.pointPosition.y})`}
                       >
-                        {/* Vibrant Purple Halo */}
                         <circle
                           r="10"
                           fill="none"
@@ -157,7 +163,6 @@ export const PolandMap = async ({ cities, events = [] }: MapProps) => {
                           strokeWidth="2"
                           className="animate-pulse opacity-60"
                         />
-                        {/* Vibrant Purple Hexagon Marker */}
                         <polygon
                           points="0,-5 4.33,-2.5 4.33,2.5 0,5 -4.33,2.5 -4.33,-2.5"
                           fill="#9333ea"
@@ -168,7 +173,6 @@ export const PolandMap = async ({ cities, events = [] }: MapProps) => {
                       </g>
                     )}
 
-                    {/* Event status circle (only for non-conferences) */}
                     {eventStatus !== 'none' && !hasConference && (
                       <circle
                         cx={city.pointPosition.x}
@@ -187,7 +191,6 @@ export const PolandMap = async ({ cities, events = [] }: MapProps) => {
                       />
                     )}
 
-                    {/* Coming soon dashed circle - only if no events/conferences */}
                     {city.status === 'coming-soon' &&
                       eventStatus === 'none' &&
                       !hasConference && (
@@ -219,26 +222,28 @@ export const PolandMap = async ({ cities, events = [] }: MapProps) => {
       </div>
 
       <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm">
-        <div className="flex items-center gap-2 whitespace-nowrap">
-          <div className="relative flex h-4 items-center justify-center pt-1">
-            <svg width="14" height="14" viewBox="-7 -7 14 14">
-              <circle
-                r="6"
-                fill="none"
-                stroke="#9333ea"
-                strokeWidth="1.5"
-                className="animate-pulse"
-              />
-              <polygon
-                points="0,-4 3.46,-2 3.46,2 0,4 -3.46,2 -3.46,-2"
-                fill="#9333ea"
-                stroke="white"
-                strokeWidth="0.5"
-              />
-            </svg>
+        {hasAnySummit && (
+          <div className="flex items-center gap-2 whitespace-nowrap">
+            <div className="relative flex h-4 items-center justify-center pt-1">
+              <svg width="14" height="14" viewBox="-7 -7 14 14">
+                <circle
+                  r="6"
+                  fill="none"
+                  stroke="#9333ea"
+                  strokeWidth="1.5"
+                  className="animate-pulse"
+                />
+                <polygon
+                  points="0,-4 3.46,-2 3.46,2 0,4 -3.46,2 -3.46,-2"
+                  fill="#9333ea"
+                  stroke="white"
+                  strokeWidth="0.5"
+                />
+              </svg>
+            </div>
+            <span>{t('poland_map.conference')}</span>
           </div>
-          <span>{t('poland_map.conference')}</span>
-        </div>
+        )}
         <div className="flex items-center gap-2 whitespace-nowrap">
           <div className="flex items-center gap-3">
             <div className="h-2 w-2 rounded-full bg-[#219eab]" />
