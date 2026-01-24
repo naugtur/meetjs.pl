@@ -40,7 +40,14 @@ export const PolandMap = async ({ cities, events = [] }: MapProps) => {
   const now = new Date();
 
   const getCityEventStatus = (cityName: string) => {
-    const cityEvents = events.filter((event) => event.city === cityName);
+    // Filter to only non-conference events for status indicator
+    const cityEvents = events.filter(
+      (event) =>
+        event.city === cityName &&
+        event.type?.toLowerCase() !== 'conference' &&
+        event.type?.toLowerCase() !== 'konferencja' &&
+        event.type?.toLowerCase() !== 'summit',
+    );
 
     for (const event of cityEvents) {
       const [day, month, year] = event.date.split('.');
@@ -66,7 +73,20 @@ export const PolandMap = async ({ cities, events = [] }: MapProps) => {
         event.city === cityName &&
         ADDITIONAL_EVENTS.some(
           (additionalEvent) => additionalEvent.id === event.id,
-        ),
+        ) &&
+        event.type !== 'Conference',
+    );
+  };
+
+  const hasConferenceEvent = (cityName: string) => {
+    return events.some(
+      (event) =>
+        event.city === cityName &&
+        (event.type?.toLowerCase() === 'conference' ||
+          event.type?.toLowerCase() === 'konferencja' ||
+          event.type?.toLowerCase() === 'summit' ||
+          event.serie?.toLowerCase().includes('summit') ||
+          event.name?.toLowerCase().includes('summit')),
     );
   };
 
@@ -87,13 +107,16 @@ export const PolandMap = async ({ cities, events = [] }: MapProps) => {
           {cities.map((city, index) => {
             const eventStatus = getCityEventStatus(city.name);
             const hasPartnership = hasPartnershipEvent(city.name);
+            const hasConference = hasConferenceEvent(city.name);
 
             return (
               <g key={index}>
                 <Link href={city.href as Route}>
                   <g className="city-marker group">
-                    {/* City dot - split if has partnership events */}
-                    {eventStatus !== 'none' && hasPartnership ? (
+                    {/* City dot - split if has partnership events and NO conference */}
+                    {eventStatus !== 'none' &&
+                    hasPartnership &&
+                    !hasConference ? (
                       <foreignObject
                         x={city.pointPosition.x - 3}
                         y={city.pointPosition.y - 3}
@@ -121,8 +144,32 @@ export const PolandMap = async ({ cities, events = [] }: MapProps) => {
                       />
                     )}
 
-                    {/* Event status circle */}
-                    {eventStatus !== 'none' && (
+                    {/* Summit premium pinnacle - Vibrant Purple Hexagon with Glow */}
+                    {hasConference && (
+                      <g
+                        transform={`translate(${city.pointPosition.x}, ${city.pointPosition.y})`}
+                      >
+                        {/* Vibrant Purple Halo */}
+                        <circle
+                          r="10"
+                          fill="none"
+                          stroke="#9333ea"
+                          strokeWidth="2"
+                          className="animate-pulse opacity-60"
+                        />
+                        {/* Vibrant Purple Hexagon Marker */}
+                        <polygon
+                          points="0,-5 4.33,-2.5 4.33,2.5 0,5 -4.33,2.5 -4.33,-2.5"
+                          fill="#9333ea"
+                          stroke="white"
+                          strokeWidth="1.5"
+                          className="cursor-pointer transition-transform hover:scale-125"
+                        />
+                      </g>
+                    )}
+
+                    {/* Event status circle (only for non-conferences) */}
+                    {eventStatus !== 'none' && !hasConference && (
                       <circle
                         cx={city.pointPosition.x}
                         cy={city.pointPosition.y}
@@ -140,9 +187,10 @@ export const PolandMap = async ({ cities, events = [] }: MapProps) => {
                       />
                     )}
 
-                    {/* Coming soon dashed circle */}
+                    {/* Coming soon dashed circle - only if no events/conferences */}
                     {city.status === 'coming-soon' &&
-                      eventStatus === 'none' && (
+                      eventStatus === 'none' &&
+                      !hasConference && (
                         <circle
                           cx={city.pointPosition.x}
                           cy={city.pointPosition.y}
@@ -171,6 +219,26 @@ export const PolandMap = async ({ cities, events = [] }: MapProps) => {
       </div>
 
       <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm">
+        <div className="flex items-center gap-2 whitespace-nowrap">
+          <div className="relative flex h-4 items-center justify-center pt-1">
+            <svg width="14" height="14" viewBox="-7 -7 14 14">
+              <circle
+                r="6"
+                fill="none"
+                stroke="#9333ea"
+                strokeWidth="1.5"
+                className="animate-pulse"
+              />
+              <polygon
+                points="0,-4 3.46,-2 3.46,2 0,4 -3.46,2 -3.46,-2"
+                fill="#9333ea"
+                stroke="white"
+                strokeWidth="0.5"
+              />
+            </svg>
+          </div>
+          <span>{t('poland_map.conference')}</span>
+        </div>
         <div className="flex items-center gap-2 whitespace-nowrap">
           <div className="flex items-center gap-3">
             <div className="h-2 w-2 rounded-full bg-[#219eab]" />
