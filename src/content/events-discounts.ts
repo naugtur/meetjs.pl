@@ -482,4 +482,22 @@ export const eventsDiscounts: Promo[] = [
     city: 'Bydgoszcz',
     discountCode: 'FREE',
   },
+  {
+    id: 'react-paris-2026',
+    name: 'React Paris 2026',
+    message: '10% off with code rp26_meetjs!',
+    cta: '👉 Get 10% Off',
+    ticketLink: 'https://react.paris',
+    eventLink: 'https://react.paris',
+    expiresAt: '2026-03-27T23:59:59+01:00',
+    description:
+      'React Paris 2026 is a two-day, single-track React.JS conference bringing together 500+ developers, tech leads, and consultants on March 26-27, 2026 at the Pullman Paris Montparnasse. Learn from influential voices including Tanner Linsley (TanStack), Mark Erikson (Redux Toolkit), Nadia Makarevich, Daishi Kato (Zustand, Jotai, Valtio), Kitze (Sizzy), Una Kravets (Google), and more! Deep technical sessions on Performance, State Management, Frameworks, AI, DX, and Accessibility. In-person attendees get exclusive access to "IN PERSON ONLY" sessions and the full hallway-track experience.',
+    gradient: 'bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-600',
+    icon: '⚛️',
+    image: '/discounts/LOGO REACT PARIS - White.png',
+    emojiRight: '🇫🇷',
+    country: 'France',
+    city: 'Paris',
+    discountCode: 'rp26_meetjs',
+  },
 ];
