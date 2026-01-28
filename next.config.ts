@@ -147,6 +147,11 @@ const nextConfig: NextConfig = {
         destination: '/discounts',
         permanent: true,
       },
+      {
+        source: '/summit',
+        destination: 'https://summit.meetjs.pl/2026/',
+        permanent: true,
+      },
     ];
   },
 };
