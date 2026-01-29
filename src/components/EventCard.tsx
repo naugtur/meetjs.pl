@@ -2,12 +2,13 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { buttonVariants } from '@/components/ui/button';
-import { FaClock, FaLocationDot } from 'react-icons/fa6';
+import { FaClock, FaLocationDot, FaMicrophoneLines } from 'react-icons/fa6';
 import type { EventType } from '@/types/event';
 import { cn } from '@/lib/utils';
 import { formatDistanceToNow } from 'date-fns';
-import { getEventWeekDay } from '@/utils/eventUtils';
+import { getEventWeekDay, isConferenceEvent } from '@/utils/eventUtils';
 import { useLocale } from '@/hooks/useLocale';
+import { useTranslate } from '@tolgee/react';
 
 interface EventCardProps {
   event: EventType;
@@ -15,6 +16,7 @@ interface EventCardProps {
 
 export const EventCard = ({ event }: EventCardProps) => {
   const { locale } = useLocale();
+  const { t } = useTranslate();
   const now = new Date();
   const [day, month, year] = event.date.split('.');
   const [hours, minutes] = event.time.split(':');
@@ -32,6 +34,8 @@ export const EventCard = ({ event }: EventCardProps) => {
     now.getMonth() === eventDate.getMonth() &&
     now.getFullYear() === eventDate.getFullYear();
 
+  const isConference = isConferenceEvent(event.type);
+
   return (
     <Card
       data-testid="event-card-wrapper"
@@ -41,6 +45,7 @@ export const EventCard = ({ event }: EventCardProps) => {
         isToday &&
           !isInProgress &&
           'border-2 border-yellow-500 dark:border-yellow-400',
+        isConference && 'border-2 border-amber-400 dark:border-amber-500',
       )}
     >
       <CardHeader>
@@ -55,6 +60,12 @@ export const EventCard = ({ event }: EventCardProps) => {
               {event.name}
             </a>
           </CardTitle>
+          {isConference && (
+            <div className="flex items-center gap-1 rounded-full bg-amber-100 px-2 py-1 text-xs font-medium text-amber-800 dark:bg-amber-900/50 dark:text-amber-200">
+              <FaMicrophoneLines className="h-3 w-3" />
+              {t('event_card.conference')}
+            </div>
+          )}
         </div>
         {eventDate.getTime() > 0 && (
           <p className="text-sm text-muted-foreground">
@@ -110,10 +121,12 @@ export const EventCard = ({ event }: EventCardProps) => {
                 buttonVariants({
                   size: 'sm',
                 }),
-                'bg-purple text-white transition-colors hover:bg-purple/90 dark:bg-green dark:hover:bg-green/90',
+                isConference
+                  ? 'bg-gradient-to-r from-amber-600 to-orange-600 text-white hover:from-amber-700 hover:to-orange-700 dark:from-amber-500 dark:to-orange-500 dark:hover:from-amber-600 dark:hover:to-orange-600'
+                  : 'bg-purple text-white transition-colors hover:bg-purple/90 dark:bg-green dark:hover:bg-green/90',
               )}
             >
-              RSVP
+              {isConference ? t('event_card.register') : t('event_card.rsvp')}
             </a>
           )}
         </div>

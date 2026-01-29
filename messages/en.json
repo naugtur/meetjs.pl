@@ -581,5 +581,10 @@
     "since": "since",
     "summits": "summits"
   },
+  "event_card": {
+    "conference": "Conference",
+    "register": "Register",
+    "rsvp": "RSVP"
+  },
   "welcome": "Welcome to meet.js"
 }
