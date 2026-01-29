@@ -1,0 +1,56 @@
+[
+  {
+    "id": "vxv0xch7x0fvbnyu5w4j0l",
+    "timestamp": "2025-12-30T18:41:40.356Z",
+    "userId": "test-user-1",
+    "userName": "Test User",
+    "userEmail": "test@example.com",
+    "action": "updated",
+    "resourceType": "city",
+    "resourceId": "krakow",
+    "resourceName": "Kraków",
+    "changes": [
+      {
+        "field": "status",
+        "oldValue": "paused",
+        "newValue": "active"
+      }
+    ]
+  },
+  {
+    "id": "k5ta3gc8qh1kpci6lwg3i",
+    "timestamp": "2025-12-30T18:49:37.513Z",
+    "userId": "unknown",
+    "userName": "Unknown User",
+    "userEmail": "unknown@example.com",
+    "action": "updated",
+    "resourceType": "city",
+    "resourceId": "białystok",
+    "resourceName": "Białystok",
+    "changes": [
+      {
+        "field": "status",
+        "oldValue": "active",
+        "newValue": "paused"
+      }
+    ]
+  },
+  {
+    "id": "nt5558bv4c8voo6szar1jk",
+    "timestamp": "2025-12-30T18:49:59.206Z",
+    "userId": "unknown",
+    "userName": "Unknown User",
+    "userEmail": "unknown@example.com",
+    "action": "updated",
+    "resourceType": "city",
+    "resourceId": "białystok",
+    "resourceName": "Białystok",
+    "changes": [
+      {
+        "field": "status",
+        "oldValue": "paused",
+        "newValue": "active"
+      }
+    ]
+  }
+]

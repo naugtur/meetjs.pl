@@ -1,0 +1,26 @@
+{
+  "id": "toruń",
+  "name": "Toruń",
+  "href": "/torun",
+  "status": "paused",
+  "coordinates": {
+    "lat": 80,
+    "lng": 100
+  },
+  "organizers": [],
+  "sponsors": [],
+  "events": [],
+  "description": "Meet.js Toruń community",
+  "coverImage": "/city//torun/cover.jpg",
+  "lastUpdated": "2025-12-30T17:56:28.945Z",
+  "updatedBy": "system",
+  "statusHistory": [
+    {
+      "previousStatus": "new",
+      "newStatus": "paused",
+      "changedBy": "system",
+      "changedAt": "2025-12-30T17:56:28.945Z",
+      "reason": "City created"
+    }
+  ]
+}
