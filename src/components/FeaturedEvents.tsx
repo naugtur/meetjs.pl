@@ -11,9 +11,10 @@ import { EmptyEventsAlert } from '@/components/EmptyEventsAlert';
 import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
 import { filterUpcomingEvents } from '@/utils/eventUtils';
 import { getTranslate } from '@/tolgee/server';
+import type { EventTypeName } from '@/types/event';
 
 export interface Event {
-  type: string;
+  type: EventTypeName;
   id: number;
   date_add: number;
   date: string;

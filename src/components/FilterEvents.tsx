@@ -6,6 +6,7 @@ import { Suspense } from 'react';
 import { EventsList } from '@/components/EventsList';
 import Link from 'next/link';
 import { getTranslate } from '@/tolgee/server';
+import { isConferenceEvent } from '@/utils/eventUtils';
 
 interface FilterEventsProps {
   events: EventType[] | null;
@@ -27,9 +28,12 @@ const FilterEventsContent = async ({ events, filter }: FilterEventsProps) => {
     return <div>{t('events_page.filter.events_not_found')}</div>;
   }
 
-  const filteredEvents = filter
-    ? events.filter((event) => event.city === filter)
-    : events;
+  const filteredEvents =
+    filter === 'summit'
+      ? events.filter((event) => isConferenceEvent(event.type))
+      : filter
+        ? events.filter((event) => event.city === filter)
+        : events;
 
   return (
     <>
@@ -45,6 +49,20 @@ const FilterEventsContent = async ({ events, filter }: FilterEventsProps) => {
             className={linkClassNames(null)}
           >
             {t('events_page.filter.all')} ({events.length})
+          </Link>
+          <Link
+            href={{
+              pathname: '/events',
+              query: {
+                city: 'summit',
+              },
+            }}
+            replace
+            scroll={false}
+            className={linkClassNames('summit')}
+          >
+            🎤 Summit (
+            {events.filter((event) => isConferenceEvent(event.type)).length})
           </Link>
           <Link
             href={{

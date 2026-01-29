@@ -1,4 +1,17 @@
-import type { EventType } from '@/types/event';
+import type { EventType, EventTypeName } from '@/types/event';
+import { EventTypeEnum } from '@/types/event';
+
+/**
+ * Type-safe function to check if event is a conference
+ * Uses EventTypeEnum values instead of hardcoded strings
+ */
+export const isConferenceEvent = (eventType: EventTypeName): boolean => {
+  const conferenceTypes: EventTypeName[] = [
+    EventTypeEnum.enum.Conference,
+    EventTypeEnum.enum.Konferencja,
+  ];
+  return conferenceTypes.includes(eventType);
+};
 
 /**
  * Parses a date string in DD.MM.YYYY format to a Date object
