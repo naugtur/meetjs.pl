@@ -586,5 +586,39 @@
     "register": "Zarejestruj się",
     "rsvp": "RSVP"
   },
+  "summit_2026": {
+    "anniversary_badge": "15. Rocznica",
+    "title": "meet.js Summit 2026",
+    "subtitle": "15. Rocznica - Edycja AI_devs",
+    "date": "4 marca 2026",
+    "location": "Warszawa, Polska",
+    "countdown_label": "Wydarzenie rozpocznie się za",
+    "days": "Dni",
+    "hours": "Godzin",
+    "minutes": "Minut",
+    "seconds": "Sekund",
+    "live_badge": "Na żywo",
+    "live_title": "TRWA TERAZ",
+    "live_subtitle": "Dołącz do nas na miejscu!",
+    "live_location_label": "Lokalizacja",
+    "live_location": "SGH Warszawa",
+    "live_time_label": "Czas",
+    "live_time": "9:00 - 18:00",
+    "ended_title": "Dziękujemy za udział!",
+    "ended_subtitle": "To była niesamowita 15. rocznica",
+    "ended_recordings": "Nagrania",
+    "ended_photos": "Zdjęcia",
+    "ended_highlights": "Najlepsze momenty",
+    "ended_coming_soon": "Wkrótce",
+    "cta_get_tickets": "Kup Bilety",
+    "cta_view_speakers": "Zobacz Prelegentów",
+    "description": "Dołącz do nas na cały dzień nauki, networkingu i inspiracji w SGH - Szkole Głównej Handlowej w Warszawie",
+    "language_note": "Wydarzenie w języku angielskim"
+  },
+  "event_card": {
+    "conference": "Konferencja",
+    "register": "Zarejestruj się",
+    "rsvp": "RSVP"
+  },
   "welcome": "Witamy w meet.js"
 }

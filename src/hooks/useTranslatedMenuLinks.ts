@@ -8,9 +8,10 @@ export const useTranslatedMenuLinks = (): MenuLink[] => {
   return [
     {
       name: t('navigation.menu_items.summit'),
-      href: 'https://summit.meetjs.pl',
+      href: 'https://summit.meetjs.pl/2026',
       current: false,
       external: true,
+      highlight: true,
     },
     {
       name: t('navigation.menu_items.videos'),

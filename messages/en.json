@@ -586,5 +586,39 @@
     "register": "Register",
     "rsvp": "RSVP"
   },
+  "summit_2026": {
+    "anniversary_badge": "15th Anniversary Edition",
+    "title": "meet.js Summit 2026",
+    "subtitle": "15th Anniversary AI_devs Edition",
+    "date": "March 4, 2026",
+    "location": "Warsaw, Poland",
+    "countdown_label": "Event Starts In",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds",
+    "live_badge": "Live",
+    "live_title": "HAPPENING NOW",
+    "live_subtitle": "Join us at the venue!",
+    "live_location_label": "Location",
+    "live_location": "SGH Warsaw",
+    "live_time_label": "Time",
+    "live_time": "9:00 AM - 6:00 PM",
+    "ended_title": "Thank You for Attending!",
+    "ended_subtitle": "What an amazing 15th anniversary celebration",
+    "ended_recordings": "Recordings",
+    "ended_photos": "Photos",
+    "ended_highlights": "Highlights",
+    "ended_coming_soon": "Coming soon",
+    "cta_get_tickets": "Get Your Tickets",
+    "cta_view_speakers": "View Speakers",
+    "description": "Join us for a full day of learning, networking, and inspiration at SGH Warsaw School of Economics",
+    "language_note": "Event in English"
+  },
+  "event_card": {
+    "conference": "Conference",
+    "register": "Register",
+    "rsvp": "RSVP"
+  },
   "welcome": "Welcome to meet.js"
 }

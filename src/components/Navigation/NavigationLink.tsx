@@ -29,7 +29,7 @@ export const NavigationLink = ({
   highlight = false,
 }: NavigationLinkProps) => {
   const baseClasses = highlight
-    ? 'bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white hover:from-purple-600 hover:via-pink-600 hover:to-orange-500 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300'
+    ? 'bg-[#bcd35d] text-black hover:bg-[#bcd35d]/90 shadow-lg hover:shadow-xl hover:shadow-[#bcd35d]/20 hover:scale-105 transition-all duration-300 font-bold'
     : current
       ? 'bg-gray-900 text-white'
       : 'text-white hover:bg-green/80 hover:text-purple';
