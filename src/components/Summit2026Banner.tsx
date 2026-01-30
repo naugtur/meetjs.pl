@@ -126,14 +126,15 @@ export const Summit2026Banner = () => {
               <div className="space-y-4">
                 {/* Large HAPPENING NOW text */}
                 <div className="text-center">
-                  <div className="mb-2 inline-block animate-pulse-scale rounded-full bg-red-500 px-4 py-1 text-xs font-bold uppercase tracking-widest text-white">
-                    • {t('summit_2026.live_badge')}
+                  <div className="mb-3 inline-block animate-pulse rounded-full bg-red-500 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white shadow-lg shadow-red-500/50">
+                    🔴 {t('summit_2026.live_badge')}
                   </div>
-                  <h3 className="mb-1 text-5xl font-black text-white md:text-6xl">
+                  <h3 className="mb-2 text-5xl font-black text-white md:text-6xl">
                     {t('summit_2026.live_title')}
                   </h3>
-                  <p className="text-xl text-white/80 md:text-2xl">
-                    {t('summit_2026.live_subtitle')}
+                  <p className="text-xl text-white/90 md:text-2xl">
+                    {t('summit_2026.live_subtitle')}{' '}
+                    <span className="text-[#75f66d]">AI_devs</span> Edition
                   </p>
                 </div>
 
