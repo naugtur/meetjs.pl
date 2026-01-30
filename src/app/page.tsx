@@ -8,6 +8,8 @@ import { HeroSection } from '@/components/HeroSection';
 import { PartnersSection } from '@/components/PartnersSection';
 import { CommunityParticipation } from '@/components/CommunityParticipationServer';
 import { YouTubeSubscribeBanner } from '@/components/YouTubeSubscribeBanner';
+import { Summit2026Banner } from '@/components/Summit2026Banner';
+import { FloatingSummitCTA } from '@/components/FloatingSummitCTA';
 
 export const dynamic = 'force-dynamic';
 
@@ -15,6 +17,7 @@ const Home = () => {
   return (
     <main>
       <HeroSection />
+      <Summit2026Banner />
       <div className="flex min-h-screen flex-col items-center">
         <FeaturedEvents />
         <JavaScript30YearsPromo />
@@ -27,6 +30,7 @@ const Home = () => {
         </div>
         <PartnersSection />
       </div>
+      <FloatingSummitCTA />
     </main>
   );
 };

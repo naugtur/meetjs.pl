@@ -1,6 +1,6 @@
 import { RankingBanner } from '@/components/RankingBanner';
 import { AwardNomination } from '@/components/AwardNomination';
-import { Instagram, MessagesSquare } from 'lucide-react';
+import { Instagram, MessagesSquare, Sparkles } from 'lucide-react';
 import { getTranslate } from '@/tolgee/server';
 
 export const HeroSection = async () => {
@@ -15,6 +15,17 @@ export const HeroSection = async () => {
       />
 
       <div className="col-start-1 row-start-1 mx-auto my-auto">
+        <a
+          href="https://summit.meetjs.pl/2026"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple via-blue to-green px-4 py-2 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl"
+        >
+          <Sparkles className="h-4 w-4" />
+          Summit 2026 • 15th Anniversary • March 4
+          <Sparkles className="h-4 w-4" />
+        </a>
+
         <h1 className="-rotate-2 bg-blue p-2 text-6xl font-bold">
           {t('hero.title')}
         </h1>
