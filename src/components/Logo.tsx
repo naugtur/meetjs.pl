@@ -4,6 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useTranslate } from '@tolgee/react';
+import { getSeasonalThemeWithMode } from '@/lib/seasonalTheme';
+import { useSeasonalPreferences } from '@/hooks/useSeasonalPreferences';
 
 interface LogoProps {
   clickable?: boolean;
@@ -11,6 +13,7 @@ interface LogoProps {
 
 export const Logo = ({ clickable = true }: LogoProps) => {
   const { t } = useTranslate();
+  const { themeMode } = useSeasonalPreferences();
   const [showContextMenu, setShowContextMenu] = useState(false);
   const [contextMenuPosition, setContextMenuPosition] = useState({
     x: 0,
@@ -28,13 +31,11 @@ export const Logo = ({ clickable = true }: LogoProps) => {
     setShowContextMenu(false);
   };
 
-  const now = new Date();
-  const isChristmasSeason =
-    now.getMonth() === 11 || (now.getMonth() === 0 && now.getDate() <= 15);
+  const { logoSrc } = getSeasonalThemeWithMode(new Date(), themeMode);
 
   const logoImage = (
     <Image
-      src={isChristmasSeason ? './christmas_logo.svg' : './logo.svg'}
+      src={logoSrc}
       alt="meet.js Logo"
       width={150}
       height={40}
