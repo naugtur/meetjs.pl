@@ -135,6 +135,24 @@
     "title": "Udział Społeczności",
     "until_date": "Do"
   },
+  "media": {
+    "page_title": "📺 Media o nas",
+    "subtitle": "Materiały medialne, wywiady i publikacje o meet.js",
+    "section_title": "meet.js w mediach",
+    "section_description": "Zobacz jak media piszą i mówią o największej społeczności JavaScript w Polsce",
+    "view_material": "Zobacz materiał",
+    "cta_title": "Chcesz napisać o nas?",
+    "cta_description": "Jesteśmy otwarci na współpracę z mediami. Skontaktuj się z nami!",
+    "cta_button": "Skontaktuj się z nami",
+    "empty_title": "Wkrótce więcej materiałów",
+    "empty_description": "Pracujemy nad zebraniem wszystkich publikacji o meet.js",
+    "type": {
+      "video": "Wideo",
+      "article": "Artykuł",
+      "podcast": "Podcast",
+      "interview": "Wywiad"
+    }
+  },
   "community_partnerships": {
     "contact_project": "Skontaktuj się z Projektem",
     "cta_description": "Jeśli prowadzisz inicjatywę edukacyjną lub społeczną zgodną z naszymi wartościami, chętnie się z Tobą skontaktujemy.",
@@ -362,6 +380,7 @@
       "coming_soon": "(Wkrótce)",
       "community_participation": "Udział w Społeczności",
       "community_partnerships": "Partnerstwa Społeczne",
+      "media_coverage": "Media o nas",
       "open_source": "Wsparcie Open Source",
       "event_discounts": "Zniżki na wydarzenia",
       "learning_discounts": "Zniżki na naukę",
