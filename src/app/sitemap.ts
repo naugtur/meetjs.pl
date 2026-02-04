@@ -76,6 +76,12 @@ const sitemap = (): MetadataRoute.Sitemap => {
       priority: 0.7,
     },
     {
+      url: `${env.SITE_URL}/media`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
       url: `${env.SITE_URL}/organizers`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
