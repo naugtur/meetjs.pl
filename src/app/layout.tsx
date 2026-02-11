@@ -11,7 +11,6 @@ import { env } from '@/env';
 import { TolgeeNextProvider } from '@/tolgee/client';
 import { getTolgee } from '@/tolgee/server';
 import { getLanguage } from '@/tolgee/language';
-import { Snow } from '@/components/Snow';
 import { PromoBanners } from '@/components/PromoBanners';
 import { softwareDiscounts } from '@/content/software-discounts';
 import { eventsDiscounts } from '@/content/events-discounts';
@@ -141,7 +140,6 @@ const RootLayout = async ({
         <Analytics />
         <SpeedInsights />
         <SchemaMarkup />
-        <Snow />
       </body>
     </html>
   );
