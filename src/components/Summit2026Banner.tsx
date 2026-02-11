@@ -94,7 +94,7 @@ export const Summit2026Banner = () => {
                 <p className="mb-4 text-center text-sm font-semibold uppercase tracking-wider text-white/80">
                   {t('summit_2026.countdown_label')}
                 </p>
-                <div className="flex flex-wrap justify-center gap-4">
+                <div className="flex flex-wrap justify-center gap-2 md:gap-4">
                   {[
                     { value: timeLeft.days, label: t('summit_2026.days') },
                     { value: timeLeft.hours, label: t('summit_2026.hours') },
@@ -109,9 +109,9 @@ export const Summit2026Banner = () => {
                   ].map((item) => (
                     <div
                       key={item.label}
-                      className="flex min-w-[80px] flex-col items-center rounded-lg bg-white/10 p-4 backdrop-blur-sm md:min-w-[100px]"
+                      className="flex min-w-[60px] flex-col items-center rounded-lg bg-white/10 p-3 backdrop-blur-sm md:min-w-[100px] md:p-4"
                     >
-                      <span className="text-3xl font-bold text-white md:text-4xl">
+                      <span className="text-2xl font-bold text-white md:text-4xl">
                         {String(item.value).padStart(2, '0')}
                       </span>
                       <span className="mt-1 text-xs font-medium uppercase tracking-wide text-white/80">
