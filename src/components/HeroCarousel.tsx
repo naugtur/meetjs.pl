@@ -78,10 +78,10 @@ export const HeroCarousel = () => {
       ]}
       className="w-full"
     >
-      <CarouselContent>
+      <CarouselContent className="min-h-[60vh] md:min-h-[70vh]">
         {/* Slide 1: Main Hero Section */}
         <CarouselItem className="basis-full">
-          <header className="relative grid h-96 bg-[url('/conference.jpg')] bg-cover text-center text-white md:h-[35rem]">
+          <header className="relative grid min-h-[60vh] bg-[url('/conference.jpg')] bg-cover text-center text-white md:min-h-[70vh]">
             <div className="col-start-1 row-start-1 h-full w-full bg-gray-800 bg-opacity-70"></div>
 
             <RankingBanner
