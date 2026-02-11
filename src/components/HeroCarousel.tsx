@@ -136,7 +136,7 @@ export const HeroCarousel = () => {
         {/* Slide 2: Summit 2026 Banner */}
         <CarouselItem className="basis-full">
           <div
-            className="relative flex min-h-[60vh] w-full flex-col overflow-hidden bg-cover bg-center py-12 md:min-h-[70vh] md:overflow-hidden md:bg-contain md:py-16"
+            className="relative flex min-h-[60vh] w-full flex-col overflow-hidden bg-cover bg-center py-8 md:min-h-[70vh] md:overflow-hidden md:bg-contain md:py-16"
             style={{ backgroundImage: 'url(/summit-2026-bg.png)' }}
           >
             {/* Lighter overlay matching summit website */}
@@ -177,10 +177,10 @@ export const HeroCarousel = () => {
                 </div>
 
                 {/* Countdown Timer / Event Status */}
-                <div className="mb-8">
+                <div className="mb-6 md:mb-8">
                   {eventStatus === 'upcoming' && (
                     <>
-                      <p className="mb-4 text-center text-sm font-semibold uppercase tracking-wider text-white/80">
+                      <p className="mb-3 text-center text-sm font-semibold uppercase tracking-wider text-white/80 md:mb-4">
                         {t('summit_2026.countdown_label')}
                       </p>
                       <div className="flex flex-wrap justify-center gap-2 md:gap-4">
@@ -279,7 +279,7 @@ export const HeroCarousel = () => {
                 </div>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-wrap justify-center gap-4 md:justify-start">
+                <div className="flex flex-wrap justify-center gap-3 md:justify-start md:gap-4">
                   <a
                     href="https://summit.meetjs.pl/2026"
                     target="_blank"
@@ -298,13 +298,15 @@ export const HeroCarousel = () => {
                   </a>
                 </div>
 
-                {/* Additional Info */}
-                <p className="mt-6 text-sm text-white/70">
-                  {t('summit_2026.description')}
-                </p>
-                <p className="mt-2 text-xs font-medium text-white/60">
-                  🌍 {t('summit_2026.language_note')}
-                </p>
+                {/* Additional Info - Hidden on mobile to match slide heights */}
+                <div className="mt-6 hidden md:block">
+                  <p className="text-sm text-white/70">
+                    {t('summit_2026.description')}
+                  </p>
+                  <p className="mt-2 text-xs font-medium text-white/60">
+                    🌍 {t('summit_2026.language_note')}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
