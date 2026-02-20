@@ -31,7 +31,7 @@ export const FloatingSummitCTA = () => {
   if (isDismissed || !isVisible) return null;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 duration-500 animate-in fade-in slide-in-from-bottom-5">
+    <div className="fixed bottom-4 left-4 right-4 z-50 duration-500 animate-in fade-in slide-in-from-bottom-5 md:bottom-6 md:left-auto md:right-6">
       <div className="relative rounded-lg bg-[#bcd35d] p-[2px] shadow-2xl shadow-[#bcd35d]/20">
         <div className="rounded-lg bg-gray-900 p-4">
           <button

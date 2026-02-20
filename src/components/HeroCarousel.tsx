@@ -101,7 +101,7 @@ export const HeroCarousel = () => {
                 <Sparkles className="h-4 w-4" />
               </a>
 
-              <h1 className="-rotate-2 bg-blue p-2 text-6xl font-bold">
+              <h1 className="-rotate-2 bg-blue p-2 text-4xl font-bold md:text-6xl">
                 {t('hero.title')}
               </h1>
               <h2 className="p-4 text-xl font-medium">{t('hero.subtitle')}</h2>

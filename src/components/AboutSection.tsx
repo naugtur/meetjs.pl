@@ -7,7 +7,7 @@ export const AboutSection = async () => {
   const t = await getTranslate();
   return (
     <section
-      className="mx-auto flex w-full max-w-7xl snap-y scroll-mt-16 flex-col items-center justify-between p-12 px-2 md:flex-row lg:px-8"
+      className="mx-auto flex w-full max-w-7xl snap-y scroll-mt-16 flex-col items-center justify-between px-4 py-8 md:flex-row md:px-8 md:py-12"
       id="about"
     >
       <div className="w-full md:w-1/2">
@@ -20,7 +20,7 @@ export const AboutSection = async () => {
           className="rounded-lg shadow-lg"
         />
       </div>
-      <div className="w-full p-8 md:w-1/2 md:p-12">
+      <div className="w-full px-4 py-6 md:w-1/2 md:p-12">
         <h2 className="mb-6 text-3xl font-bold">{t('about.title')}</h2>
         <div className="flex flex-col gap-4">
           <p>{t('about.description')}</p>

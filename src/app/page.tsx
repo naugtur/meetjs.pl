@@ -14,9 +14,9 @@ export const dynamic = 'force-dynamic';
 
 const Home = () => {
   return (
-    <main>
+    <main className="w-full overflow-hidden">
       <HeroCarousel />
-      <div className="flex min-h-screen flex-col items-center">
+      <div className="flex min-h-screen w-full flex-col items-center">
         <FeaturedEvents />
         <JavaScript30YearsPromo />
         <JoinUs />

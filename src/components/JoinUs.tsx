@@ -18,7 +18,7 @@ export const JoinUs = async () => {
 
   return (
     <section
-      className="flex w-full snap-y scroll-mt-16 flex-col justify-between bg-slate-100/50 p-12 px-2 lg:px-8 dark:bg-slate-700/10"
+      className="flex w-full snap-y scroll-mt-16 flex-col justify-between bg-slate-100/50 px-4 py-8 md:px-8 md:py-12 dark:bg-slate-700/10"
       id="joinus"
     >
       <div className="flex w-full flex-col gap-4 p-4">

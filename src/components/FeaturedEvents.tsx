@@ -39,7 +39,7 @@ export const FeaturedEvents = async () => {
 
   return (
     <section
-      className="bg-branding-blue mx-auto flex w-full max-w-7xl snap-y scroll-mt-16 flex-col justify-between p-12 px-2 lg:px-8"
+      className="bg-branding-blue mx-auto flex w-full max-w-7xl snap-y scroll-mt-16 flex-col justify-between px-4 py-8 md:px-8 md:py-12"
       id="events"
     >
       <div className="flex w-full flex-col gap-4 p-4">
