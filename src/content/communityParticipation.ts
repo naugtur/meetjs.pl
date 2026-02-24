@@ -195,7 +195,6 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
     impact:
       'Sharpen your programming skills with daily algorithmic challenges and join a global community of developers solving puzzles together.',
     ctaText: 'Start Solving',
-    featured: true,
     image: 'https://adventofcode.com/favicon.png',
     tags: [
       'Programming',
@@ -204,6 +203,32 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
       'Community',
       'Daily Puzzles',
       'Problem Solving',
+    ],
+  },
+  {
+    id: 'civil42',
+    title: 'Civil42 – Obrona Cywilna Przyszłości',
+    description:
+      'Hackathon (11-12.04.2026, Lublin) + Konferencja (23.04.2026, Lublin). Ponad 24h kodowania systemów wczesnego ostrzegania, aplikacji ratunkowych i analizy OSINT. Konferencja praktyków: służby mundurowe, inżynierowie i decydenci debatują o odporności państwa i cyberbezpieczeństwie infrastruktury krytycznej. Patronat Honorowy Kancelarii Prezydenta RP.',
+    url: 'https://civil42.pl/',
+    type: 'collaboration',
+    status: 'active',
+    startDate: '2026-04-11',
+    endDate: '2026-04-23',
+    organization: 'Civil42',
+    impact:
+      'Tworzenie technologii ratujących życie i budowanie odporności społecznej w Polsce – łączność, AI, hardware, drony.',
+    ctaText: 'Zarejestruj się',
+    featured: true,
+    image: '/partners/CIVIL42_na białym.svg',
+    tags: [
+      'Security',
+      'Defense',
+      'Hackathon',
+      'Community',
+      'Technology',
+      'Poland',
+      'Lublin',
     ],
   },
   {

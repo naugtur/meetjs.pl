@@ -14,6 +14,7 @@ const config: Config = {
     'from-gray-800',
     'from-emerald-600',
     'from-green-400',
+    'from-green-700',
     'from-indigo-500',
     'from-indigo-600',
     'from-orange-500',
@@ -47,6 +48,7 @@ const config: Config = {
     'to-cyan-500',
     'to-gray-900',
     'to-green',
+    'to-emerald-500',
     'to-indigo-600',
     'to-orange-500',
     'to-orange-400',
@@ -115,6 +117,10 @@ const config: Config = {
         green: {
           DEFAULT: '#bcd35d',
           400: '#bcd35d',
+          700: '#15803d',
+        },
+        emerald: {
+          500: '#10b981',
         },
         cyan: {
           400: '#22d3ee',
