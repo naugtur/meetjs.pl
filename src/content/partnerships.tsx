@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bot, BookOpen, Code } from 'lucide-react';
+import { Bot, BookOpen, Code, Shield } from 'lucide-react';
 
 export interface Partnership {
   name: string;
@@ -125,6 +125,36 @@ export const partnerships: Partnership[] = [
         caption: 'Presenting educational materials and resources',
       },
     ],
+  },
+  {
+    name: 'Civil42 – Obrona Cywilna Przyszłości',
+    website: 'https://civil42.pl/',
+    description:
+      'Największe w Polsce wydarzenie łączące technologie Dual Use z realnymi wyzwaniami bezpieczeństwa ludności. Konferencja skupia programistów, elektroników, służby mundurowe, ekspertów cyberbezpieczeństwa i organizacje pozarządowe wokół tematyki obrony cywilnej i odporności społecznej. Patronat Honorowy Kancelarii Prezydenta RP.',
+    details: [
+      'HACKATHON 11-12.04.2026 – Fermentownia No.2 (Tytonie), Lublin: ponad 24h kodowania systemów wczesnego ostrzegania, aplikacji ratunkowych i analizy OSINT',
+      'Tematy hackathonu: łączność, AI, hardware, drony',
+      'KONFERENCJA 23.04.2026 – Lubelskie Centrum Konferencyjne, Lublin: spotkanie praktyków ze służb mundurowych, inżynierów i decydentów',
+      'Debaty o odporności państwa, schronach i cyberbezpieczeństwie infrastruktury krytycznej',
+      'Prezentacja najlepszych rozwiązań opracowanych na hackathonie',
+    ],
+    goals: [
+      'Budowanie odporności społecznej i świadomości obronnej',
+      'Tworzenie technologii ratujących życie – systemy wczesnego ostrzegania i aplikacje ratunkowe',
+      'Edukacja w zakresie obrony cywilnej i cyberbezpieczeństwa',
+      'Integracja środowisk IT, służb mundurowych i organizacji pozarządowych',
+    ],
+    location: 'Lublin, Polska',
+    contact: 'https://civil42.pl/',
+    icon: <Shield className="h-8 w-8 text-green-400" />,
+    gradient: 'from-green-700 to-emerald-500',
+    specialOffer: {
+      title: 'Weź udział w hackathonie',
+      description:
+        'Zarejestruj się na hackathon (11-12.04.2026) lub konferencję (23.04.2026) w Lublinie.',
+      link: 'https://civil42.pl/',
+      linkText: 'Zarejestruj się',
+    },
   },
   {
     name: 'HackYeah 2025',
