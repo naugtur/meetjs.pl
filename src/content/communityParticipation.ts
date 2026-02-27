@@ -232,6 +232,33 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
     ],
   },
   {
+    id: 'superteam-poland-2025',
+    title: 'Superteam Poland – Rust & Web3 Workshop Series',
+    description:
+      'Superteam Poland organizuje bezpłatną serię eventów w Warszawie i Krakowie (marzec–kwiecień 2025): 2-dniowe warsztaty z Rusta w blockchainie, hackathon oraz pitch contest. Uczestnicy przejdą pełną ścieżkę – od nauki Rusta, przez budowanie projektu, aż do startu na globalnym hackathonie Colosseum.',
+    url: 'https://pl.superteam.fun',
+    type: 'collaboration',
+    status: 'active',
+    startDate: '2026-03-07',
+    endDate: '2026-04-30',
+    organization: 'Superteam Poland',
+    impact:
+      'Jedna z niewielu okazji w Polsce, żeby nauczyć się Rusta od podstaw – za darmo, w praktyczny sposób i z myślą o realnym projekcie w ekosystemie Web3/Solana.',
+    ctaText: 'Dowiedz się więcej',
+    featured: true,
+    image: '/partners/SuperteamPL logo no background.png',
+    tags: [
+      'Rust',
+      'Web3',
+      'Blockchain',
+      'Solana',
+      'Hackathon',
+      'Workshop',
+      'Warsaw',
+      'Kraków',
+    ],
+  },
+  {
     id: 'ugotit-contest-2025',
     title: 'Konkurs technologiczny UGotIT',
     description:

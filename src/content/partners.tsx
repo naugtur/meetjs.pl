@@ -111,4 +111,9 @@ export const PARTNERS = [
     src: '/partners/brave-white-logo.svg',
     alt: 'BRAVE.courses',
   },
+  {
+    href: 'https://pl.superteam.fun',
+    src: '/partners/SuperteamPL sign white.png',
+    alt: 'Superteam Poland',
+  },
 ];
