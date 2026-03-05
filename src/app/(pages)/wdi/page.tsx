@@ -6,20 +6,19 @@ import { CalendarIcon } from './_icons/CalendarIcon';
 import { LocationPinIcon } from './_icons/LocationPinIcon';
 import { StackedFoldersIcon } from './_icons/StackedFoldersIcon';
 
-const DISCOUNT_CODE = 'WDI25RP20';
-const DISCOUNT_END_DATE = new Date('2025-03-31');
+const DISCOUNT_CODE = 'WID26RP20';
+const DISCOUNT_END_DATE = new Date('2026-03-20');
 
 const details = [
   {
     icon: CalendarIcon,
     name: 'Dates',
-    description: 'April 4th, 2025 (online) and April 5th, 2025 (in-person)',
+    description: 'March 19th, 2026 (online) and March 20th, 2026 (in-person)',
   },
   {
     icon: LocationPinIcon,
     name: 'Location',
-    description:
-      'Faculty of Mathematics and Information Science, Warsaw University of Technology',
+    description: 'PGE Narodowy, Warsaw',
   },
   {
     icon: StackedFoldersIcon,
@@ -37,7 +36,7 @@ export default function Page() {
   return (
     <div className="container mx-auto max-w-3xl py-16">
       <div className="mb-8 flex flex-col items-start justify-between md:flex-row md:items-center">
-        <h1 className="mb-4 text-4xl font-bold md:mb-0">Warsaw IT Days 2025</h1>
+        <h1 className="mb-4 text-4xl font-bold md:mb-0">Warsaw IT Days 2026</h1>
         <ActionLink href="https://warszawskiedniinformatyki.pl/">
           Register Now! 🚀
         </ActionLink>
@@ -72,13 +71,13 @@ export default function Page() {
       <div className="mb-8 space-y-4">
         <p>
           We helped put together the JavaScript track on the Warsaw IT Days on
-          April 4th online and April 5th in Warsaw at the Faculty of Mathematics
-          and Information Science, Warsaw University of Technology.
+          March 19th online and March 20th in Warsaw at PGE Narodowy.
         </p>
         <p>
-          With 25 tracks and 300 talks, including several selected by the
+          With 25+ tracks and 300+ talks, including several selected by the
           meet.js crew, this is one of the largest IT events in Poland this
-          year!
+          year! The 17th edition brings together over 10,000 IT & Data Science
+          professionals.
         </p>
         <p className="font-semibold">Hope to see you there!</p>
       </div>
@@ -103,7 +102,7 @@ export default function Page() {
         <h2 className="mb-4 text-2xl font-semibold">Special Discount</h2>
         <div className="space-y-4 rounded-lg border border-blue-200 bg-blue-50 p-6">
           <p>
-            Until March 31st, 2025, you can buy a Standard or Executive ticket
+            Until March 20th, 2026, you can buy a Standard or Executive ticket
             with a 20% discount using a special code from the Program Council:
           </p>
 
