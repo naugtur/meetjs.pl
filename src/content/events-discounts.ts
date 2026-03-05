@@ -2,6 +2,26 @@ import { Promo } from '../types/promo';
 
 export const eventsDiscounts: Promo[] = [
   {
+    id: 'infoshare-2026',
+    name: 'Infoshare 2026',
+    message: '10% off with code ISC26-meetjs10!',
+    cta: '👉 Get 10% Off',
+    ticketLink:
+      'https://infoshare.pl/is-register/?discount_code=ISC26-meetjs10&utm_source=meet_js&utm_medium=community_partner&utm_campaign=isc2026',
+    eventLink:
+      'https://infoshare.pl/?utm_source=meet_js&utm_medium=community_partner&utm_campaign=isc2026',
+    expiresAt: '2026-05-21T23:59:59+02:00',
+    description:
+      '20. edycja Infoshare! Największa polska konferencja technologiczna powraca 20-21 maja 2026 w Gdańsku pod hasłem: Shape Tomorrow Today. 📚 Sceny tematyczne: Inspire, Marketing & Sales, Innovation, Leaders, Dev Trends, AI & Architecture, R&D & Cybersec. 🤝 Networking bez barier, moderowane dyskusje Round Tables, sesje Q&A. 🌊 Side eventy w Trójmieście, w tym kultowe Great Networking Party. Świętuj z nami 20 lat innowacji! Use code ISC26-meetjs10 for 10% off your ticket!',
+    gradient: 'bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600',
+    icon: '🎟️',
+    image: '/partners/inforshare-kwadrat.png',
+    emojiRight: '🇵🇱',
+    country: 'Poland',
+    city: 'Gdańsk',
+    discountCode: 'ISC26-meetjs10',
+  },
+  {
     id: 'infoshare-katowice-2025',
     name: 'Infoshare Katowice 2025',
     message: '10% off with code ISK25-meetjs10!',
