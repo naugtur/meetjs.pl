@@ -135,6 +135,24 @@
     "title": "Community Participation",
     "until_date": "Until"
   },
+  "media": {
+    "page_title": "📺 Media Coverage",
+    "subtitle": "Media materials, interviews and publications about meet.js",
+    "section_title": "meet.js in the media",
+    "section_description": "See how media writes and talks about the largest JavaScript community in Poland",
+    "view_material": "View Material",
+    "cta_title": "Want to write about us?",
+    "cta_description": "We are open to cooperation with the media. Contact us!",
+    "cta_button": "Contact Us",
+    "empty_title": "More materials coming soon",
+    "empty_description": "We are working on collecting all publications about meet.js",
+    "type": {
+      "video": "Video",
+      "article": "Article",
+      "podcast": "Podcast",
+      "interview": "Interview"
+    }
+  },
   "community_partnerships": {
     "contact_project": "Contact Project",
     "cta_description": "If you're running an educational or community initiative that aligns with our values, we'd love to hear from you.",
@@ -362,6 +380,7 @@
       "coming_soon": "(Coming Soon)",
       "community_participation": "Community Participation",
       "community_partnerships": "Community Partnerships",
+      "media_coverage": "Media Coverage",
       "open_source": "Open Source Support",
       "event_discounts": "Event Discounts",
       "learning_discounts": "Learning Discounts",

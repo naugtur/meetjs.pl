@@ -58,7 +58,8 @@
     "prettier": "prettier --write .",
     "tolgee:pull": "tolgee pull",
     "tolgee:push": "tolgee push",
-    "tolgee:sync": "tolgee sync"
+    "tolgee:sync": "tolgee sync",
+    "screenshots:generate": "node scripts/generate-media-screenshots.js"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.9",
@@ -111,6 +112,7 @@
     "postcss": "^8.4.41",
     "prettier": "3.7.4",
     "prettier-plugin-tailwindcss": "^0.7.2",
+    "puppeteer": "^24.37.5",
     "tailwindcss": "^3.4.17",
     "typescript": "5.8.3",
     "typescript-eslint": "^8.46.0",
