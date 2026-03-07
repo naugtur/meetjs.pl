@@ -571,4 +571,22 @@ export const eventsDiscounts: Promo[] = [
     city: 'Cluj-Napoca',
     discountCode: 'love_for_communities',
   },
+  {
+    id: 'ai-miners-5-2026',
+    name: 'AI Miners #5',
+    message: '10% off with code from link!',
+    cta: '👉 Get 10% Off',
+    ticketLink: 'https://easl.ink/oGtun',
+    eventLink: 'https://aiminers.pl',
+    expiresAt: '2026-03-26T17:00:00+01:00',
+    description:
+      '5. edycja AI Miners w Katowicach! Same konkrety od ekspertów: Piotr Cieluchowski, Robert Partyka oraz Tomasz Bartel. W programie prelekcje o Gemini API, Spec-Driven Development, ochronie systemów AI oraz - po raz pierwszy - panel dyskusyjny. Use the link for 10% off your ticket!',
+    gradient: 'bg-gradient-to-r from-orange-500 via-red-500 to-purple-600',
+    icon: '⛏️',
+    image: '/partners/ai-miners.png',
+    emojiRight: '🇵🇱',
+    country: 'Poland',
+    city: 'Katowice',
+    discountCode: 'MeetJSx10',
+  },
 ];
