@@ -45,7 +45,7 @@ const variantConfigs: Record<PromoVariant, VariantConfig> = {
       'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700',
     linkColor:
       'text-purple-600 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-300',
-    websiteLabel: 'Event Website',
+    websiteLabel: 'Website',
   },
   software: {
     iconBg: 'bg-gradient-to-br from-indigo-500 to-purple-600',
@@ -55,7 +55,7 @@ const variantConfigs: Record<PromoVariant, VariantConfig> = {
       'bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700',
     linkColor:
       'text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300',
-    websiteLabel: 'Product Website',
+    websiteLabel: 'Website',
   },
   learning: {
     iconBg: 'bg-gradient-to-br from-green-500 to-teal-600',
@@ -66,7 +66,7 @@ const variantConfigs: Record<PromoVariant, VariantConfig> = {
     ctaTextColor: 'text-white',
     linkColor:
       'text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300',
-    websiteLabel: 'Course Website',
+    websiteLabel: 'Website',
   },
 };
 
