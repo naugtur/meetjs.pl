@@ -81,4 +81,19 @@ export const learningDiscounts: Promo[] = [
     emojiRight: '👨‍👩‍👧‍👦',
     discountCode: 'meetjs',
   },
+  {
+    id: 'nextjsweekly-2026',
+    name: 'Next.js Weekly',
+    message: 'Stay updated with the best Next.js content every week!',
+    cta: '📬 Subscribe Now',
+    ticketLink: 'https://nextjsweekly.com/?utm_source=conf&utm_medium=meetjs',
+    eventLink: 'https://nextjsweekly.com',
+    expiresAt: '2026-12-31T23:59:59+01:00',
+    description:
+      'A curated newsletter that brings you the best Next.js articles, tools, and projects straight to your inbox once every week. Stay ahead with the latest Next.js developments, tutorials, and community insights.',
+    gradient: 'bg-gradient-to-r from-black via-gray-800 to-black',
+    icon: '📬',
+    image: '/partners/nextjsweekly-logo.svg',
+    emojiRight: '⚡',
+  },
 ];
