@@ -3,6 +3,13 @@ import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { EventCard } from '@/components/EventCard';
 import type { EventType } from '@/types/event';
 
+// Mock @tolgee/react to avoid needing TolgeeProvider
+vi.mock('@tolgee/react', () => ({
+  useTranslate: () => ({
+    t: (key: string) => key,
+  }),
+}));
+
 // Mock useLocale hook
 vi.mock('@/hooks/useLocale', () => ({
   useLocale: () => ({
