@@ -26,11 +26,6 @@ export const PARTNERS = [
     alt: 'Eleven Labs',
   },
   {
-    href: 'https://www.meetup.com/gdansk-typescript/',
-    src: '/partners/TSWrocław.png',
-    alt: 'Gdańsk TypeScript',
-  },
-  {
     href: 'https://warsawjs.com/',
     src: '/partners/warsawJS.svg',
     alt: 'WarsawJS',
@@ -47,19 +42,9 @@ export const PARTNERS = [
     alt: 'Siepomaga',
   },
   {
-    href: 'https://4developers.org.pl/',
-    src: '/partners/4developers.png',
-    alt: '4developers',
-  },
-  {
     href: 'https://infoshare.pl/',
     src: '/partners/infoshare.png',
     alt: 'infoshare',
-  },
-  {
-    href: 'https://asi.wroclaw.pl/',
-    src: '/partners/asi.svg',
-    alt: 'Akademickie Stowarzyszenie Informatyczne',
   },
   {
     href: 'https://sesja.linuksowa.pl/',
@@ -105,11 +90,6 @@ export const PARTNERS = [
     href: 'https://kalendarzprogramisty.pl',
     src: '/partners/skkp.png',
     alt: 'Świąteczny Kalendarz Kariery Programisty',
-  },
-  {
-    href: 'https://brave.courses/',
-    src: '/partners/brave-white-logo.svg',
-    alt: 'BRAVE.courses',
   },
   {
     href: 'https://pl.superteam.fun',

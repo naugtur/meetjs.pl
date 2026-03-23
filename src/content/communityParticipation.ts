@@ -157,31 +157,6 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
     tags: ['Christmas', 'Education', 'Charity', 'Community'],
   },
   {
-    id: 'the5-live-initiative',
-    title: 'THE 5. LIVE – Kup książkę i wesprzyj polskie lasy',
-    description:
-      'Premiera książki "The 5." już za nami, ale wciąż możesz dołączyć do misji ratowania polskich lasów. Cały zysk ze sprzedaży trafia na projekt Połączona Puszcza Polska.',
-    url: 'https://the5.live?r=5VqoY',
-    type: 'initiative',
-    status: 'completed',
-    startDate: '2025-12-10',
-    endDate: '2025-12-10',
-    organization: 'The 5. / BRAVE.courses',
-    impact:
-      'Kupując książkę wspierasz działania na rzecz ochrony polskich lasów i rozwój przedsiębiorczości w Polsce.',
-    ctaText: 'Kup książkę i wspieraj lasy',
-    featured: false,
-    image: '/partners/the5.png',
-    tags: [
-      'Entrepreneurship',
-      'Charity',
-      'Book Launch',
-      'Business',
-      'Polish Market',
-      'Forest Protection',
-    ],
-  },
-  {
     id: 'advent-of-code-2025',
     title: 'Advent of Code 2025',
     description:
