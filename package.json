@@ -64,7 +64,7 @@
     "@headlessui/react": "^2.2.9",
     "@mdx-js/loader": "^3.1.1",
     "@mdx-js/react": "^3.1.1",
-    "@next/mdx": "16.2.0",
+    "@next/mdx": "16.2.1",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-dropdown-menu": "2.1.15",
     "@radix-ui/react-slot": "1.2.3",
@@ -80,7 +80,7 @@
     "embla-carousel-react": "^8.6.0",
     "lucide-react": "^0.525.0",
     "motion": "^12.23.0",
-    "next": "16.2.0",
+    "next": "16.2.1",
     "react": "19.2.4",
     "react-confetti": "^6.4.0",
     "react-dom": "19.2.4",
@@ -96,12 +96,12 @@
     "@tolgee/cli": "^2.14.0",
     "@types/mdx": "^2.0.13",
     "@types/node": "^22.19.15",
-    "@types/react": "19.2.10",
+    "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "9.31.0",
-    "eslint-config-next": "16.2.0",
+    "eslint-config-next": "16.2.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-react-hooks": "^7.0.1",
@@ -125,7 +125,7 @@
   "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0",
   "pnpm": {
     "overrides": {
-      "@types/react": "19.2.10",
+      "@types/react": "19.2.14",
       "@types/react-dom": "19.2.3"
     }
   }
