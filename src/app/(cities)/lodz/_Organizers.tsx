@@ -4,8 +4,12 @@ export const LodzOrganizers: Organizer[] = [
   {
     name: 'Krzysztof Krawiec',
     image: '/city/lodz/organizers/krzysztof.jpeg',
-    email: '',
     linkedin: 'https://www.linkedin.com/in/kkrawiec/',
-    gitHub: '',
+  },
+  {
+    name: 'Michał Hadrysiak',
+    image: '/city/lodz/organizers/hans.jpg',
+    linkedin: 'https://www.linkedin.com/in/michal-hadrysiak/',
+    gitHub: 'https://github.com/onlyhans-dev',
   },
 ];
