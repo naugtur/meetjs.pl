@@ -82,6 +82,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'adventofcode.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'crossweb.pl',
+      },
     ],
     // Next.js 16 defaults: minimumCacheTTL changed from 60s to 4 hours (14400s)
     // qualities default changed from [1..100] to [75]

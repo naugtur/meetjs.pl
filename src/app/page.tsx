@@ -8,6 +8,7 @@ import { HeroCarousel } from '@/components/HeroCarousel';
 import { PartnersSection } from '@/components/PartnersSection';
 import { CommunityParticipation } from '@/components/CommunityParticipationServer';
 import { YouTubeSubscribeBanner } from '@/components/YouTubeSubscribeBanner';
+import { SpeakerFaces } from '@/components/SpeakerFaces';
 
 export const dynamic = 'force-dynamic';
 
@@ -25,6 +26,7 @@ const Home = () => {
           <AboutSection />
           <Stats />
         </div>
+        <SpeakerFaces />
         <PartnersSection />
       </div>
       {/*<FloatingSummitCTA />*/}

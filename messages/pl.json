@@ -382,6 +382,7 @@
       "code_of_conduct": "kodeks postępowania",
       "discounts": "\uD83D\uDCB0 zniżki",
       "summit": "summit",
+      "speakers": "\uD83C\uDFA4 prelegenci",
       "videos": "\uD83C\uDFA5 wideo",
       "wdi_2025": "WDI 2025"
     },
@@ -615,10 +616,19 @@
     "description": "Dołącz do nas na cały dzień nauki, networkingu i inspiracji w SGH - Szkole Głównej Handlowej w Warszawie",
     "language_note": "Wydarzenie w języku angielskim"
   },
-  "event_card": {
-    "conference": "Konferencja",
-    "register": "Zarejestruj się",
-    "rsvp": "RSVP"
+  "speaker_faces": {
+    "community_members": "prelegentów z naszej społeczności",
+    "view_all": "Zobacz Wszystkich Prelegentów"
+  },
+  "speakers_page": {
+    "meta_title": "Prelegenci - meet.js",
+    "meta_description": "Wszyscy prelegenci, którzy wystąpili na wydarzeniach meet.js w Polsce.",
+    "page_title": "Prelegenci",
+    "subtitle": "Wszyscy prelegenci, którzy wystąpili na wydarzeniach meet.js",
+    "events_count": "Wystąpienia: {count}",
+    "view_profile": "Zobacz profil na Crossweb",
+    "no_speakers": "Brak danych o prelegentach w tej chwili.",
+    "powered_by": "Dane o prelegentach dostarcza"
   },
   "welcome": "Witamy w meet.js"
 }
