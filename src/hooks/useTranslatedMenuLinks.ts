@@ -20,6 +20,12 @@ export const useTranslatedMenuLinks = (): MenuLink[] => {
       external: false,
     },
     {
+      name: t('navigation.menu_items.speakers'),
+      href: '/speakers',
+      current: false,
+      external: false,
+    },
+    {
       name: t('navigation.menu_items.cities'),
       href: '/events',
       current: false,

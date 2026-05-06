@@ -382,6 +382,7 @@
       "code_of_conduct": "code of conduct",
       "discounts": "\uD83D\uDCB0 discounts",
       "summit": "summit",
+      "speakers": "\uD83C\uDFA4 speakers",
       "videos": "\uD83C\uDFA5 videos",
       "wdi_2025": "WDI 2025"
     },
@@ -615,10 +616,19 @@
     "description": "Join us for a full day of learning, networking, and inspiration at SGH Warsaw School of Economics",
     "language_note": "Event in English"
   },
-  "event_card": {
-    "conference": "Conference",
-    "register": "Register",
-    "rsvp": "RSVP"
+  "speaker_faces": {
+    "community_members": "speakers from the community",
+    "view_all": "See All Speakers"
+  },
+  "speakers_page": {
+    "meta_title": "Speakers - meet.js",
+    "meta_description": "All speakers who have presented at meet.js events across Poland.",
+    "page_title": "Speakers",
+    "subtitle": "All speakers who have presented at meet.js events",
+    "events_count": "Talks: {count}",
+    "view_profile": "View profile on Crossweb",
+    "no_speakers": "No speakers data available at the moment.",
+    "powered_by": "Speaker data provided by"
   },
   "welcome": "Welcome to meet.js"
 }
