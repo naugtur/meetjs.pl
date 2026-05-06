@@ -91,7 +91,7 @@ export const learningDiscounts: Promo[] = [
     expiresAt: '2026-12-31T23:59:59+01:00',
     description:
       'A curated newsletter that brings you the best Next.js articles, tools, and projects straight to your inbox once every week. Stay ahead with the latest Next.js developments, tutorials, and community insights.',
-    gradient: 'bg-gradient-to-r from-black via-gray-800 to-black',
+    gradient: 'bg-gradient-to-r from-gray-900 via-indigo-900 to-gray-900',
     icon: '📬',
     image: '/partners/nextjsweekly-logo.svg',
     emojiRight: '⚡',
