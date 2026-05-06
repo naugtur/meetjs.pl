@@ -277,6 +277,31 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
     tags: ['Contest', 'AI', 'Business', 'AWS', 'Innovation'],
     pinned: true,
   },
+  {
+    id: 'ai-sync-warsaw-2026',
+    title: 'AI Sync Conference 2026',
+    description:
+      "A focused meetup for Warsaw's AI builders. One evening, four keynotes, 20th floor of Warsaw with panoramic views. 4 talks from founders & builders who've scaled AI and tech companies, Q&A after each talk, expert panel discussion, and 2+ hours of structured networking with drinks, food, and views. Curated room of 100 — founders, CTOs, senior devs, product leaders, early-stage investors.",
+    url: 'https://www.aisyncconf.com',
+    type: 'collaboration',
+    status: 'active',
+    startDate: '2026-05-27',
+    endDate: '2026-05-27',
+    organization: 'AI Sync',
+    impact:
+      'Connect with AI practitioners and founders in an intimate setting with high-quality networking and knowledge sharing.',
+    ctaText: 'Get Tickets',
+    featured: true,
+    image: '/partners/ai-sync.svg',
+    tags: [
+      'AI',
+      'Conference',
+      'Warsaw',
+      'Networking',
+      'Founders',
+      'Machine Learning',
+    ],
+  },
 ];
 
 const sortByNewest = (items: CommunityItem[]): CommunityItem[] => {

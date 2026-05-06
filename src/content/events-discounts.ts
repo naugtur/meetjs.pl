@@ -589,4 +589,21 @@ export const eventsDiscounts: Promo[] = [
     city: 'Katowice',
     discountCode: 'MeetJSx10',
   },
+  {
+    id: 'ai-sync-warsaw-2025',
+    name: 'AI Sync Conference',
+    message: "A focused meetup for Warsaw's AI builders",
+    cta: '👉 Get Tickets',
+    ticketLink: 'https://luma.com/yzofpe3a?tk=Ci1gkq',
+    eventLink: 'https://www.aisyncconf.com',
+    expiresAt: '2026-05-27T16:30:00+02:00',
+    description:
+      "AI Sync is built for the people actually shipping AI. One evening, four keynotes, 20th floor of Warsaw with panoramic views. 4 talks from founders & builders who've scaled AI and tech companies, Q&A after each talk, expert panel discussion, and 2+ hours of structured networking with drinks, food, and views. Curated room of 100 — founders, CTOs, senior devs, product leaders, early-stage investors. May 27, doors at 4:30pm, talks start 5pm, networking from 8pm. BEC Financial Technologies, Emilii Plater 53, Warsaw.",
+    gradient: 'bg-gradient-to-r from-gray-900 via-blue-900 to-indigo-900',
+    icon: '🤖',
+    image: '/partners/ai-sync.svg',
+    emojiRight: '🇵🇱',
+    country: 'Poland',
+    city: 'Warsaw',
+  },
 ];
