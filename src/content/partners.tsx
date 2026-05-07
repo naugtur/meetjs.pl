@@ -26,11 +26,6 @@ export const PARTNERS = [
     alt: 'Eleven Labs',
   },
   {
-    href: 'https://www.meetup.com/gdansk-typescript/',
-    src: '/partners/TSWrocław.png',
-    alt: 'Gdańsk TypeScript',
-  },
-  {
     href: 'https://warsawjs.com/',
     src: '/partners/warsawJS.svg',
     alt: 'WarsawJS',
@@ -106,7 +101,7 @@ export const PARTNERS = [
     src: '/partners/skkp.png',
     alt: 'Świąteczny Kalendarz Kariery Programisty',
   },
-  {
+    {
     href: 'https://brave.courses/',
     src: '/partners/brave-white-logo.svg',
     alt: 'BRAVE.courses',
