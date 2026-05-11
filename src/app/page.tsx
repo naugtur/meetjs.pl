@@ -9,6 +9,7 @@ import { PartnersSection } from '@/components/PartnersSection';
 import { CommunityParticipation } from '@/components/CommunityParticipationServer';
 import { YouTubeSubscribeBanner } from '@/components/YouTubeSubscribeBanner';
 import { FloatingSummitCTA } from '@/components/FloatingSummitCTA';
+import { FeaturedBlogPosts } from '@/components/FeaturedBlogPosts';
 
 export const dynamic = 'force-dynamic';
 
@@ -26,6 +27,7 @@ const Home = () => {
           <AboutSection />
           <Stats />
         </div>
+        <FeaturedBlogPosts />
         <PartnersSection />
       </div>
       <FloatingSummitCTA />
