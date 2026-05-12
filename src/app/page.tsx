@@ -8,7 +8,6 @@ import { HeroCarousel } from '@/components/HeroCarousel';
 import { PartnersSection } from '@/components/PartnersSection';
 import { CommunityParticipation } from '@/components/CommunityParticipationServer';
 import { YouTubeSubscribeBanner } from '@/components/YouTubeSubscribeBanner';
-import { FloatingSummitCTA } from '@/components/FloatingSummitCTA';
 
 export const dynamic = 'force-dynamic';
 
@@ -28,7 +27,7 @@ const Home = () => {
         </div>
         <PartnersSection />
       </div>
-      <FloatingSummitCTA />
+      {/*<FloatingSummitCTA />*/}
     </main>
   );
 };
