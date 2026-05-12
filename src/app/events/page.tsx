@@ -9,7 +9,6 @@ import { changeCityName } from '@/utils/changeCityName';
 import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
 import { filterUpcomingEvents, sortEventsByDate } from '@/utils/eventUtils';
 import { getTranslate } from '@/tolgee/server';
-import { Summit2026Banner } from '@/components/Summit2026Banner';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslate();
@@ -61,7 +60,7 @@ const EventsPage = async ({ searchParams }: EventsPageProps) => {
 
   return (
     <>
-      <Summit2026Banner />
+      {/*<Summit2026Banner />*/}
       <main className="mx-auto flex min-h-screen max-w-7xl flex-col items-center gap-6 p-5 px-5 sm:px-6 lg:px-8">
         <section className="flex w-full flex-col items-center justify-center gap-6">
           <h1 className="py-4 text-4xl font-bold">
