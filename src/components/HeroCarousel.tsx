@@ -5,20 +5,20 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselPrevious,
   CarouselNext,
+  CarouselPrevious,
 } from '@/components/ui/carousel';
 import { RankingBanner } from '@/components/RankingBanner';
 import { AwardNomination } from '@/components/AwardNomination';
 import {
+  Calendar,
   Instagram,
+  MapPin,
   MessagesSquare,
   Sparkles,
-  Calendar,
-  MapPin,
 } from 'lucide-react';
 import { useTranslate } from '@tolgee/react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export const HeroCarousel = () => {
   const { t } = useTranslate();
@@ -32,36 +32,36 @@ export const HeroCarousel = () => {
     'upcoming',
   );
 
-  useEffect(() => {
-    const eventStartDate = new Date('2026-03-04T09:00:00+02:00').getTime();
-    const eventEndDate = new Date('2026-03-04T18:00:00+02:00').getTime();
-
-    const updateCountdown = () => {
-      const now = new Date().getTime();
-      const difference = eventStartDate - now;
-
-      if (now >= eventEndDate) {
-        setEventStatus('ended');
-      } else if (now >= eventStartDate) {
-        setEventStatus('live');
-      } else {
-        setEventStatus('upcoming');
-        setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor(
-            (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-          ),
-          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((difference % (1000 * 60)) / 1000),
-        });
-      }
-    };
-
-    updateCountdown();
-    const interval = setInterval(updateCountdown, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   const eventStartDate = new Date('2026-03-04T09:00:00+02:00').getTime();
+  //   const eventEndDate = new Date('2026-03-04T18:00:00+02:00').getTime();
+  //
+  //   const updateCountdown = () => {
+  //     const now = new Date().getTime();
+  //     const difference = eventStartDate - now;
+  //
+  //     if (now >= eventEndDate) {
+  //       setEventStatus('ended');
+  //     } else if (now >= eventStartDate) {
+  //       setEventStatus('live');
+  //     } else {
+  //       setEventStatus('upcoming');
+  //       setTimeLeft({
+  //         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+  //         hours: Math.floor(
+  //           (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+  //         ),
+  //         minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+  //         seconds: Math.floor((difference % (1000 * 60)) / 1000),
+  //       });
+  //     }
+  //   };
+  //
+  //   updateCountdown();
+  //   const interval = setInterval(updateCountdown, 1000);
+  //
+  //   return () => clearInterval(interval);
+  // }, []);
 
   return (
     <Carousel
@@ -280,14 +280,14 @@ export const HeroCarousel = () => {
 
                 {/* CTA Buttons */}
                 <div className="flex flex-wrap justify-center gap-3 md:justify-start md:gap-4">
-                  <a
-                    href="https://summit.meetjs.pl/2026"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block w-fit rounded-lg bg-[#bcd35d] px-8 py-4 text-base font-bold text-black transition-all hover:bg-[#bcd35d]/90 hover:shadow-lg hover:shadow-[#bcd35d]/20"
-                  >
-                    {t('summit_2026.cta_get_tickets')}
-                  </a>
+                  {/*<a*/}
+                  {/*  href="https://summit.meetjs.pl/2026"*/}
+                  {/*  target="_blank"*/}
+                  {/*  rel="noopener noreferrer"*/}
+                  {/*  className="inline-block w-fit rounded-lg bg-[#bcd35d] px-8 py-4 text-base font-bold text-black transition-all hover:bg-[#bcd35d]/90 hover:shadow-lg hover:shadow-[#bcd35d]/20"*/}
+                  {/*>*/}
+                  {/*  {t('summit_2026.cta_get_tickets')}*/}
+                  {/*</a>*/}
                   <a
                     href="https://summit.meetjs.pl/2026#speakers"
                     target="_blank"
