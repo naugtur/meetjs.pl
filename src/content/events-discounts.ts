@@ -590,6 +590,23 @@ export const eventsDiscounts: Promo[] = [
     discountCode: 'MeetJSx10',
   },
   {
+    id: 'women-in-tech-summit-2026',
+    name: 'Women in Tech Summit 2026',
+    message: '50% off – ask your meet.js local organizer for the code!',
+    cta: '👉 Get Tickets',
+    ticketLink: 'https://summit.perspektywy.org/2026/',
+    eventLink: 'https://summit.perspektywy.org/2026/',
+    expiresAt: '2026-06-11T23:59:59+02:00',
+    description:
+      'Największe wydarzenie technologiczne dla kobiet w Europie! 10-11 czerwca 2026, Warszawa EXPO XXI. Hasło przewodnie: "Unleash New Energy". 10 000+ uczestniczek i uczestników, 500+ ekspertów, 100 największych firm technologicznych, 150 prelegentek i prelegentów. Tematy: Nowa energia, Przemysł ciężki, Robotyka, Biotechnologia, Technologia zorientowana na człowieka, Przyszłość pracy, Vibe coding, Odpowiedzialna AI. Targi kariery, warsztaty, sesje mentoringowe i networking. meet.js jest Community Partnerem - zapytaj lokalnego organizatora o kod zniżkowy 50% dla społeczności!',
+    gradient: 'bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500',
+    icon: '👩‍💻',
+    image: '/discounts/perspektywy.png',
+    emojiRight: '🇵🇱',
+    country: 'Poland',
+    city: 'Warsaw',
+  },
+  {
     id: 'ai-sync-warsaw-2025',
     name: 'AI Sync Conference',
     message: '20% off with code MEETJS-20!',
