@@ -20,6 +20,23 @@ export const eventsDiscounts: Promo[] = [
     discountCode: 'FRIENDS',
   },
   {
+    id: 'testing-ground-2026',
+    name: 'Testing Ground Conference 2026',
+    message: 'Media partnership - 20% off for meet.js community!',
+    cta: '👉 Get 20% Off',
+    ticketLink: 'https://testingground.pl/',
+    eventLink: 'https://testingground.pl/',
+    expiresAt: '2026-10-05T23:59:59+02:00',
+    description:
+      'Testing Ground Conference 2026 - największa polska konferencja łącząca świat jakości oprogramowania! Odbędzie się 05-06 października 2026 w Airport Hotel Okęcie w Warszawie. Trzy główne ścieżki: testowanie oprogramowania, cyberbezpieczeństwo oraz dostępność cyfrowa. 35 topowych ekspertów, blisko 500 uczestników, ponad 100 firm i 200 partnerów.',
+    gradient: 'bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500',
+    icon: '🧪',
+    emojiRight: '🇵🇱',
+    country: 'Poland',
+    city: 'Warsaw',
+    image: '/discounts/testinggroundconference.png',
+  },
+  {
     id: 'infoshare-2026',
     name: 'Infoshare 2026',
     message: '10% off with code ISC26-meetjs10!',

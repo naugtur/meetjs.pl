@@ -14,6 +14,7 @@ const config: Config = {
     'from-gray-700',
     'from-gray-800',
     'from-gray-900',
+    'from-emerald-500',
     'from-emerald-600',
     'from-green-400',
     'from-green-700',
@@ -26,6 +27,7 @@ const config: Config = {
     'from-purple-600',
     'from-red-500',
     'from-red-600',
+    'from-teal-500',
     'from-violet-600',
     'from-yellow-400',
     // Via colors

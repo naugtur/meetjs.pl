@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { Bot, BookOpen, Code, Shield, Users } from 'lucide-react';
+import { Bot, BookOpen, Code, Shield, Users, TestTube } from 'lucide-react';
 
 export interface Partnership {
   name: string;
@@ -61,6 +61,38 @@ export const partnerships: Partnership[] = [
         "Use code FRIENDS for 10% off tickets to the world's biggest React conference",
       link: 'https://ti.to/gitnation/react-summit-2026/discount/FRIENDS',
       linkText: 'Get 10% Off',
+    },
+  },
+  {
+    name: 'Testing Ground Conference 2026',
+    website: 'https://testingground.pl/',
+    description:
+      'Największa polska konferencja łącząca świat jakości oprogramowania - testowanie, cyberbezpieczeństwo i dostępność cyfrowa.',
+    details: [
+      '05-06 października 2026 w Airport Hotel Okęcie w Warszawie',
+      'Trzy ścieżki tematyczne: testowanie oprogramowania, cyberbezpieczeństwo, dostępność cyfrowa',
+      '35 topowych ekspertów z całej Polski',
+      'Blisko 500 uczestników i ponad 100 firm z różnych sektorów',
+      'Ponad 200 partnerów wydarzenia',
+      'Widoczność logo meet.js na stronie konferencji i materiałach promocyjnych',
+      'Możliwość ustawienia rollupa meet.js podczas konferencji',
+    ],
+    goals: [
+      'Promowanie jakości oprogramowania w społeczności developerskiej',
+      'Wzajemna promocja - meet.js promuje konferencję, a TGC promuje meet.js',
+      'Ekskluzywny rabat 20% dla społeczności meet.js (standard max 15%)',
+      'Dostarczenie wartościowej edukacji z obszaru QA, security i accessibility',
+    ],
+    location: 'Warszawa, Polska',
+    contact: 'kontakt@testingground.pl',
+    icon: <TestTube className="h-8 w-8 text-emerald-500" />,
+    gradient: 'from-emerald-500 to-teal-500',
+    specialOffer: {
+      title: '20% zniżki dla meet.js',
+      description:
+        'Ekskluzywny rabat 20% dla społeczności meet.js. Skontaktuj się z kontakt@testingground.pl lub zapytaj lokalnego organizatora o kod.',
+      link: 'https://testingground.pl/',
+      linkText: 'Sprawdź szczegóły',
     },
   },
   {

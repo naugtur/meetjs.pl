@@ -302,6 +302,32 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
       'Machine Learning',
     ],
   },
+  {
+    id: 'testing-ground-2026',
+    title: 'Testing Ground Conference 2026',
+    description:
+      'Największa polska konferencja łącząca świat jakości oprogramowania. Trzy ścieżki tematyczne: testowanie oprogramowania, cyberbezpieczeństwo oraz dostępność cyfrowa. 35 topowych ekspertów, blisko 500 uczestników, ponad 100 firm i 200 partnerów.',
+    url: 'https://testingground.pl/',
+    type: 'collaboration',
+    status: 'active',
+    startDate: '2026-10-05',
+    endDate: '2026-10-06',
+    organization: 'Testing Ground',
+    impact:
+      'Media partnership z meet.js - widoczność logo, możliwość ustawienia rollupa, ekskluzywny rabat 20% dla społeczności.',
+    ctaText: 'Sprawdź szczegóły',
+    featured: true,
+    image: '/discounts/testinggroundconference.png',
+    tags: [
+      'QA',
+      'Testing',
+      'Security',
+      'Accessibility',
+      'Conference',
+      'Warsaw',
+      'Media Partnership',
+    ],
+  },
 ];
 
 const sortByNewest = (items: CommunityItem[]): CommunityItem[] => {
