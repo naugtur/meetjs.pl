@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bot, BookOpen, Code, Shield } from 'lucide-react';
+import { Bot, BookOpen, Code, Shield, Users } from 'lucide-react';
 
 export interface Partnership {
   name: string;
@@ -154,6 +154,36 @@ export const partnerships: Partnership[] = [
         'Zarejestruj się na hackathon (11-12.04.2026) lub konferencję (23.04.2026) w Lublinie.',
       link: 'https://civil42.pl/',
       linkText: 'Zarejestruj się',
+    },
+  },
+  {
+    name: 'Women in Tech Summit 2026',
+    website: 'https://summit.perspektywy.org/2026/',
+    description:
+      'Największe wydarzenie technologiczne dla kobiet w Europie – 10-11 czerwca 2026 w Warszawie (EXPO XXI) pod hasłem "Unleash New Energy". meet.js jest oficjalnym Community Partnerem.',
+    details: [
+      '10 000+ uczestniczek i uczestników, 500+ ekspertów, 100 największych firm technologicznych',
+      '150 inspirujących prelegentek i prelegentów z całego świata',
+      'Tematy: AI, Robotyka, Biotechnologia, Vibe coding, Przyszłość pracy, Odpowiedzialna AI',
+      'Targi kariery, warsztaty, sesje mentoringowe i networking',
+      '5 darmowych biletów dla meet.js + pula biletów 50% zniżki dla społeczności',
+    ],
+    goals: [
+      'Wspieranie kobiet w technologii i budowanie inkluzywnej społeczności',
+      'Łączenie developerów z ekspertkami i liderkami branży tech',
+      'Promowanie różnorodności i innowacji w Polsce i Europie',
+      'Wzajemna promocja wydarzeń i inicjatyw społecznościowych',
+    ],
+    location: 'Warszawa, EXPO XXI',
+    contact: 'p.ceglarska@perspektywy.pl',
+    icon: <Users className="h-8 w-8 text-pink-500" />,
+    gradient: 'from-pink-500 to-purple-600',
+    specialOffer: {
+      title: '50% zniżki dla społeczności',
+      description:
+        'Kod dostępny u lokalnych organizatorów meet.js – zapytaj na wydarzeniu!',
+      link: 'https://summit.perspektywy.org/2026/',
+      linkText: 'Kup bilet',
     },
   },
   {
