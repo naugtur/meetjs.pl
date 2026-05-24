@@ -557,13 +557,13 @@ export const eventsDiscounts: Promo[] = [
   {
     id: 'jsheroes-2026',
     name: 'JSHeroes 2026',
-    message: '10% off with code love_for_communities!',
+    message: 'May 14-15, 2026 — 10% off with code love_for_communities!',
     cta: '👉 Get 10% Off',
     ticketLink: 'https://jsheroes.io/',
     eventLink: 'https://jsheroes.io/',
-    expiresAt: '2026-06-30T23:59:59+02:00',
+    expiresAt: '2026-05-15T23:59:59+02:00',
     description:
-      'JSHeroes 2026 brings together JavaScript heroes in Cluj-Napoca, Romania! Meet world-class speakers including Phil Hawksworth (Head of DevRel @ Deno) on "The time traveller\'s guide to JavaScript", Suz Hinton (Indie Developer) on "Digital Preservation and Cyberpunk for Front-end Developers", Daniel Roe (Team lead, Nuxt @ Vercel) on "Working backwards", Sara Soueidan (Inclusive UI engineer) on "The DX in HTML", Dominik Dorfmeister (TanStack Query maintainer @ Sentry) on "Dead Code Shouldn\'t Exist", Nadia Makarevich on "React Rendering Techniques", Ryan Townsend (Cloudflare) on "Faster Navigations Than React", Anjana Vakil, Craig Abbott (TetraLogical), and Cyd Stumpel on "You might not need JS". Deep technical sessions on React, accessibility, performance, web platform features, and modern JavaScript. Use code love_for_communities for 10% off your ticket!',
+      'JSHeroes 2026 takes place May 14-15, 2026 in Cluj-Napoca, Romania! 16 talks across 2 days, single-track. Speakers include Phil Hawksworth (Deno) on "The time traveller\'s guide to JavaScript", Suz Hinton on "Digital Preservation and Cyberpunk for Front-end Developers", Daniel Roe (Nuxt/Vercel) on "Working backwards", Dominik Dorfmeister (Sentry) on "Dead Code Shouldn\'t Exist", Ryan Townsend (Cloudflare) on "Breaking The Bloat", Craig Abbott (TetraLogical) on "AI and Human Centred Accessibility", Cyd Stumpel on "You might not need JS", Anjana Vakil on "Making Waves with the Web", Faris Aziz (Smallpdf) on performance optimization, Dan Neciu (Rover.com) on TanStack Query, Richard Gross on frontend code forensics, Bogdan Zaharia on managed effects, Andrei Pfeiffer on "Retired dependencies", Siddharth Dayalwal (Storyblok) on cognitive load, Zbyszek Tenerowicz (meet.js) on creative coding, and Misha Korolev on reverse-engineering JavaScript. MCs: Sara Vieira and Tejas Kumar. Use code love_for_communities for 10% off your ticket!',
     gradient: 'bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500',
     icon: '🦸',
     emojiRight: '🇷🇴',
