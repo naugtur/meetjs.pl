@@ -2,6 +2,24 @@ import { Promo } from '../types/promo';
 
 export const eventsDiscounts: Promo[] = [
   {
+    id: 'react-summit-2026',
+    name: 'React Summit 2026',
+    message: '10% off with code FRIENDS!',
+    cta: '👉 Get 10% Off',
+    ticketLink: 'https://ti.to/gitnation/react-summit-2026/discount/FRIENDS',
+    eventLink: 'https://reactsummit.com/',
+    expiresAt: '2026-06-30T23:59:59+02:00',
+    description:
+      "🚀 React Summit 2026 — Amsterdam, June 12 & 16! The world's biggest React conference brings together 60+ speakers including Kitze (Developer Who Builds & Memes), Aurora Scharff (DX Engineer, Vercel), Dominik Dorfmeister (React Query Maintainer), Mark Erikson (Redux Maintainer), Scott Tolinski (Co-host, Syntax.fm), and Alex Russell (Partner PM for Edge). Deep dives into AI-Assisted Coding, React Server Components, Full-Stack Architecture, and Career Growth. Experience Amsterdam boat & walking tours, networking, food trucks, and an after-party! Use code FRIENDS for 10% off your ticket!",
+    gradient: 'bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-500',
+    icon: '⚛️',
+    image: '/discounts/RS_Logo_Vertical_Color.png',
+    emojiRight: '🇳🇱',
+    country: 'Netherlands',
+    city: 'Amsterdam',
+    discountCode: 'FRIENDS',
+  },
+  {
     id: 'infoshare-2026',
     name: 'Infoshare 2026',
     message: '10% off with code ISC26-meetjs10!',

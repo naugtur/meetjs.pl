@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Bot, BookOpen, Code, Shield, Users } from 'lucide-react';
 
 export interface Partnership {
@@ -25,6 +26,43 @@ export interface Partnership {
 }
 
 export const partnerships: Partnership[] = [
+  {
+    name: 'React Summit 2026',
+    website: 'https://reactsummit.com/',
+    description:
+      "The world's biggest React conference featuring 60+ speakers and thousands of developers, covering everything shaping the React ecosystem right now.",
+    details: [
+      '60+ world-class speakers including Kitze, Aurora Scharff (Vercel), Dominik Dorfmeister (React Query), Mark Erikson (Redux), Scott Tolinski (Syntax.fm)',
+      'Deep dives into AI-Assisted Coding, React Server Components, Full-Stack Architecture, Performance, and Career Growth',
+      'Amsterdam boat & walking tours, networking, food trucks, and after-party',
+      'Hybrid format: June 12 & 16, 2026 in Amsterdam and online',
+      'Social media presence on Bluesky, Twitter (X), Instagram, LinkedIn, and Facebook',
+    ],
+    goals: [
+      'Bringing together the global React community for learning and networking',
+      'Showcasing the latest trends and best practices in React development',
+      'Providing platform for React experts to share knowledge and experiences',
+      'Building connections between React developers worldwide',
+    ],
+    location: 'Amsterdam, Netherlands & Online',
+    contact: 'https://reactsummit.com/',
+    icon: (
+      <Image
+        src="/discounts/RS_Logo_Vertical_Color.png"
+        alt="React Summit"
+        width={32}
+        height={32}
+      />
+    ),
+    gradient: 'from-blue-600 to-cyan-500',
+    specialOffer: {
+      title: '10% Discount - Code FRIENDS',
+      description:
+        "Use code FRIENDS for 10% off tickets to the world's biggest React conference",
+      link: 'https://ti.to/gitnation/react-summit-2026/discount/FRIENDS',
+      linkText: 'Get 10% Off',
+    },
+  },
   {
     name: 'FutureConf 2025',
     website: 'https://futureconf.tech/',
