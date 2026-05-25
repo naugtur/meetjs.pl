@@ -21,7 +21,7 @@ export default function VideosPage() {
             <a
               href="https://www.youtube.com/@meetjs"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="inline-flex items-center gap-2 rounded-lg bg-white px-8 py-4 text-lg font-semibold text-red-600 shadow-lg transition-colors duration-200 hover:bg-gray-100 hover:shadow-xl"
             >
               <FaYoutube className="h-6 w-6" />
@@ -87,7 +87,7 @@ export default function VideosPage() {
             <a
               href="https://www.youtube.com/@meetjs/videos"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="group overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-gray-800"
             >
               <div className="flex aspect-video items-center justify-center bg-gradient-to-br from-red-500 to-red-700">
@@ -110,7 +110,7 @@ export default function VideosPage() {
             <a
               href="https://www.youtube.com/@meetjs/playlists"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="group overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-gray-800"
             >
               <div className="flex aspect-video items-center justify-center bg-gradient-to-br from-purple-500 to-purple-700">
@@ -133,7 +133,7 @@ export default function VideosPage() {
             <a
               href="https://www.youtube.com/@meetjs/community"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="group overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-gray-800"
             >
               <div className="flex aspect-video items-center justify-center bg-gradient-to-br from-green-500 to-green-700">

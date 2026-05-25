@@ -47,7 +47,7 @@ export const Organizers = ({ city, organizers }: OrganizersProps) => {
                   <a
                     href={`mailto:${organizer.email}`}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener"
                   >
                     <span className="sr-only">Email</span>@
                   </a>
@@ -56,7 +56,7 @@ export const Organizers = ({ city, organizers }: OrganizersProps) => {
                   <a
                     href={organizer.linkedin}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener"
                   >
                     <span className="sr-only">Linkedin</span>
                     <FaLinkedin />
@@ -66,7 +66,7 @@ export const Organizers = ({ city, organizers }: OrganizersProps) => {
                   <a
                     href={organizer.gitHub}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener"
                   >
                     <span className="sr-only">GitHub</span>
                     <FaGithub />

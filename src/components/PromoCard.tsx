@@ -83,7 +83,7 @@ export function PromoCard({ promo }: PromoCardProps) {
             <a
               href={promo.eventLink || promo.ticketLink}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="font-medium text-white underline hover:text-white/90"
             >
               {getDomain(promo.eventLink || promo.ticketLink)}
@@ -96,7 +96,7 @@ export function PromoCard({ promo }: PromoCardProps) {
               <a
                 href={promo.ticketLink}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 className="font-medium text-white underline hover:text-white/90"
               >
                 {getDomain(promo.ticketLink)}
@@ -111,7 +111,7 @@ export function PromoCard({ promo }: PromoCardProps) {
           <a
             href={promo.ticketLink}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
             className="block w-full rounded-lg bg-white py-2 text-center font-semibold text-purple shadow transition-colors hover:bg-purple hover:text-white"
           >
             {promo.cta}

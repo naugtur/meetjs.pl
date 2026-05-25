@@ -78,7 +78,7 @@ export default function WorkshopInfo({
           <a
             href={workshopLink}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
             className="inline-flex items-center text-sm font-medium text-blue-600 hover:underline dark:text-blue-400"
           >
             Register for Workshop

@@ -96,7 +96,7 @@ export const Footer = async () => {
                       href={link.href}
                       className="hover:text-gray-300"
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="noopener"
                     >
                       {link.name}
                       <FaArrowUpRightFromSquare
@@ -127,7 +127,7 @@ export const Footer = async () => {
             <a
               href="https://cyberfolks.pl/"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="transition-opacity hover:opacity-80"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}

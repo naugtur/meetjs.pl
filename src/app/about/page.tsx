@@ -97,7 +97,7 @@ export default async function Page() {
               <a
                 href="https://summit.meetjs.pl"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 className="text-blue-600 hover:underline"
               >
                 {t('about.activities.summit.conference_link')}
@@ -120,7 +120,7 @@ export default async function Page() {
               <a
                 href="https://www.siepomaga.pl/pomagacze/meetjs"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 className="text-blue-600 hover:underline"
               >
                 Siepomaga.pl

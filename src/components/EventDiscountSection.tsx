@@ -118,7 +118,7 @@ function EventPromoCard({ promo }: { promo: Promo }) {
             <a
               href={promo.eventLink}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="group flex cursor-pointer items-center justify-between rounded-lg border border-gray-200 p-3 transition-all duration-200 hover:border-purple-300 hover:bg-purple-50/50 dark:border-gray-600 dark:hover:border-purple-600 dark:hover:bg-purple-900/10"
               aria-label={`Visit ${promo.name} website`}
               onClick={(e) => e.stopPropagation()}
@@ -143,7 +143,7 @@ function EventPromoCard({ promo }: { promo: Promo }) {
           <a
             href={promo.ticketLink}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
             className="block w-full rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 py-3 text-center font-semibold text-white shadow transition-all duration-200 hover:-translate-y-0.5 hover:from-purple-700 hover:to-pink-700 hover:shadow-lg active:scale-95"
             onClick={(e) => e.stopPropagation()}
           >

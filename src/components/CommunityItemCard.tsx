@@ -142,7 +142,7 @@ export const CommunityItemCard = ({ item }: { item: CommunityItem }) => {
           <a
             href={item.url}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
             className={`group/btn flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r ${getTypeGradient(item.type)} px-6 py-3.5 font-bold text-white shadow-lg transition-all duration-300 hover:shadow-2xl hover:brightness-110`}
           >
             <span>{item.ctaText}</span>

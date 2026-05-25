@@ -54,7 +54,7 @@ export const EventCard = ({ event }: EventCardProps) => {
             <a
               href={event.url}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="transition-colors hover:text-purple dark:hover:text-green"
             >
               {event.name}
@@ -116,7 +116,7 @@ export const EventCard = ({ event }: EventCardProps) => {
             <a
               href={event.rsvp}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className={cn(
                 buttonVariants({
                   size: 'sm',

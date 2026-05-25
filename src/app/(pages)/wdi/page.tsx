@@ -136,7 +136,7 @@ export default function Page() {
           <a
             href="https://warszawskiedniinformatyki.pl/"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
             className="text-primary hover:underline"
           >
             official website
