@@ -2,6 +2,9 @@ import { env } from '@/env';
 import { SpeakersSchema, SpeakerType } from '@/types/speaker';
 
 export const getSpeakers = async (): Promise<SpeakerType[]> => {
+  if (!env.SPEAKERS_API_URL || !env.SPEAKERS_API_TOKEN) {
+    return [];
+  }
   try {
     const res = await fetch(env.SPEAKERS_API_URL, {
       headers: {
