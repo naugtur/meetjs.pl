@@ -6,8 +6,8 @@ export const env = createEnv({
     EVENTS_API_URL: z.string().url(),
     SITE_URL: z.string().url(),
     DISCORD_SERVER_ID: z.string(),
-    SPEAKERS_API_URL: z.string().url(),
-    SPEAKERS_API_TOKEN: z.string(),
+    SPEAKERS_API_URL: z.string().url().optional(),
+    SPEAKERS_API_TOKEN: z.string().optional(),
   },
   runtimeEnv: {
     EVENTS_API_URL: process.env.EVENTS_API_URL,
