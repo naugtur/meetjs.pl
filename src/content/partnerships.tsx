@@ -179,11 +179,11 @@ export const partnerships: Partnership[] = [
     icon: <Users className="h-8 w-8 text-pink-500" />,
     gradient: 'from-pink-500 to-purple-600',
     specialOffer: {
-      title: '50% zniżki dla społeczności',
+      title: '50% zniżki – kod MEETJS_SUMMIT',
       description:
-        'Kod dostępny u lokalnych organizatorów meet.js – zapytaj na wydarzeniu!',
-      link: 'https://summit.perspektywy.org/2026/',
-      linkText: 'Kup bilet',
+        'Użyj kodu MEETJS_SUMMIT przy zakupie biletu. Limit 500 biletów ze zniżką 50%!',
+      link: 'https://go.womenintechsummit.pl/buy',
+      linkText: 'Kup bilet ze zniżką',
     },
   },
   {
