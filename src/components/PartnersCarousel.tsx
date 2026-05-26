@@ -23,7 +23,7 @@ export const PartnersCarousel = () => {
               href={partner.href}
               className="flex items-center justify-center"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img

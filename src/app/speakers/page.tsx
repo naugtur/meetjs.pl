@@ -62,7 +62,7 @@ const SpeakersPage = async () => {
                   <a
                     href={speaker.url}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener"
                     className="mt-2 inline-flex items-center gap-1 text-xs text-gray-500 hover:text-gray-700"
                   >
                     {t('speakers_page.view_profile')}
@@ -82,7 +82,7 @@ const SpeakersPage = async () => {
         <a
           href="https://crossweb.pl"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener"
           className="underline hover:text-gray-600"
         >
           Crossweb

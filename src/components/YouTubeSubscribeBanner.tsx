@@ -29,7 +29,7 @@ export const YouTubeSubscribeBanner = () => {
             <a
               href="/youtube"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-white px-6 py-3 font-semibold text-red-600 shadow-lg transition-colors duration-200 hover:bg-gray-100 hover:shadow-xl"
             >
               <FaYoutube className="h-5 w-5" />

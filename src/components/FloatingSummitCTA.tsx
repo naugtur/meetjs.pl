@@ -59,7 +59,7 @@ export const FloatingSummitCTA = () => {
               <a
                 href="https://summit.meetjs.pl/2026"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 className="inline-block rounded-md bg-[#bcd35d] px-4 py-2 text-sm font-bold text-black transition-all hover:scale-105 hover:bg-[#bcd35d]/90 hover:shadow-lg"
               >
                 Get Tickets

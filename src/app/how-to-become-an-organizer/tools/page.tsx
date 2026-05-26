@@ -24,7 +24,7 @@ export default async function OrganizerToolsPage() {
         <a
           href="https://meetjspl.github.io/assets-generator/"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener"
           className="inline-flex items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-700"
         >
           {t('organizer.generator_cta')}

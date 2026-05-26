@@ -7,7 +7,7 @@ export function AISyncLogo({ className = '' }: AISyncLogoProps) {
     <a
       href="https://www.aisyncconf.com"
       target="_blank"
-      rel="noopener noreferrer"
+      rel="noopener"
       className={`inline-flex items-center gap-2.5 no-underline ${className}`}
     >
       <span

@@ -187,7 +187,7 @@ export default function UnifiedPromoCard({
                 <a
                   href={promo.eventLink}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener"
                   className={config.linkColor}
                   onClick={(e) => e.stopPropagation()}
                 >
@@ -216,7 +216,7 @@ export default function UnifiedPromoCard({
                 <a
                   href={promo.eventLink}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener"
                   className={config.linkColor}
                   onClick={(e) => e.stopPropagation()}
                 >
@@ -233,7 +233,7 @@ export default function UnifiedPromoCard({
           <a
             href={promo.ticketLink}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
             className={`block w-full rounded-lg py-3 text-center font-semibold shadow transition-all hover:shadow-lg ${ctaTextColor} ${ctaGradient}`}
             onClick={(e) => e.stopPropagation()}
           >

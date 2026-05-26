@@ -139,7 +139,7 @@ export default async function CommunityPartnershipsPage() {
                       <a
                         href={partnership.specialOffer.link}
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="noopener"
                         className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 px-6 py-3 font-semibold text-white transition-all duration-200 hover:from-purple-700 hover:to-blue-700"
                       >
                         {partnership.specialOffer.linkText}
@@ -152,7 +152,7 @@ export default async function CommunityPartnershipsPage() {
                     <a
                       href={partnership.website}
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="noopener"
                       className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-white transition-colors duration-200 hover:bg-blue-700"
                     >
                       {t('community_partnerships.visit_website')}
@@ -169,7 +169,7 @@ export default async function CommunityPartnershipsPage() {
                       <a
                         href={partnership.contact}
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="noopener"
                         className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-6 py-3 text-gray-700 transition-colors duration-200 hover:bg-gray-50"
                       >
                         Learn More

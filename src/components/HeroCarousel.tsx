@@ -93,7 +93,7 @@ export const HeroCarousel = () => {
               <a
                 href="https://summit.meetjs.pl/2026"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 className="mb-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple via-blue to-green px-4 py-2 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105 hover:shadow-xl"
               >
                 <Sparkles className="h-4 w-4" />
@@ -111,7 +111,7 @@ export const HeroCarousel = () => {
                 <a
                   href="https://instagram.com/meet.js_poland"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener"
                   className="flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 text-sm backdrop-blur-sm transition-all hover:bg-white/30"
                 >
                   <Instagram className="h-4 w-4" />
@@ -120,7 +120,7 @@ export const HeroCarousel = () => {
                 <a
                   href="https://discord.gg/8r9XKTeNW8"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener"
                   className="flex items-center gap-2 rounded-full bg-[#5865F2] px-4 py-2 text-sm transition-all hover:bg-[#4752C4] hover:shadow-md"
                 >
                   <MessagesSquare className="h-4 w-4" />
@@ -283,7 +283,7 @@ export const HeroCarousel = () => {
                   {/*<a*/}
                   {/*  href="https://summit.meetjs.pl/2026"*/}
                   {/*  target="_blank"*/}
-                  {/*  rel="noopener noreferrer"*/}
+                  {/*  rel="noopener"*/}
                   {/*  className="inline-block w-fit rounded-lg bg-[#bcd35d] px-8 py-4 text-base font-bold text-black transition-all hover:bg-[#bcd35d]/90 hover:shadow-lg hover:shadow-[#bcd35d]/20"*/}
                   {/*>*/}
                   {/*  {t('summit_2026.cta_get_tickets')}*/}
@@ -291,7 +291,7 @@ export const HeroCarousel = () => {
                   <a
                     href="https://summit.meetjs.pl/2026#speakers"
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener"
                     className="inline-flex items-center gap-2 rounded-lg border-2 border-white bg-white/10 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20"
                   >
                     {t('summit_2026.cta_view_speakers')}

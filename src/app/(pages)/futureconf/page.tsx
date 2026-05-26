@@ -34,7 +34,7 @@ export default function FutureConfPage() {
               <a
                 href="https://futureconf.tech/meetjs/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 className="inline-flex items-center rounded-lg bg-white px-8 py-4 text-lg font-semibold text-purple-600 transition-all hover:scale-105 hover:bg-purple-50"
               >
                 Get Group Discount
@@ -103,7 +103,7 @@ export default function FutureConfPage() {
                     <a
                       href="https://futureconf.tech/meetjs/"
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="noopener"
                       className="text-purple-600 hover:underline"
                     >
                       futureconf.tech/meetjs/
@@ -368,7 +368,7 @@ export default function FutureConfPage() {
             <a
               href="https://futureconf.tech/meetjs/"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="inline-flex items-center rounded-lg bg-white px-8 py-4 text-lg font-semibold text-purple-600 transition-all hover:scale-105 hover:bg-purple-50"
             >
               Get Group Discount Now

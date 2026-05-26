@@ -187,7 +187,7 @@ export const Summit2026Banner = () => {
             <a
               href="https://summit.meetjs.pl/2026"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="inline-block w-fit rounded-lg bg-[#bcd35d] px-8 py-4 text-base font-bold text-black transition-all hover:bg-[#bcd35d]/90 hover:shadow-lg hover:shadow-[#bcd35d]/20"
             >
               {t('summit_2026.cta_get_tickets')}
@@ -195,7 +195,7 @@ export const Summit2026Banner = () => {
             <a
               href="https://summit.meetjs.pl/2026#speakers"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="inline-flex items-center gap-2 rounded-lg border-2 border-white bg-white/10 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20"
             >
               {t('summit_2026.cta_view_speakers')}

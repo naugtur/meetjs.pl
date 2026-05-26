@@ -152,7 +152,7 @@ export default function JSNationAwardPage() {
                 <a
                   href="https://www.linkedin.com/in/cdynak/?utm_source=meetjs.pl&utm_medium=referral&utm_campaign=community"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener"
                 >
                   Cezary Dynak
                 </a>
@@ -161,7 +161,7 @@ export default function JSNationAwardPage() {
                 <a
                   href="https://www.linkedin.com/in/aleksandrapawlus/?utm_source=meetjs.pl&utm_medium=referral&utm_campaign=community"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener"
                 >
                   Aleksandra Pawlus
                 </a>
@@ -170,7 +170,7 @@ export default function JSNationAwardPage() {
                 <a
                   href="https://www.linkedin.com/in/ssynowiecpl/?utm_source=meetjs.pl&utm_medium=referral&utm_campaign=community"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener"
                 >
                   Stanisław Synowiec
                 </a>
@@ -193,7 +193,7 @@ export default function JSNationAwardPage() {
               <a
                 href="https://osawards.com/react/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 className="text-yellow-600 hover:text-yellow-700"
               >
                 React Open Source Awards
@@ -249,7 +249,7 @@ export default function JSNationAwardPage() {
             <a
               href="https://osawards.com/javascript/"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="inline-flex items-center gap-1 text-sm font-medium text-green-600 hover:text-green-700"
             >
               JavaScript Open Source Awards <ExternalLink className="h-3 w-3" />
@@ -257,7 +257,7 @@ export default function JSNationAwardPage() {
             <a
               href="https://jsnation.com/"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="inline-flex items-center gap-1 text-sm font-medium text-green-600 hover:text-green-700"
             >
               JSNation Conference
@@ -321,7 +321,7 @@ export default function JSNationAwardPage() {
               <a
                 href="https://www.meetup.com/javascript-london/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 className="inline-flex items-center gap-1 text-xs font-medium text-yellow-600 hover:text-yellow-700"
               >
                 Visit Meetup Page <ExternalLink className="h-3 w-3" />
@@ -343,7 +343,7 @@ export default function JSNationAwardPage() {
               <a
                 href="https://www.meetup.com/advancedjs-amsterdam/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 className="inline-flex items-center gap-1 text-xs font-medium text-yellow-600 hover:text-yellow-700"
               >
                 Visit Meetup Page <ExternalLink className="h-3 w-3" />
@@ -366,7 +366,7 @@ export default function JSNationAwardPage() {
               <a
                 href="https://www.meetup.com/copenhagenjs"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 className="inline-flex items-center gap-1 text-xs font-medium text-yellow-600 hover:text-yellow-700"
               >
                 Visit Meetup Page <ExternalLink className="h-3 w-3" />
@@ -389,7 +389,7 @@ export default function JSNationAwardPage() {
             <a
               href={`https://x.com/intent/tweet?text=${encodeURIComponent('WE WON! meet.js Wrocław is the JavaScript Open Source Awards Community of the Year 2025! 🏆 So proud of our amazing community! #MeetjsWroclaw #JSAwardsWinner #CommunityOfTheYear #JavaScript')}`}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
             >
               Share on Twitter
             </a>
@@ -402,7 +402,7 @@ export default function JSNationAwardPage() {
             <a
               href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://meet.js.pl/jsnation-award')}`}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
             >
               Share on LinkedIn
             </a>
@@ -415,7 +415,7 @@ export default function JSNationAwardPage() {
             <a
               href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://meet.js.pl/jsnation-award')}`}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
             >
               Share on Facebook
             </a>

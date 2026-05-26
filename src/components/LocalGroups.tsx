@@ -68,7 +68,7 @@ export const LocalGroups = ({ localGroups }: LocalGroupProps) => {
             key={localGroup}
             className="flex items-center justify-center gap-1"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
           >
             {detectIcon(localGroup)}
           </a>

@@ -135,7 +135,7 @@ export default function Page() {
               <a
                 href="https://web.archive.org/web/20110121031140/http://jsnews.pl/2011/01/18/meet-js-12-lutego-w-poznaniu/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 className="inline-flex items-center font-medium text-blue-600 transition-colors duration-200 hover:text-blue-800"
               >
                 <span>View original announcement</span>

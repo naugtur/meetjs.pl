@@ -240,7 +240,7 @@ const LinkCTA = ({
     <a
       href={ticketLink}
       target="_blank"
-      rel="noopener noreferrer"
+      rel="noopener"
       className="inline-block rounded-full bg-white px-3 py-1 text-xs font-semibold text-purple shadow transition-colors duration-150 hover:bg-purple hover:text-white md:text-sm"
     >
       {cta}

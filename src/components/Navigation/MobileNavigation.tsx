@@ -112,7 +112,7 @@ export const MobileNavigation = () => {
                                 }
                                 rel={
                                   dropdownItem.external
-                                    ? 'noopener noreferrer'
+                                    ? 'noopener'
                                     : undefined
                                 }
                               >
@@ -147,7 +147,7 @@ export const MobileNavigation = () => {
                     )}
                     aria-current={item.current ? 'page' : undefined}
                     target={item.external ? '_blank' : undefined}
-                    rel={item.external ? 'noopener noreferrer' : undefined}
+                    rel={item.external ? 'noopener' : undefined}
                     {...(item.external && {
                       'aria-label': `${item.name} (opens in a new tab)`,
                     })}

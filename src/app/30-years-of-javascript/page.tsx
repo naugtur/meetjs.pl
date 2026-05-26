@@ -299,7 +299,7 @@ export default function JavaScript30Years() {
               <a
                 href="https://deno.com/blog/history-of-javascript"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 className="rounded-full bg-white/20 px-8 py-4 font-medium text-gray-900 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/30"
               >
                 Read the Full Story
@@ -409,7 +409,7 @@ export default function JavaScript30Years() {
                 <a
                   href="https://web.archive.org/web/20070916144913/http://wp.netscape.com/newsref/pr/newsrelease67.html"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener"
                   className="inline-flex items-center gap-2 rounded-full bg-yellow-500 px-6 py-3 font-medium text-gray-900 transition-all duration-300 hover:scale-105 hover:bg-yellow-400"
                 >
                   <span>📜</span>
@@ -591,7 +591,7 @@ export default function JavaScript30Years() {
               <a
                 href="https://discord.gg/8r9XKTeNW8"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 className="group rounded-full bg-indigo-600 px-8 py-4 font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-indigo-700 hover:shadow-lg"
               >
                 <span className="flex items-center gap-2">
@@ -604,7 +604,7 @@ export default function JavaScript30Years() {
               <a
                 href="https://x.com/meetjs"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 className="group rounded-full bg-blue-500 px-8 py-4 font-medium text-white transition-all duration-300 hover:scale-105 hover:bg-blue-600 hover:shadow-lg"
               >
                 <span className="flex items-center gap-2">

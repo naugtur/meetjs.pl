@@ -569,7 +569,7 @@ const BrandPage = async () => {
           <Link
             href="https://github.com/meetjspl/brand-assets"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
             className="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-gray-800"
           >
             <FaGithub />

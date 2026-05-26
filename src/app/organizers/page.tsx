@@ -54,7 +54,7 @@ export default async function OrganizersPage() {
         <a
           href="https://discord.gg/8r9XKTeNW8"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener"
           className="rounded-lg border bg-purple-50 p-4 text-center transition-colors hover:bg-purple-100"
         >
           <ExternalLink className="mx-auto mb-2 h-6 w-6 text-purple-600" />
@@ -98,7 +98,7 @@ export default async function OrganizersPage() {
             <a
               href="https://meetjspl.github.io/assets-generator/"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="inline-flex items-center gap-2 rounded-md bg-purple-600 px-4 py-2 text-white transition-colors hover:bg-purple-700"
             >
               <Download className="h-4 w-4" />

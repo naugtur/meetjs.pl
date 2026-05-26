@@ -97,7 +97,7 @@ export const DesktopNavigation = () => {
                           <a
                             href={dropdownItem.href}
                             target="_blank"
-                            rel="noopener noreferrer"
+                            rel="noopener"
                             className="flex items-center"
                           >
                             {dropdownItem.name}
