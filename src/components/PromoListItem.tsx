@@ -56,7 +56,10 @@ export function PromoListItem({ promo, variant }: PromoListItemProps) {
       {/* Header row */}
       <Row>
         {/* Clickable area for expand */}
-        <ExpandableArea onClick={toggle}>
+        <div
+          onClick={toggle}
+          className="flex flex-1 items-center gap-3 text-left sm:gap-4"
+        >
           {/* Logo */}
           <PromotionLogo
             name={promo.name}
@@ -67,14 +70,10 @@ export function PromoListItem({ promo, variant }: PromoListItemProps) {
 
           {/* Info */}
           <PromotionHeader name={promo.name} message={promo.message} />
-
-          <ChevronDown
-            className={`h-5 w-5 flex-shrink-0 text-gray-400 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
-          />
-        </ExpandableArea>
+        </div>
 
         {/* Meta - separate from expand button */}
-        <div className="flex flex-wrap items-center gap-2 sm:flex-nowrap sm:gap-3">
+        <div className="flex-2 flex flex-wrap items-center gap-2 sm:flex-nowrap sm:gap-3">
           <Column>
             <PromotionDate date={promo.expiresAt} />
 
@@ -101,6 +100,17 @@ export function PromoListItem({ promo, variant }: PromoListItemProps) {
       <ExpandedContent isExpanded={isExpanded}>
         <PromotionDetails promotion={promo} />
       </ExpandedContent>
+
+      <button
+        onClick={toggle}
+        className="flex w-full flex-1 items-center gap-3 text-left sm:gap-4"
+      >
+        <div className="flex w-full justify-center">
+          <ChevronDown
+            className={`h-5 w-5 flex-shrink-0 text-gray-400 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
+          />
+        </div>
+      </button>
     </Card>
   );
 }
@@ -170,7 +180,7 @@ const PromotionHeader = ({
   message: string;
 }) => (
   <div className="min-w-0 flex-1">
-    <h3 className="truncate font-semibold text-gray-900 dark:text-white">
+    <h3 className="truncate font-semibold text-gray-900 hover:underline dark:text-white">
       {name}
     </h3>
     <p className="text-sm text-gray-600 dark:text-gray-400">{message}</p>
@@ -186,7 +196,8 @@ const PromotionDate = ({ date }: { date: string }) => (
 
 const PromotionLocation = ({ city }: { city: string }) => (
   <div
-    className="flex max-w-[100px] items-center gap-1 text-xs text-gray-500 dark:text-gray-400"
+    // className="flex max-w-[100px] items-center gap-1 text-xs text-gray-500 dark:text-gray-400"
+    className="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400"
     title={city}
   >
     <MapPin className="h-3.5 w-3.5 flex-shrink-0" />
@@ -244,21 +255,6 @@ const PromotionCTA = ({
     </a>
   );
 };
-
-const ExpandableArea = ({
-  children,
-  onClick,
-}: {
-  children: ReactNode;
-  onClick: () => void;
-}) => (
-  <button
-    onClick={onClick}
-    className="flex flex-1 items-center gap-3 text-left sm:gap-4"
-  >
-    {children}
-  </button>
-);
 
 const ExpandedContent = ({
   children,
