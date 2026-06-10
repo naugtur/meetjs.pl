@@ -73,14 +73,14 @@ export function PromoListItem({ promo, variant }: PromoListItemProps) {
         </div>
 
         {/* Meta - separate from expand button */}
-        <div className="flex-2 flex flex-wrap items-center gap-2 sm:flex-nowrap sm:gap-3">
-          <Column>
+        <div className="flex-2 flex flex-wrap items-center justify-between gap-2 sm:flex-nowrap sm:gap-3">
+          <div className="flex min-w-24 flex-col gap-2">
             <PromotionDate date={promo.expiresAt} />
 
             {promo.city && variant === 'event' && (
               <PromotionLocation city={promo.city} />
             )}
-          </Column>
+          </div>
 
           <Column>
             <PromotionCTA
