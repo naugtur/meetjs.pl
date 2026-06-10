@@ -79,11 +79,13 @@ export function PromoListItem({ promo, variant }: PromoListItemProps) {
             <CopyDiscountCode discountCode={promo.discountCode} />
           )}
 
-          <PromotionDate date={promo.expiresAt} />
+          <div className="flex flex-col gap-2">
+            <PromotionDate date={promo.expiresAt} />
 
-          {promo.city && variant === 'event' && (
-            <PromotionLocation city={promo.city} />
-          )}
+            {promo.city && variant === 'event' && (
+              <PromotionLocation city={promo.city} />
+            )}
+          </div>
 
           <PromotionCTA
             cta={promo.cta}
@@ -177,7 +179,10 @@ const PromotionDate = ({ date }: { date: string }) => (
 );
 
 const PromotionLocation = ({ city }: { city: string }) => (
-  <div className="flex max-w-[100px] items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
+  <div
+    className="flex max-w-[100px] items-center gap-1 text-xs text-gray-500 dark:text-gray-400"
+    title={city}
+  >
     <MapPin className="h-3.5 w-3.5 flex-shrink-0" />
     <span className="truncate">{city}</span>
   </div>
