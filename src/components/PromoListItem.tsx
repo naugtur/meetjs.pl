@@ -75,23 +75,25 @@ export function PromoListItem({ promo, variant }: PromoListItemProps) {
 
         {/* Meta - separate from expand button */}
         <div className="flex flex-wrap items-center gap-2 sm:flex-nowrap sm:gap-3">
-          {promo.discountCode && (
-            <CopyDiscountCode discountCode={promo.discountCode} />
-          )}
-
-          <div className="flex flex-col gap-2">
+          <Column>
             <PromotionDate date={promo.expiresAt} />
 
             {promo.city && variant === 'event' && (
               <PromotionLocation city={promo.city} />
             )}
-          </div>
+          </Column>
 
-          <PromotionCTA
-            cta={promo.cta}
-            ticketLink={promo.ticketLink}
-            gradient={styles.ctaGradient}
-          />
+          <Column>
+            <PromotionCTA
+              cta={promo.cta}
+              ticketLink={promo.ticketLink}
+              gradient={styles.ctaGradient}
+            />
+
+            {promo.discountCode && (
+              <CopyDiscountCode discountCode={promo.discountCode} />
+            )}
+          </Column>
         </div>
       </Row>
 
@@ -121,6 +123,10 @@ const Row = ({ children }: { children: ReactNode }) => (
   <div className="flex w-full flex-col gap-3 p-4 sm:flex-row sm:items-center sm:gap-4">
     {children}
   </div>
+);
+
+const Column = ({ children }: { children: ReactNode }) => (
+  <div className="flex flex-col gap-2">{children}</div>
 );
 
 const PromotionLogo = ({
