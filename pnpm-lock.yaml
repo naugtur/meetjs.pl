@@ -22,8 +22,8 @@ importers:
         specifier: ^3.1.1
         version: 3.1.1(@types/react@19.2.17)(react@19.2.7)
       '@next/mdx':
-        specifier: 16.2.7
-        version: 16.2.7(@mdx-js/loader@3.1.1(webpack@5.93.0(postcss@8.5.12)))(@mdx-js/react@3.1.1(@types/react@19.2.17)(react@19.2.7))
+        specifier: 16.2.9
+        version: 16.2.9(@mdx-js/loader@3.1.1(webpack@5.93.0(postcss@8.5.12)))(@mdx-js/react@3.1.1(@types/react@19.2.17)(react@19.2.7))
       '@radix-ui/react-accordion':
         specifier: ^1.2.11
         version: 1.2.11(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -778,8 +778,8 @@ packages:
   '@next/eslint-plugin-next@16.2.7':
     resolution: {integrity: sha512-VbS+QgMHqvIDMTIqD2xMBKK1otIpdAUKA8VLHFwR9h6OfU/mOm7w/69nQcvdmI8hCk99Wr2AsGLn/PJ/tMHw1w==}
 
-  '@next/mdx@16.2.7':
-    resolution: {integrity: sha512-4RmM0KISxvfHr37/cn9TAGD2oy1nvTQ+ycgknz2xpd8IrY980N7XDU3CXhfKOXPhIVgbshxFF9HQEQC32ZVa9A==}
+  '@next/mdx@16.2.9':
+    resolution: {integrity: sha512-SdweShKGCuN639JjyFSMQ8uldo+I+254+HucpjwdbFfaWHqUNN6dnQ1Of6laahnFyo48CcfDXEc2OBCS/Wfngw==}
     peerDependencies:
       '@mdx-js/loader': '>=0.15.0'
       '@mdx-js/react': '>=0.15.0'
@@ -5050,7 +5050,7 @@ snapshots:
     dependencies:
       fast-glob: 3.3.1
 
-  '@next/mdx@16.2.7(@mdx-js/loader@3.1.1(webpack@5.93.0(postcss@8.5.12)))(@mdx-js/react@3.1.1(@types/react@19.2.17)(react@19.2.7))':
+  '@next/mdx@16.2.9(@mdx-js/loader@3.1.1(webpack@5.93.0(postcss@8.5.12)))(@mdx-js/react@3.1.1(@types/react@19.2.17)(react@19.2.7))':
     dependencies:
       source-map: 0.7.4
     optionalDependencies:
