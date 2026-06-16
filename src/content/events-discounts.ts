@@ -677,6 +677,24 @@ export const eventsDiscounts: Promo[] = [
     discountCode: 'meetjs_na_4dev',
   },
   {
+    id: 'hackyeah-2026',
+    name: 'HackYeah 2026',
+    message:
+      'Największy stacjonarny hackathon w Europie - darmowe bilety dla społeczności!',
+    cta: '👉 Dowiedz się więcej',
+    ticketLink: 'https://hackyeah.pl/',
+    eventLink: 'https://hackyeah.pl/',
+    expiresAt: '2026-10-04T23:59:59+02:00',
+    description:
+      'HackYeah 2026 to największy w Europie stacjonarny hackathon, który odbędzie się 3-4 października 2026 roku w Krakowie. Przez 24 godziny setki programistów, designerów i pasjonatów nowych technologii zmierzą się z wyzwaniami wymagającymi szybkiego myślenia, współpracy i niebanalnych rozwiązań. Równolegle odbędzie się konferencja technologiczna z ekspertami IT. Mamy darmowe bilety dla społeczności meet.js – zapytaj lokalnego organizatora o kod!',
+    gradient: 'bg-gradient-to-r from-orange-600 to-pink-600',
+    icon: '💻',
+    image: '/partners/hy-logo-new.png',
+    emojiRight: '🇵🇱',
+    country: 'Poland',
+    city: 'Kraków',
+  },
+  {
     id: 'ai-sync-warsaw-2025',
     name: 'AI Sync Conference',
     message: '20% off with code MEETJS-20!',

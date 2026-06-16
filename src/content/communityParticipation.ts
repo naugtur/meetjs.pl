@@ -303,6 +303,31 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
     ],
   },
   {
+    id: 'hackyeah-2026',
+    title: 'HackYeah 2026',
+    description:
+      'Największy stacjonarny hackathon w Europie powraca 3-4 października 2026 roku w Krakowie. Przez 24 godziny setki programistów, designerów i pasjonatów nowych technologii zmierzą się z wyzwaniami wymagającymi szybkiego myślenia, współpracy i niebanalnych rozwiązań. Równolegle odbędzie się konferencja technologiczna z ekspertami IT. Mamy darmowe bilety dla społeczności meet.js – zapytaj lokalnego organizatora o kod!',
+    url: 'https://hackyeah.pl/',
+    type: 'collaboration',
+    status: 'active',
+    startDate: '2026-10-03',
+    endDate: '2026-10-04',
+    organization: 'Proidea',
+    impact:
+      'Media partnership – logo meet.js na stronie i planszach TV podczas wydarzenia, wzajemna promocja w social mediach, darmowe bilety dla społeczności.',
+    ctaText: 'Dowiedz się więcej',
+    featured: true,
+    image: '/partners/hy-logo-new.png',
+    tags: [
+      'Hackathon',
+      'Community',
+      'Kraków',
+      'Poland',
+      'Free Tickets',
+      'Media Partnership',
+    ],
+  },
+  {
     id: 'testing-ground-2026',
     title: 'Testing Ground Conference 2026',
     description:
