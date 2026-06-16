@@ -2,6 +2,22 @@ import { Promo } from '../types/promo';
 
 export const eventsDiscounts: Promo[] = [
   {
+    id: 'code-europe-2026',
+    name: 'Code Europe 2026',
+    message: 'Community Partner – Blind Tickets available now at the lowest price!',
+    cta: '👉 Get Blind Tickets',
+    ticketLink: 'https://www.codeeurope.pl/en/',
+    eventLink: 'https://www.codeeurope.pl/en/',
+    expiresAt: '2026-09-15T23:59:59+02:00',
+    description:
+      'meet.js jest oficjalnym Community Partnerem Code Europe 2026! 🎉 14-15 września 2026 – Dzień 1 online, Dzień 2 stacjonarnie w Warszawie. Blind Tickets to najniższa cena tej edycji – każda kolejna pula będzie droższa, a obecna jest ograniczona. Pierwsze 50 osób, które kupi bilet, otrzymuje koszulkę z merchu Code Europe 2026. Prelegenci: Bjarne Stroustrup, George Hotz, José Valim oraz praktycy z Anthropic, NVIDIA, Red Hat, GitHub i Netflix. Trzy ścieżki: AI Engineering & Data, Cloud/DevOps & Platform Engineering, Software Architecture & Engineering Excellence.',
+    gradient: 'bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600',
+    icon: '🇪🇺',
+    emojiRight: '🇵🇱',
+    country: 'Poland',
+    city: 'Warsaw',
+  },
+  {
     id: 'react-summit-2026',
     name: 'React Summit 2026',
     message: '10% off with code FRIENDS!',
