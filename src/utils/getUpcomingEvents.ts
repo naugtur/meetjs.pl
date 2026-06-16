@@ -5,7 +5,7 @@ import { changeCityName } from '@/utils/changeCityName';
 export const getUpcomingEvents = async () => {
   try {
     const upcomingEventsRes = await fetch(new URL(env.EVENTS_API_URL), {
-      next: { revalidate: 3600 },
+      next: { revalidate: 86400 },
     });
 
     const upcomingEventsJson = await upcomingEventsRes.json();
