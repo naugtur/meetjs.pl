@@ -53,21 +53,13 @@ export const Organizers = ({ city, organizers }: OrganizersProps) => {
                   </a>
                 )}
                 {organizer.linkedin && (
-                  <a
-                    href={organizer.linkedin}
-                    target="_blank"
-                    rel="noopener"
-                  >
+                  <a href={organizer.linkedin} target="_blank" rel="noopener">
                     <span className="sr-only">Linkedin</span>
                     <FaLinkedin />
                   </a>
                 )}
                 {organizer.gitHub && (
-                  <a
-                    href={organizer.gitHub}
-                    target="_blank"
-                    rel="noopener"
-                  >
+                  <a href={organizer.gitHub} target="_blank" rel="noopener">
                     <span className="sr-only">GitHub</span>
                     <FaGithub />
                   </a>
