@@ -111,9 +111,7 @@ export const MobileNavigation = () => {
                                   dropdownItem.external ? '_blank' : undefined
                                 }
                                 rel={
-                                  dropdownItem.external
-                                    ? 'noopener'
-                                    : undefined
+                                  dropdownItem.external ? 'noopener' : undefined
                                 }
                               >
                                 <span className="flex items-center">
