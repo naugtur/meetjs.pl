@@ -4,7 +4,7 @@ import { JavaScript30YearsPromo } from '@/components/JavaScript30YearsPromo';
 
 import { JoinUs } from '@/components/JoinUs';
 import { FeaturedEvents } from '@/components/FeaturedEvents';
-import { HeroCarousel } from '@/components/HeroCarousel';
+import { HeroSection } from '@/components/HeroSection';
 import { PartnersSection } from '@/components/PartnersSection';
 import { CommunityParticipation } from '@/components/CommunityParticipationServer';
 import { YouTubeSubscribeBanner } from '@/components/YouTubeSubscribeBanner';
@@ -15,7 +15,7 @@ export const dynamic = 'force-dynamic';
 const Home = () => {
   return (
     <main>
-      <HeroCarousel />
+      <HeroSection />
       <div className="flex min-h-screen flex-col items-center">
         <FeaturedEvents />
         <JavaScript30YearsPromo />
