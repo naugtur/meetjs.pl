@@ -328,6 +328,31 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
     ],
   },
   {
+    id: 'tech-race-summit-2026',
+    title: 'Tech Race Summit 2026',
+    description:
+      'Nowa konferencja technologiczna organizowana przez SOFTSWISS (centra rozwoju w Warszawie i Poznaniu). 10 września 2026, Warszawa. Eksperci AWS, Google, Oracle, Cloudflare, Fastly, Gcore, ScyllaDB i innych globalnych firm na jednej scenie. Keynote: Andrey Doronichev — były lider Google, założyciel Optic. meet.js jest oficjalnym patronem medialnym.',
+    url: 'https://techracesummit.com/pl/?utm_source=meetjs-1&utm_medium=media&utm_campaign=tech_race_summit_2026',
+    type: 'collaboration',
+    status: 'active',
+    startDate: '2026-09-10',
+    endDate: '2026-09-10',
+    organization: 'SOFTSWISS',
+    impact:
+      'Media partnership — promocja konferencji w społeczności meet.js, wzajemna widoczność w ekosystemie tech.',
+    ctaText: 'Kup bilet',
+    featured: true,
+    image: '/partners/tech-race_vert_color on black_small_no descr.svg',
+    tags: [
+      'Conference',
+      'Infrastructure',
+      'AI',
+      'Security',
+      'Warsaw',
+      'Media Partnership',
+    ],
+  },
+  {
     id: 'testing-ground-2026',
     title: 'Testing Ground Conference 2026',
     description:

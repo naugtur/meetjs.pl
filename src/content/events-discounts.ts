@@ -2,6 +2,22 @@ import { Promo } from '../types/promo';
 
 export const eventsDiscounts: Promo[] = [
   {
+    id: 'code-europe-2026',
+    name: 'Code Europe 2026',
+    message: 'Community Partner – Blind Tickets available now at the lowest price!',
+    cta: '👉 Get Blind Tickets',
+    ticketLink: 'https://www.codeeurope.pl/en/',
+    eventLink: 'https://www.codeeurope.pl/en/',
+    expiresAt: '2026-09-15T23:59:59+02:00',
+    description:
+      'meet.js jest oficjalnym Community Partnerem Code Europe 2026! 🎉 14-15 września 2026 – Dzień 1 online, Dzień 2 stacjonarnie w Warszawie. Blind Tickets to najniższa cena tej edycji – każda kolejna pula będzie droższa, a obecna jest ograniczona. Pierwsze 50 osób, które kupi bilet, otrzymuje koszulkę z merchu Code Europe 2026. Prelegenci: Bjarne Stroustrup, George Hotz, José Valim oraz praktycy z Anthropic, NVIDIA, Red Hat, GitHub i Netflix. Trzy ścieżki: AI Engineering & Data, Cloud/DevOps & Platform Engineering, Software Architecture & Engineering Excellence.',
+    gradient: 'bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600',
+    icon: '🇪🇺',
+    emojiRight: '🇵🇱',
+    country: 'Poland',
+    city: 'Warsaw',
+  },
+  {
     id: 'react-summit-2026',
     name: 'React Summit 2026',
     message: '10% off with code FRIENDS!',
@@ -645,15 +661,18 @@ export const eventsDiscounts: Promo[] = [
   {
     id: 'tech-race-summit-2026',
     name: 'Tech Race Summit 2026',
-    message: '15% off with code coming June 15!',
-    cta: '👉 Get Tickets',
-    ticketLink: 'https://techracesummit.com/',
-    eventLink: 'https://techracesummit.com/',
+    message: 'Nowa konferencja od SOFTSWISS — Warszawa, 10 września 2026!',
+    cta: '👉 Kup bilet',
+    ticketLink:
+      'https://techracesummit.com/pl/?utm_source=meetjs-1&utm_medium=media&utm_campaign=tech_race_summit_2026',
+    eventLink:
+      'https://techracesummit.com/pl/?utm_source=meetjs-1&utm_medium=media&utm_campaign=tech_race_summit_2026',
     expiresAt: '2026-09-10T23:59:59+02:00',
     description:
-      'Tech Race Summit to nowa konferencja dla liderów technologicznych i inżynierów pracujących z systemami high-load, organizowana przez SOFTSWISS. Warszawa, 10 września 2026, język angielski. Wśród potwierdzonych prelegentów są przedstawiciele Amazon, Fastly, Gcore i Oracle. Program obejmuje: production engineering talks, real infra case studies, architecture roundtables i networking. meet.js jest oficjalnym patronem medialnym! Kod zniżkowy 15% dostępny od 15 czerwca.',
+      'Tech Race Summit 2026 – nowa konferencja technologiczna organizowana przez SOFTSWISS (centra rozwoju w Warszawie i Poznaniu). 10 września 2026, Warszawa. Eksperci AWS, Google, Oracle, Cloudflare, Fastly, Gcore, ScyllaDB i innych globalnych firm na jednej scenie. Keynote: Andrey Doronichev — były lider Google, założyciel Optic. Trzy ścieżki: Vision Track, Solution Track, Experiment Track. Tematy: AI, infrastruktura IT, cyberbezpieczeństwo, strategia technologiczna, nowoczesne systemy cyfrowe. Oczekiwane ~1000 uczestników. meet.js jest oficjalnym patronem medialnym!',
     gradient: 'bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500',
     icon: '🏎️',
+    image: '/partners/tech-race_vert_color on black_small_no descr.svg',
     emojiRight: '🇵🇱',
     country: 'Poland',
     city: 'Warsaw',
