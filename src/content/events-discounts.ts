@@ -2,6 +2,23 @@ import { Promo } from '../types/promo';
 
 export const eventsDiscounts: Promo[] = [
   {
+    id: 'wawtech-summer-2025',
+    name: 'WAWTech+Summer 2025',
+    message: '15% off with code MEETJS15!',
+    cta: '👉 Get 15% Off',
+    ticketLink: 'https://dou.ua/goto/meetjs',
+    eventLink: 'https://dou.ua/goto/meetjs',
+    expiresAt: '2025-07-18T23:59:59+02:00',
+    description:
+      '☀️ WAWTech+Summer — the largest open-air tech festival by DOU 🦄 takes place July 18 in Warsaw, Tor Służewiec! Talks and panel discussions, workshops and live coding sessions, a GameDev zone, expo area, partner activities, food court, chill-out zones, networking, job speed dating, and lots of unicorns 🦄 Use code MEETJS15 for 15% off your ticket!',
+    gradient: 'bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500',
+    icon: '☀️',
+    emojiRight: '🇵🇱',
+    country: 'Poland',
+    city: 'Warsaw',
+    discountCode: 'MEETJS15',
+  },
+  {
     id: 'code-europe-2026',
     name: 'Code Europe 2026',
     message:
