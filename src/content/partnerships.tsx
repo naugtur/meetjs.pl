@@ -257,6 +257,45 @@ export const partnerships: Partnership[] = [
     },
   },
   {
+    name: 'Tech Race Summit 2026',
+    website:
+      'https://techracesummit.com/pl/?utm_source=meetjs-1&utm_medium=media&utm_campaign=tech_race_summit_2026',
+    description:
+      'Nowa konferencja technologiczna organizowana przez SOFTSWISS (centra rozwoju w Warszawie i Poznaniu). 10 września 2026, Warszawa. meet.js jest oficjalnym patronem medialnym.',
+    details: [
+      'Eksperci AWS, Google, Oracle, Cloudflare, Fastly, Gcore, ScyllaDB i innych globalnych firm na jednej scenie',
+      'Keynote: Andrey Doronichev — były lider Google, założyciel Optic',
+      'Trzy ścieżki: Vision Track, Solution Track, Experiment Track',
+      'Tematy: AI, infrastruktura IT, cyberbezpieczeństwo, strategia technologiczna, nowoczesne systemy cyfrowe',
+      'Oczekiwanych ~1000 uczestników',
+    ],
+    goals: [
+      'Łączenie liderów technologicznych i inżynierów budujących systemy na dużą skalę',
+      'Dzielenie się praktyczną wiedzą o infrastrukturze i architekturze systemów',
+      'Promocja Polski jako centrum innowacji technologicznych w Europie',
+      'Wzajemna promocja wydarzeń i inicjatyw społeczności tech',
+    ],
+    location: 'Warszawa, Polska',
+    contact:
+      'https://techracesummit.com/pl/?utm_source=meetjs-1&utm_medium=media&utm_campaign=tech_race_summit_2026',
+    icon: (
+      <Image
+        src="/partners/tech-race_vert_color on black_small_no descr.svg"
+        alt="Tech Race Summit"
+        width={48}
+        height={48}
+      />
+    ),
+    gradient: 'from-gray-900 to-gray-800',
+    specialOffer: {
+      title: 'Kup bilet',
+      description:
+        'Dołącz do Tech Race Summit 2026 — konferencji dla inżynierów i architektów systemów działających na globalną skalę.',
+      link: 'https://techracesummit.com/pl/?utm_source=meetjs-1&utm_medium=media&utm_campaign=tech_race_summit_2026',
+      linkText: 'Kup bilet',
+    },
+  },
+  {
     name: 'HackYeah 2025',
     website: 'https://hackyeah.pl/',
     description:

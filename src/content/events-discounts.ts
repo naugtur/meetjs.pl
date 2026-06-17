@@ -661,15 +661,18 @@ export const eventsDiscounts: Promo[] = [
   {
     id: 'tech-race-summit-2026',
     name: 'Tech Race Summit 2026',
-    message: '15% off with code coming June 15!',
-    cta: '👉 Get Tickets',
-    ticketLink: 'https://techracesummit.com/',
-    eventLink: 'https://techracesummit.com/',
+    message: 'Nowa konferencja od SOFTSWISS — Warszawa, 10 września 2026!',
+    cta: '👉 Kup bilet',
+    ticketLink:
+      'https://techracesummit.com/pl/?utm_source=meetjs-1&utm_medium=media&utm_campaign=tech_race_summit_2026',
+    eventLink:
+      'https://techracesummit.com/pl/?utm_source=meetjs-1&utm_medium=media&utm_campaign=tech_race_summit_2026',
     expiresAt: '2026-09-10T23:59:59+02:00',
     description:
-      'Tech Race Summit to nowa konferencja dla liderów technologicznych i inżynierów pracujących z systemami high-load, organizowana przez SOFTSWISS. Warszawa, 10 września 2026, język angielski. Wśród potwierdzonych prelegentów są przedstawiciele Amazon, Fastly, Gcore i Oracle. Program obejmuje: production engineering talks, real infra case studies, architecture roundtables i networking. meet.js jest oficjalnym patronem medialnym! Kod zniżkowy 15% dostępny od 15 czerwca.',
+      'Tech Race Summit 2026 – nowa konferencja technologiczna organizowana przez SOFTSWISS (centra rozwoju w Warszawie i Poznaniu). 10 września 2026, Warszawa. Eksperci AWS, Google, Oracle, Cloudflare, Fastly, Gcore, ScyllaDB i innych globalnych firm na jednej scenie. Keynote: Andrey Doronichev — były lider Google, założyciel Optic. Trzy ścieżki: Vision Track, Solution Track, Experiment Track. Tematy: AI, infrastruktura IT, cyberbezpieczeństwo, strategia technologiczna, nowoczesne systemy cyfrowe. Oczekiwane ~1000 uczestników. meet.js jest oficjalnym patronem medialnym!',
     gradient: 'bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500',
     icon: '🏎️',
+    image: '/partners/tech-race_vert_color on black_small_no descr.svg',
     emojiRight: '🇵🇱',
     country: 'Poland',
     city: 'Warsaw',
