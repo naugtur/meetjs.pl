@@ -275,7 +275,6 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
     featured: true,
     image: 'https://ugotit.pl/static/svg/u-got-it-logo.svg',
     tags: ['Contest', 'AI', 'Business', 'AWS', 'Innovation'],
-    pinned: true,
   },
   {
     id: 'ai-sync-warsaw-2026',
@@ -317,7 +316,7 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
       'Media partnership – logo meet.js na stronie i planszach TV podczas wydarzenia, wzajemna promocja w social mediach, darmowe bilety dla społeczności.',
     ctaText: 'Dowiedz się więcej',
     featured: true,
-    image: '/partners/hy-logo-new.png',
+    image: '/partners/hackyeah.png',
     tags: [
       'Hackathon',
       'Community',
@@ -350,6 +349,32 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
       'Security',
       'Warsaw',
       'Media Partnership',
+    ],
+  },
+  {
+    id: 'code-europe-2026',
+    title: 'Code Europe 2026',
+    description:
+      'Największy polski festiwal technologiczny dla inżynierów powraca 14-15 września 2026. Dzień 1 online (streaming na całą Europę Środkowo-Wschodnią) z prelekcjami o AI Engineering, Cloud & DevOps, Software Architecture i bezpieczeństwie. Dzień 2 stacjonarnie na Stadionie Legii w Warszawie – networkking, afterparty i spotkania twarzą w twarz. Wystąpią eksperci z Microsoft, Google, AWS, Apple i innych światowych firm.',
+    url: 'https://codeeurope.pl/',
+    type: 'collaboration',
+    status: 'active',
+    startDate: '2026-09-14',
+    endDate: '2026-09-15',
+    organization: 'Code Europe',
+    impact:
+      'Media partnership – wzajemna promocja w kanałach społecznościowych, logo meet.js na stronie wydarzenia i materiałach.',
+    ctaText: 'Zarezerwuj bilet',
+    featured: true,
+    image: '/partners/code europe.jpg',
+    tags: [
+      'Conference',
+      'AI',
+      'Cloud',
+      'DevOps',
+      'Warsaw',
+      'Media Partnership',
+      'Tech Festival',
     ],
   },
   {
