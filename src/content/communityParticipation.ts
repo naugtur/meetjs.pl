@@ -378,6 +378,24 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
     ],
   },
   {
+    id: 'day-one-ukraine-2026',
+    title: 'Day One Ukraine Hackathon 2026',
+    description:
+      '36-godzinny hackathon w Warszawie (22–23 czerwca), tuż przed Ukraine Recovery Conference w Gdańsku. 150 uczestników z całej Europy będzie budować realne rozwiązania dla odbudowy Ukrainy — od reintegracji weteranów, przez cyfrowe usługi publiczne, po infrastrukturę zdrowia psychicznego. Nagroda: €2 500 dla zwycięskiego zespołu. Jako partner społeczności mamy fast-track dla 1–2 zespołów z naszej sieci — odzywajcie się! W formularzu rejestracyjnym wpisz "meet.js" w polu "organizacja".',
+    url: 'https://form.typeform.com/to/kOH7l0Pu',
+    type: 'collaboration',
+    status: 'active',
+    startDate: '2026-06-22',
+    endDate: '2026-06-23',
+    organization: 'Econverse Foundation & Centre for International Relations',
+    impact:
+      'Media partnership – fast-track dla zespołów z meet.js, wzajemna promocja, logo meet.js na stronie wydarzenia.',
+    ctaText: 'Zgłoś się',
+    featured: true,
+    image: '/partners/dayoneukrainelogo.png',
+    tags: ['Hackathon', 'Warsaw', 'Ukraine', 'Community', 'Media Partnership'],
+  },
+  {
     id: 'testing-ground-2026',
     title: 'Testing Ground Conference 2026',
     description:
