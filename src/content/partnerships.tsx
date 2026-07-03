@@ -288,11 +288,11 @@ export const partnerships: Partnership[] = [
     ),
     gradient: 'from-gray-900 to-gray-800',
     specialOffer: {
-      title: 'Kup bilet',
+      title: '15% zniżki dla meet.js',
       description:
-        'Dołącz do Tech Race Summit 2026 — konferencji dla inżynierów i architektów systemów działających na globalną skalę.',
-      link: 'https://techracesummit.com/pl/?utm_source=meetjs-1&utm_medium=media&utm_campaign=tech_race_summit_2026',
-      linkText: 'Kup bilet',
+        'Użyj dedykowanego linku lub kodu meetjs_15, aby otrzymać 15% zniżki na bilet na Tech Race Summit 2026.',
+      link: 'https://fienta.com/tech-race-summit/discount/meetjs_15',
+      linkText: 'Odbierz 15% zniżki',
     },
   },
   {
