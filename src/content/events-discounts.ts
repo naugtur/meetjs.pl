@@ -680,21 +680,21 @@ export const eventsDiscounts: Promo[] = [
   {
     id: 'tech-race-summit-2026',
     name: 'Tech Race Summit 2026',
-    message: 'Nowa konferencja od SOFTSWISS — Warszawa, 10 września 2026!',
-    cta: '👉 Kup bilet',
-    ticketLink:
-      'https://techracesummit.com/pl/?utm_source=meetjs-1&utm_medium=media&utm_campaign=tech_race_summit_2026',
+    message: '15% off with code meetjs_15!',
+    cta: '👉 Get 15% Off',
+    ticketLink: 'https://fienta.com/tech-race-summit/discount/meetjs_15',
     eventLink:
       'https://techracesummit.com/pl/?utm_source=meetjs-1&utm_medium=media&utm_campaign=tech_race_summit_2026',
     expiresAt: '2026-09-10T23:59:59+02:00',
     description:
-      'Tech Race Summit 2026 – nowa konferencja technologiczna organizowana przez SOFTSWISS (centra rozwoju w Warszawie i Poznaniu). 10 września 2026, Warszawa. Eksperci AWS, Google, Oracle, Cloudflare, Fastly, Gcore, ScyllaDB i innych globalnych firm na jednej scenie. Keynote: Andrey Doronichev — były lider Google, założyciel Optic. Trzy ścieżki: Vision Track, Solution Track, Experiment Track. Tematy: AI, infrastruktura IT, cyberbezpieczeństwo, strategia technologiczna, nowoczesne systemy cyfrowe. Oczekiwane ~1000 uczestników. meet.js jest oficjalnym patronem medialnym!',
+      'Tech Race Summit 2026 – nowa konferencja technologiczna organizowana przez SOFTSWISS (centra rozwoju w Warszawie i Poznaniu). 10 września 2026, Warszawa. Eksperci AWS, Google, Oracle, Cloudflare, Fastly, Gcore, ScyllaDB i innych globalnych firm na jednej scenie. Keynote: Andrey Doronichev — były lider Google, założyciel Optic. Trzy ścieżki: Vision Track, Solution Track, Experiment Track. Tematy: AI, infrastruktura IT, cyberbezpieczeństwo, strategia technologiczna, nowoczesne systemy cyfrowe. Oczekiwane ~1000 uczestników. meet.js jest oficjalnym patronem medialnym! Użyj kodu meetjs_15 lub dedykowanego linku, aby otrzymać 15% zniżki.',
     gradient: 'bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500',
     icon: '🏎️',
     image: '/partners/tech-race_vert_color on black_small_no descr.svg',
     emojiRight: '🇵🇱',
     country: 'Poland',
     city: 'Warsaw',
+    discountCode: 'meetjs_15',
   },
   {
     id: '4developers-2026',
