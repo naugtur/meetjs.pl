@@ -421,6 +421,32 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
       'Media Partnership',
     ],
   },
+  {
+    id: 'cityjs-cityai-athens-2026',
+    title: 'CityJSCityAI Athens 2026',
+    description:
+      'A 3-day AI + JavaScript conference in Athens (21-23 October 2026). Deep talks, workshops and real-world case studies from engineers building real systems, with practical lessons on performance, scaling and modern JS architecture.',
+    url: 'https://athens.cityjsconf.org/',
+    type: 'collaboration',
+    status: 'active',
+    startDate: '2026-10-21',
+    endDate: '2026-10-23',
+    organization: 'CityJS',
+    impact:
+      'Community partnership — promote the conference in the meet.js network and get visibility among senior JS and AI developers.',
+    ctaText: 'Register now',
+    featured: true,
+    image: '/partners/cityjs.jpg',
+    tags: [
+      'JavaScript',
+      'AI',
+      'Conference',
+      'Athens',
+      'Workshops',
+      'Networking',
+      'Community Partnership',
+    ],
+  },
 ];
 
 const sortByNewest = (items: CommunityItem[]): CommunityItem[] => {
