@@ -1,6 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
-import { Bot, BookOpen, Code, Shield, Users, TestTube } from 'lucide-react';
+import {
+  Bot,
+  BookOpen,
+  Code,
+  Shield,
+  Users,
+  TestTube,
+  Sun,
+} from 'lucide-react';
 
 export interface Partnership {
   name: string;
@@ -26,6 +34,36 @@ export interface Partnership {
 }
 
 export const partnerships: Partnership[] = [
+  {
+    name: 'WAWTech+Summer 2026',
+    website: 'https://wawtech.io/summer',
+    description:
+      'Letni festiwal technologiczny dla społeczności IT organizowany przez DOU — 18 lipca 2026 na Torze Służewiec w Warszawie. Oczekiwanych ~5 000 uczestników. meet.js jest oficjalnym Community Partnerem.',
+    details: [
+      'Prelekcje i panele dyskusyjne z ekspertami branżowymi',
+      'Warsztaty i sesje live coding',
+      'Strefa expo, networking i job speed dating',
+      '5 000+ uczestników ze środowiska IT',
+      'Tor Służewiec, Warszawa – 18 lipca 2026',
+    ],
+    goals: [
+      'Łączenie społeczności tech podczas nieformalnego letniego festiwalu',
+      'Wzajemna promocja wydarzeń i inicjatyw meet.js',
+      'Ekskluzywna 15% zniżka dla społeczności meet.js (kod MEETJS15)',
+      '2 darmowe bilety dla organizatorów meet.js',
+    ],
+    location: 'Warszawa, Tor Służewiec',
+    contact: 'anna@wawtech.io',
+    icon: <Sun className="h-8 w-8 text-yellow-400" />,
+    gradient: 'from-yellow-400 via-orange-500 to-red-500',
+    specialOffer: {
+      title: '15% zniżki – kod MEETJS15',
+      description:
+        'Użyj kodu MEETJS15 przy zakupie biletu na WAWTech+Summer 2026 i zaoszczędź 15%!',
+      link: 'https://wawtech.io/summer',
+      linkText: 'Kup bilet ze zniżką',
+    },
+  },
   {
     name: 'React Summit 2026',
     website: 'https://reactsummit.com/',
