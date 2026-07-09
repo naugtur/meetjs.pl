@@ -435,20 +435,30 @@ const sortByNewest = (items: CommunityItem[]): CommunityItem[] => {
   });
 };
 
+// An item is "past" once its endDate has elapsed. Items without an endDate
+// (e.g. open-ended surveys) never expire automatically.
+const isPastEvent = (item: CommunityItem): boolean =>
+  item.endDate ? new Date(item.endDate) < new Date() : false;
+
+// Currency is derived from the date, not only the manually-set status, so
+// items don't need their status flipped by hand once they finish.
+const isCurrentlyActive = (item: CommunityItem): boolean =>
+  item.status === 'active' && !isPastEvent(item);
+
 export const getActiveCommunityItems = (): CommunityItem[] => {
-  return sortByNewest(
-    COMMUNITY_PARTICIPATION.filter((item) => item.status === 'active'),
-  );
+  return sortByNewest(COMMUNITY_PARTICIPATION.filter(isCurrentlyActive));
 };
 
 export const getFeaturedCommunityItems = (): CommunityItem[] => {
   return sortByNewest(
     COMMUNITY_PARTICIPATION.filter(
-      (item) => item.featured && item.status === 'active',
+      (item) => item.featured && isCurrentlyActive(item),
     ),
   );
 };
 
+// Full archive: every item, past and present. Used by the /community page,
+// which intentionally lists completed initiatives alongside current ones.
 export const getCombinedCommunityItems = (): CommunityItem[] => {
   return sortByNewest([...COMMUNITY_PARTICIPATION]);
 };
@@ -456,6 +466,9 @@ export const getCombinedCommunityItems = (): CommunityItem[] => {
 export const getNewestCommunityItems = (limit: number = 3): CommunityItem[] => {
   const allItems = getCombinedCommunityItems();
 
-  // Filter featured items and slice (already sorted by getCombinedCommunityItems)
-  return allItems.filter((item) => item.featured).slice(0, limit);
+  // Only surface featured items that haven't already ended, so a finished
+  // event (with a now-dead "register" CTA) never shows up on the homepage.
+  return allItems
+    .filter((item) => item.featured && !isPastEvent(item))
+    .slice(0, limit);
 };
