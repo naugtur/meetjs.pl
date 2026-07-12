@@ -3,6 +3,7 @@ import { eventsDiscounts } from '@/content/events-discounts';
 import { softwareDiscounts } from '@/content/software-discounts';
 import { learningDiscounts } from '@/content/learning-discounts';
 import type { Promo } from '@/types/promo';
+import { getLogoDataUri } from '@/utils/og';
 
 export const alt = 'Exclusive discounts for the meet.js community';
 export const size = { width: 1200, height: 630 };
@@ -69,23 +70,9 @@ export default async function Image() {
           width: 720,
         }}
       >
-        {/* Wordmark */}
-        <div style={{ display: 'flex', alignItems: 'baseline' }}>
-          <span style={{ fontSize: 52, fontWeight: 700, color: '#ffffff' }}>
-            meet
-          </span>
-          <div
-            style={{
-              width: 14,
-              height: 14,
-              backgroundColor: '#bcd25f',
-              marginLeft: 4,
-              marginRight: 4,
-            }}
-          />
-          <span style={{ fontSize: 52, fontWeight: 700, color: '#239eab' }}>
-            js
-          </span>
+        {/* Logo */}
+        <div style={{ display: 'flex' }}>
+          <img src={getLogoDataUri()} width={240} height={67} alt="" />
         </div>
 
         {/* Headline */}
