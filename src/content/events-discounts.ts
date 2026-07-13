@@ -24,8 +24,8 @@ export const eventsDiscounts: Promo[] = [
     message:
       'Community Partner – Blind Tickets available now at the lowest price!',
     cta: '👉 Get Blind Tickets',
-    ticketLink: 'https://www.codeeurope.pl/en/',
-    eventLink: 'https://www.codeeurope.pl/en/',
+    ticketLink: 'https://www.codeeurope.pl/',
+    eventLink: 'https://www.codeeurope.pl/',
     expiresAt: '2026-09-15T23:59:59+02:00',
     description:
       'meet.js jest oficjalnym Community Partnerem Code Europe 2026! 🎉 14-15 września 2026 – Dzień 1 online, Dzień 2 stacjonarnie w Warszawie. Blind Tickets to najniższa cena tej edycji – każda kolejna pula będzie droższa, a obecna jest ograniczona. Pierwsze 50 osób, które kupi bilet, otrzymuje koszulkę z merchu Code Europe 2026. Prelegenci: Bjarne Stroustrup, George Hotz, José Valim oraz praktycy z Anthropic, NVIDIA, Red Hat, GitHub i Netflix. Trzy ścieżki: AI Engineering & Data, Cloud/DevOps & Platform Engineering, Software Architecture & Engineering Excellence.',
@@ -134,8 +134,8 @@ export const eventsDiscounts: Promo[] = [
     name: 'Code Europe 2025',
     message: "Join Poland's biggest tech festival with code MEETJS25!",
     cta: '👉 Get Discount',
-    ticketLink: 'https://www.codeeurope.pl/en/',
-    eventLink: 'https://www.codeeurope.pl/en/',
+    ticketLink: 'https://www.codeeurope.pl/',
+    eventLink: 'https://www.codeeurope.pl/',
     expiresAt: '2025-06-30T23:59:59+02:00',
     description:
       "Join Poland's biggest tech festival! Code Europe 2025 takes place on June 30 - July 1, 2025 at EXPO Kraków. Experience inspiring talks, workshops, and networking opportunities with tech leaders and innovators. Use code MEETJS25 for a special discount on tickets!",
