@@ -400,6 +400,7 @@
       "cities": "\uD83C\uDFD9️ miasta",
       "code_of_conduct": "kodeks postępowania",
       "discounts": "\uD83D\uDCB0 zniżki",
+      "passport": "\uD83D\uDEC2 paszport",
       "summit": "summit",
       "speakers": "\uD83C\uDFA4 prelegenci",
       "videos": "\uD83C\uDFA5 wideo",
@@ -588,6 +589,41 @@
       "description": "Gotowy zacząć organizować meetupy i budować społeczność JavaScript w swoim mieście? Zacznijmy od wszystkich zasobów i wsparcia, których potrzebujesz.",
       "start_journey": "Zacznij Organizować Dziś",
       "title": "Gotowy na Zostanie Organizatorem meet.js?"
+    }
+  },
+  "passport": {
+    "brackets": {
+      "two_city": "2 Miasta",
+      "four_city": "4 Miasta",
+      "six_city": "6 Miast",
+      "all_city": "Wszystkie Miasta"
+    },
+    "achieved_on": "Zdobyto: {date}",
+    "cities_needed": "Potrzebne miasta: {count}",
+    "revoked_label": "Unieważniono: {reason}",
+    "not_found": {
+      "title": "Nie znaleziono uczestnika",
+      "description": "Nie mogliśmy znaleźć uczestnika Passport Challenge pod tym linkiem."
+    },
+    "hall_of_fame": {
+      "meta_title": "Hall of Fame Passport Challenge | meet.js",
+      "meta_description": "Zobacz, kto ukończył meet.js Passport Challenge, odwiedzając meetupy w całej Polsce.",
+      "page_title": "Hall of Fame Passport Challenge",
+      "subtitle": "Członkowie społeczności, którzy odwiedzili wydarzenia meet.js w wielu miastach.",
+      "empty_state": "Nikt jeszcze nie zdobył tego poziomu.",
+      "view_progress": "Zobacz postępy",
+      "starting_out": {
+        "heading": "Właśnie zaczynają",
+        "subtitle": "Członkowie społeczności, którzy przystąpili do Passport Challenge i są w drodze do swojego pierwszego poziomu."
+      }
+    },
+    "progress": {
+      "meta_title": "Postępy Passport Challenge | meet.js",
+      "page_title": "Postępy Passport Challenge",
+      "heading": "Postępy {name} w Passport Challenge",
+      "cities_visited_heading": "Odwiedzone miasta",
+      "revoked_heading": "Unieważnione wpisy",
+      "no_attendance": "Brak zarejestrowanej obecności."
     }
   },
   "poland_map": {
