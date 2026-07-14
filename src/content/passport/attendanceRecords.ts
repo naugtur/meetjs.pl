@@ -1,0 +1,86 @@
+import type { AttendanceRecord } from '@/types/passport';
+
+export const ATTENDANCE_RECORDS: AttendanceRecord[] = [
+  {
+    participantSlug: 'adrian-romanski',
+    eventId: 900001,
+    eventDate: '24.09.2025',
+    eventCity: 'Warszawa',
+    eventName: 'meet.js Warsaw x Legends',
+    status: 'active',
+  },
+  {
+    participantSlug: 'adrian-romanski',
+    eventId: 900002,
+    eventDate: '25.09.2025',
+    eventCity: 'Wrocław',
+    eventName: 'meet.js Wrocław 2025-09-25',
+    status: 'active',
+  },
+  {
+    participantSlug: 'adrian-romanski',
+    eventId: 900003,
+    eventDate: '02.10.2025',
+    eventCity: 'Gdańsk',
+    eventName: 'TypeScript Meetup #16 with meet.js',
+    status: 'active',
+  },
+  {
+    participantSlug: 'adrian-romanski',
+    eventId: 900004,
+    eventDate: '14.10.2025',
+    eventCity: 'Poznań',
+    eventName: 'meet.js #Poznań #10.2025 #61',
+    status: 'active',
+  },
+  {
+    participantSlug: 'adrian-romanski',
+    eventId: 900005,
+    eventDate: '30.10.2025',
+    eventCity: 'Kraków',
+    eventName: 'meet.js KRK [with Schibsted & Vend]',
+    status: 'active',
+  },
+  {
+    participantSlug: 'adrian-romanski',
+    eventId: 900006,
+    eventDate: '26.11.2025',
+    eventCity: 'Katowice',
+    eventName: 'meet.js Katowice #47',
+    status: 'active',
+  },
+  {
+    participantSlug: 'adrian-romanski',
+    eventId: 900007,
+    eventDate: '19.02.2026',
+    eventCity: 'Lublin',
+    eventName: 'meet.js Lublin #15',
+    status: 'active',
+  },
+  {
+    participantSlug: 'adrian-romanski',
+    eventId: 900008,
+    eventDate: '18.03.2026',
+    eventCity: 'Łódź',
+    eventName: 'meet.js Łódź 03/2026',
+    status: 'active',
+  },
+  {
+    participantSlug: 'adrian-romanski',
+    eventId: 900009,
+    eventDate: '28.05.2026',
+    eventCity: 'Białystok',
+    eventName: '#64 meet.js Białystok',
+    status: 'active',
+  },
+  {
+    participantSlug: 'adrian-romanski',
+    eventId: 900010,
+    eventDate: '23.06.2026',
+    eventCity: 'Bielsko-Biała',
+    eventName: 'meet.js Bielsko-Biała #24',
+    status: 'active',
+  },
+];
+
+export default ATTENDANCE_RECORDS;

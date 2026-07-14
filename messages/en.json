@@ -400,6 +400,7 @@
       "cities": "\uD83C\uDFD9️ cities",
       "code_of_conduct": "code of conduct",
       "discounts": "\uD83D\uDCB0 discounts",
+      "passport": "\uD83D\uDEC2 passport",
       "summit": "summit",
       "speakers": "\uD83C\uDFA4 speakers",
       "videos": "\uD83C\uDFA5 videos",
@@ -588,6 +589,41 @@
       "description": "Ready to start organizing meetups and building the JavaScript community in your city? Let's get you started with all the resources and support you need.",
       "start_journey": "Start Organizing Today",
       "title": "Ready to Become a meet.js Organizer?"
+    }
+  },
+  "passport": {
+    "brackets": {
+      "two_city": "2 Cities",
+      "four_city": "4 Cities",
+      "six_city": "6 Cities",
+      "all_city": "All Cities"
+    },
+    "achieved_on": "Achieved on {date}",
+    "cities_needed": "Cities needed: {count}",
+    "revoked_label": "Revoked: {reason}",
+    "not_found": {
+      "title": "Participant not found",
+      "description": "We couldn't find a Passport Challenge participant with that link."
+    },
+    "hall_of_fame": {
+      "meta_title": "Passport Challenge Hall of Fame | meet.js",
+      "meta_description": "See who has completed the meet.js Passport Challenge by visiting meetups across Poland.",
+      "page_title": "Passport Challenge Hall of Fame",
+      "subtitle": "Community members who have visited meet.js events across multiple cities.",
+      "empty_state": "No one has achieved this bracket yet.",
+      "view_progress": "View progress",
+      "starting_out": {
+        "heading": "Just Getting Started",
+        "subtitle": "Community members who have joined the Passport Challenge and are on their way to their first Bracket."
+      }
+    },
+    "progress": {
+      "meta_title": "Passport Progress | meet.js",
+      "page_title": "Passport Challenge Progress",
+      "heading": "{name}'s Passport Progress",
+      "cities_visited_heading": "Cities visited",
+      "revoked_heading": "Revoked records",
+      "no_attendance": "No attendance recorded yet."
     }
   },
   "poland_map": {
