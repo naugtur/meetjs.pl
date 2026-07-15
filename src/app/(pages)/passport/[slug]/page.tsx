@@ -116,27 +116,31 @@ export default async function PassportProgressPage({
           return (
             <div
               key={bracket.bracketId}
-              className={`flex flex-col items-center gap-2 rounded-lg border p-4 text-center shadow-sm ${
+              className={`flex items-center gap-3 rounded-lg border p-4 text-left shadow-sm ${
                 achieved ? style.cardHighlightClass : 'border-gray-200 bg-white'
               }`}
             >
-              <Icon className={`h-6 w-6 ${achieved ? '' : 'text-gray-400'}`} />
-              <h2 className="font-semibold text-gray-900">
-                {t(`passport.brackets.${bracket.bracketId}`)}
-              </h2>
-              {achieved ? (
-                <p className="text-xs text-muted-foreground">
-                  {t('passport.achieved_on', {
-                    date: formatAchievedAt(bracket.achievedAt!, language),
-                  })}
-                </p>
-              ) : (
-                <p className="text-xs text-gray-500">
-                  {t('passport.cities_needed', {
-                    count: bracket.citiesNeeded,
-                  })}
-                </p>
-              )}
+              <Icon
+                className={`h-6 w-6 shrink-0 ${achieved ? '' : 'text-gray-400'}`}
+              />
+              <div>
+                <h2 className="font-semibold text-gray-900">
+                  {t(`passport.brackets.${bracket.bracketId}`)}
+                </h2>
+                {achieved ? (
+                  <p className="text-xs text-muted-foreground">
+                    {t('passport.achieved_on', {
+                      date: formatAchievedAt(bracket.achievedAt!, language),
+                    })}
+                  </p>
+                ) : (
+                  <p className="text-xs text-gray-500">
+                    {t('passport.cities_needed', {
+                      count: bracket.citiesNeeded,
+                    })}
+                  </p>
+                )}
+              </div>
             </div>
           );
         })}

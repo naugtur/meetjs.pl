@@ -34,7 +34,7 @@ export const Logo = ({ clickable = true }: LogoProps) => {
 
   const logoImage = (
     <Image
-      src={isChristmasSeason ? './christmas_logo.svg' : './logo.svg'}
+      src={isChristmasSeason ? '/christmas_logo.svg' : '/logo.svg'}
       alt="meet.js Logo"
       width={150}
       height={40}
