@@ -317,12 +317,17 @@
     "subtitle": "Don't miss these!",
     "title": "Upcoming Events"
   },
+  "partners": {
+    "section_title": "Our partners",
+    "technology_partner": "Technology Partner",
+    "technology_partner_offer": "20% off hosting & domains with code",
+    "technology_partner_link": "See all discounts"
+  },
   "footer": {
     "cities": "Cities",
     "contact": "Contact us",
     "copyright": "All rights reserved.",
     "menu": "Menu",
-    "technology_partner": "Technology Partner",
     "menu_links": {
       "14_birthday": "14 Birthday",
       "about": "About",

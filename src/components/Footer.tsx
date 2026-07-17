@@ -14,7 +14,7 @@ export const Footer = async () => {
   const footerMenuLinks = await getTranslatedFooterMenuLinks();
 
   return (
-    <footer className="bg-purple text-white">
+    <footer className="border-t border-white/10 bg-purple text-white">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* First column */}
@@ -118,30 +118,8 @@ export const Footer = async () => {
           </nav>
         </div>
 
-        {/* Technology Partner */}
-        <div className="mt-12 border-t border-white/10 pt-8">
-          <div className="flex flex-col items-center gap-4">
-            <p className="text-sm text-white/80">
-              {t('footer.technology_partner')}
-            </p>
-            <a
-              href="https://cyberfolks.pl/"
-              target="_blank"
-              rel="noopener"
-              className="transition-opacity hover:opacity-80"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/partners/cyberfolks.svg"
-                alt="cyber_Folks"
-                className="h-16 w-auto brightness-0 invert"
-              />
-            </a>
-          </div>
-        </div>
-
         {/* Copyright */}
-        <div className="mt-8 border-t border-white/10 pt-8">
+        <div className="mt-12 border-t border-white/10 pt-8">
           <p className="text-center">
             © {new Date().getFullYear()} meet.js. {t('footer.copyright')}
           </p>
