@@ -164,6 +164,28 @@ Optional: `gradient`, `icon`, `emojiRight`, `discountCode`
 Edit `src/content/communityParticipation.ts` and add to `COMMUNITY_PARTICIPATION` array.
 Set `status: 'active'` and `featured: true` to display on homepage.
 
+### Generating Promo Graphics (Social Media)
+Promo materials (copy + graphics) live in `docs/social-media/<campaign-name>/`.
+See `docs/social-media/cyberfolks-meetjs/` as the reference implementation.
+
+To generate graphics, write a Node script using `@vercel/og` (satori) bundled with Next.js —
+do NOT hand-position elements in raw SVG:
+
+```js
+const { ImageResponse } = await import(
+  'next/dist/compiled/@vercel/og/index.node.js'
+);
+```
+
+Key conventions:
+- **Layout**: flexbox via satori element trees (plain objects `{ type, props: { style, children } }`, no JSX needed)
+- **Fonts**: Montserrat (brand font, weights 500/800) + JetBrains Mono for discount codes; fetch from Google Fonts and cache in `.fonts/` (gitignored)
+- **Brand colors**: purple `#2b1932`, green `#bcd25f`, blue `#239eab`, card `#241329`
+- **Brand style**: reuse the "ticket" motif from `src/app/(pages)/discounts/opengraph-image.tsx` (rotated card, gradient border, dashed perforation, code pill). Avoid fake cut-out notches — satori has no masking, they clash with gradient backgrounds
+- **Formats**: LinkedIn/Facebook 1200×630, IG feed 1080×1080, IG story 1080×1920 (keep content within ~250px top / 280px bottom safe zone)
+- **Assets**: inline images as base64 data URIs (satori fetches remote `<img>` at render time)
+- Run: `node docs/social-media/<campaign>/generate-graphics.mjs`, output PNGs to `graphics/`
+
 ### Adding New Cities
 Edit `src/content/cities.tsx`:
 1. Add city object to `CITIES` array with map coordinates
