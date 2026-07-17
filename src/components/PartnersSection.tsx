@@ -25,9 +25,9 @@ export const PartnersSection = async () => {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/partners/cyberfolks.svg"
+              src="/partners/cyberfolks-white.svg"
               alt="cyber_Folks"
-              className="h-14 w-auto brightness-0 invert"
+              className="h-14 w-auto"
             />
           </a>
           <p className="max-w-md text-center text-sm text-white/80">

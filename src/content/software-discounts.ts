@@ -13,7 +13,7 @@ export const softwareDiscounts: Promo[] = [
       'Buy a domain, hosting, or other standard services at cyber_Folks with code MEETJS and get 20% off — while supporting meet.js through our partner program. cyber_Folks is our technology partner and hosts meet.js infrastructure. Use code MEETJS at checkout or go through our referral link.',
     gradient: 'bg-gradient-to-r from-orange-500 via-red-500 to-pink-600',
     icon: '🌐',
-    image: '/discounts/cyber_folks_sygnet.webp',
+    image: '/discounts/cyber_folks_cf.png',
     emojiRight: '💜',
     discountCode: 'MEETJS',
   },
