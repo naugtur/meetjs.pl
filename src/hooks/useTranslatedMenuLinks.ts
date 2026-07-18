@@ -14,12 +14,6 @@ export const useTranslatedMenuLinks = (): MenuLink[] => {
       highlight: true,
     },
     {
-      name: t('navigation.menu_items.videos'),
-      href: '/videos',
-      current: false,
-      external: false,
-    },
-    {
       name: t('navigation.menu_items.speakers'),
       href: '/speakers',
       current: false,
