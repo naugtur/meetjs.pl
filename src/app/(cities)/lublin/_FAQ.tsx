@@ -30,11 +30,11 @@ export const LublinFAQ: FAQQuestion[] = [
       <>
         Register to upcoming event on{' '}
         <a
-          href="https://www.meetup.com/pl-PL/meetjslublin/"
+          href="https://luma.com/user/meetjs"
           className="font-bold hover:underline"
           about="_blank"
         >
-          meetup.com
+          luma.com
         </a>
         . Join us on time in venue. It&apos;s easy 🥳
       </>
