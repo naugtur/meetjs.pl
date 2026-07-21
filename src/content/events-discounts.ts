@@ -2,6 +2,23 @@ import { Promo } from '../types/promo';
 
 export const eventsDiscounts: Promo[] = [
   {
+    id: 'agent-conf-2026',
+    name: 'Agent Conf 2026',
+    message: 'Media partnership – 15% off with code meet.js15!',
+    cta: '👉 Get 15% Off',
+    ticketLink: 'https://ti.to/agent-conf/agent-conf-2026/discount/meet.js15',
+    eventLink: 'https://www.agent.sh/',
+    expiresAt: '2026-09-18T23:59:59+02:00',
+    description:
+      'meet.js is an official Media Partner of Agent Conf 2026! Join engineers and builders in Warsaw on September 17–18 to explore the future of agentic development, from engineering fundamentals and multi-agent orchestration to real-world adoption. Use code meet.js15 for 15% off your ticket!',
+    gradient: 'bg-gradient-to-r from-cyan-500 via-blue-600 to-violet-600',
+    image: '/discounts/agent-conf.svg',
+    emojiRight: '🇵🇱',
+    country: 'Poland',
+    city: 'Warsaw',
+    discountCode: 'meet.js15',
+  },
+  {
     id: 'wawtech-summer-2026',
     name: 'WAWTech+Summer 2026',
     message: '15% off with code MEETJS15!',
