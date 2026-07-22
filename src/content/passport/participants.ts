@@ -13,6 +13,12 @@ export const PARTICIPANTS: Participant[] = [
     displayName: 'Michał Hadrysiak',
     profileUrl: 'https://crossweb.pl/profile/michal-hadrysiak/125634/',
   },
+  {
+    slug: 'jakub-wasik',
+    displayName: 'Jakub Wąsik',
+    image: 'https://avatars.githubusercontent.com/u/32049761',
+    profileUrl: 'https://crossweb.pl/profile/kuba-wasik/123026/',
+  },
 ];
 
 export default PARTICIPANTS;
