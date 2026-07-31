@@ -18,6 +18,30 @@ export interface CommunityItem {
 
 export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
   {
+    id: 'codaro-coding-challenge-ii-2026',
+    title: 'Codaro Coding Challenge II',
+    description:
+      'Jesteśmy partnerem Codaro Coding Challenge II - hackathonu organizowanego przez Codaro i GDG Warszawa, 20 sierpnia 2026 w Google for Startups Campus w Warszawie. Uczestnicy budują bazę aplikacji wcześniej, a o 16:00 dostają zmianę założeń i trzy godziny na przebudowę systemu na żywo. W trakcie dwa panele: "Kto odpowiada za kod, którego nikt nie napisał?" oraz "Suwerenność jako produkt. Czy klient za to zapłaci?".',
+    url: 'https://codaro.dev/hackathon',
+    type: 'collaboration',
+    status: 'active',
+    startDate: '2026-08-20',
+    endDate: '2026-08-20',
+    organization: 'Codaro & GDG Warszawa',
+    impact:
+      'Community partnership - promocja hackathonu w sieci meet.js oraz wsparcie wydarzenia dla zespołów budujących z użyciem modeli open source na GPU w UE.',
+    ctaText: 'Zarejestruj się',
+    featured: true,
+    tags: [
+      'Hackathon',
+      'Warsaw',
+      'AI',
+      'Community Partnership',
+      'Open Source',
+      'Google for Startups',
+    ],
+  },
+  {
     id: 'react-conf',
     title: 'React Conference 2025',
     description:
