@@ -35,6 +35,36 @@ export interface Partnership {
 
 export const partnerships: Partnership[] = [
   {
+    name: 'Codaro Coding Challenge II',
+    website: 'https://codaro.dev/hackathon',
+    description:
+      'Jesteśmy partnerem Codaro Coding Challenge II - hackathonu organizowanego przez Codaro i GDG Warszawa, 20 sierpnia 2026 w Google for Startups Campus w Warszawie.',
+    details: [
+      'Format: bazę aplikacji budujesz w domu i przyjeżdżasz z czymś, co już działa',
+      'O 16:00 organizatorzy ogłaszają, dla kogo system ma być - część założeń przestaje być prawdziwa i zostają trzy godziny na przerobienie kodu na żywo',
+      'Każdy zespół dostaje darmowy dostęp do modeli open source na GPU w Unii Europejskiej, bez limitów na osobę',
+      'Dwa panele w trakcie kodowania: "Kto odpowiada za kod, którego nikt nie napisał?" (16:30) oraz "Suwerenność jako produkt. Czy klient za to zapłaci?" (18:00)',
+      '16 zespołów po 5 osób i 20 miejsc dla obserwatorów. Wydarzenie prowadzone po angielsku',
+    ],
+    goals: [
+      'Wspieranie praktycznego budowania produktów pod presją zmieniających się wymagań',
+      'Promocja hackathonu w społeczności meet.js i wśród developerów JS oraz AI',
+      'Łączenie społeczności wokół open-source AI i nowoczesnego software engineeringu',
+      'Zwiększenie widoczności inicjatyw Codaro i GDG Warszawa w ekosystemie meet.js',
+    ],
+    location: 'Warszawa, Google for Startups Campus',
+    contact: 'https://codaro.dev/hackathon',
+    icon: <Code className="h-8 w-8 text-orange-300" />,
+    gradient: 'from-orange-500 via-red-500 to-amber-500',
+    specialOffer: {
+      title: 'Rejestracja na hackathon',
+      description:
+        'Zgłoś zespół lub zapisz się jako obserwator na Codaro Coding Challenge II.',
+      link: 'https://codaro.dev/hackathon',
+      linkText: 'Przejdź do rejestracji',
+    },
+  },
+  {
     name: 'WAWTech+Summer 2026',
     website: 'https://wawtech.io/summer',
     description:
