@@ -2,10 +2,7 @@
 
 import { RankingBanner } from '@/components/RankingBanner';
 import { AwardNomination } from '@/components/AwardNomination';
-import {
-  Instagram,
-  MessagesSquare,
-} from 'lucide-react';
+import { Instagram, MessagesSquare } from 'lucide-react';
 import { useTranslate } from '@tolgee/react';
 
 export const HeroSection = () => {

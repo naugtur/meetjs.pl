@@ -5,6 +5,7 @@
  * Usage: node scripts/generate-media-screenshots.js
  */
 
+/* eslint-disable @typescript-eslint/no-require-imports -- Node.js CJS script */
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
