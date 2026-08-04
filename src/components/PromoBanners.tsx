@@ -64,6 +64,7 @@ export const PromoBanners = ({ promos }: Props) => {
         dismissed.add(promo.id);
       }
     });
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- sync with localStorage, external browser store
     setDismissedPromos(dismissed);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // Only run once on mount to avoid hydration issues
