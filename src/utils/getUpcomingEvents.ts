@@ -8,6 +8,12 @@ export const getUpcomingEvents = async () => {
       next: { revalidate: 86400 },
     });
 
+    if (!upcomingEventsRes.ok) {
+      throw new Error(
+        `Events API returned ${upcomingEventsRes.status}: ${upcomingEventsRes.statusText}`,
+      );
+    }
+
     const upcomingEventsJson = await upcomingEventsRes.json();
     const data = EventsSchema.parse(upcomingEventsJson);
 
@@ -17,7 +23,7 @@ export const getUpcomingEvents = async () => {
 
     return Object.values(data).map(changeCityName);
   } catch (error) {
-    console.log(error);
+    console.error('Error fetching upcoming events:', error);
     return null;
   }
 };
