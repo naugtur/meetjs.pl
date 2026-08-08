@@ -98,11 +98,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: env.SITE_URL,
   },
-  verification: {
-    google: 'google-site-verification',
-    yandex: 'yandex-verification',
-    yahoo: 'yahoo-verification',
-  },
   category: 'technology',
 };
 

@@ -4,7 +4,7 @@ Website for meet.js community.
 
 ## Stack
 
-- [Next.js 15 (app router)](https://nextjs.org/docs)
+- [Next.js 16.3 (app router)](https://nextjs.org/docs)
 - [React 19](https://react.dev/) with [React Compiler RC](https://react.dev/blog/2025/04/21/react-compiler-rc)
 - [TypeScript](https://www.typescriptlang.org/docs)
 - [Tailwindcss](https://tailwindcss.com/docs)
@@ -52,19 +52,19 @@ src/content/software-discounts.ts
 **For Events & Conferences Discounts:**
 
 ```
-src/content/discounts.ts
+src/content/events-discounts.ts
 ```
 
 Below is an example of how multiple discount banners appear on the site:
 
 ![Example of multiple discount banners in meet.js website navigation, showing CityJS Athens, JSConf CFP, and Crossweb 2024 banners](docs/promo-banners-example.png)
 
-Each discount is an object in the exported `discounts` or `softwareDiscounts` array. Example of a current discount:
+Each discount is an object in the exported `eventsDiscounts` or `softwareDiscounts` array. Example of a current discount:
 
 ```ts
 import { Promo } from '@/types/promo';
 
-export const discounts: Promo[] = [
+export const eventsDiscounts: Promo[] = [
   {
     id: 'react-universe-2025', // Unique string identifier
     message: 'React Universe Conf 2025: 10% off with code meet.js10!', // Banner message
@@ -100,7 +100,7 @@ export const discounts: Promo[] = [
 
 If you're organizing an event, conference, or offering software tools and would like to provide discounts to the meet.js community, please reach out to us at **contact@meetjs.pl**. We're always happy to feature relevant offers that benefit our developer community.
 
-**After editing discounts.ts or software-discounts.ts, save and reload the page to see your changes.**
+**After editing events-discounts.ts or software-discounts.ts, save and reload the page to see your changes.**
 
 ## Community Participation Section
 
