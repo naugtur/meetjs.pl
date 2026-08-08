@@ -32,17 +32,40 @@ export const getSpeakers = async (): Promise<SpeakerType[]> => {
 
     if (!res.ok) {
       const body = await res.text();
+      const isHtml =
+        body.trimStart().toLowerCase().startsWith('<!doctype') ||
+        body.includes('<html');
+
+      if (isDevelopment()) {
+        console.warn(
+          `[getSpeakers] API returned ${res.status} ${res.statusText}. ` +
+            (isHtml
+              ? 'Response is HTML (likely Cloudflare/WAF challenge). '
+              : '') +
+            'Using mock data for development.',
+        );
+        return MOCK_SPEAKERS;
+      }
+
       console.error(
         `[getSpeakers] API returned ${res.status} ${res.statusText}:`,
         body.slice(0, 200),
       );
-      return isDevelopment() ? MOCK_SPEAKERS : [];
+      return [];
     }
 
     const json = await res.json();
     return SpeakersSchema.parse(json);
   } catch (error) {
+    if (isDevelopment()) {
+      console.warn(
+        '[getSpeakers] Failed to fetch or parse speakers, using mock data for development:',
+        error,
+      );
+      return MOCK_SPEAKERS;
+    }
+
     console.error('[getSpeakers] Failed to fetch or parse speakers:', error);
-    return isDevelopment() ? MOCK_SPEAKERS : [];
+    return [];
   }
 };
