@@ -6,6 +6,7 @@ import { EventsSchema } from '@/types/event';
 import { EmptyEventsAlert } from '@/components/EmptyEventsAlert';
 import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
 import { changeCityName } from '@/utils/changeCityName';
+import { MOCK_PAST_EVENTS } from '@/utils/eventsMock';
 import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
 import { filterUpcomingEvents, sortEventsByDate } from '@/utils/eventUtils';
 import { getTranslate } from '@/tolgee/server';
@@ -29,7 +30,16 @@ const getPastEvents = async () => {
     });
 
     if (!pastEventsRes.ok) {
-      throw new Error(`HTTP error! status: ${pastEventsRes.status}`);
+      const body = await pastEventsRes.text();
+      if (process.env.NODE_ENV !== 'production') {
+        console.warn(
+          `[getPastEvents] API returned ${pastEventsRes.status} ${pastEventsRes.statusText}, using mock past events for development.`,
+        );
+        return sortEventsByDate(MOCK_PAST_EVENTS.map(changeCityName), false); // false = descending order
+      }
+      throw new Error(
+        `Events API returned ${pastEventsRes.status}: ${pastEventsRes.statusText}\n${body.slice(0, 200)}`,
+      );
     }
 
     const pastEventsJson = await pastEventsRes.json();
@@ -38,6 +48,14 @@ const getPastEvents = async () => {
     const pastEvents = Object.values(data ?? {}).map(changeCityName);
     return sortEventsByDate(pastEvents, false); // false = descending order
   } catch (error) {
+    if (process.env.NODE_ENV !== 'production') {
+      console.warn(
+        '[getPastEvents] Failed to fetch or parse past events, using mock data for development:',
+        error,
+      );
+      return sortEventsByDate(MOCK_PAST_EVENTS.map(changeCityName), false);
+    }
+
     console.error('Error fetching past events:', error);
     return [];
   }
