@@ -22,7 +22,7 @@ export const MOCK_SPEAKERS: SpeakerType[] = [
   {
     id: 3,
     name: 'Dev',
-    surname: null,
+    surname: '',
     slug: 'dev-placeholder',
     events_count: 0,
     url: 'https://meetjs.pl',

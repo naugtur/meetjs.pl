@@ -7,6 +7,7 @@ import { EmptyEventsAlert } from '@/components/EmptyEventsAlert';
 import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
 import { changeCityName } from '@/utils/changeCityName';
 import { MOCK_PAST_EVENTS } from '@/utils/eventsMock';
+import { isDevelopment } from '@/utils/isDevelopment';
 import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
 import { filterUpcomingEvents, sortEventsByDate } from '@/utils/eventUtils';
 import { getTranslate } from '@/tolgee/server';
@@ -31,7 +32,7 @@ const getPastEvents = async () => {
 
     if (!pastEventsRes.ok) {
       const body = await pastEventsRes.text();
-      if (process.env.NODE_ENV !== 'production') {
+      if (isDevelopment()) {
         console.warn(
           `[getPastEvents] API returned ${pastEventsRes.status} ${pastEventsRes.statusText}, using mock past events for development.`,
         );
@@ -48,7 +49,7 @@ const getPastEvents = async () => {
     const pastEvents = Object.values(data ?? {}).map(changeCityName);
     return sortEventsByDate(pastEvents, false); // false = descending order
   } catch (error) {
-    if (process.env.NODE_ENV !== 'production') {
+    if (isDevelopment()) {
       console.warn(
         '[getPastEvents] Failed to fetch or parse past events, using mock data for development:',
         error,

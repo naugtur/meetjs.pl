@@ -2,8 +2,7 @@ import { env } from '@/env';
 import { EventsSchema } from '@/types/event';
 import { changeCityName } from '@/utils/changeCityName';
 import { MOCK_UPCOMING_EVENTS } from '@/utils/eventsMock';
-
-const isDevelopment = () => process.env.NODE_ENV !== 'production';
+import { isDevelopment } from '@/utils/isDevelopment';
 
 export const getUpcomingEvents = async () => {
   try {

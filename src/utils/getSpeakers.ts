@@ -1,5 +1,6 @@
 import { env } from '@/env';
 import { SpeakersSchema, SpeakerType } from '@/types/speaker';
+import { isDevelopment } from '@/utils/isDevelopment';
 import { MOCK_SPEAKERS } from '@/utils/speakersMock';
 
 const isPlaceholderToken = (token: string | undefined): boolean => {
@@ -8,8 +9,6 @@ const isPlaceholderToken = (token: string | undefined): boolean => {
     token.includes('<') || token.includes('>') || token.startsWith('your_')
   );
 };
-
-const isDevelopment = (): boolean => process.env.NODE_ENV !== 'production';
 
 export const getSpeakers = async (): Promise<SpeakerType[]> => {
   if (!env.SPEAKERS_API_URL || isPlaceholderToken(env.SPEAKERS_API_TOKEN)) {
