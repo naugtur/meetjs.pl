@@ -10,7 +10,7 @@ const pastDate1 = new Date(now.getFullYear(), now.getMonth() - 3, 15);
 const pastDate2 = new Date(now.getFullYear(), now.getMonth() - 3, 22);
 
 const baseEvent = {
-  type: 'Meetup' as EventType['type'],
+  type: 'Meetup',
   date_add: 0,
   time: '18:00',
   url: 'https://meetjs.pl',
@@ -19,7 +19,7 @@ const baseEvent = {
   image: '',
   serie: 'mock.js',
   topic: ['JavaScript'],
-};
+} as const satisfies Partial<EventType>;
 
 export const MOCK_UPCOMING_EVENTS: EventType[] = [
   {
