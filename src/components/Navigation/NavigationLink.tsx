@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
 import { classNames } from '@/utils/classNames';
 import type { Route } from 'next';
+import { trackClientEvent } from '@/lib/analytics';
 
 type InternalNavLinkProps = {
   name: string;
@@ -56,6 +57,14 @@ export const NavigationLink = ({
   ) : (
     <Link
       href={href}
+      onClick={
+        href === '/how-to-become-an-organizer'
+          ? () =>
+              trackClientEvent('click_organizer_entry', {
+                source: 'navigation',
+              })
+          : undefined
+      }
       className={classNames(
         baseClasses,
         'whitespace-nowrap rounded-md px-3 py-2 font-medium',

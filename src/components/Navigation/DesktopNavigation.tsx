@@ -23,12 +23,15 @@ export const DesktopNavigation = () => {
   return (
     <nav
       aria-label="Primary navigation"
-      className="hidden sm:flex"
+      className="hidden xl:flex"
       itemScope
       itemType="https://schema.org/SiteNavigationElement"
       role="navigation"
     >
-      <ul className="flex items-center justify-center gap-4" role="menubar">
+      <ul
+        className="flex items-center justify-center gap-1 text-sm 2xl:gap-3 2xl:text-base"
+        role="menubar"
+      >
         {menuLinks.map((item) => (
           <li key={item.name} role="none">
             {item.dropdown ? (

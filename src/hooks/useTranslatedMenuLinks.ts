@@ -14,6 +14,12 @@ export const useTranslatedMenuLinks = (): MenuLink[] => {
       highlight: true,
     },
     {
+      name: t('navigation.organize'),
+      href: '/how-to-become-an-organizer',
+      current: false,
+      external: false,
+    },
+    {
       name: t('navigation.menu_items.speakers'),
       href: '/speakers',
       current: false,
@@ -198,7 +204,7 @@ export const useTranslatedFooterMenuLinks = (): MenuLink[] => {
     },
     {
       name: t('footer.menu_links.contact_link'),
-      href: '#',
+      href: 'mailto:contact@meetjs.pl',
       current: false,
       external: false,
     },
@@ -260,7 +266,7 @@ export const getTranslatedFooterMenuLinks = async (): Promise<MenuLink[]> => {
     },
     {
       name: t('footer.menu_links.contact_link'),
-      href: '#',
+      href: 'mailto:contact@meetjs.pl',
       current: false,
       external: false,
     },

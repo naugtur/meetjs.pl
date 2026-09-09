@@ -16,16 +16,20 @@ export const Navigation = () => {
         <Disclosure as="nav" className="bg-purple" aria-label="Main navigation">
           {({ open }) => (
             <>
-              <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+              <div className="mx-auto max-w-screen-2xl px-2 sm:px-6 lg:px-8">
                 <div className="relative flex h-16 items-center justify-between">
                   <div className="flex flex-1 items-center justify-between sm:items-stretch">
-                    <Logo />
+                    <div className="shrink-0">
+                      <Logo />
+                    </div>
                     <DesktopNavigation />
                     <aside
-                      className="hidden items-center justify-center md:flex"
+                      className="hidden items-center justify-center xl:flex"
                       aria-label="Social media links"
                     >
-                      <SocialLinks />
+                      <div className="hidden 2xl:block">
+                        <SocialLinks />
+                      </div>
                       <LanguageSwitcher variant="desktop" />
                     </aside>
                   </div>

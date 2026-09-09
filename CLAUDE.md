@@ -381,6 +381,7 @@ Key conventions:
 - Use descriptive, namespaced keys (e.g., `hero.title`, not just `title`)
 - Server components: `const t = await getTranslate(); t('key')`
 - Client components: `const { t } = useTranslate(); t('key')`
+- Tolgee extraction requires literal keys in `t('key')`: translate inside configuration arrays/maps, then render the translated values instead of calling `t()` with a computed key. Run `pnpm exec tolgee extract check` before syncing; do not bypass extraction warnings.
 
 ### Testing Components
 
