@@ -38,6 +38,12 @@ export default async function PassportProgressPage({
   const { slug } = await params;
   const t = await getTranslate();
   const language = await getLanguage();
+  const bracketLabels = {
+    two_city: t('passport.brackets.two_city'),
+    four_city: t('passport.brackets.four_city'),
+    six_city: t('passport.brackets.six_city'),
+    all_city: t('passport.brackets.all_city'),
+  };
 
   const participant = PARTICIPANTS.find((p) => p.slug === slug);
 
@@ -88,7 +94,7 @@ export default async function PassportProgressPage({
             className={`flex items-center gap-1.5 px-3 py-1.5 ${bestStyle.badgeClass}`}
           >
             <BestIcon className="h-4 w-4" />
-            {t(`passport.brackets.${bestBracket.bracketId}`)} &middot;{' '}
+            {bracketLabels[bestBracket.bracketId]} &middot;{' '}
             {t('passport.achieved_on', {
               date: formatAchievedAt(bestBracket.achievedAt!, language),
             })}
@@ -125,7 +131,7 @@ export default async function PassportProgressPage({
               />
               <div>
                 <h2 className="font-semibold text-gray-900">
-                  {t(`passport.brackets.${bracket.bracketId}`)}
+                  {bracketLabels[bracket.bracketId]}
                 </h2>
                 {achieved ? (
                   <p className="text-xs text-muted-foreground">

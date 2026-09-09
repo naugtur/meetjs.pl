@@ -13,13 +13,14 @@ import { CityStatusIndicator } from './CityStatusIndicator';
 import { useTranslate } from '@tolgee/react';
 import { useTranslatedMenuLinks } from '@/hooks/useTranslatedMenuLinks';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import { trackClientEvent } from '@/lib/analytics';
 
 export const MobileNavigation = () => {
   const { t } = useTranslate();
   const menuLinks = useTranslatedMenuLinks();
 
   return (
-    <DisclosurePanel className="sm:hidden">
+    <DisclosurePanel className="xl:hidden">
       <nav
         aria-label="Mobile navigation menu"
         itemScope
@@ -135,6 +136,14 @@ export const MobileNavigation = () => {
                   <DisclosureButton
                     as="a"
                     href={item.href}
+                    onClick={
+                      item.href === '/how-to-become-an-organizer'
+                        ? () =>
+                            trackClientEvent('click_organizer_entry', {
+                              source: 'navigation',
+                            })
+                        : undefined
+                    }
                     className={classNames(
                       item.highlight
                         ? 'animate-pulse-scale bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white shadow-lg'

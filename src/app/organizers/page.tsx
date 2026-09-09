@@ -21,7 +21,7 @@ export default async function OrganizersPage() {
   const t = await getTranslate();
 
   return (
-    <div className="container mx-auto max-w-6xl py-16">
+    <main className="container mx-auto max-w-6xl py-16">
       <div className="mb-12 text-center">
         <h1 className="mb-4 text-4xl font-bold">
           {t('organizer.hub_page_title')}
@@ -167,6 +167,12 @@ export default async function OrganizersPage() {
                 <li>Multiple colors</li>
                 <li>Square variants</li>
               </ul>
+              <a
+                href="/brand#logos"
+                className="inline-flex min-h-11 items-center rounded font-semibold text-purple underline underline-offset-4 hover:text-purple/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
+              >
+                {t('organizer.assets_section.current_logos.title')} →
+              </a>
             </div>
           </div>
 
@@ -190,6 +196,12 @@ export default async function OrganizersPage() {
                 <li>Print materials</li>
                 <li>Historical branding</li>
               </ul>
+              <a
+                href="/brand#logos"
+                className="inline-flex min-h-11 items-center rounded font-semibold text-purple underline underline-offset-4 hover:text-purple/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
+              >
+                {t('organizer.assets_section.legacy_assets.title')} →
+              </a>
             </div>
           </div>
 
@@ -213,6 +225,12 @@ export default async function OrganizersPage() {
                 <li>Various themes</li>
                 <li>Social media ready</li>
               </ul>
+              <a
+                href="/brand#wallpapers"
+                className="inline-flex min-h-11 items-center rounded font-semibold text-purple underline underline-offset-4 hover:text-purple/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
+              >
+                {t('organizer.assets_section.wallpapers.title')} →
+              </a>
             </div>
           </div>
         </div>
@@ -262,6 +280,6 @@ export default async function OrganizersPage() {
           </a>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

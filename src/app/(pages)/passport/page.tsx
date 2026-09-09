@@ -49,6 +49,12 @@ function toBestAchievementOnly(
 export default async function PassportPage() {
   const t = await getTranslate();
   const language = await getLanguage();
+  const bracketLabels: Record<BracketId, string> = {
+    two_city: t('passport.brackets.two_city'),
+    four_city: t('passport.brackets.four_city'),
+    six_city: t('passport.brackets.six_city'),
+    all_city: t('passport.brackets.all_city'),
+  };
 
   const fullHallOfFame = computeHallOfFame(
     PARTICIPANTS,
@@ -98,7 +104,7 @@ export default async function PassportPage() {
                   <div className="mb-6 flex items-center justify-center gap-3">
                     <Icon className="h-7 w-7 text-gray-700" />
                     <h2 className="text-2xl font-bold">
-                      {t(`passport.brackets.${bracket.id}`)}
+                      {bracketLabels[bracket.id]}
                     </h2>
                   </div>
                   <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
