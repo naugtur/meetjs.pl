@@ -1,6 +1,4 @@
-'use client';
-
-import { useMemo, useState } from 'react';
+import { createMemo, createSignal, For, Show } from 'solid-js';
 import type { Promo } from '@/types/promo';
 import { PromoFilters } from '@/components/PromoFilters';
 import { PromoCard } from '@/components/PromoCard';
@@ -9,38 +7,40 @@ interface SpecialPromoBannersProps {
   promos: Promo[];
 }
 
-export function SpecialPromoBanners({ promos }: SpecialPromoBannersProps) {
-  const [selectedCountries, setSelectedCountries] = useState<string[]>([]);
+export function SpecialPromoBanners(props: SpecialPromoBannersProps) {
+  const [selectedCountries, setSelectedCountries] = createSignal<string[]>([]);
 
   // Filter out expired promos and sort by expiration date
-  const visiblePromos = useMemo(() => {
+  const visiblePromos = createMemo(() => {
     const now = new Date();
-    return promos
+    return props.promos
       .filter((promo) => new Date(promo.expiresAt) >= now)
       .sort(
         (a, b) =>
           new Date(a.expiresAt).getTime() - new Date(b.expiresAt).getTime(),
       );
-  }, [promos]);
+  });
 
   // Get available countries from active promos
-  const availableCountries = useMemo(() => {
+  const availableCountries = createMemo(() => {
     return [
-      ...new Set(visiblePromos.map((promo) => promo.country).filter(Boolean)),
+      ...new Set(
+        visiblePromos()
+          .map((promo) => promo.country)
+          .filter(Boolean),
+      ),
     ] as string[];
-  }, [visiblePromos]);
+  });
 
   // Apply country filters to active promos
-  const filteredPromos = useMemo(() => {
-    if (selectedCountries.length === 0) {
-      return visiblePromos;
+  const filteredPromos = createMemo(() => {
+    if (selectedCountries().length === 0) {
+      return visiblePromos();
     }
-    return visiblePromos.filter(
-      (promo) => promo.country && selectedCountries.includes(promo.country),
+    return visiblePromos().filter(
+      (promo) => promo.country && selectedCountries().includes(promo.country),
     );
-  }, [visiblePromos, selectedCountries]);
-
-  if (visiblePromos.length === 0) return null;
+  });
 
   const toggleCountry = (country: string) => {
     setSelectedCountries((prev) =>
@@ -55,21 +55,23 @@ export function SpecialPromoBanners({ promos }: SpecialPromoBannersProps) {
   };
 
   return (
-    <div className="space-y-6">
-      <PromoFilters
-        availableCountries={availableCountries}
-        selectedCountries={selectedCountries}
-        onCountryToggle={toggleCountry}
-        onClearFilters={clearCountryFilters}
-        filteredCount={filteredPromos.length}
-        totalCount={visiblePromos.length}
-      />
+    <Show when={visiblePromos().length > 0}>
+      <div class="space-y-6">
+        <PromoFilters
+          availableCountries={availableCountries()}
+          selectedCountries={selectedCountries()}
+          onCountryToggle={toggleCountry}
+          onClearFilters={clearCountryFilters}
+          filteredCount={filteredPromos().length}
+          totalCount={visiblePromos().length}
+        />
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
-        {filteredPromos.map((promo) => (
-          <PromoCard key={promo.id} promo={promo} />
-        ))}
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
+          <For each={filteredPromos()}>
+            {(promo) => <PromoCard promo={promo} />}
+          </For>
+        </div>
       </div>
-    </div>
+    </Show>
   );
 }

@@ -1,15 +1,17 @@
+import type { JSX } from '@solidjs/web';
+
 interface Props {
   href: string;
-  children: string;
+  children: JSX.Element;
 }
 
-export const ActionLink = ({ href, children }: Props) => (
+export const ActionLink = (props: Props) => (
   <a
-    href={href}
+    href={props.href}
     target="_blank"
     rel="noopener"
-    className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2 text-primary-foreground transition-all hover:bg-purple/50"
+    class="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2 text-primary-foreground transition-all hover:bg-purple/50"
   >
-    {children}
+    {props.children}
   </a>
 );

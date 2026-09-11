@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
+import { omit, type ParentProps } from 'solid-js';
+import type { JSX } from '@solidjs/web';
 
 import { cn } from '@/lib/utils';
 
@@ -33,25 +33,22 @@ const buttonVariants = cva(
   },
 );
 
-export interface ButtonProps
-  extends
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
-}
+export type ButtonProps = ParentProps<
+  JSX.ButtonHTMLAttributes<HTMLButtonElement> &
+    VariantProps<typeof buttonVariants>
+>;
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : 'button';
-    return (
-      <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
-        {...props}
-      />
-    );
-  },
-);
-Button.displayName = 'Button';
+const Button = (props: ButtonProps) => {
+  const rest = omit(props, 'class', 'variant', 'size');
+  return (
+    <button
+      class={cn(
+        buttonVariants({ variant: props.variant, size: props.size }),
+        props.class,
+      )}
+      {...rest}
+    />
+  );
+};
 
 export { Button, buttonVariants };

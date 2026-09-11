@@ -1,6 +1,5 @@
-'use client';
-
 import Autoplay from 'embla-carousel-autoplay';
+import { For } from 'solid-js';
 import {
   Carousel,
   CarouselContent,
@@ -16,26 +15,27 @@ export const PartnersCarousel = () => {
       }}
       plugins={[Autoplay({ playOnInit: true, delay: 2000 })]}
     >
-      <CarouselContent className="items-center">
-        {PARTNERS.map((partner) => (
-          <CarouselItem className="basis-full md:basis-1/6" key={partner.alt}>
-            <a
-              href={partner.href}
-              className="flex items-center justify-center"
-              target="_blank"
-              rel="noopener"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={partner.src}
-                alt={partner.alt}
-                width={114}
-                height={48}
-                className="h-auto max-h-12 w-auto max-w-[114px] object-contain"
-              />
-            </a>
-          </CarouselItem>
-        ))}
+      <CarouselContent class="items-center">
+        <For each={PARTNERS}>
+          {(partner) => (
+            <CarouselItem class="basis-full md:basis-1/6">
+              <a
+                href={partner.href}
+                class="flex items-center justify-center"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src={partner.src}
+                  alt={partner.alt}
+                  width={114}
+                  height={48}
+                  class="h-auto max-h-12 w-auto max-w-[114px] object-contain"
+                />
+              </a>
+            </CarouselItem>
+          )}
+        </For>
       </CarouselContent>
     </Carousel>
   );

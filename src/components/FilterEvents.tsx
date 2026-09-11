@@ -1,11 +1,10 @@
+import { For, Show } from 'solid-js';
 import { badgeVariants } from '@/components/ui/badge';
 import { CITIES } from '@/content/cities';
 import { EventType } from '@/types/event';
 import { clsx } from 'clsx';
-import { Suspense } from 'react';
 import { EventsList } from '@/components/EventsList';
-import Link from 'next/link';
-import { getTranslate } from '@/tolgee/server';
+import { useTranslate } from '@/i18n';
 import { isConferenceEvent } from '@/utils/eventUtils';
 
 interface FilterEventsProps {
@@ -13,101 +12,76 @@ interface FilterEventsProps {
   filter: string | null;
 }
 
-const FilterEventsContent = async ({ events, filter }: FilterEventsProps) => {
-  const t = await getTranslate();
+export const FilterEvents = (props: FilterEventsProps) => {
+  const { t } = useTranslate();
+
   const linkClassNames = (city: string | null) =>
     clsx(
       badgeVariants({
-        variant: filter === city ? 'default' : 'outline',
+        variant: props.filter === city ? 'default' : 'outline',
       }),
-      filter === city ? '' : 'bg-transparent',
+      props.filter === city ? '' : 'bg-transparent',
       'hover:text-black hover:bg-gray-100 hover:border-purple',
     );
 
-  if (!events) {
-    return <div>{t('events_page.filter.events_not_found')}</div>;
-  }
-
-  const filteredEvents =
-    filter === 'summit'
-      ? events.filter((event) => isConferenceEvent(event.type))
-      : filter
-        ? events.filter((event) => event.city === filter)
-        : events;
+  const filteredEvents = () => {
+    const events = props.events;
+    if (!events) return [];
+    if (props.filter === 'summit')
+      return events.filter((event) => isConferenceEvent(event.type));
+    if (props.filter)
+      return events.filter((event) => event.city === props.filter);
+    return events;
+  };
 
   return (
-    <>
-      <div className="flex flex-col gap-2">
-        <p className="text-center text-lg">
-          {t('events_page.filter.filter_by_city')}
-        </p>
-        <div className="flex max-w-4xl flex-wrap justify-center gap-2">
-          <Link
-            href={{ pathname: '/events' }}
-            scroll={false}
-            replace
-            className={linkClassNames(null)}
-          >
-            {t('events_page.filter.all')} ({events.length})
-          </Link>
-          <Link
-            href={{
-              pathname: '/events',
-              query: {
-                city: 'summit',
-              },
-            }}
-            replace
-            scroll={false}
-            className={linkClassNames('summit')}
-          >
-            🎤 Summit (
-            {events.filter((event) => isConferenceEvent(event.type)).length})
-          </Link>
-          <Link
-            href={{
-              pathname: '/events',
-              query: {
-                city: 'On-line',
-              },
-            }}
-            replace
-            scroll={false}
-            className={linkClassNames('On-line')}
-          >
-            {t('events_page.filter.online')} (
-            {events.filter((event) => event.city === 'On-line').length})
-          </Link>
-          {CITIES.map((city) => {
-            return (
-              <Link
-                href={{
-                  pathname: '/events',
-                  query: { city: city.name },
-                }}
-                replace
-                scroll={false}
-                className={linkClassNames(city.name)}
-                key={city.name}
-              >
-                {city.name} (
-                {events.filter((event) => event.city === city.name).length})
-              </Link>
-            );
-          })}
-        </div>
-      </div>
+    <Show
+      when={props.events}
+      fallback={<div>{t('events_page.filter.events_not_found')}</div>}
+    >
+      {(events) => (
+        <>
+          <div class="flex flex-col gap-2">
+            <p class="text-center text-lg">
+              {t('events_page.filter.filter_by_city')}
+            </p>
+            <div class="flex max-w-4xl flex-wrap justify-center gap-2">
+              <a href="/events" class={linkClassNames(null)}>
+                {t('events_page.filter.all')} ({events().length})
+              </a>
+              <a href="/events?city=summit" class={linkClassNames('summit')}>
+                🎤 Summit (
+                {
+                  events().filter((event) => isConferenceEvent(event.type))
+                    .length
+                }
+                )
+              </a>
+              <a href="/events?city=On-line" class={linkClassNames('On-line')}>
+                {t('events_page.filter.online')} (
+                {events().filter((event) => event.city === 'On-line').length})
+              </a>
+              <For each={CITIES}>
+                {(city) => (
+                  <a
+                    href={`/events?city=${encodeURIComponent(city.name)}`}
+                    class={linkClassNames(city.name)}
+                  >
+                    {city.name} (
+                    {
+                      events().filter((event) => event.city === city.name)
+                        .length
+                    }
+                    )
+                  </a>
+                )}
+              </For>
+            </div>
+          </div>
 
-      {filteredEvents !== null && <EventsList eventsList={filteredEvents} />}
-    </>
-  );
-};
-
-export const FilterEvents = async ({ events, filter }: FilterEventsProps) => {
-  const t = await getTranslate();
-  return (
-    <Suspense fallback={<div>{t('events_page.filter.loading')}</div>}>
-      <FilterEventsContent events={events} filter={filter} />
-    </Suspense>
+          <EventsList eventsList={filteredEvents()} />
+        </>
+      )}
+    </Show>
   );
 };

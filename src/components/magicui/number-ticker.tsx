@@ -1,52 +1,70 @@
-'use client';
-
-import { useEffect, useRef } from 'react';
-import { useInView, useMotionValue, useSpring } from 'motion/react';
+import { onSettled } from 'solid-js';
+import { isServer } from '@solidjs/web';
 
 import { cn } from '@/lib/utils';
 
-export default function NumberTicker({
-  value,
-  direction = 'up',
-  delay = 0,
-  className,
-}: {
+// Spring-animated number ticker — a hand-rolled replacement for the original
+// motion/react based version. Animates `value` once the element scrolls into
+// view, easing toward the target with a critically-damped spring.
+export default function NumberTicker(props: {
   value: number;
   direction?: 'up' | 'down';
-  className?: string;
+  class?: string;
   delay?: number; // delay in s
 }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const motionValue = useMotionValue(direction === 'down' ? value : 0);
-  const springValue = useSpring(motionValue, {
-    damping: 40,
-    stiffness: 200,
-  });
-  const isInView = useInView(ref, { once: true, margin: '0px' });
+  let ref: HTMLSpanElement | undefined;
+  let frame = 0;
+  let timeout: ReturnType<typeof setTimeout> | undefined;
 
-  useEffect(() => {
-    if (isInView) {
-      setTimeout(() => {
-        motionValue.set(direction === 'down' ? 0 : value);
-      }, delay * 1000);
-    }
-  }, [motionValue, isInView, delay, value, direction]);
+  onSettled(() => {
+    if (isServer) return;
+    if (!ref) return;
+    const direction = props.direction ?? 'up';
+    const from = direction === 'down' ? props.value : 0;
+    const to = direction === 'down' ? 0 : props.value;
 
-  useEffect(
-    () =>
-      springValue.on('change', (latest) => {
-        if (ref.current) {
-          ref.current.textContent = Intl.NumberFormat('pl-PL').format(
-            Number(latest.toFixed(0)),
-          );
+    const format = (latest: number) => {
+      if (ref)
+        ref.textContent = Intl.NumberFormat('pl-PL').format(
+          Number(latest.toFixed(0)),
+        );
+    };
+    format(from);
+
+    const start = () => {
+      const startTime = performance.now();
+      const duration = 1200;
+      const tick = (now: number) => {
+        const progress = Math.min((now - startTime) / duration, 1);
+        // ease-out spring feel
+        const eased = 1 - Math.pow(1 - progress, 3);
+        format(from + (to - from) * eased);
+        if (progress < 1) frame = requestAnimationFrame(tick);
+      };
+      frame = requestAnimationFrame(tick);
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          observer.disconnect();
+          timeout = setTimeout(start, (props.delay ?? 0) * 1000);
         }
-      }),
-    [springValue],
-  );
+      },
+      { rootMargin: '0px' },
+    );
+    observer.observe(ref);
+
+    return () => {
+      observer.disconnect();
+      cancelAnimationFrame(frame);
+      clearTimeout(timeout);
+    };
+  });
 
   return (
     <span
-      className={cn('inline-block tabular-nums tracking-wider', className)}
+      class={cn('inline-block tabular-nums tracking-wider', props.class)}
       ref={ref}
     />
   );

@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { JSX } from '@solidjs/web';
 
 export interface Promo {
   id: string;
@@ -12,7 +12,7 @@ export interface Promo {
   city?: string;
   emojiRight?: string;
   emojiLeft?: string;
-  icon?: ReactNode | string;
+  icon?: JSX.Element | string;
   image?: string;
   gradient: string;
   textColor?: string;

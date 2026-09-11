@@ -1,13 +1,13 @@
 import {
-  FaDiscord,
-  FaFacebook,
-  FaGithub,
-  FaInstagram,
-  FaLinkedin,
-  FaSquareXTwitter,
-  FaYoutube,
-} from 'react-icons/fa6';
-import type { JSX } from 'react';
+  FaBrandsDiscord,
+  FaBrandsFacebook,
+  FaBrandsGithub,
+  FaBrandsInstagram,
+  FaBrandsLinkedin,
+  FaBrandsSquareXTwitter,
+  FaBrandsYoutube,
+} from 'solid-icons/fa';
+import type { JSX } from '@solidjs/web';
 
 export interface socialLink {
   name: string;
@@ -19,37 +19,37 @@ export const socialLinksData: socialLink[] = [
   {
     name: 'Instagram',
     url: '/instagram',
-    icon: <FaInstagram />,
+    icon: <FaBrandsInstagram />,
   },
   {
     name: 'Facebook',
     url: '/facebook',
-    icon: <FaFacebook />,
+    icon: <FaBrandsFacebook />,
   },
   {
     name: 'Linkedin',
     url: '/linkedin',
-    icon: <FaLinkedin />,
+    icon: <FaBrandsLinkedin />,
   },
   {
     name: 'Twitter',
     url: '/x',
-    icon: <FaSquareXTwitter />,
+    icon: <FaBrandsSquareXTwitter />,
   },
   {
     name: 'Discord',
     url: '/discord',
-    icon: <FaDiscord />,
+    icon: <FaBrandsDiscord />,
   },
   {
     name: 'Github',
     url: '/github',
-    icon: <FaGithub />,
+    icon: <FaBrandsGithub />,
   },
   {
     name: 'YouTube',
     url: '/youtube',
-    icon: <FaYoutube />,
+    icon: <FaBrandsYoutube />,
   },
 ];
 
@@ -57,21 +57,21 @@ export const instagramLinksData: socialLink[] = [
   {
     name: 'Instagram',
     url: '/instagram',
-    icon: <FaInstagram />,
+    icon: <FaBrandsInstagram />,
   },
   {
     name: 'Białystok',
     url: '/instagram-bialystok',
-    icon: <FaInstagram />,
+    icon: <FaBrandsInstagram />,
   },
   {
     name: 'Poznań',
     url: '/instagram-poznan',
-    icon: <FaInstagram />,
+    icon: <FaBrandsInstagram />,
   },
   {
     name: 'Wrocław',
     url: '/instagram-wroclaw',
-    icon: <FaInstagram />,
+    icon: <FaBrandsInstagram />,
   },
 ];

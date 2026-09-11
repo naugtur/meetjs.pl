@@ -1,10 +1,11 @@
+import { For } from 'solid-js';
+import type { JSX } from '@solidjs/web';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { JSX } from 'react';
 
 export interface FAQQuestion {
   id: string;
@@ -16,19 +17,21 @@ interface FAQProps {
   questions: FAQQuestion[];
 }
 
-export const FAQ = ({ questions }: FAQProps) => {
+export const FAQ = (props: FAQProps) => {
   return (
-    <section className="p-8">
-      <h2 className="text-center text-2xl font-bold">FAQ</h2>
-      <Accordion type="single" collapsible className="w-full">
-        {questions.map((question) => (
-          <AccordionItem key={question.id} value={`item-${question.id}`}>
-            <AccordionTrigger>{question.question}</AccordionTrigger>
-            <AccordionContent>
-              <p>{question.answer}</p>
-            </AccordionContent>
-          </AccordionItem>
-        ))}
+    <section class="p-8">
+      <h2 class="text-center text-2xl font-bold">FAQ</h2>
+      <Accordion class="w-full">
+        <For each={props.questions}>
+          {(question) => (
+            <AccordionItem value={`item-${question.id}`}>
+              <AccordionTrigger>{question.question}</AccordionTrigger>
+              <AccordionContent>
+                <p>{question.answer}</p>
+              </AccordionContent>
+            </AccordionItem>
+          )}
+        </For>
       </Accordion>
     </section>
   );

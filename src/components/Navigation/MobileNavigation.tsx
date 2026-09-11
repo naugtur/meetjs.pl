@@ -1,172 +1,178 @@
+import { For, Show } from 'solid-js';
 import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-} from '@headlessui/react';
-import { FaArrowUpRightFromSquare, FaChevronDown } from 'react-icons/fa6';
-import { FaMapMarkerAlt } from 'react-icons/fa';
+  FaSolidArrowUpRightFromSquare,
+  FaSolidChevronDown,
+  FaSolidMapMarkerAlt,
+} from 'solid-icons/fa';
 
 import { CITIES } from '@/content/cities';
 import { classNames } from '@/utils/classNames';
 import { SocialLinks } from '@/components/SocialLinks';
 import { CityStatusIndicator } from './CityStatusIndicator';
-import { useTranslate } from '@tolgee/react';
+import { useTranslate } from '@/i18n';
 import { useTranslatedMenuLinks } from '@/hooks/useTranslatedMenuLinks';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+  useDisclosure,
+} from '@/components/ui/disclosure';
+
+const MobileDropdownSection = (props: {
+  item: ReturnType<typeof useTranslatedMenuLinks>[number];
+}) => {
+  const { t } = useTranslate();
+  const disclosure = useDisclosure();
+  const item = props.item;
+
+  return (
+    <div>
+      <DisclosureButton class="flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-base font-medium text-white hover:bg-green/80 hover:text-purple">
+        <span>{item.name}</span>
+        <FaSolidChevronDown
+          class={classNames(
+            disclosure?.open() ? 'rotate-180' : '',
+            'h-4 w-4 transform transition-transform duration-200',
+          )}
+          aria-hidden="true"
+        />
+      </DisclosureButton>
+      <DisclosurePanel class="space-y-1">
+        <For each={item.dropdown}>
+          {(dropdownItem) => (
+            <Show
+              when={dropdownItem.type !== 'separator'}
+              fallback={<div class="my-2 border-t border-gray-200" />}
+            >
+              <Show
+                when={dropdownItem.type === 'cities'}
+                fallback={
+                  <Show
+                    when={!dropdownItem.disabled}
+                    fallback={
+                      <div
+                        class="block cursor-not-allowed rounded-md px-3 py-2 text-base font-medium text-gray-400"
+                        aria-disabled="true"
+                      >
+                        <span class="flex items-center justify-between">
+                          {dropdownItem.name}
+                          <span class="text-xs">
+                            {t('navigation.dropdown.coming_soon')}
+                          </span>
+                        </span>
+                      </div>
+                    }
+                  >
+                    <a
+                      href={dropdownItem.href}
+                      class="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-green/80 hover:text-purple"
+                      target={dropdownItem.external ? '_blank' : undefined}
+                      rel={dropdownItem.external ? 'noopener' : undefined}
+                    >
+                      <span class="flex items-center">
+                        {dropdownItem.name}
+                        <Show when={dropdownItem.external}>
+                          <FaSolidArrowUpRightFromSquare class="ml-2 h-4 w-4" />
+                        </Show>
+                      </span>
+                    </a>
+                  </Show>
+                }
+              >
+                <div>
+                  <div class="px-3 py-2 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                    {t('navigation.dropdown.cities_label')}
+                  </div>
+                  <For
+                    each={CITIES.slice().sort((a, b) =>
+                      a.name.localeCompare(b.name),
+                    )}
+                  >
+                    {(city) => (
+                      <a
+                        href={city.href}
+                        class="flex items-center justify-between rounded-md px-3 py-2 text-base font-medium text-white hover:bg-green/80 hover:text-purple"
+                      >
+                        <span class="flex items-center">
+                          <FaSolidMapMarkerAlt class="mr-2 h-4 w-4" />
+                          {city.name}
+                        </span>
+                        <CityStatusIndicator status={city.status} />
+                      </a>
+                    )}
+                  </For>
+                </div>
+              </Show>
+            </Show>
+          )}
+        </For>
+      </DisclosurePanel>
+    </div>
+  );
+};
 
 export const MobileNavigation = () => {
-  const { t } = useTranslate();
   const menuLinks = useTranslatedMenuLinks();
 
   return (
-    <DisclosurePanel className="sm:hidden">
+    <DisclosurePanel class="sm:hidden">
       <nav
         aria-label="Mobile navigation menu"
-        itemScope
-        itemType="https://schema.org/SiteNavigationElement"
-        className="max-h-[70vh] overflow-y-auto"
+        itemscope
+        itemtype="https://schema.org/SiteNavigationElement"
+        class="max-h-[70vh] overflow-y-auto"
         role="navigation"
       >
-        <ul className="space-y-1 px-2 pb-3 pt-2" role="menu">
-          {menuLinks.map((item) => {
-            if (item.dropdown) {
-              return (
-                <li key={item.name} className="first:pt-0">
+        <ul class="space-y-1 px-2 pb-3 pt-2" role="menu">
+          <For each={menuLinks}>
+            {(item) => (
+              <li class="first:pt-0">
+                <Show
+                  when={item.dropdown}
+                  fallback={
+                    <DisclosureButton
+                      as="a"
+                      href={item.href}
+                      class={classNames(
+                        item.highlight
+                          ? 'animate-pulse-scale bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white shadow-lg'
+                          : item.current
+                            ? 'bg-gray-900 text-white'
+                            : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                        'block rounded-md px-3 py-2 text-base font-medium',
+                      )}
+                      aria-current={item.current ? 'page' : undefined}
+                      target={item.external ? '_blank' : undefined}
+                      rel={item.external ? 'noopener' : undefined}
+                      {...(item.external
+                        ? {
+                            'aria-label': `${item.name} (opens in a new tab)`,
+                          }
+                        : {})}
+                    >
+                      {item.name}
+                      <Show when={item.external}>
+                        <FaSolidArrowUpRightFromSquare
+                          class="mb-1 ml-2 inline-block"
+                          aria-hidden="true"
+                        />
+                      </Show>
+                    </DisclosureButton>
+                  }
+                >
                   <Disclosure>
-                    {({ open }) => (
-                      <div>
-                        <DisclosureButton className="flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-base font-medium text-white hover:bg-green/80 hover:text-purple">
-                          <span>{item.name}</span>
-                          <FaChevronDown
-                            className={classNames(
-                              open ? 'rotate-180' : '',
-                              'h-4 w-4 transform transition-transform duration-200',
-                            )}
-                            aria-hidden="true"
-                          />
-                        </DisclosureButton>
-                        <DisclosurePanel className="space-y-1">
-                          {item.dropdown?.map((dropdownItem, index) => {
-                            if (dropdownItem.type === 'separator') {
-                              return (
-                                <div
-                                  key={index}
-                                  className="my-2 border-t border-gray-200"
-                                />
-                              );
-                            }
-
-                            if (dropdownItem.type === 'cities') {
-                              return (
-                                <div key={index}>
-                                  <div className="px-3 py-2 text-xs font-semibold uppercase tracking-wide text-gray-500">
-                                    {t('navigation.dropdown.cities_label')}
-                                  </div>
-                                  {CITIES.sort((a, b) =>
-                                    a.name.localeCompare(b.name),
-                                  ).map((city) => (
-                                    <DisclosureButton
-                                      key={city.name}
-                                      as="a"
-                                      href={city.href}
-                                      className="flex items-center justify-between rounded-md px-3 py-2 text-base font-medium text-white hover:bg-green/80 hover:text-purple"
-                                    >
-                                      <span className="flex items-center">
-                                        <FaMapMarkerAlt className="mr-2 h-4 w-4" />
-                                        {city.name}
-                                      </span>
-                                      <CityStatusIndicator
-                                        status={city.status}
-                                      />
-                                    </DisclosureButton>
-                                  ))}
-                                </div>
-                              );
-                            }
-
-                            if (dropdownItem.disabled) {
-                              return (
-                                <div
-                                  key={dropdownItem.name}
-                                  className="block cursor-not-allowed rounded-md px-3 py-2 text-base font-medium text-gray-400"
-                                  aria-disabled="true"
-                                >
-                                  <span className="flex items-center justify-between">
-                                    {dropdownItem.name}
-                                    <span className="text-xs">
-                                      {t('navigation.dropdown.coming_soon')}
-                                    </span>
-                                  </span>
-                                </div>
-                              );
-                            }
-
-                            return (
-                              <DisclosureButton
-                                key={dropdownItem.name}
-                                as="a"
-                                href={dropdownItem.href}
-                                className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-green/80 hover:text-purple"
-                                target={
-                                  dropdownItem.external ? '_blank' : undefined
-                                }
-                                rel={
-                                  dropdownItem.external ? 'noopener' : undefined
-                                }
-                              >
-                                <span className="flex items-center">
-                                  {dropdownItem.name}
-                                  {dropdownItem.external && (
-                                    <FaArrowUpRightFromSquare className="ml-2 h-4 w-4" />
-                                  )}
-                                </span>
-                              </DisclosureButton>
-                            );
-                          })}
-                        </DisclosurePanel>
-                      </div>
-                    )}
+                    <MobileDropdownSection item={item} />
                   </Disclosure>
-                </li>
-              );
-            } else {
-              return (
-                <li key={item.name}>
-                  <DisclosureButton
-                    as="a"
-                    href={item.href}
-                    className={classNames(
-                      item.highlight
-                        ? 'animate-pulse-scale bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white shadow-lg'
-                        : item.current
-                          ? 'bg-gray-900 text-white'
-                          : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                      'block rounded-md px-3 py-2 text-base font-medium',
-                    )}
-                    aria-current={item.current ? 'page' : undefined}
-                    target={item.external ? '_blank' : undefined}
-                    rel={item.external ? 'noopener' : undefined}
-                    {...(item.external && {
-                      'aria-label': `${item.name} (opens in a new tab)`,
-                    })}
-                  >
-                    {item.name}
-                    {item.external && (
-                      <FaArrowUpRightFromSquare
-                        className="mb-1 ml-2 inline-block"
-                        aria-hidden="true"
-                      />
-                    )}
-                  </DisclosureButton>
-                </li>
-              );
-            }
-          })}
+                </Show>
+              </li>
+            )}
+          </For>
         </ul>
-        <div className="border-t border-gray-600 px-2 pt-4">
-          <LanguageSwitcher variant="mobile" className="mb-4" />
+        <div class="border-t border-gray-600 px-2 pt-4">
+          <LanguageSwitcher variant="mobile" class="mb-4" />
         </div>
-        <div className="flex justify-center px-2">
+        <div class="flex justify-center px-2">
           <SocialLinks />
         </div>
       </nav>

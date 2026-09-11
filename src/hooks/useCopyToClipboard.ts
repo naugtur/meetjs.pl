@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { createSignal } from 'solid-js';
 
 export function useCopyToClipboard() {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = createSignal(false);
 
   const copyToClipboard = async (text: string) => {
     try {

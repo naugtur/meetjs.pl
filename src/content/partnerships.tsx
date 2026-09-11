@@ -1,5 +1,3 @@
-import React from 'react';
-import Image from 'next/image';
 import {
   Bot,
   BookOpen,
@@ -8,7 +6,8 @@ import {
   Users,
   TestTube,
   Sun,
-} from 'lucide-react';
+} from '@/lib/lucide';
+import type { JSX } from '@solidjs/web';
 
 export interface Partnership {
   name: string;
@@ -18,7 +17,7 @@ export interface Partnership {
   goals: string[];
   location: string;
   contact: string;
-  icon: React.ReactElement;
+  icon: JSX.Element;
   gradient: string;
   photos?: {
     src: string;
@@ -54,7 +53,7 @@ export const partnerships: Partnership[] = [
     ],
     location: 'Warszawa, Google for Startups Campus',
     contact: 'https://codaro.dev/hackathon',
-    icon: <Code className="h-8 w-8 text-orange-300" />,
+    icon: <Code class="h-8 w-8 text-orange-300" />,
     gradient: 'from-orange-500 via-red-500 to-amber-500',
     specialOffer: {
       title: 'Rejestracja na hackathon',
@@ -84,7 +83,7 @@ export const partnerships: Partnership[] = [
     ],
     location: 'Warszawa, Tor Służewiec',
     contact: 'anna@wawtech.io',
-    icon: <Sun className="h-8 w-8 text-yellow-400" />,
+    icon: <Sun class="h-8 w-8 text-yellow-400" />,
     gradient: 'from-yellow-400 via-orange-500 to-red-500',
     specialOffer: {
       title: '15% zniżki – kod MEETJS15',
@@ -115,10 +114,11 @@ export const partnerships: Partnership[] = [
     location: 'Amsterdam, Netherlands & Online',
     contact: 'https://reactsummit.com/',
     icon: (
-      <Image
+      <img
         src="/discounts/RS_Logo_Vertical_Color.png"
         alt="React Summit"
         width={32}
+        style={{ width: '32px', height: 'auto' }}
         height={32}
       />
     ),
@@ -153,7 +153,7 @@ export const partnerships: Partnership[] = [
     ],
     location: 'Warszawa, Polska',
     contact: 'kontakt@testingground.pl',
-    icon: <TestTube className="h-8 w-8 text-emerald-500" />,
+    icon: <TestTube class="h-8 w-8 text-emerald-500" />,
     gradient: 'from-emerald-500 to-teal-500',
     specialOffer: {
       title: '20% zniżki dla meet.js',
@@ -183,7 +183,7 @@ export const partnerships: Partnership[] = [
     ],
     location: 'Kraków, Poland',
     contact: 'https://futureconf.tech/meetjs/',
-    icon: <Bot className="h-8 w-8 text-purple-500" />,
+    icon: <Bot class="h-8 w-8 text-purple-500" />,
     gradient: 'from-purple-600 to-blue-600',
     photos: [
       {
@@ -234,7 +234,7 @@ export const partnerships: Partnership[] = [
     ],
     location: 'Bielsko-Biała and surrounding areas',
     contact: 'mlodzi4it@gmail.com',
-    icon: <BookOpen className="h-8 w-8 text-blue-500" />,
+    icon: <BookOpen class="h-8 w-8 text-blue-500" />,
     gradient: 'from-blue-500 to-purple-600',
     photos: [
       {
@@ -284,7 +284,7 @@ export const partnerships: Partnership[] = [
     ],
     location: 'Lublin, Polska',
     contact: 'https://civil42.pl/',
-    icon: <Shield className="h-8 w-8 text-green-400" />,
+    icon: <Shield class="h-8 w-8 text-green-400" />,
     gradient: 'from-green-700 to-emerald-500',
     specialOffer: {
       title: 'Weź udział w hackathonie',
@@ -314,7 +314,7 @@ export const partnerships: Partnership[] = [
     ],
     location: 'Warszawa, EXPO XXI',
     contact: 'p.ceglarska@perspektywy.pl',
-    icon: <Users className="h-8 w-8 text-pink-500" />,
+    icon: <Users class="h-8 w-8 text-pink-500" />,
     gradient: 'from-pink-500 to-purple-600',
     specialOffer: {
       title: '50% zniżki – kod MEETJS_SUMMIT',
@@ -347,7 +347,7 @@ export const partnerships: Partnership[] = [
     contact:
       'https://techracesummit.com/pl/?utm_source=meetjs-1&utm_medium=media&utm_campaign=tech_race_summit_2026',
     icon: (
-      <Image
+      <img
         src="/partners/tech-race_vert_color on black_small_no descr.svg"
         alt="Tech Race Summit"
         width={48}
@@ -383,7 +383,7 @@ export const partnerships: Partnership[] = [
     ],
     location: 'Kraków, Poland',
     contact: 'https://hackyeah.pl/',
-    icon: <Code className="h-8 w-8 text-orange-500" />,
+    icon: <Code class="h-8 w-8 text-orange-500" />,
     gradient: 'from-orange-600 to-pink-600',
     specialOffer: {
       title: 'Free Participation',
