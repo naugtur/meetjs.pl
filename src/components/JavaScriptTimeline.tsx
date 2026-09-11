@@ -1,6 +1,4 @@
-'use client';
-
-import { useState } from 'react';
+import { createSignal, For } from 'solid-js';
 import styles from './JavaScriptTimeline.module.css';
 
 const timelineEvents = [
@@ -169,9 +167,9 @@ const timelineEvents = [
 ];
 
 const JavaScriptTimeline = () => {
-  const [activeIndex, setActiveIndex] = useState(timelineEvents.length - 1);
-  const [filter, setFilter] = useState('all');
-  const [focusedFilterIndex, setFocusedFilterIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = createSignal(timelineEvents.length - 1);
+  const [filter, setFilter] = createSignal('all');
+  const [focusedFilterIndex, setFocusedFilterIndex] = createSignal(0);
 
   const filters = [
     {
@@ -196,19 +194,20 @@ const JavaScriptTimeline = () => {
     },
   ];
 
-  const filteredEvents = timelineEvents.filter((event) => {
-    if (filter === 'all') return true;
-    if (filter === 'early' && parseInt(event.year) <= 2005) return true;
-    if (
-      filter === 'frameworks' &&
-      ['2006', '2010', '2013', '2014', '2016', '2018'].includes(event.year)
-    )
-      return true;
-    if (filter === 'modern' && parseInt(event.year) >= 2015) return true;
-    return false;
-  });
+  const filteredEvents = () =>
+    timelineEvents.filter((event) => {
+      if (filter() === 'all') return true;
+      if (filter() === 'early' && parseInt(event.year) <= 2005) return true;
+      if (
+        filter() === 'frameworks' &&
+        ['2006', '2010', '2013', '2014', '2016', '2018'].includes(event.year)
+      )
+        return true;
+      if (filter() === 'modern' && parseInt(event.year) >= 2015) return true;
+      return false;
+    });
 
-  const handleKeyDown = (e: React.KeyboardEvent, filterIndex: number) => {
+  const handleKeyDown = (e: KeyboardEvent, filterIndex: number) => {
     switch (e.key) {
       case 'ArrowRight':
         e.preventDefault();
@@ -231,76 +230,78 @@ const JavaScriptTimeline = () => {
   };
 
   return (
-    <div className={styles.timelineContainer}>
-      <div className={styles.header}>
-        <h2 className={styles.title}>30 Years of JavaScript Evolution</h2>
-        <p className={styles.subtitle}>
+    <div class={styles.timelineContainer}>
+      <div class={styles.header}>
+        <h2 class={styles.title}>30 Years of JavaScript Evolution</h2>
+        <p class={styles.subtitle}>
           From a 10-day prototype to the world&#39;s most popular programming
           language
         </p>
 
         <div
-          className={styles.filterButtons}
+          class={styles.filterButtons}
           role="tablist"
           aria-label="Filter timeline events"
         >
-          {filters.map((filterItem, index) => (
-            <button
-              key={filterItem.key}
-              className={`${styles.filterBtn} ${filter === filterItem.key ? styles.active : ''}`}
-              onClick={() => {
-                setFilter(filterItem.key);
-                setFocusedFilterIndex(index);
-              }}
-              onKeyDown={(e) => handleKeyDown(e, index)}
-              role="tab"
-              aria-selected={filter === filterItem.key}
-              aria-controls="timeline-events"
-              aria-describedby={`filter-${filterItem.key}-desc`}
-              tabIndex={focusedFilterIndex === index ? 0 : -1}
-            >
-              {filterItem.label}
-              <span id={`filter-${filterItem.key}-desc`} className="sr-only">
-                {filterItem.description}
-              </span>
-            </button>
-          ))}
+          <For each={filters}>
+            {(filterItem, index) => (
+              <button
+                class={`${styles.filterBtn} ${filter() === filterItem.key ? styles.active : ''}`}
+                onClick={() => {
+                  setFilter(filterItem.key);
+                  setFocusedFilterIndex(index());
+                }}
+                onKeyDown={(e) => handleKeyDown(e, index())}
+                role="tab"
+                aria-selected={filter() === filterItem.key ? 'true' : 'false'}
+                aria-controls="timeline-events"
+                aria-describedby={`filter-${filterItem.key}-desc`}
+                tabindex={focusedFilterIndex() === index() ? 0 : -1}
+              >
+                {filterItem.label}
+                <span id={`filter-${filterItem.key}-desc`} class="sr-only">
+                  {filterItem.description}
+                </span>
+              </button>
+            )}
+          </For>
         </div>
       </div>
 
       <div
-        className={styles.timeline}
+        class={styles.timeline}
         role="region"
         aria-label="JavaScript timeline events"
         id="timeline-events"
       >
-        {filteredEvents.map((event, index) => (
-          <div
-            key={event.year}
-            className={`${styles.timelineItem} ${activeIndex === index ? styles.active : ''} ${event.highlight ? styles.highlight : ''}`}
-            onClick={() => setActiveIndex(index)}
-            role="article"
-            aria-label={`${event.year}: ${event.title}`}
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                setActiveIndex(index);
-              }
-            }}
-          >
-            <div className={styles.timelineDot}>
-              <span className={styles.icon} aria-hidden="true">
-                {event.icon}
-              </span>
+        <For each={filteredEvents()}>
+          {(event, index) => (
+            <div
+              class={`${styles.timelineItem} ${activeIndex() === index() ? styles.active : ''} ${event.highlight ? styles.highlight : ''}`}
+              onClick={() => setActiveIndex(index())}
+              role="article"
+              aria-label={`${event.year}: ${event.title}`}
+              tabindex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setActiveIndex(index());
+                }
+              }}
+            >
+              <div class={styles.timelineDot}>
+                <span class={styles.icon} aria-hidden="true">
+                  {event.icon}
+                </span>
+              </div>
+              <div class={styles.timelineContent}>
+                <h3 class={styles.year}>{event.year}</h3>
+                <h4 class={styles.eventTitle}>{event.title}</h4>
+                <p class={styles.eventDescription}>{event.description}</p>
+              </div>
             </div>
-            <div className={styles.timelineContent}>
-              <h3 className={styles.year}>{event.year}</h3>
-              <h4 className={styles.eventTitle}>{event.title}</h4>
-              <p className={styles.eventDescription}>{event.description}</p>
-            </div>
-          </div>
-        ))}
+          )}
+        </For>
       </div>
     </div>
   );

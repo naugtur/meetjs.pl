@@ -1,6 +1,4 @@
-'use client';
-
-import { useState } from 'react';
+import { createSignal, For } from 'solid-js';
 
 const codeExamples = [
   {
@@ -285,7 +283,7 @@ const allPositive = numbers.every(n => n > 0);`,
 ];
 
 export const JavaScriptEvolution = () => {
-  const [activeExample, setActiveExample] = useState(0);
+  const [activeExample, setActiveExample] = createSignal(0);
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -293,14 +291,14 @@ export const JavaScriptEvolution = () => {
   };
 
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-white py-20 dark:from-gray-900 dark:to-gray-800">
-      <div className="container mx-auto px-4">
+    <section class="bg-gradient-to-b from-gray-50 to-white py-20 dark:from-gray-900 dark:to-gray-800">
+      <div class="container mx-auto px-4">
         {/* Header */}
-        <div className="mb-16 text-center">
-          <h2 className="mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-4xl font-extrabold text-transparent sm:text-5xl">
+        <div class="mb-16 text-center">
+          <h2 class="mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-4xl font-extrabold text-transparent sm:text-5xl">
             JavaScript Evolution: Then vs Now
           </h2>
-          <p className="mx-auto max-w-3xl text-lg leading-relaxed text-gray-600 dark:text-gray-400">
+          <p class="mx-auto max-w-3xl text-lg leading-relaxed text-gray-600 dark:text-gray-400">
             See how JavaScript has transformed from its humble beginnings in
             1995 to the powerful language it is today. Compare the syntax and
             patterns developers used back then with modern ES2024 code.
@@ -308,119 +306,121 @@ export const JavaScriptEvolution = () => {
         </div>
 
         {/* Example Selector */}
-        <div className="mb-12 flex flex-wrap justify-center gap-3">
-          {codeExamples.map((example, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveExample(index)}
-              className={`rounded-full px-6 py-2 font-medium transition-all duration-300 ${
-                activeExample === index
-                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300'
-              }`}
-            >
-              {example.title}
-            </button>
-          ))}
+        <div class="mb-12 flex flex-wrap justify-center gap-3">
+          <For each={codeExamples}>
+            {(example, index) => (
+              <button
+                onClick={() => setActiveExample(index())}
+                class={`rounded-full px-6 py-2 font-medium transition-all duration-300 ${
+                  activeExample() === index()
+                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300'
+                }`}
+              >
+                {example.title}
+              </button>
+            )}
+          </For>
         </div>
 
         {/* Code Comparison */}
-        <div className="mx-auto max-w-6xl">
-          {codeExamples.map((example, index) => (
-            <div
-              key={index}
-              className={`${index === activeExample ? 'block' : 'hidden'}`}
-            >
-              <div className="mb-8 text-center">
-                <h3 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">
-                  {example.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {example.description}
-                </p>
-              </div>
+        <div class="mx-auto max-w-6xl">
+          <For each={codeExamples}>
+            {(example, index) => (
+              <div
+                class={`${index() === activeExample() ? 'block' : 'hidden'}`}
+              >
+                <div class="mb-8 text-center">
+                  <h3 class="mb-2 text-2xl font-bold text-gray-900 dark:text-white">
+                    {example.title}
+                  </h3>
+                  <p class="text-gray-600 dark:text-gray-400">
+                    {example.description}
+                  </p>
+                </div>
 
-              <div className="grid gap-8 lg:grid-cols-2">
-                {/* Then (1995) */}
-                <div className="relative">
-                  <div className="rounded-t-lg bg-gradient-to-r from-red-600 to-orange-600 p-4 text-white">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <span className="text-lg font-bold">Then</span>
-                        <span className="rounded-full bg-white/20 px-3 py-1 text-sm">
-                          {example.then.year}
-                        </span>
+                <div class="grid gap-8 lg:grid-cols-2">
+                  {/* Then (1995) */}
+                  <div class="relative">
+                    <div class="rounded-t-lg bg-gradient-to-r from-red-600 to-orange-600 p-4 text-white">
+                      <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                          <span class="text-lg font-bold">Then</span>
+                          <span class="rounded-full bg-white/20 px-3 py-1 text-sm">
+                            {example.then.year}
+                          </span>
+                        </div>
+                        <button
+                          onClick={() => copyToClipboard(example.then.code)}
+                          class="rounded-lg bg-white/10 px-3 py-1 text-sm transition-colors hover:bg-white/20"
+                        >
+                          Copy Code
+                        </button>
                       </div>
-                      <button
-                        onClick={() => copyToClipboard(example.then.code)}
-                        className="rounded-lg bg-white/10 px-3 py-1 text-sm transition-colors hover:bg-white/20"
-                      >
-                        Copy Code
-                      </button>
+                    </div>
+                    <div class="rounded-b-lg bg-gray-900 p-6">
+                      <pre class="overflow-x-auto">
+                        <code class="font-mono text-sm text-gray-300">
+                          {example.then.code}
+                        </code>
+                      </pre>
                     </div>
                   </div>
-                  <div className="rounded-b-lg bg-gray-900 p-6">
-                    <pre className="overflow-x-auto">
-                      <code className="font-mono text-sm text-gray-300">
-                        {example.then.code}
-                      </code>
-                    </pre>
-                  </div>
-                </div>
 
-                {/* Evolution Arrow */}
-                <div className="absolute left-1/2 top-1/2 z-10 hidden lg:block">
-                  <div className="flex items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-purple-600 p-4 text-white shadow-lg">
-                    <svg
-                      className="h-8 w-8"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 7l5 5m0 0l-5 5m5-5H6"
-                      />
-                    </svg>
-                  </div>
-                </div>
-
-                {/* Now (ES2024) */}
-                <div className="relative">
-                  <div className="rounded-t-lg bg-gradient-to-r from-blue-600 to-purple-600 p-4 text-white">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <span className="text-lg font-bold">Now</span>
-                        <span className="rounded-full bg-white/20 px-3 py-1 text-sm">
-                          {example.now.year}
-                        </span>
-                      </div>
-                      <button
-                        onClick={() => copyToClipboard(example.now.code)}
-                        className="rounded-lg bg-white/10 px-3 py-1 text-sm transition-colors hover:bg-white/20"
+                  {/* Evolution Arrow */}
+                  <div class="absolute left-1/2 top-1/2 z-10 hidden lg:block">
+                    <div class="flex items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-purple-600 p-4 text-white shadow-lg">
+                      <svg
+                        class="h-8 w-8"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
                       >
-                        Copy Code
-                      </button>
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width={2}
+                          d="M13 7l5 5m0 0l-5 5m5-5H6"
+                        />
+                      </svg>
                     </div>
                   </div>
-                  <div className="rounded-b-lg bg-gray-900 p-6">
-                    <pre className="overflow-x-auto">
-                      <code className="font-mono text-sm text-gray-300">
-                        {example.now.code}
-                      </code>
-                    </pre>
+
+                  {/* Now (ES2024) */}
+                  <div class="relative">
+                    <div class="rounded-t-lg bg-gradient-to-r from-blue-600 to-purple-600 p-4 text-white">
+                      <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                          <span class="text-lg font-bold">Now</span>
+                          <span class="rounded-full bg-white/20 px-3 py-1 text-sm">
+                            {example.now.year}
+                          </span>
+                        </div>
+                        <button
+                          onClick={() => copyToClipboard(example.now.code)}
+                          class="rounded-lg bg-white/10 px-3 py-1 text-sm transition-colors hover:bg-white/20"
+                        >
+                          Copy Code
+                        </button>
+                      </div>
+                    </div>
+                    <div class="rounded-b-lg bg-gray-900 p-6">
+                      <pre class="overflow-x-auto">
+                        <code class="font-mono text-sm text-gray-300">
+                          {example.now.code}
+                        </code>
+                      </pre>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            )}
+          </For>
         </div>
 
         {/* Footer */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-100 to-purple-100 px-6 py-3 text-sm text-blue-800 dark:from-blue-900 dark:to-purple-900 dark:text-blue-200">
+        <div class="mt-16 text-center">
+          <div class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-100 to-purple-100 px-6 py-3 text-sm text-blue-800 dark:from-blue-900 dark:to-purple-900 dark:text-blue-200">
             <span>&#x1F680;</span>
             JavaScript continues to evolve - what&apos;s next?
           </div>

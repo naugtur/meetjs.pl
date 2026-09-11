@@ -1,4 +1,4 @@
-import { env } from '@/env';
+import { SITE_URL } from '@/lib/site';
 
 export function SchemaMarkup() {
   const schema = {
@@ -6,8 +6,8 @@ export function SchemaMarkup() {
     '@type': 'Organization',
     name: 'meet.js',
     alternateName: 'meetjs',
-    url: env.SITE_URL,
-    logo: `${env.SITE_URL}/logo.png`,
+    url: SITE_URL,
+    logo: `${SITE_URL}/logo.png`,
     description:
       'The largest JavaScript community in Poland organizing regular meetups, conferences, and knowledge sharing events since 2011.',
     foundingDate: '2011',
@@ -86,7 +86,7 @@ export function SchemaMarkup() {
         '@type': 'EventSeries',
         name: 'meet.js Meetups',
         description: 'Regular JavaScript community meetups across Poland',
-        url: `${env.SITE_URL}/events`,
+        url: `${SITE_URL}/events`,
       },
     ],
     memberOf: {
@@ -97,12 +97,12 @@ export function SchemaMarkup() {
     slogan: 'JavaScript Meetups in Poland',
   };
 
-  // For server components, we need to use dangerouslySetInnerHTML
   return (
     <script
       id="schema-markup"
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      // oxlint-disable-next-line solid/no-innerhtml -- static JSON-LD
+      innerHTML={JSON.stringify(schema)}
     />
   );
 }

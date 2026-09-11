@@ -1,44 +1,33 @@
-'use client';
-
-import { useEffect, useState } from 'react';
+import { createSignal, onSettled } from 'solid-js';
+import type { JSX } from '@solidjs/web';
 
 export const useScrollAnimation = (threshold = 0.1) => {
-  const [ref, setRef] = useState<HTMLElement | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = createSignal(false);
+  let observer: IntersectionObserver | undefined;
 
-  useEffect(() => {
-    if (!ref) return;
-
-    const observer = new IntersectionObserver(
+  const setRef = (el: HTMLElement | null) => {
+    observer?.disconnect();
+    if (!el) return;
+    observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(entry.target);
+          observer?.unobserve(entry.target);
         }
       },
       { threshold },
     );
+    observer.observe(el);
+  };
 
-    observer.observe(ref);
-
-    return () => {
-      if (ref) {
-        observer.unobserve(ref);
-      }
-    };
-  }, [ref, threshold]);
+  onSettled(() => () => observer?.disconnect());
 
   return { setRef, isVisible };
 };
 
-export const AnimatedSection = ({
-  children,
-  className = '',
-  animation = 'fade-in-up',
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  className?: string;
+export const AnimatedSection = (props: {
+  children: JSX.Element;
+  class?: string;
   animation?: 'fade-in-up' | 'fade-in-left' | 'fade-in-right' | 'scale-in';
   delay?: number;
 }) => {
@@ -58,24 +47,23 @@ export const AnimatedSection = ({
     'scale-in': 'opacity-100 scale-100',
   };
 
+  const animation = () => props.animation ?? 'fade-in-up';
+
   return (
     <div
       ref={setRef}
-      className={`transition-all duration-700 ease-out ${animationClasses[animation]} ${
-        isVisible ? visibleClasses[animation] : ''
-      } ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
+      class={`transition-all duration-700 ease-out ${animationClasses[animation()]} ${
+        isVisible() ? visibleClasses[animation()] : ''
+      } ${props.class ?? ''}`}
+      style={{ 'transition-delay': `${props.delay ?? 0}ms` }}
     >
-      {children}
+      {props.children}
     </div>
   );
 };
 
-export const AnimatedStats = ({
-  children,
-  index,
-}: {
-  children: React.ReactNode;
+export const AnimatedStats = (props: {
+  children: JSX.Element;
   index: number;
 }) => {
   const { setRef, isVisible } = useScrollAnimation(0.1);
@@ -83,12 +71,12 @@ export const AnimatedStats = ({
   return (
     <div
       ref={setRef}
-      className={`translate-y-8 opacity-0 transition-all duration-700 ease-out ${
-        isVisible ? 'translate-y-0 opacity-100' : ''
+      class={`translate-y-8 opacity-0 transition-all duration-700 ease-out ${
+        isVisible() ? 'translate-y-0 opacity-100' : ''
       }`}
-      style={{ transitionDelay: `${index * 100}ms` }}
+      style={{ 'transition-delay': `${props.index * 100}ms` }}
     >
-      {children}
+      {props.children}
     </div>
   );
 };

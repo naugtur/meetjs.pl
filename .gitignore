@@ -40,3 +40,8 @@ next-env.d.ts
 .aider*
 .env
 docs/social-media/**/.fonts/
+
+# solid/vite build output
+/dist/
+file-routes.d.ts
+solid-env.d.ts

@@ -1,5 +1,5 @@
-import { useTranslate } from '@tolgee/react';
-import { getTranslate } from '@/tolgee/server';
+import { useTranslate } from '@/i18n';
+
 import { MenuLink } from '@/content/menuLinks';
 
 export const useTranslatedMenuLinks = (): MenuLink[] => {
@@ -211,9 +211,10 @@ export const useTranslatedFooterMenuLinks = (): MenuLink[] => {
   ];
 };
 
-// Server-side function for translated footer menu links
-export const getTranslatedFooterMenuLinks = async (): Promise<MenuLink[]> => {
-  const t = await getTranslate();
+// Same as useTranslatedFooterMenuLinks — kept under the old name for callers
+// that used to need a server-side variant.
+export const getTranslatedFooterMenuLinks = (): MenuLink[] => {
+  const { t } = useTranslate();
 
   return [
     {

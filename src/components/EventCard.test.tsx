@@ -1,22 +1,15 @@
-import { render, screen, cleanup } from '@testing-library/react';
+import { render, screen, cleanup } from '@solidjs/testing-library';
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { EventCard } from '@/components/EventCard';
+import { I18nProvider } from '@/i18n';
 import type { EventType } from '@/types/event';
 
-// Mock @tolgee/react to avoid needing TolgeeProvider
-vi.mock('@tolgee/react', () => ({
-  useTranslate: () => ({
-    t: (key: string) => key,
-  }),
-}));
-
-// Mock useLocale hook
-vi.mock('@/hooks/useLocale', () => ({
-  useLocale: () => ({
-    language: 'en',
-    locale: 'en-US',
-  }),
-}));
+const renderCard = (event: EventType) =>
+  render(() => (
+    <I18nProvider>
+      <EventCard event={event} />
+    </I18nProvider>
+  ));
 
 // Base mock event data (modify as needed)
 const baseEvent: EventType = {
@@ -74,7 +67,7 @@ describe('EventCard Component', () => {
       time: formatTime(eventDate),
     };
 
-    render(<EventCard event={testEvent} />);
+    renderCard(testEvent);
 
     // Check title, date, time, location
     expect(screen.getByText(testEvent.name)).toBeInTheDocument();
@@ -108,7 +101,7 @@ describe('EventCard Component', () => {
       time: formatTime(eventDate),
     };
 
-    render(<EventCard event={testEvent} />);
+    renderCard(testEvent);
 
     // Check message
     expect(
@@ -136,7 +129,7 @@ describe('EventCard Component', () => {
       time: formatTime(eventDate),
     };
 
-    render(<EventCard event={testEvent} />);
+    renderCard(testEvent);
 
     // Check relative time message
     expect(screen.getByText(/^Starts in (about )?1 day$/)).toBeInTheDocument(); // Check full text, make 'about' optional
@@ -161,7 +154,7 @@ describe('EventCard Component', () => {
       time: formatTime(eventDate),
     };
 
-    render(<EventCard event={testEvent} />);
+    renderCard(testEvent);
 
     // Check message
     expect(screen.getByText('Event ended')).toBeInTheDocument();
@@ -190,7 +183,7 @@ describe('EventCard Component', () => {
       city: 'Known City', // Add a city to ensure it's not displayed
     };
 
-    render(<EventCard event={testEvent} />);
+    renderCard(testEvent);
 
     // Check that 'Location TBA' is displayed
     expect(screen.getByText('Location TBA')).toBeInTheDocument();

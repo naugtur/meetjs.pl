@@ -12,10 +12,10 @@ const statusColors = {
   typescript: 'bg-blue-600',
 } as const;
 
-export const CityStatusIndicator = ({ status }: CityStatusIndicatorProps) => {
+export const CityStatusIndicator = (props: CityStatusIndicatorProps) => {
   return (
     <span
-      className={`ml-2 inline-block h-2 w-2 rounded-full ${statusColors[status]}`}
+      class={`ml-2 inline-block h-2 w-2 rounded-full ${statusColors[props.status]}`}
     />
   );
 };

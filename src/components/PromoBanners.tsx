@@ -1,7 +1,6 @@
-'use client';
-
-import { useEffect, useMemo, useState } from 'react';
-import Image from 'next/image';
+import { createSignal, onSettled, Show } from 'solid-js';
+import { isServer } from '@solidjs/web';
+import type { JSX } from '@solidjs/web';
 import type { Promo } from '@/types/promo';
 
 class DismissedPromo {
@@ -49,173 +48,163 @@ const prioritizePromos = (promos: Promo[]): Promo[] => {
   });
 };
 
-export const PromoBanners = ({ promos }: Props) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [dismissedPromos, setDismissedPromos] = useState<Set<string>>(
+export const PromoBanners = (props: Props) => {
+  const [currentIndex, setCurrentIndex] = createSignal(0);
+  const [dismissedPromos, setDismissedPromos] = createSignal<Set<string>>(
     new Set(),
   );
 
   // Load dismissed promos from localStorage on mount (client-side only)
-  // This is a legitimate use of setState in useEffect to sync with external storage
-  useEffect(() => {
+  onSettled(() => {
+    if (isServer) return;
     const dismissed = new Set<string>();
-    promos.forEach((promo) => {
+    props.promos.forEach((promo) => {
       if (isPromoDismissed(promo)) {
         dismissed.add(promo.id);
       }
     });
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- sync with localStorage, external browser store
     setDismissedPromos(dismissed);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // Only run once on mount to avoid hydration issues
+  });
 
   // Filter and prioritize promos
-  const visiblePromos = useMemo(() => {
-    const filtered = promos.filter((promo) => {
+  const visiblePromos = () => {
+    const filtered = props.promos.filter((promo) => {
       if (isPromoExpired(promo)) return false;
-      // Check against our state instead of localStorage directly
-      if (dismissedPromos.has(promo.id)) return false;
+      if (dismissedPromos().has(promo.id)) return false;
       return true;
     });
     return prioritizePromos(filtered);
-  }, [promos, dismissedPromos]);
+  };
 
   // Auto-rotate banners every 6 seconds if there are multiple
-  useEffect(() => {
-    if (visiblePromos.length <= 1) return;
-
+  onSettled(() => {
+    if (isServer) return;
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % visiblePromos.length);
+      const promos = visiblePromos();
+      if (promos.length <= 1) return;
+      setCurrentIndex((prev) => (prev + 1) % promos.length);
     }, 6000);
-
     return () => clearInterval(interval);
-  }, [visiblePromos.length]);
+  });
 
-  if (visiblePromos.length === 0) return null;
+  const promo = () => {
+    const promos = visiblePromos();
+    if (promos.length === 0) return undefined;
+    return promos[currentIndex() % promos.length || 0];
+  };
 
-  // Ensure index is valid (in case promos changed)
-  const safeIndex = currentIndex % visiblePromos.length || 0;
-  const promo = visiblePromos[safeIndex];
-
-  if (!promo) return null;
-
-  return <PromoBanner promo={promo} />;
+  return <Show when={promo()}>{(p) => <PromoBanner promo={p()} />}</Show>;
 };
 
-const PromoBanner = ({ promo }: { promo: Promo }) => {
-  const [isVisible, setIsVisible] = useState(true);
-  const textColor = promo.textColor || 'text-white';
+const PromoBanner = (props: { promo: Promo }) => {
+  const [isVisible, setIsVisible] = createSignal(true);
+  const textColor = () => props.promo.textColor || 'text-white';
 
   const handleDismiss = () => {
-    DismissedPromo.set(promo.id);
+    DismissedPromo.set(props.promo.id);
     setIsVisible(false);
   };
 
-  if (!isVisible) return null;
-
   return (
-    <div className="relative">
-      <div
-        className={`relative ${promo.gradient || 'bg-gradient-to-r from-blue via-purple to-green'} animate-fade-in z-0 py-1.5 shadow md:py-2 ${textColor}`}
-      >
-        <div className="mx-2 sm:mx-4">
-          <div className="flex flex-col items-center justify-between gap-1 text-center md:flex-row md:gap-2 md:text-left">
-            <div className="hidden md:block">
-              <Icon
-                icon={promo.icon}
-                image={promo.image}
-                emojiLeft={promo.emojiLeft}
-              />
-            </div>
+    <Show when={isVisible()}>
+      <div class="relative">
+        <div
+          class={`relative ${props.promo.gradient || 'bg-gradient-to-r from-blue via-purple to-green'} animate-fade-in z-0 py-1.5 shadow md:py-2 ${textColor()}`}
+        >
+          <div class="mx-2 sm:mx-4">
+            <div class="flex flex-col items-center justify-between gap-1 text-center md:flex-row md:gap-2 md:text-left">
+              <div class="hidden md:block">
+                <Icon
+                  icon={props.promo.icon}
+                  image={props.promo.image}
+                  emojiLeft={props.promo.emojiLeft}
+                />
+              </div>
 
-            <span className="flex-1 text-xs font-medium leading-tight md:text-sm">
-              <span className="font-semibold">{promo.name}</span> -{' '}
-              {promo.message} <RightEmoji emojiRight={promo.emojiRight} />
-            </span>
+              <span class="flex-1 text-xs font-medium leading-tight md:text-sm">
+                <span class="font-semibold">{props.promo.name}</span> -{' '}
+                {props.promo.message}{' '}
+                <RightEmoji emojiRight={props.promo.emojiRight} />
+              </span>
 
-            <div className="flex items-center gap-2">
-              <LinkCTA ticketLink={promo.ticketLink}>{promo.cta}</LinkCTA>
-              <button
-                onClick={handleDismiss}
-                aria-label="Dismiss promo banner"
-                className={`ml-2 rounded-full p-1 transition-colors hover:bg-white/20 ${textColor}`}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+              <div class="flex items-center gap-2">
+                <LinkCTA ticketLink={props.promo.ticketLink}>
+                  {props.promo.cta}
+                </LinkCTA>
+                <button
+                  onClick={handleDismiss}
+                  aria-label="Dismiss promo banner"
+                  class={`ml-2 rounded-full p-1 transition-colors hover:bg-white/20 ${textColor()}`}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </Show>
   );
 };
 
-const Icon = ({
-  icon,
-  image,
-  emojiLeft,
-}: {
-  icon?: React.ReactNode | string;
+const Icon = (props: {
+  icon?: JSX.Element | string;
   image?: string;
   emojiLeft?: string;
 }) => {
   // Priority 1: Show image if available (for all types)
-  if (image) {
+  if (props.image) {
     return (
-      <Image
-        src={image}
+      <img
+        src={props.image}
         alt="Logo"
         width={24}
         height={24}
-        className="mr-2 h-5 w-5 object-contain md:h-6 md:w-6"
+        class="mr-2 h-5 w-5 object-contain md:h-6 md:w-6"
       />
     );
   }
 
   // Priority 2: Show icon (emoji or image URL)
-  if (icon) {
+  if (props.icon) {
     // Check if icon is a string URL
     if (
-      typeof icon === 'string' &&
-      (icon.startsWith('http://') ||
-        icon.startsWith('https://') ||
-        icon.startsWith('/'))
+      typeof props.icon === 'string' &&
+      (props.icon.startsWith('http://') ||
+        props.icon.startsWith('https://') ||
+        props.icon.startsWith('/'))
     ) {
       return (
-        <Image
-          src={icon}
+        <img
+          src={props.icon}
           alt="Icon"
           width={24}
           height={24}
-          className="mr-2 h-5 w-5 object-contain md:h-6 md:w-6"
+          class="mr-2 h-5 w-5 object-contain md:h-6 md:w-6"
         />
       );
     }
-    return <span className="mr-2 text-xl md:text-2xl">{icon}</span>;
+    return <span class="mr-2 text-xl md:text-2xl">{props.icon}</span>;
   }
 
   // Priority 3: Show emojiLeft as fallback
-  if (emojiLeft) {
+  if (props.emojiLeft) {
     return (
-      <span
-        className="mr-2 text-xl md:text-2xl"
-        role="img"
-        aria-label="emojiLeft"
-      >
-        {emojiLeft}
+      <span class="mr-2 text-xl md:text-2xl" role="img" aria-label="emojiLeft">
+        {props.emojiLeft}
       </span>
     );
   }
@@ -223,31 +212,33 @@ const Icon = ({
   return null;
 };
 
-const RightEmoji = ({ emojiRight }: { emojiRight?: string }) =>
-  emojiRight ? (
+const RightEmoji = (props: { emojiRight?: string }) => (
+  <Show when={props.emojiRight}>
     <span role="img" aria-label="emojiRight">
-      {emojiRight}
+      {props.emojiRight}
     </span>
-  ) : null;
+  </Show>
+);
 
-const LinkCTA = ({
-  ticketLink,
-  children: cta,
-}: {
+const LinkCTA = (props: {
   ticketLink: string | undefined;
-  children: React.ReactNode;
-}) =>
-  ticketLink ? (
+  children: JSX.Element;
+}) => (
+  <Show
+    when={props.ticketLink}
+    fallback={
+      <span class="inline-block rounded-full bg-white/70 px-3 py-1 text-xs font-semibold text-purple opacity-70 md:text-sm">
+        {props.children}
+      </span>
+    }
+  >
     <a
-      href={ticketLink}
+      href={props.ticketLink}
       target="_blank"
       rel="noopener"
-      className="inline-block rounded-full bg-white px-3 py-1 text-xs font-semibold text-purple shadow transition-colors duration-150 hover:bg-purple hover:text-white md:text-sm"
+      class="inline-block rounded-full bg-white px-3 py-1 text-xs font-semibold text-purple shadow transition-colors duration-150 hover:bg-purple hover:text-white md:text-sm"
     >
-      {cta}
+      {props.children}
     </a>
-  ) : (
-    <span className="inline-block rounded-full bg-white/70 px-3 py-1 text-xs font-semibold text-purple opacity-70 md:text-sm">
-      {cta}
-    </span>
-  );
+  </Show>
+);

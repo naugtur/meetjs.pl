@@ -1,6 +1,5 @@
-'use client';
-
-import { Check, Copy } from 'lucide-react';
+import { Show } from 'solid-js';
+import { Check, Copy } from '@/lib/lucide';
 import { useCopyToClipboard } from '@/hooks/useCopyToClipboard';
 
 interface DiscountCodeSectionProps {
@@ -8,14 +7,11 @@ interface DiscountCodeSectionProps {
   variant?: 'event' | 'software';
 }
 
-export default function DiscountCodeSection({
-  discountCode,
-  variant = 'event',
-}: DiscountCodeSectionProps) {
+export default function DiscountCodeSection(props: DiscountCodeSectionProps) {
   const { copied, copyToClipboard } = useCopyToClipboard();
 
   const handleCopyCode = () => {
-    copyToClipboard(discountCode);
+    copyToClipboard(props.discountCode);
   };
 
   const variantStyles = {
@@ -35,30 +31,28 @@ export default function DiscountCodeSection({
     },
   };
 
-  const styles = variantStyles[variant];
+  const styles = () => variantStyles[props.variant ?? 'event'];
 
   return (
-    <div className={`mb-6 rounded-lg border p-4 ${styles.container}`}>
-      <div className="flex items-center justify-between">
-        <div className="min-w-0 flex-1">
-          <p className="mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">
+    <div class={`mb-6 rounded-lg border p-4 ${styles().container}`}>
+      <div class="flex items-center justify-between">
+        <div class="min-w-0 flex-1">
+          <p class="mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">
             Discount Code
           </p>
-          <p className={`truncate font-mono text-lg font-bold ${styles.code}`}>
-            {discountCode}
+          <p class={`truncate font-mono text-lg font-bold ${styles().code}`}>
+            {props.discountCode}
           </p>
         </div>
         <button
           onClick={handleCopyCode}
-          className={`ml-3 flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium shadow-sm transition-all duration-200 hover:shadow-md active:scale-95 ${styles.button}`}
-          aria-label={`Copy discount code ${discountCode}`}
+          class={`ml-3 flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium shadow-sm transition-all duration-200 hover:shadow-md active:scale-95 ${styles().button}`}
+          aria-label={`Copy discount code ${props.discountCode}`}
         >
-          {copied ? (
-            <Check className="h-4 w-4" />
-          ) : (
-            <Copy className="h-4 w-4" />
-          )}
-          {copied ? 'Copied!' : 'Copy'}
+          <Show when={copied()} fallback={<Copy class="h-4 w-4" />}>
+            <Check class="h-4 w-4" />
+          </Show>
+          {copied() ? 'Copied!' : 'Copy'}
         </button>
       </div>
     </div>

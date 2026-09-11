@@ -1,7 +1,7 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent } from '@solidjs/testing-library';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { PromoBanners } from './PromoBanners';
 import { Promo } from '@/types/promo';
-import React from 'react';
 
 const promos: Promo[] = [
   {
@@ -32,7 +32,7 @@ describe('PromoBanners', () => {
   });
 
   it('renders only non-expired promos', () => {
-    render(<PromoBanners promos={promos} />);
+    render(() => <PromoBanners promos={promos} />);
     const messageElement = screen.getByText(/Test Promo 1/i, { exact: false });
     expect(messageElement).toBeInTheDocument();
     expect(
@@ -41,12 +41,12 @@ describe('PromoBanners', () => {
   });
 
   it('dismisses a promo and does not show it again', () => {
-    render(<PromoBanners promos={promos} />);
+    render(() => <PromoBanners promos={promos} />);
     const closeBtn = screen.getAllByLabelText('Dismiss promo banner')[0];
     fireEvent.click(closeBtn);
     expect(screen.queryByText('Test Promo 1')).not.toBeInTheDocument();
     // Simulate re-mount (like page reload)
-    render(<PromoBanners promos={promos} />);
+    render(() => <PromoBanners promos={promos} />);
     expect(screen.queryByText('Test Promo 1')).not.toBeInTheDocument();
   });
 });

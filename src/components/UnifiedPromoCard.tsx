@@ -1,8 +1,6 @@
-'use client';
-
-import Image from 'next/image';
+import { Show } from 'solid-js';
 import type { Promo } from '@/types/promo';
-import { Calendar, MapPin, ExternalLink } from 'lucide-react';
+import { Calendar, MapPin, ExternalLink } from '@/lib/lucide';
 import DiscountCodeSection from './DiscountCodeSection';
 import WorkshopInfo from './WorkshopInfo';
 
@@ -75,177 +73,188 @@ interface UnifiedPromoCardProps {
   variant?: PromoVariant;
 }
 
-export default function UnifiedPromoCard({
-  promo,
-  variant = 'software',
-}: UnifiedPromoCardProps) {
-  const config = variantConfigs[variant];
-  const isEventVariant = variant === 'event';
+export default function UnifiedPromoCard(props: UnifiedPromoCardProps) {
+  const config = () => variantConfigs[props.variant ?? 'software'];
+  const isEventVariant = () => (props.variant ?? 'software') === 'event';
 
   // Use promo-specific gradient and text color if provided, otherwise use variant defaults
-  const ctaGradient = promo.gradient || config.ctaGradient;
-  const ctaTextColor = promo.textColor || config.ctaTextColor || 'text-white';
+  const ctaGradient = () => props.promo.gradient || config().ctaGradient;
+  const ctaTextColor = () =>
+    props.promo.textColor || config().ctaTextColor || 'text-white';
 
   return (
-    <div className="group relative block overflow-hidden rounded-xl border border-gray-200 bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800">
+    <div class="group relative block overflow-hidden rounded-xl border border-gray-200 bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800">
       {/* Header with Logo/Image */}
-      <div className="flex items-center gap-4 border-b border-gray-100 p-6 dark:border-gray-700">
-        {promo.image ? (
-          <div className="relative h-20 w-20 overflow-hidden rounded-lg bg-gray-100 ring-2 ring-gray-100 dark:bg-gray-700 dark:ring-gray-600">
-            <Image
-              src={promo.image}
-              alt={`${promo.name} logo`}
-              fill
-              className="object-contain p-3"
+      <div class="flex items-center gap-4 border-b border-gray-100 p-6 dark:border-gray-700">
+        <Show
+          when={props.promo.image}
+          fallback={
+            <div
+              class={`flex h-20 w-20 items-center justify-center rounded-lg text-3xl text-white ${config().iconBg}`}
+            >
+              {props.promo.icon || config().defaultIcon}
+            </div>
+          }
+        >
+          <div class="relative h-20 w-20 overflow-hidden rounded-lg bg-gray-100 ring-2 ring-gray-100 dark:bg-gray-700 dark:ring-gray-600">
+            <img
+              src={props.promo.image}
+              alt={`${props.promo.name} logo`}
+              class="absolute inset-0 h-full w-full object-contain p-3"
             />
           </div>
-        ) : (
-          <div
-            className={`flex h-20 w-20 items-center justify-center rounded-lg text-3xl text-white ${config.iconBg}`}
-          >
-            {promo.icon || config.defaultIcon}
-          </div>
-        )}
+        </Show>
 
-        <div className="flex-1">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-            {promo.name}
+        <div class="flex-1">
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+            {props.promo.name}
           </h3>
-          <p className="text-sm text-gray-600 dark:text-gray-400">
-            {promo.message}
+          <p class="text-sm text-gray-600 dark:text-gray-400">
+            {props.promo.message}
           </p>
         </div>
       </div>
 
-      <div className="p-6">
+      <div class="p-6">
         {/* Description */}
-        {promo.description && (
-          <div className="mb-6">
-            <p className="leading-relaxed text-gray-700 dark:text-gray-300">
-              {promo.description}
+        <Show when={props.promo.description}>
+          <div class="mb-6">
+            <p class="leading-relaxed text-gray-700 dark:text-gray-300">
+              {props.promo.description}
             </p>
           </div>
-        )}
+        </Show>
 
         {/* Workshop Information - Only for events */}
-        {isEventVariant && (
+        <Show when={isEventVariant()}>
           <WorkshopInfo
-            workshopDescription={promo.workshopDescription}
-            workshopDiscountCode={promo.workshopDiscountCode}
-            workshopLink={promo.workshopLink}
+            workshopDescription={props.promo.workshopDescription}
+            workshopDiscountCode={props.promo.workshopDiscountCode}
+            workshopLink={props.promo.workshopLink}
           />
-        )}
+        </Show>
 
         {/* Discount Code Section */}
-        {promo.discountCode && (
+        <Show when={props.promo.discountCode}>
           <DiscountCodeSection
-            discountCode={promo.discountCode}
-            variant={config.discountVariant}
+            discountCode={props.promo.discountCode!}
+            variant={config().discountVariant}
           />
-        )}
+        </Show>
 
         {/* Details Grid - Different for events vs software/learning */}
-        {isEventVariant ? (
-          <div className="mb-6 grid grid-cols-2 gap-4">
-            <div className="flex items-start gap-2">
-              <Calendar className="mt-0.5 h-4 w-4 flex-shrink-0 text-gray-400" />
-              <div className="min-w-0">
-                <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
+        <Show
+          when={isEventVariant()}
+          fallback={
+            <div class="mb-6 space-y-3">
+              <Show when={props.promo.eventLink}>
+                <div class="flex items-center justify-between rounded-lg border border-gray-200 p-3 dark:border-gray-600">
+                  <div>
+                    <p class="text-sm font-medium text-gray-700 dark:text-gray-300">
+                      {config().websiteLabel}
+                    </p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">
+                      {getDomain(props.promo.eventLink!)}
+                    </p>
+                  </div>
+                  <a
+                    href={props.promo.eventLink}
+                    target="_blank"
+                    rel="noopener"
+                    class={config().linkColor}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <ExternalLink class="h-4 w-4" />
+                  </a>
+                </div>
+              </Show>
+            </div>
+          }
+        >
+          <div class="mb-6 grid grid-cols-2 gap-4">
+            <div class="flex items-start gap-2">
+              <Calendar class="mt-0.5 h-4 w-4 flex-shrink-0 text-gray-400" />
+              <div class="min-w-0">
+                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">
                   Valid Until
                 </p>
-                <p className="text-sm text-gray-900 dark:text-white">
-                  {formatDate(promo.expiresAt)}
+                <p class="text-sm text-gray-900 dark:text-white">
+                  {formatDate(props.promo.expiresAt)}
                 </p>
               </div>
             </div>
-            {promo.city && promo.country && (
-              <div className="flex items-start gap-2">
-                <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-gray-400" />
-                <div className="min-w-0">
-                  <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
+            <Show when={props.promo.city && props.promo.country}>
+              <div class="flex items-start gap-2">
+                <MapPin class="mt-0.5 h-4 w-4 flex-shrink-0 text-gray-400" />
+                <div class="min-w-0">
+                  <p class="text-sm font-medium text-gray-500 dark:text-gray-400">
                     Location
                   </p>
-                  <p className="text-sm text-gray-900 dark:text-white">
-                    {promo.city}, {promo.country} {promo.emojiRight}
+                  <p class="text-sm text-gray-900 dark:text-white">
+                    {props.promo.city}, {props.promo.country}{' '}
+                    {props.promo.emojiRight}
                   </p>
                 </div>
               </div>
-            )}
+            </Show>
           </div>
-        ) : (
-          <div className="mb-6 space-y-3">
-            {promo.eventLink && (
-              <div className="flex items-center justify-between rounded-lg border border-gray-200 p-3 dark:border-gray-600">
-                <div>
-                  <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                    {config.websiteLabel}
-                  </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    {getDomain(promo.eventLink)}
-                  </p>
-                </div>
-                <a
-                  href={promo.eventLink}
-                  target="_blank"
-                  rel="noopener"
-                  className={config.linkColor}
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <ExternalLink className="h-4 w-4" />
-                </a>
-              </div>
-            )}
-          </div>
-        )}
+        </Show>
 
         {/* Additional Event Links */}
-        {isEventVariant &&
-          promo.eventLink &&
-          promo.ticketLink &&
-          promo.eventLink !== promo.ticketLink && (
-            <div className="mb-6">
-              <div className="flex items-center justify-between rounded-lg border border-gray-200 p-3 dark:border-gray-600">
-                <div>
-                  <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                    {config.websiteLabel}
-                  </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    {getDomain(promo.eventLink)}
-                  </p>
-                </div>
-                <a
-                  href={promo.eventLink}
-                  target="_blank"
-                  rel="noopener"
-                  className={config.linkColor}
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <ExternalLink className="h-4 w-4" />
-                </a>
+        <Show
+          when={
+            isEventVariant() &&
+            props.promo.eventLink &&
+            props.promo.ticketLink &&
+            props.promo.eventLink !== props.promo.ticketLink
+          }
+        >
+          <div class="mb-6">
+            <div class="flex items-center justify-between rounded-lg border border-gray-200 p-3 dark:border-gray-600">
+              <div>
+                <p class="text-sm font-medium text-gray-700 dark:text-gray-300">
+                  {config().websiteLabel}
+                </p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                  {getDomain(props.promo.eventLink!)}
+                </p>
               </div>
+              <a
+                href={props.promo.eventLink}
+                target="_blank"
+                rel="noopener"
+                class={config().linkColor}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <ExternalLink class="h-4 w-4" />
+              </a>
             </div>
-          )}
+          </div>
+        </Show>
       </div>
 
       {/* CTA Button */}
-      <div className="border-t border-gray-100 p-6 dark:border-gray-700">
-        {promo.ticketLink ? (
+      <div class="border-t border-gray-100 p-6 dark:border-gray-700">
+        <Show
+          when={props.promo.ticketLink}
+          fallback={
+            <span
+              class={`block w-full rounded-lg py-3 text-center font-semibold opacity-60 shadow ${ctaTextColor()}/80 ${ctaGradient()}`}
+            >
+              {props.promo.cta}
+            </span>
+          }
+        >
           <a
-            href={promo.ticketLink}
+            href={props.promo.ticketLink}
             target="_blank"
             rel="noopener"
-            className={`block w-full rounded-lg py-3 text-center font-semibold shadow transition-all hover:shadow-lg ${ctaTextColor} ${ctaGradient}`}
+            class={`block w-full rounded-lg py-3 text-center font-semibold shadow transition-all hover:shadow-lg ${ctaTextColor()} ${ctaGradient()}`}
             onClick={(e) => e.stopPropagation()}
           >
-            {promo.cta}
+            {props.promo.cta}
           </a>
-        ) : (
-          <span
-            className={`block w-full rounded-lg py-3 text-center font-semibold opacity-60 shadow ${ctaTextColor}/80 ${ctaGradient}`}
-          >
-            {promo.cta}
-          </span>
-        )}
+        </Show>
       </div>
     </div>
   );

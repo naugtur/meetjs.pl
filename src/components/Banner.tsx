@@ -1,20 +1,21 @@
+import type { JSX } from '@solidjs/web';
 import { classNames } from '@/utils/classNames';
 
 type Variant = 'info' | 'success' | 'warning' | 'danger';
 
 interface Props {
-  children: React.ReactNode;
+  children: JSX.Element;
   variant?: Variant;
 }
 
-export const Banner = ({ children, variant = 'info' }: Props) => (
+export const Banner = (props: Props) => (
   <article
-    className={classNames(
+    class={classNames(
       'mb-8 border-l-4 p-4 shadow-sm',
-      getVariantStyles(variant),
+      getVariantStyles(props.variant ?? 'info'),
     )}
   >
-    {children}
+    {props.children}
   </article>
 );
 

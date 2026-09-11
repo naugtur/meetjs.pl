@@ -1,22 +1,26 @@
-'use client';
-
+import { Show, untrack } from 'solid-js';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { buttonVariants } from '@/components/ui/button';
-import { FaClock, FaLocationDot, FaMicrophoneLines } from 'react-icons/fa6';
+import {
+  FaSolidClock,
+  FaSolidLocationDot,
+  FaSolidMicrophoneLines,
+} from 'solid-icons/fa';
 import type { EventType } from '@/types/event';
 import { cn } from '@/lib/utils';
 import { formatDistanceToNow } from 'date-fns';
 import { getEventWeekDay, isConferenceEvent } from '@/utils/eventUtils';
-import { useLocale } from '@/hooks/useLocale';
-import { useTranslate } from '@tolgee/react';
+import { useLocale, useTranslate } from '@/i18n';
 
 interface EventCardProps {
   event: EventType;
 }
 
-export const EventCard = ({ event }: EventCardProps) => {
-  const { locale } = useLocale();
+export const EventCard = (props: EventCardProps) => {
+  const i18n = useLocale();
   const { t } = useTranslate();
+  // One-time snapshot: the card renders a fixed event, so read it untracked.
+  const event = untrack(() => props.event);
   const now = new Date();
   const [day, month, year] = event.date.split('.');
   const [hours, minutes] = event.time.split(':');
@@ -39,7 +43,7 @@ export const EventCard = ({ event }: EventCardProps) => {
   return (
     <Card
       data-testid="event-card-wrapper"
-      className={cn(
+      class={cn(
         'group flex min-h-60 min-w-full flex-col justify-between transition-all hover:shadow-lg',
         isInProgress && 'border-2 border-purple dark:border-green',
         isToday &&
@@ -49,26 +53,26 @@ export const EventCard = ({ event }: EventCardProps) => {
       )}
     >
       <CardHeader>
-        <div className="flex items-start justify-between gap-2">
+        <div class="flex items-start justify-between gap-2">
           <CardTitle>
             <a
               href={event.url}
               target="_blank"
               rel="noopener"
-              className="transition-colors hover:text-purple dark:hover:text-green"
+              class="transition-colors hover:text-purple dark:hover:text-green"
             >
               {event.name}
             </a>
           </CardTitle>
-          {isConference && (
-            <div className="flex items-center gap-1 rounded-full bg-amber-100 px-2 py-1 text-xs font-medium text-amber-800 dark:bg-amber-900/50 dark:text-amber-200">
-              <FaMicrophoneLines className="h-3 w-3" />
+          <Show when={isConference}>
+            <div class="flex items-center gap-1 rounded-full bg-amber-100 px-2 py-1 text-xs font-medium text-amber-800 dark:bg-amber-900/50 dark:text-amber-200">
+              <FaSolidMicrophoneLines class="h-3 w-3" />
               {t('event_card.conference')}
             </div>
-          )}
+          </Show>
         </div>
-        {eventDate.getTime() > 0 && (
-          <p className="text-sm text-muted-foreground">
+        <Show when={eventDate.getTime() > 0}>
+          <p class="text-sm text-muted-foreground">
             {isInProgress
               ? "🎉 Live now! Why aren't you here?"
               : isToday && isUpcoming
@@ -77,47 +81,48 @@ export const EventCard = ({ event }: EventCardProps) => {
                   ? `Starts in ${formatDistanceToNow(eventDate)}`
                   : 'Event ended'}
           </p>
-        )}
+        </Show>
       </CardHeader>
 
-      <CardContent className="flex flex-col gap-4">
-        {(event.address || event.city) && (
-          <div className="mt-3 flex items-center gap-2">
-            <FaLocationDot className="h-4 w-4 flex-shrink-0" />
-            {event.address ? (
+      <CardContent class="flex flex-col gap-4">
+        <Show when={event.address || event.city}>
+          <div class="mt-3 flex items-center gap-2">
+            <FaSolidLocationDot class="h-4 w-4 flex-shrink-0" />
+            <Show
+              when={event.address}
+              fallback={
+                <div class="text-sm font-medium text-muted-foreground">
+                  Location TBA
+                </div>
+              }
+            >
               <div>
-                <div className="text-sm font-medium">{event.address}</div>
-                {event.city && (
-                  <div className="text-sm text-muted-foreground">
-                    {event.city}
-                  </div>
-                )}
+                <div class="text-sm font-medium">{event.address}</div>
+                <Show when={event.city}>
+                  <div class="text-sm text-muted-foreground">{event.city}</div>
+                </Show>
               </div>
-            ) : (
-              <div className="text-sm font-medium text-muted-foreground">
-                Location TBA
-              </div>
-            )}
+            </Show>
           </div>
-        )}
+        </Show>
 
-        <div className="flex items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <FaClock className="h-4 w-4 flex-shrink-0" />
+        <div class="flex items-center justify-between gap-4">
+          <div class="flex items-center gap-2">
+            <FaSolidClock class="h-4 w-4 flex-shrink-0" />
             <div>
-              <div className="text-sm font-medium">
-                {event.date} ({getEventWeekDay(event, locale)})
+              <div class="text-sm font-medium">
+                {event.date} ({getEventWeekDay(event, i18n.locale)})
               </div>
-              <div className="text-sm text-muted-foreground">{event.time}</div>
+              <div class="text-sm text-muted-foreground">{event.time}</div>
             </div>
           </div>
 
-          {isUpcoming && event.rsvp && (
+          <Show when={isUpcoming && event.rsvp}>
             <a
               href={event.rsvp}
               target="_blank"
               rel="noopener"
-              className={cn(
+              class={cn(
                 buttonVariants({
                   size: 'sm',
                 }),
@@ -128,7 +133,7 @@ export const EventCard = ({ event }: EventCardProps) => {
             >
               {isConference ? t('event_card.register') : t('event_card.rsvp')}
             </a>
-          )}
+          </Show>
         </div>
       </CardContent>
     </Card>

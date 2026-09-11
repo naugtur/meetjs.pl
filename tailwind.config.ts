@@ -4,9 +4,12 @@ import tailwindcssAnimate from 'tailwindcss-animate';
 
 const config: Config = {
   content: [
-    './src/components/**/*.{ts,tsx,mdx}',
-    './src/app/**/*.{ts,tsx,mdx}',
+    './src/components/**/*.{ts,tsx}',
+    './src/routes/**/*.{ts,tsx}',
     './src/content/**/*.{ts,tsx}',
+    './src/data/**/*.{ts,tsx}',
+    './src/App.tsx',
+    './src/Document.tsx',
   ],
   prefix: '',
   theme: {
