@@ -362,6 +362,10 @@
     "click_city": "Kliknij swoje miasto, aby dowiedzieć się, jak dołączyć do lokalnego wydarzenia jako uczestnik, prelegent lub sponsor.",
     "description": "meet.js to rodzina lokalnych meetupów w całej Polsce. Są dla społeczności i przez społeczność, niekomercyjne i organizowane przez pasjonatów. Bezpłatne lub charytatywne. Głównym celem jest połączenie społeczności Web Developerów i ułatwienie wymiany wiedzy oraz koleżeństwa.",
     "discord_title": "Dołącz do naszej społeczności Discord",
+    "find_nearest": "Znajdź najbliższy meetup",
+    "locate_error": "Nie udało się ustalić lokalizacji. Wybierz miasto na mapie.",
+    "locating": "Ustalanie lokalizacji…",
+    "nearest_result": "Najbliższy meetup:",
     "start_local": "Jeśli nie widzisz swojego miasta na mapie, rozważ założenie lokalnego meet.js!",
     "title": "Dołącz do nas"
   },

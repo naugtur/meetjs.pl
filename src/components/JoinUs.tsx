@@ -7,6 +7,7 @@ import { DiscordCommunity } from '@/components/DiscordCommunity';
 import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
 import { filterUpcomingEvents } from '@/utils/eventUtils';
 import { getTranslate } from '@/tolgee/server';
+import { NearestCity } from '@/components/NearestCity';
 
 export const JoinUs = async () => {
   const t = await getTranslate();
@@ -28,6 +29,7 @@ export const JoinUs = async () => {
       <div className="mx-auto flex w-full max-w-7xl flex-col p-4 md:flex-row">
         <div className="w-full md:w-1/2">
           <PolandMap cities={CITIES} events={events} />
+          <NearestCity />
         </div>
         <div className="w-full p-4 md:w-1/2">
           <p className="pb-6">{t('join_us.description')}</p>

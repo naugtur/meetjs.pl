@@ -1,9 +1,4 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
+import { ChevronDown } from 'lucide-react';
 import { JSX } from 'react';
 
 export interface FAQQuestion {
@@ -20,16 +15,19 @@ export const FAQ = ({ questions }: FAQProps) => {
   return (
     <section className="p-8">
       <h2 className="text-center text-2xl font-bold">FAQ</h2>
-      <Accordion type="single" collapsible className="w-full">
+      <div className="w-full">
         {questions.map((question) => (
-          <AccordionItem key={question.id} value={`item-${question.id}`}>
-            <AccordionTrigger>{question.question}</AccordionTrigger>
-            <AccordionContent>
+          <details key={question.id} name="faq" className="group border-b">
+            <summary className="flex cursor-pointer list-none items-center justify-between py-4 font-medium transition-all hover:underline [&::-webkit-details-marker]:hidden">
+              {question.question}
+              <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180" />
+            </summary>
+            <div className="pb-4 text-sm">
               <p>{question.answer}</p>
-            </AccordionContent>
-          </AccordionItem>
+            </div>
+          </details>
         ))}
-      </Accordion>
+      </div>
     </section>
   );
 };
