@@ -84,6 +84,11 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'crossweb.pl',
       },
+      {
+        protocol: 'https',
+        hostname: 'dzienprogramisty.pl',
+        pathname: '/assets/images/logo_color.svg',
+      },
     ],
     minimumCacheTTL: 2678400, // 31 days - images rarely change
     qualities: [75],

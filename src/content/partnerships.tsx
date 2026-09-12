@@ -35,6 +35,34 @@ export interface Partnership {
 
 export const partnerships: Partnership[] = [
   {
+    name: 'Dzień Programisty',
+    website: 'https://dzienprogramisty.pl/',
+    description:
+      'meet.js jest partnerem społecznościowym Dnia Programisty — inicjatywy łączącej programistów, entuzjastów technologii i społeczność IT.',
+    details: [
+      'Inicjatywa skierowana do osób związanych z programowaniem i nowymi technologiami',
+      'Okazja do dzielenia się wiedzą, doświadczeniami i inspiracjami',
+      'Współpraca społecznościowa między Dniem Programisty i meet.js',
+    ],
+    goals: [
+      'Wzmacnianie społeczności programistycznej w Polsce',
+      'Promowanie wymiany wiedzy i doświadczeń wśród developerów',
+      'Wzajemna promocja inicjatyw skierowanych do społeczności IT',
+    ],
+    location: 'Polska i online',
+    contact: 'https://dzienprogramisty.pl/',
+    icon: (
+      <Image
+        src="https://dzienprogramisty.pl/assets/images/logo_color.svg"
+        alt="Dzień Programisty"
+        width={32}
+        height={32}
+        className="h-8 w-8 object-contain"
+      />
+    ),
+    gradient: 'from-cyan-600 to-blue-600',
+  },
+  {
     name: 'Codaro Coding Challenge II',
     website: 'https://codaro.dev/hackathon',
     description:
