@@ -94,8 +94,8 @@ importers:
         version: 3.24.2
     devDependencies:
       '@lavamoat/preinstall-always-fail':
-        specifier: ^2.1.1
-        version: 2.1.1
+        specifier: ^3.0.0
+        version: 3.0.0
       '@testing-library/jest-dom':
         specifier: ^6.6.3
         version: 6.6.3
@@ -743,9 +743,9 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@lavamoat/preinstall-always-fail@2.1.1':
-    resolution: {integrity: sha512-8eyQm26cQtEek2z1vM+iSVOoKrchkHBEvUQ3VnbDEqQ7hDL5sU/rhHo/FnoMgY8J31r6LSesEzpwYQe4omgqbA==}
-    engines: {node: ^16.20.0 || ^18.0.0 || ^20.0.0 || ^22.0.0 || ^24.0.0}
+  '@lavamoat/preinstall-always-fail@3.0.0':
+    resolution: {integrity: sha512-O2TfrjwX0GbMtdtbtZn9RVHoNBkaX3pdsSRUFU9AYGeHcqEJA5AAQLg7JLIjeQs/D83uDvB+KptdA9vlVIBeMA==}
+    engines: {node: ^20.19.0 || ^22.5.1 || ^24.0.0}
 
   '@mdx-js/loader@3.1.1':
     resolution: {integrity: sha512-0TTacJyZ9mDmY+VefuthVshaNIyCGZHJG2fMnGaDttCt8HmjUF7SizlHJpaCDoGnN635nK1wpzfpx/Xx5S4WnQ==}
@@ -5084,7 +5084,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@lavamoat/preinstall-always-fail@2.1.1': {}
+  '@lavamoat/preinstall-always-fail@3.0.0': {}
 
   '@mdx-js/loader@3.1.1(webpack@5.93.0(postcss@8.5.23))':
     dependencies:
