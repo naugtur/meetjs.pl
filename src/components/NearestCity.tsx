@@ -55,7 +55,7 @@ type LocateState = 'idle' | 'locating' | 'done' | 'error';
 
 export const NearestCity = () => {
   const { t } = useTranslate();
-  const geoRef = useRef<HTMLElement | null>(null);
+  const geoRef = useRef<HTMLGeolocationElement | null>(null);
   const [state, setState] = useState<LocateState>('idle');
   const [nearest, setNearest] = useState<{ city: GeoCity; km: number } | null>(
     null,
@@ -71,16 +71,17 @@ export const NearestCity = () => {
     const element = geoRef.current;
     if (!element) return;
 
-    const onLocation = (event: Event) => {
-      const { latitude, longitude } = (
-        event as Event & {
-          coords: { latitude: number; longitude: number };
-        }
-      ).coords;
-      handleCoords(latitude, longitude);
+    const onLocation = () => {
+      const { position } = element;
+      if (position) {
+        handleCoords(position.coords.latitude, position.coords.longitude);
+      } else {
+        setState('error');
+      }
     };
 
     element.addEventListener('location', onLocation);
+    if (element.position || element.error) onLocation();
     return () => element.removeEventListener('location', onLocation);
   }, [handleCoords]);
 
@@ -96,10 +97,9 @@ export const NearestCity = () => {
 
   return (
     <div className="flex flex-col items-center gap-2 pt-4" aria-live="polite">
-      <geolocation ref={geoRef}>
+      <geolocation ref={geoRef} autolocate="">
         <button
           type="button"
-          autolocate=""
           onClick={handleFallbackClick}
           className="inline-flex items-center gap-2 rounded-md bg-purple px-4 py-2 font-medium text-white transition-colors hover:bg-green hover:text-purple"
         >
