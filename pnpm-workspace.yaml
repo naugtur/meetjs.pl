@@ -1,0 +1,4 @@
+allowBuilds:
+  '@lavamoat/preinstall-always-fail': false
+  esbuild: false
+  puppeteer: false
