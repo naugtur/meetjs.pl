@@ -363,11 +363,14 @@
     "description": "meet.js to rodzina lokalnych meetupów w całej Polsce. Są dla społeczności i przez społeczność, niekomercyjne i organizowane przez pasjonatów. Bezpłatne lub charytatywne. Głównym celem jest połączenie społeczności Web Developerów i ułatwienie wymiany wiedzy oraz koleżeństwa.",
     "discord_title": "Dołącz do naszej społeczności Discord",
     "find_nearest": "Znajdź najbliższy meetup",
+    "how_it_works": "Jak to działa?",
+    "how_it_works_body": "Przycisk korzysta z eksperymentalnego elementu HTML <geolocation> (z fallbackiem do navigator.geolocation w innych przeglądarkach). Potem liczy odległość haversine do każdego miasta meet.js na mapie i wybiera najbliższe — wszystko w Twojej przeglądarce, lokalizacja nie opuszcza urządzenia. W promieniu ~20 km traktujemy Cię jako lokalnego.",
     "locate_error": "Nie udało się ustalić lokalizacji. Wybierz miasto na mapie.",
     "locating": "Ustalanie lokalizacji…",
     "nearest_result": "Najbliższy meetup:",
     "start_local": "Jeśli nie widzisz swojego miasta na mapie, rozważ założenie lokalnego meet.js!",
-    "title": "Dołącz do nas"
+    "title": "Dołącz do nas",
+    "you_are_in": "Wygląda na to, że jesteś w mieście meet.js:"
   },
   "logo_component": {
     "context_menu_subtitle": "Chcesz pobrać nasze logo?",

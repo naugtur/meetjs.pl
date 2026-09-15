@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import type { Route } from 'next';
-import { MapPin } from 'lucide-react';
+import { ChevronDown, Info, MapPin } from 'lucide-react';
 import { useTranslate } from '@tolgee/react';
 import { CITIES, UNMAPPED_CITY_PAGES } from '@/content/cities';
 
@@ -52,6 +52,8 @@ const findNearest = (lat: number, lng: number) =>
   );
 
 type LocateState = 'idle' | 'locating' | 'done' | 'error';
+
+const IN_CITY_THRESHOLD_KM = 20;
 
 export const NearestCity = () => {
   const { t } = useTranslate();
@@ -111,14 +113,17 @@ export const NearestCity = () => {
       </geolocation>
       {state === 'done' && nearest && (
         <p className="text-sm">
-          {t('join_us.nearest_result')}{' '}
+          {nearest.km <= IN_CITY_THRESHOLD_KM
+            ? t('join_us.you_are_in')
+            : t('join_us.nearest_result')}{' '}
           <Link
             href={nearest.city.href as Route}
             className="font-semibold text-purple hover:underline"
           >
             {nearest.city.name}
-          </Link>{' '}
-          (~{Math.round(nearest.km)} km)
+          </Link>
+          {nearest.km > IN_CITY_THRESHOLD_KM &&
+            ` (~${Math.round(nearest.km)} km)`}
         </p>
       )}
       {state === 'error' && (
@@ -126,6 +131,17 @@ export const NearestCity = () => {
           {t('join_us.locate_error')}
         </p>
       )}
+      <details className="group max-w-sm text-center text-sm text-muted-foreground">
+        <summary className="flex cursor-pointer list-none items-center gap-1 transition-all hover:underline [&::-webkit-details-marker]:hidden">
+          <Info className="h-3.5 w-3.5" aria-hidden="true" />
+          {t('join_us.how_it_works')}
+          <ChevronDown
+            className="h-3 w-3 transition-transform duration-200 group-open:rotate-180"
+            aria-hidden="true"
+          />
+        </summary>
+        <p className="pt-2">{t('join_us.how_it_works_body')}</p>
+      </details>
     </div>
   );
 };
