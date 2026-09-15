@@ -18,8 +18,8 @@ export default function EmptyDiscountState({ type }: EmptyDiscountStateProps) {
           iconBg: 'bg-gradient-to-br from-purple-500 to-pink-600',
           textColor: 'text-gray-900 dark:text-white',
           descColor: 'text-gray-600 dark:text-gray-400',
-          titleKey: 'discounts.empty.events.title',
-          descKey: 'discounts.empty.events.description',
+          title: t('discounts.empty.events.title'),
+          description: t('discounts.empty.events.description'),
         };
       case 'software':
         return {
@@ -27,8 +27,8 @@ export default function EmptyDiscountState({ type }: EmptyDiscountStateProps) {
           iconBg: 'bg-gradient-to-br from-indigo-500 to-purple-600',
           textColor: 'text-gray-900 dark:text-white',
           descColor: 'text-gray-600 dark:text-gray-400',
-          titleKey: 'discounts.empty.software.title',
-          descKey: 'discounts.empty.software.description',
+          title: t('discounts.empty.software.title'),
+          description: t('discounts.empty.software.description'),
         };
       case 'learning':
         return {
@@ -36,8 +36,8 @@ export default function EmptyDiscountState({ type }: EmptyDiscountStateProps) {
           iconBg: 'bg-gradient-to-br from-green-500 to-teal-600',
           textColor: 'text-gray-900 dark:text-white',
           descColor: 'text-gray-600 dark:text-gray-400',
-          titleKey: 'discounts.empty.learning.title',
-          descKey: 'discounts.empty.learning.description',
+          title: t('discounts.empty.learning.title'),
+          description: t('discounts.empty.learning.description'),
         };
     }
   };
@@ -53,12 +53,12 @@ export default function EmptyDiscountState({ type }: EmptyDiscountStateProps) {
           {config.icon}
         </div>
         <h3 className={`mb-3 text-lg font-semibold ${config.textColor}`}>
-          {t(config.titleKey)}
+          {config.title}
         </h3>
         <p
           className={`mx-auto max-w-md text-sm leading-relaxed ${config.descColor}`}
         >
-          {t(config.descKey)}
+          {config.description}
         </p>
       </div>
     </div>

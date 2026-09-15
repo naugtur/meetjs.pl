@@ -20,6 +20,13 @@ const typeColors = {
 export default async function MediaPage() {
   const t = await getTranslate();
 
+  const typeLabels: Record<keyof typeof typeIcons, string> = {
+    video: t('media.type.video'),
+    article: t('media.type.article'),
+    podcast: t('media.type.podcast'),
+    interview: t('media.type.interview'),
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
       {/* Hero Section */}
@@ -57,7 +64,7 @@ export default async function MediaPage() {
                       <div className="flex items-center gap-2">
                         <Icon className="h-5 w-5" />
                         <span className="text-sm font-semibold uppercase tracking-wide">
-                          {t(`media.type.${item.type}`)}
+                          {typeLabels[item.type]}
                         </span>
                       </div>
                       <span className="text-xl">
