@@ -1,6 +1,9 @@
 import { track } from '@vercel/analytics';
 
-type AnalyticsClientEvent = 'click_discord_invite';
+type AnalyticsClientEvent =
+  | 'click_discord_invite'
+  | 'click_organizer_entry'
+  | 'click_organizer_contact';
 
 type TrackClientEvent = (
   event: AnalyticsClientEvent,

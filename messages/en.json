@@ -287,6 +287,7 @@
     }
   },
   "empty_events_alert": {
+    "organize_cta": "Help prepare the next meetup",
     "message": "Nothing planned yet. Contact your local organizers if you want to help make it happen!"
   },
   "events_api_partner": {
@@ -350,7 +351,9 @@
   "hello_world": "Hello World",
   "hero": {
     "2025_wrapped": "2025 Wrapped",
-    "cta": "Find Your Local Meetup",
+    "cta": "Find a meetup",
+    "organize_cta": "Help organize a meetup",
+    "description": "Local, non-commercial meetups for people interested in JavaScript. Join us, share what you know, or help prepare the next event.",
     "follow_us": "Follow us",
     "join_discord": "Join Discord",
     "ranking_banner": "#1 Tech Event Series in Poland (Crossweb 2024, 2025)",
@@ -362,7 +365,9 @@
     "click_city": "Click your city to learn how to join your local event as an attendee, speaker or sponsor.",
     "description": "meet.js is a family of local meetups all around Poland. They're for-community and by-community, non-commercial and organized by passionate individuals. Free to attend or for-charity. With the main goal of getting the Web Developers community together and facilitating knowledge exchange and camraderie.",
     "discord_title": "Join our Discord Community",
-    "start_local": "If you don't see your city on the map, consider starting a local meet.js!",
+    "organize_title": "meet.js is built by people like you",
+    "organize_cta": "See how you can help",
+    "start_local": "Want to help a local team or start meetups in your city? You can begin with one task. Tell us what interests you.",
     "title": "Join Us"
   },
   "logo_component": {
@@ -371,6 +376,7 @@
     "go_to_brand_assets": "Go to Brand Assets"
   },
   "navigation": {
+    "organize": "Get involved",
     "about": "About",
     "contact": "Contact",
     "discounts": "Discounts",
@@ -415,6 +421,98 @@
     "team": "Team"
   },
   "organizer": {
+    "recruitment": {
+      "eyebrow": "Build meet.js with us",
+      "title": "Bring meet.js to your city. We’ll help you get started.",
+      "description": "You don’t need event planning experience or a personal budget. We’ll share instructions for running a meetup with support from local companies. You can also start by helping at just one event.",
+      "contact_cta": "I’d like to help with meet.js",
+      "contact_hint": "Tell us your city and how you’d like to help. Contact:",
+      "image_alt": "meet.js organizers preparing the community stand together",
+      "paths_title": "Start with what works for you",
+      "paths_description": "One task, a local team, or a new city? Ask about the options — you don’t need a finished plan.",
+      "paths": {
+        "one_event": {
+          "title": "Help at one event",
+          "description": "Ask about welcoming attendees, communications, or preparing a meetup. Get to know event organizing without committing to an ongoing role.",
+          "cta": "Ask about one-off help",
+          "intent": "I’m interested in helping at one meet.js event."
+        },
+        "local_team": {
+          "title": "Join a local team",
+          "description": "Is meet.js already active in your city? Tell us you’d like to join. We’ll discuss the team’s needs and tasks that fit your availability.",
+          "cta": "I’d like to join a team",
+          "intent": "I’d like to join a local meet.js team."
+        },
+        "new_city": {
+          "title": "Start or restart a chapter",
+          "description": "Missing meetups in your city, or want to bring them back after a break? We’ll share instructions on getting started and preparing your first meetup.",
+          "cta": "Let’s talk about my city",
+          "intent": "I’d like to start or restart meet.js in my city."
+        }
+      },
+      "support_title": "You’re not starting from scratch",
+      "support": {
+        "instructions": {
+          "title": "Guidance from organizers",
+          "description": "You’ll get instructions for preparing an event and a chance to talk to the meet.js team. We’ll help you choose a first step and approach conversations with companies."
+        },
+        "venue": {
+          "title": "A local company’s space",
+          "description": "A company usually provides its office for the meetup. You don’t need your own venue — we’ll show you how to approach finding one."
+        },
+        "costs": {
+          "title": "Sponsors cover the costs",
+          "description": "Events rely on sponsor support, not the organizer’s personal budget. Support is agreed before the event; we don’t expect you to cover funding gaps."
+        }
+      },
+      "community_title": "A community meetup, not a sales event",
+      "community_description": "Companies can provide space and fund a meetup. The event remains a non-commercial initiative for sharing knowledge and meeting people. Organizing is a community contribution, not a paid job.",
+      "process_title": "From a message to a first step",
+      "process": {
+        "write": {
+          "title": "Write to us",
+          "description": "Tell us your city and how you’d like to help. It’s fine to start with questions."
+        },
+        "talk": {
+          "title": "Let’s discuss the options",
+          "description": "We’ll talk about your expectations, the local situation, and how we can support you."
+        },
+        "start": {
+          "title": "Choose a first step together",
+          "description": "We’ll identify a task at an existing meetup or work out how to start organizing in your city."
+        }
+      },
+      "faq": {
+        "experience": {
+          "question": "Do I need to be a senior developer or give talks?",
+          "answer": "No. You don’t need to be the most technical person or give presentations. What matters is wanting to work with people and support knowledge sharing in the community."
+        },
+        "one_event": {
+          "question": "Can I help at just one meetup?",
+          "answer": "Tell us you’re interested in one-off help. We’ll check with the local team about available tasks. Getting in touch doesn’t commit you to an ongoing organizing role."
+        },
+        "budget": {
+          "question": "Do I need to pay out of my own pocket?",
+          "answer": "That’s not what we expect of organizers. We’ll show you how to prepare an event with costs covered by sponsors. A local company usually provides its office. Support is agreed before the event — we don’t expect organizers to cover funding gaps."
+        },
+        "sponsor": {
+          "question": "What if I don’t have a venue or sponsor?",
+          "answer": "You can get in touch without a venue or company contacts. We’ll share instructions for organizing and approaching sponsors. This doesn’t guarantee a sponsor in every city — we’ll explore the options together."
+        },
+        "contact": {
+          "question": "What happens after I get in touch?",
+          "answer": "Your message goes to the meet.js team at contact@meetjs.pl. One of the community coordinators will discuss your city and ways to help. You don’t need to send a CV or a complete event plan."
+        }
+      },
+      "email": {
+        "subject": "meet.js — organizing",
+        "greeting": "Hi!",
+        "general": "I’d like to talk about helping with meet.js.",
+        "fields": "City:\nI’d like to help with:\nQuestions or concerns:"
+      },
+      "final_title": "Let’s start with a conversation",
+      "final_description": "You don’t need a team, a venue, or all the answers. Tell us what interests you and we’ll work out the first step together."
+    },
     "assets_section": {
       "current_logos": {
         "available_formats": "Available formats:",
@@ -483,7 +581,7 @@
     "intro_p1": "Do you wish to become an organizer and you need some help getting started? That's what we're here for!",
     "intro_p2": "If there's a meet.js in your city already, get in touch with the organizers to see how you can join.",
     "intro_p3": "If your city has a JavaScript crowd that's not organized yet or the local meetups are hosted by companies for short-term commercial or hiring reasons, you should definitely set up a meet.js in your city.",
-    "meta_description": "How to become an organizer for meet.js.",
+    "meta_description": "Help at one meetup, join a local team, or bring meet.js to your city. Get guidance from organizers and learn how to run events with sponsor support.",
     "meta_title": "How to become an organizer | meet.js",
     "no_benefits": {
       "money": "Money or anything of notable commercial value"
@@ -524,7 +622,7 @@
     },
     "requirements": {
       "involvement": "Some involvement with JavaScript and programming community (being a dev yourself and enthusiastic about other humans)",
-      "non_commercial": "No commercial interest or a company backing your engagement as an organizer",
+      "non_commercial": "Meetups serve the community, not sales. Companies can provide space and fund events.",
       "time": "A bit of time and ambition"
     },
     "requirements_labels": {
@@ -538,8 +636,8 @@
     "tools_section": {
       "event_management": {
         "about_meetjs": "About meet.js",
-        "description": "Everything you need to know about organizing successful meet.js events, from planning to execution.",
-        "event_planning_guide": "Event Planning Guide",
+        "description": "Find out how to start organizing and what support you can get from meet.js.",
+        "event_planning_guide": "How to start organizing",
         "title": "Event Management"
       },
       "image_generator": {

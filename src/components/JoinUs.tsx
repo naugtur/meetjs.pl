@@ -7,6 +7,9 @@ import { DiscordCommunity } from '@/components/DiscordCommunity';
 import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
 import { filterUpcomingEvents } from '@/utils/eventUtils';
 import { getTranslate } from '@/tolgee/server';
+import { OrganizerLink } from '@/components/OrganizerLink';
+import { buttonVariants } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 export const JoinUs = async () => {
   const t = await getTranslate();
@@ -32,7 +35,21 @@ export const JoinUs = async () => {
         <div className="w-full p-4 md:w-1/2">
           <p className="pb-6">{t('join_us.description')}</p>
           <p className="pb-6">{t('join_us.click_city')}</p>
-          <p className="pb-6">{t('join_us.start_local')}</p>
+          <div className="rounded-xl border border-purple/10 bg-white p-5 text-purple">
+            <h3 className="text-xl font-semibold">
+              {t('join_us.organize_title')}
+            </h3>
+            <p className="mt-3 leading-relaxed">{t('join_us.start_local')}</p>
+            <OrganizerLink
+              source="map"
+              className={cn(
+                buttonVariants(),
+                'mt-4 h-auto min-h-11 max-w-full whitespace-normal bg-green px-5 py-3 text-center text-purple hover:bg-green/80',
+              )}
+            >
+              {t('join_us.organize_cta')}
+            </OrganizerLink>
+          </div>
 
           <div className="mt-4 border-t pt-6">
             <h3 className="mb-4 flex items-center gap-2 text-xl font-semibold">
