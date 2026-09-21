@@ -2,6 +2,20 @@ import { Promo } from '../types/promo';
 
 export const softwareDiscounts: Promo[] = [
   {
+    id: 'tester-army-2026',
+    name: 'Tester Army',
+    message: 'Earn free test runs through referrals!',
+    cta: '🧪 Earn Free Runs',
+    ticketLink: 'https://tester.army/sign-up?ref=8a1ugwnter',
+    eventLink: 'https://tester.army',
+    expiresAt: '2027-12-31T23:59:59+01:00',
+    description:
+      'Know a team that should be testing with agents? Share your referral link and both sides get rewarded in test runs. Whoever signs up with your link starts with 25 bonus test runs, and you both get 100 more when their workspace goes paid. Share it with as many teams as you like.',
+    gradient: 'bg-[#FA7A01]',
+    image: '/partners/tester-army-logo.png',
+    emojiRight: '🤖',
+  },
+  {
     id: 'cyberfolks-2026',
     name: 'cyber_Folks',
     message: '20% off hosting & domains — support meet.js!',
@@ -11,7 +25,8 @@ export const softwareDiscounts: Promo[] = [
     expiresAt: '2027-12-31T23:59:59+01:00',
     description:
       'Buy a domain, hosting, or other standard services at cyber_Folks with code MEETJS and get 20% off — while supporting meet.js through our partner program. cyber_Folks is our technology partner and hosts meet.js infrastructure. Use code MEETJS at checkout or go through our referral link.',
-    gradient: 'bg-gradient-to-r from-orange-500 via-red-500 to-pink-600',
+    gradient: 'bg-[#FFCC00]',
+    textColor: 'text-gray-900',
     icon: '🌐',
     image: '/discounts/cyber_folks_cf.png',
     emojiRight: '💜',
