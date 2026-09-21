@@ -2,6 +2,25 @@ import { Promo } from '../types/promo';
 
 export const eventsDiscounts: Promo[] = [
   {
+    id: 'cityjs-athens-2026',
+    name: 'CityJS Athens 2026',
+    message: '10% off with code MEETJS!',
+    cta: '👉 Get 10% Off',
+    ticketLink:
+      'https://ti.to/cityjs-conference/cityjsathens26/discount/MEETJS',
+    eventLink: 'https://athens.cityjsconf.org/',
+    expiresAt: '2026-10-21T23:59:59+03:00',
+    description:
+      "Thanks to our partners at CityJS Athens, we're excited to offer you an exclusive 10% discount! Join 30+ expert speakers, 10 hands-on workshops, and 3 unforgettable days dedicated to AI and JavaScript, October 21-23, 2026 in Athens. Hear from industry leaders representing AWS, Microsoft, IBM, NVIDIA, Nokia, Neo4j, Supabase, and many more. The discount applies to most ticket types, workshop passes, and ticket bundles. Use code MEETJS for 10% off your ticket!",
+    gradient: 'bg-gradient-to-r from-blue via-purple to-green',
+    icon: '🏛️',
+    image: '/partners/cityjs.jpg',
+    emojiRight: '🇬🇷',
+    country: 'Greece',
+    city: 'Athens',
+    discountCode: 'MEETJS',
+  },
+  {
     id: 'agent-conf-2026',
     name: 'Agent Conf 2026',
     message: 'Media partnership – 15% off with code meet.js15!',
