@@ -2,6 +2,24 @@ import { Promo } from '../types/promo';
 
 export const eventsDiscounts: Promo[] = [
   {
+    id: 'the-hack-summit-2026',
+    name: 'The Hack Summit 2026',
+    message: '20% off with code THS26SP20!',
+    cta: '👉 Get 20% Off',
+    ticketLink: 'https://thehacksummit.com/',
+    eventLink: 'https://thehacksummit.com/',
+    expiresAt: '2026-11-06T23:59:59+01:00',
+    description:
+      'The Hack Summit 2026 to kolejna edycja wiodącej konferencji środowiska cybersec. Wydarzenie odbędzie się w formule hybrydowej: 05.11 Online oraz 06.11 na PGE Narodowym w Warszawie. Ponad 150 praktycznych prelekcji, 15+ ścieżek tematycznych obejmujących AI & Trends, Hacking, Defending, SoftwareDevSec, SecOps, CloudSec, OSINT, Forensics, Strategy, Governance, Audit, Risk, Legal & Compliance. Konferencji towarzyszy CyberSec Expo – targi pracy, produktów i usług. Networking wspierany aplikacją z funkcją matchmaking oraz wieczorne preparty i afterparty. Use code THS26SP20 for 20% off Standard or Exec packages!',
+    gradient: 'bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500',
+    icon: '🔐',
+    image: 'https://thehacksummit.com/fav/apple-touch-icon.png',
+    emojiRight: '🇵🇱',
+    country: 'Poland',
+    city: 'Warsaw',
+    discountCode: 'THS26SP20',
+  },
+  {
     id: 'cityjs-athens-2026',
     name: 'CityJS Athens 2026',
     message: '10% off with code MEETJS!',
