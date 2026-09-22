@@ -89,6 +89,10 @@ const nextConfig: NextConfig = {
         hostname: 'dzienprogramisty.pl',
         pathname: '/assets/images/logo_color.svg',
       },
+      {
+        protocol: 'https',
+        hostname: 'thehacksummit.com',
+      },
     ],
     minimumCacheTTL: 2678400, // 31 days - images rarely change
     qualities: [75],
