@@ -32,7 +32,7 @@ export const eventsDiscounts: Promo[] = [
     description:
       'meet.js is an official Media Partner of WAWTECH 2026! The second edition of the conference by DOU lands in Warsaw on November 26–27, bringing together 5,000+ engineers and tech leaders and 60+ speakers. The lineup already includes José Valim (creator of Elixir), Daniel Stenberg (creator and lead developer of curl), Ivan Lapa (Netflix), Dima Maleev (Agoda), and Taras Kloba (Microsoft). Use code MEETJS for 10% off your ticket!',
     gradient: 'bg-gradient-to-r from-indigo-600 via-purple-600 to-fuchsia-600',
-    image: '/discounts/wawtech.svg',
+    image: '/discounts/wawtech.png',
     emojiRight: '🇵🇱',
     country: 'Poland',
     city: 'Warsaw',
