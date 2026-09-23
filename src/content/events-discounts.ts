@@ -4,21 +4,22 @@ export const eventsDiscounts: Promo[] = [
   {
     id: 'infoshare-katowice-2026',
     name: 'Infoshare Katowice 2026',
-    message: 'meet.js is a Community Partner!',
-    cta: '👉 Get Tickets',
+    message: 'Discount with code isk26meetjs!',
+    cta: '👉 Get Discount',
     ticketLink:
-      'https://katowice.infoshare.pl/rejestracja/?utm_source=meet_js&utm_medium=community_partner&utm_campaign=isk2026',
+      'https://katowice.infoshare.pl/rejestracja/?discount_code=isk26meetjs&utm_source=meet_js&utm_medium=community_partner&utm_campaign=isk2026',
     eventLink:
       'https://katowice.infoshare.pl/?utm_source=meet_js&utm_medium=community_partner&utm_campaign=isk2026',
     expiresAt: '2026-11-18T23:59:59+01:00',
     description:
-      'Trzecia edycja Infoshare na Śląsku! Wydarzenie technologiczno-biznesowe łączące technologie, biznes i ludzi. 17-18 listopada 2026 w Międzynarodowym Centrum Kongresowym w Katowicach. meet.js is a Community Partner — stay tuned for a discount code!',
+      'Trzecia edycja Infoshare na Śląsku! Wydarzenie technologiczno-biznesowe łączące technologie, biznes i ludzi. 17-18 listopada 2026 w Międzynarodowym Centrum Kongresowym w Katowicach. meet.js is a Community Partner — use code isk26meetjs for a discount on your ticket!',
     gradient: 'bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600',
     icon: '🎟️',
     image: '/partners/inforshare-kwadrat.png',
     emojiRight: '🇵🇱',
     country: 'Poland',
     city: 'Katowice',
+    discountCode: 'isk26meetjs',
   },
   {
     id: 'the-hack-summit-2026',
