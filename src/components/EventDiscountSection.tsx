@@ -4,22 +4,11 @@ import { useMemo, useState } from 'react';
 import Image from 'next/image';
 import type { Promo } from '@/types/promo';
 import EmptyDiscountState from './EmptyDiscountState';
-import { PromoFilters } from '@/components/PromoFilters';
-import { Calendar, MapPin, ExternalLink } from 'lucide-react';
-import WorkshopInfo from './WorkshopInfo';
-import DiscountCodeSection from './DiscountCodeSection';
+import { Calendar, MapPin, ChevronDown } from 'lucide-react';
 
 interface EventDiscountSectionProps {
   promos: Promo[];
 }
-
-const getDomain = (url: string) => {
-  try {
-    return new URL(url).hostname.replace('www.', '');
-  } catch {
-    return url;
-  }
-};
 
 const formatDate = (dateString: string) => {
   return new Date(dateString).toLocaleDateString('en-US', {
@@ -30,129 +19,110 @@ const formatDate = (dateString: string) => {
 };
 
 function EventPromoCard({ promo }: { promo: Promo }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleCopyCode = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (promo.discountCode) {
+      navigator.clipboard.writeText(promo.discountCode);
+    }
+  };
+
+  const handleCtaClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+  };
+
   return (
-    <div className="group relative block overflow-hidden rounded-xl border border-gray-200 bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800">
-      {/* Header with Logo/Image */}
-      <div className="flex items-center gap-4 border-b border-gray-100 p-6 dark:border-gray-700">
+    <div
+      className={`rounded-lg border border-gray-200 bg-white transition-all hover:border-purple-300 hover:shadow-sm dark:border-gray-700 dark:bg-gray-800 ${isExpanded ? 'ring-1 ring-purple-300' : ''}`}
+    >
+      {/* Header - clickable to expand */}
+      <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="flex w-full flex-col gap-3 p-4 text-left sm:flex-row sm:items-center sm:gap-4"
+      >
+        {/* Logo */}
         {promo.image ? (
-          <div className="relative h-20 w-20 overflow-hidden rounded-lg bg-gray-100 ring-2 ring-gray-100 dark:bg-gray-700 dark:ring-gray-600">
+          <div className="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-700">
             <Image
               src={promo.image}
               alt={`${promo.name} logo`}
               fill
-              className="object-contain p-1 transition-transform duration-300 group-hover:scale-105"
+              className="object-contain p-1"
             />
           </div>
         ) : (
-          <div className="flex h-20 w-20 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 to-pink-600 text-3xl text-white shadow-md transition-transform duration-300 group-hover:scale-105">
+          <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 to-pink-600 text-xl text-white">
             {promo.icon || '🎟️'}
           </div>
         )}
 
+        {/* Info */}
         <div className="min-w-0 flex-1">
-          <h3 className="truncate text-xl font-bold text-gray-900 dark:text-white">
+          <h3 className="truncate font-semibold text-gray-900 dark:text-white">
             {promo.name}
           </h3>
-          <p className="mt-1 line-clamp-2 text-sm text-gray-600 dark:text-gray-400">
+          <p className="text-sm text-gray-600 dark:text-gray-400">
             {promo.message}
           </p>
         </div>
-      </div>
 
-      {/* Content */}
-      <div className="p-6">
+        {/* Meta */}
+        <div className="flex flex-wrap items-center gap-3 sm:flex-nowrap">
+          {promo.discountCode && (
+            <button
+              onClick={handleCopyCode}
+              className="rounded-md border border-dashed border-purple-300 bg-purple-50 px-3 py-1 font-mono text-sm font-medium text-purple-700 transition-colors hover:bg-purple-100 dark:border-purple-600 dark:bg-purple-900/20 dark:text-purple-400 dark:hover:bg-purple-900/30"
+              title="Click to copy"
+            >
+              {promo.discountCode}
+            </button>
+          )}
+
+          <div className="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
+            <Calendar className="h-3.5 w-3.5" />
+            <span>{formatDate(promo.expiresAt)}</span>
+          </div>
+
+          {promo.city && (
+            <div className="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
+              <MapPin className="h-3.5 w-3.5" />
+              <span className="truncate">{promo.city}</span>
+            </div>
+          )}
+
+          {promo.ticketLink ? (
+            <a
+              href={promo.ticketLink}
+              target="_blank"
+              rel="noopener"
+              onClick={handleCtaClick}
+              className="whitespace-nowrap rounded-md bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-1.5 text-sm font-medium text-white transition-all hover:from-purple-700 hover:to-pink-700"
+            >
+              {promo.cta}
+            </a>
+          ) : (
+            <span className="whitespace-nowrap rounded-md bg-gray-100 px-4 py-1.5 text-sm text-gray-500 dark:bg-gray-700 dark:text-gray-400">
+              {promo.cta}
+            </span>
+          )}
+
+          <ChevronDown
+            className={`h-5 w-5 flex-shrink-0 text-gray-400 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
+          />
+        </div>
+      </button>
+
+      {/* Expanded content */}
+      <div
+        className={`overflow-hidden transition-all duration-200 ${isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+      >
         {promo.description && (
-          <div className="mb-6">
+          <div className="border-t border-gray-100 px-4 py-4 dark:border-gray-700">
             <p className="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
               {promo.description}
             </p>
           </div>
-        )}
-
-        {/* Workshop Information */}
-        <WorkshopInfo
-          workshopDescription={promo.workshopDescription}
-          workshopDiscountCode={promo.workshopDiscountCode}
-          workshopLink={promo.workshopLink}
-        />
-
-        {/* Discount Code Section */}
-        {promo.discountCode && (
-          <DiscountCodeSection
-            discountCode={promo.discountCode}
-            variant="event"
-          />
-        )}
-
-        {/* Details Grid */}
-        <div className="mb-6 grid grid-cols-2 gap-4">
-          <div className="flex items-start gap-2">
-            <Calendar className="mt-0.5 h-4 w-4 flex-shrink-0 text-gray-400" />
-            <div className="min-w-0">
-              <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
-                Valid Until
-              </p>
-              <p className="text-sm font-medium text-gray-900 dark:text-gray-100">
-                {formatDate(promo.expiresAt)}
-              </p>
-            </div>
-          </div>
-          <div className="flex items-start gap-2">
-            <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-gray-400" />
-            <div className="min-w-0">
-              <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
-                Location
-              </p>
-              <p className="truncate text-sm font-medium text-gray-900 dark:text-gray-100">
-                {promo.city && promo.country
-                  ? `${promo.city}, ${promo.country}`
-                  : promo.country || 'Global'}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Links */}
-        {promo.eventLink && (
-          <div className="mb-6">
-            <a
-              href={promo.eventLink}
-              target="_blank"
-              rel="noopener"
-              className="group flex cursor-pointer items-center justify-between rounded-lg border border-gray-200 p-3 transition-all duration-200 hover:border-purple-300 hover:bg-purple-50/50 dark:border-gray-600 dark:hover:border-purple-600 dark:hover:bg-purple-900/10"
-              aria-label={`Visit ${promo.name} website`}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="min-w-0 flex-1">
-                <p className="text-sm font-medium text-gray-700 transition-colors duration-200 group-hover:text-purple-600 dark:text-gray-300 dark:group-hover:text-purple-400">
-                  Event Website
-                </p>
-                <p className="truncate text-sm text-gray-500 dark:text-gray-400">
-                  {getDomain(promo.eventLink)}
-                </p>
-              </div>
-              <ExternalLink className="h-4 w-4 text-purple-600 transition-colors duration-200 group-hover:text-purple-700 dark:text-purple-400 dark:group-hover:text-purple-300" />
-            </a>
-          </div>
-        )}
-      </div>
-
-      {/* CTA Footer */}
-      <div className="border-t border-gray-100 p-6 dark:border-gray-700">
-        {promo.ticketLink ? (
-          <a
-            href={promo.ticketLink}
-            target="_blank"
-            rel="noopener"
-            className="block w-full rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 py-3 text-center font-semibold text-white shadow transition-all duration-200 hover:-translate-y-0.5 hover:from-purple-700 hover:to-pink-700 hover:shadow-lg active:scale-95"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {promo.cta}
-          </a>
-        ) : (
-          <span className="block w-full rounded-lg bg-gradient-to-r from-purple-600/70 to-pink-600/70 py-3 text-center font-semibold text-white/80 opacity-60 shadow">
-            {promo.cta}
-          </span>
         )}
       </div>
     </div>
@@ -160,8 +130,6 @@ function EventPromoCard({ promo }: { promo: Promo }) {
 }
 
 export function EventDiscountSection({ promos }: EventDiscountSectionProps) {
-  const [selectedCountries, setSelectedCountries] = useState<string[]>([]);
-
   // Filter out expired promos and sort by expiration date
   const visiblePromos = useMemo(() => {
     const now = new Date();
@@ -173,52 +141,14 @@ export function EventDiscountSection({ promos }: EventDiscountSectionProps) {
       );
   }, [promos]);
 
-  // Get available countries from active promos
-  const availableCountries = useMemo(() => {
-    return [
-      ...new Set(visiblePromos.map((promo) => promo.country).filter(Boolean)),
-    ] as string[];
-  }, [visiblePromos]);
-
-  // Apply country filters to active promos
-  const filteredPromos = useMemo(() => {
-    if (selectedCountries.length === 0) {
-      return visiblePromos;
-    }
-    return visiblePromos.filter(
-      (promo) => promo.country && selectedCountries.includes(promo.country),
-    );
-  }, [visiblePromos, selectedCountries]);
-
   if (visiblePromos.length === 0) {
     return <EmptyDiscountState type="events" />;
   }
 
-  const toggleCountry = (country: string) => {
-    setSelectedCountries((prev) =>
-      prev.includes(country)
-        ? prev.filter((c) => c !== country)
-        : [...prev, country],
-    );
-  };
-
-  const clearCountryFilters = () => {
-    setSelectedCountries([]);
-  };
-
   return (
-    <div className="space-y-6">
-      <PromoFilters
-        availableCountries={availableCountries}
-        selectedCountries={selectedCountries}
-        onCountryToggle={toggleCountry}
-        onClearFilters={clearCountryFilters}
-        filteredCount={filteredPromos.length}
-        totalCount={visiblePromos.length}
-      />
-
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
-        {filteredPromos.map((promo) => (
+    <div className="space-y-4">
+      <div className="flex flex-col gap-3">
+        {visiblePromos.map((promo) => (
           <EventPromoCard key={promo.id} promo={promo} />
         ))}
       </div>
