@@ -13,26 +13,39 @@ const makePromo = (overrides: Partial<Promo>): Promo => ({
 });
 
 describe('isPromoExpired', () => {
+  beforeEach(() => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-06-01T12:00:00Z'));
+  });
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
   it('returns true for past dates and false for future ones', () => {
-    const now = new Date('2026-06-01T12:00:00Z');
     expect(
-      isPromoExpired(makePromo({ expiresAt: '2026-05-31T23:59:59Z' }), now),
+      isPromoExpired(makePromo({ expiresAt: '2026-05-31T23:59:59Z' })),
     ).toBe(true);
     expect(
-      isPromoExpired(makePromo({ expiresAt: '2026-06-02T00:00:00Z' }), now),
+      isPromoExpired(makePromo({ expiresAt: '2026-06-02T00:00:00Z' })),
     ).toBe(false);
   });
 });
 
 describe('getActivePromos', () => {
-  const now = new Date('2026-06-01T12:00:00Z');
+  beforeEach(() => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-06-01T12:00:00Z'));
+  });
+  afterEach(() => {
+    vi.useRealTimers();
+  });
 
   it('filters out expired promos', () => {
     const promos = [
       makePromo({ id: 'active', expiresAt: '2026-07-01T00:00:00Z' }),
       makePromo({ id: 'expired', expiresAt: '2026-05-01T00:00:00Z' }),
     ];
-    expect(getActivePromos(promos, now).map((p) => p.id)).toEqual(['active']);
+    expect(getActivePromos(promos).map((p) => p.id)).toEqual(['active']);
   });
 
   it('sorts events first, then by soonest expiry', () => {
@@ -49,7 +62,7 @@ describe('getActivePromos', () => {
         city: 'Warsaw',
       }),
     ];
-    expect(getActivePromos(promos, now).map((p) => p.id)).toEqual([
+    expect(getActivePromos(promos).map((p) => p.id)).toEqual([
       'event-sooner',
       'event-later',
       'software',
