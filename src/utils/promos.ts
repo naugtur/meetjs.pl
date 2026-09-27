@@ -1,16 +1,16 @@
 import type { Promo } from '@/types/promo';
 
-export const isPromoExpired = (promo: Promo, now = new Date()): boolean =>
-  new Date(promo.expiresAt) < now;
+export const isPromoExpired = (promo: Promo): boolean =>
+  new Date(promo.expiresAt) < new Date();
 
 // Event promos (conferences) are time-sensitive, so they rank above
 // long-running software/learning deals
 const categorizePromo = (promo: Promo): 'event' | 'other' =>
   promo.eventLink || promo.country || promo.city ? 'event' : 'other';
 
-export const getActivePromos = (promos: Promo[], now = new Date()): Promo[] =>
+export const getActivePromos = (promos: Promo[]): Promo[] =>
   promos
-    .filter((promo) => !isPromoExpired(promo, now))
+    .filter((promo) => !isPromoExpired(promo))
     .sort((a, b) => {
       const catA = categorizePromo(a);
       const catB = categorizePromo(b);
