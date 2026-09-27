@@ -12,6 +12,7 @@ const eslintConfig = defineConfig([
     'dist/**',
     'build/**',
     '.vercel/**',
+    '.kilo/**',
     'next-env.d.ts',
   ]),
   eslintPluginPrettier, // It's important to put this last https://github.com/prettier/eslint-plugin-prettier?tab=readme-ov-file#configuration-new-eslintconfigjs
