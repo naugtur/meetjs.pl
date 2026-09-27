@@ -323,6 +323,10 @@
     "technology_partner_offer": "20% off hosting & domains with code",
     "technology_partner_link": "See all discounts"
   },
+  "promo_ticker": {
+    "label": "Community discounts",
+    "view_all": "View all"
+  },
   "footer": {
     "cities": "Cities",
     "contact": "Contact us",

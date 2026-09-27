@@ -323,6 +323,10 @@
     "technology_partner_offer": "20% zniżki na hosting i domeny z kodem",
     "technology_partner_link": "Zobacz wszystkie zniżki"
   },
+  "promo_ticker": {
+    "label": "Zniżki dla społeczności",
+    "view_all": "Zobacz wszystkie"
+  },
   "footer": {
     "cities": "Miasta",
     "contact": "Skontaktuj się z nami",
