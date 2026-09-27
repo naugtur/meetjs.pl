@@ -2,6 +2,21 @@ import { Promo } from '../types/promo';
 
 export const eventsDiscounts: Promo[] = [
   {
+    id: 'agentic-angular-engineering-2026',
+    name: 'Agentic Angular Engineering Workshop',
+    message: '10% off with code october10!',
+    cta: '👉 Get 10% Off',
+    ticketLink: 'https://buy.stripe.com/5kQ7sM4LY5Go7F221FbEA0E',
+    eventLink: 'https://houseofangular.io/agentic-angular-engineering/',
+    expiresAt: '2026-10-29T23:59:59+01:00',
+    description:
+      'Angular Agentic Engineering: From Spec to Ship — a full-day (8h) online workshop by House of Angular on October 30, 2026, led by Fanis Prodromou (Google Developer Expert). Learn to build systematically with AI agents: spec-driven development, custom Skills, sub-agents, and multi-library planning on a real Nx/Angular codebase. Hands-on work is based on Claude Code, with a translation handout for Cursor and Antigravity users. Small group (max 15 seats) with 1:1 GDE mentoring included. Use code october10 at checkout for 10% off — valid until October 29!',
+    gradient: 'bg-gradient-to-r from-pink-600 via-rose-500 to-purple-600',
+    icon: '🅰️',
+    image: '/discounts/house-of-angular.png',
+    discountCode: 'october10',
+  },
+  {
     id: 'infoshare-katowice-2026',
     name: 'Infoshare Katowice 2026',
     message: 'Discount with code isk26meetjs!',
