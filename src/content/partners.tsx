@@ -111,4 +111,9 @@ export const PARTNERS = [
     src: '/partners/SuperteamPL sign white.png',
     alt: 'Superteam Poland',
   },
+  {
+    href: 'https://cloudnativedayspoland.org/',
+    src: '/partners/cnd-poland.svg',
+    alt: 'Cloud Native Days Poland',
+  },
 ];
