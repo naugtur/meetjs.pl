@@ -2,6 +2,24 @@ import { Promo } from '../types/promo';
 
 export const eventsDiscounts: Promo[] = [
   {
+    id: 'cloud-native-days-poland-2026',
+    name: 'Cloud Native Days Poland 2026',
+    message: 'Community partnership – 20% off with code meetjs_cnd26!',
+    cta: '👉 Get 20% Off',
+    ticketLink: 'https://cnd2026.konfeo.com/',
+    eventLink: 'https://cloudnativedayspoland.org/',
+    expiresAt: '2026-10-22T23:59:59+02:00',
+    description:
+      'meet.js is an official Community Partner of Cloud Native Days Poland 2026! Join us on October 22 at Varso Tower (Chmielna 69) in Warsaw for a community-driven, non-profit conference covering Cloud Native, Kubernetes, platform engineering, DevOps, and software architecture. The event evolves from KCD Warsaw 2025 and is proudly supported by the CNCF. Use code meetjs_cnd26 for 20% off your ticket!',
+    gradient: 'bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600',
+    icon: '☸️',
+    image: '/partners/cnd-poland.svg',
+    emojiRight: '🇵🇱',
+    country: 'Poland',
+    city: 'Warsaw',
+    discountCode: 'meetjs_cnd26',
+  },
+  {
     id: 'agentic-angular-engineering-2026',
     name: 'Agentic Angular Engineering Workshop',
     message: '10% off with code october10!',

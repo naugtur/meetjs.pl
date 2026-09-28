@@ -63,6 +63,42 @@ export const partnerships: Partnership[] = [
     gradient: 'from-cyan-600 to-blue-600',
   },
   {
+    name: 'Cloud Native Days Poland 2026',
+    website: 'https://cloudnativedayspoland.org/',
+    description:
+      'Społecznościowa, non-profit konferencja cloud native — 22 października 2026 w Varso Tower w Warszawie. Wydarzenie rozwijające się z KCD Warsaw 2025, wspierane przez Cloud Native Computing Foundation. meet.js jest oficjalnym Community Partnerem.',
+    details: [
+      '22 października 2026, Varso Tower (Chmielna 69), Warszawa',
+      'Tematy: Cloud Native, Kubernetes, platform engineering, DevOps, observability, software architecture',
+      'Prelegenci: maintainerzy projektów CNCF, CNCF Ambassadorzy i praktycy z firm takich jak Google, Microsoft, Elastic, Form3, Monzo',
+      'Kontynuacja KCD Warsaw 2025 — pierwszego Kubernetes Community Days w Polsce (200+ uczestników)',
+    ],
+    goals: [
+      'Wzmacnianie polskiej społeczności cloud native i platform engineering',
+      'Wzajemna promocja — meet.js promuje konferencję w swoich kanałach społecznościowych',
+      'Ekskluzywna 20% zniżka dla społeczności meet.js (kod meetjs_cnd26)',
+    ],
+    location: 'Warszawa, Varso Tower',
+    contact: 'https://cloudnativedayspoland.org/contact/',
+    icon: (
+      <Image
+        src="/partners/cnd-poland.svg"
+        alt="Cloud Native Days Poland"
+        width={64}
+        height={40}
+        className="h-8 w-auto object-contain"
+      />
+    ),
+    gradient: 'from-sky-500 to-blue-600',
+    specialOffer: {
+      title: '20% zniżki – kod meetjs_cnd26',
+      description:
+        'Użyj kodu meetjs_cnd26 przy zakupie biletu na Cloud Native Days Poland 2026 i zaoszczędź 20%!',
+      link: 'https://cnd2026.konfeo.com/',
+      linkText: 'Kup bilet ze zniżką',
+    },
+  },
+  {
     name: 'Codaro Coding Challenge II',
     website: 'https://codaro.dev/hackathon',
     description:
