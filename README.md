@@ -5,7 +5,7 @@ Website for meet.js community.
 ## Stack
 
 - [Next.js 16.3 (app router)](https://nextjs.org/docs)
-- [React 19](https://react.dev/) with [React Compiler RC](https://react.dev/blog/2025/04/21/react-compiler-rc)
+- [React 19.2](https://react.dev/) with [React Compiler 1.0](https://react.dev/blog/2025/10/07/react-compiler-1)
 - [TypeScript](https://www.typescriptlang.org/docs)
 - [Tailwindcss](https://tailwindcss.com/docs)
 
@@ -34,32 +34,30 @@ src/content/cities.tsx
 
 City statuses include:
 
-- **active**: Currently organizing meetups (Białystok, Gdańsk, Kraków, Łódź, Lublin, Poznań, Warszawa, Wrocław)
-- **coming-soon**: Planning to start meetups soon (Katowice)
-- **paused**: Temporarily inactive (Bielsko-Biała, Kielce, Szczecin, Toruń)
-- **typescript**: Special marker for TypeScript events (Gdańsk)
+- **active**: Currently organizing meetups (Białystok, Bielsko-Biała, Gdańsk, Kraków, Łódź, Lublin, Poznań, Warszawa, Wrocław)
+- **new**: Recently launched (Katowice)
+- **coming-soon**: Planning to start meetups soon (none at the moment)
+- **paused**: Temporarily inactive (Kielce, Szczecin, Toruń)
 
-## Discount Banners & Special Offers: How to Add or Edit
+City pages that are not shown on the map (Gliwice, Olsztyn, Opole, Rzeszów, Zielona Góra) are listed in `UNMAPPED_CITY_PAGES` in the same file.
 
-To add, edit, or remove promotional banners and discount offers, edit the appropriate files:
+## Discounts & Special Offers: How to Add or Edit
 
-**For Software & Tools Discounts:**
+To add, edit, or remove discount offers, edit the appropriate file:
 
-```
-src/content/software-discounts.ts
-```
+- `src/content/events-discounts.ts` - Anything with a specific date: conferences, live workshops, meetups
+- `src/content/software-discounts.ts` - Software tools
+- `src/content/learning-discounts.ts` - Self-paced/evergreen content: online courses, learning platforms, newsletters
 
-**For Events & Conferences Discounts:**
+Rule of thumb: a scheduled live event (even an online workshop) goes to events; self-paced educational content goes to learning.
 
-```
-src/content/events-discounts.ts
-```
+Active offers appear in the "Community Discounts" ticker on the homepage and as cards on the [`/discounts`](https://meetjs.pl/discounts) page. Offers disappear automatically after their `expiresAt` date.
 
-Below is an example of how multiple discount banners appear on the site:
+![meet.js homepage with the "Community Discounts" ticker below the hero section](docs/screenshots/promo-ticker-desktop.png)
 
-![Example of multiple discount banners in meet.js website navigation, showing CityJS Athens, JSConf CFP, and Crossweb 2024 banners](docs/promo-banners-example.png)
+![Software discount cards on the /discounts page](docs/screenshots/tester-army-promo.png)
 
-Each discount is an object in the exported `eventsDiscounts` or `softwareDiscounts` array. Example of a current discount:
+Each discount is an object in the exported `eventsDiscounts`, `softwareDiscounts` or `learningDiscounts` array. Example entry:
 
 ```ts
 import { Promo } from '@/types/promo';
@@ -67,44 +65,56 @@ import { Promo } from '@/types/promo';
 export const eventsDiscounts: Promo[] = [
   {
     id: 'react-universe-2025', // Unique string identifier
-    message: 'React Universe Conf 2025: 10% off with code meet.js10!', // Banner message
+    name: 'React Universe Conf 2025', // Display name
+    message: 'React Universe Conf 2025: 10% off with code meet.js10!', // Short teaser
     cta: '👉 Get Discount', // Call-to-action text
     ticketLink: 'https://ti.to/RUC/react-universe-conf-2025/discount/meet.js10', // Link for CTA
-    eventLink: 'https://react-universe.org', // Link to event website
-    expiresAt: '2025-09-02T23:59:59+02:00', // Expiry date (ISO format)
+    eventLink: 'https://react-universe.org', // Optional link to event website
+    expiresAt: '2025-09-02T23:59:59+02:00', // Expiry date (ISO 8601)
     description:
-      'React Universe is the largest React conference in Central Europe...', // Full description
-    gradient: 'bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500', // Optional Tailwind gradient class
-    icon: '🪐', // Optional emoji or icon (left side)
-    emojiRight: '🇵🇱', // Optional emoji (right side)
-    country: 'Poland', // Event country
-    city: 'Wrocław', // Event city
+      'React Universe is the largest React conference in Central Europe...', // Optional full description
+    gradient: 'bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500', // Tailwind gradient classes
+    icon: '🪐', // Optional emoji or icon
+    emojiRight: '🇵🇱', // Optional emoji shown after the location
+    country: 'Poland', // Optional event country
+    city: 'Wrocław', // Optional event city
     discountCode: 'meet.js10', // Optional discount code
   },
   // Add more discounts as needed
 ];
 ```
 
-**Field descriptions:**
+**Field descriptions** (type `Promo` in `src/types/promo.ts`):
 
 - `id` (string): Unique identifier for the discount (required)
-- `message` (string): The text shown in the banner (required)
+- `name` (string): Display name shown in the ticker and on the card (required)
+- `message` (string): Short teaser text (required)
 - `cta` (string): The call-to-action button text (required)
 - `ticketLink` (string): URL for the CTA button (required)
-- `expiresAt` (string): Expiration date/time in ISO 8601 format (required)
-- `gradient` (string): Tailwind CSS gradient class for background (optional)
-- `icon` (string): Emoji or icon on the left (optional)
-- `emojiRight` (string): Emoji or icon on the right (optional)
+- `expiresAt` (string): Expiration date/time in ISO 8601 format; the offer is hidden afterwards (required)
+- `gradient` (string): Tailwind gradient classes for the CTA button on software and learning cards (required)
+- `description` (string): Longer description shown on the card (optional)
+- `eventLink` (string): Link to the event website (optional)
+- `country`, `city` (string): Event location shown on the card (optional)
+- `icon` (string or React node): Emoji or image URL used as the offer icon (optional)
+- `image` (string): Logo image URL or path; takes precedence over `icon` (optional)
+- `emojiLeft` (string): Fallback icon in the ticker (optional)
+- `emojiRight` (string): Emoji shown after the location, e.g. a flag (optional)
+- `textColor` (string): Tailwind text color class for the CTA button (optional)
+- `discountCode` (string): Discount code displayed with a copy button (optional)
+- `workshopDescription`, `workshopLink`, `workshopDiscountCode` (string): Extra workshop block, shown when `workshopDescription` is set (optional)
+
+Offers with `eventLink`, `country` or `city` are treated as events and listed first in the homepage ticker. Write Tailwind classes (e.g. `gradient`) as complete strings — Tailwind only generates classes it finds in the source files.
 
 ### Contact for Discounts
 
 If you're organizing an event, conference, or offering software tools and would like to provide discounts to the meet.js community, please reach out to us at **contact@meetjs.pl**. We're always happy to feature relevant offers that benefit our developer community.
 
-**After editing events-discounts.ts or software-discounts.ts, save and reload the page to see your changes.**
+**After editing any of these discount files, save and reload the page to see your changes.**
 
 ## Community Participation Section
 
-The website features a dedicated Community Participation section that showcases surveys, research initiatives, and collaborative projects that benefit the JavaScript community. This section appears prominently on the homepage between Join Us and About sections.
+The website features a dedicated Community Participation section that showcases surveys, research initiatives, and collaborative projects that benefit the JavaScript community. This section appears on the homepage (below the Join Us section and the YouTube banner, above About), and all items are listed on the [`/community`](https://meetjs.pl/community) page.
 
 ### Configuration
 
@@ -171,11 +181,14 @@ Each community item is an object in the `COMMUNITY_PARTICIPATION` array:
 - `ctaText` (string): Call-to-action button text (required)
 - `featured` (boolean): Whether to display on homepage (optional, default: false)
 - `tags` (string[]): Array of relevant tags for categorization (required)
+- `image` (string): Logo or image URL shown on the card; remote hosts must be allowed in `images.remotePatterns` in `next.config.ts` (optional)
+- `pinned` (boolean): Always list the item before others (optional)
 
 ### Display Logic
 
-- Only items with `status: 'active'` and `featured: true` appear on the homepage
-- The section automatically hides when no featured active items exist
+- The homepage shows up to 3 items with `featured: true` whose `endDate` hasn't passed (`status` is not checked), sorted by newest `startDate` with `pinned` items first
+- The homepage section automatically hides when no such items exist
+- The `/community` page lists all items, including completed ones
 - Cards are responsive and center-aligned in a grid layout
 - Dark mode styling is fully supported
 
@@ -215,17 +228,17 @@ This repository contains:
 
 To add or update brand assets on the website:
 
-1. Place new logo files in `public/brand/logos/`
+1. Place new logo files in `public/assets/brand/logo/` (pre-2023 assets live in `public/assets/brand/pre-2023/`)
 2. Place new wallpaper files in `public/brand/wallpapers/`
-3. Update the assets list in `src/app/brand/page.tsx`
+3. Add an entry to the matching list in `src/app/brand/page.tsx` (`officialLogos`, `boldLogos`, `legacyLogos` or `wallpapers`)
 
-Each asset should include:
+Each entry (`AssetItem`) has:
 
-- Name
-- File path
-- Description
-- Dimensions (for wallpapers)
-- File size
+- `name`
+- `path` (public URL, e.g. `/assets/brand/logo/bold/meetjs_logo_color_bold.svg`)
+- `description` (optional)
+- `dimensions` (optional, used for wallpapers)
+- `fileSize` (optional)
 
 ### Brand Colors
 
@@ -249,6 +262,8 @@ The original meet.js brand colors were:
 
 This project uses [Tolgee](https://tolgee.io) for internationalization, supporting English (`en`) and Polish (`pl`) languages.
 
+The app works without a Tolgee API key: translations are bundled from `messages/en.json` and `messages/pl.json`. An API key is only needed for live translations and in-context editing during development.
+
 ### Setup
 
 1. **Create a Tolgee account** at [https://app.tolgee.io](https://app.tolgee.io)
@@ -260,7 +275,9 @@ This project uses [Tolgee](https://tolgee.io) for internationalization, supporti
    NEXT_PUBLIC_TOLGEE_API_URL=https://app.tolgee.io
    ```
 
-### Initial Translation Setup
+The Tolgee CLI configuration (`.tolgeerc`) points at the meet.js project (`projectId: 20172`); update it if you use your own project.
+
+### Initial Translation Setup (new Tolgee project)
 
 1. **Upload translation files** to your Tolgee project:
    - Import `messages/en.json` for English translations
@@ -323,12 +340,12 @@ Translation keys are organized by sections:
     "sponsors": "Sponsors"
   },
   "hero": {
-    "title": "JavaScript Community in Poland",
-    "subtitle": "Join the largest JavaScript community in Poland",
-    "cta": "Join Us"
+    "title": "meet.js",
+    "subtitle": "Join the largest JavaScript meetup community in Poland",
+    "cta": "Find Your Local Meetup"
   },
   "footer": {
-    "copyright": "© 2024 meet.js. All rights reserved.",
+    "copyright": "All rights reserved.",
     "contact": "Contact us"
   }
 }
@@ -336,7 +353,7 @@ Translation keys are organized by sections:
 
 ### In-Context Translation
 
-With Tolgee's in-context translation feature:
+With Tolgee's in-context translation feature (works in development when `NEXT_PUBLIC_TOLGEE_API_KEY` is set):
 
 1. **Hold Alt** and **click on any translated text** to edit it directly
 2. Changes are saved to your Tolgee project automatically
@@ -344,24 +361,29 @@ With Tolgee's in-context translation feature:
 
 ### Testing Translations
 
-Visit `/tolgee-demo` to test the translation integration:
-
-- View all translation keys in action
-- Test language switching
-- Verify in-context editing (Alt+click)
+Switch languages with the language switcher (🇺🇸 EN / 🇵🇱 PL) in the navigation. The choice is stored in the `NEXT_LOCALE` cookie; without it, the language is detected from the browser's `Accept-Language` header (default: English). Both languages use the same URLs.
 
 ### Translation Workflow
 
-1. **Developers**: Add translation keys using `t('key.name')` in components
+1. **Developers**: Add translation keys using `t('key.name')` in components and add them to both `messages/en.json` and `messages/pl.json`
 2. **Content Team**: Use Tolgee dashboard or in-context editing to manage translations
 3. **Translators**: Use Tolgee's translation interface for Polish translations
-4. **Deployment**: Translations are automatically fetched from Tolgee in production
+4. **Deployment**: Production uses the bundled `messages/*.json` files, so run `pnpm tolgee:pull` and commit the result to ship translation changes
+
+Tolgee CLI commands:
+
+- `pnpm tolgee:pull` - Download translations into `messages/`
+- `pnpm tolgee:push` - Upload `messages/en.json` (only English is pushed)
+- `pnpm tolgee:sync` - Sync keys used in `src/` with the Tolgee project
+
+The CLI needs `TOLGEE_API_KEY` in CI; locally, log in with `pnpm tolgee login <your_api_key>`.
 
 ### Configuration Files
 
 - `src/tolgee/shared.ts` - Base Tolgee configuration
 - `src/tolgee/server.tsx` - Server-side Tolgee instance
 - `src/tolgee/client.tsx` - Client-side Tolgee provider
-- `src/tolgee/language.ts` - Language management and cookies
-- `messages/en.json` - English translations (for import to Tolgee)
-- `messages/pl.json` - Polish translations (for import to Tolgee)
+- `src/tolgee/language.ts` - Language detection (cookie, `Accept-Language`) and the `setLanguage` server action
+- `messages/en.json` - English translations (bundled into the app, synced with Tolgee)
+- `messages/pl.json` - Polish translations (bundled into the app, synced with Tolgee)
+- `.tolgeerc` - Tolgee CLI configuration
