@@ -15,6 +15,9 @@ interface FilterEventsProps {
 
 const FilterEventsContent = async ({ events, filter }: FilterEventsProps) => {
   const t = await getTranslate();
+  // Server Component rendered per request (after reading searchParams)
+  // eslint-disable-next-line react-hooks/purity
+  const now = Date.now();
   const linkClassNames = (city: string | null) =>
     clsx(
       badgeVariants({
@@ -98,7 +101,9 @@ const FilterEventsContent = async ({ events, filter }: FilterEventsProps) => {
         </div>
       </div>
 
-      {filteredEvents !== null && <EventsList eventsList={filteredEvents} />}
+      {filteredEvents !== null && (
+        <EventsList eventsList={filteredEvents} now={now} />
+      )}
     </>
   );
 };

@@ -1,14 +1,25 @@
+import { cacheLife } from 'next/cache';
 import { env } from '@/env';
 import { EventsSchema } from '@/types/event';
 import { changeCityName } from '@/utils/changeCityName';
-import { MOCK_UPCOMING_EVENTS } from '@/utils/eventsMock';
+import { getMockUpcomingEvents } from '@/utils/eventsMock';
 import { isDevelopment } from '@/utils/isDevelopment';
 
 export const getUpcomingEvents = async () => {
+  'use cache';
+  const events = await fetchUpcomingEvents();
+  // Retry soon after a failed response instead of caching it for a day
+  if (events) {
+    cacheLife('days');
+  } else {
+    cacheLife('minutes');
+  }
+  return events;
+};
+
+const fetchUpcomingEvents = async () => {
   try {
-    const upcomingEventsRes = await fetch(new URL(env.EVENTS_API_URL), {
-      next: { revalidate: 86400 },
-    });
+    const upcomingEventsRes = await fetch(new URL(env.EVENTS_API_URL));
 
     if (!upcomingEventsRes.ok) {
       const body = await upcomingEventsRes.text();
@@ -16,7 +27,7 @@ export const getUpcomingEvents = async () => {
         console.warn(
           `[getUpcomingEvents] API returned ${upcomingEventsRes.status} ${upcomingEventsRes.statusText}, using mock events for development.`,
         );
-        return MOCK_UPCOMING_EVENTS.map(changeCityName);
+        return getMockUpcomingEvents().map(changeCityName);
       }
       throw new Error(
         `Events API returned ${upcomingEventsRes.status}: ${upcomingEventsRes.statusText}\n${body.slice(0, 200)}`,
@@ -37,7 +48,7 @@ export const getUpcomingEvents = async () => {
         '[getUpcomingEvents] Failed to fetch or parse upcoming events, using mock data for development:',
         error,
       );
-      return MOCK_UPCOMING_EVENTS.map(changeCityName);
+      return getMockUpcomingEvents().map(changeCityName);
     }
 
     console.error('Error fetching upcoming events:', error);

@@ -1,4 +1,8 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+
+// `cacheLife` only works inside a Next.js build; mock it to assert lifetimes
+const { cacheLife } = vi.hoisted(() => ({ cacheLife: vi.fn() }));
+vi.mock('next/cache', () => ({ cacheLife }));
 import { MOCK_SPEAKERS } from '@/utils/speakersMock';
 import type { SpeakerType } from '@/types/speaker';
 
@@ -21,6 +25,7 @@ const mockEnv = (token: string): { env: Record<string, string> } => ({
 
 describe('getSpeakers', () => {
   beforeEach(() => {
+    cacheLife.mockClear();
     vi.resetModules();
     vi.stubEnv('NODE_ENV', 'development');
   });
@@ -56,6 +61,7 @@ describe('getSpeakers', () => {
 
     expect(result).toHaveLength(1);
     expect(result[0]?.name).toBe('John');
+    expect(cacheLife).toHaveBeenCalledWith('hours');
   });
 
   it('returns mock speakers when token is placeholder in development', async () => {
@@ -128,5 +134,6 @@ describe('getSpeakers', () => {
 
     expect(result).toEqual([]);
     expect(errorSpy).toHaveBeenCalled();
+    expect(cacheLife).toHaveBeenCalledWith('minutes');
   });
 });

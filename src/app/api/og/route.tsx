@@ -1,7 +1,12 @@
+import { connection } from 'next/server';
 import { ImageResponse } from 'next/og';
 import { env } from '@/env';
 
 export const GET = async (request: Request) => {
+  // Render per request (the image depends on the query string). Must stay
+  // outside the try/catch, which would otherwise swallow the prerender bail-out.
+  await connection();
+
   try {
     const { searchParams } = new URL(request.url);
 

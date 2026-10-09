@@ -5,19 +5,21 @@ import { buttonVariants } from '@/components/ui/button';
 import { FaClock, FaLocationDot, FaMicrophoneLines } from 'react-icons/fa6';
 import type { EventType } from '@/types/event';
 import { cn } from '@/lib/utils';
-import { formatDistanceToNow } from 'date-fns';
+import { formatDistance } from 'date-fns';
 import { getEventWeekDay, isConferenceEvent } from '@/utils/eventUtils';
 import { useLocale } from '@/hooks/useLocale';
 import { useTranslate } from '@tolgee/react';
 
 interface EventCardProps {
   event: EventType;
+  // Passed from the server so prerendered and hydrated output agree
+  now: number;
 }
 
-export const EventCard = ({ event }: EventCardProps) => {
+export const EventCard = ({ event, now: nowTimestamp }: EventCardProps) => {
   const { locale } = useLocale();
   const { t } = useTranslate();
-  const now = new Date();
+  const now = new Date(nowTimestamp);
   const [day, month, year] = event.date.split('.');
   const [hours, minutes] = event.time.split(':');
 
@@ -72,9 +74,9 @@ export const EventCard = ({ event }: EventCardProps) => {
             {isInProgress
               ? "🎉 Live now! Why aren't you here?"
               : isToday && isUpcoming
-                ? `🎯 Today! Starts in ${formatDistanceToNow(eventDate)}`
+                ? `🎯 Today! Starts in ${formatDistance(eventDate, now)}`
                 : isUpcoming
-                  ? `Starts in ${formatDistanceToNow(eventDate)}`
+                  ? `Starts in ${formatDistance(eventDate, now)}`
                   : 'Event ended'}
           </p>
         )}

@@ -1,3 +1,4 @@
+import { cacheLife } from 'next/cache';
 import { env } from '@/env';
 import { SpeakersSchema, SpeakerType } from '@/types/speaker';
 import { isDevelopment } from '@/utils/isDevelopment';
@@ -11,6 +12,18 @@ const isPlaceholderToken = (token: string | undefined): boolean => {
 };
 
 export const getSpeakers = async (): Promise<SpeakerType[]> => {
+  'use cache';
+  const speakers = await fetchSpeakers();
+  // Retry soon after a failed or empty response instead of caching it for an hour
+  if (speakers.length > 0) {
+    cacheLife('hours');
+  } else {
+    cacheLife('minutes');
+  }
+  return speakers;
+};
+
+const fetchSpeakers = async (): Promise<SpeakerType[]> => {
   if (!env.SPEAKERS_API_URL || isPlaceholderToken(env.SPEAKERS_API_TOKEN)) {
     if (isDevelopment()) {
       console.warn(
@@ -26,7 +39,6 @@ export const getSpeakers = async (): Promise<SpeakerType[]> => {
       headers: {
         Authorization: `Basic ${env.SPEAKERS_API_TOKEN}`,
       },
-      next: { revalidate: 3600 },
     });
 
     if (!res.ok) {

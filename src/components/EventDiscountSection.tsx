@@ -11,6 +11,8 @@ import DiscountCodeSection from './DiscountCodeSection';
 
 interface EventDiscountSectionProps {
   promos: Promo[];
+  // Passed from the server so prerendered and hydrated output agree
+  now: number;
 }
 
 const getDomain = (url: string) => {
@@ -159,19 +161,21 @@ function EventPromoCard({ promo }: { promo: Promo }) {
   );
 }
 
-export function EventDiscountSection({ promos }: EventDiscountSectionProps) {
+export function EventDiscountSection({
+  promos,
+  now,
+}: EventDiscountSectionProps) {
   const [selectedCountries, setSelectedCountries] = useState<string[]>([]);
 
   // Filter out expired promos and sort by expiration date
   const visiblePromos = useMemo(() => {
-    const now = new Date();
     return promos
-      .filter((promo) => new Date(promo.expiresAt) >= now)
+      .filter((promo) => new Date(promo.expiresAt).getTime() >= now)
       .sort(
         (a, b) =>
           new Date(a.expiresAt).getTime() - new Date(b.expiresAt).getTime(),
       );
-  }, [promos]);
+  }, [promos, now]);
 
   // Get available countries from active promos
   const availableCountries = useMemo(() => {

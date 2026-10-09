@@ -1,15 +1,20 @@
 import { Logo } from '@/components/Logo';
 import { SocialLinks } from '@/components/SocialLinks';
 import Link from 'next/link';
+import { cacheLife } from 'next/cache';
 import { instagramLinksData } from '@/content/socialLinks';
 import { CITIES } from '@/content/cities';
 import { FaRegEnvelope, FaArrowUpRightFromSquare } from 'react-icons/fa6';
 import type { Route } from 'next';
 import { getTranslate } from '@/tolgee/server';
-import { getTranslatedFooterMenuLinks } from '@/hooks/useTranslatedMenuLinks';
+import { getTranslatedFooterMenuLinks } from '@/utils/getTranslatedFooterMenuLinks';
+import { isChristmasSeason } from '@/utils/isChristmasSeason';
 import { CityStatusIndicator } from '@/components/Navigation/CityStatusIndicator';
 
 export const Footer = async () => {
+  'use cache';
+  // Prerendered; refreshed daily so the copyright year rolls over
+  cacheLife('days');
   const t = await getTranslate();
   const footerMenuLinks = await getTranslatedFooterMenuLinks();
 
@@ -19,7 +24,10 @@ export const Footer = async () => {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* First column */}
           <div className="space-y-8">
-            <Logo clickable={false} />
+            <Logo
+              clickable={false}
+              isChristmasSeason={await isChristmasSeason()}
+            />
             <SocialLinks />
             <ul className="space-y-4">
               {instagramLinksData.map((socialLink) => (
