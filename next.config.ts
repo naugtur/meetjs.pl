@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
       dynamic: 30,
     },
     typedEnv: true,
+    turbopackRustReactCompiler: true,
   },
   images: {
     remotePatterns: [
