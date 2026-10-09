@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-object-type, @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any */
 // This file is referenced in vitest.config.ts
 // It extends Vitest's expect with jest-dom matchers
 
