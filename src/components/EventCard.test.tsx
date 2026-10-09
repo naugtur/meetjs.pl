@@ -74,7 +74,7 @@ describe('EventCard Component', () => {
       time: formatTime(eventDate),
     };
 
-    render(<EventCard event={testEvent} />);
+    render(<EventCard event={testEvent} now={Date.now()} />);
 
     // Check title, date, time, location
     expect(screen.getByText(testEvent.name)).toBeInTheDocument();
@@ -108,7 +108,7 @@ describe('EventCard Component', () => {
       time: formatTime(eventDate),
     };
 
-    render(<EventCard event={testEvent} />);
+    render(<EventCard event={testEvent} now={Date.now()} />);
 
     // Check message
     expect(
@@ -136,7 +136,7 @@ describe('EventCard Component', () => {
       time: formatTime(eventDate),
     };
 
-    render(<EventCard event={testEvent} />);
+    render(<EventCard event={testEvent} now={Date.now()} />);
 
     // Check relative time message
     expect(screen.getByText(/^Starts in (about )?1 day$/)).toBeInTheDocument(); // Check full text, make 'about' optional
@@ -161,7 +161,7 @@ describe('EventCard Component', () => {
       time: formatTime(eventDate),
     };
 
-    render(<EventCard event={testEvent} />);
+    render(<EventCard event={testEvent} now={Date.now()} />);
 
     // Check message
     expect(screen.getByText('Event ended')).toBeInTheDocument();
@@ -190,7 +190,7 @@ describe('EventCard Component', () => {
       city: 'Known City', // Add a city to ensure it's not displayed
     };
 
-    render(<EventCard event={testEvent} />);
+    render(<EventCard event={testEvent} now={Date.now()} />);
 
     // Check that 'Location TBA' is displayed
     expect(screen.getByText('Location TBA')).toBeInTheDocument();

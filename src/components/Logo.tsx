@@ -7,9 +7,13 @@ import { useTranslate } from '@tolgee/react';
 
 interface LogoProps {
   clickable?: boolean;
+  isChristmasSeason?: boolean;
 }
 
-export const Logo = ({ clickable = true }: LogoProps) => {
+export const Logo = ({
+  clickable = true,
+  isChristmasSeason = false,
+}: LogoProps) => {
   const { t } = useTranslate();
   const [showContextMenu, setShowContextMenu] = useState(false);
   const [contextMenuPosition, setContextMenuPosition] = useState({
@@ -27,10 +31,6 @@ export const Logo = ({ clickable = true }: LogoProps) => {
   const handleClickOutside = () => {
     setShowContextMenu(false);
   };
-
-  const now = new Date();
-  const isChristmasSeason =
-    now.getMonth() === 11 || (now.getMonth() === 0 && now.getDate() <= 15);
 
   const logoImage = (
     <Image

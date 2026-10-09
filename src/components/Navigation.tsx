@@ -9,7 +9,11 @@ import { MobileNavigation } from './Navigation/MobileNavigation';
 import { MobileMenuButton } from './Navigation/MobileMenuButton';
 import { LanguageSwitcher } from './LanguageSwitcher';
 
-export const Navigation = () => {
+interface NavigationProps {
+  isChristmasSeason: boolean;
+}
+
+export const Navigation = ({ isChristmasSeason }: NavigationProps) => {
   return (
     <>
       <header role="banner" className="sticky top-0 z-40">
@@ -19,7 +23,7 @@ export const Navigation = () => {
               <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="relative flex h-16 items-center justify-between">
                   <div className="flex flex-1 items-center justify-between sm:items-stretch">
-                    <Logo />
+                    <Logo isChristmasSeason={isChristmasSeason} />
                     <DesktopNavigation />
                     <aside
                       className="hidden items-center justify-center md:flex"

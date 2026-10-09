@@ -7,7 +7,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Conference',
     id: 100011,
-    date_add: Date.now(),
+    date_add: 0,
     date: '09.10.2025',
     time: '9:00',
     name: 'ViteConf Amsterdam - Day 1',
@@ -22,7 +22,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Conference',
     id: 100012,
-    date_add: Date.now(),
+    date_add: 0,
     date: '10.10.2025',
     time: '9:00',
     name: 'ViteConf Amsterdam - Day 2',
@@ -37,7 +37,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Meetup',
     id: 100014,
-    date_add: Date.now(),
+    date_add: 0,
     date: '10.10.2025',
     time: '19:00',
     name: 'ViteConf Amsterdam - Conference Party',
@@ -52,7 +52,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Conference',
     id: 100009,
-    date_add: Date.now(),
+    date_add: 0,
     date: '07.10.2025',
     time: '9:00',
     name: 'React Conference - Day 1',
@@ -67,7 +67,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Conference',
     id: 100010,
-    date_add: Date.now(),
+    date_add: 0,
     date: '08.10.2025',
     time: '9:00',
     name: 'React Conference - Day 2',
@@ -82,7 +82,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Meetup',
     id: 99998,
-    date_add: Date.now(),
+    date_add: 0,
     date: '15.05.2025',
     time: '17:30',
     name: 'Gdańsk TypeScript Meetup',
@@ -97,7 +97,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Meetup',
     id: 99999,
-    date_add: Date.now(),
+    date_add: 0,
     date: '02.09.2025',
     time: '18:00',
     name: 'AI Meetup in Wroclaw with Callstack & Vercel',
@@ -112,7 +112,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Conference',
     id: 100000,
-    date_add: Date.now(),
+    date_add: 0,
     date: '27.10.2025',
     time: '8:30',
     name: 'FutureConf 2025',
@@ -127,7 +127,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Meetup',
     id: 100001,
-    date_add: Date.now(),
+    date_add: 0,
     date: '17.09.2025',
     time: '17:00',
     name: 'AI Miners',
@@ -142,7 +142,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Meetup',
     id: 100002,
-    date_add: Date.now(),
+    date_add: 0,
     date: '02.10.2025',
     time: '17:30',
     name: 'Gdańsk TypeScript Meetup #16 / meet.js by Handsontable',
@@ -157,7 +157,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Conference',
     id: 100003,
-    date_add: Date.now(),
+    date_add: 0,
     date: '06.10.2025',
     time: '9:00',
     name: 'Testing Ground Conference 2025',
@@ -172,7 +172,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Conference',
     id: 100004,
-    date_add: Date.now(),
+    date_add: 0,
     date: '04.10.2025',
     time: '18:00',
     name: 'HackYeah 2025',
@@ -194,7 +194,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Conference',
     id: 100005,
-    date_add: Date.now(),
+    date_add: 0,
     date: '02.10.2025',
     time: '15:00',
     name: 'JetBrains JavaScript Day 2025 (5th Edition)',
@@ -216,7 +216,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Conference',
     id: 100006,
-    date_add: Date.now(),
+    date_add: 0,
     date: '13.10.2025',
     time: '9:00',
     name: 'The Hack Summit 2025 - Online',
@@ -239,7 +239,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Conference',
     id: 100007,
-    date_add: Date.now(),
+    date_add: 0,
     date: '14.10.2025',
     time: '9:00',
     name: 'The Hack Summit 2025',
@@ -262,7 +262,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Meetup',
     id: 100008,
-    date_add: Date.now(),
+    date_add: 0,
     date: '09.10.2025',
     time: '18:00',
     name: 'Spotkanie dla organizatorów wydarzeń #4',
@@ -277,7 +277,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Meetup',
     id: 100013,
-    date_add: Date.now(),
+    date_add: 0,
     date: '29.10.2025',
     time: '16:30',
     name: 'AI Miners #2',
@@ -292,7 +292,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Conference',
     id: 100015,
-    date_add: Date.now(),
+    date_add: 0,
     date: '22.10.2025',
     time: '17:30',
     name: 'Next.js Conf 2025',
@@ -307,7 +307,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Conference',
     id: 100016,
-    date_add: Date.now(),
+    date_add: 0,
     date: '17.11.2025',
     time: '10:00',
     name: 'NG Poland, JS Poland & AI Poland - Workshops Day',
@@ -329,7 +329,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Conference',
     id: 100017,
-    date_add: Date.now(),
+    date_add: 0,
     date: '18.11.2025',
     time: '8:00',
     name: 'NG Poland 2025',
@@ -352,7 +352,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Conference',
     id: 100018,
-    date_add: Date.now(),
+    date_add: 0,
     date: '19.11.2025',
     time: '8:00',
     name: 'JS Poland 2025',
@@ -375,7 +375,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Conference',
     id: 100019,
-    date_add: Date.now(),
+    date_add: 0,
     date: '20.11.2025',
     time: '8:00',
     name: 'AI Poland 2025',
@@ -397,7 +397,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Conference',
     id: 100020,
-    date_add: Date.now(),
+    date_add: 0,
     date: '28.10.2025',
     time: '18:00',
     name: 'GitHub Universe 2025 - Day 1',
@@ -420,7 +420,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Conference',
     id: 100021,
-    date_add: Date.now(),
+    date_add: 0,
     date: '29.10.2025',
     time: '18:00',
     name: 'GitHub Universe 2025 - Day 2',
@@ -443,7 +443,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Meetup',
     id: 100022,
-    date_add: Date.now(),
+    date_add: 0,
     date: '12.11.2025',
     time: '18:00',
     name: 'Windsurf Warsaw Meetup #2',
@@ -464,7 +464,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Conference',
     id: 100023,
-    date_add: Date.now(),
+    date_add: 0,
     date: '24.11.2025',
     time: '9:00',
     name: 'Infoshare Katowice 2025 - Day 1',
@@ -479,7 +479,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Conference',
     id: 100024,
-    date_add: Date.now(),
+    date_add: 0,
     date: '25.11.2025',
     time: '9:00',
     name: 'Infoshare Katowice 2025 - Day 2',
@@ -494,7 +494,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Meetup',
     id: 100025,
-    date_add: Date.now(),
+    date_add: 0,
     date: '10.12.2025',
     time: '17:00',
     name: 'AI Miners #3',
@@ -509,7 +509,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Meetup',
     id: 100026,
-    date_add: Date.now(),
+    date_add: 0,
     date: '26.03.2026',
     time: '17:00',
     name: 'AI Miners #5',
@@ -531,7 +531,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Conference',
     id: 100027,
-    date_add: Date.now(),
+    date_add: 0,
     date: '17.11.2026',
     time: '9:00',
     name: 'Infoshare Katowice 2026 - Day 1',
@@ -546,7 +546,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
   {
     type: 'Conference',
     id: 100028,
-    date_add: Date.now(),
+    date_add: 0,
     date: '18.11.2026',
     time: '9:00',
     name: 'Infoshare Katowice 2026 - Day 2',

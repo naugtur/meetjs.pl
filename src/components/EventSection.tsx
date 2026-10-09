@@ -1,3 +1,4 @@
+import { cacheLife } from 'next/cache';
 import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
 import { EventsList } from './EventsList';
 import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
@@ -9,6 +10,12 @@ interface EventSectionProps {
 }
 
 export async function EventSection({ city }: EventSectionProps) {
+  'use cache';
+  // Prerendered; refreshed hourly so past events drop off
+  cacheLife('hours');
+  // Server Component inside a cache scope: read once per (re)render of the cache entry
+  // eslint-disable-next-line react-hooks/purity
+  const now = Date.now();
   const t = await getTranslate();
 
   const apiEvents = await getUpcomingEvents();
@@ -24,7 +31,7 @@ export async function EventSection({ city }: EventSectionProps) {
         {t('events.upcoming_in_city')} {city}
       </h2>
       {cityEvents && cityEvents.length > 0 ? (
-        <EventsList eventsList={cityEvents} />
+        <EventsList eventsList={cityEvents} now={now} />
       ) : (
         <p>{t('events.no_events', { city })}</p>
       )}

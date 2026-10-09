@@ -1,5 +1,9 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { MOCK_UPCOMING_EVENTS } from '@/utils/eventsMock';
+
+// `cacheLife` only works inside a Next.js build; mock it to assert lifetimes
+const { cacheLife } = vi.hoisted(() => ({ cacheLife: vi.fn() }));
+vi.mock('next/cache', () => ({ cacheLife }));
+import { getMockUpcomingEvents } from '@/utils/eventsMock';
 import type { EventType } from '@/types/event';
 
 const createFetchResponse = (overrides: Partial<Response> = {}): Response =>
@@ -14,6 +18,7 @@ const createFetchResponse = (overrides: Partial<Response> = {}): Response =>
 
 describe('getUpcomingEvents', () => {
   beforeEach(() => {
+    cacheLife.mockClear();
     vi.resetModules();
     vi.stubEnv('NODE_ENV', 'development');
   });
@@ -59,6 +64,7 @@ describe('getUpcomingEvents', () => {
 
     expect(result).toHaveLength(1);
     expect(result?.[0]?.name).toBe('Real Meetup');
+    expect(cacheLife).toHaveBeenCalledWith('days');
   });
 
   it('returns mock events when API fails in development', async () => {
@@ -83,7 +89,7 @@ describe('getUpcomingEvents', () => {
     const { getUpcomingEvents } = await import('@/utils/getUpcomingEvents');
     const result = await getUpcomingEvents();
 
-    expect(result).toHaveLength(MOCK_UPCOMING_EVENTS.length);
+    expect(result).toHaveLength(getMockUpcomingEvents().length);
     expect(warnSpy).toHaveBeenCalledWith(
       expect.stringContaining('using mock events for development'),
     );
@@ -114,6 +120,7 @@ describe('getUpcomingEvents', () => {
     const result = await getUpcomingEvents();
 
     expect(result).toBeNull();
+    expect(cacheLife).toHaveBeenCalledWith('minutes');
     expect(errorSpy).toHaveBeenCalledWith(
       expect.stringContaining('Error fetching upcoming events'),
       expect.any(Error),

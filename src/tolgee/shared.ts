@@ -5,6 +5,8 @@ const apiUrl = process.env.NEXT_PUBLIC_TOLGEE_API_URL;
 
 export const ALL_LANGUAGES = ['en', 'pl'];
 export const DEFAULT_LANGUAGE = 'en';
+export const LANGUAGE_COOKIE = 'NEXT_LOCALE';
+export const LANGUAGE_COOKIE_MAX_AGE = 60 * 60 * 24 * 365; // one year in seconds
 
 export function TolgeeBase() {
   return Tolgee()

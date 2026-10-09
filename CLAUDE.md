@@ -67,11 +67,16 @@ pnpm tolgee:sync      # Sync translations bidirectionally
 
 ```
 src/
-├── app/                       # Next.js App Router pages
-│   ├── (pages)/              # Route group for main pages
-│   ├── (cities)/             # Route group for city-specific pages
-│   ├── layout.tsx            # Root layout with Tolgee provider
-│   └── page.tsx              # Homepage
+├── app/                       # Next.js App Router
+│   ├── [locale]/             # All pages, prerendered per language (en, pl)
+│   │   ├── (pages)/          # Route group for main pages
+│   │   ├── (cities)/         # Route group for city-specific pages
+│   │   ├── layout.tsx        # Root layout with Tolgee provider
+│   │   └── page.tsx          # Homepage
+│   ├── api/                  # Route handlers (outside [locale])
+│   ├── robots.ts
+│   └── sitemap.ts
+├── proxy.ts                  # Rewrites /x → /{locale}/x (cookie / Accept-Language)
 ├── components/               # React components
 │   ├── Navigation/           # Navigation components
 │   └── ui/                   # shadcn/ui components
@@ -85,9 +90,9 @@ src/
 │   └── partners.tsx         # Partner/sponsor data
 ├── tolgee/                   # Tolgee i18n configuration
 │   ├── shared.ts            # Base Tolgee config
-│   ├── server.tsx           # Server-side instance
+│   ├── server.tsx           # Server-side instance + getLanguage (from root params)
 │   ├── client.tsx           # Client-side provider
-│   └── language.ts          # Language management
+│   └── language.ts          # setLanguage server action (cookie)
 ├── types/                    # TypeScript type definitions
 ├── utils/                    # Utility functions
 ├── hooks/                    # Custom React hooks
@@ -105,7 +110,7 @@ messages/
 - **Route Groups**: `(pages)` and `(cities)` group routes without affecting URLs
 - **Server Components by default**: Most components are Server Components for better performance
 - **Client Components**: Marked with `'use client'` directive (e.g., interactive forms, animations)
-- **Typed Routes**: Enabled via `typedRoutes: true` in next.config.ts
+- **No typed routes**: `typedRoutes` is off — internal routes live under `[locale]` but links use unprefixed public URLs, so it can't validate them
 
 #### Internationalization with Tolgee
 
@@ -113,6 +118,8 @@ messages/
 - **Client Components**: Use `useTranslate()` hook from `@tolgee/react`
 - **Translation keys**: Organized by section (e.g., `navigation.home`, `hero.title`)
 - **Static data fallback**: Translation files in `messages/` for development without API key
+- **Language routing**: public URLs have no locale prefix. `src/proxy.ts` rewrites `/x` to `/{locale}/x` from the `NEXT_LOCALE` cookie or `Accept-Language`; `/pl/x` redirects to `/x` and sets the cookie. Server code reads the language via `next/root-params` (`getLanguage()` in `@/tolgee/server`) — never `cookies()`/`headers()`, which would make pages dynamic
+- Link internally with unprefixed paths (`/events`, not `/en/events`)
 - **In-context editing**: Hold Alt + click on text to edit translations
 
 #### Content Management
@@ -127,7 +134,7 @@ All promotional content, discounts, and community initiatives are configured via
 
 1. Events fetched from external API (configured via `EVENTS_API_URL`)
 2. Validated with Zod schema (`EventsSchema`)
-3. Cached for 1 hour (`revalidate: 3600`)
+3. Cached with `'use cache'` + `cacheLife('days')` (failures only for `'minutes'`)
 4. Merged with static additional events
 5. Rendered in `EventCard` components
 
@@ -158,6 +165,15 @@ All promotional content, discounts, and community initiatives are configured via
 - Lifecycle scripts disabled in `.npmrc`
 - `preinstall-always-fail` package prevents accidental script execution
 - Socket.dev warnings enabled on PRs
+
+### Cache Components
+
+`cacheComponents` and `partialPrefetching` are enabled, so pages are prerendered (per locale) and refreshed via `cacheLife`:
+
+- Cache data/UI with `'use cache'` + `cacheLife(...)` instead of `fetch` `next.revalidate` or route segment config (`dynamic`, `revalidate` are not allowed)
+- Anything reading the current time (`new Date()`, `Date.now()`, expiry checks) must run inside a `'use cache'` scope with a short `cacheLife`, or after `await connection()`. Client Components must not read the time during render — pass `now` as a prop from the cached server parent (see `EventCard`, `EventDiscountSection`)
+- Don't read the time at module level (it breaks prerendering)
+- Request-time data (`searchParams`, `cookies()`) goes inside `<Suspense>` (see `src/app/[locale]/events/page.tsx`)
 
 ### React Compiler
 
@@ -206,7 +222,7 @@ Key conventions:
 - **Layout**: flexbox via satori element trees (plain objects `{ type, props: { style, children } }`, no JSX needed)
 - **Fonts**: Montserrat (brand font, weights 500/800) + JetBrains Mono for discount codes; fetch from Google Fonts and cache in `.fonts/` (gitignored)
 - **Brand colors**: purple `#2b1932`, green `#bcd25f`, blue `#239eab`, card `#241329`
-- **Brand style**: reuse the "ticket" motif from `src/app/(pages)/discounts/opengraph-image.tsx` (rotated card, gradient border, dashed perforation, code pill). Avoid fake cut-out notches — satori has no masking, they clash with gradient backgrounds
+- **Brand style**: reuse the "ticket" motif from `src/app/[locale]/(pages)/discounts/opengraph-image.tsx` (rotated card, gradient border, dashed perforation, code pill). Avoid fake cut-out notches — satori has no masking, they clash with gradient backgrounds
 - **Formats**: LinkedIn/Facebook 1200×630, IG feed 1080×1080, IG story 1080×1920 (keep content within ~250px top / 280px bottom safe zone)
 - **Assets**: inline images as base64 data URIs (satori fetches remote `<img>` at render time)
 - Run: `node docs/social-media/<campaign>/generate-graphics.mjs`, output PNGs to `graphics/`
@@ -216,7 +232,7 @@ Key conventions:
 Edit `src/content/cities.tsx`:
 
 1. Add city object to `CITIES` array with map coordinates
-2. Create corresponding route folder in `src/app/(cities)/city-name/`
+2. Create corresponding route folder in `src/app/[locale]/(cities)/city-name/`
 3. Set status: `'active'`, `'paused'`, `'coming-soon'`, or `'new'`
 
 ### Working with Translations

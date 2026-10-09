@@ -6,6 +6,7 @@ import {
 import { buttonVariants } from '@/components/ui/button';
 import { EventCard } from '@/components/EventCard';
 import Link from 'next/link';
+import { cacheLife } from 'next/cache';
 import { EventsAPIPartner } from '@/components/EventsAPIPartner';
 import { EmptyEventsAlert } from '@/components/EmptyEventsAlert';
 import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
@@ -30,6 +31,12 @@ export interface Event {
 }
 
 export const FeaturedEvents = async () => {
+  'use cache';
+  // Prerendered; refreshed hourly so past events drop off
+  cacheLife('hours');
+  // Server Component inside a cache scope: read once per (re)render of the cache entry
+  // eslint-disable-next-line react-hooks/purity
+  const now = Date.now();
   const t = await getTranslate();
   const apiEvents: Event[] | null = await getUpcomingEvents();
   const allEvents: Event[] = apiEvents || [];
@@ -58,7 +65,7 @@ export const FeaturedEvents = async () => {
                     className="basis-[85%] md:basis-[45%] lg:basis-[30%]"
                     key={event.id}
                   >
-                    <EventCard event={event} />
+                    <EventCard event={event} now={now} />
                   </CarouselItem>
                 );
               })}

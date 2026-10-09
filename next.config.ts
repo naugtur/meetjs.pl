@@ -4,9 +4,10 @@ import { NextConfig } from 'next';
 /** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  typedRoutes: true,
   turbopack: {},
   reactCompiler: true,
+  cacheComponents: true,
+  partialPrefetching: true,
   experimental: {
     staleTimes: {
       dynamic: 30,
