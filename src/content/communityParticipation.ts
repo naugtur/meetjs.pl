@@ -18,6 +18,32 @@ export interface CommunityItem {
 
 export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
   {
+    id: 'skill-sprint-2026',
+    title: 'Skill Sprint 2026',
+    description:
+      'Bezpłatna konferencja karierowa dla studentów i absolwentów – 13 października 2026 (10:00–15:00) w Centrum Konferencyjnym Centrum Nauki Kopernik w Warszawie. Zamiast nudnych wykładów: 14-minutowe prelekcje ekspertów i praktyków branży, Sprint Pytań do rekruterów o rekrutacji, zarobkach i błędach w aplikacjach, networking z czołowymi firmami szukającymi młodych talentów, analiza CV i dopracowanie profilu LinkedIn, darmowa profesjonalna sesja zdjęciowa oraz konkursy z nagrodami za aktywność.',
+    url: 'https://tinyurl.com/Skill-Sprint-8-meet-js',
+    type: 'collaboration',
+    status: 'active',
+    startDate: '2026-10-13',
+    endDate: '2026-10-13',
+    organization: 'Skill Sprint',
+    impact:
+      'Community partnership – promocja bezpłatnego wydarzenia karierowego dla studentów i absolwentów w społeczności meet.js.',
+    ctaText: 'Zarezerwuj darmowe miejsce',
+    featured: true,
+    tags: [
+      'Career',
+      'Conference',
+      'Students',
+      'Graduates',
+      'Warsaw',
+      'Networking',
+      'Free Entry',
+      'Community Partnership',
+    ],
+  },
+  {
     id: 'codaro-coding-challenge-ii-2026',
     title: 'Codaro Coding Challenge II',
     description:

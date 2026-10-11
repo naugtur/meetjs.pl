@@ -2,6 +2,23 @@ import { Promo } from '../types/promo';
 
 export const eventsDiscounts: Promo[] = [
   {
+    id: 'skill-sprint-2026',
+    name: 'Skill Sprint 2026',
+    message: 'Free career conference for students & grads!',
+    cta: '👉 Zarezerwuj darmowe miejsce',
+    ticketLink: 'https://tinyurl.com/Skill-Sprint-8-meet-js',
+    eventLink: 'https://tinyurl.com/Skill-Sprint-8-meet-js',
+    expiresAt: '2026-10-13T23:59:59+02:00',
+    description:
+      'Skill Sprint to bezpłatna konferencja karierowa dla studentów i absolwentów – 13 października 2026, 10:00–15:00, Centrum Konferencyjne w Centrum Nauki Kopernik w Warszawie. Zero ogólników, 100% praktyki: 14-minutowe prelekcje ekspertów i praktyków branży, Sprint Pytań do rekruterów (rekrutacja, zarobki, błędy w aplikacjach), networking z czołowymi firmami szukającymi młodych talentów, analiza CV i dopracowanie profilu LinkedIn, darmowa profesjonalna sesja zdjęciowa oraz konkursy z nagrodami. Wstęp bezpłatny – wymagana wcześniejsza rejestracja!',
+    gradient: 'bg-gradient-to-r from-green-700 via-emerald-500 to-green-400',
+    icon: '🚀',
+    emojiRight: '🇵🇱',
+    country: 'Poland',
+    city: 'Warsaw',
+    discountCode: 'FREE',
+  },
+  {
     id: 'cloud-native-days-poland-2026',
     name: 'Cloud Native Days Poland 2026',
     message: 'Community partnership – 20% off with code meetjs_cnd26!',
