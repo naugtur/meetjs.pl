@@ -91,7 +91,7 @@ export default function UnifiedPromoCard({
       {/* Header with Logo/Image */}
       <div className="flex items-center gap-4 border-b border-gray-100 p-6 dark:border-gray-700">
         {promo.image ? (
-          <div className="relative h-20 w-20 overflow-hidden rounded-lg bg-gray-100 ring-2 ring-gray-100 dark:bg-gray-700 dark:ring-gray-600">
+          <div className="relative h-20 w-20 overflow-hidden rounded-lg bg-gray-100 ring-2 ring-gray-100 dark:ring-gray-600">
             <Image
               src={promo.image}
               alt={`${promo.name} logo`}
