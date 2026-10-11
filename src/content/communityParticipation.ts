@@ -32,6 +32,7 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
       'Community partnership – promocja bezpłatnego wydarzenia karierowego dla studentów i absolwentów w społeczności meet.js.',
     ctaText: 'Zarezerwuj darmowe miejsce',
     featured: true,
+    image: '/partners/skill-sprint.png',
     tags: [
       'Career',
       'Conference',

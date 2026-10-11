@@ -13,6 +13,7 @@ export const eventsDiscounts: Promo[] = [
       'Skill Sprint to bezpłatna konferencja karierowa dla studentów i absolwentów – 13 października 2026, 10:00–15:00, Centrum Konferencyjne w Centrum Nauki Kopernik w Warszawie. Zero ogólników, 100% praktyki: 14-minutowe prelekcje ekspertów i praktyków branży, Sprint Pytań do rekruterów (rekrutacja, zarobki, błędy w aplikacjach), networking z czołowymi firmami szukającymi młodych talentów, analiza CV i dopracowanie profilu LinkedIn, darmowa profesjonalna sesja zdjęciowa oraz konkursy z nagrodami. Wstęp bezpłatny – wymagana wcześniejsza rejestracja!',
     gradient: 'bg-gradient-to-r from-green-700 via-emerald-500 to-green-400',
     icon: '🚀',
+    image: '/partners/skill-sprint.png',
     emojiRight: '🇵🇱',
     country: 'Poland',
     city: 'Warsaw',
