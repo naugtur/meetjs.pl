@@ -82,6 +82,21 @@ export const learningDiscounts: Promo[] = [
     discountCode: 'meetjs',
   },
   {
+    id: 'aihero-crash-course-2026',
+    name: 'AI Coding Crash Course',
+    message: '60% off in Poland with regional pricing (PPP)!',
+    cta: '🚀 Get 60% Off',
+    ticketLink: 'https://www.aihero.dev/workshops/ai-coding-crash-course',
+    eventLink: 'https://www.aihero.dev',
+    expiresAt: '2027-12-31T23:59:59+01:00',
+    description:
+      'Buying from Poland? Get 60% off ($119.60 instead of $299) with regional pricing (PPP) — content is then viewable from Poland only. AI Coding Crash Course by Matt Pocock (AIHero) is a self-paced course (~60 lessons in 6 sections) that teaches you to control coding agents like Claude Code using real software engineering fundamentals: context management, AGENTS.md, skills, subagents, handoffs, and more.',
+    gradient: 'bg-gradient-to-r from-violet-700 via-fuchsia-600 to-purple-500',
+    icon: '🤖',
+    image: '/partners/aihero-logo.png',
+    emojiRight: '🇵�',
+  },
+  {
     id: 'nextjsweekly-2026',
     name: 'Next.js Weekly',
     message: 'Stay updated with the best Next.js content every week!',
