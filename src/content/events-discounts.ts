@@ -31,7 +31,7 @@ export const eventsDiscounts: Promo[] = [
       'meet.js is an official Community Partner of Cloud Native Days Poland 2026! Join us on October 22 at Varso Tower (Chmielna 69) in Warsaw for a community-driven, non-profit conference covering Cloud Native, Kubernetes, platform engineering, DevOps, and software architecture. The event evolves from KCD Warsaw 2025 and is proudly supported by the CNCF. Use code meetjs_cnd26 for 20% off your ticket!',
     gradient: 'bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600',
     icon: '☸️',
-    image: '/partners/cnd-poland.svg',
+    image: '/partners/cnd-poland-black.svg',
     emojiRight: '🇵🇱',
     country: 'Poland',
     city: 'Warsaw',
