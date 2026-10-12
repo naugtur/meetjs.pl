@@ -18,6 +18,23 @@ export interface CommunityItem {
 
 export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
   {
+    id: 'state-of-html-2026',
+    title: 'State of HTML 2026 Survey',
+    description:
+      'Devographics’ annual look at how we use HTML, forms, web components and browser APIs is back. Takes 10–15 minutes — and browser vendors use the results to prioritize their roadmaps, so your answers help decide what ships next.',
+    url: 'https://survey.devographics.com/en-US/survey/state-of-html/2026',
+    type: 'survey',
+    status: 'active',
+    startDate: '2026-10-12',
+    organization: 'Devographics',
+    impact:
+      'Your answers directly influence what browser vendors ship next — help shape the future of the web platform.',
+    ctaText: 'Fill out the survey',
+    featured: true,
+    image: 'https://assets.devographics.com/surveys/html2026.png',
+    tags: ['HTML', 'Survey', 'Community', 'Web Platform', 'Browser APIs'],
+  },
+  {
     id: 'skill-sprint-2026',
     title: 'Skill Sprint 2026',
     description:
