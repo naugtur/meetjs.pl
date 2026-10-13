@@ -56,7 +56,7 @@ pnpm tolgee:sync      # Sync translations bidirectionally
 ### Tech Stack
 
 - **Next.js 15** (App Router) with Turbopack
-- **React 19** with React Compiler RC
+- **React 19** with React Compiler
 - **TypeScript** with strict configuration
 - **Tailwind CSS** for styling
 - **Tolgee** for i18n (English & Polish)
@@ -161,8 +161,9 @@ All promotional content, discounts, and community initiatives are configured via
 
 ### React Compiler
 
-- Enabled in "annotation" mode (`reactCompiler.compilationMode: 'annotation'`)
-- Only compiles functions/components with `"use memo"` or `"use forget"` directives
+- Enabled for all components (`reactCompiler: true`)
+- Turbopack uses the experimental Rust compiler (`experimental.turbopackRustReactCompiler`); `babel-plugin-react-compiler` is kept for `build:webpack`
+- Opt a component out with the `"use no memo"` directive
 
 ### Node Version
 
