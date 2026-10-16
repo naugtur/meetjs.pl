@@ -1,8 +1,9 @@
 /**
  * cyber_Folks × meet.js — promo graphics generator.
  *
- * Uses @vercel/og (satori) bundled with Next.js: proper flexbox layout
- * + the site's brand font (Montserrat), matching the /discounts OG style.
+ * Uses @vercel/og (satori), the renderer of the site's OG images: proper
+ * flexbox layout + the site's brand font (Montserrat), matching the
+ * /discounts OG style.
  *
  * Run: node docs/social-media/cyberfolks-meetjs/generate-graphics.mjs
  */
@@ -10,8 +11,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const { ImageResponse } =
-  await import('next/dist/compiled/@vercel/og/index.node.js');
+const { ImageResponse } = await import('@vercel/og');
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '../../..');

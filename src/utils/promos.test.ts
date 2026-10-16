@@ -1,5 +1,6 @@
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { getActivePromos, isPromoExpired } from './promos';
-import type { Promo } from '@/types/promo';
+import type { Promo } from '../types/promo';
 
 const makePromo = (overrides: Partial<Promo>): Promo => ({
   id: 'promo',

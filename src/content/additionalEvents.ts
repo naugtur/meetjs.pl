@@ -1,7 +1,7 @@
 // Additional one-time or manually managed events for the map and event sections
 // Extend this array as needed for other cities/events
 
-import type { EventType } from '@/types/event';
+import type { EventType } from '../types/event';
 
 export const ADDITIONAL_EVENTS: EventType[] = [
   {

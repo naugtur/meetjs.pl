@@ -2,4 +2,10 @@ allowBuilds:
   '@lavamoat/preinstall-always-fail': false
   esbuild: false
   puppeteer: false
+  sharp: false
   unrs-resolver: false
+
+overrides:
+  # A single sharp for IPX and @vercel/og: with two versions the Nitro output
+  # cannot load the second libvips and OG images fall back to resvg.
+  '@vercel/og>sharp': ^0.35.3

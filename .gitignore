@@ -9,9 +9,10 @@
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
+# nuxt
+/.nuxt/
+/.output/
+/.data/
 
 # production
 /build
@@ -33,10 +34,12 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
 
 # IDE
 /.idea
 .aider*
 .env
 docs/social-media/**/.fonts/
+
+# parity tooling output (scripts/parity)
+.parity/

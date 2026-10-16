@@ -1,4 +1,4 @@
-import { Promo } from '@/types/promo';
+import type { Promo } from '../types/promo';
 
 export const learningDiscounts: Promo[] = [
   {

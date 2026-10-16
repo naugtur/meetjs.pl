@@ -3,7 +3,7 @@
   "projectId": 20172,
   "format": "JSON_TOLGEE",
   "patterns": [
-    "./src/**/*.ts?(x)"
+    "./app/**/*.{vue,ts}"
   ],
   "push": {
     "filesTemplate": "./messages/{languageTag}.json",

@@ -1,4 +1,4 @@
-import type { Promo } from '@/types/promo';
+import type { Promo } from '../types/promo';
 
 export const isPromoExpired = (promo: Promo): boolean =>
   new Date(promo.expiresAt) < new Date();

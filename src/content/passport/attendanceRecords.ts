@@ -1,4 +1,4 @@
-import type { AttendanceRecord } from '@/types/passport';
+import type { AttendanceRecord } from '../../types/passport';
 
 export const ATTENDANCE_RECORDS: AttendanceRecord[] = [
   {
