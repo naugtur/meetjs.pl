@@ -1,11 +1,8 @@
 import { describe, expect, it } from 'vitest';
 
-import {
-  validateAttendanceRecords,
-  validateParticipants,
-} from '@/lib/passport/validation';
-import { ATTENDANCE_RECORDS } from '@/content/passport/attendanceRecords';
-import { PARTICIPANTS } from '@/content/passport/participants';
+import { validateAttendanceRecords, validateParticipants } from './validation';
+import { ATTENDANCE_RECORDS } from '../../content/passport/attendanceRecords';
+import { PARTICIPANTS } from '../../content/passport/participants';
 
 describe('Passport content validation gate', () => {
   it('validates PARTICIPANTS with zero errors', () => {

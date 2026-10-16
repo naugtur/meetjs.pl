@@ -1,5 +1,3 @@
-import { ReactNode } from 'react';
-
 export interface Promo {
   id: string;
   name: string;
@@ -12,7 +10,7 @@ export interface Promo {
   city?: string;
   emojiRight?: string;
   emojiLeft?: string;
-  icon?: ReactNode | string;
+  icon?: string;
   image?: string;
   gradient: string;
   textColor?: string;

@@ -1,4 +1,4 @@
-import type { BracketId, EligibleCity } from '@/types/passport';
+import type { BracketId, EligibleCity } from '../../types/passport';
 
 export interface BracketDefinition {
   id: BracketId;

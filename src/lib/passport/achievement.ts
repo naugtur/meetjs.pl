@@ -2,7 +2,7 @@ import type {
   AttendanceRecord,
   BracketId,
   EligibleCity,
-} from '@/types/passport';
+} from '../../types/passport';
 import { BRACKETS } from './brackets';
 
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
@@ -62,7 +62,7 @@ export function computeBracketAchievements(
     const cityCounts = new Map<string, number>();
 
     for (let i = 0; i < eligible.length; i++) {
-      const candidate = eligible[i];
+      const candidate = eligible[i]!;
       cityCounts.set(
         candidate.record.eventCity,
         (cityCounts.get(candidate.record.eventCity) ?? 0) + 1,
@@ -70,8 +70,8 @@ export function computeBracketAchievements(
 
       const windowStartCutoff =
         candidate.date.getTime() - QUALIFYING_SPAN_DAYS * MS_PER_DAY;
-      while (eligible[windowStart].date.getTime() < windowStartCutoff) {
-        const expired = eligible[windowStart];
+      while (eligible[windowStart]!.date.getTime() < windowStartCutoff) {
+        const expired = eligible[windowStart]!;
         const count = cityCounts.get(expired.record.eventCity) ?? 0;
         if (count <= 1) {
           cityCounts.delete(expired.record.eventCity);

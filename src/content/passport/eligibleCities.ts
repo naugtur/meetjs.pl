@@ -1,4 +1,4 @@
-import type { EligibleCity } from '@/types/passport';
+import type { EligibleCity } from '../../types/passport';
 
 const PLACEHOLDER_ADDED_AT = '2019-01-01';
 

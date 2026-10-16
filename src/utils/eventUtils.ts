@@ -1,5 +1,5 @@
-import type { EventType, EventTypeName } from '@/types/event';
-import { EventTypeEnum } from '@/types/event';
+import type { EventType, EventTypeName } from '../types/event';
+import { EventTypeEnum } from '../types/event';
 
 /**
  * Type-safe function to check if event is a conference

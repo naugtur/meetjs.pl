@@ -1,4 +1,4 @@
-import { SpeakerType } from '@/types/speaker';
+import type { SpeakerType } from '../types/speaker';
 
 export const MOCK_SPEAKERS: SpeakerType[] = [
   {
