@@ -2,7 +2,7 @@ import type { EligibleCity } from '@/types/passport';
 
 const PLACEHOLDER_ADDED_AT = '2019-01-01';
 
-export const ELIGIBLE_CITIES: EligibleCity[] = [
+export const ELIGIBLE_CITIES = [
   { name: 'Białystok', addedAt: PLACEHOLDER_ADDED_AT },
   { name: 'Bielsko-Biała', addedAt: PLACEHOLDER_ADDED_AT },
   { name: 'Gdańsk', addedAt: PLACEHOLDER_ADDED_AT },
@@ -13,6 +13,8 @@ export const ELIGIBLE_CITIES: EligibleCity[] = [
   { name: 'Poznań', addedAt: PLACEHOLDER_ADDED_AT },
   { name: 'Warszawa', addedAt: PLACEHOLDER_ADDED_AT },
   { name: 'Wrocław', addedAt: PLACEHOLDER_ADDED_AT },
-];
+] as const satisfies EligibleCity[];
+
+export type EligibleCityName = (typeof ELIGIBLE_CITIES)[number]['name'];
 
 export default ELIGIBLE_CITIES;

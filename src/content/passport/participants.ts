@@ -1,6 +1,6 @@
 import type { Participant } from '@/types/passport';
 
-export const PARTICIPANTS: Participant[] = [
+export const PARTICIPANTS = [
   {
     slug: 'adrian-romanski',
     displayName: 'Adrian Romański',
@@ -19,6 +19,8 @@ export const PARTICIPANTS: Participant[] = [
     image: 'https://avatars.githubusercontent.com/u/32049761',
     profileUrl: 'https://crossweb.pl/profile/kuba-wasik/123026/',
   },
-];
+] as const satisfies Participant[];
+
+export type ParticipantSlug = (typeof PARTICIPANTS)[number]['slug'];
 
 export default PARTICIPANTS;
