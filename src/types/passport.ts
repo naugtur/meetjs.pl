@@ -2,15 +2,15 @@ import { z } from 'zod';
 
 export const EligibleCitySchema = z.object({
   name: z.string().min(1),
-  addedAt: z.string().date(),
+  addedAt: z.iso.date(),
 });
 export type EligibleCity = z.infer<typeof EligibleCitySchema>;
 
 export const ParticipantSchema = z.object({
   slug: z.string().min(1),
   displayName: z.string().min(1),
-  image: z.string().url().optional(),
-  profileUrl: z.string().url().optional(),
+  image: z.url().optional(),
+  profileUrl: z.url().optional(),
 });
 export type Participant = z.infer<typeof ParticipantSchema>;
 
