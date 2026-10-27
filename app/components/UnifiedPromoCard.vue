@@ -91,7 +91,7 @@ const ctaTextColor = computed(
     >
       <div
         v-if="promo.image"
-        class="relative h-20 w-20 overflow-hidden rounded-lg bg-gray-100 ring-2 ring-gray-100 dark:bg-gray-700 dark:ring-gray-600"
+        class="relative h-20 w-20 overflow-hidden rounded-lg bg-gray-100 ring-2 ring-gray-100 dark:ring-gray-600"
       >
         <AppImage
           :src="promo.image"

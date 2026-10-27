@@ -63,7 +63,7 @@ const endDateLabel = computed(() =>
       <div class="relative p-6 pb-4">
         <div v-if="item.image" class="mb-4 flex items-center justify-between">
           <div
-            class="relative h-28 w-28 overflow-hidden rounded-2xl bg-white shadow-lg ring-2 ring-white/50 transition-all duration-500 group-hover:rotate-3 group-hover:scale-110 dark:bg-gray-900 dark:ring-gray-700/50"
+            class="relative h-28 w-28 overflow-hidden rounded-2xl bg-white shadow-lg ring-2 ring-white/50 transition-all duration-500 group-hover:rotate-3 group-hover:scale-110 dark:ring-gray-700/50"
           >
             <AppImage
               :src="item.image"
