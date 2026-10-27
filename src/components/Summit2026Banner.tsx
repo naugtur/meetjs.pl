@@ -53,7 +53,7 @@ export const Summit2026Banner = () => {
       style={{ backgroundImage: 'url(/summit-2026-bg.png)' }}
     >
       {/* Lighter overlay matching summit website */}
-      <div className="absolute left-0 top-0 h-full w-full bg-black opacity-25"></div>
+      <div className="absolute top-0 left-0 h-full w-full bg-black opacity-25"></div>
 
       <div className="relative mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="text-center md:text-left">
@@ -91,7 +91,7 @@ export const Summit2026Banner = () => {
           <div className="mb-8">
             {eventStatus === 'upcoming' && (
               <>
-                <p className="mb-4 text-center text-sm font-semibold uppercase tracking-wider text-white/80">
+                <p className="mb-4 text-center text-sm font-semibold tracking-wider text-white/80 uppercase">
                   {t('summit_2026.countdown_label')}
                 </p>
                 <div className="flex flex-wrap justify-center gap-2 md:gap-4">
@@ -114,7 +114,7 @@ export const Summit2026Banner = () => {
                       <span className="text-2xl font-bold text-white md:text-4xl">
                         {String(item.value).padStart(2, '0')}
                       </span>
-                      <span className="mt-1 text-xs font-medium uppercase tracking-wide text-white/80">
+                      <span className="mt-1 text-xs font-medium tracking-wide text-white/80 uppercase">
                         {item.label}
                       </span>
                     </div>
@@ -126,7 +126,7 @@ export const Summit2026Banner = () => {
               <div className="space-y-4">
                 {/* Large HAPPENING NOW text */}
                 <div className="text-center">
-                  <div className="mb-3 inline-block animate-pulse rounded-full bg-red-500 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white shadow-lg shadow-red-500/50">
+                  <div className="mb-3 inline-block animate-pulse rounded-full bg-red-500 px-4 py-1.5 text-xs font-bold tracking-widest text-white uppercase shadow-lg shadow-red-500/50">
                     🔴 {t('summit_2026.live_badge')}
                   </div>
                   <h3 className="mb-2 text-5xl font-black text-white md:text-6xl">

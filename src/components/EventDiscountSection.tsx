@@ -44,7 +44,7 @@ function EventPromoCard({ promo }: { promo: Promo }) {
             />
           </div>
         ) : (
-          <div className="flex h-20 w-20 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500 to-pink-600 text-3xl text-white shadow-md transition-transform duration-300 group-hover:scale-105">
+          <div className="flex h-20 w-20 items-center justify-center rounded-lg bg-linear-to-br from-purple-500 to-pink-600 text-3xl text-white shadow-md transition-transform duration-300 group-hover:scale-105">
             {promo.icon || '🎟️'}
           </div>
         )}
@@ -87,7 +87,7 @@ function EventPromoCard({ promo }: { promo: Promo }) {
         {/* Details Grid */}
         <div className="mb-6 grid grid-cols-2 gap-4">
           <div className="flex items-start gap-2">
-            <Calendar className="mt-0.5 h-4 w-4 flex-shrink-0 text-gray-400" />
+            <Calendar className="mt-0.5 h-4 w-4 shrink-0 text-gray-400" />
             <div className="min-w-0">
               <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
                 Valid Until
@@ -98,7 +98,7 @@ function EventPromoCard({ promo }: { promo: Promo }) {
             </div>
           </div>
           <div className="flex items-start gap-2">
-            <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-gray-400" />
+            <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gray-400" />
             <div className="min-w-0">
               <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
                 Location
@@ -144,13 +144,13 @@ function EventPromoCard({ promo }: { promo: Promo }) {
             href={promo.ticketLink}
             target="_blank"
             rel="noopener"
-            className="block w-full rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 py-3 text-center font-semibold text-white shadow transition-all duration-200 hover:-translate-y-0.5 hover:from-purple-700 hover:to-pink-700 hover:shadow-lg active:scale-95"
+            className="block w-full rounded-lg bg-linear-to-r from-purple-600 to-pink-600 py-3 text-center font-semibold text-white shadow transition-all duration-200 hover:-translate-y-0.5 hover:from-purple-700 hover:to-pink-700 hover:shadow-lg active:scale-95"
             onClick={(e) => e.stopPropagation()}
           >
             {promo.cta}
           </a>
         ) : (
-          <span className="block w-full rounded-lg bg-gradient-to-r from-purple-600/70 to-pink-600/70 py-3 text-center font-semibold text-white/80 opacity-60 shadow">
+          <span className="block w-full rounded-lg bg-linear-to-r from-purple-600/70 to-pink-600/70 py-3 text-center font-semibold text-white/80 opacity-60 shadow">
             {promo.cta}
           </span>
         )}

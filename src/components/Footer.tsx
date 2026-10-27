@@ -14,7 +14,7 @@ export const Footer = async () => {
   const footerMenuLinks = await getTranslatedFooterMenuLinks();
 
   return (
-    <footer className="border-t border-white/10 bg-purple text-white">
+    <footer className="bg-purple border-t border-white/10 text-white">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* First column */}

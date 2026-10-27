@@ -245,7 +245,7 @@ export default async function OrganizersPage() {
       </section>
 
       {/* New Organizer CTA */}
-      <div className="rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 p-8 text-white">
+      <div className="rounded-lg bg-linear-to-r from-blue-600 to-purple-600 p-8 text-white">
         <div className="text-center">
           <h2 className="mb-4 text-2xl font-bold">
             {t('organizers_hub.cta_section.title')}

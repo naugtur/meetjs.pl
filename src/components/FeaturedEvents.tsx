@@ -71,7 +71,7 @@ export const FeaturedEvents = async () => {
             href="/events"
             className={buttonVariants({
               className:
-                'w-full bg-purple text-black hover:bg-purple/80 md:w-auto dark:bg-green dark:hover:bg-green/80',
+                'bg-purple hover:bg-purple/80 dark:bg-green dark:hover:bg-green/80 w-full text-black md:w-auto',
             })}
           >
             {t('featured_events.all_events')}

@@ -18,21 +18,21 @@ export default function ServerEmptyDiscountState({
       case 'events':
         return {
           icon: <Ticket className="h-10 w-10 text-white" />,
-          iconBg: 'bg-gradient-to-br from-purple-500 to-pink-600',
+          iconBg: 'bg-linear-to-br from-purple-500 to-pink-600',
           textColor: 'text-gray-900 dark:text-white',
           descColor: 'text-gray-600 dark:text-gray-400',
         };
       case 'software':
         return {
           icon: <Monitor className="h-10 w-10 text-white" />,
-          iconBg: 'bg-gradient-to-br from-indigo-500 to-purple-600',
+          iconBg: 'bg-linear-to-br from-indigo-500 to-purple-600',
           textColor: 'text-gray-900 dark:text-white',
           descColor: 'text-gray-600 dark:text-gray-400',
         };
       case 'learning':
         return {
           icon: <BookOpen className="h-10 w-10 text-white" />,
-          iconBg: 'bg-gradient-to-br from-green-500 to-teal-600',
+          iconBg: 'bg-linear-to-br from-green-500 to-teal-600',
           textColor: 'text-gray-900 dark:text-white',
           descColor: 'text-gray-600 dark:text-gray-400',
         };

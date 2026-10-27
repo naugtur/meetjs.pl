@@ -42,7 +42,7 @@ export const softwareDiscounts: Promo[] = [
     expiresAt: '2025-12-31T23:59:59+02:00',
     description:
       "Windsurf's Cascade is a revolutionary AI coding assistant that helps developers write better code faster. With agentic capabilities and advanced code understanding, Cascade works as your pair programming partner. Use code MEETJS-WS at checkout to receive 1 month free of Cascade Pro ($15/month value) with 500 prompt credits and access to all premium AI models including SWE-1.",
-    gradient: 'bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-600',
+    gradient: 'bg-linear-to-r from-blue-500 via-cyan-400 to-blue-600',
     icon: '🌊',
     image: '/partners/Windsurf-white-symbol.png',
     emojiRight: '💻',
@@ -58,7 +58,7 @@ export const softwareDiscounts: Promo[] = [
     expiresAt: '2025-12-31T23:59:59+02:00',
     description:
       'Warp is the terminal reimagined with AI and collaborative features built-in. Experience lightning-fast performance, intelligent completions, and modern workflows. Get Warp Pro for just $5 for your first month with code MEETJS25!',
-    gradient: 'bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500',
+    gradient: 'bg-linear-to-r from-indigo-600 via-purple-600 to-pink-500',
     icon: '⚡',
     image: '/partners/warp-logo.svg',
     emojiRight: '💻',

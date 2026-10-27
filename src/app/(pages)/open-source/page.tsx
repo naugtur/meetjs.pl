@@ -5,9 +5,9 @@ export default async function OpenSourcePage() {
 
   return (
     <main>
-      <header className="relative flex grid h-96 items-center justify-center bg-gray-900 text-center text-white md:h-[25rem]">
+      <header className="relative flex grid h-96 items-center justify-center bg-gray-900 text-center text-white md:h-100">
         <div className="z-10 mx-auto my-auto">
-          <h1 className="inline-block -rotate-2 bg-blue p-2 text-6xl font-bold">
+          <h1 className="bg-blue inline-block -rotate-2 p-2 text-6xl font-bold">
             {t('open_source.hero.title')}
           </h1>
           <h2 className="mt-4 p-4 text-xl font-medium">
@@ -28,7 +28,7 @@ export default async function OpenSourcePage() {
           </div>
 
           <div className="grid gap-8 md:grid-cols-2">
-            <div className="rounded-lg border bg-card p-6 shadow-sm">
+            <div className="bg-card rounded-lg border p-6 shadow-sm">
               <h3 className="mb-4 text-2xl font-bold">
                 {t('open_source.support.title')}
               </h3>
@@ -47,7 +47,7 @@ export default async function OpenSourcePage() {
                   href="https://github.com/sponsors"
                   target="_blank"
                   rel="noopener"
-                  className="inline-flex h-10 items-center justify-center rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white ring-offset-background transition-colors visited:text-white hover:bg-slate-800 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="ring-offset-background focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white transition-colors visited:text-white hover:bg-slate-800 hover:text-white focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
                 >
                   {t('open_source.support.platforms.github')}
                 </a>
@@ -55,20 +55,20 @@ export default async function OpenSourcePage() {
                   href="https://opencollective.com/"
                   target="_blank"
                   rel="noopener"
-                  className="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                  className="border-input bg-background ring-offset-background hover:bg-accent hover:text-accent-foreground focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md border px-4 py-2 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
                 >
                   {t('open_source.support.platforms.opencollective')}
                 </a>
               </div>
             </div>
 
-            <div className="rounded-lg border bg-card p-6 shadow-sm">
+            <div className="bg-card rounded-lg border p-6 shadow-sm">
               <h3 className="mb-4 text-2xl font-bold">
                 {t('open_source.projects.title')}
               </h3>
               <p className="mb-4">{t('open_source.projects.description')}</p>
-              <div className="mt-6 rounded-md bg-muted p-4 text-center">
-                <p className="italic text-muted-foreground">
+              <div className="bg-muted mt-6 rounded-md p-4 text-center">
+                <p className="text-muted-foreground italic">
                   {t('open_source.projects.coming_soon')}
                 </p>
               </div>

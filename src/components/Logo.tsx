@@ -56,9 +56,9 @@ export const Logo = ({ clickable = true }: LogoProps) => {
 
       {showContextMenu && (
         <>
-          <div className="fixed inset-0 z-[60]" onClick={handleClickOutside} />
+          <div className="fixed inset-0 z-60" onClick={handleClickOutside} />
           <div
-            className="fixed z-[70] min-w-[200px] rounded-lg border border-gray-200 bg-white py-2 shadow-lg"
+            className="fixed z-70 min-w-[200px] rounded-lg border border-gray-200 bg-white py-2 shadow-lg"
             style={{
               left: contextMenuPosition.x,
               top: contextMenuPosition.y,

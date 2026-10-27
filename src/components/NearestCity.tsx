@@ -103,7 +103,7 @@ export const NearestCity = () => {
         <button
           type="button"
           onClick={handleFallbackClick}
-          className="inline-flex items-center gap-2 rounded-md bg-purple px-4 py-2 font-medium text-white transition-colors hover:bg-green hover:text-purple"
+          className="bg-purple hover:bg-green hover:text-purple inline-flex items-center gap-2 rounded-md px-4 py-2 font-medium text-white transition-colors"
         >
           <MapPin className="h-4 w-4" aria-hidden="true" />
           {state === 'locating'
@@ -118,7 +118,7 @@ export const NearestCity = () => {
             : t('join_us.nearest_result')}{' '}
           <Link
             href={nearest.city.href as Route}
-            className="font-semibold text-purple hover:underline"
+            className="text-purple font-semibold hover:underline"
           >
             {nearest.city.name}
           </Link>
@@ -127,11 +127,11 @@ export const NearestCity = () => {
         </p>
       )}
       {state === 'error' && (
-        <p className="text-sm text-muted-foreground">
+        <p className="text-muted-foreground text-sm">
           {t('join_us.locate_error')}
         </p>
       )}
-      <details className="group max-w-sm text-center text-sm text-muted-foreground">
+      <details className="group text-muted-foreground max-w-sm text-center text-sm">
         <summary className="flex cursor-pointer list-none items-center gap-1 transition-all hover:underline [&::-webkit-details-marker]:hidden">
           <Info className="h-3.5 w-3.5" aria-hidden="true" />
           {t('join_us.how_it_works')}

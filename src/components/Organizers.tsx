@@ -19,7 +19,7 @@ export const Organizers = ({ city, organizers }: OrganizersProps) => {
         {organizers.map((organizer) => (
           <Card
             key={organizer.name}
-            className="w-full max-w-[15rem] overflow-hidden text-2xl font-bold md:w-1/3"
+            className="w-full max-w-60 overflow-hidden text-2xl font-bold md:w-1/3"
           >
             <CardContent className="flex items-center justify-center pt-6">
               {organizer.image ? (

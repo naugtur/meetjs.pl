@@ -5,9 +5,9 @@ export default function VideosPage() {
   const hasVideos = featuredVideos.length > 0;
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+    <main className="min-h-screen bg-linear-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-red-600 via-red-500 to-red-600 py-20 text-white">
+      <section className="bg-linear-to-r from-red-600 via-red-500 to-red-600 py-20 text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="mb-6 flex items-center justify-center gap-4">
@@ -90,7 +90,7 @@ export default function VideosPage() {
               rel="noopener"
               className="group overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-gray-800"
             >
-              <div className="flex aspect-video items-center justify-center bg-gradient-to-br from-red-500 to-red-700">
+              <div className="flex aspect-video items-center justify-center bg-linear-to-br from-red-500 to-red-700">
                 <div className="text-center text-white">
                   <FaPlay className="mx-auto mb-4 h-20 w-20 transition-transform group-hover:scale-110" />
                   <p className="text-2xl font-bold">Latest Videos</p>
@@ -113,7 +113,7 @@ export default function VideosPage() {
               rel="noopener"
               className="group overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-gray-800"
             >
-              <div className="flex aspect-video items-center justify-center bg-gradient-to-br from-purple-500 to-purple-700">
+              <div className="flex aspect-video items-center justify-center bg-linear-to-br from-purple-500 to-purple-700">
                 <div className="text-center text-white">
                   <FaList className="mx-auto mb-4 h-20 w-20 transition-transform group-hover:scale-110" />
                   <p className="text-2xl font-bold">Playlists</p>
@@ -136,7 +136,7 @@ export default function VideosPage() {
               rel="noopener"
               className="group overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-gray-800"
             >
-              <div className="flex aspect-video items-center justify-center bg-gradient-to-br from-green-500 to-green-700">
+              <div className="flex aspect-video items-center justify-center bg-linear-to-br from-green-500 to-green-700">
                 <div className="text-center text-white">
                   <FaUsers className="mx-auto mb-4 h-20 w-20 transition-transform group-hover:scale-110" />
                   <p className="text-2xl font-bold">Community</p>

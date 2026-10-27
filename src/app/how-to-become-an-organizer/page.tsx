@@ -37,7 +37,7 @@ export default async function Page() {
       </div>
 
       {/* Quick Start CTA */}
-      <div className="mb-12 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 p-8 text-white">
+      <div className="mb-12 rounded-lg bg-linear-to-r from-purple-600 to-blue-600 p-8 text-white">
         <div className="text-center">
           <h2 className="mb-4 text-2xl font-bold">
             {t('organizer.ready_to_start_cta.title')}

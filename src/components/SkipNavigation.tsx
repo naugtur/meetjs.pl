@@ -27,7 +27,7 @@ export const SkipNavigation = () => {
           <button
             key={item.id}
             onClick={() => scrollToSection(item.id)}
-            className="group flex flex-col items-center gap-1 rounded-xl bg-gray-700/80 p-3 text-white transition-all duration-300 hover:scale-105 hover:bg-gray-600/90 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-transparent md:gap-2 md:p-4"
+            className="group flex flex-col items-center gap-1 rounded-xl bg-gray-700/80 p-3 text-white transition-all duration-300 hover:scale-105 hover:bg-gray-600/90 focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-transparent focus:outline-none md:gap-2 md:p-4"
           >
             <span className="text-lg transition-transform group-hover:scale-110 md:text-2xl">
               {item.icon}

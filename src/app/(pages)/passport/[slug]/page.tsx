@@ -107,7 +107,7 @@ export default async function PassportProgressPage({
             href={participant.profileUrl}
             target="_blank"
             rel="noopener"
-            className="inline-flex items-center gap-1 text-xs text-blue hover:text-blue/80"
+            className="text-blue hover:text-blue/80 inline-flex items-center gap-1 text-xs"
           >
             {t('speakers_page.view_profile')}
             <FaArrowUpRightFromSquare className="h-3 w-3" />
@@ -136,7 +136,7 @@ export default async function PassportProgressPage({
                   {bracketLabels[bracket.bracketId]}
                 </h2>
                 {achieved ? (
-                  <p className="text-xs text-muted-foreground">
+                  <p className="text-muted-foreground text-xs">
                     {t('passport.achieved_on', {
                       date: formatAchievedAt(bracket.achievedAt!, language),
                     })}
@@ -169,10 +169,10 @@ export default async function PassportProgressPage({
                 className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm"
               >
                 <h3 className="mb-2 font-semibold text-purple-600">{city}</h3>
-                <ul className="space-y-2 text-sm text-muted-foreground">
+                <ul className="text-muted-foreground space-y-2 text-sm">
                   {progress.activeRecordsByCity[city].map((record) => (
                     <li key={`${record.participantSlug}-${record.eventId}`}>
-                      <span className="mb-0.5 block font-semibold text-blue">
+                      <span className="text-blue mb-0.5 block font-semibold">
                         {record.eventDate}
                       </span>
                       {record.eventName}
@@ -194,10 +194,10 @@ export default async function PassportProgressPage({
           <h2 className="mb-4 text-xl font-bold">
             {t('passport.progress.revoked_heading')}
           </h2>
-          <ul className="space-y-2 rounded-lg border border-gray-200 bg-white p-4 text-sm text-muted-foreground shadow-sm">
+          <ul className="text-muted-foreground space-y-2 rounded-lg border border-gray-200 bg-white p-4 text-sm shadow-sm">
             {progress.revokedRecords.map((record) => (
               <li key={`${record.participantSlug}-${record.eventId}`}>
-                <span className="font-medium text-foreground">
+                <span className="text-foreground font-medium">
                   {record.eventName} &mdash; {record.eventCity}
                 </span>
                 <br />
