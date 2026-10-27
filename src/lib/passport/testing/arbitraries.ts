@@ -3,7 +3,7 @@ import type {
   AttendanceRecord,
   AttendanceStatus,
   EligibleCity,
-} from '@/types/passport';
+} from '../../../types/passport';
 
 export const ELIGIBLE_CITY_NAMES = [
   'Warszawa',

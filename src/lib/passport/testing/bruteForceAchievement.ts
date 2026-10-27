@@ -1,6 +1,6 @@
-import type { AttendanceRecord, EligibleCity } from '@/types/passport';
-import type { BracketAchievement } from '@/lib/passport/achievement';
-import { BRACKETS } from '@/lib/passport/brackets';
+import type { AttendanceRecord, EligibleCity } from '../../../types/passport';
+import type { BracketAchievement } from '../achievement';
+import { BRACKETS } from '../brackets';
 
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
 const QUALIFYING_SPAN_DAYS = 365;

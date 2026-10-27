@@ -1,4 +1,4 @@
-import type { AttendanceRecord } from '@/types/passport';
+import type { AttendanceRecord } from '../../types/passport';
 import type { ParticipantSlug } from './participants';
 import type { EligibleCityName } from './eligibleCities';
 

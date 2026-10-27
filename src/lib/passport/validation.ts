@@ -1,5 +1,5 @@
-import { generateSlug } from '@/lib/passport/slug';
-import type { AttendanceRecord, Participant } from '@/types/passport';
+import { generateSlug } from './slug';
+import type { AttendanceRecord, Participant } from '../../types/passport';
 
 export interface ValidationError {
   message: string;

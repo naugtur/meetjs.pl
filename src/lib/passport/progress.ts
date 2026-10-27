@@ -3,7 +3,7 @@ import type {
   BracketId,
   EligibleCity,
   Participant,
-} from '@/types/passport';
+} from '../../types/passport';
 import { computeBracketAchievements } from './achievement';
 import { BRACKETS } from './brackets';
 

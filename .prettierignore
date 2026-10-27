@@ -1,8 +1,10 @@
 # dependencies
 /node_modules
 
-# next.js
-/.next/
+# nuxt
+/.nuxt
+/.output
+/.data
 
 # IDE
 /.idea
@@ -10,3 +12,5 @@
 
 # pnpm
 pnpm-lock.yaml
+# parity tooling output
+/.parity

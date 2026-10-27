@@ -4,10 +4,10 @@ Website for meet.js community.
 
 ## Stack
 
-- [Next.js 16.3 (app router)](https://nextjs.org/docs)
-- [React 19.2](https://react.dev/) with [React Compiler 1.0](https://react.dev/blog/2025/10/07/react-compiler-1)
+- [Nuxt 4.6](https://nuxt.com/docs) with [Vue 3.5](https://vuejs.org/guide/introduction.html)
 - [TypeScript](https://www.typescriptlang.org/docs)
 - [Tailwindcss](https://tailwindcss.com/docs)
+- [Tolgee](https://tolgee.io) for translations (English and Polish)
 
 ## Development
 
@@ -19,6 +19,10 @@ Website for meet.js community.
 6. Run development server `pnpm dev`
 7. Open [http://localhost:3000](http://localhost:3000) in your browser
 
+Other commands: `pnpm build` + `pnpm preview` (production build), `pnpm lint`, `pnpm typecheck`, `pnpm test`.
+
+The site was migrated from Next.js to Nuxt; `scripts/parity/` holds the tools that compare two running versions of the site visually and functionally (see [`scripts/parity/README.md`](scripts/parity/README.md)).
+
 ## Security
 
 - For basic security all lifecycle scripts are disabled in .npmrc (also supported by pnpm) and in case the setting is not respected, `preinstall-always-fail` will error out to warn you.
@@ -29,7 +33,7 @@ Website for meet.js community.
 The meet.js community is present in multiple cities across Poland. Each city status can be configured in:
 
 ```
-src/content/cities.tsx
+src/content/cities.ts
 ```
 
 City statuses include:
@@ -60,7 +64,7 @@ Active offers appear in the "Community Discounts" ticker on the homepage and as 
 Each discount is an object in the exported `eventsDiscounts`, `softwareDiscounts` or `learningDiscounts` array. Example entry:
 
 ```ts
-import { Promo } from '@/types/promo';
+import type { Promo } from '../types/promo';
 
 export const eventsDiscounts: Promo[] = [
   {
@@ -96,7 +100,7 @@ export const eventsDiscounts: Promo[] = [
 - `description` (string): Longer description shown on the card (optional)
 - `eventLink` (string): Link to the event website (optional)
 - `country`, `city` (string): Event location shown on the card (optional)
-- `icon` (string or React node): Emoji or image URL used as the offer icon (optional)
+- `icon` (string): Emoji or image URL used as the offer icon (optional)
 - `image` (string): Logo image URL or path; takes precedence over `icon` (optional)
 - `emojiLeft` (string): Fallback icon in the ticker (optional)
 - `emojiRight` (string): Emoji shown after the location, e.g. a flag (optional)
@@ -181,7 +185,7 @@ Each community item is an object in the `COMMUNITY_PARTICIPATION` array:
 - `ctaText` (string): Call-to-action button text (required)
 - `featured` (boolean): Whether to display on homepage (optional, default: false)
 - `tags` (string[]): Array of relevant tags for categorization (required)
-- `image` (string): Logo or image URL shown on the card; remote hosts must be allowed in `images.remotePatterns` in `next.config.ts` (optional)
+- `image` (string): Logo or image URL shown on the card; remote hosts must be allowed in `image.domains` in `nuxt.config.ts` (optional)
 - `pinned` (boolean): Always list the item before others (optional)
 
 ### Display Logic
@@ -230,7 +234,7 @@ To add or update brand assets on the website:
 
 1. Place new logo files in `public/assets/brand/logo/` (pre-2023 assets live in `public/assets/brand/pre-2023/`)
 2. Place new wallpaper files in `public/brand/wallpapers/`
-3. Add an entry to the matching list in `src/app/brand/page.tsx` (`officialLogos`, `boldLogos`, `legacyLogos` or `wallpapers`)
+3. Add an entry to the matching list in `app/pages/brand.vue` (`officialLogos`, `boldLogos`, `legacyLogos` or `wallpapers`)
 
 Each entry (`AssetItem`) has:
 
@@ -269,7 +273,7 @@ The app works without a Tolgee API key: translations are bundled from `messages/
 1. **Create a Tolgee account** at [https://app.tolgee.io](https://app.tolgee.io)
 2. **Create a new project** in your Tolgee dashboard
 3. **Get your API key** from the project settings
-4. **Add environment variables** to your `.env` or `.env.development.local`:
+4. **Add environment variables** to your `.env`:
    ```bash
    NEXT_PUBLIC_TOLGEE_API_KEY=your_actual_api_key_here
    NEXT_PUBLIC_TOLGEE_API_URL=https://app.tolgee.io
@@ -290,39 +294,22 @@ The Tolgee CLI configuration (`.tolgeerc`) points at the meet.js project (`proje
 
 ### Using Translations in Components
 
-**Server Components:**
+Components and pages render on the server and hydrate in the browser with the same Tolgee instance (`app/plugins/tolgee.ts`):
 
-```tsx
-import { getTranslate } from '@/tolgee/server';
+```vue
+<script setup lang="ts">
+import { useTranslate } from '@tolgee/vue';
 
-export default async function MyComponent() {
-  const t = await getTranslate();
+const { t } = useTranslate();
 
-  return (
-    <div>
-      <h1>{t('hero.title')}</h1>
-      <p>{t('hero.subtitle')}</p>
-    </div>
-  );
-}
-```
+// In script code `t` is a ref, e.g. for translated page metadata:
+useSiteMeta(() => ({ title: t.value('events_page.meta_title') }));
+</script>
 
-**Client Components:**
-
-```tsx
-'use client';
-import { useTranslate } from '@tolgee/react';
-
-export default function MyClientComponent() {
-  const { t } = useTranslate();
-
-  return (
-    <div>
-      <h1>{t('navigation.home')}</h1>
-      <button>{t('hero.cta')}</button>
-    </div>
-  );
-}
+<template>
+  <h1>{{ t('hero.title') }}</h1>
+  <button>{{ t('hero.cta') }}</button>
+</template>
 ```
 
 ### Translation Keys Structure
@@ -361,7 +348,7 @@ With Tolgee's in-context translation feature (works in development when `NEXT_PU
 
 ### Testing Translations
 
-Switch languages with the language switcher (🇺🇸 EN / 🇵🇱 PL) in the navigation. The choice is stored in the `NEXT_LOCALE` cookie; without it, the language is detected from the browser's `Accept-Language` header (default: English). Both languages use the same URLs.
+Switch languages with the language switcher (🇺🇸 EN / 🇵🇱 PL) in the navigation. The choice is stored in the `NEXT_LOCALE` cookie (name kept from the Next.js version, so returning visitors keep their language); without it, the language is detected from the browser's `Accept-Language` header (default: English). Both languages use the same URLs.
 
 ### Translation Workflow
 
@@ -374,16 +361,15 @@ Tolgee CLI commands:
 
 - `pnpm tolgee:pull` - Download translations into `messages/`
 - `pnpm tolgee:push` - Upload `messages/en.json` (only English is pushed)
-- `pnpm tolgee:sync` - Sync keys used in `src/` with the Tolgee project
+- `pnpm tolgee:sync` - Sync keys used in `app/` with the Tolgee project
 
 The CLI needs `TOLGEE_API_KEY` in CI; locally, log in with `pnpm tolgee login <your_api_key>`.
 
 ### Configuration Files
 
-- `src/tolgee/shared.ts` - Base Tolgee configuration
-- `src/tolgee/server.tsx` - Server-side Tolgee instance
-- `src/tolgee/client.tsx` - Client-side Tolgee provider
-- `src/tolgee/language.ts` - Language detection (cookie, `Accept-Language`) and the `setLanguage` server action
+- `app/plugins/tolgee.ts` - Tolgee instance (server and client) with the bundled translations
+- `app/composables/useLanguage.ts` - Language detection (cookie, `Accept-Language`) and the language cookie
+- `app/components/LanguageSwitcher.vue` - Language switcher (sets the cookie, switches without a reload)
 - `messages/en.json` - English translations (bundled into the app, synced with Tolgee)
 - `messages/pl.json` - Polish translations (bundled into the app, synced with Tolgee)
 - `.tolgeerc` - Tolgee CLI configuration
