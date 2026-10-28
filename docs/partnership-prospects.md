@@ -50,3 +50,9 @@ Existing partners are excluded (NG/JS/AI Poland, Infoshare, CityJS, React Summit
 3. **GDG DevFest Warsaw** — local, cheap, community-first; note the HackNation clash.
 4. **Boiling Frogs 2027** — best long-game play for Wrocław presence (meet.js already has a Wrocław chapter).
 5. **iJS London 2027** — biggest new-market reach; formal partner program exists.
+
+## Outreach status — 2026-10-28
+
+Emailed (14): DevFest Warsaw (hello@gdgwarsaw.pl), performance.now() (notifyme@perfnow.nl), React Day Berlin (events@gitnation.org), Junction (hello@hackjunction.com), beyond tellerrand (hello@beyondtellerrand.com — unverified), Boiling Frogs (info@boilingfrogs.pl — unverified), iJS London (webmaster@sandsmedia.com), WebExpo (sarka@webexpo.net), SmashingConf (hello@smashingconf.com), Programistok (bilety@programistok.org — unverified), enterJS (events@dpunkt.de), Craft Budapest (hello@craft-conf.com), Devoxx Poland (info@devoxx.pl), HalfStack Phoenix (hello@halfstackconf.com — unverified).
+
+Not emailed: existing partners, GitNation events beyond React Day Berlin (same thread), HalfStack Vienna (too late), dormant/cancelled series.
