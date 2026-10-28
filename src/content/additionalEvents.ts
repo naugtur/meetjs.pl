@@ -692,6 +692,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
     ],
   },
   {
+    type: 'Conference',
     id: 100035,
     date_add: Date.now(),
     date: '21.11.2026',
@@ -701,7 +702,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
     rsvp: 'https://warsaw.devfest.pl/',
     city: 'Warszawa',
     address: 'Google for Startups Campus Warsaw\nPlac Konesera 10',
-    image: '',
+    image: '/partners/devfest-warsaw.png',
     serie: 'DevFest',
     topic: [
       'AI',

@@ -556,6 +556,7 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
       'Community partnership – promocja wydarzenia w społeczności meet.js.',
     ctaText: 'Dowiedz się więcej',
     featured: true,
+    image: '/partners/devfest-warsaw.png',
     tags: [
       'Conference',
       'Warsaw',
