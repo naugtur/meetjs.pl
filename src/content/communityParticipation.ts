@@ -516,6 +516,31 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
       'Community Partnership',
     ],
   },
+  {
+    id: 'hacknation-2026',
+    title: 'HackNation 2026',
+    description:
+      'Druga edycja największego w Polsce hackathonu wdrożeniowego – 21-22 listopada 2026 w Bydgoszczy. 24 godziny na stworzenie rozwiązań, które mogą zmienić codzienne życie milionów Polaków: 17 wyzwań od 15 partnerów, realne problemy sektora publicznego, wsparcie ekspertów i mentorów, nagrody finansowe i szansa na wdrożenie. Organizatorzy: Ministerstwo Cyfryzacji, Departament GovTech Polska i Miasto Bydgoszcz.',
+    url: 'https://hacknation.pl/',
+    type: 'collaboration',
+    status: 'active',
+    startDate: '2026-11-21',
+    endDate: '2026-11-22',
+    organization: 'Ministerstwo Cyfryzacji & GovTech Polska & Miasto Bydgoszcz',
+    impact:
+      'Community partnership – promocja ogólnopolskiego hackathonu wdrożeniowego w społeczności meet.js.',
+    ctaText: 'Zarejestruj się',
+    featured: true,
+    image: '/partners/hacknation.png',
+    tags: [
+      'Hackathon',
+      'Bydgoszcz',
+      'GovTech',
+      'Public Sector',
+      'Community',
+      'Poland',
+    ],
+  },
 ];
 
 const sortByNewest = (items: CommunityItem[]): CommunityItem[] => {
