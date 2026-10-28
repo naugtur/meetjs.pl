@@ -9,7 +9,7 @@ export default async function CommunityPartnershipsPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-purple-600 to-blue-600 py-20">
+      <section className="bg-linear-to-r from-purple-600 to-blue-600 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <Users className="mx-auto mb-6 h-16 w-16 text-white" />
@@ -41,7 +41,7 @@ export default async function CommunityPartnershipsPage() {
                 key={partnership.name}
                 className="overflow-hidden rounded-xl bg-white shadow-lg transition-shadow duration-300 hover:shadow-xl"
               >
-                <div className={`bg-gradient-to-r ${partnership.gradient} p-6`}>
+                <div className={`bg-linear-to-r ${partnership.gradient} p-6`}>
                   <div className="flex items-center gap-4">
                     {partnership.icon}
                     <div>
@@ -70,7 +70,7 @@ export default async function CommunityPartnershipsPage() {
                         {partnership.details.map(
                           (detail: string, index: number) => (
                             <li key={index} className="flex items-start gap-2">
-                              <div className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-blue-500" />
+                              <div className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-500" />
                               <span className="text-gray-600">{detail}</span>
                             </li>
                           ),
@@ -87,7 +87,7 @@ export default async function CommunityPartnershipsPage() {
                         {partnership.goals.map(
                           (goal: string, index: number) => (
                             <li key={index} className="flex items-start gap-2">
-                              <div className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-green-500" />
+                              <div className="mt-2 h-2 w-2 shrink-0 rounded-full bg-green-500" />
                               <span className="text-gray-600">{goal}</span>
                             </li>
                           ),
@@ -115,8 +115,8 @@ export default async function CommunityPartnershipsPage() {
                               height={300}
                               className="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                              <div className="absolute bottom-0 left-0 right-0 p-4">
+                            <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                              <div className="absolute right-0 bottom-0 left-0 p-4">
                                 <p className="text-sm font-medium text-white">
                                   {photo.caption}
                                 </p>
@@ -129,7 +129,7 @@ export default async function CommunityPartnershipsPage() {
                   )}
 
                   {partnership.specialOffer && (
-                    <div className="mt-8 rounded-lg border border-yellow-200 bg-gradient-to-r from-yellow-50 to-orange-50 p-6">
+                    <div className="mt-8 rounded-lg border border-yellow-200 bg-linear-to-r from-yellow-50 to-orange-50 p-6">
                       <h4 className="mb-2 text-lg font-semibold text-gray-900">
                         🎟️ {partnership.specialOffer.title}
                       </h4>
@@ -140,7 +140,7 @@ export default async function CommunityPartnershipsPage() {
                         href={partnership.specialOffer.link}
                         target="_blank"
                         rel="noopener"
-                        className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 px-6 py-3 font-semibold text-white transition-all duration-200 hover:from-purple-700 hover:to-blue-700"
+                        className="inline-flex items-center gap-2 rounded-lg bg-linear-to-r from-purple-600 to-blue-600 px-6 py-3 font-semibold text-white transition-all duration-200 hover:from-purple-700 hover:to-blue-700"
                       >
                         {partnership.specialOffer.linkText}
                         <ExternalLink className="h-4 w-4" />

@@ -5,7 +5,7 @@ import { getTranslate } from '@/tolgee/server';
 export const Stats = async () => {
   const t = await getTranslate();
   return (
-    <div className="w-full bg-green py-12 md:py-16">
+    <div className="bg-green w-full py-12 md:py-16">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 sm:px-6 md:grid-cols-3 lg:px-8">
         <div className="text-center">
           <h3 className="text-3xl font-bold sm:text-4xl">

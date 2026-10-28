@@ -194,32 +194,32 @@ export default function YearInReview2025() {
     <>
       <main>
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 py-24">
+        <section className="relative overflow-hidden bg-linear-to-br from-purple-600 via-pink-500 to-orange-400 py-24">
           <div className="absolute inset-0 bg-black/10"></div>
-          <div className="absolute left-0 top-0 h-full w-full">
-            <div className="absolute left-10 top-10 h-20 w-20 animate-pulse rounded-full bg-white/10"></div>
-            <div className="absolute right-20 top-32 h-16 w-16 animate-pulse rounded-full bg-white/10 delay-300"></div>
+          <div className="absolute top-0 left-0 h-full w-full">
+            <div className="absolute top-10 left-10 h-20 w-20 animate-pulse rounded-full bg-white/10"></div>
+            <div className="absolute top-32 right-20 h-16 w-16 animate-pulse rounded-full bg-white/10 delay-300"></div>
             <div className="absolute bottom-20 left-1/4 h-12 w-12 animate-pulse rounded-full bg-white/10 delay-700"></div>
-            <div className="absolute bottom-32 right-1/3 h-24 w-24 animate-pulse rounded-full bg-white/10 delay-500"></div>
-            <div className="absolute right-10 top-1/2 text-6xl opacity-20">
+            <div className="absolute right-1/3 bottom-32 h-24 w-24 animate-pulse rounded-full bg-white/10 delay-500"></div>
+            <div className="absolute top-1/2 right-10 text-6xl opacity-20">
               🎊
             </div>
-            <div className="absolute left-1/4 top-20 text-4xl opacity-20">
+            <div className="absolute top-20 left-1/4 text-4xl opacity-20">
               ✨
             </div>
-            <div className="absolute bottom-10 right-1/4 text-5xl opacity-20">
+            <div className="absolute right-1/4 bottom-10 text-5xl opacity-20">
               🚀
             </div>
           </div>
-          <div className="container relative z-10 mx-auto px-4 text-center">
+          <div className="relative z-10 container mx-auto px-4 text-center">
             <div className="mb-6">
               <span className="mb-4 inline-block animate-bounce text-7xl">
                 🎆
               </span>
             </div>
-            <h1 className="mb-6 text-5xl font-bold leading-tight text-white md:text-7xl">
+            <h1 className="mb-6 text-5xl leading-tight font-bold text-white md:text-7xl">
               2025
-              <span className="block bg-gradient-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent">
+              <span className="block bg-linear-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent">
                 Year in Review
               </span>
             </h1>
@@ -260,10 +260,10 @@ export default function YearInReview2025() {
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="group rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 p-6 text-center transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20"
+                  className="group rounded-2xl bg-linear-to-br from-gray-800 to-gray-900 p-6 text-center transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20"
                 >
                   <div className="mb-2 text-4xl">{stat.emoji}</div>
-                  <div className="mb-2 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-5xl font-bold text-transparent">
+                  <div className="mb-2 bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-5xl font-bold text-transparent">
                     {stat.number}
                   </div>
                   <div className="mb-2 text-lg font-semibold text-white">
@@ -277,7 +277,7 @@ export default function YearInReview2025() {
         </section>
 
         {/* Your Year in Numbers (Funny) */}
-        <section className="bg-gradient-to-br from-blue-900 to-purple-900 py-20">
+        <section className="bg-linear-to-br from-blue-900 to-purple-900 py-20">
           <div className="container mx-auto px-4">
             <div className="mb-16 text-center">
               <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
@@ -291,7 +291,7 @@ export default function YearInReview2025() {
               {funnyStats.map((item, index) => (
                 <div
                   key={index}
-                  className="rounded-xl bg-white/10 p-4 text-center backdrop-blur-sm transition-all duration-300 hover:bg-white/20"
+                  className="rounded-xl bg-white/10 p-4 text-center backdrop-blur-xs transition-all duration-300 hover:bg-white/20"
                 >
                   <div className="mb-2 text-3xl">{item.emoji}</div>
                   <div className="text-2xl font-bold text-white">
@@ -305,7 +305,7 @@ export default function YearInReview2025() {
         </section>
 
         {/* Good Things */}
-        <section className="bg-gradient-to-br from-green-50 to-emerald-100 py-20 dark:from-green-900/20 dark:to-emerald-900/20">
+        <section className="bg-linear-to-br from-green-50 to-emerald-100 py-20 dark:from-green-900/20 dark:to-emerald-900/20">
           <div className="container mx-auto px-4">
             <div className="mb-16 text-center">
               <span className="mb-4 inline-block text-5xl">🌟</span>
@@ -320,7 +320,7 @@ export default function YearInReview2025() {
               {goodThings.map((item, index) => (
                 <div
                   key={index}
-                  className="rounded-2xl border border-green-200 bg-white p-6 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-lg dark:border-green-800 dark:bg-gray-800"
+                  className="rounded-2xl border border-green-200 bg-white p-6 shadow-xs transition-all duration-300 hover:scale-105 hover:shadow-lg dark:border-green-800 dark:bg-gray-800"
                 >
                   <div className="mb-3 text-3xl">{item.emoji}</div>
                   <h3 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">
@@ -336,7 +336,7 @@ export default function YearInReview2025() {
         </section>
 
         {/* Bad Things */}
-        <section className="bg-gradient-to-br from-red-50 to-orange-100 py-20 dark:from-red-900/20 dark:to-orange-900/20">
+        <section className="bg-linear-to-br from-red-50 to-orange-100 py-20 dark:from-red-900/20 dark:to-orange-900/20">
           <div className="container mx-auto px-4">
             <div className="mb-16 text-center">
               <span className="mb-4 inline-block text-5xl">😬</span>
@@ -351,7 +351,7 @@ export default function YearInReview2025() {
               {badThings.map((item, index) => (
                 <div
                   key={index}
-                  className="rounded-2xl border border-red-200 bg-white p-6 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-lg dark:border-red-800 dark:bg-gray-800"
+                  className="rounded-2xl border border-red-200 bg-white p-6 shadow-xs transition-all duration-300 hover:scale-105 hover:shadow-lg dark:border-red-800 dark:bg-gray-800"
                 >
                   <div className="mb-3 text-3xl">{item.emoji}</div>
                   <h3 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">
@@ -373,7 +373,7 @@ export default function YearInReview2025() {
               <h2 className="mb-8 text-3xl font-bold text-white md:text-4xl">
                 🏆 Framework of the Year Award
               </h2>
-              <div className="mb-8 rounded-2xl bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-500 p-8">
+              <div className="mb-8 rounded-2xl bg-linear-to-r from-yellow-500 via-yellow-400 to-yellow-500 p-8">
                 <div className="text-6xl font-bold text-gray-900">???</div>
                 <p className="mt-4 text-xl text-gray-800">
                   We couldn&apos;t decide. There were too many.
@@ -406,7 +406,7 @@ export default function YearInReview2025() {
         </section>
 
         {/* 2026 Predictions */}
-        <section className="bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 py-20">
+        <section className="bg-linear-to-br from-indigo-900 via-purple-900 to-pink-900 py-20">
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-3xl text-center">
               <span className="mb-4 inline-block text-5xl">🔮</span>
@@ -414,8 +414,8 @@ export default function YearInReview2025() {
                 2026 Prediction
               </h2>
               <p className="mb-8 text-purple-200">Our crystal ball says...</p>
-              <div className="rounded-2xl bg-white/10 p-8 backdrop-blur-sm">
-                <p className="text-xl italic text-white md:text-2xl">
+              <div className="rounded-2xl bg-white/10 p-8 backdrop-blur-xs">
+                <p className="text-xl text-white italic md:text-2xl">
                   &ldquo;{randomPrediction}&rdquo;
                 </p>
               </div>
@@ -462,7 +462,7 @@ type Developer = {
         </section>
 
         {/* Share Section */}
-        <section className="bg-gradient-to-r from-gray-900 to-gray-800 py-20">
+        <section className="bg-linear-to-r from-gray-900 to-gray-800 py-20">
           <div className="container mx-auto px-4 text-center">
             <h2 className="mb-6 text-3xl font-bold text-white md:text-4xl">
               Share Your 2025! 🎉
@@ -486,7 +486,7 @@ type Developer = {
         </section>
 
         {/* CTA */}
-        <section className="bg-gradient-to-br from-yellow-400 via-yellow-500 to-orange-500 py-20">
+        <section className="bg-linear-to-br from-yellow-400 via-yellow-500 to-orange-500 py-20">
           <div className="container mx-auto px-4 text-center">
             <h2 className="mb-6 text-3xl font-bold text-gray-900 md:text-4xl">
               Here&apos;s to 2026! 🥂
@@ -504,7 +504,7 @@ type Developer = {
               </Link>
               <Link
                 href="/"
-                className="rounded-full bg-white/30 px-8 py-4 font-medium text-gray-900 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/50"
+                className="rounded-full bg-white/30 px-8 py-4 font-medium text-gray-900 backdrop-blur-xs transition-all duration-300 hover:scale-105 hover:bg-white/50"
               >
                 Back to Homepage
               </Link>

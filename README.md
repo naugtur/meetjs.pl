@@ -73,7 +73,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-09-02T23:59:59+02:00', // Expiry date (ISO 8601)
     description:
       'React Universe is the largest React conference in Central Europe...', // Optional full description
-    gradient: 'bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500', // Tailwind gradient classes
+    gradient: 'bg-linear-to-r from-yellow-400 via-orange-500 to-pink-500', // Tailwind gradient classes
     icon: '🪐', // Optional emoji or icon
     emojiRight: '🇵🇱', // Optional emoji shown after the location
     country: 'Poland', // Optional event country

@@ -39,7 +39,7 @@ export const NavigationLink = ({
       href={href}
       className={classNames(
         baseClasses,
-        'whitespace-nowrap rounded-md px-3 py-2 font-medium',
+        'rounded-md px-3 py-2 font-medium whitespace-nowrap',
       )}
       aria-current={current ? 'page' : undefined}
       target="_blank"
@@ -58,7 +58,7 @@ export const NavigationLink = ({
       href={href}
       className={classNames(
         baseClasses,
-        'whitespace-nowrap rounded-md px-3 py-2 font-medium',
+        'rounded-md px-3 py-2 font-medium whitespace-nowrap',
       )}
       aria-current={current ? 'page' : undefined}
       itemProp="url"

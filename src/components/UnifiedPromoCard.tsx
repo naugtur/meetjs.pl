@@ -38,31 +38,31 @@ interface VariantConfig {
 
 const variantConfigs: Record<PromoVariant, VariantConfig> = {
   event: {
-    iconBg: 'bg-gradient-to-br from-purple-500 to-pink-600',
+    iconBg: 'bg-linear-to-br from-purple-500 to-pink-600',
     defaultIcon: '🎟️',
     discountVariant: 'event',
     ctaGradient:
-      'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700',
+      'bg-linear-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700',
     linkColor:
       'text-purple-600 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-300',
     websiteLabel: 'Website',
   },
   software: {
-    iconBg: 'bg-gradient-to-br from-indigo-500 to-purple-600',
+    iconBg: 'bg-linear-to-br from-indigo-500 to-purple-600',
     defaultIcon: '🖥️',
     discountVariant: 'software',
     ctaGradient:
-      'bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700',
+      'bg-linear-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700',
     linkColor:
       'text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300',
     websiteLabel: 'Website',
   },
   learning: {
-    iconBg: 'bg-gradient-to-br from-green-500 to-teal-600',
+    iconBg: 'bg-linear-to-br from-green-500 to-teal-600',
     defaultIcon: '📚',
     discountVariant: 'software',
     ctaGradient:
-      'bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700',
+      'bg-linear-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700',
     ctaTextColor: 'text-white',
     linkColor:
       'text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300',
@@ -148,7 +148,7 @@ export default function UnifiedPromoCard({
         {isEventVariant ? (
           <div className="mb-6 grid grid-cols-2 gap-4">
             <div className="flex items-start gap-2">
-              <Calendar className="mt-0.5 h-4 w-4 flex-shrink-0 text-gray-400" />
+              <Calendar className="mt-0.5 h-4 w-4 shrink-0 text-gray-400" />
               <div className="min-w-0">
                 <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
                   Valid Until
@@ -160,7 +160,7 @@ export default function UnifiedPromoCard({
             </div>
             {promo.city && promo.country && (
               <div className="flex items-start gap-2">
-                <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-gray-400" />
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gray-400" />
                 <div className="min-w-0">
                   <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
                     Location

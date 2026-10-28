@@ -79,7 +79,7 @@ export const LanguageSwitcher = ({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
-        className={`flex items-center rounded-md px-3 py-2 font-medium text-white hover:bg-green/80 hover:text-purple ${className}`}
+        className={`hover:bg-green/80 hover:text-purple flex items-center rounded-md px-3 py-2 font-medium text-white ${className}`}
         aria-haspopup="true"
         aria-expanded="false"
       >
@@ -94,7 +94,7 @@ export const LanguageSwitcher = ({
             onClick={() => handleLanguageChange(lang)}
             className={`flex cursor-pointer items-center ${
               currentLanguage === lang
-                ? 'bg-purple/10 font-medium text-purple'
+                ? 'bg-purple/10 text-purple font-medium'
                 : ''
             }`}
           >

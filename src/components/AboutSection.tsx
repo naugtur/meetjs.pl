@@ -34,7 +34,7 @@ export const AboutSection = async () => {
               href="/about"
               className={buttonVariants({
                 className:
-                  'w-fit bg-purple px-8 py-4 text-center text-black hover:bg-purple/80 dark:bg-green dark:hover:bg-green/80',
+                  'bg-purple hover:bg-purple/80 dark:bg-green dark:hover:bg-green/80 w-fit px-8 py-4 text-center text-black',
               })}
             >
               {t('about.learn_more')}

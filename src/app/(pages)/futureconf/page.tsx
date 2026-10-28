@@ -4,13 +4,13 @@ import { Calendar, MapPin, ExternalLink, Star } from 'lucide-react';
 
 export default function FutureConfPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50">
+    <div className="min-h-screen bg-linear-to-br from-purple-50 via-indigo-50 to-blue-50">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-r from-purple-600 via-indigo-500 to-blue-600 text-white">
+      <section className="relative overflow-hidden bg-linear-to-r from-purple-600 via-indigo-500 to-blue-600 text-white">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="mb-6 inline-flex items-center rounded-full bg-white/20 px-4 py-2 text-sm font-medium backdrop-blur-sm">
+            <div className="mb-6 inline-flex items-center rounded-full bg-white/20 px-4 py-2 text-sm font-medium backdrop-blur-xs">
               <Star className="mr-2 h-4 w-4" />
               meet.js Partnership
             </div>
@@ -85,7 +85,7 @@ export default function FutureConfPage() {
           </div>
 
           {/* How Group Discount Works */}
-          <div className="rounded-2xl bg-gradient-to-br from-purple-100 to-indigo-100 p-8">
+          <div className="rounded-2xl bg-linear-to-br from-purple-100 to-indigo-100 p-8">
             <h2 className="mb-6 text-3xl font-bold text-gray-900">
               How to Get Up to 50% Off
             </h2>
@@ -156,7 +156,7 @@ export default function FutureConfPage() {
               height={320}
               className="h-64 w-full object-cover sm:h-80"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent"></div>
             <div className="absolute bottom-6 left-6 text-white">
               <p className="text-lg font-semibold">Experience the Energy</p>
               <p className="text-sm opacity-90">
@@ -321,7 +321,7 @@ export default function FutureConfPage() {
                 height={192}
                 className="h-48 w-full object-cover transition-transform hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent"></div>
               <div className="absolute bottom-3 left-3 text-sm font-medium text-white">
                 Inspiring Speakers
               </div>
@@ -334,7 +334,7 @@ export default function FutureConfPage() {
                 height={192}
                 className="h-48 w-full object-cover transition-transform hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent"></div>
               <div className="absolute bottom-3 left-3 text-sm font-medium text-white">
                 Engaged Community
               </div>
@@ -347,7 +347,7 @@ export default function FutureConfPage() {
                 height={192}
                 className="h-48 w-full object-cover transition-transform hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent"></div>
               <div className="absolute bottom-3 left-3 text-sm font-medium text-white">
                 Networking Opportunities
               </div>
@@ -356,7 +356,7 @@ export default function FutureConfPage() {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-16 rounded-2xl bg-gradient-to-r from-purple-600 via-indigo-500 to-blue-600 p-8 text-center text-white">
+        <div className="mt-16 rounded-2xl bg-linear-to-r from-purple-600 via-indigo-500 to-blue-600 p-8 text-center text-white">
           <h2 className="mb-4 text-3xl font-bold">
             Ready to Join FutureConf 2025?
           </h2>

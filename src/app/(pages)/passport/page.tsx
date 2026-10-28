@@ -129,7 +129,7 @@ export default async function PassportPage() {
                           <h3 className="text-lg font-semibold text-gray-900">
                             {entry.participant.displayName}
                           </h3>
-                          <p className="mt-1 text-sm text-purple">
+                          <p className="text-purple mt-1 text-sm">
                             {t('passport.achieved_on', {
                               date: formatAchievedAt(
                                 entry.achievedAt,
@@ -146,7 +146,7 @@ export default async function PassportPage() {
                                 href={entry.participant.profileUrl}
                                 target="_blank"
                                 rel="noopener"
-                                className="inline-flex items-center gap-1 text-xs text-blue hover:text-blue/80"
+                                className="text-blue hover:text-blue/80 inline-flex items-center gap-1 text-xs"
                               >
                                 {t('speakers_page.view_profile')}
                                 <FaArrowUpRightFromSquare className="h-3 w-3" />
@@ -202,7 +202,7 @@ export default async function PassportPage() {
                             href={participant.profileUrl}
                             target="_blank"
                             rel="noopener"
-                            className="inline-flex items-center gap-1 text-xs text-blue hover:text-blue/80"
+                            className="text-blue hover:text-blue/80 inline-flex items-center gap-1 text-xs"
                           >
                             {t('speakers_page.view_profile')}
                             <FaArrowUpRightFromSquare className="h-3 w-3" />

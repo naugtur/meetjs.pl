@@ -11,7 +11,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2026-11-17T23:59:59+01:00',
     description:
       'meet.js is a Community Partner of NG Poland 2026! The 11th edition of the biggest Angular conference in the world takes place November 17, 2026 in Warsaw – one day, one track, the Angular Core Team on stage and 1000+ developers in the room. Available both in-person at Multikino Złote Tarasy and online. Part of a full week of events: workshops on November 16 & 20, JS Poland on November 18 and AI Poland on November 19. We have free 3-day tickets (all 3 conferences!) to give away in the meet.js community – stay tuned!',
-    gradient: 'bg-gradient-to-r from-red-600 via-pink-500 to-purple-600',
+    gradient: 'bg-linear-to-r from-red-600 via-pink-500 to-purple-600',
     icon: '🅰️',
     image: 'https://ng-poland.pl/images/ng-logo-white.png',
     emojiRight: '🇵🇱',
@@ -28,7 +28,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2026-11-18T23:59:59+01:00',
     description:
       'meet.js is a Community Partner of JS Poland 2026! The 10th edition of the biggest JavaScript conference in CEE brings the community together on November 18, 2026 in Warsaw. International speakers covering the entire JavaScript ecosystem – from React and Vue to Node.js and TypeScript. Available both in-person at Multikino Złote Tarasy and online. Part of a full week of events: workshops on November 16 & 20, NG Poland on November 17 and AI Poland on November 19. We have free 3-day tickets (all 3 conferences!) to give away in the meet.js community – stay tuned!',
-    gradient: 'bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500',
+    gradient: 'bg-linear-to-r from-yellow-400 via-orange-500 to-red-500',
     icon: '🟨',
     image: 'https://js-poland.pl/images/js-logo-white.png',
     emojiRight: '🇵🇱',
@@ -45,7 +45,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2026-11-19T23:59:59+01:00',
     description:
       'meet.js is a Community Partner of AI Poland 2026! The developer-focused AI conference returns for its 2nd edition on November 19, 2026 in Warsaw. Created by developers for developers – practical, real-world AI applications: building AI agents, integrating LLMs and shipping intelligent products. Available both in-person at Multikino Złote Tarasy and online. Part of a full week of events: workshops on November 16 & 20, NG Poland on November 17 and JS Poland on November 18. We have free 3-day tickets (all 3 conferences!) to give away in the meet.js community – stay tuned!',
-    gradient: 'bg-gradient-to-r from-purple-600 via-blue-500 to-cyan-400',
+    gradient: 'bg-linear-to-r from-purple-600 via-blue-500 to-cyan-400',
     icon: '🤖',
     image: 'https://ai-poland.pl/images/ai-logo-white.png',
     emojiRight: '🇵🇱',
@@ -62,7 +62,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2026-10-13T23:59:59+02:00',
     description:
       'Skill Sprint to bezpłatna konferencja karierowa dla studentów i absolwentów – 13 października 2026, 10:00–15:00, Centrum Konferencyjne w Centrum Nauki Kopernik w Warszawie. Zero ogólników, 100% praktyki: 14-minutowe prelekcje ekspertów i praktyków branży, Sprint Pytań do rekruterów (rekrutacja, zarobki, błędy w aplikacjach), networking z czołowymi firmami szukającymi młodych talentów, analiza CV i dopracowanie profilu LinkedIn, darmowa profesjonalna sesja zdjęciowa oraz konkursy z nagrodami. Wstęp bezpłatny – wymagana wcześniejsza rejestracja!',
-    gradient: 'bg-gradient-to-r from-green-700 via-emerald-500 to-green-400',
+    gradient: 'bg-linear-to-r from-green-700 via-emerald-500 to-green-400',
     icon: '🚀',
     image: '/partners/skill-sprint.png',
     emojiRight: '🇵🇱',
@@ -80,7 +80,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2026-10-22T23:59:59+02:00',
     description:
       'meet.js is an official Community Partner of Cloud Native Days Poland 2026! Join us on October 22 at Varso Tower (Chmielna 69) in Warsaw for a community-driven, non-profit conference covering Cloud Native, Kubernetes, platform engineering, DevOps, and software architecture. The event evolves from KCD Warsaw 2025 and is proudly supported by the CNCF. Use code meetjs_cnd26 for 20% off your ticket!',
-    gradient: 'bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600',
+    gradient: 'bg-linear-to-r from-sky-500 via-blue-600 to-indigo-600',
     icon: '☸️',
     image: '/partners/cnd-poland-black.svg',
     emojiRight: '🇵🇱',
@@ -98,7 +98,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2026-10-29T23:59:59+01:00',
     description:
       'Angular Agentic Engineering: From Spec to Ship — a full-day (8h) online workshop by House of Angular on October 30, 2026, led by Fanis Prodromou (Google Developer Expert). Learn to build systematically with AI agents: spec-driven development, custom Skills, sub-agents, and multi-library planning on a real Nx/Angular codebase. Hands-on work is based on Claude Code, with a translation handout for Cursor and Antigravity users. Small group (max 15 seats) with 1:1 GDE mentoring included. Use code october10 at checkout for 10% off — valid until October 29!',
-    gradient: 'bg-gradient-to-r from-pink-600 via-rose-500 to-purple-600',
+    gradient: 'bg-linear-to-r from-pink-600 via-rose-500 to-purple-600',
     icon: '🅰️',
     image: '/discounts/house-of-angular.png',
     discountCode: 'october10',
@@ -115,7 +115,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2026-11-18T23:59:59+01:00',
     description:
       'Trzecia edycja Infoshare na Śląsku! Wydarzenie technologiczno-biznesowe łączące technologie, biznes i ludzi. 17-18 listopada 2026 w Międzynarodowym Centrum Kongresowym w Katowicach. meet.js is a Community Partner — use code isk26meetjs for a discount on your ticket!',
-    gradient: 'bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600',
+    gradient: 'bg-linear-to-r from-blue-600 via-purple-600 to-pink-600',
     icon: '🎟️',
     image: '/partners/inforshare-kwadrat.png',
     emojiRight: '🇵🇱',
@@ -133,7 +133,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2026-11-27T23:59:59+01:00',
     description:
       'meet.js is an official Media Partner of WAWTECH 2026! The second edition of the conference by DOU lands in Warsaw on November 26–27, bringing together 5,000+ engineers and tech leaders and 60+ speakers. The lineup already includes José Valim (creator of Elixir), Daniel Stenberg (creator and lead developer of curl), Ivan Lapa (Netflix), Dima Maleev (Agoda), and Taras Kloba (Microsoft). Use code MEETJS for 10% off your ticket!',
-    gradient: 'bg-gradient-to-r from-indigo-600 via-purple-600 to-fuchsia-600',
+    gradient: 'bg-linear-to-r from-indigo-600 via-purple-600 to-fuchsia-600',
     image: '/discounts/wawtech.png',
     emojiRight: '🇵🇱',
     country: 'Poland',
@@ -150,7 +150,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2026-11-06T23:59:59+01:00',
     description:
       'The Hack Summit 2026 to kolejna edycja wiodącej konferencji środowiska cybersec. Wydarzenie odbędzie się w formule hybrydowej: 05.11 Online oraz 06.11 na PGE Narodowym w Warszawie. Ponad 150 praktycznych prelekcji, 15+ ścieżek tematycznych obejmujących AI & Trends, Hacking, Defending, SoftwareDevSec, SecOps, CloudSec, OSINT, Forensics, Strategy, Governance, Audit, Risk, Legal & Compliance. Konferencji towarzyszy CyberSec Expo – targi pracy, produktów i usług. Networking wspierany aplikacją z funkcją matchmaking oraz wieczorne preparty i afterparty. Use code THS26SP20 for 20% off Standard or Exec packages!',
-    gradient: 'bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500',
+    gradient: 'bg-linear-to-r from-red-600 via-orange-500 to-yellow-500',
     icon: '🔐',
     image: 'https://thehacksummit.com/fav/apple-touch-icon.png',
     emojiRight: '🇵🇱',
@@ -169,7 +169,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2026-10-21T23:59:59+03:00',
     description:
       "Thanks to our partners at CityJS Athens, we're excited to offer you an exclusive 10% discount! Join 30+ expert speakers, 10 hands-on workshops, and 3 unforgettable days dedicated to AI and JavaScript, October 21-23, 2026 in Athens. Hear from industry leaders representing AWS, Microsoft, IBM, NVIDIA, Nokia, Neo4j, Supabase, and many more. The discount applies to most ticket types, workshop passes, and ticket bundles. Use code MEETJS for 10% off your ticket!",
-    gradient: 'bg-gradient-to-r from-blue via-purple to-green',
+    gradient: 'bg-linear-to-r from-blue via-purple to-green',
     icon: '🏛️',
     image: '/partners/cityjs.jpg',
     emojiRight: '🇬🇷',
@@ -187,7 +187,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2026-09-18T23:59:59+02:00',
     description:
       'meet.js is an official Media Partner of Agent Conf 2026! Join engineers and builders in Warsaw on September 17–18 to explore the future of agentic development, from engineering fundamentals and multi-agent orchestration to real-world adoption. Use code meet.js15 for 15% off your ticket!',
-    gradient: 'bg-gradient-to-r from-cyan-500 via-blue-600 to-violet-600',
+    gradient: 'bg-linear-to-r from-cyan-500 via-blue-600 to-violet-600',
     image: '/discounts/agent-conf.svg',
     emojiRight: '🇵🇱',
     country: 'Poland',
@@ -204,7 +204,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2026-07-18T23:59:59+02:00',
     description:
       '☀️ WAWTech+Summer 2026 — a summer tech festival for the IT community by DOU 🦄, July 18 at Tor Służewiec, Warsaw! Expect ~5,000 attendees, talks, workshops, live coding, networking, and lots more. Use code MEETJS15 for 15% off your ticket!',
-    gradient: 'bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500',
+    gradient: 'bg-linear-to-r from-yellow-400 via-orange-500 to-red-500',
     image: '/discounts/wawtech.svg',
     emojiRight: '🇵🇱',
     country: 'Poland',
@@ -222,7 +222,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2026-09-13T23:59:59+02:00',
     description:
       'meet.js jest oficjalnym Community Partnerem Code Europe 2026! 🎉 14 września online, 15 września na Stadionie Legii w Warszawie. Ponad 80 prelekcji w ścieżkach AI Engineering & Data, Cloud & Platform Engineering, Software Architecture, Cybersecurity i Engineering Careers. Na scenie m.in. GitHub, Anthropic, Netflix, Microsoft, Red Hat. Dla społeczności meet.js mamy dwa kody: **MEETJS26** – 10 darmowych zaproszeń (wpisz w koszyku, limit 10 zastosowań) oraz **MEETUS20** – 20% zniżki na bilet Full Pass. Oba kody ważne do 13.09. Wpisz kod w koszyku na codeeurope.pl/tickets po wybraniu rodzaju i liczby biletów.',
-    gradient: 'bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600',
+    gradient: 'bg-linear-to-r from-violet-600 via-purple-600 to-indigo-600',
     icon: '🇪🇺',
     image: '/partners/code europe.jpg',
     emojiRight: '🇵🇱',
@@ -240,7 +240,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2026-06-30T23:59:59+02:00',
     description:
       "🚀 React Summit 2026 — Amsterdam, June 12 & 16! The world's biggest React conference brings together 60+ speakers including Kitze (Developer Who Builds & Memes), Aurora Scharff (DX Engineer, Vercel), Dominik Dorfmeister (React Query Maintainer), Mark Erikson (Redux Maintainer), Scott Tolinski (Co-host, Syntax.fm), and Alex Russell (Partner PM for Edge). Deep dives into AI-Assisted Coding, React Server Components, Full-Stack Architecture, and Career Growth. Experience Amsterdam boat & walking tours, networking, food trucks, and an after-party! Use code FRIENDS for 10% off your ticket!",
-    gradient: 'bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-500',
+    gradient: 'bg-linear-to-r from-blue-600 via-cyan-500 to-blue-500',
     icon: '⚛️',
     image: '/discounts/RS_Logo_Vertical_Color.png',
     emojiRight: '🇳🇱',
@@ -258,7 +258,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2026-10-05T23:59:59+02:00',
     description:
       'Testing Ground Conference 2026 - największa polska konferencja łącząca świat jakości oprogramowania! Odbędzie się 05-06 października 2026 w Airport Hotel Okęcie w Warszawie. Trzy główne ścieżki: testowanie oprogramowania, cyberbezpieczeństwo oraz dostępność cyfrowa. 35 topowych ekspertów, blisko 500 uczestników, ponad 100 firm i 200 partnerów. Use code meet.js-10% for 10% off your ticket!',
-    gradient: 'bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500',
+    gradient: 'bg-linear-to-r from-emerald-500 via-teal-500 to-cyan-500',
     icon: '🧪',
     emojiRight: '🇵🇱',
     country: 'Poland',
@@ -278,7 +278,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2026-05-21T23:59:59+02:00',
     description:
       '20. edycja Infoshare! Największa polska konferencja technologiczna powraca 20-21 maja 2026 w Gdańsku pod hasłem: Shape Tomorrow Today. 📚 Sceny tematyczne: Inspire, Marketing & Sales, Innovation, Leaders, Dev Trends, AI & Architecture, R&D & Cybersec. 🤝 Networking bez barier, moderowane dyskusje Round Tables, sesje Q&A. 🌊 Side eventy w Trójmieście, w tym kultowe Great Networking Party. Świętuj z nami 20 lat innowacji! Use code ISC26-meetjs10 for 10% off your ticket!',
-    gradient: 'bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600',
+    gradient: 'bg-linear-to-r from-blue-600 via-purple-600 to-pink-600',
     icon: '🎟️',
     image: '/partners/inforshare-kwadrat.png',
     emojiRight: '🇵🇱',
@@ -298,7 +298,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-11-25T23:59:59+01:00',
     description:
       'Druga edycja Infoshare na Śląsku! Wydarzenie technologiczno-biznesowe łączące technologie, biznes i ludzi. 3 sceny tematyczne (Growth, AI, R&D), formaty networkingowe (Round Tables, Matchmaking, Speed Dating), spotkania z ekspertami oraz wieczorne Networking Party. Use code ISK25-meetjs10 for 10% off your ticket!',
-    gradient: 'bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600',
+    gradient: 'bg-linear-to-r from-blue-600 via-purple-600 to-pink-600',
     icon: '🎟️',
     emojiRight: '🇵🇱',
     country: 'Poland',
@@ -316,7 +316,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-05-24T23:59:59+02:00',
     description:
       'Join InfoShare 2025, one of the largest tech conferences in Central Europe! Use code ISC25-MeetJS10 for 10% off your ticket.',
-    gradient: 'bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600',
+    gradient: 'bg-linear-to-r from-blue-600 via-purple-600 to-pink-600',
     icon: '🎟️',
     emojiRight: '🇵🇱',
     country: 'Poland',
@@ -333,7 +333,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-06-30T23:59:59+02:00',
     description:
       "Join Poland's biggest tech festival! Code Europe 2025 takes place on June 30 - July 1, 2025 at EXPO Kraków. Experience inspiring talks, workshops, and networking opportunities with tech leaders and innovators. Use code MEETJS25 for a special discount on tickets!",
-    gradient: 'bg-gradient-to-r from-purple-600 via-blue-500 to-indigo-600',
+    gradient: 'bg-linear-to-r from-purple-600 via-blue-500 to-indigo-600',
     icon: '🎪',
     emojiRight: '🇵🇱',
     country: 'Poland',
@@ -350,7 +350,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-06-10T23:59:59+02:00',
     description:
       'MS Tech Summit 2025 is one of the few community conferences in Poland fully dedicated to Microsoft technologies. Join online on June 11 and in-person in Warsaw on June 12, 2025. Use code MSTS25xmeetjs for 30% off Standard and Exec packages!',
-    gradient: 'bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-600',
+    gradient: 'bg-linear-to-r from-blue-500 via-cyan-400 to-blue-600',
     icon: '🧠',
     emojiRight: '🇵🇱',
     country: 'Poland',
@@ -367,7 +367,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-05-19T23:59:59+02:00',
     description:
       'DevDays Europe is back for its 7th edition! Join us in Vilnius & online on May 20-23, 2025, for full-day workshops, 90+ content-packed sessions, global networking with 700+ participants, EXPO, and more! Use code FINAL15 for 15% off.',
-    gradient: 'bg-gradient-to-r from-indigo-600 via-blue-500 to-cyan-400',
+    gradient: 'bg-linear-to-r from-indigo-600 via-blue-500 to-cyan-400',
     icon: '👨🏻‍💻',
     emojiRight: '🇱🇹',
     country: 'Lithuania',
@@ -385,7 +385,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-05-24T23:59:59+02:00',
     description:
       'CityJS Athens brings together JavaScript developers for two days of talks, workshops and networking in the heart of Greece. Join experts and enthusiasts to explore the latest in JS frameworks, tools, and best practices.',
-    gradient: 'bg-gradient-to-r from-blue via-purple to-green',
+    gradient: 'bg-linear-to-r from-blue via-purple to-green',
     icon: '🚀',
     emojiRight: '🇬🇷',
     country: 'Greece',
@@ -403,7 +403,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-11-30T23:59:59+00:00',
     description:
       "Join one of the biggest JavaScript conferences in the world! CityJS London 2026 features legendary speakers including Douglas Crockford (Creator of JSON), Matteo Collina (Founder & CTO, Platformatic), Tejas Kumar (Director, Developer Relations @ IBM), Anna Henningsen (Staff Engineer @ MongoDB), Rich Harris (Vercel), and Kitze (Sizzy). If you've ever written JSON.parse() or JSON.stringify(), you already know this lineup is legendary! Early bird tickets available until the end of November. Call for papers is also open - submit your talk!",
-    gradient: 'bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600',
+    gradient: 'bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600',
     icon: '🏙️',
     image: '/partners/cityjs.jpg',
     emojiRight: '🇬🇧',
@@ -420,7 +420,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-05-27T23:59:59+02:00',
     description:
       "App.js is Poland's premier conference focused on JavaScript for mobile and web applications. Join us in Kraków for hands-on workshops, in-depth technical talks, and networking with the top JS developers building modern applications.",
-    gradient: 'bg-gradient-to-r from-indigo-500 via-blue-500 to-purple-500',
+    gradient: 'bg-linear-to-r from-indigo-500 via-blue-500 to-purple-500',
     icon: '📱',
     emojiRight: '🇵🇱',
     country: 'Poland',
@@ -440,7 +440,7 @@ export const eventsDiscounts: Promo[] = [
       'React Universe is the largest React conference in Central Europe, bringing together the global React community in Wrocław, Poland. Featuring speakers from Meta and leading React teams, this event covers everything from React core concepts to advanced patterns and the React ecosystem.',
     workshopDescription:
       'Exclusive workshop on Day 0 (Sep 2, 2025): "Vercel AI SDK v5: Building AI-powered Apps in TypeScript" by Matt Pocock. Use code COMBO for €70 off the workshop when purchased with your conference ticket.',
-    gradient: 'bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500',
+    gradient: 'bg-linear-to-r from-yellow-400 via-orange-500 to-pink-500',
     icon: '🪐',
     emojiRight: '🇵🇱',
     country: 'Poland',
@@ -459,7 +459,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-07-11T23:59:59+02:00',
     description:
       "Join the WeAreDevelopers World Congress 2025 (July 10-11), the world's leading event for developers, AI innovators & tech leaders! Connect with 15,000+ developers, 500+ speakers including GitHub CEO Thomas Dohmke, Amazon CTO Dr. Werner Vogels, and legendary game creator John Romero. Experience cutting-edge talks on AI, software development, and the future of technology. Use code Community_MeetJs for 10% off your ticket.",
-    gradient: 'bg-gradient-to-r from-orange-500 via-red-500 to-pink-600',
+    gradient: 'bg-linear-to-r from-orange-500 via-red-500 to-pink-600',
     icon: '🌍',
     emojiRight: '🇩🇪',
     country: 'Germany',
@@ -477,7 +477,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-05-21T23:59:59+02:00',
     description:
       'VueConf US is the premier Vue.js conference in North America, held in New Orleans on May 20-21, 2025. Join for two days of code playground, talks, and networking with the Vue community. Optional workshop day available on May 19. Save $199 with our exclusive discount!',
-    gradient: 'bg-gradient-to-r from-green-400 via-blue-500 to-purple-500',
+    gradient: 'bg-linear-to-r from-green-400 via-blue-500 to-purple-500',
     icon: '🟩',
     emojiRight: '🇺🇸',
     country: 'USA',
@@ -494,7 +494,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-05-17T23:59:59+02:00',
     description:
       'As a Community Partner for the Women in Tech Summit, meet.js members can use code SUMMIT_2025MEET.JS50 for 50% off tickets until May 17, 2025. Free tickets are also available - grab them as soon as possible for the best experience! The Summit offers networking with tech professionals, inspiring talks, and workshops. Join us and be part of this empowering event!',
-    gradient: 'bg-gradient-to-r from-pink-500 via-yellow-400 to-purple-500',
+    gradient: 'bg-linear-to-r from-pink-500 via-yellow-400 to-purple-500',
     icon: '👧',
     emojiRight: '🇵🇱',
     country: 'Poland',
@@ -511,7 +511,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-05-31T23:59:59+02:00',
     description:
       'React Summit 2025 brings together the global React community for an immersive experience with expert-led sessions and networking opportunities. Use code REACT for 10% off on tickets!',
-    gradient: 'bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-500',
+    gradient: 'bg-linear-to-r from-blue-600 via-indigo-500 to-purple-500',
     icon: '⚛️',
     emojiRight: '🇳🇱',
     country: 'Netherlands',
@@ -528,7 +528,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-11-17T23:59:59+02:00',
     description:
       'React Summit US 2025 is the premier React conference in North America taking place November 18-21, 2025 in New York & Online. Join the global React community for expert-led sessions and networking. Use code FRIENDS for 10% off on tickets!',
-    gradient: 'bg-gradient-to-r from-red-500 via-blue-500 to-indigo-600',
+    gradient: 'bg-linear-to-r from-red-500 via-blue-500 to-indigo-600',
     icon: '⚛️',
     image: 'https://reactsummit.us/img/logo.svg?v5',
     emojiRight: '🇺🇸',
@@ -547,7 +547,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-06-09T23:59:59+02:00',
     description:
       'Our friendly meetup friends, WarsawJS, offer a 40% discount with code JScommunity for their meetup!',
-    gradient: 'bg-gradient-to-r from-red-500 via-pink-500 to-purple-600',
+    gradient: 'bg-linear-to-r from-red-500 via-pink-500 to-purple-600',
     icon: '🤝',
     image:
       'https://warsawjs.com/static/images/logos/logo-warsawjs-with-white-text.svg',
@@ -566,7 +566,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-10-28T23:59:59+02:00',
     description:
       'A two-day conference in the heart of Kraków – FutureConf 2025 takes place October 27-28 at the International Cultural Centre on the Main Square. The theme of Future 2025 is "AI in Production". The agenda features a mix of topics: from ML/AI to security and practical AI production use cases. Speakers include Mateusz Chrobok, Vladimir Alekseichenko, Ziemowit Dworakowski from AGH, Merve Noyan from Hugging Face, Sacha Bron from Llamaindex, Kacper Milan from mBank, and specialists from Docker, Qdrant, and Box. Buy your ticket and share with friends – each additional person increases the discount up to 50%!',
-    gradient: 'bg-gradient-to-r from-purple-600 via-indigo-500 to-blue-600',
+    gradient: 'bg-linear-to-r from-purple-600 via-indigo-500 to-blue-600',
     icon: '🤖',
     image: 'https://futureconf.tech/logo_transparent_big.png',
     emojiRight: '🇵🇱',
@@ -584,7 +584,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-09-17T23:59:59+02:00',
     description:
       'AI Miners to spotkania praktyków AI z biznesem w Katowicach. Realne wdrożenia, konkretne rozwiązania, wartościowe dyskusje. Wydarzenie łączy praktyków - developerów, inżynierów, founderów - z przedstawicielami biznesu, którzy chcą zrozumieć, jak naprawdę działa sztuczna inteligencja w produktach i procesach. Use code MEETJS-10 for 10% off your ticket!',
-    gradient: 'bg-gradient-to-r from-orange-500 via-red-500 to-purple-600',
+    gradient: 'bg-linear-to-r from-orange-500 via-red-500 to-purple-600',
     icon: '⛏️',
     emojiRight: '🇵🇱',
     country: 'Poland',
@@ -601,7 +601,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-10-29T23:59:59+02:00',
     description:
       'AI Miners #2 to druga edycja wydarzenia łączącego praktyków sztucznej inteligencji z biznesem. Nie ma tu miejsca na marketingowe slogany - zamiast tego usłyszysz realne historie wdrożeń AI, sprawdzone narzędzia i konkretne praktyki od ludzi, którzy naprawdę ogarniają temat. W programie: Jakub Masztalski (przetwarzanie transkrypcji w sprzedaży B2B), Witold Wydmański (finetuning Bielika), Marek Zibrow (lokalne modele AI), Damian Maślanka (profesjonalny vibe coding). Po prelekcjach networking i pizza. Wydarzenie odbędzie się 29 października 2025 w Miejskim Inkubatorze Przedsiębiorczości Rawa.Ink w Katowicach. Use code MEETJS-10 for 10% off your ticket!',
-    gradient: 'bg-gradient-to-r from-orange-500 via-red-500 to-purple-600',
+    gradient: 'bg-linear-to-r from-orange-500 via-red-500 to-purple-600',
     icon: '⛏️',
     image: 'https://aiminers.pl/logo.png',
     emojiRight: '🇵🇱',
@@ -619,7 +619,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-10-06T23:59:59+02:00',
     description:
       'Testing Ground Conference 2025 is a prestigious two-day event taking place October 6-7, 2025 in Warsaw. The conference theme is "Quality without compromise, security without exceptions, accessibility for everyone." Join 16 inspiring presentations and 6 practical workshops led by recognized experts. Perfect for QA professionals, security specialists, and those passionate about creating accessible digital products. Use code meet.js15 for 15% off your ticket!',
-    gradient: 'bg-gradient-to-r from-green-500 via-teal-500 to-blue-600',
+    gradient: 'bg-linear-to-r from-green-500 via-teal-500 to-blue-600',
     icon: '🧪',
     emojiRight: '🇵🇱',
     country: 'Poland',
@@ -636,7 +636,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-10-05T23:59:59+02:00',
     description:
       'HackYeah 2025 to największy w Europie stacjonarny hackathon, który odbędzie się 4-5 października 2025 roku w TAURON Arena w Krakowie. Przez 24 godziny setki programistów, designerów i pasjonatów nowych technologii zmierzą się z wyzwaniami wymagającymi szybkiego myślenia, współpracy i niebanalnych rozwiązań. Wydarzenie obejmuje biohacking, podróże, obronność oraz rozwiązania mające realny wpływ na codzienne życie. Równolegle odbędzie się konferencja technologiczna z ekspertami IT. Udział jest całkowicie darmowy - wystarczy wcześniejsza rejestracja. Mogą uczestniczyć osoby pełnoletnie indywidualnie lub w zespołach do 6 osób.',
-    gradient: 'bg-gradient-to-r from-orange-600 to-pink-600',
+    gradient: 'bg-linear-to-r from-orange-600 to-pink-600',
     icon: '💻',
     emojiRight: '🇵🇱',
     country: 'Poland',
@@ -653,7 +653,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-10-14T23:59:59+02:00',
     description:
       'The Hack Summit 2025 to VIII edycja wiodącej konferencji środowiska cybersec. Wydarzenie odbędzie się w formule hybrydowej: 13.10 Online oraz 14.10 na PGE Narodowym w Warszawie. Ponad 150 praktycznych prelekcji, 10+ ścieżek tematycznych obejmujących AI & Trends, Hacking, Defending, SoftwareDevSec, SecOps, CloudSec, OSINT, Forensics, Strategy, Governance, Audit, Risk, Legal & Compliance. Konferencji towarzyszy CyberSec Expo – targi pracy, produktów i usług. Networking wspierany aplikacją z funkcją matchmaking oraz wieczorne preparty i afterparty. Use code PARTNER for 10% off Standard or Exec packages!',
-    gradient: 'bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500',
+    gradient: 'bg-linear-to-r from-red-600 via-orange-500 to-yellow-500',
     icon: '🔐',
     emojiRight: '🇵🇱',
     country: 'Poland',
@@ -670,7 +670,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-11-18T23:59:59+02:00',
     description:
       'NG Poland 2025 is the biggest Angular conference in Europe, taking place November 18, 2025 in Warsaw. Join 25+ international speakers including members of the Google Angular Team for a full day of expert talks, workshops, and the NG Awards ceremony. Topics include Angular Signals, NgRx SignalStore, modern architectures, and more. Available both in-person at Multikino Złote Tarasy and online. Workshops available on November 17.',
-    gradient: 'bg-gradient-to-r from-red-600 via-pink-500 to-purple-600',
+    gradient: 'bg-linear-to-r from-red-600 via-pink-500 to-purple-600',
     icon: '🅰️',
     image: 'https://ng-poland.pl/images/ng-logo-white.png',
     emojiRight: '🇵🇱',
@@ -687,7 +687,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-11-19T23:59:59+02:00',
     description:
       'JS Poland 2025 brings together the JavaScript community on November 19, 2025 in Warsaw. Featuring 25+ international speakers covering the entire JavaScript ecosystem - from React and Vue to Node.js and TypeScript. Experience expert talks, the JS Awards ceremony, and networking with fellow JavaScript enthusiasts. Available both in-person at Multikino Złote Tarasy and online. Workshops available on November 17.',
-    gradient: 'bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500',
+    gradient: 'bg-linear-to-r from-yellow-400 via-orange-500 to-red-500',
     icon: '🟨',
     image: 'https://js-poland.pl/images/js-logo-white.png',
     emojiRight: '🇵🇱',
@@ -704,7 +704,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-11-20T23:59:59+02:00',
     description:
       'AI Poland 2025 is the premiere developer-focused AI conference taking place November 20, 2025 in Warsaw. Created by developers for developers, this conference delivers practical, real-world AI applications. Learn how to build AI agents, integrate LLMs, and create intelligent applications from top engineers and AI practitioners. Topics include AI development, machine learning, AI agents, and hands-on implementation. Available both in-person at Multikino Złote Tarasy and online. Workshops available on November 17.',
-    gradient: 'bg-gradient-to-r from-purple-600 via-blue-500 to-cyan-400',
+    gradient: 'bg-linear-to-r from-purple-600 via-blue-500 to-cyan-400',
     icon: '🤖',
     image: 'https://ai-poland.pl/images/ai-logo-white.png',
     emojiRight: '🇵🇱',
@@ -721,7 +721,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-10-29T23:59:59+02:00',
     description:
       "GitHub Universe 2025 takes place October 28-29 at Fort Mason in San Francisco. Join the global developer community online with a free virtual pass! Watch keynotes live and catch available sessions on-demand. Get full access to live-streamed keynotes and content, plus full access to recorded sessions once they're available. The virtual pass is always free - no discount code needed!",
-    gradient: 'bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900',
+    gradient: 'bg-linear-to-r from-gray-800 via-gray-700 to-gray-900',
     icon: '🐙',
     image:
       'https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png',
@@ -740,7 +740,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-12-17T23:59:59+01:00',
     description:
       'WAWTECH 2025 is a new international tech conference in Warsaw gathering over 5,000 developers, startups, CEOs, and investors from across Europe. Organized by DOU, the largest IT community in CEE, it features 3 stages and 6 tracks: AI, Highload, Dev, Startup, SciTech, and Product. Speakers will include representatives from companies such as OpenAI, Asana, Agoda, and Netflix. The main language is English and the event aims to become a central meeting point for the CEE tech community. December 16-17, 2025 at EXPO XXI, Warsaw. Use code MEETJS10 for 10% off any ticket type!',
-    gradient: 'bg-gradient-to-r from-indigo-600 via-blue-500 to-cyan-400',
+    gradient: 'bg-linear-to-r from-indigo-600 via-blue-500 to-cyan-400',
     icon: '🚀',
     image:
       'https://cdn.prod.website-files.com/68f89c19dc49271dca84d03f/68f8a10a207aff19953a1401_waw.png',
@@ -759,7 +759,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2025-12-07T23:59:59+01:00',
     description:
       'HackNation 2025 to pierwszy w Polsce hackathon wdrożeniowy organizowany przez Ministerstwo Cyfryzacji. 24 godziny kodowania, 500 000 PLN w puli nagród, wyzwania od ministerstw i instytucji publicznych. Wydarzenie łączy świeże, technologiczne umysły z administracją publiczną, by wspólnie stworzyć realne usprawnienia dla państwa. Finaliści otrzymają realną szansę na wdrożenie swoich pomysłów do urzędów, szkół i systemów, z których korzystają miliony Polaków. Udział jest całkowicie darmowy - wystarczy wcześniejsza rejestracja. 6-7 grudnia 2025, Bydgoskie Centrum Targowo-Wystawiennicze, Bydgoszcz.',
-    gradient: 'bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600',
+    gradient: 'bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600',
     icon: '🏛️',
     image: '/partners/hacknation.jpg',
     emojiRight: '🇵🇱',
@@ -777,7 +777,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2026-03-27T23:59:59+01:00',
     description:
       'React Paris 2026 is a two-day, single-track React.JS conference bringing together 500+ developers, tech leads, and consultants on March 26-27, 2026 at the Pullman Paris Montparnasse. Learn from influential voices including Tanner Linsley (TanStack), Mark Erikson (Redux Toolkit), Nadia Makarevich, Daishi Kato (Zustand, Jotai, Valtio), Kitze (Sizzy), Una Kravets (Google), and more! Deep technical sessions on Performance, State Management, Frameworks, AI, DX, and Accessibility. In-person attendees get exclusive access to "IN PERSON ONLY" sessions and the full hallway-track experience.',
-    gradient: 'bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-600',
+    gradient: 'bg-linear-to-r from-blue-500 via-cyan-400 to-blue-600',
     icon: '⚛️',
     image: '/discounts/LOGO REACT PARIS - White.png',
     emojiRight: '🇫🇷',
@@ -795,7 +795,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2026-03-20T23:59:59+01:00',
     description:
       'Warsaw IT Days 2026 - 17th edition of the iconic Polish IT & Data Science event gathering over 10,000 people! March 19 (Online) and March 20 (PGE Narodowy, Warsaw). 25+ tracks, 300+ presentations covering Challenges & New Technologies, Cybersecurity, GenAI/LLMs/AI Agents, Data Science/ML, Business Analysis, Programming & DevOps (Python, Java, .NET), Frontend Development, Testing/QA, Tech Project & Product Management, IT Career, and Women in IT. Three formats: In-person, Online Live, and VoD. Features recruitment opportunities (senior, mid, junior levels), IT products & services expo, technical presentations, career fair, expert mentoring, competitions, afterparty, and gift bags. Use code WID26RP20 for 20% off your ticket!',
-    gradient: 'bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-600',
+    gradient: 'bg-linear-to-r from-indigo-600 via-purple-500 to-pink-600',
     icon: '💻',
     emojiRight: '🇵🇱',
     country: 'Poland',
@@ -812,7 +812,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2026-04-17T23:59:59+01:00',
     description:
       'CityJS London 2026 celebrates 30 years of JavaScript! April 15-17, 2026 at Kensington Town Hall, London. Three days of workshops, meetups, and a full JavaScript conference. Day 1 (April 15): FREE Meetup (19:00-21:00) + Professional Workshops (09:00-18:00). Day 2 (April 16): Professional & Free Workshops (09:00-18:00). Day 3 (April 17): Full Conference Day with 35+ speakers across 3 tracks covering all the latest JavaScript trends, 6+ workshops, swag, session recordings, and valuable networking opportunities. AI-Powered. JavaScript-Driven. Use code meetjs2026 for 20% off your ticket!',
-    gradient: 'bg-gradient-to-r from-blue via-purple to-green',
+    gradient: 'bg-linear-to-r from-blue via-purple to-green',
     icon: '🏙️',
     emojiRight: '🇬🇧',
     country: 'United Kingdom',
@@ -829,7 +829,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2026-05-15T23:59:59+02:00',
     description:
       'JSHeroes 2026 takes place May 14-15, 2026 in Cluj-Napoca, Romania! 16 talks across 2 days, single-track. Speakers include Phil Hawksworth (Deno) on "The time traveller\'s guide to JavaScript", Suz Hinton on "Digital Preservation and Cyberpunk for Front-end Developers", Daniel Roe (Nuxt/Vercel) on "Working backwards", Dominik Dorfmeister (Sentry) on "Dead Code Shouldn\'t Exist", Ryan Townsend (Cloudflare) on "Breaking The Bloat", Craig Abbott (TetraLogical) on "AI and Human Centred Accessibility", Cyd Stumpel on "You might not need JS", Anjana Vakil on "Making Waves with the Web", Faris Aziz (Smallpdf) on performance optimization, Dan Neciu (Rover.com) on TanStack Query, Richard Gross on frontend code forensics, Bogdan Zaharia on managed effects, Andrei Pfeiffer on "Retired dependencies", Siddharth Dayalwal (Storyblok) on cognitive load, Zbyszek Tenerowicz (meet.js) on creative coding, and Misha Korolev on reverse-engineering JavaScript. MCs: Sara Vieira and Tejas Kumar. Use code love_for_communities for 10% off your ticket!',
-    gradient: 'bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500',
+    gradient: 'bg-linear-to-r from-yellow-400 via-orange-500 to-red-500',
     icon: '🦸',
     emojiRight: '🇷🇴',
     country: 'Romania',
@@ -846,7 +846,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2026-03-26T17:00:00+01:00',
     description:
       '5. edycja AI Miners w Katowicach! Same konkrety od ekspertów: Piotr Cieluchowski, Robert Partyka oraz Tomasz Bartel. W programie prelekcje o Gemini API, Spec-Driven Development, ochronie systemów AI oraz - po raz pierwszy - panel dyskusyjny. Use the link for 10% off your ticket!',
-    gradient: 'bg-gradient-to-r from-orange-500 via-red-500 to-purple-600',
+    gradient: 'bg-linear-to-r from-orange-500 via-red-500 to-purple-600',
     icon: '⛏️',
     image: '/partners/ai-miners.png',
     emojiRight: '🇵🇱',
@@ -864,7 +864,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2026-06-11T23:59:59+02:00',
     description:
       'Największe wydarzenie technologiczne dla kobiet w Europie! 10-11 czerwca 2026, Warszawa EXPO XXI + online. Hasło przewodnie: "Unleash New Energy". 10 000+ uczestniczek i uczestników, 500+ ekspertów, 100 największych firm technologicznych, 150 prelegentek i prelegentów. Tematy: Nowa energia, Przemysł ciężki, Robotyka, Biotechnologia, Technologia zorientowana na człowieka, Przyszłość pracy, Vibe coding, Odpowiedzialna AI. Targi kariery, warsztaty, sesje mentoringowe i networking. Użyj kodu MEETJS_SUMMIT, aby otrzymać 50% zniżki (limit 500 biletów)!',
-    gradient: 'bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500',
+    gradient: 'bg-linear-to-r from-pink-500 via-purple-500 to-indigo-500',
     icon: '👩‍💻',
     image: '/discounts/perspektywy.png',
     emojiRight: '🇵🇱',
@@ -883,7 +883,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2026-09-10T23:59:59+02:00',
     description:
       'Tech Race Summit 2026 – nowa konferencja technologiczna organizowana przez SOFTSWISS (centra rozwoju w Warszawie i Poznaniu). 10 września 2026, Warszawa. Eksperci AWS, Google, Oracle, Cloudflare, Fastly, Gcore, ScyllaDB i innych globalnych firm na jednej scenie. Keynote: Andrey Doronichev — były lider Google, założyciel Optic. Trzy ścieżki: Vision Track, Solution Track, Experiment Track. Tematy: AI, infrastruktura IT, cyberbezpieczeństwo, strategia technologiczna, nowoczesne systemy cyfrowe. Oczekiwane ~1000 uczestników. meet.js jest oficjalnym patronem medialnym! Użyj kodu meetjs_15 lub dedykowanego linku, aby otrzymać 15% zniżki.',
-    gradient: 'bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500',
+    gradient: 'bg-linear-to-r from-red-600 via-orange-500 to-yellow-500',
     icon: '🏎️',
     image: '/partners/tech-race_vert_color on black_small_no descr.svg',
     emojiRight: '🇵🇱',
@@ -901,7 +901,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2026-04-22T23:59:59+02:00',
     description:
       'Zostaliśmy Partnerem Społecznościowym 4Developers Warszawa 2026! 6 ścieżek tematycznych: Applications & System Architectures, Cloud & DevOps, Programming MIX, AI in Practice, Career & Growth, Bottega IT Minds. Łącznie 42 wykłady i 3 panele dyskusyjne – wszystkie nagrywane i udostępniane uczestnikom. Use code meetjs_na_4dev for 15% off your ticket!',
-    gradient: 'bg-gradient-to-r from-orange-500 via-red-500 to-yellow-500',
+    gradient: 'bg-linear-to-r from-orange-500 via-red-500 to-yellow-500',
     icon: '🦆',
     image: '/partners/4developers.png',
     emojiRight: '🇵🇱',
@@ -920,7 +920,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2026-10-04T23:59:59+02:00',
     description:
       'HackYeah 2026 to największy w Europie stacjonarny hackathon, który odbędzie się 3-4 października 2026 roku w Krakowie. Przez 24 godziny setki programistów, designerów i pasjonatów nowych technologii zmierzą się z wyzwaniami wymagającymi szybkiego myślenia, współpracy i niebanalnych rozwiązań. Równolegle odbędzie się konferencja technologiczna z ekspertami IT. Mamy darmowe bilety dla społeczności meet.js – zapytaj lokalnego organizatora o kod!',
-    gradient: 'bg-gradient-to-r from-orange-600 to-pink-600',
+    gradient: 'bg-linear-to-r from-orange-600 to-pink-600',
     icon: '💻',
     image: '/partners/hy-logo-new.png',
     emojiRight: '🇵🇱',
@@ -937,7 +937,7 @@ export const eventsDiscounts: Promo[] = [
     expiresAt: '2026-05-27T16:30:00+02:00',
     description:
       "AI Sync is built for the people actually shipping AI. One evening, four keynotes, 20th floor of Warsaw with panoramic views. 4 talks from founders & builders who've scaled AI and tech companies, Q&A after each talk, expert panel discussion, and 2+ hours of structured networking with drinks, food, and views. Curated room of 100 — founders, CTOs, senior devs, product leaders, early-stage investors. May 27, doors at 4:30pm, talks start 5pm, networking from 8pm. BEC Financial Technologies, Emilii Plater 53, Warsaw. Use code MEETJS-20 for 20% off!",
-    gradient: 'bg-gradient-to-r from-gray-900 via-blue-900 to-indigo-900',
+    gradient: 'bg-linear-to-r from-gray-900 via-blue-900 to-indigo-900',
     icon: '🤖',
     image: '/partners/ai-sync.svg',
     emojiRight: '🇵🇱',

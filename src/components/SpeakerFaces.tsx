@@ -31,7 +31,7 @@ export const SpeakerFaces = async () => {
           {speakersWithImages.map((speaker) => (
             <div
               key={speaker.id}
-              className="h-12 w-12 overflow-hidden rounded-full ring-2 ring-white transition-transform hover:scale-110 hover:ring-purple sm:h-14 sm:w-14"
+              className="hover:ring-purple h-12 w-12 overflow-hidden rounded-full ring-2 ring-white transition-transform hover:scale-110 sm:h-14 sm:w-14"
               title={`${speaker.name} ${speaker.surname || ''}`}
             >
               <Image
@@ -48,7 +48,7 @@ export const SpeakerFaces = async () => {
         <div className="mt-8 text-center">
           <Link
             href={'/speakers' as Route}
-            className="inline-flex items-center gap-2 rounded-lg bg-purple px-6 py-3 font-semibold text-white transition-colors hover:bg-purple/80"
+            className="bg-purple hover:bg-purple/80 inline-flex items-center gap-2 rounded-lg px-6 py-3 font-semibold text-white transition-colors"
           >
             {t('speaker_faces.view_all')}
           </Link>

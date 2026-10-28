@@ -56,7 +56,7 @@ const SpeakersPage = async () => {
                   <h2 className="text-lg font-semibold text-gray-900">
                     {speaker.name} {speaker.surname}
                   </h2>
-                  <p className="mt-1 text-sm text-purple">
+                  <p className="text-purple mt-1 text-sm">
                     {speaker.events_count}x 🎤
                   </p>
                   <a

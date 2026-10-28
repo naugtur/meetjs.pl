@@ -89,7 +89,7 @@ export const ParticipantAvatar = ({
         />
       ) : (
         <div
-          className={`flex h-full w-full items-center justify-center rounded-full bg-gradient-to-br font-bold text-white ${gradient}`}
+          className={`flex h-full w-full items-center justify-center rounded-full bg-linear-to-br font-bold text-white ${gradient}`}
           style={{ fontSize: size / 2.8 }}
         >
           {getInitials(participant.displayName)}

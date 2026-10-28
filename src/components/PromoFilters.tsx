@@ -19,9 +19,9 @@ export function PromoFilters({
 }: PromoFiltersProps) {
   return (
     <>
-      <div className="flex flex-wrap items-center gap-4 rounded-lg border bg-card p-4 shadow-sm">
+      <div className="bg-card flex flex-wrap items-center gap-4 rounded-lg border p-4 shadow-xs">
         <div className="flex items-center gap-2">
-          <Filter className="h-5 w-5 text-muted-foreground" />
+          <Filter className="text-muted-foreground h-5 w-5" />
           <span className="text-sm font-medium">Filter by country:</span>
 
           <div className="flex flex-wrap gap-2">
@@ -51,7 +51,7 @@ export function PromoFilters({
       </div>
 
       {/* Results count */}
-      <div className="text-sm text-muted-foreground">
+      <div className="text-muted-foreground text-sm">
         Showing {filteredCount} of {totalCount} active promotions
         {selectedCountries.length > 0 && (
           <> (filtered by {selectedCountries.join(', ')})</>

@@ -37,7 +37,7 @@ export default async function Page() {
       </div>
 
       {/* Quick Start CTA */}
-      <div className="mb-12 rounded-lg bg-gradient-to-r from-purple-600 to-blue-600 p-8 text-white">
+      <div className="mb-12 rounded-lg bg-linear-to-r from-purple-600 to-blue-600 p-8 text-white">
         <div className="text-center">
           <h2 className="mb-4 text-2xl font-bold">
             {t('organizer.ready_to_start_cta.title')}
@@ -112,14 +112,14 @@ export default async function Page() {
           {t('organizer.requirements_title')}
         </h2>
         <div className="grid gap-6 md:grid-cols-3">
-          <div className="rounded-lg border bg-white p-6 shadow-sm">
+          <div className="rounded-lg border bg-white p-6 shadow-xs">
             <Users className="mb-4 h-8 w-8 text-blue-600" />
             <h3 className="mb-2 text-lg font-semibold">
               {t('organizer.requirements_labels.time_commitment')}
             </h3>
             <p className="text-gray-600">{t('organizer.requirements.time')}</p>
           </div>
-          <div className="rounded-lg border bg-white p-6 shadow-sm">
+          <div className="rounded-lg border bg-white p-6 shadow-xs">
             <Heart className="mb-4 h-8 w-8 text-red-600" />
             <h3 className="mb-2 text-lg font-semibold">
               {t('organizer.requirements_labels.community_spirit')}
@@ -128,7 +128,7 @@ export default async function Page() {
               {t('organizer.requirements.involvement')}
             </p>
           </div>
-          <div className="rounded-lg border bg-white p-6 shadow-sm">
+          <div className="rounded-lg border bg-white p-6 shadow-xs">
             <Handshake className="mb-4 h-8 w-8 text-green-600" />
             <h3 className="mb-2 text-lg font-semibold">
               {t('organizer.requirements_labels.non_commercial_approach')}
@@ -252,7 +252,7 @@ export default async function Page() {
       </section>
 
       {/* CTA Section */}
-      <div className="rounded-lg border bg-white p-8 text-center shadow-sm">
+      <div className="rounded-lg border bg-white p-8 text-center shadow-xs">
         <h2 className="mb-4 text-2xl font-bold">
           {t('organizer.final_cta.title')}
         </h2>

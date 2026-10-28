@@ -3,10 +3,10 @@ import { z } from 'zod';
 
 export const env = createEnv({
   server: {
-    EVENTS_API_URL: z.string().url(),
-    SITE_URL: z.string().url(),
+    EVENTS_API_URL: z.url(),
+    SITE_URL: z.url(),
     DISCORD_SERVER_ID: z.string(),
-    SPEAKERS_API_URL: z.string().url().optional(),
+    SPEAKERS_API_URL: z.url().optional(),
     SPEAKERS_API_TOKEN: z.string().optional(),
   },
   runtimeEnv: {

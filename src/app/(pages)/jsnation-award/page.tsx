@@ -29,7 +29,7 @@ export default function JSNationAwardPage() {
         <h1 className="mb-4 text-5xl font-bold tracking-tight">
           We Won! Community of the Year!
         </h1>
-        <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+        <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
           meet.js Wrocław has WON the JavaScript Open Source Award for{' '}
           <span className="font-semibold text-yellow-500">
             Community of the Year 2025
@@ -122,8 +122,8 @@ export default function JSNationAwardPage() {
         </div>
       </div>
 
-      <div className="mb-16 overflow-hidden rounded-xl bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 p-1 shadow-xl">
-        <div className="rounded-lg bg-background p-8">
+      <div className="mb-16 overflow-hidden rounded-xl bg-linear-to-r from-green-500 via-emerald-500 to-teal-500 p-1 shadow-xl">
+        <div className="bg-background rounded-lg p-8">
           <div className="prose prose-lg mx-auto max-w-3xl">
             <p className="lead mb-6 text-xl font-medium">
               WE WON! 🎉 We are incredibly honored and thrilled to announce that
@@ -220,7 +220,7 @@ export default function JSNationAwardPage() {
             </p>
           </CardContent>
           <CardFooter>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-muted-foreground text-xs">
               Awarded at JSNation, June 12, 2025
             </p>
           </CardFooter>
@@ -240,7 +240,7 @@ export default function JSNationAwardPage() {
             </p>
             <div className="mt-4 rounded-md border border-yellow-200 bg-white p-3">
               <p className="font-medium">Awarded: June 12, 2025</p>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-muted-foreground text-sm">
                 JSNation Conference, Amsterdam, Netherlands
               </p>
             </div>
@@ -279,13 +279,13 @@ export default function JSNationAwardPage() {
               Wrocław, Poland, organizing regular meetups, workshops, and
               knowledge-sharing events.
             </p>
-            <div className="mt-4 rounded-md bg-muted p-3">
+            <div className="bg-muted mt-4 rounded-md p-3">
               <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-muted-foreground" />
+                <MapPin className="text-muted-foreground h-4 w-4" />
                 <p className="text-sm font-medium">Wrocław, Poland</p>
               </div>
               <div className="mt-2 flex items-center gap-2">
-                <Heart className="h-4 w-4 text-muted-foreground" />
+                <Heart className="text-muted-foreground h-4 w-4" />
                 <p className="text-sm font-medium">
                   Community-driven since 2011
                 </p>
@@ -306,12 +306,12 @@ export default function JSNationAwardPage() {
       <div className="mb-16">
         <h2 className="mb-6 text-center text-2xl font-bold">Other Nominees</h2>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <Card className="border-gray-200 shadow-sm">
+          <Card className="border-gray-200 shadow-xs">
             <CardHeader className="pb-2">
               <CardTitle className="text-lg">JavaScript London</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-muted-foreground text-sm">
                 This is a community of people passionate about JavaScript. We
                 believe that the best way to learn is by doing, and it&apos;s
                 also the most rewarding.
@@ -329,12 +329,12 @@ export default function JSNationAwardPage() {
             </CardFooter>
           </Card>
 
-          <Card className="border-gray-200 shadow-sm">
+          <Card className="border-gray-200 shadow-xs">
             <CardHeader className="pb-2">
               <CardTitle className="text-lg">AdvancedJS Amsterdam</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-muted-foreground text-sm">
                 Meetups about JavaScript, React, deep-dives, and the latest tech
                 updates to learn all tricks of the trade from the experts.
               </p>
@@ -351,12 +351,12 @@ export default function JSNationAwardPage() {
             </CardFooter>
           </Card>
 
-          <Card className="border-gray-200 shadow-sm">
+          <Card className="border-gray-200 shadow-xs">
             <CardHeader className="pb-2">
               <CardTitle className="text-lg">CopenhagenJS</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-muted-foreground text-sm">
                 CopenhagenJS is a monthly meetup group about JavaScript and all
                 web technologies. It is a group focused on community building
                 and sharing information.
@@ -427,7 +427,7 @@ export default function JSNationAwardPage() {
         <p className="text-muted-foreground">
           Thank you for making this possible! We are incredibly grateful! ❤️
         </p>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <p className="text-muted-foreground mt-2 text-sm">
           #MeetjsWroclaw #JSAwardsWinner #CommunityOfTheYear #JavaScript
           #OpenSource #JSNation #TechCommunity #Grateful
         </p>

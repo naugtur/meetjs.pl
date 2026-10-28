@@ -34,7 +34,7 @@ export const DesktopNavigation = () => {
             {item.dropdown ? (
               <DropdownMenu>
                 <DropdownMenuTrigger
-                  className="flex items-center whitespace-nowrap rounded-md px-3 py-2 font-medium text-white hover:bg-green/80 hover:text-purple"
+                  className="hover:bg-green/80 hover:text-purple flex items-center rounded-md px-3 py-2 font-medium whitespace-nowrap text-white"
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
@@ -57,7 +57,7 @@ export const DesktopNavigation = () => {
                     if (dropdownItem.type === 'cities') {
                       return (
                         <div key={index}>
-                          <DropdownMenuLabel className="text-xs font-semibold uppercase tracking-wide text-gray-500">
+                          <DropdownMenuLabel className="text-xs font-semibold tracking-wide text-gray-500 uppercase">
                             {t('navigation.dropdown.cities_label')}
                           </DropdownMenuLabel>
                           {CITIES.sort((a, b) =>

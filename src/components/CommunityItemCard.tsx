@@ -55,7 +55,7 @@ export const CommunityItemCard = ({ item }: { item: CommunityItem }) => {
     <div className="group relative h-full overflow-hidden rounded-3xl border border-white/20 bg-white/60 shadow-xl backdrop-blur-xl transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl dark:border-gray-700/50 dark:bg-gray-800/60">
       {/* Animated gradient background */}
       <div
-        className={`absolute inset-0 bg-gradient-to-br ${getTypeGradient(item.type)} opacity-0 transition-opacity duration-500 group-hover:opacity-10`}
+        className={`absolute inset-0 bg-linear-to-br ${getTypeGradient(item.type)} opacity-0 transition-opacity duration-500 group-hover:opacity-10`}
       />
 
       <div className="relative flex h-full flex-col">
@@ -63,7 +63,7 @@ export const CommunityItemCard = ({ item }: { item: CommunityItem }) => {
         <div className="relative p-6 pb-4">
           {item.image && (
             <div className="mb-4 flex items-center justify-between">
-              <div className="relative h-28 w-28 overflow-hidden rounded-2xl bg-white shadow-lg ring-2 ring-white/50 transition-all duration-500 group-hover:rotate-3 group-hover:scale-110 dark:ring-gray-700/50">
+              <div className="relative h-28 w-28 overflow-hidden rounded-2xl bg-white shadow-lg ring-2 ring-white/50 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 dark:ring-gray-700/50">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -85,7 +85,7 @@ export const CommunityItemCard = ({ item }: { item: CommunityItem }) => {
           )}
 
           {/* Title */}
-          <h3 className="mb-2 text-2xl font-black leading-tight text-gray-900 dark:text-white">
+          <h3 className="mb-2 text-2xl leading-tight font-black text-gray-900 dark:text-white">
             {item.title}
           </h3>
 
@@ -110,7 +110,7 @@ export const CommunityItemCard = ({ item }: { item: CommunityItem }) => {
         </div>
 
         {/* Divider */}
-        <div className="mx-6 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent dark:via-gray-600" />
+        <div className="mx-6 h-px bg-linear-to-r from-transparent via-gray-300 to-transparent dark:via-gray-600" />
 
         {/* Middle Section - Content */}
         <div className="flex-1 space-y-3 p-6">
@@ -119,7 +119,7 @@ export const CommunityItemCard = ({ item }: { item: CommunityItem }) => {
             {item.tags.slice(0, 3).map((tag) => (
               <span
                 key={tag}
-                className="rounded-lg bg-gray-900/5 px-2.5 py-1 text-xs font-semibold text-gray-700 backdrop-blur-sm dark:bg-white/5 dark:text-gray-300"
+                className="rounded-lg bg-gray-900/5 px-2.5 py-1 text-xs font-semibold text-gray-700 backdrop-blur-xs dark:bg-white/5 dark:text-gray-300"
               >
                 #{tag}
               </span>
@@ -143,7 +143,7 @@ export const CommunityItemCard = ({ item }: { item: CommunityItem }) => {
             href={item.url}
             target="_blank"
             rel="noopener"
-            className={`group/btn flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r ${getTypeGradient(item.type)} px-6 py-3.5 font-bold text-white shadow-lg transition-all duration-300 hover:shadow-2xl hover:brightness-110`}
+            className={`group/btn flex items-center justify-center gap-2 rounded-2xl bg-linear-to-r ${getTypeGradient(item.type)} px-6 py-3.5 font-bold text-white shadow-lg transition-all duration-300 hover:shadow-2xl hover:brightness-110`}
           >
             <span>{item.ctaText}</span>
             <ExternalLink className="h-4 w-4" />

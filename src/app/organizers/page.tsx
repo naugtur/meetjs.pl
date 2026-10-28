@@ -85,7 +85,7 @@ export default async function OrganizersPage() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
-          <div className="rounded-lg border bg-white p-6 shadow-sm">
+          <div className="rounded-lg border bg-white p-6 shadow-xs">
             <div className="mb-4 flex items-center gap-3">
               <ImageIcon className="h-6 w-6 text-purple-600" />
               <h3 className="text-xl font-semibold">
@@ -107,7 +107,7 @@ export default async function OrganizersPage() {
             </a>
           </div>
 
-          <div className="rounded-lg border bg-white p-6 shadow-sm">
+          <div className="rounded-lg border bg-white p-6 shadow-xs">
             <div className="mb-4 flex items-center gap-3">
               <CalendarDays className="h-6 w-6 text-blue-600" />
               <h3 className="text-xl font-semibold">
@@ -147,7 +147,7 @@ export default async function OrganizersPage() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <div className="rounded-lg border bg-white p-6 shadow-sm">
+          <div className="rounded-lg border bg-white p-6 shadow-xs">
             <div className="mb-4 flex items-center gap-3">
               <FileText className="h-6 w-6 text-green-600" />
               <h3 className="text-lg font-semibold">
@@ -170,7 +170,7 @@ export default async function OrganizersPage() {
             </div>
           </div>
 
-          <div className="rounded-lg border bg-white p-6 shadow-sm">
+          <div className="rounded-lg border bg-white p-6 shadow-xs">
             <div className="mb-4 flex items-center gap-3">
               <Heart className="h-6 w-6 text-red-600" />
               <h3 className="text-lg font-semibold">
@@ -193,7 +193,7 @@ export default async function OrganizersPage() {
             </div>
           </div>
 
-          <div className="rounded-lg border bg-white p-6 shadow-sm">
+          <div className="rounded-lg border bg-white p-6 shadow-xs">
             <div className="mb-4 flex items-center gap-3">
               <ImageIcon className="h-6 w-6 text-blue-600" />
               <h3 className="text-lg font-semibold">
@@ -245,7 +245,7 @@ export default async function OrganizersPage() {
       </section>
 
       {/* New Organizer CTA */}
-      <div className="rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 p-8 text-white">
+      <div className="rounded-lg bg-linear-to-r from-blue-600 to-purple-600 p-8 text-white">
         <div className="text-center">
           <h2 className="mb-4 text-2xl font-bold">
             {t('organizers_hub.cta_section.title')}

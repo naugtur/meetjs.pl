@@ -19,20 +19,20 @@ export const PromoTicker = async ({ promos }: Props) => {
   return (
     <section
       aria-label={t('promo_ticker.label')}
-      className="border-y border-white/10 bg-purple text-white"
+      className="bg-purple border-y border-white/10 text-white"
     >
       <div className="flex items-stretch">
         <Link
           href="/discounts"
-          className="z-10 flex shrink-0 items-center gap-2 border-r border-white/10 bg-purple px-3 py-2 text-xs font-bold uppercase tracking-wider transition-colors hover:bg-white/10 sm:px-4"
+          className="bg-purple z-10 flex shrink-0 items-center gap-2 border-r border-white/10 px-3 py-2 text-xs font-bold tracking-wider uppercase transition-colors hover:bg-white/10 sm:px-4"
         >
-          <TicketPercent className="h-4 w-4 text-green" aria-hidden />
+          <TicketPercent className="text-green h-4 w-4" aria-hidden />
           <span className="hidden sm:inline">{t('promo_ticker.label')}</span>
         </Link>
 
-        <div className="group relative flex-1 motion-safe:overflow-hidden motion-safe:[mask-image:linear-gradient(to_right,transparent,black_2rem,black_calc(100%-2rem),transparent)] motion-reduce:overflow-x-auto">
+        <div className="group relative flex-1 motion-safe:overflow-hidden motion-safe:mask-[linear-gradient(to_right,transparent,black_2rem,black_calc(100%-2rem),transparent)] motion-reduce:overflow-x-auto">
           <div
-            className="flex w-max items-center group-focus-within:[animation-play-state:paused] group-hover:[animation-play-state:paused] motion-safe:animate-marquee"
+            className="group-focus-within:paused group-hover:paused motion-safe:animate-marquee flex w-max items-center"
             style={
               {
                 '--marquee-duration': `${Math.max(activePromos.length * 6, 30)}s`,
@@ -46,7 +46,7 @@ export const PromoTicker = async ({ promos }: Props) => {
 
         <Link
           href="/discounts"
-          className="z-10 hidden shrink-0 items-center gap-1.5 border-l border-white/10 bg-purple px-4 py-2 text-xs font-semibold transition-colors hover:bg-white/10 sm:flex"
+          className="bg-purple z-10 hidden shrink-0 items-center gap-1.5 border-l border-white/10 px-4 py-2 text-xs font-semibold transition-colors hover:bg-white/10 sm:flex"
         >
           {t('promo_ticker.view_all')}
           <ArrowRight className="h-3.5 w-3.5" aria-hidden />
@@ -74,7 +74,7 @@ const PromoList = ({
           target="_blank"
           rel="noopener"
           tabIndex={duplicated ? -1 : undefined}
-          className="mx-1 flex items-center gap-2 whitespace-nowrap rounded-full px-3 py-1 text-xs transition-colors hover:bg-white/15 sm:text-sm"
+          className="mx-1 flex items-center gap-2 rounded-full px-3 py-1 text-xs whitespace-nowrap transition-colors hover:bg-white/15 sm:text-sm"
         >
           <PromoIcon promo={promo} />
           <span className="font-semibold">{promo.name}</span>
@@ -82,7 +82,7 @@ const PromoList = ({
             {promo.message}
           </span>
           {promo.discountCode && (
-            <code className="rounded bg-green/20 px-1.5 py-0.5 font-mono text-[11px] font-semibold text-green">
+            <code className="bg-green/20 text-green rounded px-1.5 py-0.5 font-mono text-[11px] font-semibold">
               {promo.discountCode}
             </code>
           )}

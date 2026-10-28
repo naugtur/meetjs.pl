@@ -41,7 +41,7 @@ export const EventCard = ({ event }: EventCardProps) => {
       data-testid="event-card-wrapper"
       className={cn(
         'group flex min-h-60 min-w-full flex-col justify-between transition-all hover:shadow-lg',
-        isInProgress && 'border-2 border-purple dark:border-green',
+        isInProgress && 'border-purple dark:border-green border-2',
         isToday &&
           !isInProgress &&
           'border-2 border-yellow-500 dark:border-yellow-400',
@@ -55,7 +55,7 @@ export const EventCard = ({ event }: EventCardProps) => {
               href={event.url}
               target="_blank"
               rel="noopener"
-              className="transition-colors hover:text-purple dark:hover:text-green"
+              className="hover:text-purple dark:hover:text-green transition-colors"
             >
               {event.name}
             </a>
@@ -68,7 +68,7 @@ export const EventCard = ({ event }: EventCardProps) => {
           )}
         </div>
         {eventDate.getTime() > 0 && (
-          <p className="text-sm text-muted-foreground">
+          <p className="text-muted-foreground text-sm">
             {isInProgress
               ? "🎉 Live now! Why aren't you here?"
               : isToday && isUpcoming
@@ -83,18 +83,18 @@ export const EventCard = ({ event }: EventCardProps) => {
       <CardContent className="flex flex-col gap-4">
         {(event.address || event.city) && (
           <div className="mt-3 flex items-center gap-2">
-            <FaLocationDot className="h-4 w-4 flex-shrink-0" />
+            <FaLocationDot className="h-4 w-4 shrink-0" />
             {event.address ? (
               <div>
                 <div className="text-sm font-medium">{event.address}</div>
                 {event.city && (
-                  <div className="text-sm text-muted-foreground">
+                  <div className="text-muted-foreground text-sm">
                     {event.city}
                   </div>
                 )}
               </div>
             ) : (
-              <div className="text-sm font-medium text-muted-foreground">
+              <div className="text-muted-foreground text-sm font-medium">
                 Location TBA
               </div>
             )}
@@ -103,12 +103,12 @@ export const EventCard = ({ event }: EventCardProps) => {
 
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <FaClock className="h-4 w-4 flex-shrink-0" />
+            <FaClock className="h-4 w-4 shrink-0" />
             <div>
               <div className="text-sm font-medium">
                 {event.date} ({getEventWeekDay(event, locale)})
               </div>
-              <div className="text-sm text-muted-foreground">{event.time}</div>
+              <div className="text-muted-foreground text-sm">{event.time}</div>
             </div>
           </div>
 
@@ -122,8 +122,8 @@ export const EventCard = ({ event }: EventCardProps) => {
                   size: 'sm',
                 }),
                 isConference
-                  ? 'bg-gradient-to-r from-amber-600 to-orange-600 text-white hover:from-amber-700 hover:to-orange-700 dark:from-amber-500 dark:to-orange-500 dark:hover:from-amber-600 dark:hover:to-orange-600'
-                  : 'bg-purple text-white transition-colors hover:bg-purple/90 dark:bg-green dark:hover:bg-green/90',
+                  ? 'bg-linear-to-r from-amber-600 to-orange-600 text-white hover:from-amber-700 hover:to-orange-700 dark:from-amber-500 dark:to-orange-500 dark:hover:from-amber-600 dark:hover:to-orange-600'
+                  : 'bg-purple hover:bg-purple/90 dark:bg-green dark:hover:bg-green/90 text-white transition-colors',
               )}
             >
               {isConference ? t('event_card.register') : t('event_card.rsvp')}

@@ -21,9 +21,9 @@ export default function WorkshopInfo({
   }
 
   return (
-    <div className="mb-6 rounded-lg border border-blue-100 bg-gradient-to-r from-blue-50 to-cyan-50 p-4 dark:border-blue-800/30 dark:from-blue-900/20 dark:to-cyan-900/20">
+    <div className="mb-6 rounded-lg border border-blue-100 bg-linear-to-r from-blue-50 to-cyan-50 p-4 dark:border-blue-800/30 dark:from-blue-900/20 dark:to-cyan-900/20">
       <div className="mb-2 flex items-center gap-2">
-        <div className="rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 p-1.5 text-white">
+        <div className="rounded-full bg-linear-to-r from-blue-500 to-cyan-500 p-1.5 text-white">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"

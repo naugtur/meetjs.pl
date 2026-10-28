@@ -27,7 +27,7 @@ export const MobileNavigation = () => {
         className="max-h-[70vh] overflow-y-auto"
         role="navigation"
       >
-        <ul className="space-y-1 px-2 pb-3 pt-2" role="menu">
+        <ul className="space-y-1 px-2 pt-2 pb-3" role="menu">
           {menuLinks.map((item) => {
             if (item.dropdown) {
               return (
@@ -35,7 +35,7 @@ export const MobileNavigation = () => {
                   <Disclosure>
                     {({ open }) => (
                       <div>
-                        <DisclosureButton className="flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-base font-medium text-white hover:bg-green/80 hover:text-purple">
+                        <DisclosureButton className="hover:bg-green/80 hover:text-purple flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-base font-medium text-white">
                           <span>{item.name}</span>
                           <FaChevronDown
                             className={classNames(
@@ -59,7 +59,7 @@ export const MobileNavigation = () => {
                             if (dropdownItem.type === 'cities') {
                               return (
                                 <div key={index}>
-                                  <div className="px-3 py-2 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                                  <div className="px-3 py-2 text-xs font-semibold tracking-wide text-gray-500 uppercase">
                                     {t('navigation.dropdown.cities_label')}
                                   </div>
                                   {CITIES.sort((a, b) =>
@@ -69,7 +69,7 @@ export const MobileNavigation = () => {
                                       key={city.name}
                                       as="a"
                                       href={city.href}
-                                      className="flex items-center justify-between rounded-md px-3 py-2 text-base font-medium text-white hover:bg-green/80 hover:text-purple"
+                                      className="hover:bg-green/80 hover:text-purple flex items-center justify-between rounded-md px-3 py-2 text-base font-medium text-white"
                                     >
                                       <span className="flex items-center">
                                         <FaMapMarkerAlt className="mr-2 h-4 w-4" />
@@ -106,7 +106,7 @@ export const MobileNavigation = () => {
                                 key={dropdownItem.name}
                                 as="a"
                                 href={dropdownItem.href}
-                                className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-green/80 hover:text-purple"
+                                className="hover:bg-green/80 hover:text-purple block rounded-md px-3 py-2 text-base font-medium text-white"
                                 target={
                                   dropdownItem.external ? '_blank' : undefined
                                 }
@@ -137,7 +137,7 @@ export const MobileNavigation = () => {
                     href={item.href}
                     className={classNames(
                       item.highlight
-                        ? 'animate-pulse-scale bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white shadow-lg'
+                        ? 'animate-pulse-scale bg-linear-to-r from-purple-500 via-pink-500 to-orange-400 text-white shadow-lg'
                         : item.current
                           ? 'bg-gray-900 text-white'
                           : 'text-gray-300 hover:bg-gray-700 hover:text-white',

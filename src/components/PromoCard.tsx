@@ -31,7 +31,7 @@ export function PromoCard({ promo }: PromoCardProps) {
 
   return (
     <div
-      className={`relative flex flex-col overflow-hidden rounded-xl border-2 border-purple ${promo.gradient || 'bg-gradient-to-r from-green-400 via-blue-500 to-purple-500'} shadow-lg transition-transform hover:scale-[1.01]`}
+      className={`border-purple relative flex flex-col overflow-hidden rounded-xl border-2 ${promo.gradient || 'bg-linear-to-r from-green-400 via-blue-500 to-purple-500'} shadow-lg transition-transform hover:scale-[1.01]`}
     >
       <div className="flex items-center gap-3 border-b border-white/20 p-4">
         <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-2xl">
@@ -41,7 +41,7 @@ export function PromoCard({ promo }: PromoCardProps) {
           <h3 className="text-xl font-bold text-white drop-shadow-md">
             {promo.name}
           </h3>
-          <p className="text-sm text-white/80 drop-shadow-sm">
+          <p className="text-sm text-white/80 drop-shadow-xs">
             {promo.message}
           </p>
         </div>
@@ -112,12 +112,12 @@ export function PromoCard({ promo }: PromoCardProps) {
             href={promo.ticketLink}
             target="_blank"
             rel="noopener"
-            className="block w-full rounded-lg bg-white py-2 text-center font-semibold text-purple shadow transition-colors hover:bg-purple hover:text-white"
+            className="text-purple hover:bg-purple block w-full rounded-lg bg-white py-2 text-center font-semibold shadow transition-colors hover:text-white"
           >
             {promo.cta}
           </a>
         ) : (
-          <span className="block w-full rounded-lg bg-white/60 py-2 text-center font-semibold text-purple opacity-60">
+          <span className="text-purple block w-full rounded-lg bg-white/60 py-2 text-center font-semibold opacity-60">
             {promo.cta}
           </span>
         )}

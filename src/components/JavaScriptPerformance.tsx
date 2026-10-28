@@ -88,11 +88,11 @@ export const JavaScriptPerformance = () => {
   };
 
   return (
-    <section className="bg-gradient-to-b from-gray-900 to-black py-20 text-white">
+    <section className="bg-linear-to-b from-gray-900 to-black py-20 text-white">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="mb-16 text-center">
-          <h2 className="mb-4 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-4xl font-extrabold text-transparent sm:text-5xl">
+          <h2 className="mb-4 bg-linear-to-r from-green-400 to-blue-500 bg-clip-text text-4xl font-extrabold text-transparent sm:text-5xl">
             JavaScript Performance Evolution
           </h2>
           <p className="mx-auto max-w-3xl text-lg leading-relaxed text-gray-300">
@@ -107,7 +107,7 @@ export const JavaScriptPerformance = () => {
           {benchmarks.map((benchmark, index) => (
             <div
               key={index}
-              className="rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 p-6 shadow-2xl ring-1 ring-gray-700"
+              className="rounded-2xl bg-linear-to-br from-gray-800 to-gray-900 p-6 shadow-2xl ring-1 ring-gray-700"
             >
               <div className="mb-4">
                 <h3 className="mb-2 text-xl font-bold text-white">
@@ -148,7 +148,7 @@ export const JavaScriptPerformance = () => {
               <div className="mb-4">
                 <div className="h-2 rounded-full bg-gray-700">
                   <div
-                    className="h-2 rounded-full bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 transition-all duration-1000"
+                    className="h-2 rounded-full bg-linear-to-r from-red-500 via-yellow-500 to-green-500 transition-all duration-1000"
                     style={{
                       width: `${getProgressWidth(benchmark.year2024)}%`,
                     }}
@@ -178,7 +178,7 @@ export const JavaScriptPerformance = () => {
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-xl bg-gradient-to-br from-blue-600/20 to-blue-800/20 p-6 ring-1 ring-blue-500/30">
+            <div className="rounded-xl bg-linear-to-br from-blue-600/20 to-blue-800/20 p-6 ring-1 ring-blue-500/30">
               <div className="mb-3 text-3xl">⚡</div>
               <h4 className="mb-2 font-bold text-blue-400">V8 Engine</h4>
               <p className="text-sm text-gray-300">
@@ -187,7 +187,7 @@ export const JavaScriptPerformance = () => {
               </p>
             </div>
 
-            <div className="rounded-xl bg-gradient-to-br from-green-600/20 to-green-800/20 p-6 ring-1 ring-green-500/30">
+            <div className="rounded-xl bg-linear-to-br from-green-600/20 to-green-800/20 p-6 ring-1 ring-green-500/30">
               <div className="mb-3 text-3xl">🌳</div>
               <h4 className="mb-2 font-bold text-green-400">Tree Shaking</h4>
               <p className="text-sm text-gray-300">
@@ -196,7 +196,7 @@ export const JavaScriptPerformance = () => {
               </p>
             </div>
 
-            <div className="rounded-xl bg-gradient-to-br from-purple-600/20 to-purple-800/20 p-6 ring-1 ring-purple-500/30">
+            <div className="rounded-xl bg-linear-to-br from-purple-600/20 to-purple-800/20 p-6 ring-1 ring-purple-500/30">
               <div className="mb-3 text-3xl">🔄</div>
               <h4 className="mb-2 font-bold text-purple-400">Virtual DOM</h4>
               <p className="text-sm text-gray-300">
@@ -204,7 +204,7 @@ export const JavaScriptPerformance = () => {
               </p>
             </div>
 
-            <div className="rounded-xl bg-gradient-to-br from-orange-600/20 to-orange-800/20 p-6 ring-1 ring-orange-500/30">
+            <div className="rounded-xl bg-linear-to-br from-orange-600/20 to-orange-800/20 p-6 ring-1 ring-orange-500/30">
               <div className="mb-3 text-3xl">🚀</div>
               <h4 className="mb-2 font-bold text-orange-400">WebAssembly</h4>
               <p className="text-sm text-gray-300">
@@ -217,7 +217,7 @@ export const JavaScriptPerformance = () => {
 
         {/* Footer */}
         <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-green-500/20 to-blue-500/20 px-6 py-3 text-sm text-green-400 ring-1 ring-green-500/30">
+          <div className="inline-flex items-center gap-2 rounded-full bg-linear-to-r from-green-500/20 to-blue-500/20 px-6 py-3 text-sm text-green-400 ring-1 ring-green-500/30">
             <span>📈</span>
             <span>
               Performance improvements continue with every JavaScript engine

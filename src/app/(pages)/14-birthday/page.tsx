@@ -97,9 +97,9 @@ export default function Page() {
           />
         </div>
       )}
-      <div className="container relative mx-auto max-w-4xl py-16">
+      <div className="relative container mx-auto max-w-4xl py-16">
         <div className="mb-12 text-center">
-          <h1 className="mb-4 bg-gradient-to-r from-yellow-400 via-red-500 to-purple-600 bg-clip-text text-6xl font-bold text-transparent">
+          <h1 className="mb-4 bg-linear-to-r from-yellow-400 via-red-500 to-purple-600 bg-clip-text text-6xl font-bold text-transparent">
             🎉 14 Years of meet.js! 🎉
           </h1>
           <p className="text-xl text-gray-600">
@@ -121,12 +121,12 @@ export default function Page() {
               height={300}
               className="mx-auto mb-2 rounded-lg shadow-lg"
             />
-            <p className="text-center text-sm italic text-gray-500">
+            <p className="text-center text-sm text-gray-500 italic">
               A snapshot from the very first meet.js meetup at Klub ZAK, Poznań
               (February 12, 2011)
             </p>
           </div>
-          <div className="rounded-r-lg border-l-4 border-blue-600 bg-gray-50 p-4 shadow-sm">
+          <div className="rounded-r-lg border-l-4 border-blue-600 bg-gray-50 p-4 shadow-xs">
             <p className="text-sm leading-relaxed text-gray-700">
               The first meet.js featured talks on cutting-edge topics of the
               time, including jQuery Mobile, Box2D physics engine, HTML5 audio,
@@ -178,28 +178,20 @@ export default function Page() {
           </h2>
           <div className="space-y-4">
             <div className="flex items-start">
-              <div className="w-24 flex-shrink-0 font-bold text-blue-600">
-                2011
-              </div>
-              <div className="flex-grow">First meet.js in Poznań</div>
+              <div className="w-24 shrink-0 font-bold text-blue-600">2011</div>
+              <div className="grow">First meet.js in Poznań</div>
             </div>
             <div className="flex items-start">
-              <div className="w-24 flex-shrink-0 font-bold text-blue-600">
-                2012
-              </div>
-              <div className="flex-grow">Expansion to Warsaw and Wrocław</div>
+              <div className="w-24 shrink-0 font-bold text-blue-600">2012</div>
+              <div className="grow">Expansion to Warsaw and Wrocław</div>
             </div>
             <div className="flex items-start">
-              <div className="w-24 flex-shrink-0 font-bold text-blue-600">
-                2015
-              </div>
-              <div className="flex-grow">First meet.js Summit conference</div>
+              <div className="w-24 shrink-0 font-bold text-blue-600">2015</div>
+              <div className="grow">First meet.js Summit conference</div>
             </div>
             <div className="flex items-start">
-              <div className="w-24 flex-shrink-0 font-bold text-blue-600">
-                2024
-              </div>
-              <div className="flex-grow">
+              <div className="w-24 shrink-0 font-bold text-blue-600">2024</div>
+              <div className="grow">
                 14th Anniversary - Still growing strong!
               </div>
             </div>

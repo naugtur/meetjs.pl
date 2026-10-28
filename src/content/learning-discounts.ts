@@ -11,7 +11,7 @@ export const learningDiscounts: Promo[] = [
     expiresAt: '2025-12-31T23:59:59+02:00',
     description:
       'Get 20% off GreatFrontEnd Premium plan with code MEETJSPL. As a community partner, you can also earn 15% commission on every Premium plan purchase through your referral link. Perfect for developers looking to master frontend development with high-quality coding problems and system design questions.',
-    gradient: 'bg-gradient-to-r from-purple-600 via-pink-500 to-red-500',
+    gradient: 'bg-linear-to-r from-purple-600 via-pink-500 to-red-500',
     icon: '💻',
     image: '/partners/greatfrontend-logo.svg',
     emojiRight: '🌐',
@@ -27,7 +27,7 @@ export const learningDiscounts: Promo[] = [
     expiresAt: '2025-12-31T23:59:59+02:00',
     description:
       'Access premium courses by Josh W. Comeau, including "CSS for JavaScript Developers" and "Joy of React". Learn modern CSS techniques, React patterns, and frontend best practices through interactive lessons and real-world projects. Perfect for developers looking to level up their frontend skills with in-depth, hands-on learning experiences.',
-    gradient: 'bg-gradient-to-r from-blue-700 via-indigo-600 to-purple-500',
+    gradient: 'bg-linear-to-r from-blue-700 via-indigo-600 to-purple-500',
     icon: '🎨',
     emojiRight: '🌐',
     discountCode: 'MEETJS',
@@ -42,7 +42,7 @@ export const learningDiscounts: Promo[] = [
     expiresAt: '2025-12-31T23:59:59+02:00',
     description:
       'Get 40% off all Piccalilli courses with code MEETJS! Learn modern CSS, accessibility, progressive enhancement, and web performance from industry experts. Piccalilli also offers automatic 40% PPP (Purchasing Power Parity) discounts for developers in Poland. Perfect for frontend developers who want to build better, more accessible websites.',
-    gradient: 'bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500',
+    gradient: 'bg-linear-to-r from-yellow-400 via-amber-500 to-orange-500',
     textColor: 'text-gray-900',
     image: 'https://piccalil.li/favicons/favicon-32x32.png',
     icon: 'https://piccalil.li/favicons/favicon-32x32.png',
@@ -60,7 +60,7 @@ export const learningDiscounts: Promo[] = [
     expiresAt: '2026-01-31T23:59:59+01:00',
     description:
       'Get $10 off any mid-level or senior certificate packages available on Certificates.dev with code MEETJS10. Coupon expires on 31 Jan 2026.',
-    gradient: 'bg-gradient-to-r from-emerald-600 via-teal-500 to-cyan-500',
+    gradient: 'bg-linear-to-r from-emerald-600 via-teal-500 to-cyan-500',
     icon: '🏅',
     emojiRight: '📜',
     discountCode: 'MEETJS10',
@@ -75,7 +75,7 @@ export const learningDiscounts: Promo[] = [
     expiresAt: '2025-12-31T23:59:59+02:00',
     description:
       'Otrzymaj 10% zniżki na kurs "Dziecko w sieci" z kodem meetjs. Kurs pomoże rodzicom i opiekunom nauczyć dzieci bezpiecznego korzystania z internetu, ochrony prywatności i rozpoznawania zagrożeń online. Idealne dla rodzin, które chcą zapewnić dzieciom bezpieczne doświadczenia w świecie cyfrowym.',
-    gradient: 'bg-gradient-to-r from-blue-600 via-cyan-500 to-teal-500',
+    gradient: 'bg-linear-to-r from-blue-600 via-cyan-500 to-teal-500',
     icon: '🛡️',
     image: 'https://www.uczmnie.pl/wp-content/uploads/2025/01/fav-1.svg',
     emojiRight: '👨‍👩‍👧‍👦',
@@ -91,7 +91,7 @@ export const learningDiscounts: Promo[] = [
     expiresAt: '2027-12-31T23:59:59+01:00',
     description:
       'Buying from Poland? Get 60% off ($119.60 instead of $299) with regional pricing (PPP) — content is then viewable from Poland only. AI Coding Crash Course by Matt Pocock (AIHero) is a self-paced course (~60 lessons in 6 sections) that teaches you to control coding agents like Claude Code using real software engineering fundamentals: context management, AGENTS.md, skills, subagents, handoffs, and more.',
-    gradient: 'bg-gradient-to-r from-violet-700 via-fuchsia-600 to-purple-500',
+    gradient: 'bg-linear-to-r from-violet-700 via-fuchsia-600 to-purple-500',
     icon: '🤖',
     image: '/partners/aihero-logo.png',
     emojiRight: '🇵�',
@@ -106,7 +106,7 @@ export const learningDiscounts: Promo[] = [
     expiresAt: '2026-12-31T23:59:59+01:00',
     description:
       'A curated newsletter that brings you the best Next.js articles, tools, and projects straight to your inbox once every week. Stay ahead with the latest Next.js developments, tutorials, and community insights.',
-    gradient: 'bg-gradient-to-r from-gray-900 via-indigo-900 to-gray-900',
+    gradient: 'bg-linear-to-r from-gray-900 via-indigo-900 to-gray-900',
     icon: '📬',
     image: '/partners/nextjsweekly-logo.svg',
     emojiRight: '⚡',

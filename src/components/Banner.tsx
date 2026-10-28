@@ -10,7 +10,7 @@ interface Props {
 export const Banner = ({ children, variant = 'info' }: Props) => (
   <article
     className={classNames(
-      'mb-8 border-l-4 p-4 shadow-sm',
+      'mb-8 border-l-4 p-4 shadow-xs',
       getVariantStyles(variant),
     )}
   >

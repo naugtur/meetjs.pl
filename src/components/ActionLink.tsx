@@ -8,7 +8,7 @@ export const ActionLink = ({ href, children }: Props) => (
     href={href}
     target="_blank"
     rel="noopener"
-    className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-2 text-primary-foreground transition-all hover:bg-purple/50"
+    className="bg-primary text-primary-foreground hover:bg-purple/50 inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 transition-all"
   >
     {children}
   </a>

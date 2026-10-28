@@ -28,9 +28,9 @@ export default async function MediaPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen bg-linear-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 py-20">
+      <section className="bg-linear-to-r from-purple-600 via-blue-600 to-indigo-600 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <Tv className="mx-auto mb-6 h-16 w-16 text-white" />
@@ -59,11 +59,11 @@ export default async function MediaPage() {
                   className="group overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl dark:bg-gray-800"
                 >
                   {/* Type Badge */}
-                  <div className={`bg-gradient-to-r ${gradient} p-4`}>
+                  <div className={`bg-linear-to-r ${gradient} p-4`}>
                     <div className="flex items-center justify-between text-white">
                       <div className="flex items-center gap-2">
                         <Icon className="h-5 w-5" />
-                        <span className="text-sm font-semibold uppercase tracking-wide">
+                        <span className="text-sm font-semibold tracking-wide uppercase">
                           {typeLabels[item.type]}
                         </span>
                       </div>
@@ -108,7 +108,7 @@ export default async function MediaPage() {
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`inline-flex items-center gap-2 rounded-lg bg-gradient-to-r ${gradient} px-6 py-3 font-semibold text-white transition-all duration-200 hover:scale-105`}
+                      className={`inline-flex items-center gap-2 rounded-lg bg-linear-to-r ${gradient} px-6 py-3 font-semibold text-white transition-all duration-200 hover:scale-105`}
                     >
                       {t('media.view_material')}
                       <ExternalLink className="h-4 w-4" />
