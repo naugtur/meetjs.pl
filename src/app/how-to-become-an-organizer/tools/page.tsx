@@ -11,7 +11,7 @@ export default async function OrganizerToolsPage() {
       </h1>
       <p className="mb-8 text-lg text-gray-700">{t('organizer.tools_intro')}</p>
 
-      <section className="mb-12 rounded-lg border bg-white p-6 shadow-sm">
+      <section className="mb-12 rounded-lg border bg-white p-6 shadow-xs">
         <div className="mb-4 flex items-center gap-3">
           <span className="text-3xl">🖼️</span>
           <h2 className="text-2xl font-semibold">

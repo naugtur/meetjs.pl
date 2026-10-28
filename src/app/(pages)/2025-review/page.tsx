@@ -291,7 +291,7 @@ export default function YearInReview2025() {
               {funnyStats.map((item, index) => (
                 <div
                   key={index}
-                  className="rounded-xl bg-white/10 p-4 text-center backdrop-blur-sm transition-all duration-300 hover:bg-white/20"
+                  className="rounded-xl bg-white/10 p-4 text-center backdrop-blur-xs transition-all duration-300 hover:bg-white/20"
                 >
                   <div className="mb-2 text-3xl">{item.emoji}</div>
                   <div className="text-2xl font-bold text-white">
@@ -320,7 +320,7 @@ export default function YearInReview2025() {
               {goodThings.map((item, index) => (
                 <div
                   key={index}
-                  className="rounded-2xl border border-green-200 bg-white p-6 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-lg dark:border-green-800 dark:bg-gray-800"
+                  className="rounded-2xl border border-green-200 bg-white p-6 shadow-xs transition-all duration-300 hover:scale-105 hover:shadow-lg dark:border-green-800 dark:bg-gray-800"
                 >
                   <div className="mb-3 text-3xl">{item.emoji}</div>
                   <h3 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">
@@ -351,7 +351,7 @@ export default function YearInReview2025() {
               {badThings.map((item, index) => (
                 <div
                   key={index}
-                  className="rounded-2xl border border-red-200 bg-white p-6 shadow-sm transition-all duration-300 hover:scale-105 hover:shadow-lg dark:border-red-800 dark:bg-gray-800"
+                  className="rounded-2xl border border-red-200 bg-white p-6 shadow-xs transition-all duration-300 hover:scale-105 hover:shadow-lg dark:border-red-800 dark:bg-gray-800"
                 >
                   <div className="mb-3 text-3xl">{item.emoji}</div>
                   <h3 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">
@@ -414,7 +414,7 @@ export default function YearInReview2025() {
                 2026 Prediction
               </h2>
               <p className="mb-8 text-purple-200">Our crystal ball says...</p>
-              <div className="rounded-2xl bg-white/10 p-8 backdrop-blur-sm">
+              <div className="rounded-2xl bg-white/10 p-8 backdrop-blur-xs">
                 <p className="text-xl text-white italic md:text-2xl">
                   &ldquo;{randomPrediction}&rdquo;
                 </p>
@@ -504,7 +504,7 @@ type Developer = {
               </Link>
               <Link
                 href="/"
-                className="rounded-full bg-white/30 px-8 py-4 font-medium text-gray-900 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/50"
+                className="rounded-full bg-white/30 px-8 py-4 font-medium text-gray-900 backdrop-blur-xs transition-all duration-300 hover:scale-105 hover:bg-white/50"
               >
                 Back to Homepage
               </Link>

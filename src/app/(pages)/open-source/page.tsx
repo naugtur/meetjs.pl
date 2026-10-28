@@ -28,7 +28,7 @@ export default async function OpenSourcePage() {
           </div>
 
           <div className="grid gap-8 md:grid-cols-2">
-            <div className="bg-card rounded-lg border p-6 shadow-sm">
+            <div className="bg-card rounded-lg border p-6 shadow-xs">
               <h3 className="mb-4 text-2xl font-bold">
                 {t('open_source.support.title')}
               </h3>
@@ -47,7 +47,7 @@ export default async function OpenSourcePage() {
                   href="https://github.com/sponsors"
                   target="_blank"
                   rel="noopener"
-                  className="ring-offset-background focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white transition-colors visited:text-white hover:bg-slate-800 hover:text-white focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
+                  className="ring-offset-background focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white transition-colors visited:text-white hover:bg-slate-800 hover:text-white focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50"
                 >
                   {t('open_source.support.platforms.github')}
                 </a>
@@ -55,14 +55,14 @@ export default async function OpenSourcePage() {
                   href="https://opencollective.com/"
                   target="_blank"
                   rel="noopener"
-                  className="border-input bg-background ring-offset-background hover:bg-accent hover:text-accent-foreground focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md border px-4 py-2 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
+                  className="border-input bg-background ring-offset-background hover:bg-accent hover:text-accent-foreground focus-visible:ring-ring inline-flex h-10 items-center justify-center rounded-md border px-4 py-2 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50"
                 >
                   {t('open_source.support.platforms.opencollective')}
                 </a>
               </div>
             </div>
 
-            <div className="bg-card rounded-lg border p-6 shadow-sm">
+            <div className="bg-card rounded-lg border p-6 shadow-xs">
               <h3 className="mb-4 text-2xl font-bold">
                 {t('open_source.projects.title')}
               </h3>

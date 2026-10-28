@@ -10,7 +10,7 @@ export default function FutureConfPage() {
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="mb-6 inline-flex items-center rounded-full bg-white/20 px-4 py-2 text-sm font-medium backdrop-blur-sm">
+            <div className="mb-6 inline-flex items-center rounded-full bg-white/20 px-4 py-2 text-sm font-medium backdrop-blur-xs">
               <Star className="mr-2 h-4 w-4" />
               meet.js Partnership
             </div>

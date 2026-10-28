@@ -306,7 +306,7 @@ export default function JSNationAwardPage() {
       <div className="mb-16">
         <h2 className="mb-6 text-center text-2xl font-bold">Other Nominees</h2>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <Card className="border-gray-200 shadow-sm">
+          <Card className="border-gray-200 shadow-xs">
             <CardHeader className="pb-2">
               <CardTitle className="text-lg">JavaScript London</CardTitle>
             </CardHeader>
@@ -329,7 +329,7 @@ export default function JSNationAwardPage() {
             </CardFooter>
           </Card>
 
-          <Card className="border-gray-200 shadow-sm">
+          <Card className="border-gray-200 shadow-xs">
             <CardHeader className="pb-2">
               <CardTitle className="text-lg">AdvancedJS Amsterdam</CardTitle>
             </CardHeader>
@@ -351,7 +351,7 @@ export default function JSNationAwardPage() {
             </CardFooter>
           </Card>
 
-          <Card className="border-gray-200 shadow-sm">
+          <Card className="border-gray-200 shadow-xs">
             <CardHeader className="pb-2">
               <CardTitle className="text-lg">CopenhagenJS</CardTitle>
             </CardHeader>

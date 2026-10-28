@@ -11,7 +11,7 @@ export const HeroSection = () => {
 
   return (
     <header className="relative grid min-h-[60vh] bg-[url('/conference.jpg')] bg-cover text-center text-white md:min-h-[70vh]">
-      <div className="bg-opacity-70 col-start-1 row-start-1 h-full w-full bg-gray-800"></div>
+      <div className="col-start-1 row-start-1 h-full w-full bg-gray-800/70"></div>
 
       <RankingBanner
         href="https://crossweb.pl/blog/ranking-najpopularniejsze-wydarzenia-i-cykle-wydarzen-w-crossweb-w-2025/"
@@ -30,7 +30,7 @@ export const HeroSection = () => {
             href="https://instagram.com/meet.js_poland"
             target="_blank"
             rel="noopener"
-            className="flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 text-sm backdrop-blur-sm transition-all hover:bg-white/30"
+            className="flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 text-sm backdrop-blur-xs transition-all hover:bg-white/30"
           >
             <FaInstagram className="h-4 w-4" />
             {t('hero.follow_us')}

@@ -119,7 +119,7 @@ export const CommunityItemCard = ({ item }: { item: CommunityItem }) => {
             {item.tags.slice(0, 3).map((tag) => (
               <span
                 key={tag}
-                className="rounded-lg bg-gray-900/5 px-2.5 py-1 text-xs font-semibold text-gray-700 backdrop-blur-sm dark:bg-white/5 dark:text-gray-300"
+                className="rounded-lg bg-gray-900/5 px-2.5 py-1 text-xs font-semibold text-gray-700 backdrop-blur-xs dark:bg-white/5 dark:text-gray-300"
               >
                 #{tag}
               </span>

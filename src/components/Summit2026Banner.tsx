@@ -58,7 +58,7 @@ export const Summit2026Banner = () => {
       <div className="relative mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="text-center md:text-left">
           {/* Anniversary Badge */}
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 backdrop-blur-sm">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 backdrop-blur-xs">
             <Sparkles className="h-5 w-5 text-yellow-300" />
             <span className="text-sm font-semibold text-white">
               {t('summit_2026.anniversary_badge')}
@@ -77,11 +77,11 @@ export const Summit2026Banner = () => {
 
           {/* Event Details */}
           <div className="mb-8 flex flex-wrap justify-center gap-4 text-white">
-            <div className="flex items-center gap-2 rounded-lg bg-white/10 px-4 py-2 backdrop-blur-sm">
+            <div className="flex items-center gap-2 rounded-lg bg-white/10 px-4 py-2 backdrop-blur-xs">
               <Calendar className="h-5 w-5" />
               <span className="font-medium">{t('summit_2026.date')}</span>
             </div>
-            <div className="flex items-center gap-2 rounded-lg bg-white/10 px-4 py-2 backdrop-blur-sm">
+            <div className="flex items-center gap-2 rounded-lg bg-white/10 px-4 py-2 backdrop-blur-xs">
               <MapPin className="h-5 w-5" />
               <span className="font-medium">{t('summit_2026.location')}</span>
             </div>
@@ -109,7 +109,7 @@ export const Summit2026Banner = () => {
                   ].map((item) => (
                     <div
                       key={item.label}
-                      className="flex min-w-[60px] flex-col items-center rounded-lg bg-white/10 p-3 backdrop-blur-sm md:min-w-[100px] md:p-4"
+                      className="flex min-w-[60px] flex-col items-center rounded-lg bg-white/10 p-3 backdrop-blur-xs md:min-w-[100px] md:p-4"
                     >
                       <span className="text-2xl font-bold text-white md:text-4xl">
                         {String(item.value).padStart(2, '0')}
@@ -140,7 +140,7 @@ export const Summit2026Banner = () => {
 
                 {/* Event details in cards */}
                 <div className="flex flex-wrap justify-center gap-3">
-                  <div className="rounded-lg bg-white/10 px-4 py-2 backdrop-blur-sm">
+                  <div className="rounded-lg bg-white/10 px-4 py-2 backdrop-blur-xs">
                     <p className="text-sm text-white/70">
                       {t('summit_2026.live_location_label')}
                     </p>
@@ -148,7 +148,7 @@ export const Summit2026Banner = () => {
                       {t('summit_2026.live_location')}
                     </p>
                   </div>
-                  <div className="rounded-lg bg-white/10 px-4 py-2 backdrop-blur-sm">
+                  <div className="rounded-lg bg-white/10 px-4 py-2 backdrop-blur-xs">
                     <p className="text-sm text-white/70">
                       {t('summit_2026.live_time_label')}
                     </p>
@@ -160,7 +160,7 @@ export const Summit2026Banner = () => {
               </div>
             )}
             {eventStatus === 'ended' && (
-              <div className="rounded-2xl border-2 border-white/20 bg-white/10 px-8 py-8 backdrop-blur-sm">
+              <div className="rounded-2xl border-2 border-white/20 bg-white/10 px-8 py-8 backdrop-blur-xs">
                 <div className="mb-3 text-center text-4xl">🎉</div>
                 <p className="mb-2 text-center text-2xl font-bold text-white md:text-3xl">
                   {t('summit_2026.ended_title')}
@@ -196,7 +196,7 @@ export const Summit2026Banner = () => {
               href="https://summit.meetjs.pl/2026#speakers"
               target="_blank"
               rel="noopener"
-              className="inline-flex items-center gap-2 rounded-lg border-2 border-white bg-white/10 px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20"
+              className="inline-flex items-center gap-2 rounded-lg border-2 border-white bg-white/10 px-8 py-4 text-base font-semibold text-white backdrop-blur-xs transition-all hover:bg-white/20"
             >
               {t('summit_2026.cta_view_speakers')}
             </a>

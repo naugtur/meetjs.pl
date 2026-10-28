@@ -11,7 +11,7 @@ export const YouTubeSubscribeBanner = () => {
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           {/* Left side - Icon and text */}
           <div className="flex items-center gap-4 text-white">
-            <div className="rounded-full bg-white/10 p-4 backdrop-blur-sm">
+            <div className="rounded-full bg-white/10 p-4 backdrop-blur-xs">
               <FaYoutube className="h-12 w-12" />
             </div>
             <div>
@@ -37,7 +37,7 @@ export const YouTubeSubscribeBanner = () => {
             </a>
             <Link
               href={'/videos' as Route}
-              className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/30 bg-white/10 px-6 py-3 font-semibold whitespace-nowrap text-white backdrop-blur-sm transition-colors duration-200 hover:bg-white/20"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/30 bg-white/10 px-6 py-3 font-semibold whitespace-nowrap text-white backdrop-blur-xs transition-colors duration-200 hover:bg-white/20"
             >
               Browse Videos
               <FaArrowRight className="h-4 w-4" />

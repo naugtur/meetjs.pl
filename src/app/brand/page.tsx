@@ -247,7 +247,7 @@ const BrandPage = async () => {
           <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
             <a
               href="#guidelines"
-              className="flex items-center gap-2 rounded-md bg-white p-3 shadow-sm transition-all hover:bg-blue-50 hover:shadow-md"
+              className="flex items-center gap-2 rounded-md bg-white p-3 shadow-xs transition-all hover:bg-blue-50 hover:shadow-md"
             >
               <span className="text-2xl">📋</span>
               <div>
@@ -259,7 +259,7 @@ const BrandPage = async () => {
             </a>
             <a
               href="#logos"
-              className="flex items-center gap-2 rounded-md bg-white p-3 shadow-sm transition-all hover:bg-blue-50 hover:shadow-md"
+              className="flex items-center gap-2 rounded-md bg-white p-3 shadow-xs transition-all hover:bg-blue-50 hover:shadow-md"
             >
               <span className="text-2xl">🎨</span>
               <div>
@@ -272,7 +272,7 @@ const BrandPage = async () => {
 
             <a
               href="#colors"
-              className="flex items-center gap-2 rounded-md bg-white p-3 shadow-sm transition-all hover:bg-blue-50 hover:shadow-md"
+              className="flex items-center gap-2 rounded-md bg-white p-3 shadow-xs transition-all hover:bg-blue-50 hover:shadow-md"
             >
               <span className="text-2xl">🎨</span>
               <div>
@@ -284,7 +284,7 @@ const BrandPage = async () => {
             </a>
             <a
               href="#wallpapers"
-              className="flex items-center gap-2 rounded-md bg-white p-3 shadow-sm transition-all hover:bg-blue-50 hover:shadow-md"
+              className="flex items-center gap-2 rounded-md bg-white p-3 shadow-xs transition-all hover:bg-blue-50 hover:shadow-md"
             >
               <span className="text-2xl">🖼️</span>
               <div>
@@ -385,7 +385,7 @@ const BrandPage = async () => {
         <div className="mb-8 rounded-lg bg-blue-50 p-6">
           <p className="mb-4">{t('brand.logo_variants_intro')}</p>
           <div className="grid gap-6 md:grid-cols-2">
-            <div className="rounded-lg bg-white p-4 shadow-sm">
+            <div className="rounded-lg bg-white p-4 shadow-xs">
               <h4 className="mb-2 text-lg font-semibold text-green-700">
                 {t('brand.light_logos_official')}
               </h4>
@@ -399,7 +399,7 @@ const BrandPage = async () => {
                 <li>• {t('brand.light_logos_use_4')}</li>
               </ul>
             </div>
-            <div className="rounded-lg bg-white p-4 shadow-sm">
+            <div className="rounded-lg bg-white p-4 shadow-xs">
               <h4 className="mb-2 text-lg font-semibold text-orange-700">
                 {t('brand.bold_logos_print')}
               </h4>
@@ -421,7 +421,7 @@ const BrandPage = async () => {
           {officialLogos.map((logo) => (
             <div
               key={logo.name}
-              className="overflow-hidden rounded-lg border shadow-sm transition-shadow hover:shadow-md"
+              className="overflow-hidden rounded-lg border shadow-xs transition-shadow hover:shadow-md"
             >
               <div className="flex h-48 items-center justify-center bg-gray-100 p-6">
                 <Image
@@ -469,7 +469,7 @@ const BrandPage = async () => {
           {boldLogos.map((logo) => (
             <div
               key={logo.name}
-              className="overflow-hidden rounded-lg border shadow-sm transition-shadow hover:shadow-md"
+              className="overflow-hidden rounded-lg border shadow-xs transition-shadow hover:shadow-md"
             >
               <div className="flex h-48 items-center justify-center bg-gray-100 p-6">
                 <Image
@@ -519,7 +519,7 @@ const BrandPage = async () => {
               {legacyLogos.map((logo) => (
                 <div
                   key={logo.name}
-                  className="overflow-hidden rounded-lg border bg-white shadow-sm"
+                  className="overflow-hidden rounded-lg border bg-white shadow-xs"
                 >
                   <div className="flex h-40 items-center justify-center bg-gray-100 p-4">
                     <Image
@@ -590,7 +590,7 @@ const BrandPage = async () => {
           {currentColors.map((color) => (
             <div
               key={color.name}
-              className="overflow-hidden rounded-lg border shadow-sm transition-shadow hover:shadow-md"
+              className="overflow-hidden rounded-lg border shadow-xs transition-shadow hover:shadow-md"
             >
               <div
                 className="h-32"
@@ -621,7 +621,7 @@ const BrandPage = async () => {
               {originalColors.map((color) => (
                 <div
                   key={color.name}
-                  className="overflow-hidden rounded-lg border bg-white shadow-sm"
+                  className="overflow-hidden rounded-lg border bg-white shadow-xs"
                 >
                   <div
                     className="h-24"
@@ -649,7 +649,7 @@ const BrandPage = async () => {
           {wallpapers.map((wallpaper) => (
             <div
               key={wallpaper.name}
-              className="overflow-hidden rounded-lg border shadow-sm transition-shadow hover:shadow-md"
+              className="overflow-hidden rounded-lg border shadow-xs transition-shadow hover:shadow-md"
             >
               <div className="relative flex h-64 items-center justify-center bg-gray-100 p-4">
                 <Image

@@ -10,7 +10,7 @@ export const JavaScript30YearsPromo = () => {
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           {/* Left side - Icon and text */}
           <div className="flex items-center gap-4 text-white">
-            <div className="rounded-full bg-white/10 p-4 backdrop-blur-sm">
+            <div className="rounded-full bg-white/10 p-4 backdrop-blur-xs">
               <FaCalendar className="h-12 w-12" />
             </div>
             <div>

@@ -300,7 +300,7 @@ export default function JavaScript30Years() {
                 href="https://deno.com/blog/history-of-javascript"
                 target="_blank"
                 rel="noopener"
-                className="rounded-full bg-white/20 px-8 py-4 font-medium text-gray-900 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/30"
+                className="rounded-full bg-white/20 px-8 py-4 font-medium text-gray-900 backdrop-blur-xs transition-all duration-300 hover:scale-105 hover:bg-white/30"
               >
                 Read the Full Story
               </a>
@@ -362,7 +362,7 @@ export default function JavaScript30Years() {
               </p>
             </div>
 
-            <div className="mx-auto max-w-4xl rounded-2xl bg-white/10 p-8 backdrop-blur-sm">
+            <div className="mx-auto max-w-4xl rounded-2xl bg-white/10 p-8 backdrop-blur-xs">
               <h3 className="mb-4 text-2xl font-bold text-yellow-400">
                 &ldquo;NETSCAPE AND SUN ANNOUNCE JAVASCRIPT, THE OPEN,
                 CROSS-PLATFORM OBJECT SCRIPTING LANGUAGE FOR ENTERPRISE NETWORKS
@@ -541,7 +541,7 @@ export default function JavaScript30Years() {
                 foundation of modern digital experiences.
               </p>
               <div className="mb-12 grid grid-cols-1 gap-6 md:grid-cols-3">
-                <div className="rounded-xl bg-white p-6 shadow-sm">
+                <div className="rounded-xl bg-white p-6 shadow-xs">
                   <div className="mb-3 text-2xl">🤖</div>
                   <h3 className="mb-2 font-semibold text-gray-900">
                     AI Integration
@@ -551,7 +551,7 @@ export default function JavaScript30Years() {
                     the browser
                   </p>
                 </div>
-                <div className="rounded-xl bg-white p-6 shadow-sm">
+                <div className="rounded-xl bg-white p-6 shadow-xs">
                   <div className="mb-3 text-2xl">🌐</div>
                   <h3 className="mb-2 font-semibold text-gray-900">
                     Edge Computing
@@ -561,7 +561,7 @@ export default function JavaScript30Years() {
                     serverless functions
                   </p>
                 </div>
-                <div className="rounded-xl bg-white p-6 shadow-sm">
+                <div className="rounded-xl bg-white p-6 shadow-xs">
                   <div className="mb-3 text-2xl">🚀</div>
                   <h3 className="mb-2 font-semibold text-gray-900">
                     Performance

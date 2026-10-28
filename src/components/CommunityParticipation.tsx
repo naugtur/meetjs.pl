@@ -62,7 +62,7 @@ export const CommunityParticipationClient = ({
         {/* Footer */}
         {items.length > 0 && (
           <div className="mt-16 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-6 py-3 text-sm text-gray-600 shadow-sm dark:bg-gray-800 dark:text-gray-400">
+            <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-6 py-3 text-sm text-gray-600 shadow-xs dark:bg-gray-800 dark:text-gray-400">
               <Users className="h-4 w-4" />
               <p>{t('communityParticipation.help_text')}</p>
             </div>

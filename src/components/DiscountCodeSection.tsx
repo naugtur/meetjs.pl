@@ -50,7 +50,7 @@ export default function DiscountCodeSection({
         </div>
         <button
           onClick={handleCopyCode}
-          className={`ml-3 flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium shadow-sm transition-all duration-200 hover:shadow-md active:scale-95 ${styles.button}`}
+          className={`ml-3 flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium shadow-xs transition-all duration-200 hover:shadow-md active:scale-95 ${styles.button}`}
           aria-label={`Copy discount code ${discountCode}`}
         >
           {copied ? (

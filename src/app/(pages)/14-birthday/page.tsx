@@ -126,7 +126,7 @@ export default function Page() {
               (February 12, 2011)
             </p>
           </div>
-          <div className="rounded-r-lg border-l-4 border-blue-600 bg-gray-50 p-4 shadow-sm">
+          <div className="rounded-r-lg border-l-4 border-blue-600 bg-gray-50 p-4 shadow-xs">
             <p className="text-sm leading-relaxed text-gray-700">
               The first meet.js featured talks on cutting-edge topics of the
               time, including jQuery Mobile, Box2D physics engine, HTML5 audio,

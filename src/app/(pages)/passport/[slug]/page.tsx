@@ -124,7 +124,7 @@ export default async function PassportProgressPage({
           return (
             <div
               key={bracket.bracketId}
-              className={`flex items-center gap-3 rounded-lg border p-4 text-left shadow-sm ${
+              className={`flex items-center gap-3 rounded-lg border p-4 text-left shadow-xs ${
                 achieved ? style.cardHighlightClass : 'border-gray-200 bg-white'
               }`}
             >
@@ -166,7 +166,7 @@ export default async function PassportProgressPage({
             {cities.map((city) => (
               <div
                 key={city}
-                className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm"
+                className="rounded-lg border border-gray-200 bg-white p-4 shadow-xs"
               >
                 <h3 className="mb-2 font-semibold text-purple-600">{city}</h3>
                 <ul className="text-muted-foreground space-y-2 text-sm">
@@ -194,7 +194,7 @@ export default async function PassportProgressPage({
           <h2 className="mb-4 text-xl font-bold">
             {t('passport.progress.revoked_heading')}
           </h2>
-          <ul className="text-muted-foreground space-y-2 rounded-lg border border-gray-200 bg-white p-4 text-sm shadow-sm">
+          <ul className="text-muted-foreground space-y-2 rounded-lg border border-gray-200 bg-white p-4 text-sm shadow-xs">
             {progress.revokedRecords.map((record) => (
               <li key={`${record.participantSlug}-${record.eventId}`}>
                 <span className="text-foreground font-medium">

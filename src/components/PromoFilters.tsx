@@ -19,7 +19,7 @@ export function PromoFilters({
 }: PromoFiltersProps) {
   return (
     <>
-      <div className="bg-card flex flex-wrap items-center gap-4 rounded-lg border p-4 shadow-sm">
+      <div className="bg-card flex flex-wrap items-center gap-4 rounded-lg border p-4 shadow-xs">
         <div className="flex items-center gap-2">
           <Filter className="text-muted-foreground h-5 w-5" />
           <span className="text-sm font-medium">Filter by country:</span>

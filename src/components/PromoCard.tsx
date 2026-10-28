@@ -41,7 +41,7 @@ export function PromoCard({ promo }: PromoCardProps) {
           <h3 className="text-xl font-bold text-white drop-shadow-md">
             {promo.name}
           </h3>
-          <p className="text-sm text-white/80 drop-shadow-sm">
+          <p className="text-sm text-white/80 drop-shadow-xs">
             {promo.message}
           </p>
         </div>
