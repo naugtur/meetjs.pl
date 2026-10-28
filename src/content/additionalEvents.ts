@@ -680,7 +680,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
     rsvp: 'https://eventory.cc/event/hacknation-2026/tickets',
     city: 'Bydgoszcz',
     address: 'Bydgoszcz',
-    image: '',
+    image: '/partners/hacknation.png',
     serie: 'Hackathon',
     topic: [
       'Hackathon',
