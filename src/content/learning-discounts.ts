@@ -97,6 +97,21 @@ export const learningDiscounts: Promo[] = [
     emojiRight: '🇵�',
   },
   {
+    id: 'aiforui-2026',
+    name: 'AI for UI',
+    message: '40% off in Poland with code B7C1LR2W!',
+    cta: '🎨 Get 40% Off',
+    ticketLink: 'https://aiforui.dev/',
+    eventLink: 'https://aiforui.dev',
+    expiresAt: '2026-12-31T23:59:59+01:00',
+    description:
+      'Get 40% off "AI for UI" by Emil Kowalski (design engineer at Linear, creator of Sonner and Vaul) with code B7C1LR2W — a PPP regional license for buyers in Poland; course content is then accessible from Poland only. Learn to build great interfaces with AI: encode your taste into rules and skills, workflows from prototype to production, and how to review AI output. Includes 28 UI skills, the Lapse animation review tool, and a private Discord community.',
+    gradient: 'bg-gradient-to-r from-indigo-600 via-blue-500 to-cyan-400',
+    icon: '🎨',
+    emojiRight: '🇵🇱',
+    discountCode: 'B7C1LR2W',
+  },
+  {
     id: 'nextjsweekly-2026',
     name: 'Next.js Weekly',
     message: 'Stay updated with the best Next.js content every week!',

@@ -541,6 +541,32 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
       'Poland',
     ],
   },
+  {
+    id: 'gdg-devfest-warsaw-2026',
+    title: 'GDG DevFest Warsaw 2026',
+    description:
+      'Jednodniowa konferencja technologiczna organizowana przez społeczność GDG Warszawa – 21 listopada 2026 w Google for Startups Campus Warsaw (Plac Konesera 10). Motyw przewodni "Real Work, Real Lessons": prelekcje, dema i warsztaty o praktycznym AI/ML, Google Cloud, web performance, Androidzie, open source i kulturze inżynierskiej. Bilety od 79 zł.',
+    url: 'https://warsaw.devfest.pl/',
+    type: 'collaboration',
+    status: 'active',
+    startDate: '2026-11-21',
+    endDate: '2026-11-21',
+    organization: 'GDG Warszawa',
+    impact:
+      'Community partnership – promocja wydarzenia w społeczności meet.js.',
+    ctaText: 'Dowiedz się więcej',
+    featured: true,
+    image: '/partners/devfest-warsaw.png',
+    tags: [
+      'Conference',
+      'Warsaw',
+      'GDG',
+      'Google',
+      'Community',
+      'AI',
+      'Web Development',
+    ],
+  },
 ];
 
 const sortByNewest = (items: CommunityItem[]): CommunityItem[] => {
