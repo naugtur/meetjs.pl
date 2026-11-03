@@ -2,6 +2,44 @@ import { Promo } from '../types/promo';
 
 export const eventsDiscounts: Promo[] = [
   {
+    id: 'react-day-berlin-2026',
+    name: 'React Day Berlin 2026',
+    message: '10% off with code FRIENDS!',
+    cta: '👉 Get 10% Off',
+    ticketLink:
+      'https://ti.to/gitnation/react-day-berlin-2026/discount/FRIENDS',
+    eventLink: 'https://reactday.berlin/',
+    expiresAt: '2026-12-07T23:59:59+01:00',
+    description:
+      'meet.js is a Community Partner of React Day Berlin 2026! A hybrid conference of all things React — December 4 in-person at KOSMOS Berlin and December 7 remote. OSS authors, top trainers and speakers, and web engineers from across the globe meet to talk React, React Native, full-stack and AI-assisted development. Use code FRIENDS for 10% off your ticket!',
+    gradient: 'bg-gradient-to-r from-sky-600 via-cyan-500 to-teal-400',
+    icon: '⚛️',
+    image: '/discounts/react-day-berlin.svg',
+    emojiRight: '🇩🇪',
+    country: 'Germany',
+    city: 'Berlin',
+    discountCode: 'FRIENDS',
+  },
+  {
+    id: 'ai-coding-summit-berlin-2026',
+    name: 'AI Coding Summit Berlin 2026',
+    message: '10% off with code FRIENDS!',
+    cta: '👉 Get 10% Off',
+    ticketLink:
+      'https://ti.to/gitnation/ai-coding-summit-berlin-2026/discount/FRIENDS',
+    eventLink: 'https://aicodingsummit.com/berlin/',
+    expiresAt: '2026-12-07T23:59:59+01:00',
+    description:
+      'meet.js is a Community Partner of AI Coding Summit Berlin 2026! A new in-person gathering for the European AI developer community — December 4 at KOSMOS Berlin (co-located with React Day Berlin) and December 7 remote. A no-hype, practitioner-led format: real workflows, repeatable techniques, and deep dives into the tools, agents and patterns that make AI-assisted development work at scale. Use code FRIENDS for 10% off your ticket!',
+    gradient: 'bg-gradient-to-r from-slate-800 via-violet-700 to-fuchsia-600',
+    icon: '🤖',
+    image: '/discounts/ai-coding-summit-berlin.svg',
+    emojiRight: '🇩🇪',
+    country: 'Germany',
+    city: 'Berlin',
+    discountCode: 'FRIENDS',
+  },
+  {
     id: 'smashingconf-ai-2027',
     name: 'SmashingConf AI 2027 Conference',
     message: 'Online, Dec 1 — tickets €50 + a free ticket giveaway!',

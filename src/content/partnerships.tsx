@@ -189,6 +189,78 @@ export const partnerships: Partnership[] = [
     gradient: 'from-red-600 to-amber-400',
   },
   {
+    name: 'React Day Berlin 2026',
+    website: 'https://reactday.berlin/',
+    description:
+      'Hybrid conference of all things React, gathering OSS authors, top trainers and speakers, and web engineers from across the globe in Berlin and online.',
+    details: [
+      'Hybrid format: December 4, 2026 in-person at KOSMOS Berlin (Karl-Marx-Allee 131A) and December 7 remote',
+      'Talks on React, React Native, full-stack architecture and AI-assisted development',
+      'Co-located with AI Coding Summit Berlin 2026',
+      'meet.js logo in the partners section on reactday.berlin',
+      'Mutual promotion on social media',
+    ],
+    goals: [
+      'Bringing the European React community together for learning and networking',
+      'Showcasing the latest trends and best practices in React development',
+      'Building connections between meet.js members and the international React community',
+    ],
+    location: 'Berlin, Germany & Online',
+    contact: 'https://reactday.berlin/',
+    icon: (
+      <Image
+        src="/discounts/react-day-berlin.svg"
+        alt="React Day Berlin"
+        width={32}
+        height={32}
+      />
+    ),
+    gradient: 'from-sky-600 to-teal-400',
+    specialOffer: {
+      title: '10% Discount - Code FRIENDS',
+      description:
+        'Use code FRIENDS for 10% off tickets to React Day Berlin 2026',
+      link: 'https://ti.to/gitnation/react-day-berlin-2026/discount/FRIENDS',
+      linkText: 'Get 10% Off',
+    },
+  },
+  {
+    name: 'AI Coding Summit Berlin 2026',
+    website: 'https://aicodingsummit.com/berlin/',
+    description:
+      'A new in-person gathering for the European AI developer community — a no-hype, practitioner-led look at how AI-assisted development works at scale.',
+    details: [
+      'Hybrid format: December 4, 2026 in-person at KOSMOS Berlin (Karl-Marx-Allee 131A) and December 7 remote',
+      'Real workflows, repeatable techniques and deep dives into AI coding tools, agents and patterns',
+      'Co-located with React Day Berlin 2026',
+      'meet.js logo in the partners section on aicodingsummit.com',
+      'Mutual promotion on social media',
+    ],
+    goals: [
+      'Sharing practical, production-tested approaches to AI-assisted software development',
+      'Connecting European developers working with AI coding tools',
+      'Building connections between meet.js members and the international AI developer community',
+    ],
+    location: 'Berlin, Germany & Online',
+    contact: 'https://aicodingsummit.com/berlin/',
+    icon: (
+      <Image
+        src="/discounts/ai-coding-summit-berlin.svg"
+        alt="AI Coding Summit"
+        width={32}
+        height={32}
+      />
+    ),
+    gradient: 'from-violet-700 to-fuchsia-600',
+    specialOffer: {
+      title: '10% Discount - Code FRIENDS',
+      description:
+        'Use code FRIENDS for 10% off tickets to AI Coding Summit Berlin 2026',
+      link: 'https://ti.to/gitnation/ai-coding-summit-berlin-2026/discount/FRIENDS',
+      linkText: 'Get 10% Off',
+    },
+  },
+  {
     name: 'React Summit 2026',
     website: 'https://reactsummit.com/',
     description:
