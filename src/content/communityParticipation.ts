@@ -31,6 +31,7 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
       'Know when new CSS is safe to use in production and find legacy patterns in your own stylesheets worth replacing with :has(), container queries and other modern features.',
     ctaText: 'Audit your CSS',
     featured: true,
+    image: '/partners/modern-css.png',
     tags: ['CSS', 'Tools', 'Baseline', 'Web Platform', 'Frontend'],
   },
   {
