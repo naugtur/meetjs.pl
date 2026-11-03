@@ -18,6 +18,24 @@ export interface CommunityItem {
 
 export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
   {
+    id: 'testerarmy-is-now-e2e-2026',
+    title: 'TesterArmy is now e2e',
+    description:
+      'Our partner TesterArmy has retired its brand and hosted product and relaunched as e2e (e2e.com) — an open source, customizable TypeScript testing framework for web, mobile apps and more, with $8M in seed funding to build hosted infrastructure and model support around it. TesterArmy accounts keep working at tester.army until 15 January 2027, and an official migration tool moves existing tests to e2e. To try it, run `npx e2e init` in your project.',
+    url: 'https://e2e.com/blog/seed',
+    type: 'initiative',
+    status: 'active',
+    startDate: '2026-11-03',
+    endDate: '2027-01-15',
+    organization: 'e2e',
+    impact:
+      'Keep your TesterArmy tests working after the January 2027 shutdown and get started with an open source, agent-driven e2e testing framework.',
+    ctaText: 'Read the announcement',
+    featured: true,
+    image: '/partners/e2e-logo.png',
+    tags: ['Testing', 'E2E', 'Open Source', 'TypeScript', 'AI', 'Tools'],
+  },
+  {
     id: 'smashingconf-ai-2027',
     title: 'SmashingConf AI 2027 Conference (online)',
     description:

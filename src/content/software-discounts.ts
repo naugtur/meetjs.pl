@@ -2,17 +2,17 @@ import { Promo } from '../types/promo';
 
 export const softwareDiscounts: Promo[] = [
   {
-    id: 'tester-army-2026',
-    name: 'Tester Army',
-    message: 'Earn free test runs through referrals!',
+    id: 'e2e-testerarmy-2026',
+    name: 'e2e (formerly TesterArmy)',
+    message: 'TesterArmy is now e2e — earn free test runs until the switch!',
     cta: '🧪 Earn Free Runs',
     ticketLink: 'https://tester.army/sign-up?ref=8a1ugwnter',
-    eventLink: 'https://tester.army',
-    expiresAt: '2027-12-31T23:59:59+01:00',
+    eventLink: 'https://e2e.com',
+    expiresAt: '2027-01-15T23:59:59+01:00',
     description:
-      'Know a team that should be testing with agents? Share your referral link and both sides get rewarded in test runs. Whoever signs up with your link starts with 25 bonus test runs, and you both get 100 more when their workspace goes paid. Share it with as many teams as you like.',
-    gradient: 'bg-[#FA7A01]',
-    image: '/partners/tester-army-logo.png',
+      'TesterArmy has rebranded to e2e (e2e.com) — an open source, customizable TypeScript testing framework for web, mobile and more, backed by $8M in seed funding. The hosted TesterArmy product keeps running until 15 January 2027, so you can still use our referral link: whoever signs up with it starts with 25 bonus test runs, and you both get 100 more when their workspace goes paid. Existing TesterArmy tests can be moved to e2e with the official migration tool (e2e.com/docs/migrate/testerarmy). New here? Run `npx e2e init` in your project.',
+    gradient: 'bg-[#1E5BFF]',
+    image: '/partners/e2e-logo.png',
     emojiRight: '🤖',
   },
   {
