@@ -159,6 +159,36 @@ export const partnerships: Partnership[] = [
     },
   },
   {
+    name: 'SmashingConf AI 2027 Conference',
+    website: 'https://smashingconf.com/ai-2027-conference/',
+    description:
+      'Friendly, practical online conference for designers and developers on AI by Smashing Magazine — showing, not telling, how to integrate AI in daily work and what to expect in 2027.',
+    details: [
+      'December 1, 2026, live and online (Zoom), 5 PM–9 PM CET',
+      'Speakers: Vitaly Friedman, Brad Frost, Christine Vallaure, TJ Pitre (Figma)',
+      'AI-ready design systems, AI-driven research, designing for trust in AI, Figma MCPs',
+      'Breakout sessions to answer your questions, access to all recordings, slides and toolkits',
+      'Tickets €50; complimentary ticket for a meet.js community giveaway',
+      'meet.js logo on the SmashingConf partner page and in the Smashing Members newsletter (25K members)',
+    ],
+    goals: [
+      'Mutual promotion between meet.js and SmashingConf (AI 2027 Conference first, SmashingConf Amsterdam 2027 next)',
+      'Bringing practical AI knowledge to Polish front-end developers and UI engineers',
+      'Building a long-term media partnership with Smashing Magazine',
+    ],
+    location: 'Online',
+    contact: 'https://smashingconf.com/ai-2027-conference/',
+    icon: (
+      <Image
+        src="/partners/smashingconf-ai-2027.svg"
+        alt="SmashingConf AI 2027 Conference"
+        width={32}
+        height={32}
+      />
+    ),
+    gradient: 'from-red-600 to-amber-400',
+  },
+  {
     name: 'React Summit 2026',
     website: 'https://reactsummit.com/',
     description:

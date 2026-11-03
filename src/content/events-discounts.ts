@@ -2,6 +2,21 @@ import { Promo } from '../types/promo';
 
 export const eventsDiscounts: Promo[] = [
   {
+    id: 'smashingconf-ai-2027',
+    name: 'SmashingConf AI 2027 Conference',
+    message: 'Online, Dec 1 — tickets €50 + a free ticket giveaway!',
+    cta: '👉 Get Tickets',
+    ticketLink: 'https://smashingconf.com/ai-2027-conference/',
+    eventLink: 'https://smashingconf.com/ai-2027-conference/',
+    expiresAt: '2026-12-01T23:59:59+01:00',
+    description:
+      'meet.js is a media partner of SmashingConf! The AI 2027 Conference is a friendly, practical online conference for designers and developers on AI — December 1, 2026, live on Zoom, 5 PM–9 PM CET. Vitaly Friedman, Brad Frost, Christine Vallaure and TJ Pitre (Figma) show how to set up AI-ready design systems, run AI-driven research and design for trust in AI, followed by breakout sessions for your own questions. Tickets are only €50 and include all recordings, slides and toolkits. We also have a complimentary ticket to give away in the meet.js community — stay tuned on Discord!',
+    gradient: 'bg-gradient-to-r from-red-600 via-orange-500 to-amber-400',
+    icon: '🐱',
+    image: '/partners/smashingconf-ai-2027.svg',
+    emojiRight: '🌍',
+  },
+  {
     id: 'ng-poland-2026',
     name: 'NG Poland 2026',
     message: "Europe's biggest Angular conference – free tickets giveaway!",
