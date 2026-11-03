@@ -18,6 +18,24 @@ export interface CommunityItem {
 
 export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
   {
+    id: 'smashingconf-ai-2027',
+    title: 'SmashingConf AI 2027 Conference (online)',
+    description:
+      'A friendly, practical online conference for designers and developers on AI by Smashing Magazine — December 1, 2026, live on Zoom, 5 PM–9 PM CET. Vitaly Friedman, Brad Frost, Christine Vallaure and TJ Pitre (Figma) show how to set up AI-ready design systems, run AI-driven research and design for trust in AI, with breakout sessions to tackle your own challenges. Tickets €50, all recordings included. We have a complimentary ticket to give away in the meet.js community — watch our Discord!',
+    url: 'https://smashingconf.com/ai-2027-conference/',
+    type: 'collaboration',
+    status: 'active',
+    startDate: '2026-12-01',
+    endDate: '2026-12-01',
+    organization: 'Smashing Magazine',
+    impact:
+      'Media partnership with SmashingConf – meet.js logo on the partner page, mutual promotion in the Smashing newsletter and social media, and a free ticket for the community.',
+    ctaText: 'Learn more',
+    featured: true,
+    image: '/partners/smashingconf-ai-2027.svg',
+    tags: ['AI', 'Design Systems', 'UX', 'Conference', 'Online', 'Smashing'],
+  },
+  {
     id: 'modern-css-relaunch-2026',
     title: 'The new modern.css: CSS audit & Baseline alerts',
     description:
