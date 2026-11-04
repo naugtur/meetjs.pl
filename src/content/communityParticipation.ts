@@ -18,6 +18,23 @@ export interface CommunityItem {
 
 export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
   {
+    id: 'modern-css-relaunch-2026',
+    title: 'The new modern.css: CSS audit & Baseline alerts',
+    description:
+      'modern.css has relaunched with two new tools. The CSS audit takes your stylesheet or website URL and shows what is already modern, which old tricks (floats, clearfix hacks, JS-driven layout) you could drop, and the simpler modern replacement for each. Baseline alerts send you one short email on the day a CSS feature ships in a browser or becomes available in all of them — pick only the features you care about. Alerts come with a free account (Google or GitHub, no password), which also lets you save snippets into collections, fork any snippet and keep your audits in projects.',
+    url: 'https://modern-css.com/tools/css-audit/',
+    type: 'initiative',
+    status: 'active',
+    startDate: '2026-11-03',
+    organization: 'modern.css',
+    impact:
+      'Know when new CSS is safe to use in production and find legacy patterns in your own stylesheets worth replacing with :has(), container queries and other modern features.',
+    ctaText: 'Audit your CSS',
+    featured: true,
+    image: '/partners/modern-css.png',
+    tags: ['CSS', 'Tools', 'Baseline', 'Web Platform', 'Frontend'],
+  },
+  {
     id: 'state-of-html-2026',
     title: 'State of HTML 2026 Survey',
     description:
