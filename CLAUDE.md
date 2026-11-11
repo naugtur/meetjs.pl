@@ -334,6 +334,8 @@ Rule of thumb: a scheduled live event (even an online workshop) goes to events; 
 Required fields (`Promo` in `src/types/promo.ts`): `id`, `name`, `message`, `cta`, `ticketLink`, `expiresAt` (ISO 8601), `gradient` (Tailwind classes)
 Optional: `description`, `eventLink`, `country`, `city`, `icon`, `emojiLeft`, `emojiRight`, `image`, `textColor`, `discountCode`, `workshopLink`, `workshopDescription`, `workshopDiscountCode`
 
+**UTM parameters are required**: every `ticketLink` and `eventLink` (and `workshopLink`) must carry `utm_source=meetjs&utm_medium=community_partner&utm_campaign=<promo id>`. Keep partner-provided params (`?ref=…`, `discount_code=…`) and append the UTMs after them; if the partner supplied their own UTMs, keep theirs. `src/content/discounts-utm.test.ts` fails for active promos without `utm_source`.
+
 In the homepage ticker (`getActivePromos`), promos with `eventLink`, `country` or `city` count as events and are listed first.
 
 ### Adding Community Participation Items
