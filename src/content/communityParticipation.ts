@@ -18,6 +18,32 @@ export interface CommunityItem {
 
 export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
   {
+    id: 'gdg-devfest-wroclaw-2026',
+    title: 'Google DevFest 2026 Wrocław',
+    description:
+      'Dwudniowy DevFest organizowany przez GDG Wrocław – 13–14 listopada 2026 na Uniwersytecie Ekonomicznym we Wrocławiu (ul. Komandorska 118/120). W piątek panele dyskusyjne o Web, Cloud, Mobile i AI z krótkimi keynote’ami, w sobotę cały dzień prelekcji i warsztatów: Gemini, agenci AI, WebMCP, Angular, Flutter, Android, Google Cloud i Firebase. Wstęp wolny po rejestracji.',
+    url: 'https://gdg.community.dev/events/details/google-gdg-wroclaw-presents-google-devfest-2026-wroclaw/',
+    type: 'collaboration',
+    status: 'active',
+    startDate: '2026-11-13',
+    endDate: '2026-11-14',
+    organization: 'GDG Wrocław',
+    impact: 'Partnerstwo społecznościowe – meet.js jest partnerem wydarzenia.',
+    ctaText: 'Zarejestruj się',
+    featured: true,
+    image: '/partners/devfest-wroclaw.png',
+    tags: [
+      'Conference',
+      'Wrocław',
+      'GDG',
+      'Google',
+      'Community',
+      'AI',
+      'Web Development',
+      'Free',
+    ],
+  },
+  {
     id: 'react-day-berlin-2026',
     title: 'React Day Berlin 2026',
     description:
