@@ -86,8 +86,10 @@ export const learningDiscounts: Promo[] = [
     name: 'AI Coding Crash Course',
     message: '60% off in Poland with regional pricing (PPP)!',
     cta: '🚀 Get 60% Off',
-    ticketLink: 'https://www.aihero.dev/workshops/ai-coding-crash-course',
-    eventLink: 'https://www.aihero.dev',
+    ticketLink:
+      'https://www.aihero.dev/workshops/ai-coding-crash-course?utm_source=meetjs&utm_medium=community_partner&utm_campaign=aihero-crash-course-2026',
+    eventLink:
+      'https://www.aihero.dev/?utm_source=meetjs&utm_medium=community_partner&utm_campaign=aihero-crash-course-2026',
     expiresAt: '2027-12-31T23:59:59+01:00',
     description:
       'Buying from Poland? Get 60% off ($119.60 instead of $299) with regional pricing (PPP) — content is then viewable from Poland only. AI Coding Crash Course by Matt Pocock (AIHero) is a self-paced course (~60 lessons in 6 sections) that teaches you to control coding agents like Claude Code using real software engineering fundamentals: context management, AGENTS.md, skills, subagents, handoffs, and more.',
@@ -101,8 +103,10 @@ export const learningDiscounts: Promo[] = [
     name: 'AI for UI',
     message: '40% off in Poland with code B7C1LR2W!',
     cta: '🎨 Get 40% Off',
-    ticketLink: 'https://aiforui.dev/',
-    eventLink: 'https://aiforui.dev',
+    ticketLink:
+      'https://aiforui.dev/?utm_source=meetjs&utm_medium=community_partner&utm_campaign=aiforui-2026',
+    eventLink:
+      'https://aiforui.dev/?utm_source=meetjs&utm_medium=community_partner&utm_campaign=aiforui-2026',
     expiresAt: '2026-12-31T23:59:59+01:00',
     description:
       'Get 40% off "AI for UI" by Emil Kowalski (design engineer at Linear, creator of Sonner and Vaul) with code B7C1LR2W — a PPP regional license for buyers in Poland; course content is then accessible from Poland only. Learn to build great interfaces with AI: encode your taste into rules and skills, workflows from prototype to production, and how to review AI output. Includes 28 UI skills, the Lapse animation review tool, and a private Discord community.',
@@ -117,7 +121,8 @@ export const learningDiscounts: Promo[] = [
     message: 'Stay updated with the best Next.js content every week!',
     cta: '📬 Subscribe Now',
     ticketLink: 'https://nextjsweekly.com/?utm_source=conf&utm_medium=meetjs',
-    eventLink: 'https://nextjsweekly.com',
+    eventLink:
+      'https://nextjsweekly.com/?utm_source=meetjs&utm_medium=community_partner&utm_campaign=nextjsweekly-2026',
     expiresAt: '2026-12-31T23:59:59+01:00',
     description:
       'A curated newsletter that brings you the best Next.js articles, tools, and projects straight to your inbox once every week. Stay ahead with the latest Next.js developments, tutorials, and community insights.',

@@ -6,8 +6,10 @@ export const eventsDiscounts: Promo[] = [
     name: 'GDG DevFest Warsaw 2026',
     message: '33% off LastBird tickets with code MEETJS33!',
     cta: '👉 Get 33% Off',
-    ticketLink: 'https://warsaw.devfest.pl/',
-    eventLink: 'https://warsaw.devfest.pl/',
+    ticketLink:
+      'https://warsaw.devfest.pl/?utm_source=meetjs&utm_medium=community_partner&utm_campaign=gdg-devfest-warsaw-2026',
+    eventLink:
+      'https://warsaw.devfest.pl/?utm_source=meetjs&utm_medium=community_partner&utm_campaign=gdg-devfest-warsaw-2026',
     expiresAt: '2026-11-21T23:59:59+01:00',
     description:
       'meet.js is a Community Partner of GDG DevFest Warsaw 2026! A one-day, community-led tech conference organised by GDG Warszawa — November 21, 2026 at Google for Startups Campus Warsaw (Plac Konesera 10). Under the theme "Real Work, Real Lessons": talks, demos and workshops on practical AI/ML, Google Cloud, web performance, Android, open source and engineering culture. Use code MEETJS33 for 33% off LastBird tickets!',
@@ -25,8 +27,9 @@ export const eventsDiscounts: Promo[] = [
     message: '10% off with code FRIENDS!',
     cta: '👉 Get 10% Off',
     ticketLink:
-      'https://ti.to/gitnation/react-day-berlin-2026/discount/FRIENDS',
-    eventLink: 'https://reactday.berlin/',
+      'https://ti.to/gitnation/react-day-berlin-2026/discount/FRIENDS?utm_source=meetjs&utm_medium=community_partner&utm_campaign=react-day-berlin-2026',
+    eventLink:
+      'https://reactday.berlin/?utm_source=meetjs&utm_medium=community_partner&utm_campaign=react-day-berlin-2026',
     expiresAt: '2026-12-07T23:59:59+01:00',
     description:
       'meet.js is a Community Partner of React Day Berlin 2026! A hybrid conference of all things React — December 4 in-person at KOSMOS Berlin and December 7 remote. OSS authors, top trainers and speakers, and web engineers from across the globe meet to talk React, React Native, full-stack and AI-assisted development. Use code FRIENDS for 10% off your ticket!',
@@ -44,8 +47,9 @@ export const eventsDiscounts: Promo[] = [
     message: '10% off with code FRIENDS!',
     cta: '👉 Get 10% Off',
     ticketLink:
-      'https://ti.to/gitnation/ai-coding-summit-berlin-2026/discount/FRIENDS',
-    eventLink: 'https://aicodingsummit.com/berlin/',
+      'https://ti.to/gitnation/ai-coding-summit-berlin-2026/discount/FRIENDS?utm_source=meetjs&utm_medium=community_partner&utm_campaign=ai-coding-summit-berlin-2026',
+    eventLink:
+      'https://aicodingsummit.com/berlin/?utm_source=meetjs&utm_medium=community_partner&utm_campaign=ai-coding-summit-berlin-2026',
     expiresAt: '2026-12-07T23:59:59+01:00',
     description:
       'meet.js is a Community Partner of AI Coding Summit Berlin 2026! A new in-person gathering for the European AI developer community — December 4 at KOSMOS Berlin (co-located with React Day Berlin) and December 7 remote. A no-hype, practitioner-led format: real workflows, repeatable techniques, and deep dives into the tools, agents and patterns that make AI-assisted development work at scale. Use code FRIENDS for 10% off your ticket!',
@@ -62,8 +66,10 @@ export const eventsDiscounts: Promo[] = [
     name: 'SmashingConf AI 2027 Conference',
     message: 'Online, Dec 1 — tickets €50 + a free ticket giveaway!',
     cta: '👉 Get Tickets',
-    ticketLink: 'https://smashingconf.com/ai-2027-conference/',
-    eventLink: 'https://smashingconf.com/ai-2027-conference/',
+    ticketLink:
+      'https://smashingconf.com/ai-2027-conference/?utm_source=meetjs&utm_medium=community_partner&utm_campaign=smashingconf-ai-2027',
+    eventLink:
+      'https://smashingconf.com/ai-2027-conference/?utm_source=meetjs&utm_medium=community_partner&utm_campaign=smashingconf-ai-2027',
     expiresAt: '2026-12-01T23:59:59+01:00',
     description:
       'meet.js is a media partner of SmashingConf! The AI 2027 Conference is a friendly, practical online conference for designers and developers on AI — December 1, 2026, live on Zoom, 5 PM–9 PM CET. Vitaly Friedman, Brad Frost, Christine Vallaure and TJ Pitre (Figma) show how to set up AI-ready design systems, run AI-driven research and design for trust in AI, followed by breakout sessions for your own questions. Tickets are only €50 and include all recordings, slides and toolkits. We also have a complimentary ticket to give away in the meet.js community — stay tuned on Discord!',
@@ -77,8 +83,10 @@ export const eventsDiscounts: Promo[] = [
     name: 'NG Poland 2026',
     message: "Europe's biggest Angular conference – free tickets giveaway!",
     cta: '👉 Get Tickets',
-    ticketLink: 'https://eventsmaster.pl/event/ng-js-ai-poland-2026/',
-    eventLink: 'https://ng-poland.pl',
+    ticketLink:
+      'https://eventsmaster.pl/event/ng-js-ai-poland-2026/?utm_source=meetjs&utm_medium=community_partner&utm_campaign=ng-poland-2026',
+    eventLink:
+      'https://ng-poland.pl/?utm_source=meetjs&utm_medium=community_partner&utm_campaign=ng-poland-2026',
     expiresAt: '2026-11-17T23:59:59+01:00',
     description:
       'meet.js is a Community Partner of NG Poland 2026! The 11th edition of the biggest Angular conference in the world takes place November 17, 2026 in Warsaw – one day, one track, the Angular Core Team on stage and 1000+ developers in the room. Available both in-person at Multikino Złote Tarasy and online. Part of a full week of events: workshops on November 16 & 20, JS Poland on November 18 and AI Poland on November 19. We have free 3-day tickets (all 3 conferences!) to give away in the meet.js community – stay tuned!',
@@ -94,8 +102,10 @@ export const eventsDiscounts: Promo[] = [
     name: 'JS Poland 2026',
     message: 'Explore the JavaScript ecosystem – free tickets giveaway!',
     cta: '👉 Get Tickets',
-    ticketLink: 'https://eventsmaster.pl/event/ng-js-ai-poland-2026/',
-    eventLink: 'https://js-poland.pl',
+    ticketLink:
+      'https://eventsmaster.pl/event/ng-js-ai-poland-2026/?utm_source=meetjs&utm_medium=community_partner&utm_campaign=js-poland-2026',
+    eventLink:
+      'https://js-poland.pl/?utm_source=meetjs&utm_medium=community_partner&utm_campaign=js-poland-2026',
     expiresAt: '2026-11-18T23:59:59+01:00',
     description:
       'meet.js is a Community Partner of JS Poland 2026! The 10th edition of the biggest JavaScript conference in CEE brings the community together on November 18, 2026 in Warsaw. International speakers covering the entire JavaScript ecosystem – from React and Vue to Node.js and TypeScript. Available both in-person at Multikino Złote Tarasy and online. Part of a full week of events: workshops on November 16 & 20, NG Poland on November 17 and AI Poland on November 19. We have free 3-day tickets (all 3 conferences!) to give away in the meet.js community – stay tuned!',
@@ -111,8 +121,10 @@ export const eventsDiscounts: Promo[] = [
     name: 'AI Poland 2026',
     message: 'Practical AI for developers – free tickets giveaway!',
     cta: '👉 Get Tickets',
-    ticketLink: 'https://eventsmaster.pl/event/ng-js-ai-poland-2026/',
-    eventLink: 'https://ai-poland.pl',
+    ticketLink:
+      'https://eventsmaster.pl/event/ng-js-ai-poland-2026/?utm_source=meetjs&utm_medium=community_partner&utm_campaign=ai-poland-2026',
+    eventLink:
+      'https://ai-poland.pl/?utm_source=meetjs&utm_medium=community_partner&utm_campaign=ai-poland-2026',
     expiresAt: '2026-11-19T23:59:59+01:00',
     description:
       'meet.js is a Community Partner of AI Poland 2026! The developer-focused AI conference returns for its 2nd edition on November 19, 2026 in Warsaw. Created by developers for developers – practical, real-world AI applications: building AI agents, integrating LLMs and shipping intelligent products. Available both in-person at Multikino Złote Tarasy and online. Part of a full week of events: workshops on November 16 & 20, NG Poland on November 17 and JS Poland on November 18. We have free 3-day tickets (all 3 conferences!) to give away in the meet.js community – stay tuned!',
@@ -199,8 +211,10 @@ export const eventsDiscounts: Promo[] = [
     name: 'WAWTECH 2026',
     message: 'Media partnership – 10% off with code MEETJS!',
     cta: '👉 Get 10% Off',
-    ticketLink: 'https://wawtech.io/',
-    eventLink: 'https://wawtech.io/',
+    ticketLink:
+      'https://wawtech.io/?utm_source=meetjs&utm_medium=community_partner&utm_campaign=wawtech-2026',
+    eventLink:
+      'https://wawtech.io/?utm_source=meetjs&utm_medium=community_partner&utm_campaign=wawtech-2026',
     expiresAt: '2026-11-27T23:59:59+01:00',
     description:
       'meet.js is an official Media Partner of WAWTECH 2026! The second edition of the conference by DOU lands in Warsaw on November 26–27, bringing together 5,000+ engineers and tech leaders and 60+ speakers. The lineup already includes José Valim (creator of Elixir), Daniel Stenberg (creator and lead developer of curl), Ivan Lapa (Netflix), Dima Maleev (Agoda), and Taras Kloba (Microsoft). Use code MEETJS for 10% off your ticket!',
