@@ -2,6 +2,24 @@ import { Promo } from '../types/promo';
 
 export const eventsDiscounts: Promo[] = [
   {
+    id: 'gdg-devfest-warsaw-2026',
+    name: 'GDG DevFest Warsaw 2026',
+    message: '33% off LastBird tickets with code MEETJS33!',
+    cta: '👉 Get 33% Off',
+    ticketLink: 'https://warsaw.devfest.pl/',
+    eventLink: 'https://warsaw.devfest.pl/',
+    expiresAt: '2026-11-21T23:59:59+01:00',
+    description:
+      'meet.js is a Community Partner of GDG DevFest Warsaw 2026! A one-day, community-led tech conference organised by GDG Warszawa — November 21, 2026 at Google for Startups Campus Warsaw (Plac Konesera 10). Under the theme "Real Work, Real Lessons": talks, demos and workshops on practical AI/ML, Google Cloud, web performance, Android, open source and engineering culture. Use code MEETJS33 for 33% off LastBird tickets!',
+    gradient: 'bg-gradient-to-r from-blue-600 via-red-500 to-yellow-400',
+    icon: '🎪',
+    image: '/partners/devfest-warsaw.png',
+    emojiRight: '🇵🇱',
+    country: 'Poland',
+    city: 'Warsaw',
+    discountCode: 'MEETJS33',
+  },
+  {
     id: 'react-day-berlin-2026',
     name: 'React Day Berlin 2026',
     message: '10% off with code FRIENDS!',
