@@ -5,7 +5,7 @@ export const AwardNomination = () => {
   return (
     <Link
       href="/jsnation-award"
-      className="mx-auto mt-8 block text-center transition-transform hover:scale-105"
+      className="block rounded-2xl text-center transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 motion-safe:hover:scale-105"
     >
       <Image
         src="/javascript-os-award-2025.png"

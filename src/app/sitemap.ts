@@ -70,6 +70,12 @@ const sitemap = (): MetadataRoute.Sitemap => {
       priority: 0.6,
     },
     {
+      url: `${env.SITE_URL}/js-hero-2026`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
       url: `${env.SITE_URL}/community-partnerships`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
