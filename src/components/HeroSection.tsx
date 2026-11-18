@@ -2,6 +2,7 @@
 
 import { RankingBanner } from '@/components/RankingBanner';
 import { AwardNomination } from '@/components/AwardNomination';
+import { JSHeroAwardBadge } from '@/components/JSHeroAwardBadge';
 import { Instagram, MessagesSquare } from 'lucide-react';
 import { useTranslate } from '@tolgee/react';
 
@@ -45,7 +46,10 @@ export const HeroSection = () => {
           </a>
         </div>
 
-        <AwardNomination />
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-5 px-4">
+          <JSHeroAwardBadge />
+          <AwardNomination />
+        </div>
       </div>
     </header>
   );
