@@ -98,13 +98,14 @@ src/
 │   └── passport/               # Passport participants, attendance records, eligible cities
 ├── hooks/                      # useTranslatedMenuLinks (nav + footer items), useLocale, useCopyToClipboard
 ├── lib/
+│   ├── crossweb.ts             # Crossweb events & speakers API client (cache, timeouts, per-item Zod)
 │   ├── discord.ts              # Discord widget API client
 │   ├── analytics.ts            # Vercel Analytics custom events
 │   ├── passport/               # Passport logic (brackets, achievements, hall of fame) + tests
 │   └── utils.ts                # cn() helper
 ├── tolgee/                     # i18n: shared.ts, server.tsx, client.tsx, language.ts (server actions)
 ├── types/                      # Zod schemas (event, speaker, passport) + TS types (promo, organizer, menu)
-├── utils/                      # API fetchers (getUpcomingEvents, getSpeakers), event utils, mocks, OG helper
+├── utils/                      # Event utils, city mapping, mocks, OG helper, promos
 ├── env.ts                      # Environment variable validation (T3 Env)
 └── setupTests.ts               # Vitest jest-dom setup
 
@@ -243,10 +244,10 @@ Files in `public/` are served from the site root (e.g. `/llms.txt`, `/og-image.p
 
 ### Server-side APIs (called from Server Components)
 
-**Crossweb – events** (`src/utils/getUpcomingEvents.ts`, `getPastEvents()` in `src/app/events/page.tsx`)
+**Crossweb – events** (`src/lib/crossweb.ts`: `getUpcomingEvents`, `getPastEvents`)
 
-- Requests: `GET {EVENTS_API_URL}` (upcoming), `GET {EVENTS_API_URL}?old=1` (past); no auth; `revalidate: 86400` (24 h)
-- Validation: `EventsSchema` (`src/types/event.ts`). Fallback on HTTP error or invalid payload: dev → `src/utils/eventsMock.ts`; prod → no events
+- Requests: `GET {EVENTS_API_URL}` (upcoming), `GET {EVENTS_API_URL}?old=1` (past); no auth; `revalidate: 86400` (24 h) + React `cache()` + 10 s timeout
+- Validation: per-item `EventSchema` (`src/types/event.ts`) so a single malformed entry is skipped rather than dropping all events. Fallback on HTTP error (incl. Cloudflare/WAF HTML detection) or invalid payload: dev → `src/utils/eventsMock.ts`; prod → `null` / `[]`
 - Consumers: homepage `FeaturedEvents` + `JoinUs`, `/events`, `EventSection` on city pages
 - Payload: object keyed by string ids (`Record<string, Event> | null`); `date` is `DD.MM.YYYY`, `time` is `HH:MM` or `HH:MM-HH:MM`; `type` ∈ `Spotkanie | Konferencja | Meetup | Conference | Webinar | Warsztaty`.
 - `changeCityName` (`src/utils/changeCityName.tsx`) maps Crossweb city names (`Bielsko Biała` → `Bielsko-Biała`, `Trójmiasto` → `Gdańsk`).
@@ -255,10 +256,10 @@ Files in `public/` are served from the site root (e.g. `/llms.txt`, `/og-image.p
 - `EventSection` matches `event.city` against its `city` prop exactly (Polish names with diacritics).
 - The production `EVENTS_API_URL` is configured in the hosting environment, not in the repo.
 
-**Crossweb – speakers** (`src/utils/getSpeakers.ts`)
+**Crossweb – speakers** (`src/lib/crossweb.ts`: `getSpeakers`)
 
-- Request: `GET {SPEAKERS_API_URL}` with `Authorization: Basic {SPEAKERS_API_TOKEN}` (both env vars optional); `revalidate: 3600` (1 h)
-- Validation: `SpeakersSchema` (`src/types/speaker.ts`). Fallback on missing config, HTTP error or invalid payload: dev → `src/utils/speakersMock.ts`; prod → `[]` (sections hide)
+- Request: `GET {SPEAKERS_API_URL}` with `Authorization: Basic {SPEAKERS_API_TOKEN}` (both env vars optional); `revalidate: 3600` (1 h) + React `cache()` + 10 s timeout
+- Validation: per-item `SpeakerSchema` (`src/types/speaker.ts`). Fallback on missing config, HTTP error or invalid payload: dev → `src/utils/speakersMock.ts`; prod → `[]` (sections hide)
 - Consumers: `/speakers`, homepage `SpeakerFaces` (up to 60 avatars); images come from `crossweb.pl` through `next/image`
 
 **Discord guild widget** (`src/lib/discord.ts`)

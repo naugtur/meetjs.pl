@@ -1,14 +1,14 @@
 import Link from 'next/link';
 import type { Route } from 'next';
 import { City } from '@/content/cities';
-import { Event } from '@/components/FeaturedEvents';
+import type { EventType } from '@/types/event';
 import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
 import { getEventDateRange } from '@/utils/eventUtils';
 import { getTranslate } from '@/tolgee/server';
 
 type MapProps = {
   cities: City[];
-  events?: Event[];
+  events?: EventType[];
 };
 
 function getCityFillColor(status: City['status']): string {

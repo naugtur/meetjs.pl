@@ -1,4 +1,4 @@
-import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
+import { getUpcomingEvents } from '@/lib/crossweb';
 import { EventsList } from './EventsList';
 import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
 import { filterUpcomingEvents } from '@/utils/eventUtils';

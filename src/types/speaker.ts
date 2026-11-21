@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const SpeakerSchema = z.object({
+export const SpeakerSchema = z.object({
   id: z.number(),
   name: z.string(),
   surname: z.string().nullable().default(''),

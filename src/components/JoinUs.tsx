@@ -1,7 +1,7 @@
 import { CITIES } from '@/content/cities';
 import { PolandMap } from './PolandMap';
-import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
-import { Event } from '@/components/FeaturedEvents';
+import { getUpcomingEvents } from '@/lib/crossweb';
+import type { EventType } from '@/types/event';
 import { MessagesSquare } from 'lucide-react';
 import { DiscordCommunity } from '@/components/DiscordCommunity';
 import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
@@ -12,8 +12,8 @@ import { NearestCity } from '@/components/NearestCity';
 export const JoinUs = async () => {
   const t = await getTranslate();
 
-  const apiEvents: Event[] | null = await getUpcomingEvents();
-  const allEvents: Event[] = [...(apiEvents || []), ...ADDITIONAL_EVENTS];
+  const apiEvents: EventType[] | null = await getUpcomingEvents();
+  const allEvents: EventType[] = [...(apiEvents || []), ...ADDITIONAL_EVENTS];
 
   const events = filterUpcomingEvents(allEvents);
 
