@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Route } from 'next';
-import { getSpeakers } from '@/utils/getSpeakers';
+import { getSpeakers } from '@/lib/crossweb';
 import { getTranslate } from '@/tolgee/server';
 
 export const SpeakerFaces = async () => {

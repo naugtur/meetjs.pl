@@ -1,15 +1,10 @@
 import type { Metadata } from 'next';
-import { env } from '@/env';
 import { EventsAPIPartner } from '@/components/EventsAPIPartner';
 import { FilterEvents } from '@/components/FilterEvents';
-import { EventsSchema } from '@/types/event';
 import { EmptyEventsAlert } from '@/components/EmptyEventsAlert';
-import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
-import { changeCityName } from '@/utils/changeCityName';
-import { MOCK_PAST_EVENTS } from '@/utils/eventsMock';
-import { isDevelopment } from '@/utils/isDevelopment';
+import { getPastEvents, getUpcomingEvents } from '@/lib/crossweb';
 import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
-import { filterUpcomingEvents, sortEventsByDate } from '@/utils/eventUtils';
+import { filterUpcomingEvents } from '@/utils/eventUtils';
 import { getTranslate } from '@/tolgee/server';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -20,47 +15,6 @@ export async function generateMetadata(): Promise<Metadata> {
     description: t('events_page.meta_description'),
   };
 }
-
-const getPastEvents = async () => {
-  try {
-    const url = new URL(env.EVENTS_API_URL);
-    url.searchParams.set('old', '1');
-
-    const pastEventsRes = await fetch(url, {
-      next: { revalidate: 86400 },
-    });
-
-    if (!pastEventsRes.ok) {
-      const body = await pastEventsRes.text();
-      if (isDevelopment()) {
-        console.warn(
-          `[getPastEvents] API returned ${pastEventsRes.status} ${pastEventsRes.statusText}, using mock past events for development.`,
-        );
-        return sortEventsByDate(MOCK_PAST_EVENTS.map(changeCityName), false); // false = descending order
-      }
-      throw new Error(
-        `Events API returned ${pastEventsRes.status}: ${pastEventsRes.statusText}\n${body.slice(0, 200)}`,
-      );
-    }
-
-    const pastEventsJson = await pastEventsRes.json();
-    const data = EventsSchema.parse(pastEventsJson);
-
-    const pastEvents = Object.values(data ?? {}).map(changeCityName);
-    return sortEventsByDate(pastEvents, false); // false = descending order
-  } catch (error) {
-    if (isDevelopment()) {
-      console.warn(
-        '[getPastEvents] Failed to fetch or parse past events, using mock data for development:',
-        error,
-      );
-      return sortEventsByDate(MOCK_PAST_EVENTS.map(changeCityName), false);
-    }
-
-    console.error('Error fetching past events:', error);
-    return [];
-  }
-};
 
 interface EventsPageProps {
   searchParams: Promise<{ city: string }>;

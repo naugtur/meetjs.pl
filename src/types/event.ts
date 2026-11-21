@@ -10,7 +10,7 @@ export const EventTypeEnum = z.enum([
   'Warsztaty',
 ]);
 
-const EventSchema = z.object({
+export const EventSchema = z.object({
   id: z.number(),
   date_add: z.number(),
   date: z.string(),
