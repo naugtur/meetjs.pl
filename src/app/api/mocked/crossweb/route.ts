@@ -1,9 +1,15 @@
 import { EventsType } from '@/types/event';
+import { isDevelopment } from '@/utils/isDevelopment';
 
-export const GET = async (request: Request) =>
-  new URL(request.url).searchParams.get('old') === '1'
+export const GET = async (request: Request) => {
+  if (!isDevelopment()) {
+    return new Response('Not Found', { status: 404 });
+  }
+
+  return new URL(request.url).searchParams.get('old') === '1'
     ? Response.json(pastEventsJson())
     : Response.json(upcomingEventsJson());
+};
 
 const formatDate = (date: Date): string =>
   `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
