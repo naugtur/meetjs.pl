@@ -699,7 +699,16 @@
     "events_count": "Wystąpienia: {count}",
     "view_profile": "Zobacz profil na Crossweb",
     "no_speakers": "Brak danych o prelegentach w tej chwili.",
-    "powered_by": "Dane o prelegentach dostarcza"
+    "powered_by": "Dane o prelegentach dostarcza",
+    "search_label": "Szukaj prelegentów",
+    "search_placeholder": "Filtruj po nazwisku...",
+    "clear_search": "Wyczyść wyszukiwanie",
+    "sort_label": "Sortuj według",
+    "sort_most_talks": "Najwięcej wystąpień",
+    "sort_name_asc": "Imię i nazwisko (A–Z)",
+    "sort_name_desc": "Imię i nazwisko (Z–A)",
+    "showing_count": "Wyświetlono {shown} z {total} prelegentów",
+    "no_matches": "Brak prelegentów pasujących do \"{query}\"."
   },
   "js_hero_2026": {
     "meta_title": "Adrian Romański — JavaScript Hero of the Community (JS Awards 2026) | meet.js",
