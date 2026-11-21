@@ -9,7 +9,8 @@ import { isDevelopment } from '@/utils/isDevelopment';
 import { MOCK_SPEAKERS } from '@/utils/speakersMock';
 
 const CROSSWEB_TIMEOUT_MS = 10_000;
-const EVENTS_REVALIDATE_SECONDS = 86_400; // 24 hours
+const UPCOMING_EVENTS_REVALIDATE_SECONDS = 3_600; // 1 hour
+const PAST_EVENTS_REVALIDATE_SECONDS = 86_400; // 24 hours
 const SPEAKERS_REVALIDATE_SECONDS = 3_600; // 1 hour
 
 const isHtmlResponse = (body: string): boolean => {
@@ -165,7 +166,7 @@ export const getUpcomingEvents = cache(
   async (): Promise<EventType[] | null> => {
     try {
       const raw = await fetchCrosswebJson(new URL(env.EVENTS_API_URL), {
-        revalidate: EVENTS_REVALIDATE_SECONDS,
+        revalidate: UPCOMING_EVENTS_REVALIDATE_SECONDS,
       });
       return parseCrosswebEvents(raw, 'getUpcomingEvents');
     } catch (error) {
@@ -188,7 +189,7 @@ export const getPastEvents = cache(async (): Promise<EventType[]> => {
     url.searchParams.set('old', '1');
 
     const raw = await fetchCrosswebJson(url, {
-      revalidate: EVENTS_REVALIDATE_SECONDS,
+      revalidate: PAST_EVENTS_REVALIDATE_SECONDS,
     });
     const parsed = parseCrosswebEvents(raw, 'getPastEvents');
     return sortEventsByDate(parsed ?? [], false);
