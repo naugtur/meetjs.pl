@@ -82,7 +82,7 @@ describe('Crossweb API client', () => {
         new URL('http://localhost:3000/api/events'),
         expect.objectContaining({
           signal: expect.any(AbortSignal),
-          next: { revalidate: 86_400 },
+          next: { revalidate: 3_600 },
         }),
       );
     });

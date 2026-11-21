@@ -246,7 +246,7 @@ Files in `public/` are served from the site root (e.g. `/llms.txt`, `/og-image.p
 
 **Crossweb – events** (`src/lib/crossweb.ts`: `getUpcomingEvents`, `getPastEvents`)
 
-- Requests: `GET {EVENTS_API_URL}` (upcoming), `GET {EVENTS_API_URL}?old=1` (past); no auth; `revalidate: 86400` (24 h) + React `cache()` + 10 s timeout
+- Requests: `GET {EVENTS_API_URL}` (upcoming, `revalidate: 3600` = 1 h), `GET {EVENTS_API_URL}?old=1` (past, `revalidate: 86400` = 24 h); no auth; React `cache()` + 10 s timeout
 - Validation: per-item `EventSchema` (`src/types/event.ts`) so a single malformed entry is skipped rather than dropping all events. Fallback on HTTP error (incl. Cloudflare/WAF HTML detection) or invalid payload: dev → `src/utils/eventsMock.ts`; prod → `null` / `[]`
 - Consumers: homepage `FeaturedEvents` + `JoinUs`, `/events`, `EventSection` on city pages
 - Payload: object keyed by string ids (`Record<string, Event> | null`); `date` is `DD.MM.YYYY`, `time` is `HH:MM` or `HH:MM-HH:MM`; `type` ∈ `Spotkanie | Konferencja | Meetup | Conference | Webinar | Warsztaty`.
