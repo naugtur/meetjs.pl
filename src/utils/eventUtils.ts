@@ -53,33 +53,57 @@ const parseEventTime = (
   return { start, end };
 };
 
+const DEFAULT_EVENT_DURATION_MS = 3 * 60 * 60 * 1000;
+
+/**
+ * Parses an event's DD.MM.YYYY date and HH:MM (or HH:MM-HH:MM) time
+ * into local start and end Date instances.
+ * Falls back to 3 hours after start when no valid end time is provided.
+ * Returns null if the event date is invalid.
+ */
+export const getEventDateRange = (
+  event: Pick<EventType, 'date' | 'time'>,
+): { start: Date; end: Date } | null => {
+  try {
+    const baseDate = parseEventDate(event.date);
+    const { start: startMinutes, end: endMinutes } = parseEventTime(event.time);
+
+    const start = new Date(
+      baseDate.getFullYear(),
+      baseDate.getMonth(),
+      baseDate.getDate(),
+      Math.floor(startMinutes / 60),
+      startMinutes % 60,
+    );
+
+    const end =
+      endMinutes !== null && endMinutes > startMinutes
+        ? new Date(
+            baseDate.getFullYear(),
+            baseDate.getMonth(),
+            baseDate.getDate(),
+            Math.floor(endMinutes / 60),
+            endMinutes % 60,
+          )
+        : new Date(start.getTime() + DEFAULT_EVENT_DURATION_MS);
+
+    return { start, end };
+  } catch {
+    return null;
+  }
+};
+
 /**
  * Checks if an event is currently in progress
  */
 const isEventInProgress = (event: EventType): boolean => {
-  try {
-    const eventDate = parseEventDate(event.date);
-    const now = new Date();
-    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-
-    // Event must be today
-    if (eventDate.getTime() !== today.getTime()) {
-      return false;
-    }
-
-    const { start, end } = parseEventTime(event.time);
-    const currentMinutes = now.getHours() * 60 + now.getMinutes();
-
-    // Event is in progress if current time is after start and before end (if end exists)
-    if (end !== null) {
-      return currentMinutes >= start && currentMinutes <= end;
-    } else {
-      // If no end time, consider in progress for 3 hours after start
-      return currentMinutes >= start && currentMinutes <= start + 180;
-    }
-  } catch {
+  const range = getEventDateRange(event);
+  if (!range) {
     return false;
   }
+
+  const now = new Date();
+  return now >= range.start && now <= range.end;
 };
 
 /**

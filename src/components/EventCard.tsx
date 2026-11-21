@@ -6,7 +6,11 @@ import { FaClock, FaLocationDot, FaMicrophoneLines } from 'react-icons/fa6';
 import type { EventType } from '@/types/event';
 import { cn } from '@/lib/utils';
 import { formatDistanceToNow } from 'date-fns';
-import { getEventWeekDay, isConferenceEvent } from '@/utils/eventUtils';
+import {
+  getEventDateRange,
+  getEventWeekDay,
+  isConferenceEvent,
+} from '@/utils/eventUtils';
 import { useLocale } from '@/hooks/useLocale';
 import { useTranslate } from '@tolgee/react';
 
@@ -18,18 +22,18 @@ export const EventCard = ({ event }: EventCardProps) => {
   const { locale } = useLocale();
   const { t } = useTranslate();
   const now = new Date();
-  const [day, month, year] = event.date.split('.');
-  const [hours, minutes] = event.time.split(':');
+  const dateRange = getEventDateRange(event);
+  const eventDate = dateRange?.start ?? null;
+  const eventEndDate = dateRange?.end ?? null;
 
-  // Create date in local timezone
-  const eventDate = new Date(+year, +month - 1, +day, +hours, +minutes);
-
-  // Calculate event end time (3 hours after start)
-  const eventEndDate = new Date(eventDate.getTime() + 3 * 60 * 60 * 1000);
-
-  const isUpcoming = now < eventDate;
-  const isInProgress = now >= eventDate && now <= eventEndDate;
+  const isUpcoming = eventDate !== null && now < eventDate;
+  const isInProgress =
+    eventDate !== null &&
+    eventEndDate !== null &&
+    now >= eventDate &&
+    now <= eventEndDate;
   const isToday =
+    eventDate !== null &&
     now.getDate() === eventDate.getDate() &&
     now.getMonth() === eventDate.getMonth() &&
     now.getFullYear() === eventDate.getFullYear();
@@ -67,7 +71,7 @@ export const EventCard = ({ event }: EventCardProps) => {
             </div>
           )}
         </div>
-        {eventDate.getTime() > 0 && (
+        {eventDate !== null && eventDate.getTime() > 0 && (
           <p className="text-sm text-muted-foreground">
             {isInProgress
               ? "🎉 Live now! Why aren't you here?"

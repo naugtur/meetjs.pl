@@ -3,6 +3,7 @@ import type { Route } from 'next';
 import { City } from '@/content/cities';
 import { Event } from '@/components/FeaturedEvents';
 import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
+import { getEventDateRange } from '@/utils/eventUtils';
 import { getTranslate } from '@/tolgee/server';
 
 type MapProps = {
@@ -43,16 +44,15 @@ export const PolandMap = async ({ cities, events = [] }: MapProps) => {
     const cityEvents = events.filter((event) => event.city === cityName);
 
     for (const event of cityEvents) {
-      const [day, month, year] = event.date.split('.');
-      const [hours, minutes] = event.time.split(':');
+      const range = getEventDateRange(event);
+      if (!range) {
+        continue;
+      }
 
-      const eventDate = new Date(+year, +month - 1, +day, +hours, +minutes);
-      const eventEndDate = new Date(eventDate.getTime() + 3 * 60 * 60 * 1000);
-
-      if (now >= eventDate && now <= eventEndDate) {
+      if (now >= range.start && now <= range.end) {
         return 'in-progress';
       }
-      if (now < eventDate) {
+      if (now < range.start) {
         return 'upcoming';
       }
     }
