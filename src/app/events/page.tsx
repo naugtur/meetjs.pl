@@ -9,7 +9,11 @@ import { changeCityName } from '@/utils/changeCityName';
 import { MOCK_PAST_EVENTS } from '@/utils/eventsMock';
 import { isDevelopment } from '@/utils/isDevelopment';
 import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
-import { filterUpcomingEvents, sortEventsByDate } from '@/utils/eventUtils';
+import {
+  filterPastEvents,
+  filterUpcomingEvents,
+  sortEventsByDate,
+} from '@/utils/eventUtils';
 import { getTranslate } from '@/tolgee/server';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -76,6 +80,7 @@ const EventsPage = async ({ searchParams }: EventsPageProps) => {
   // Merge additional events with upcomingEvents and filter by date
   const mergedEvents = [...(upcomingEvents || []), ...ADDITIONAL_EVENTS];
   const allUpcomingEvents = filterUpcomingEvents(mergedEvents);
+  const allPastEvents = filterPastEvents([...pastEvents, ...ADDITIONAL_EVENTS]);
 
   return (
     <>
@@ -100,10 +105,14 @@ const EventsPage = async ({ searchParams }: EventsPageProps) => {
           )}
         </section>
 
-        <section className="flex w-full flex-col items-center justify-center gap-6">
-          <h2 className="text-2xl font-bold">{t('events_page.past_events')}</h2>
-          <FilterEvents events={pastEvents} filter={city} />
-        </section>
+        {allPastEvents.length > 0 && (
+          <section className="flex w-full flex-col items-center justify-center gap-6">
+            <h2 className="text-2xl font-bold">
+              {t('events_page.past_events')}
+            </h2>
+            <FilterEvents events={allPastEvents} filter={city} />
+          </section>
+        )}
       </main>
     </>
   );

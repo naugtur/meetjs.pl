@@ -150,6 +150,38 @@ export const filterUpcomingEvents = (events: EventType[]): EventType[] => {
   });
 };
 
+/**
+ * Filters events to only include those strictly before today,
+ * deduplicates by id (preserving first occurrence), and sorts newest first.
+ */
+export const filterPastEvents = (events: EventType[]): EventType[] => {
+  const now = new Date();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const seenIds = new Set<number>();
+
+  const pastEvents = events.filter((event) => {
+    if (seenIds.has(event.id)) {
+      return false;
+    }
+
+    try {
+      const eventDate = parseEventDate(event.date);
+      if (eventDate < today) {
+        seenIds.add(event.id);
+        return true;
+      }
+      return false;
+    } catch {
+      console.warn(
+        `Invalid date format for event: ${event.name} - ${event.date}`,
+      );
+      return false;
+    }
+  });
+
+  return sortEventsByDate(pastEvents, false);
+};
+
 export type Localization = 'en-US' | 'pl-PL';
 export const getEventWeekDay = (
   event: EventType,
