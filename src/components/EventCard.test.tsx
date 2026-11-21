@@ -201,4 +201,33 @@ describe('EventCard Component', () => {
     // Check that RSVP button is still present for future event
     expect(screen.getByRole('link', { name: /rsvp/i })).toBeInTheDocument();
   });
+
+  it('Scenario 6: handles HH:MM-HH:MM time ranges accurately', () => {
+    const upcomingRangeEvent: EventType = {
+      ...baseEvent,
+      date: formatDate(mockNow),
+      time: '14:00-17:30',
+    };
+
+    render(<EventCard event={upcomingRangeEvent} />);
+    expect(
+      screen.getByText(/^🎯 Today! Starts in about 2 hours$/),
+    ).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /rsvp/i })).toBeInTheDocument();
+
+    cleanup();
+
+    // Ended 30 minutes before mockNow (12:00), despite being < 3h after start
+    const endedRangeEvent: EventType = {
+      ...baseEvent,
+      date: formatDate(mockNow),
+      time: '10:00-11:30',
+    };
+
+    render(<EventCard event={endedRangeEvent} />);
+    expect(screen.getByText('Event ended')).toBeInTheDocument();
+    expect(
+      screen.queryByRole('link', { name: /rsvp/i }),
+    ).not.toBeInTheDocument();
+  });
 });
