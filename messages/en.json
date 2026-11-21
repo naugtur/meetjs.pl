@@ -699,7 +699,16 @@
     "events_count": "Talks: {count}",
     "view_profile": "View profile on Crossweb",
     "no_speakers": "No speakers data available at the moment.",
-    "powered_by": "Speaker data provided by"
+    "powered_by": "Speaker data provided by",
+    "search_label": "Search speakers",
+    "search_placeholder": "Filter by name...",
+    "clear_search": "Clear search",
+    "sort_label": "Sort by",
+    "sort_most_talks": "Most talks",
+    "sort_name_asc": "Name (A–Z)",
+    "sort_name_desc": "Name (Z–A)",
+    "showing_count": "Showing {shown} of {total} speakers",
+    "no_matches": "No speakers match \"{query}\"."
   },
   "js_hero_2026": {
     "meta_title": "Adrian Romański — JavaScript Hero of the Community (JS Awards 2026) | meet.js",
