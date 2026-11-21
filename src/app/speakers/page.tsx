@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
-import { getSpeakers } from '@/utils/getSpeakers';
+import { getSpeakers } from '@/lib/crossweb';
 import { getTranslate } from '@/tolgee/server';
 
 export async function generateMetadata(): Promise<Metadata> {
