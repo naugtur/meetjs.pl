@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getSpeakers } from '@/utils/getSpeakers';
+import { getSpeakers } from '@/lib/crossweb';
 import { getTranslate } from '@/tolgee/server';
 import { SpeakersDirectory } from '@/components/SpeakersDirectory';
 

@@ -8,31 +8,15 @@ import { EventCard } from '@/components/EventCard';
 import Link from 'next/link';
 import { EventsAPIPartner } from '@/components/EventsAPIPartner';
 import { EmptyEventsAlert } from '@/components/EmptyEventsAlert';
-import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
+import { getUpcomingEvents } from '@/lib/crossweb';
 import { filterUpcomingEvents } from '@/utils/eventUtils';
 import { getTranslate } from '@/tolgee/server';
-import type { EventTypeName } from '@/types/event';
-
-export interface Event {
-  type: EventTypeName;
-  id: number;
-  date_add: number;
-  date: string;
-  time: string;
-  name: string;
-  url: string;
-  rsvp: string;
-  city: string;
-  address: string | null;
-  image: string;
-  serie: string;
-  topic: string[];
-}
+import type { EventType } from '@/types/event';
 
 export const FeaturedEvents = async () => {
   const t = await getTranslate();
-  const apiEvents: Event[] | null = await getUpcomingEvents();
-  const allEvents: Event[] = apiEvents || [];
+  const apiEvents: EventType[] | null = await getUpcomingEvents();
+  const allEvents: EventType[] = apiEvents || [];
 
   // Filter out past events and events too far in the future
   const events = filterUpcomingEvents(allEvents);
