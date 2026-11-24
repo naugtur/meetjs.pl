@@ -93,6 +93,35 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'thehacksummit.com',
       },
+      // Mastodon instances for social feed
+      {
+        protocol: 'https',
+        hostname: 'cdn.fosstodon.org',
+      },
+      {
+        protocol: 'https',
+        hostname: 'fosstodon.org',
+      },
+      {
+        protocol: 'https',
+        hostname: 'files.mastodon.social',
+      },
+      {
+        protocol: 'https',
+        hostname: 'mastodon.social',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.masto.host',
+      },
+      {
+        protocol: 'https',
+        hostname: 'media.mas.to',
+      },
+      {
+        protocol: 'https',
+        hostname: 'mas.to',
+      },
     ],
     minimumCacheTTL: 2678400, // 31 days - images rarely change
     qualities: [75],
