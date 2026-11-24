@@ -18,7 +18,7 @@ export default async function OpenSourcePage() {
 
       <section className="container mx-auto px-4 py-12">
         <div className="mx-auto max-w-4xl space-y-12">
-          <div className="prose prose-lg dark:prose-invert max-w-none text-center">
+          <div className="prose prose-lg max-w-none text-center dark:prose-invert">
             <h2 className="mb-4 text-3xl font-bold">
               {t('open_source.description.title')}
             </h2>
