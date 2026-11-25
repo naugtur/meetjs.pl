@@ -23,14 +23,25 @@ describe('EventsFeedLinks', () => {
     vi.restoreAllMocks();
   });
 
-  it('renders global .ics download and JSON API links when no city is selected', () => {
+  it('renders global webcal subscription, Google Calendar, and JSON API links when no city is selected', () => {
     render(<EventsFeedLinks siteUrl="https://meetjs.pl" />);
 
-    const icsLink = screen.getByRole('link', {
-      name: 'events_page.feeds.download_ics',
+    const subscribeLink = screen.getByRole('link', {
+      name: 'events_page.feeds.subscribe_calendar',
     });
-    expect(icsLink).toHaveAttribute('href', '/api/events.ics');
-    expect(icsLink).toHaveAttribute('download', 'meetjs-events.ics');
+    expect(subscribeLink).toHaveAttribute(
+      'href',
+      'webcal://meetjs.pl/api/events.ics',
+    );
+    expect(subscribeLink).not.toHaveAttribute('download');
+
+    const googleLink = screen.getByRole('link', {
+      name: 'events_page.feeds.google_calendar',
+    });
+    expect(googleLink).toHaveAttribute(
+      'href',
+      `https://calendar.google.com/calendar/r?cid=${encodeURIComponent('webcal://meetjs.pl/api/events.ics')}`,
+    );
 
     const jsonLink = screen.getByRole('link', {
       name: 'events_page.feeds.json_api',
@@ -38,17 +49,25 @@ describe('EventsFeedLinks', () => {
     expect(jsonLink).toHaveAttribute('href', '/api/events');
   });
 
-  it('scopes download, JSON API, and filename to the selected city', () => {
+  it('scopes webcal subscription, Google Calendar, and JSON API links to the selected city', () => {
     render(<EventsFeedLinks city="Wrocław" siteUrl="https://meetjs.pl" />);
 
-    const icsLink = screen.getByRole('link', {
-      name: /events_page\.feeds\.download_city_ics/,
+    const expectedWebcal =
+      'webcal://meetjs.pl/api/events.ics?city=Wroc%C5%82aw';
+
+    const subscribeLink = screen.getByRole('link', {
+      name: /events_page\.feeds\.subscribe_city_calendar/,
     });
-    expect(icsLink).toHaveAttribute(
+    expect(subscribeLink).toHaveAttribute('href', expectedWebcal);
+    expect(subscribeLink).not.toHaveAttribute('download');
+
+    const googleLink = screen.getByRole('link', {
+      name: 'events_page.feeds.google_calendar',
+    });
+    expect(googleLink).toHaveAttribute(
       'href',
-      '/api/events.ics?city=Wroc%C5%82aw',
+      `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(expectedWebcal)}`,
     );
-    expect(icsLink).toHaveAttribute('download', 'meetjs-wroclaw-events.ics');
 
     const jsonLink = screen.getByRole('link', {
       name: 'events_page.feeds.json_api',

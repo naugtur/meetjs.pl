@@ -45,6 +45,8 @@ describe('ical helpers', () => {
     expect(ics.endsWith('\r\n')).toBe(true);
     expect(ics).toContain('BEGIN:VCALENDAR\r\n');
     expect(ics).toContain('VERSION:2.0\r\n');
+    expect(ics).toContain('REFRESH-INTERVAL;VALUE=DURATION:PT12H\r\n');
+    expect(ics).toContain('X-PUBLISHED-TTL:PT12H\r\n');
     expect(ics).toContain('UID:event-60579@meetjs.pl\r\n');
     expect(ics).toContain('DTSTAMP:20261121T180000Z\r\n');
     expect(ics).toContain('DTSTART;TZID=Europe/Warsaw:20261210T173000\r\n');

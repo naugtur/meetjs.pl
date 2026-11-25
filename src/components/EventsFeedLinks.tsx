@@ -1,9 +1,8 @@
 'use client';
 
 import { useEffect, useId, useRef, useState } from 'react';
-import { CalendarPlus, Check, Code2, Copy } from 'lucide-react';
+import { Calendar, CalendarPlus, Check, Code2, Copy } from 'lucide-react';
 import { useTranslate } from '@tolgee/react';
-import { getIcsFilename } from '@/utils/eventsFeed';
 
 interface EventsFeedLinksProps {
   city?: string | null;
@@ -26,14 +25,14 @@ export const EventsFeedLinks = ({ city, siteUrl }: EventsFeedLinksProps) => {
   const icsPath = `/api/events.ics${query}`;
   const jsonPath = `/api/events${query}`;
 
-  const downloadFilename = getIcsFilename(city);
-
   const baseOrigin =
     siteUrl?.replace(/\/$/, '') ||
     (typeof window !== 'undefined'
       ? window.location.origin
       : 'https://meetjs.pl');
   const subscribeUrl = `${baseOrigin}${icsPath}`;
+  const webcalUrl = subscribeUrl.replace(/^https?:\/\//, 'webcal://');
+  const googleCalendarUrl = `https://calendar.google.com/calendar/r?cid=${encodeURIComponent(webcalUrl)}`;
 
   useEffect(() => {
     const button = buttonRef.current;
@@ -105,9 +104,9 @@ export const EventsFeedLinks = ({ city, siteUrl }: EventsFeedLinksProps) => {
     };
   }, [t]);
 
-  const icsLabel = city
-    ? t('events_page.feeds.download_city_ics', { city })
-    : t('events_page.feeds.download_ics');
+  const subscribeLabel = city
+    ? t('events_page.feeds.subscribe_city_calendar', { city })
+    : t('events_page.feeds.subscribe_calendar');
 
   const invokerAttrs = {
     command: '--copy',
@@ -117,12 +116,21 @@ export const EventsFeedLinks = ({ city, siteUrl }: EventsFeedLinksProps) => {
   return (
     <div className="flex flex-wrap items-center justify-center gap-2 text-sm">
       <a
-        href={icsPath}
-        download={downloadFilename}
+        href={webcalUrl}
         className="inline-flex min-h-9 items-center gap-1.5 rounded-lg bg-purple px-3.5 py-1.5 font-medium text-white transition-colors hover:bg-purple/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple"
       >
         <CalendarPlus aria-hidden="true" className="h-4 w-4 shrink-0" />
-        <span>{icsLabel}</span>
+        <span>{subscribeLabel}</span>
+      </a>
+
+      <a
+        href={googleCalendarUrl}
+        target="_blank"
+        rel="noopener"
+        className="inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-gray-300 bg-white px-3 py-1.5 font-medium text-gray-800 transition-colors hover:border-purple hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple"
+      >
+        <Calendar aria-hidden="true" className="h-4 w-4 shrink-0" />
+        <span>{t('events_page.feeds.google_calendar')}</span>
       </a>
 
       <span className="relative inline-flex items-center gap-1.5">

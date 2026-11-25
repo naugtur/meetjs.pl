@@ -123,6 +123,8 @@ export const buildEventsIcal = (
     'METHOD:PUBLISH',
     `X-WR-CALNAME:${escapeIcalText(calendarName)}`,
     `X-WR-TIMEZONE:${CALENDAR_TIMEZONE}`,
+    'REFRESH-INTERVAL;VALUE=DURATION:PT12H',
+    'X-PUBLISHED-TTL:PT12H',
   ];
 
   for (const event of events) {

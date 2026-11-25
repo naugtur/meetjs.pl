@@ -301,9 +301,10 @@
       "copied": "Skopiowano",
       "copy_failed": "Błąd kopiowania",
       "copy_subscribe_url": "Kopiuj link kalendarza",
-      "download_city_ics": "Pobierz kalendarz {city} (.ics)",
-      "download_ics": "Pobierz kalendarz (.ics)",
-      "json_api": "JSON API"
+      "google_calendar": "Google Calendar",
+      "json_api": "JSON API",
+      "subscribe_calendar": "Subskrybuj kalendarz",
+      "subscribe_city_calendar": "Subskrybuj kalendarz {city}"
     },
     "filter": {
       "all": "Wszystkie",

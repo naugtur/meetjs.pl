@@ -301,9 +301,10 @@
       "copied": "Copied",
       "copy_failed": "Copy failed",
       "copy_subscribe_url": "Copy calendar URL",
-      "download_city_ics": "Download {city} calendar (.ics)",
-      "download_ics": "Download calendar (.ics)",
-      "json_api": "JSON API"
+      "google_calendar": "Google Calendar",
+      "json_api": "JSON API",
+      "subscribe_calendar": "Subscribe to calendar",
+      "subscribe_city_calendar": "Subscribe to {city} calendar"
     },
     "filter": {
       "all": "All",
