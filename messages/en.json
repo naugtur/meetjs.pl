@@ -297,6 +297,14 @@
     "upcoming_in_city": "Upcoming events in"
   },
   "events_page": {
+    "feeds": {
+      "copied": "Copied",
+      "copy_failed": "Copy failed",
+      "copy_subscribe_url": "Copy calendar URL",
+      "download_city_ics": "Download {city} calendar (.ics)",
+      "download_ics": "Download calendar (.ics)",
+      "json_api": "JSON API"
+    },
     "filter": {
       "all": "All",
       "events_not_found": "Events not found",

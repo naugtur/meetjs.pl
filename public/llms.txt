@@ -13,6 +13,11 @@ meet.js was established in Poznań in 2011 and has since expanded to multiple ci
 - [30 Years of JavaScript](https://meetjs.pl/30-years-of-javascript): Celebrating JavaScript's history
 - [JSNation Award](https://meetjs.pl/jsnation-award): Recognition of our community contribution
 
+## Public API & Calendar Feed
+
+- [Upcoming Events JSON API](https://meetjs.pl/api/events): Public JSON feed of upcoming meet.js and partner events (supports `?city=<name>` and `?type=<eventType>`, e.g. `?city=Warszawa`, `?city=summit`)
+- [Upcoming Events iCalendar Feed (.ics)](https://meetjs.pl/api/events.ics): Subscribable RFC 5545 calendar feed for Google Calendar, Apple Calendar, and Outlook (supports the same `?city=` and `?type=` filters)
+
 ## Community Chapters
 
 - [Poznań Chapter](https://meetjs.pl/team#poznan): The first meet.js chapter, founded in 2011

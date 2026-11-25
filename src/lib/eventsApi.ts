@@ -1,25 +1,15 @@
 import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
 import type { EventType } from '@/types/event';
+import { normalizeFilterValue } from '@/utils/eventsFeed';
 import { filterUpcomingEvents, isConferenceEvent } from '@/utils/eventUtils';
 import { getUpcomingEvents } from '@/utils/getUpcomingEvents';
+
+export { normalizeFilterValue };
 
 export const PUBLIC_API_HEADERS: Record<string, string> = {
   'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
   'Access-Control-Allow-Origin': '*',
 };
-
-/**
- * Normalizes city/filter strings for diacritic- and punctuation-insensitive matching
- * (e.g. "wroclaw" matches "Wrocław", "online" matches "On-line").
- */
-export const normalizeFilterValue = (value: string): string =>
-  value
-    .trim()
-    .toLowerCase()
-    .replace(/ł/g, 'l')
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[\s-]+/g, '');
 
 export const filterEventsByQuery = (
   events: EventType[],

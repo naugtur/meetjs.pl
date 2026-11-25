@@ -11,6 +11,7 @@ import { isDevelopment } from '@/utils/isDevelopment';
 import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
 import { filterUpcomingEvents, sortEventsByDate } from '@/utils/eventUtils';
 import { getTranslate } from '@/tolgee/server';
+import { EventsFeedLinks } from '@/components/EventsFeedLinks';
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslate();
@@ -87,6 +88,7 @@ const EventsPage = async ({ searchParams }: EventsPageProps) => {
           </h1>
           <p className="text-center text-lg">{t('events_page.subtitle')}</p>
           <EventsAPIPartner />
+          <EventsFeedLinks city={city} siteUrl={env.SITE_URL} />
         </section>
 
         <section className="flex w-full flex-col items-center justify-center gap-6">
