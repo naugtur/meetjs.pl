@@ -3,6 +3,8 @@ import { EventsList } from './EventsList';
 import { ADDITIONAL_EVENTS } from '@/content/additionalEvents';
 import { filterUpcomingEvents } from '@/utils/eventUtils';
 import { getTranslate } from '@/tolgee/server';
+import { env } from '@/env';
+import { EventsFeedLinks } from '@/components/EventsFeedLinks';
 
 interface EventSectionProps {
   city: string;
@@ -23,6 +25,7 @@ export async function EventSection({ city }: EventSectionProps) {
       <h2 className="text-2xl font-bold">
         {t('events.upcoming_in_city')} {city}
       </h2>
+      <EventsFeedLinks city={city} siteUrl={env.SITE_URL} />
       {cityEvents && cityEvents.length > 0 ? (
         <EventsList eventsList={cityEvents} />
       ) : (

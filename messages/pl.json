@@ -297,6 +297,15 @@
     "upcoming_in_city": "Nadchodzące wydarzenia w"
   },
   "events_page": {
+    "feeds": {
+      "copied": "Skopiowano",
+      "copy_failed": "Błąd kopiowania",
+      "copy_subscribe_url": "Kopiuj link kalendarza",
+      "google_calendar": "Google Calendar",
+      "json_api": "JSON API",
+      "subscribe_calendar": "Subskrybuj kalendarz",
+      "subscribe_city_calendar": "Subskrybuj kalendarz {city}"
+    },
     "filter": {
       "all": "Wszystkie",
       "events_not_found": "Nie znaleziono wydarzeń",
