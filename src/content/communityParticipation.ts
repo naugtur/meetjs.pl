@@ -18,6 +18,33 @@ export interface CommunityItem {
 
 export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
   {
+    id: 'smashingconf-amsterdam-2027',
+    title: 'SmashingConf Amsterdam 2027',
+    description:
+      'In-person conference and workshops for designers, UI engineers and UX professionals by Smashing Magazine — May 18–21, 2027 at Pathé Tuschinski in Amsterdam (conference May 19–20, workshops May 18 & 21). Practical single-track sessions on design systems, modern CSS, accessibility, Figma, UX and AI-driven workflows. Use code welovecommunity for 15% off your ticket.',
+    url: 'https://smashingconf.com/amsterdam-2027',
+    type: 'collaboration',
+    status: 'active',
+    startDate: '2027-05-18',
+    endDate: '2027-05-21',
+    organization: 'Smashing Magazine',
+    impact:
+      'Media partnership with SmashingConf – meet.js logo on the Amsterdam partner page, feature in the Smashing newsletter, and a 15% discount for the meet.js community.',
+    ctaText: 'Get 15% off with welovecommunity',
+    featured: true,
+    image: '/partners/smashingconf.svg',
+    tags: [
+      'UX',
+      'Frontend',
+      'CSS',
+      'Design Systems',
+      'Conference',
+      'Amsterdam',
+      'Smashing',
+      'Discount',
+    ],
+  },
+  {
     id: 'gdg-devfest-wroclaw-2026',
     title: 'Google DevFest 2026 Wrocław',
     description:

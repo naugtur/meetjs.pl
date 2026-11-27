@@ -116,4 +116,9 @@ export const PARTNERS = [
     src: '/partners/cnd-poland.svg',
     alt: 'Cloud Native Days Poland',
   },
+  {
+    href: 'https://smashingconf.com/',
+    src: '/partners/smashingconf-white.svg',
+    alt: 'SmashingConf',
+  },
 ];
