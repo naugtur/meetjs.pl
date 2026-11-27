@@ -82,6 +82,12 @@ export const useTranslatedMenuLinks = (): MenuLink[] => {
       ],
     },
     {
+      name: t('navigation.menu_items.quiz'),
+      href: '/quiz',
+      current: false,
+      external: false,
+    },
+    {
       name: t('navigation.menu_items.about'),
       href: '/about',
       current: false,
