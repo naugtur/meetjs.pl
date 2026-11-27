@@ -35,6 +35,34 @@ export interface Partnership {
 
 export const partnerships: Partnership[] = [
   {
+    name: 'Devoxx Poland 2027',
+    website: 'https://devoxx.pl/',
+    description:
+      'Jedna z największych konferencji dla developerów w Polsce — czerwiec 2027 w Krakowie (ICE Kraków). Choć wywodzi się z ekosystemu Java/JVM, obejmuje również ścieżki webowe, architekturę i AI. meet.js jest partnerem medialnym wydarzenia.',
+    details: [
+      'Czerwiec 2027, ICE Kraków Congress Centre, Kraków',
+      'Ścieżki obejmujące m.in. technologie webowe, architekturę oprogramowania, cloud i AI',
+      'Wzajemna wymiana logo na stronach internetowych oraz promocja w newsletterach, na Discordzie i w social mediach',
+    ],
+    goals: [
+      'Wzajemna widoczność społeczności meet.js i Devoxx Poland w polskim ekosystemie IT',
+      'Promocja ścieżek webowych i konferencji wśród developerów JavaScript, także podczas krakowskich meetupów',
+      'Budowanie długofalowej współpracy z jednym z największych wydarzeń developerskich w kraju',
+    ],
+    location: 'Kraków, ICE Kraków',
+    contact: 'https://devoxx.pl/',
+    icon: (
+      <Image
+        src="/partners/devoxx-poland.svg"
+        alt="Devoxx Poland"
+        width={64}
+        height={32}
+        className="h-8 w-auto object-contain"
+      />
+    ),
+    gradient: 'from-orange-500 to-amber-500',
+  },
+  {
     name: 'Dzień Programisty',
     website: 'https://dzienprogramisty.pl/',
     description:

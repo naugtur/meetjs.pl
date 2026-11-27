@@ -18,6 +18,29 @@ export interface CommunityItem {
 
 export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
   {
+    id: 'devoxx-poland-2027',
+    title: 'Devoxx Poland 2027',
+    description:
+      'Jedna z największych konferencji developerskich w Polsce wraca do Krakowa w czerwcu 2027 (ICE Kraków). Poza ścieżkami JVM na scenie pojawiają się też tematy webowe, architektura, cloud i praktyczne AI. meet.js jest partnerem medialnym wydarzenia.',
+    url: 'https://devoxx.pl/',
+    type: 'collaboration',
+    status: 'upcoming',
+    startDate: '2027-06-01',
+    organization: 'Devoxx Poland',
+    impact:
+      'Partnerstwo medialne – wzajemna wymiana logo oraz promocja w newsletterach, na Discordzie i w social mediach.',
+    ctaText: 'Dowiedz się więcej',
+    featured: false,
+    image: '/partners/devoxx-poland.svg',
+    tags: [
+      'Conference',
+      'Kraków',
+      'Web Development',
+      'Architecture',
+      'Media Partnership',
+    ],
+  },
+  {
     id: 'gdg-devfest-wroclaw-2026',
     title: 'Google DevFest 2026 Wrocław',
     description:
