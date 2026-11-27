@@ -1,87 +1,531 @@
 [
-	{
-		"id": "7a36aecd-13a1-4703-98f7-8e0771b3e05c",
-		"question": "What is JavaScript?",
-		"options": [
-			"A programming language",
-			"A markup language",
-			"A database",
-			"An operating system"
-		],
-		"correct": 0
-	},
-	{
-		"id": "bcf83845-d58d-46c2-beb7-b448e0e0b102",
-		"question": "Which keyword is used to declare variables in JavaScript?",
-		"options": ["var", "let", "const", "All of the above"],
-		"correct": 3
-	},
-	{
-		"id": "f542edea-3947-4c21-8d19-790b6902f4f5",
-		"question": "What is the result of 2 + \"2\" in JavaScript?",
-		"options": ["4", "22", "NaN", "Error"],
-		"correct": 1
-	},
-	{
-		"id": "1df65343-95d9-4800-b5c2-b885e07cf48c",
-		"question": "What is the purpose of the \"use strict\" directive in JavaScript?",
-		"options": [
-			"To enforce stricter parsing and error handling",
-			"To make the code run faster",
-			"To enable new JavaScript features",
-			"To prevent code execution"
-		],
-		"correct": 0
-	},
-	{
-		"id": "2ee6657a-d0f3-4df0-9984-e52ea12c1c00",
-		"question": "Which method removes the last element from an array?",
-		"options": ["shift()", "unshift()", "pop()", "push()"],
-		"correct": 2
-	},
-	{
-		"id": "9392aab7-ed3c-4f06-b0b0-b66c79e0f234",
-		"question": "What is a closure in JavaScript?",
-		"options": [
-			"A function that has access to variables in its outer scope",
-			"A way to close browser windows",
-			"A method to end loops",
-			"A type of error handling"
-		],
-		"correct": 0
-	},
-	{
-		"id": "f1851e0f-b92d-4a4e-a50c-482dc10cdf53",
-		"question": "What does the \"===\" operator do?",
-		"options": [
-			"Assigns a value",
-			"Compares values only",
-			"Compares and returns true if primitives or object references are identical",
-			"Concatenates strings"
-		],
-		"correct": 2
-	},
-	{
-		"id": "04bb668a-f925-4e13-a7f6-e6044ebfd4fa",
-		"question": "What is the output of typeof null?",
-		"options": ["null", "undefined", "object", "NaN"],
-		"correct": 2
-	},
-	{
-		"id": "a76cb63c-8a78-4feb-b057-651d91608a07",
-		"question": "Which is not a JavaScript data type?",
-		"options": ["string", "boolean", "float", "symbol"],
-		"correct": 2
-	},
-	{
-		"id": "616b8a76-00fb-4798-9070-fb16e3025551",
-		"question": "What is event bubbling?",
-		"options": [
-			"When an event triggers on a child and propagates up",
-			"When elements float to the top",
-			"A way to create new events",
-			"A method to sort elements"
-		],
-		"correct": 0
-	}
+  {
+    "id": "quirks-typeof-null",
+    "category": "js-quirks",
+    "difficulty": "junior",
+    "question": "What does typeof null evaluate to in JavaScript?",
+    "code": "console.log(typeof null);",
+    "options": ["\"null\"", "\"undefined\"", "\"object\"", "\"boolean\""],
+    "correct": 2,
+    "explanation": "This is a famous bug from the very first 1995 implementation of JavaScript, where null had the same 0x00 type tag as objects. Changing it would break existing web code, so it remains \"object\" by specification.",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof#typeof_null",
+    "author": "dzienisz"
+  },
+  {
+    "id": "quirks-strict-equality",
+    "category": "js-quirks",
+    "difficulty": "junior",
+    "question": "What does this snippet log?",
+    "code": "const a = new Set([1, 2, 3]);\nconst b = new Set([1, 2, 3]);\nconsole.log(a === b, NaN === NaN);",
+    "options": ["true true", "true false", "false true", "false false"],
+    "correct": 3,
+    "explanation": "Strict equality (===) checks object identity by reference (a and b are two distinct Set instances), and per IEEE 754, NaN is never equal to itself. Use Object.is(NaN, NaN) when you need true for NaN.",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality",
+    "author": "naugtur"
+  },
+  {
+    "id": "quirks-array-sort-numbers",
+    "category": "js-quirks",
+    "difficulty": "junior",
+    "question": "What is logged by Array.prototype.sort() with no comparator?",
+    "code": "const nums = [10, 2, 30, 1];\nconsole.log(nums.sort());",
+    "options": [
+      "[1, 2, 10, 30]",
+      "[1, 10, 2, 30]",
+      "[30, 10, 2, 1]",
+      "Throws TypeError"
+    ],
+    "correct": 1,
+    "explanation": "Without a compare function, Array.prototype.sort() converts elements to strings and compares UTF-16 code units — so \"10\" comes before \"2\". Always pass (a, b) => a - b for numeric sorting (or use .toSorted()).",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort",
+    "author": "meetjs"
+  },
+  {
+    "id": "quirks-parseint-map",
+    "category": "js-quirks",
+    "difficulty": "mid",
+    "question": "What does ['1', '7', '11'].map(parseInt) return?",
+    "code": "console.log(['1', '7', '11'].map(parseInt));",
+    "options": ["[1, 7, 11]", "[1, NaN, 3]", "[1, NaN, NaN]", "[1, 7, NaN]"],
+    "correct": 1,
+    "explanation": "Array.prototype.map passes (value, index, array) to its callback, and parseInt takes (string, radix). It calls parseInt('1', 0) => 1, parseInt('7', 1) => NaN (invalid radix 1), and parseInt('11', 2) => 3 (binary 11).",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt",
+    "author": "meetjs"
+  },
+  {
+    "id": "quirks-min-max-no-args",
+    "category": "js-quirks",
+    "difficulty": "wtf",
+    "question": "What does Math.min() > Math.max() evaluate to?",
+    "code": "console.log(Math.min() > Math.max());",
+    "options": ["false", "true", "NaN", "Throws RangeError"],
+    "correct": 1,
+    "explanation": "Math.min() with no arguments returns Infinity (the identity element for min), while Math.max() returns -Infinity. Therefore Infinity > -Infinity evaluates to true!",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min",
+    "author": "meetjs"
+  },
+  {
+    "id": "quirks-banana-coercion",
+    "category": "js-quirks",
+    "difficulty": "wtf",
+    "question": "What does this infamous coercion expression produce?",
+    "code": "console.log(('b' + 'a' + + 'a' + 'a').toLowerCase());",
+    "options": ["\"baaa\"", "\"banana\"", "\"banan\"", "\"baNaNa\""],
+    "correct": 1,
+    "explanation": "The unary + in `+ 'a'` tries to convert 'a' to a number, producing NaN. String concatenation turns it into 'baNaNa', and .toLowerCase() yields 'banana'.",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Unary_plus",
+    "author": "meetjs"
+  },
+  {
+    "id": "async-microtask-macrotask",
+    "category": "async-event-loop",
+    "difficulty": "junior",
+    "question": "In what order are the numbers logged?",
+    "code": "console.log(1);\nsetTimeout(() => console.log(2), 0);\nPromise.resolve().then(() => console.log(3));\nconsole.log(4);",
+    "options": ["1, 2, 3, 4", "1, 4, 2, 3", "1, 4, 3, 2", "1, 3, 4, 2"],
+    "correct": 2,
+    "explanation": "Synchronous code runs first (1, 4). Then the microtask queue drains completely (Promise callbacks => 3) before the event loop picks the next timer task (setTimeout => 2).",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide",
+    "author": "meetjs"
+  },
+  {
+    "id": "async-promise-executor-sync",
+    "category": "async-event-loop",
+    "difficulty": "mid",
+    "question": "What is logged when this Promise is constructed?",
+    "code": "console.log('A');\nnew Promise((resolve) => {\n  console.log('B');\n  resolve('C');\n}).then((v) => console.log(v));\nconsole.log('D');",
+    "options": ["A, B, D, C", "A, D, B, C", "A, B, C, D", "B, A, D, C"],
+    "correct": 0,
+    "explanation": "The Promise executor function runs synchronously during `new Promise(...)` construction, logging 'B' right after 'A'. Only the `.then()` handler is scheduled as a microtask, running after 'D'.",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/Promise",
+    "author": "meetjs"
+  },
+  {
+    "id": "async-return-vs-return-await",
+    "category": "async-event-loop",
+    "difficulty": "senior",
+    "question": "Does the catch block catch the rejected Promise here?",
+    "code": "async function load() {\n  try {\n    return Promise.reject(new Error('boom'));\n  } catch {\n    return 'fallback';\n  }\n}\nload().then(console.log).catch(() => console.log('uncaught'));",
+    "options": [
+      "Logs \"fallback\"",
+      "Logs \"uncaught\"",
+      "Logs nothing",
+      "Throws synchronously"
+    ],
+    "correct": 1,
+    "explanation": "Without `await`, `return Promise.reject(...)` returns the rejected promise directly out of the try block before it settles, so the catch block never runs. Using `return await ...` inside try/catch is required to catch rejections locally.",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function",
+    "author": "meetjs"
+  },
+  {
+    "id": "async-promise-all-settled",
+    "category": "async-event-loop",
+    "difficulty": "junior",
+    "question": "Which Promise combinator waits for all promises to finish regardless of whether any reject?",
+    "code": "const results = await Promise.???([fetchA(), fetchB(), fetchC()]);",
+    "options": [
+      "Promise.all()",
+      "Promise.race()",
+      "Promise.allSettled()",
+      "Promise.any()"
+    ],
+    "correct": 2,
+    "explanation": "Promise.allSettled() never short-circuits on rejection — it resolves once every input promise settles, returning an array of `{ status: 'fulfilled', value }` or `{ status: 'rejected', reason }` objects.",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled",
+    "author": "meetjs"
+  },
+  {
+    "id": "async-promise-any-empty",
+    "category": "async-event-loop",
+    "difficulty": "senior",
+    "question": "What happens when you call Promise.any([]) with an empty array?",
+    "code": "Promise.any([])\n  .then(() => console.log('resolved'))\n  .catch((err) => console.log(err.name));",
+    "options": [
+      "Logs \"resolved\"",
+      "Logs \"AggregateError\"",
+      "Never settles (stays pending)",
+      "Logs \"TypeError\""
+    ],
+    "correct": 1,
+    "explanation": "Because Promise.any() fulfills as soon as at least one promise fulfills, an empty iterable can never fulfill and rejects with an AggregateError. By contrast, Promise.race([]) stays pending forever.",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/any",
+    "author": "meetjs"
+  },
+  {
+    "id": "async-await-non-promise",
+    "category": "async-event-loop",
+    "difficulty": "mid",
+    "question": "What is logged first when awaiting a plain primitive?",
+    "code": "async function run() {\n  console.log('1');\n  await 42;\n  console.log('2');\n}\nrun();\nconsole.log('3');",
+    "options": ["1, 2, 3", "1, 3, 2", "3, 1, 2", "Throws TypeError"],
+    "correct": 1,
+    "explanation": "`await 42` wraps 42 in a resolved promise and suspends the async function, scheduling the continuation (`console.log('2')`) as a microtask. Synchronous code continues immediately and logs '3' first.",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await",
+    "author": "meetjs"
+  },
+  {
+    "id": "modern-object-groupby",
+    "category": "modern-js",
+    "difficulty": "mid",
+    "question": "What does Object.groupBy() return for the object prototype?",
+    "code": "const grouped = Object.groupBy(['js', 'ts', 'go'], (s) => s.length);\nconsole.log(Object.getPrototypeOf(grouped));",
+    "options": ["Object.prototype", "null", "Map.prototype", "Array.prototype"],
+    "correct": 1,
+    "explanation": "Object.groupBy() (ES2024) returns a null-prototype object (`Object.create(null)`) so keys like 'toString' or 'constructor' never collide with inherited Object.prototype properties.",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/groupBy",
+    "author": "meetjs"
+  },
+  {
+    "id": "modern-array-tospliced",
+    "category": "modern-js",
+    "difficulty": "junior",
+    "question": "What does this ES2023 change-array-by-copy snippet log?",
+    "code": "const cities = ['Poznań', 'Warsaw', 'Kraków'];\nconst next = cities.with(1, 'Gdańsk');\nconsole.log(cities[1], next[1]);",
+    "options": [
+      "Gdańsk Gdańsk",
+      "Warsaw Gdańsk",
+      "Warsaw Warsaw",
+      "Throws TypeError"
+    ],
+    "correct": 1,
+    "explanation": "Array.prototype.with(index, value) returns a new shallow copy with the element replaced, leaving the original array untouched — alongside toSorted(), toReversed(), and toSpliced().",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/with",
+    "author": "meetjs"
+  },
+  {
+    "id": "modern-set-methods",
+    "category": "modern-js",
+    "difficulty": "mid",
+    "question": "What does Set.prototype.symmetricDifference() return here?",
+    "code": "const a = new Set([1, 2, 3]);\nconst b = new Set([2, 3, 4]);\nconsole.log([...a.symmetricDifference(b)]);",
+    "options": ["[2, 3]", "[1, 4]", "[1]", "[1, 2, 3, 4]"],
+    "correct": 1,
+    "explanation": "Added in ES2025, `a.symmetricDifference(b)` returns elements present in either `a` or `b`, but not in both — here 1 and 4.",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/symmetricDifference",
+    "author": "meetjs"
+  },
+  {
+    "id": "modern-nullish-vs-or",
+    "category": "modern-js",
+    "difficulty": "junior",
+    "question": "What is the difference in output between || and ?? here?",
+    "code": "const count = 0;\nconsole.log(count || 10, count ?? 10);",
+    "options": ["0 0", "10 10", "10 0", "0 10"],
+    "correct": 2,
+    "explanation": "Logical OR (`||`) falls back on any falsy value (including 0, '', and false). Nullish coalescing (`??`) only falls back when the left-hand side is `null` or `undefined`.",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing",
+    "author": "meetjs"
+  },
+  {
+    "id": "modern-iterator-helpers",
+    "category": "modern-js",
+    "difficulty": "senior",
+    "question": "How many times does the map callback execute?",
+    "code": "let calls = 0;\nconst result = [1, 2, 3, 4, 5]\n  .values()\n  .map((x) => { calls++; return x * 10; })\n  .take(2)\n  .toArray();\nconsole.log(calls, result);",
+    "options": [
+      "5 [10, 20]",
+      "2 [10, 20]",
+      "0 [10, 20]",
+      "5 [10, 20, 30, 40, 50]"
+    ],
+    "correct": 1,
+    "explanation": "ES2025 Iterator Helpers (.map, .filter, .take on iterators) are lazy! Unlike Array.prototype.map, values are pulled one by one, so `.take(2)` stops after processing only 2 items.",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator",
+    "author": "meetjs"
+  },
+  {
+    "id": "modern-promise-withresolvers",
+    "category": "modern-js",
+    "difficulty": "mid",
+    "question": "What does Promise.withResolvers() return?",
+    "code": "const { promise, resolve, reject } = Promise.withResolvers();",
+    "options": [
+      "A tuple [promise, resolve, reject]",
+      "An object { promise, resolve, reject }",
+      "A Promise that resolves to [resolve, reject]",
+      "Only { promise, resolve }"
+    ],
+    "correct": 1,
+    "explanation": "Introduced in ES2024, `Promise.withResolvers()` returns an object containing `{ promise, resolve, reject }`, removing the boilerplate of capturing `resolve`/`reject` from inside `new Promise(...)`.",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/withResolvers",
+    "author": "meetjs"
+  },
+  {
+    "id": "ts-satisfies-operator",
+    "category": "typescript",
+    "difficulty": "mid",
+    "question": "Why use `satisfies` instead of a type annotation `: Record<string, string | number[]>` here?",
+    "code": "const palette = {\n  green: '#bcd35d',\n  rgb: [188, 211, 93],\n} satisfies Record<string, string | number[]>;\n\npalette.green.toUpperCase();",
+    "options": [
+      "It converts properties to readonly at runtime",
+      "It validates the shape while preserving narrow inferred property types",
+      "It strips extra properties at compile time",
+      "It disables excess property checking"
+    ],
+    "correct": 1,
+    "explanation": "With a `: Record<...>` annotation, `palette.green` widens to `string | number[]`, breaking `.toUpperCase()`. `satisfies` validates conformance to the target type without widening the inferred literal/property types.",
+    "docsUrl": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-9.html#the-satisfies-operator",
+    "author": "meetjs"
+  },
+  {
+    "id": "ts-unknown-vs-any",
+    "category": "typescript",
+    "difficulty": "junior",
+    "question": "Which statement accurately describes `unknown` compared to `any` in TypeScript?",
+    "code": "function parse(input: unknown) {\n  // input.toUpperCase(); // Error!\n  if (typeof input === 'string') return input.toUpperCase();\n}",
+    "options": [
+      "`unknown` only accepts primitive values",
+      "`unknown` is type-safe: any value can be assigned to it, but you must narrow it before use",
+      "`unknown` is identical to `never`",
+      "`unknown` strips type checking for downstream callers"
+    ],
+    "correct": 1,
+    "explanation": "`unknown` is the type-safe top type in TypeScript. Like `any`, any value is assignable to `unknown`, but TypeScript refuses property access or calls until you narrow it (e.g. via `typeof`, type guards, or Zod).",
+    "docsUrl": "https://www.typescriptlang.org/docs/handbook/2/functions.html#unknown",
+    "author": "meetjs"
+  },
+  {
+    "id": "ts-distributive-conditional",
+    "category": "typescript",
+    "difficulty": "senior",
+    "question": "What type does `Result` resolve to?",
+    "code": "type Wrap<T> = T extends string ? [T] : never;\ntype Result = Wrap<'a' | 'b' | 42>;",
+    "options": ["never", "['a' | 'b']", "['a'] | ['b']", "['a', 'b']"],
+    "correct": 2,
+    "explanation": "Conditional types distribute over naked type parameters when given a union: `Wrap<'a'> | Wrap<'b'> | Wrap<42>` => `['a'] | ['b'] | never` => `['a'] | ['b']`. Wrap `[T] extends [string]` to opt out of distribution.",
+    "docsUrl": "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#distributive-conditional-types",
+    "author": "meetjs"
+  },
+  {
+    "id": "ts-never-exhaustiveness",
+    "category": "typescript",
+    "difficulty": "mid",
+    "question": "Why do TypeScript developers assign the default branch of a switch on a union to `never`?",
+    "code": "type Status = 'idle' | 'ok';\nfunction label(s: Status): string {\n  switch (s) {\n    case 'idle': return 'Waiting';\n    case 'ok': return 'Done';\n    default: {\n      const _exhaustive: never = s;\n      return _exhaustive;\n    }\n  }\n}",
+    "options": [
+      "It optimizes the compiled JavaScript switch statement",
+      "It causes a compile-time error if a new union member is added and unhandled",
+      "It prevents runtime exceptions in production",
+      "It is required by strictNullChecks for all switches"
+    ],
+    "correct": 1,
+    "explanation": "If someone later adds `'error'` to `Status` without handling it, `s` in `default` narrows to `'error'`, which isn't assignable to `never` — catching the missing case at compile time.",
+    "docsUrl": "https://www.typescriptlang.org/docs/handbook/2/narrowing.html#exhaustiveness-checking",
+    "author": "meetjs"
+  },
+  {
+    "id": "ts-as-const-tuple",
+    "category": "typescript",
+    "difficulty": "junior",
+    "question": "What is the inferred type of `cities` with `as const`?",
+    "code": "const cities = ['Poznań', 'Wrocław'] as const;",
+    "options": [
+      "string[]",
+      "readonly string[]",
+      "readonly [\"Poznań\", \"Wrocław\"]",
+      "[\"Poznań\" | \"Wrocław\"]"
+    ],
+    "correct": 2,
+    "explanation": "`as const` makes array literals readonly tuples and preserves exact literal types for every element instead of widening them to `string[]`.",
+    "docsUrl": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#literal-inference",
+    "author": "meetjs"
+  },
+  {
+    "id": "ts-infer-awaited",
+    "category": "typescript",
+    "difficulty": "senior",
+    "question": "What does `Awaited<Promise<Promise<number | string>>>` evaluate to?",
+    "code": "type Unwrapped = Awaited<Promise<Promise<number | string>>>;",
+    "options": [
+      "Promise<number | string>",
+      "number | string",
+      "unknown",
+      "never"
+    ],
+    "correct": 1,
+    "explanation": "TypeScript's built-in `Awaited<T>` recursively unwraps nested Promise/thenable types, mirroring how `await` flattens promises at runtime — yielding `number | string`.",
+    "docsUrl": "https://www.typescriptlang.org/docs/handbook/utility-types.html#awaitedtype",
+    "author": "meetjs"
+  },
+  {
+    "id": "web-fetch-404",
+    "category": "web-apis",
+    "difficulty": "junior",
+    "question": "What happens when `fetch()` receives an HTTP 404 or 500 response?",
+    "code": "try {\n  const res = await fetch('/api/missing-endpoint');\n  console.log('ok:', res.ok, 'status:', res.status);\n} catch {\n  console.log('caught');\n}",
+    "options": [
+      "Logs \"caught\" because 404 rejects the Promise",
+      "Logs \"ok: false status: 404\"",
+      "Logs \"ok: true status: 404\"",
+      "Retries automatically 3 times"
+    ],
+    "correct": 1,
+    "explanation": "`fetch()` only rejects on network failures or aborted requests — HTTP error statuses like 404 or 500 still resolve! Always check `res.ok` before parsing the body.",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#checking_that_the_fetch_was_successful",
+    "author": "meetjs"
+  },
+  {
+    "id": "web-structured-clone",
+    "category": "web-apis",
+    "difficulty": "mid",
+    "question": "Which of these will cause `structuredClone()` to throw a DataCloneError?",
+    "code": "structuredClone({ a: new Date(), b: new Map(), c: ??? });",
+    "options": [
+      "A circular object reference",
+      "A RegExp instance",
+      "A function",
+      "A Uint8Array"
+    ],
+    "correct": 2,
+    "explanation": "`structuredClone()` handles Dates, Maps, Sets, RegExps, TypedArrays, and even circular references — but functions (and DOM nodes / Symbols) cannot be cloned and throw a DataCloneError.",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Window/structuredClone",
+    "author": "meetjs"
+  },
+  {
+    "id": "web-abort-signal-timeout",
+    "category": "web-apis",
+    "difficulty": "mid",
+    "question": "What is the cleanest built-in way to cancel a `fetch()` after 5 seconds in modern browsers and Node.js?",
+    "code": "await fetch('/api/events', { signal: ??? });",
+    "options": [
+      "AbortSignal.timeout(5000)",
+      "Promise.timeout(5000)",
+      "fetch.timeout(5000)",
+      "setTimeout.signal(5000)"
+    ],
+    "correct": 0,
+    "explanation": "`AbortSignal.timeout(ms)` creates an AbortSignal that automatically aborts with a TimeoutError after the given delay, without manual `AbortController` and `clearTimeout` boilerplate.",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal/timeout_static",
+    "author": "meetjs"
+  },
+  {
+    "id": "web-event-bubbling-target",
+    "category": "web-apis",
+    "difficulty": "junior",
+    "question": "Inside a click listener attached to a `<ul>`, you click a nested `<span>` inside an `<li>`. What are `event.target` and `event.currentTarget`?",
+    "code": "ul.addEventListener('click', (event) => {\n  console.log(event.target.tagName, event.currentTarget.tagName);\n});",
+    "options": ["UL UL", "SPAN UL", "UL SPAN", "LI UL"],
+    "correct": 1,
+    "explanation": "`event.target` is the deepest element that actually triggered the event (`SPAN`), whereas `event.currentTarget` is the element the listener is attached to (`UL`). This is the foundation of event delegation.",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget",
+    "author": "dzienisz"
+  },
+  {
+    "id": "web-popover-top-layer",
+    "category": "web-apis",
+    "difficulty": "senior",
+    "question": "What happens visually when an HTML element with the `popover` attribute is opened?",
+    "code": "<button popovertarget=\"info\">Info</button>\n<div id=\"info\" popover>Hello meet.js!</div>",
+    "options": [
+      "It requires z-index: 9999 to appear above sticky headers",
+      "It is promoted to the browser's top layer above all z-index stacking contexts and supports light-dismiss by default",
+      "It traps focus like showModal() and blocks page scrolling",
+      "It only opens when JavaScript calls showModal()"
+    ],
+    "correct": 1,
+    "explanation": "The Popover API renders open popovers in the browser top layer (no z-index wars!) and `popover` (equivalent to `popover=\"auto\"`) automatically light-dismisses on outside click or Escape.",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Popover_API",
+    "author": "meetjs"
+  },
+  {
+    "id": "web-url-canparse",
+    "category": "web-apis",
+    "difficulty": "mid",
+    "question": "How can you check if a string is a valid URL without a try/catch block in modern JS runtimes?",
+    "code": "const isValid = URL.???('https://meetjs.pl/quiz');",
+    "options": [
+      "URL.isValid(str)",
+      "URL.canParse(str)",
+      "URL.validate(str)",
+      "URL.test(str)"
+    ],
+    "correct": 1,
+    "explanation": "`URL.canParse(url, base?)` returns a boolean directly without throwing an exception, and `URL.parse(url, base?)` returns a URL instance or `null` instead of throwing.",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/API/URL/canParse_static",
+    "author": "meetjs"
+  },
+  {
+    "id": "history-original-name",
+    "category": "js-history",
+    "difficulty": "junior",
+    "question": "What was JavaScript's original working name when Brendan Eich created it in 10 days in May 1995?",
+    "options": ["TypeScript", "Mocha", "ECMAScript", "JScript"],
+    "correct": 1,
+    "explanation": "Brendan Eich first called it Mocha inside Netscape, then it was renamed LiveScript in beta, and finally JavaScript in December 1995 as a marketing tie-in with Java.",
+    "docsUrl": "https://meetjs.pl/30-years-of-javascript",
+    "author": "meetjs"
+  },
+  {
+    "id": "history-meetjs-origin",
+    "category": "js-history",
+    "difficulty": "junior",
+    "question": "In which Polish city did the very first meet.js meetup take place on Valentine's Day eve in 2011?",
+    "options": ["Warszawa", "Kraków", "Poznań", "Wrocław"],
+    "correct": 2,
+    "explanation": "meet.js started on February 13, 2011 in a pub in Poznań, and has since grown into Poland's largest and longest-running non-commercial JavaScript community!",
+    "docsUrl": "https://meetjs.pl/about",
+    "author": "meetjs"
+  },
+  {
+    "id": "history-es4-skipped",
+    "category": "js-history",
+    "difficulty": "senior",
+    "question": "Why is there no official ECMAScript 4 (ES4) release in JavaScript history?",
+    "options": [
+      "The number 4 was reserved for ActionScript",
+      "TC39 split over an overly ambitious redesign and abandoned ES4 in favor of incremental ES5 (Harmony)",
+      "It was merged directly into HTML5",
+      "Netscape shut down before publishing it"
+    ],
+    "correct": 1,
+    "explanation": "ES4 proposed massive breaking changes (classes, static types, packages) that split the committee. In 2008 TC39 reached the 'Harmony' compromise: ship modest ES3.1 as ES5 and evolve incrementally toward ES6.",
+    "docsUrl": "https://meetjs.pl/30-years-of-javascript",
+    "author": "meetjs"
+  },
+  {
+    "id": "history-use-strict",
+    "category": "js-history",
+    "difficulty": "junior",
+    "question": "Why was strict mode introduced as a string literal `\"use strict\"` in ES5?",
+    "code": "\"use strict\";",
+    "options": [
+      "Strings were faster to parse than keywords",
+      "Older browsers ignore standalone string expressions instead of throwing a SyntaxError",
+      "It was required by JSON compatibility",
+      "Only strings can appear at the top of a file"
+    ],
+    "correct": 1,
+    "explanation": "Using a directive prologue string ensured backward compatibility: ES3 engines simply saw an unused string literal and ignored it, while ES5+ engines enabled stricter parsing and error handling.",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode",
+    "author": "dzienisz"
+  },
+  {
+    "id": "history-esm-strict-default",
+    "category": "js-history",
+    "difficulty": "mid",
+    "question": "What is the value of top-level `this` inside an ES Module (`.mjs` / `<script type=\"module\">`)?",
+    "code": "// module.mjs\nconsole.log(this);",
+    "options": [
+      "window / globalThis",
+      "undefined",
+      "exports object",
+      "module object"
+    ],
+    "correct": 1,
+    "explanation": "ES Modules are always in strict mode by default and have their own module scope, so top-level `this` is `undefined` (unlike classic browser scripts where it is `window`, or CommonJS where it is `exports`).",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules",
+    "author": "meetjs"
+  },
+  {
+    "id": "history-closures-scope",
+    "category": "js-history",
+    "difficulty": "mid",
+    "question": "What does this classic closure loop with `var` vs `let` log?",
+    "code": "const fns = [];\nfor (var i = 0; i < 3; i++) fns.push(() => i);\nfor (let j = 0; j < 3; j++) fns.push(() => j);\nconsole.log(fns[0](), fns[3]());",
+    "options": ["0 0", "3 0", "3 3", "0 3"],
+    "correct": 1,
+    "explanation": "`var` is function-scoped, so all three closures capture the same `i` binding (which finishes at 3). `let` creates a fresh lexical binding per loop iteration, so `fns[3]()` returns 0.",
+    "docsUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures",
+    "author": "naugtur"
+  }
 ]

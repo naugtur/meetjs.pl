@@ -417,6 +417,7 @@
       "code_of_conduct": "code of conduct",
       "discounts": "\uD83D\uDCB0 discounts",
       "passport": "\uD83D\uDEC2 passport",
+      "quiz": "\uD83E\uDDE0 quiz",
       "summit": "summit",
       "speakers": "\uD83C\uDFA4 speakers",
       "videos": "\uD83C\uDFA5 videos",
@@ -761,6 +762,101 @@
     "badge_title": "JavaScript Hero",
     "badge_recipient": "Adrian Romański",
     "badge_trophy_alt": "JS Awards 2026 glass trophy — Adrian Romański, JavaScript Hero of the Community"
+  },
+  "quiz": {
+    "all_levels": "All levels",
+    "all_topics": "All topics",
+    "api_description": "Use our open, CORS-enabled JSON endpoints for workshops, pet projects, or Discord bots. Supports category, difficulty, search, limit, and shuffle filters.",
+    "api_title": "Public Quiz API",
+    "best_label": "Best: {best}",
+    "categories": {
+      "async-event-loop": "Async & Event Loop",
+      "js-history": "JS & meet.js History",
+      "js-quirks": "JS Quirks & WTF",
+      "modern-js": "Modern JS",
+      "typescript": "TypeScript",
+      "web-apis": "Web APIs"
+    },
+    "community_section_heading": "Community & Public API",
+    "contribute_description": "We currently have {count} curated questions in our open-source JSON bank. Have a tricky JavaScript snippet or TypeScript puzzle? Contribute it and get credited!",
+    "contribute_title": "Add Your Own Question",
+    "copied": "Copied!",
+    "copied_announcement": "Quiz result copied to clipboard.",
+    "copy_api_snippet": "Copy API fetch snippet",
+    "copy_result": "Copy Result",
+    "correct_answer_label": "Correct",
+    "count_all": "All ({count})",
+    "daily_header": "Daily JS Challenge #{day}",
+    "difficulties": {
+      "junior": "Junior",
+      "mid": "Mid",
+      "senior": "Senior",
+      "wtf": "WTF?!"
+    },
+    "edit_json_cta": "Edit questions.json",
+    "feedback_correct": "Spot on!",
+    "feedback_incorrect": "Not quite!",
+    "filter_label": "Customize your run",
+    "hero_stats": "{questions} questions · {categories} topics · Open API",
+    "hero_subtitle": "Tackle today's 5-question Daily Challenge, sharpen your JavaScript & TypeScript instincts in Classic mode, or test your streak in Survival.",
+    "hero_title": "meet.js JavaScript Quiz",
+    "keyboard_hint_next": "Tip: Press Enter to continue to the next question.",
+    "keyboard_hint_select": "Tip: Press keys 1–4 to pick an answer quickly.",
+    "lives_remaining": "{lives} of {max} lives remaining",
+    "meetup_cta_button": "Find a meetup",
+    "meetup_cta_description": "Debate typeof null, event loops, and modern JS in person at free local meetups across Poland.",
+    "meetup_cta_title": "Ready to talk JS in person?",
+    "mode_tablist_label": "Quiz modes",
+    "modes": {
+      "classic": "Classic Run",
+      "daily": "Daily 5",
+      "survival": "Survival"
+    },
+    "new_shuffle": "Reshuffle",
+    "next_question": "Next question",
+    "no_matching_questions": "No questions match this category and difficulty combination yet.",
+    "options_aria_label": "Answer choices",
+    "personal_best": "Personal best streak: {best}",
+    "play_again": "Play Again",
+    "practice_daily_again": "Practice Again",
+    "progress_aria_label": "Quiz progress",
+    "question_counter": "Question {current} of {total}",
+    "ranks": {
+      "async_master": {
+        "subtitle": "Your microtask queue is spotless. Almost nothing slipped past you.",
+        "title": "Event Loop Wizard"
+      },
+      "callback_survivor": {
+        "subtitle": "You survived the quirks! Review the explanations below and go for a rematch.",
+        "title": "Callback Survivor"
+      },
+      "promise_keeper": {
+        "subtitle": "Solid JavaScript instincts — a few tricky edge cases away from perfection.",
+        "title": "Promise Keeper"
+      },
+      "tc39": {
+        "subtitle": "Flawless run! Are you secretly writing ECMAScript proposals?",
+        "title": "TC39 Delegate"
+      },
+      "undefined_not_fn": {
+        "subtitle": "JavaScript got you this time — every weird quirk is a great excuse to learn something new!",
+        "title": "undefined is not a function"
+      }
+    },
+    "read_docs": "Read docs",
+    "report_issue": "Spot a mistake?",
+    "reset_filters": "Reset filters",
+    "result_grid_aria": "Result grid: {score} correct out of {total}",
+    "review_answers": "Review answers ({count})",
+    "score_heading": "You scored {score} / {total}",
+    "score_inline": "Score: {score}",
+    "see_results": "See results",
+    "share_linkedin": "Share on LinkedIn",
+    "share_x": "Share on X",
+    "streak_label": "Streak: {streak}",
+    "suggest_question_cta": "Suggest on GitHub",
+    "survival_score": "Final streak: {score}",
+    "your_answer_label": "Yours"
   },
   "welcome": "Welcome to meet.js"
 }

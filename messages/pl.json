@@ -417,6 +417,7 @@
       "code_of_conduct": "kodeks postępowania",
       "discounts": "\uD83D\uDCB0 zniżki",
       "passport": "\uD83D\uDEC2 paszport",
+      "quiz": "\uD83E\uDDE0 quiz",
       "summit": "summit",
       "speakers": "\uD83C\uDFA4 prelegenci",
       "videos": "\uD83C\uDFA5 wideo",
@@ -761,6 +762,101 @@
     "badge_title": "JavaScript Hero",
     "badge_recipient": "Adrian Romański",
     "badge_trophy_alt": "Statuetka JS Awards 2026 — Adrian Romański, JavaScript Hero of the Community"
+  },
+  "quiz": {
+    "all_levels": "Wszystkie poziomy",
+    "all_topics": "Wszystkie tematy",
+    "api_description": "Korzystaj z naszego otwartego API JSON (z CORS) na warsztatach, w projektach do portfolio lub botach na Discordzie. Obsługuje filtrowanie po kategorii, poziomie, wyszukiwanie, limit i tasowanie.",
+    "api_title": "Publiczne API Quizu",
+    "best_label": "Rekord: {best}",
+    "categories": {
+      "async-event-loop": "Async i Event Loop",
+      "js-history": "Historia JS i meet.js",
+      "js-quirks": "Pułapki i WTF w JS",
+      "modern-js": "Nowoczesny JS",
+      "typescript": "TypeScript",
+      "web-apis": "Web APIs"
+    },
+    "community_section_heading": "Społeczność i Publiczne API",
+    "contribute_description": "Mamy obecnie {count} sprawdzonych pytań w otwartym pliku JSON. Masz podchwytliwy snippet w JS lub zagadkę z TypeScripta? Dodaj pytanie i zgarnij podpis autora!",
+    "contribute_title": "Dodaj własne pytanie",
+    "copied": "Skopiowano!",
+    "copied_announcement": "Wynik quizu został skopiowany do schowka.",
+    "copy_api_snippet": "Skopiuj przykład wywołania API",
+    "copy_result": "Kopiuj wynik",
+    "correct_answer_label": "Poprawna",
+    "count_all": "Wszystkie ({count})",
+    "daily_header": "Codzienne Wyzwanie JS #{day}",
+    "difficulties": {
+      "junior": "Junior",
+      "mid": "Mid",
+      "senior": "Senior",
+      "wtf": "WTF?!"
+    },
+    "edit_json_cta": "Edytuj questions.json",
+    "feedback_correct": "Strzał w dziesiątkę!",
+    "feedback_incorrect": "Nie tym razem!",
+    "filter_label": "Dostosuj rundę",
+    "hero_stats": "{questions} pytań · {categories} kategorii · Otwarte API",
+    "hero_subtitle": "Zmierz się z dzisiejszym Codziennym Wyzwaniem (5 pytań), wybierz własne kategorie w trybie Klasycznym albo powalcz o rekord serii w trybie Przetrwania.",
+    "hero_title": "meet.js JavaScript Quiz",
+    "keyboard_hint_next": "Wskazówka: Naciśnij Enter, aby przejść do kolejnego pytania.",
+    "keyboard_hint_select": "Wskazówka: Użyj klawiszy 1–4, aby szybko wybrać odpowiedź.",
+    "lives_remaining": "Pozostało {lives} z {max} żyć",
+    "meetup_cta_button": "Znajdź meetup",
+    "meetup_cta_description": "Podyskutuj o typeof null, event loopie i nowoczesnym JS na żywo podczas darmowych meetupów w całej Polsce.",
+    "meetup_cta_title": "Chcesz pogadać o JS na żywo?",
+    "mode_tablist_label": "Tryby quizu",
+    "modes": {
+      "classic": "Klasyczny",
+      "daily": "Dzienna 5",
+      "survival": "Przetrwanie"
+    },
+    "new_shuffle": "Wylosuj ponownie",
+    "next_question": "Następne pytanie",
+    "no_matching_questions": "Brak pytań dla wybranej kombinacji kategorii i poziomu trudności.",
+    "options_aria_label": "Opcje odpowiedzi",
+    "personal_best": "Twój rekord serii: {best}",
+    "play_again": "Zagraj ponownie",
+    "practice_daily_again": "Poćwicz jeszcze raz",
+    "progress_aria_label": "Postęp quizu",
+    "question_counter": "Pytanie {current} z {total}",
+    "ranks": {
+      "async_master": {
+        "subtitle": "Twoja kolejka mikrozadań działa bez zarzutu. Prawie nic Cię nie zaskoczyło.",
+        "title": "Mistrz Event Loopa"
+      },
+      "callback_survivor": {
+        "subtitle": "Przetrwałeś pułapki JS! Zerknij na wyjaśnienia poniżej i spróbuj rewanżu.",
+        "title": "Ocalały z Callback Hell"
+      },
+      "promise_keeper": {
+        "subtitle": "Świetne wyczucie JavaScriptu — tylko kilka podchwytliwych przypadków od ideału.",
+        "title": "Strażnik Promise'ów"
+      },
+      "tc39": {
+        "subtitle": "Bezbłędny wynik! Czy nie piszesz po godzinach specyfikacji ECMAScript?",
+        "title": "Delegat TC39"
+      },
+      "undefined_not_fn": {
+        "subtitle": "Tym razem JavaScript wygrał — ale każda pułapka to świetna okazja do nauki!",
+        "title": "undefined is not a function"
+      }
+    },
+    "read_docs": "Dokumentacja",
+    "report_issue": "Widzisz błąd?",
+    "reset_filters": "Wyczyść filtry",
+    "result_grid_aria": "Siatka wyników: {score} poprawnych na {total}",
+    "review_answers": "Przejrzyj odpowiedzi ({count})",
+    "score_heading": "Twój wynik: {score} / {total}",
+    "score_inline": "Wynik: {score}",
+    "see_results": "Zobacz wyniki",
+    "share_linkedin": "Udostępnij na LinkedIn",
+    "share_x": "Udostępnij na X",
+    "streak_label": "Seria: {streak}",
+    "suggest_question_cta": "Zaproponuj na GitHubie",
+    "survival_score": "Końcowa seria: {score}",
+    "your_answer_label": "Twoja"
   },
   "welcome": "Witamy w meet.js"
 }

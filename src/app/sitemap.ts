@@ -93,6 +93,12 @@ const sitemap = (): MetadataRoute.Sitemap => {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+    {
+      url: `${env.SITE_URL}/quiz`,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 0.8,
+    },
   ];
 
   return [...mainPages, ...cities];

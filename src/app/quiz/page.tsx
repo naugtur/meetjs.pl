@@ -1,55 +1,100 @@
+import { Suspense } from 'react';
+import type { Metadata } from 'next';
+import { getTranslate } from '@/tolgee/server';
 import { env } from '@/env';
-import { Quiz } from './_components/quiz/Quiz';
-import { QuestionsListSchema } from './_model/question';
-import { ReportError } from './_components/ReportError';
-import { RandomQuestion } from './_components/RandomQuestion';
-// import { sleep } from '@/utils/sleep';
+import { QUIZ_CATEGORIES } from './_model/question';
+import { getAllQuestions, getLocalDateKey } from './_lib/quizEngine';
+import { QuizApp } from './_components/QuizApp';
+import { QuizApiSection } from './_components/QuizApiSection';
 
-const FIFTEEN_MINUTES = 900;
-const getQuizQuestions = async () => {
-  // await sleep(25_000); // todo: remove sleep.
-
-  const response = await fetch(`${env.SITE_URL}/api/quiz/questions`, {
-    next: { revalidate: FIFTEEN_MINUTES },
-  });
-
-  if (!response.ok) {
-    return { data: null, error: 'Failed to fetch questions' };
-  }
-
-  const json: unknown = await response.json();
-
-  // Todo: Make reusable GET with validation
-  const result = QuestionsListSchema.safeParse(json);
-
-  return result.success
-    ? { data: result.data, error: null }
-    : { data: null, error: 'Failed to parse questions' };
+export const metadata: Metadata = {
+  title: 'JavaScript Quiz | meet.js',
+  description:
+    'Test your JavaScript, TypeScript, async, and Web API knowledge with the daily meet.js challenge, classic quiz runs, and survival streak mode.',
+  openGraph: {
+    title: 'JavaScript Quiz | meet.js',
+    description:
+      'Daily 5-question JS challenge, code puzzles with explanations, and an open public JSON API by the meet.js community.',
+    url: `${env.SITE_URL}/quiz`,
+    siteName: 'meet.js',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'JavaScript Quiz | meet.js',
+    description:
+      'Test your JavaScript & TypeScript skills with the daily meet.js quiz!',
+  },
+  alternates: {
+    canonical: `${env.SITE_URL}/quiz`,
+  },
 };
 
 export default async function QuizPage() {
-  const { data: questions, error } = await getQuizQuestions();
+  const t = await getTranslate();
+  const questions = getAllQuestions();
+  const initialDateKey = getLocalDateKey();
 
-  if (error) return <ReportError error={error} />;
-
-  // Todo: Handle no questions
-  // Todo: Question menu: Random question, search & filter, tabs for adding, API docs etc.
   return (
-    <div className="mx-auto min-h-screen max-w-2xl p-8">
-      <div className="space-y-10">
-        {questions && <Quiz questions={questions} />}
+    <main className="min-h-screen bg-slate-50 pb-16">
+      {/* Branded Hero Banner */}
+      <section className="relative overflow-hidden bg-purple py-12 text-white sm:py-16">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 opacity-20"
+          style={{
+            backgroundImage:
+              'radial-gradient(circle at 20% 20%, #bcd35d 0, transparent 40%), radial-gradient(circle at 80% 80%, #219eab 0, transparent 45%)',
+          }}
+        />
+        <div className="container relative mx-auto max-w-3xl px-4">
+          <div className="space-y-4">
+            <div className="inline-flex flex-wrap items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3.5 py-1 text-xs font-semibold text-green">
+              <span className="font-mono">$ npx meetjs-quiz</span>
+              <span aria-hidden="true">·</span>
+              <span>
+                {t('quiz.hero_stats', {
+                  questions: questions.length,
+                  categories: QUIZ_CATEGORIES.length,
+                })}
+              </span>
+            </div>
 
-        <hr />
+            <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
+              {t('quiz.hero_title')}
+            </h1>
 
-        <h2 className="text-2xl font-bold">Random question</h2>
-        <RandomQuestion />
+            <p className="max-w-2xl text-base leading-relaxed text-slate-200 sm:text-lg">
+              {t('quiz.hero_subtitle')}
+            </p>
+          </div>
+        </div>
+      </section>
 
-        {/* Todo */}
-        <h2 className="text-2xl font-bold">Rate/flag question</h2>
-        <h2 className="text-2xl font-bold">Comment question</h2>
-        <h2 className="text-2xl font-bold">Add/Suggest question</h2>
-        <h2 className="text-2xl font-bold">Question API</h2>
+      {/* Main Quiz Workspace */}
+      <div className="container mx-auto max-w-3xl px-4 pt-8">
+        <Suspense
+          fallback={
+            <div
+              role="status"
+              className="space-y-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+            >
+              <div className="h-6 w-48 rounded bg-slate-200" />
+              <div className="h-28 w-full rounded-xl bg-slate-100" />
+              <div className="space-y-3">
+                <div className="h-12 w-full rounded-xl bg-slate-100" />
+                <div className="h-12 w-full rounded-xl bg-slate-100" />
+                <div className="h-12 w-full rounded-xl bg-slate-100" />
+                <div className="h-12 w-full rounded-xl bg-slate-100" />
+              </div>
+            </div>
+          }
+        >
+          <QuizApp questions={questions} initialDateKey={initialDateKey} />
+        </Suspense>
+
+        <QuizApiSection totalQuestions={questions.length} />
       </div>
-    </div>
+    </main>
   );
 }
