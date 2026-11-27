@@ -47,7 +47,7 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
     id: 'react-day-berlin-2026',
     title: 'React Day Berlin 2026',
     description:
-      'Hybrid conference of all things React by GitNation — December 4 in-person at KOSMOS Berlin and December 7 remote. OSS authors, top trainers and speakers, and web engineers from across the globe meet to talk React, React Native, full-stack and AI-assisted development. Use code FRIENDS for 10% off your ticket.',
+      'Hybrid conference of all things React by GitNation — December 4 in-person at KOSMOS Berlin and December 7 remote. OSS authors, top trainers and speakers, and web engineers from across the globe meet to talk React, React Native, full-stack and AI-assisted development. Use code MEETJS for 15% off your ticket.',
     url: 'https://reactday.berlin/',
     type: 'collaboration',
     status: 'active',
@@ -55,8 +55,8 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
     endDate: '2026-12-07',
     organization: 'GitNation',
     impact:
-      'Community partnership – meet.js logo on the conference website, mutual social media promotion and a 10% discount for the meet.js community.',
-    ctaText: 'Get 10% off with FRIENDS',
+      'Community partnership – meet.js logo on the conference website, mutual social media promotion and a 15% discount for the meet.js community.',
+    ctaText: 'Get 15% off with MEETJS',
     featured: true,
     image: '/discounts/react-day-berlin.svg',
     tags: ['React', 'Conference', 'Berlin', 'Hybrid', 'GitNation', 'Discount'],
@@ -65,7 +65,7 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
     id: 'ai-coding-summit-berlin-2026',
     title: 'AI Coding Summit Berlin 2026',
     description:
-      'A new in-person gathering for the European AI developer community by GitNation — December 4 at KOSMOS Berlin (co-located with React Day Berlin) and December 7 remote. No-hype, practitioner-led format: real workflows, repeatable techniques, and deep dives into the tools, agents and patterns that make AI-assisted development work at scale. Use code FRIENDS for 10% off your ticket.',
+      'A new in-person gathering for the European AI developer community by GitNation — December 4 at KOSMOS Berlin (co-located with React Day Berlin) and December 7 remote. No-hype, practitioner-led format: real workflows, repeatable techniques, and deep dives into the tools, agents and patterns that make AI-assisted development work at scale. Use code MEETJS for 15% off your ticket.',
     url: 'https://aicodingsummit.com/berlin/',
     type: 'collaboration',
     status: 'active',
@@ -73,8 +73,8 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
     endDate: '2026-12-07',
     organization: 'GitNation',
     impact:
-      'Community partnership – meet.js logo on the conference website, mutual social media promotion and a 10% discount for the meet.js community.',
-    ctaText: 'Get 10% off with FRIENDS',
+      'Community partnership – meet.js logo on the conference website, mutual social media promotion and a 15% discount for the meet.js community.',
+    ctaText: 'Get 15% off with MEETJS',
     featured: true,
     image: '/discounts/ai-coding-summit-berlin.svg',
     tags: [

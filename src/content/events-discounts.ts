@@ -24,42 +24,42 @@ export const eventsDiscounts: Promo[] = [
   {
     id: 'react-day-berlin-2026',
     name: 'React Day Berlin 2026',
-    message: '10% off with code FRIENDS!',
-    cta: '👉 Get 10% Off',
+    message: '15% off with code MEETJS!',
+    cta: '👉 Get 15% Off',
     ticketLink:
-      'https://ti.to/gitnation/react-day-berlin-2026/discount/FRIENDS?utm_source=meetjs&utm_medium=community_partner&utm_campaign=react-day-berlin-2026',
+      'https://ti.to/gitnation/react-day-berlin-2026/discount/MEETJS?utm_source=meetjs&utm_medium=community_partner&utm_campaign=react-day-berlin-2026',
     eventLink:
       'https://reactday.berlin/?utm_source=meetjs&utm_medium=community_partner&utm_campaign=react-day-berlin-2026',
     expiresAt: '2026-12-07T23:59:59+01:00',
     description:
-      'meet.js is a Community Partner of React Day Berlin 2026! A hybrid conference of all things React — December 4 in-person at KOSMOS Berlin and December 7 remote. OSS authors, top trainers and speakers, and web engineers from across the globe meet to talk React, React Native, full-stack and AI-assisted development. Use code FRIENDS for 10% off your ticket!',
+      'meet.js is a Community Partner of React Day Berlin 2026! A hybrid conference of all things React — December 4 in-person at KOSMOS Berlin and December 7 remote. OSS authors, top trainers and speakers, and web engineers from across the globe meet to talk React, React Native, full-stack and AI-assisted development. Use code MEETJS for 15% off your ticket!',
     gradient: 'bg-gradient-to-r from-sky-600 via-cyan-500 to-teal-400',
     icon: '⚛️',
     image: '/discounts/react-day-berlin.svg',
     emojiRight: '🇩🇪',
     country: 'Germany',
     city: 'Berlin',
-    discountCode: 'FRIENDS',
+    discountCode: 'MEETJS',
   },
   {
     id: 'ai-coding-summit-berlin-2026',
     name: 'AI Coding Summit Berlin 2026',
-    message: '10% off with code FRIENDS!',
-    cta: '👉 Get 10% Off',
+    message: '15% off with code MEETJS!',
+    cta: '👉 Get 15% Off',
     ticketLink:
-      'https://ti.to/gitnation/ai-coding-summit-berlin-2026/discount/FRIENDS?utm_source=meetjs&utm_medium=community_partner&utm_campaign=ai-coding-summit-berlin-2026',
+      'https://ti.to/gitnation/ai-coding-summit-berlin-2026/discount/MEETJS?utm_source=meetjs&utm_medium=community_partner&utm_campaign=ai-coding-summit-berlin-2026',
     eventLink:
       'https://aicodingsummit.com/berlin/?utm_source=meetjs&utm_medium=community_partner&utm_campaign=ai-coding-summit-berlin-2026',
     expiresAt: '2026-12-07T23:59:59+01:00',
     description:
-      'meet.js is a Community Partner of AI Coding Summit Berlin 2026! A new in-person gathering for the European AI developer community — December 4 at KOSMOS Berlin (co-located with React Day Berlin) and December 7 remote. A no-hype, practitioner-led format: real workflows, repeatable techniques, and deep dives into the tools, agents and patterns that make AI-assisted development work at scale. Use code FRIENDS for 10% off your ticket!',
+      'meet.js is a Community Partner of AI Coding Summit Berlin 2026! A new in-person gathering for the European AI developer community — December 4 at KOSMOS Berlin (co-located with React Day Berlin) and December 7 remote. A no-hype, practitioner-led format: real workflows, repeatable techniques, and deep dives into the tools, agents and patterns that make AI-assisted development work at scale. Use code MEETJS for 15% off your ticket!',
     gradient: 'bg-gradient-to-r from-slate-800 via-violet-700 to-fuchsia-600',
     icon: '🤖',
     image: '/discounts/ai-coding-summit-berlin.svg',
     emojiRight: '🇩🇪',
     country: 'Germany',
     city: 'Berlin',
-    discountCode: 'FRIENDS',
+    discountCode: 'MEETJS',
   },
   {
     id: 'smashingconf-ai-2027',
