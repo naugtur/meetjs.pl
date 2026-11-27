@@ -35,6 +35,35 @@ export interface Partnership {
 
 export const partnerships: Partnership[] = [
   {
+    name: 'Boiling Frogs 2027',
+    website: 'https://2027.boilingfrogs.pl/',
+    description:
+      'Konferencja poświęcona rzemiosłu programistycznemu (Software Craftsmanship) — 20 marca 2027 we Wrocławskim Centrum Kongresowym. meet.js jest oficjalnym partnerem medialnym wydarzenia.',
+    details: [
+      '20 marca 2027, Wrocławskie Centrum Kongresowe (ul. Wystawowa 1), Wrocław',
+      'Jednodniowa konferencja IT skupiona na fundamentalnej wiedzy, architekturze, jakości kodu i dobrych praktykach niezależnych od konkretnych frameworków',
+      'Logo meet.js na stronie partnerów oraz materiałach drukowanych (roll-up, plakat)',
+      '1 darmowa wejściówka do rozdania w konkursie dla społeczności meet.js',
+    ],
+    goals: [
+      'Promowanie rzemiosła programistycznego i dobrych praktyk inżynierskich w społeczności meet.js',
+      'Wzajemna promocja w kanałach społecznościowych i podczas wrocławskich meetupów meet.js',
+      'Konkurs z darmową wejściówką na konferencję dla członków społeczności',
+    ],
+    location: 'Wrocław, Wrocławskie Centrum Kongresowe',
+    contact: 'https://2027.boilingfrogs.pl/',
+    icon: (
+      <Image
+        src="/partners/boiling-frogs-icon.png"
+        alt="Boiling Frogs"
+        width={32}
+        height={32}
+        className="h-8 w-8 object-contain"
+      />
+    ),
+    gradient: 'from-lime-500 to-cyan-500',
+  },
+  {
     name: 'Dzień Programisty',
     website: 'https://dzienprogramisty.pl/',
     description:

@@ -116,4 +116,9 @@ export const PARTNERS = [
     src: '/partners/cnd-poland.svg',
     alt: 'Cloud Native Days Poland',
   },
+  {
+    href: 'https://2027.boilingfrogs.pl/',
+    src: '/partners/boiling-frogs.png',
+    alt: 'Boiling Frogs',
+  },
 ];

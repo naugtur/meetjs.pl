@@ -18,6 +18,31 @@ export interface CommunityItem {
 
 export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
   {
+    id: 'boiling-frogs-2027',
+    title: 'Boiling Frogs 2027',
+    description:
+      'Jednodniowa konferencja poświęcona rzemiosłu programistycznemu (Software Craftsmanship) — 20 marca 2027 we Wrocławskim Centrum Kongresowym (ul. Wystawowa 1). Fundamenty architektury, jakości kodu i dobrych praktyk inżynierskich bez wojen technologicznych. Jako partner medialny mamy 1 darmową wejściówkę do rozdania w konkursie dla społeczności meet.js — wypatrujcie szczegółów na Discordzie!',
+    url: 'https://2027.boilingfrogs.pl/',
+    type: 'collaboration',
+    status: 'active',
+    startDate: '2027-03-20',
+    endDate: '2027-03-20',
+    organization: 'Boiling Frogs',
+    impact:
+      'Partnerstwo medialne – logo meet.js na stronie i materiałach konferencji, wzajemna promocja oraz darmowa wejściówka w konkursie dla społeczności.',
+    ctaText: 'Dowiedz się więcej',
+    featured: true,
+    image: '/partners/boiling-frogs.png',
+    tags: [
+      'Conference',
+      'Software Craftsmanship',
+      'Architecture',
+      'Wrocław',
+      'Media Partnership',
+      'Giveaway',
+    ],
+  },
+  {
     id: 'gdg-devfest-wroclaw-2026',
     title: 'Google DevFest 2026 Wrocław',
     description:
