@@ -117,6 +117,11 @@ export const PARTNERS = [
     alt: 'Cloud Native Days Poland',
   },
   {
+    href: 'https://www.jetbrains.com/community/user-groups/',
+    src: '/partners/jetbrains-white.svg',
+    alt: 'JetBrains',
+  },
+  {
     href: 'https://2027.boilingfrogs.pl/',
     src: '/partners/boiling-frogs.png',
     alt: 'Boiling Frogs',
