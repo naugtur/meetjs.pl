@@ -78,7 +78,7 @@ export default async function OpenSourcePage() {
                     <span className="font-semibold">
                       e2e (formerly TesterArmy)
                     </span>
-                    <span className="rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800 dark:bg-blue-950 dark:text-blue-200">
+                    <span className="rounded-full bg-sky-100 px-2.5 py-0.5 text-xs font-medium text-sky-800 dark:bg-sky-950 dark:text-sky-200">
                       TypeScript
                     </span>
                   </div>

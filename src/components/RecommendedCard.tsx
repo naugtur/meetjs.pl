@@ -21,19 +21,19 @@ const categoryStyles: Record<
   'open-source': {
     label: 'Open Source',
     badgeClass:
-      'bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950/50 dark:text-blue-300 dark:border-blue-800',
+      'bg-sky-50 text-sky-800 border-sky-200 dark:bg-sky-950 dark:text-sky-200 dark:border-sky-800',
     iconBg: 'bg-gradient-to-br from-blue-500 to-indigo-600',
   },
   course: {
     label: 'Course',
     badgeClass:
-      'bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-950/50 dark:text-purple-300 dark:border-purple-800',
-    iconBg: 'bg-gradient-to-br from-purple-500 to-indigo-600',
+      'bg-violet-50 text-violet-800 border-violet-200 dark:bg-violet-950 dark:text-violet-200 dark:border-violet-800',
+    iconBg: 'bg-gradient-to-br from-purple-600 to-indigo-600',
   },
   newsletter: {
     label: 'Newsletter',
     badgeClass:
-      'bg-gray-100 text-gray-700 border-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:border-gray-600',
+      'bg-slate-100 text-slate-800 border-slate-200 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700',
     iconBg: 'bg-gradient-to-br from-gray-700 to-gray-900',
   },
 };
@@ -47,10 +47,10 @@ export default function RecommendedCard({ resource }: RecommendedCardProps) {
   const ctaTextColor = resource.textColor || 'text-white';
 
   return (
-    <div className="group relative flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800">
-      <div className="flex items-center gap-4 border-b border-gray-100 p-6 dark:border-gray-700">
+    <div className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+      <div className="flex items-center gap-4 border-b border-border p-6">
         {resource.image ? (
-          <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg bg-gray-100 ring-2 ring-gray-100 dark:ring-gray-600">
+          <div className="relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg bg-muted ring-1 ring-border">
             <Image
               src={resource.image}
               alt={`${resource.name} logo`}
@@ -74,23 +74,21 @@ export default function RecommendedCard({ resource }: RecommendedCardProps) {
               {style.label}
             </span>
             {resource.pppSupport && (
-              <span className="inline-flex items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300">
+              <span className="inline-flex items-center gap-1 rounded-full border border-teal-300 bg-teal-50 px-2.5 py-0.5 text-xs font-semibold text-teal-800 dark:border-teal-700 dark:bg-teal-950 dark:text-teal-200">
                 <Globe className="h-3 w-3" />
                 {resource.pppSupport.badge}
               </span>
             )}
           </div>
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+          <h3 className="text-xl font-bold text-card-foreground">
             {resource.name}
           </h3>
-          <p className="text-sm text-gray-600 dark:text-gray-400">
-            {resource.tagline}
-          </p>
+          <p className="text-sm text-muted-foreground">{resource.tagline}</p>
         </div>
       </div>
 
       <div className="flex flex-1 flex-col p-6">
-        <p className="mb-6 leading-relaxed text-gray-700 dark:text-gray-300">
+        <p className="mb-6 leading-relaxed text-card-foreground/80">
           {resource.description}
         </p>
 
@@ -102,12 +100,12 @@ export default function RecommendedCard({ resource }: RecommendedCardProps) {
         )}
 
         <div className="mt-auto">
-          <div className="flex items-center justify-between rounded-lg border border-gray-200 p-3 dark:border-gray-600">
+          <div className="flex items-center justify-between rounded-lg border border-border p-3">
             <div>
-              <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
+              <p className="text-sm font-medium text-card-foreground">
                 Website
               </p>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
+              <p className="text-sm text-muted-foreground">
                 {getDomain(resource.url)}
               </p>
             </div>
@@ -115,7 +113,7 @@ export default function RecommendedCard({ resource }: RecommendedCardProps) {
               href={resource.url}
               target="_blank"
               rel="noopener"
-              className="text-purple-600 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-300"
+              className="text-purple-600 hover:opacity-80 dark:text-violet-400"
             >
               <ExternalLink className="h-4 w-4" />
             </a>
@@ -123,7 +121,7 @@ export default function RecommendedCard({ resource }: RecommendedCardProps) {
         </div>
       </div>
 
-      <div className="border-t border-gray-100 p-6 dark:border-gray-700">
+      <div className="border-t border-border p-6">
         <a
           href={resource.url}
           target="_blank"

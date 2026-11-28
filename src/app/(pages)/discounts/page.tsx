@@ -179,14 +179,16 @@ export default async function DiscountsPage() {
           {t('discounts.recommended.subtitle')}
         </p>
 
-        <div className="mb-8 rounded-xl border border-emerald-200 bg-emerald-50/70 p-5 dark:border-emerald-800/60 dark:bg-emerald-950/30">
-          <div className="flex items-start gap-3">
-            <Globe className="mt-0.5 h-5 w-5 flex-shrink-0 text-emerald-600 dark:text-emerald-400" />
+        <div className="mb-8 rounded-xl border border-l-4 border-border border-l-green bg-card p-5 shadow-sm">
+          <div className="flex items-start gap-4">
+            <span className="mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-purple text-green">
+              <Globe className="h-5 w-5" />
+            </span>
             <div>
-              <h3 className="mb-1 font-semibold text-emerald-950 dark:text-emerald-100">
+              <h3 className="mb-1 font-semibold text-card-foreground">
                 {t('discounts.ppp_banner.title')}
               </h3>
-              <p className="text-sm leading-relaxed text-emerald-900/80 dark:text-emerald-200/80">
+              <p className="text-sm leading-relaxed text-muted-foreground">
                 {t('discounts.ppp_banner.description')}
               </p>
             </div>

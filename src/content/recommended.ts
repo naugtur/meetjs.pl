@@ -50,16 +50,12 @@ export const recommendedResources: RecommendedResource[] = [
     name: 'AI for UI',
     tagline: 'Building great interfaces with AI by Emil Kowalski',
     description:
-      'Learn to build polished interfaces with AI from Emil Kowalski (design engineer at Linear, creator of Sonner and Vaul): encode your taste into rules and skills, ship from prototype to production, and review AI output. Includes 28 UI skills, the Lapse animation review tool, and a private Discord. Supports 40% Purchasing Power Parity (PPP) pricing in Poland with code B7C1LR2W.',
+      'Learn to build polished interfaces with AI from Emil Kowalski (design engineer at Linear, creator of Sonner and Vaul): encode your taste into rules and skills, ship from prototype to production, and review AI output. Includes 28 UI skills, the Lapse animation review tool, and a private Discord.',
     category: 'course',
     url: 'https://aiforui.dev/?utm_source=meetjs&utm_medium=community_partner&utm_campaign=aiforui',
     cta: '🎨 View Course',
     gradient: 'bg-gradient-to-r from-indigo-600 via-blue-500 to-cyan-400',
     icon: '🎨',
-    pppSupport: {
-      badge: '🇵🇱 40% PPP in Poland',
-      code: 'B7C1LR2W',
-    },
   },
   {
     id: 'nextjsweekly',
