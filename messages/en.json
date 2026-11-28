@@ -268,7 +268,15 @@
     "sections": {
       "events": "Events & Conferences",
       "learning": "Courses & Learning",
+      "recommended": "Recommended & PPP-Friendly",
       "software": "Software & Tools"
+    },
+    "recommended": {
+      "subtitle": "Tools, open-source projects, newsletters, and courses we genuinely recommend and want to support — even without an exclusive meet.js discount code."
+    },
+    "ppp_banner": {
+      "title": "We support Purchasing Power Parity (PPP) 🇵🇱",
+      "description": "Fair regional pricing makes top developer education accessible regardless of local currency strength. We highlight creators and courses — like AI Coding Crash Course — that offer PPP pricing in Poland."
     },
     "subtitle": "Exclusive discounts on software tools and event tickets for the meet.js community. Take advantage of these limited-time opportunities!",
     "empty": {
@@ -402,6 +410,7 @@
       "learning_discounts": "Learning Discounts",
       "organizer_tools": "Organizer Tools",
       "our_team": "Our Team",
+      "recommended_resources": "Recommended & PPP",
       "software_discounts": "Software Discounts",
       "sponsors": "Sponsors"
     },
@@ -577,6 +586,7 @@
     "projects": {
       "coming_soon": "Project list coming soon...",
       "description": "Discover projects maintained by our community members or recommended by meet.js.",
+      "e2e_description": "Open-source, customizable TypeScript testing framework for web and mobile apps built by our community partner.",
       "title": "Community Projects"
     },
     "support": {

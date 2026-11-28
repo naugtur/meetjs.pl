@@ -268,7 +268,15 @@
     "sections": {
       "events": "Wydarzenia i Konferencje",
       "learning": "Kursy i Nauka",
+      "recommended": "Polecane i wspierające PPP",
       "software": "Oprogramowanie i Narzędzia"
+    },
+    "recommended": {
+      "subtitle": "Narzędzia, projekty open source, newslettery i kursy, które szczerze polecamy i wspieramy jako społeczność — nawet jeśli nie mamy na nie dedykowanego kodu rabatowego meet.js."
+    },
+    "ppp_banner": {
+      "title": "Wspieramy Purchasing Power Parity (PPP) 🇵🇱",
+      "description": "Uczciwe ceny regionalne sprawiają, że świetne kursy i narzędzia dla programistów są bardziej dostępne w Polsce. Wyróżniamy twórców i kursy — takie jak AI Coding Crash Course — które wspierają PPP dla kupujących z Polski."
     },
     "subtitle": "Ekskluzywne zniżki na narzędzia programistyczne i bilety na wydarzenia dla społeczności meet.js. Skorzystaj z tych ograniczonych czasowo okazji!",
     "empty": {
@@ -402,6 +410,7 @@
       "learning_discounts": "Zniżki na naukę",
       "organizer_tools": "Narzędzia dla organizatorów",
       "our_team": "Nasz zespół",
+      "recommended_resources": "Polecane i PPP",
       "software_discounts": "Zniżki na oprogramowanie",
       "sponsors": "Sponsorzy"
     },
@@ -577,6 +586,7 @@
     "projects": {
       "coming_soon": "Lista projektów wkrótce...",
       "description": "Odkryj projekty utrzymywane przez członków naszej społeczności lub polecane przez meet.js.",
+      "e2e_description": "Otwartoźródłowy, konfigurowalny framework testowy w TypeScript dla aplikacji webowych i mobilnych od naszego partnera społecznościowego.",
       "title": "Projekty Społeczności"
     },
     "support": {

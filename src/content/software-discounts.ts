@@ -2,22 +2,6 @@ import { Promo } from '../types/promo';
 
 export const softwareDiscounts: Promo[] = [
   {
-    id: 'e2e-testerarmy-2026',
-    name: 'e2e (formerly TesterArmy)',
-    message: 'TesterArmy is now e2e — earn free test runs until the switch!',
-    cta: '🧪 Earn Free Runs',
-    ticketLink:
-      'https://tester.army/sign-up?ref=8a1ugwnter&utm_source=meetjs&utm_medium=community_partner&utm_campaign=e2e-testerarmy-2026',
-    eventLink:
-      'https://e2e.com/?utm_source=meetjs&utm_medium=community_partner&utm_campaign=e2e-testerarmy-2026',
-    expiresAt: '2027-01-15T23:59:59+01:00',
-    description:
-      'TesterArmy has rebranded to e2e (e2e.com) — an open source, customizable TypeScript testing framework for web, mobile and more, backed by $8M in seed funding. The hosted TesterArmy product keeps running until 15 January 2027, so you can still use our referral link: whoever signs up with it starts with 25 bonus test runs, and you both get 100 more when their workspace goes paid. Existing TesterArmy tests can be moved to e2e with the official migration tool (e2e.com/docs/migrate/testerarmy). New here? Run `npx e2e init` in your project.',
-    gradient: 'bg-[#1E5BFF]',
-    image: '/partners/e2e-logo.png',
-    emojiRight: '🤖',
-  },
-  {
     id: 'cyberfolks-2026',
     name: 'cyber_Folks',
     message: '20% off hosting & domains — support meet.js!',

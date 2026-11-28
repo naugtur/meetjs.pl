@@ -67,10 +67,25 @@ export default async function OpenSourcePage() {
                 {t('open_source.projects.title')}
               </h3>
               <p className="mb-4">{t('open_source.projects.description')}</p>
-              <div className="mt-6 rounded-md bg-muted p-4 text-center">
-                <p className="italic text-muted-foreground">
-                  {t('open_source.projects.coming_soon')}
-                </p>
+              <div className="mt-4 space-y-3">
+                <a
+                  href="https://e2e.com/?utm_source=meetjs&utm_medium=community_partner&utm_campaign=e2e"
+                  target="_blank"
+                  rel="noopener"
+                  className="block rounded-lg border bg-background p-4 transition-colors hover:bg-accent"
+                >
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="font-semibold">
+                      e2e (formerly TesterArmy)
+                    </span>
+                    <span className="rounded-full bg-sky-100 px-2.5 py-0.5 text-xs font-medium text-sky-800 dark:bg-sky-950 dark:text-sky-200">
+                      TypeScript
+                    </span>
+                  </div>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {t('open_source.projects.e2e_description')}
+                  </p>
+                </a>
               </div>
             </div>
           </div>

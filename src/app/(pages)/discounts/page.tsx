@@ -1,6 +1,7 @@
 import { eventsDiscounts } from '@/content/events-discounts';
 import { softwareDiscounts } from '@/content/software-discounts';
 import { learningDiscounts } from '@/content/learning-discounts';
+import { recommendedResources } from '@/content/recommended';
 import type { Promo } from '@/types/promo';
 import {
   Card,
@@ -10,8 +11,9 @@ import {
   CardDescription,
   CardFooter,
 } from '@/components/ui/card';
-import { Gift, Ticket, Monitor, BookOpen } from 'lucide-react';
+import { Gift, Ticket, Monitor, BookOpen, Heart, Globe } from 'lucide-react';
 import UnifiedPromoCard from '@/components/UnifiedPromoCard';
+import RecommendedCard from '@/components/RecommendedCard';
 import { EventDiscountSection } from '@/components/EventDiscountSection';
 import ServerEmptyDiscountState from '@/components/ServerEmptyDiscountState';
 import { getTranslate } from '@/tolgee/server';
@@ -164,6 +166,40 @@ export default async function DiscountsPage() {
             description={t('discounts.empty.learning.description')}
           />
         )}
+      </div>
+
+      <div id="recommended" className="mb-8 mt-14 border-t pt-12">
+        <div className="mb-4 flex items-center gap-3">
+          <Heart className="h-6 w-6 text-pink-600" />
+          <h2 className="text-2xl font-bold">
+            {t('discounts.sections.recommended')}
+          </h2>
+        </div>
+        <p className="mb-6 text-muted-foreground">
+          {t('discounts.recommended.subtitle')}
+        </p>
+
+        <div className="mb-8 rounded-xl border border-l-4 border-border border-l-green bg-card p-5 shadow-sm">
+          <div className="flex items-start gap-4">
+            <span className="mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-purple text-green">
+              <Globe className="h-5 w-5" />
+            </span>
+            <div>
+              <h3 className="mb-1 font-semibold text-card-foreground">
+                {t('discounts.ppp_banner.title')}
+              </h3>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                {t('discounts.ppp_banner.description')}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+          {recommendedResources.map((resource) => (
+            <RecommendedCard key={resource.id} resource={resource} />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -79,6 +79,11 @@ export const useTranslatedMenuLinks = (): MenuLink[] => {
           href: '/discounts#learning',
           type: 'link',
         },
+        {
+          name: t('navigation.dropdown.recommended_resources'),
+          href: '/discounts#recommended',
+          type: 'link',
+        },
       ],
     },
     {
