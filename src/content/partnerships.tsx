@@ -217,11 +217,11 @@ export const partnerships: Partnership[] = [
     ),
     gradient: 'from-sky-600 to-teal-400',
     specialOffer: {
-      title: '10% Discount - Code FRIENDS',
+      title: '15% Discount - Code MEETJS',
       description:
-        'Use code FRIENDS for 10% off tickets to React Day Berlin 2026',
-      link: 'https://ti.to/gitnation/react-day-berlin-2026/discount/FRIENDS',
-      linkText: 'Get 10% Off',
+        'Use code MEETJS for 15% off tickets to React Day Berlin 2026',
+      link: 'https://ti.to/gitnation/react-day-berlin-2026/discount/MEETJS',
+      linkText: 'Get 15% Off',
     },
   },
   {
@@ -253,11 +253,11 @@ export const partnerships: Partnership[] = [
     ),
     gradient: 'from-violet-700 to-fuchsia-600',
     specialOffer: {
-      title: '10% Discount - Code FRIENDS',
+      title: '15% Discount - Code MEETJS',
       description:
-        'Use code FRIENDS for 10% off tickets to AI Coding Summit Berlin 2026',
-      link: 'https://ti.to/gitnation/ai-coding-summit-berlin-2026/discount/FRIENDS',
-      linkText: 'Get 10% Off',
+        'Use code MEETJS for 15% off tickets to AI Coding Summit Berlin 2026',
+      link: 'https://ti.to/gitnation/ai-coding-summit-berlin-2026/discount/MEETJS',
+      linkText: 'Get 15% Off',
     },
   },
   {
