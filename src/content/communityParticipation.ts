@@ -18,6 +18,23 @@ export interface CommunityItem {
 
 export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
   {
+    id: 'state-of-js-2026',
+    title: 'State of JS 2026 Survey',
+    description:
+      'The 2026 State of JavaScript survey is now open — the last Devographics survey of the year. Share your experience with the JS ecosystem, frameworks, runtimes, and tooling to help take the pulse of web development and inform browser and library roadmaps.',
+    url: 'https://survey.devographics.com/en-US/survey/state-of-js/2026',
+    type: 'survey',
+    status: 'active',
+    startDate: '2026-11-24',
+    organization: 'Devographics',
+    impact:
+      'Your input helps developers and browser vendors worldwide understand JS trends and shape what ships next.',
+    ctaText: 'Fill out the survey',
+    featured: true,
+    image: 'https://assets.devographics.com/surveys/js2026.png',
+    tags: ['JavaScript', 'Survey', 'Community', 'Trends', 'Ecosystem'],
+  },
+  {
     id: 'gdg-devfest-wroclaw-2026',
     title: 'Google DevFest 2026 Wrocław',
     description:
@@ -142,20 +159,21 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
   },
   {
     id: 'state-of-html-2026',
-    title: 'State of HTML 2026 Survey',
+    title: 'State of HTML 2026 Survey Results',
     description:
-      'Devographics’ annual look at how we use HTML, forms, web components and browser APIs is back. Takes 10–15 minutes — and browser vendors use the results to prioritize their roadmaps, so your answers help decide what ships next.',
-    url: 'https://survey.devographics.com/en-US/survey/state-of-html/2026',
+      'The State of HTML 2026 survey results are now out! Explore the latest web platform features, remaining pain points, and new insights on AI’s impact on accessibility.',
+    url: 'https://2026.stateofhtml.com/en-US/',
     type: 'survey',
-    status: 'active',
+    status: 'completed',
     startDate: '2026-10-12',
+    endDate: '2026-11-18',
     organization: 'Devographics',
     impact:
-      'Your answers directly influence what browser vendors ship next — help shape the future of the web platform.',
-    ctaText: 'Fill out the survey',
-    featured: true,
+      'Browse the results to learn about HTML adoption, pain points, and web platform priorities across the industry.',
+    ctaText: 'View Results',
+    featured: false,
     image: 'https://assets.devographics.com/surveys/html2026.png',
-    tags: ['HTML', 'Survey', 'Community', 'Web Platform', 'Browser APIs'],
+    tags: ['HTML', 'Survey', 'Results', 'Community', 'Web Platform'],
   },
   {
     id: 'skill-sprint-2026',
