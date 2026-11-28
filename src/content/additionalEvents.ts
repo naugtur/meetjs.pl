@@ -864,6 +864,7 @@ export const ADDITIONAL_EVENTS: EventType[] = [
     topic: ['UX', 'Frontend', 'CSS', 'Design Systems', 'Accessibility', 'AI'],
   },
   {
+    type: 'Conference',
     id: 100044,
     date_add: Date.now(),
     date: '20.03.2027',
