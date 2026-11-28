@@ -117,6 +117,11 @@ export const PARTNERS = [
     alt: 'Cloud Native Days Poland',
   },
   {
+    href: 'https://devoxx.pl/',
+    src: '/partners/devoxx-poland-white.svg',
+    alt: 'Devoxx Poland',
+  },
+  {
     href: 'https://smashingconf.com/',
     src: '/partners/smashingconf-white.svg',
     alt: 'SmashingConf',
