@@ -43,6 +43,23 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
     ],
   },
   {
+    id: 'state-of-js-2026',
+    title: 'State of JS 2026 Survey',
+    description:
+      'The 2026 State of JavaScript survey is now open — the last Devographics survey of the year. Share your experience with the JS ecosystem, frameworks, runtimes, and tooling to help take the pulse of web development and inform browser and library roadmaps.',
+    url: 'https://survey.devographics.com/en-US/survey/state-of-js/2026',
+    type: 'survey',
+    status: 'active',
+    startDate: '2026-11-24',
+    organization: 'Devographics',
+    impact:
+      'Your input helps developers and browser vendors worldwide understand JS trends and shape what ships next.',
+    ctaText: 'Fill out the survey',
+    featured: true,
+    image: 'https://assets.devographics.com/surveys/js2026.png',
+    tags: ['JavaScript', 'Survey', 'Community', 'Trends', 'Ecosystem'],
+  },
+  {
     id: 'gdg-devfest-wroclaw-2026',
     title: 'Google DevFest 2026 Wrocław',
     description:
@@ -72,7 +89,7 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
     id: 'react-day-berlin-2026',
     title: 'React Day Berlin 2026',
     description:
-      'Hybrid conference of all things React by GitNation — December 4 in-person at KOSMOS Berlin and December 7 remote. OSS authors, top trainers and speakers, and web engineers from across the globe meet to talk React, React Native, full-stack and AI-assisted development. Use code FRIENDS for 10% off your ticket.',
+      'Hybrid conference of all things React by GitNation — December 4 in-person at KOSMOS Berlin and December 7 remote. OSS authors, top trainers and speakers, and web engineers from across the globe meet to talk React, React Native, full-stack and AI-assisted development. Use code MEETJS for 15% off your ticket.',
     url: 'https://reactday.berlin/',
     type: 'collaboration',
     status: 'active',
@@ -80,8 +97,8 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
     endDate: '2026-12-07',
     organization: 'GitNation',
     impact:
-      'Community partnership – meet.js logo on the conference website, mutual social media promotion and a 10% discount for the meet.js community.',
-    ctaText: 'Get 10% off with FRIENDS',
+      'Community partnership – meet.js logo on the conference website, mutual social media promotion and a 15% discount for the meet.js community.',
+    ctaText: 'Get 15% off with MEETJS',
     featured: true,
     image: '/discounts/react-day-berlin.svg',
     tags: ['React', 'Conference', 'Berlin', 'Hybrid', 'GitNation', 'Discount'],
@@ -90,7 +107,7 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
     id: 'ai-coding-summit-berlin-2026',
     title: 'AI Coding Summit Berlin 2026',
     description:
-      'A new in-person gathering for the European AI developer community by GitNation — December 4 at KOSMOS Berlin (co-located with React Day Berlin) and December 7 remote. No-hype, practitioner-led format: real workflows, repeatable techniques, and deep dives into the tools, agents and patterns that make AI-assisted development work at scale. Use code FRIENDS for 10% off your ticket.',
+      'A new in-person gathering for the European AI developer community by GitNation — December 4 at KOSMOS Berlin (co-located with React Day Berlin) and December 7 remote. No-hype, practitioner-led format: real workflows, repeatable techniques, and deep dives into the tools, agents and patterns that make AI-assisted development work at scale. Use code MEETJS for 15% off your ticket.',
     url: 'https://aicodingsummit.com/berlin/',
     type: 'collaboration',
     status: 'active',
@@ -98,8 +115,8 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
     endDate: '2026-12-07',
     organization: 'GitNation',
     impact:
-      'Community partnership – meet.js logo on the conference website, mutual social media promotion and a 10% discount for the meet.js community.',
-    ctaText: 'Get 10% off with FRIENDS',
+      'Community partnership – meet.js logo on the conference website, mutual social media promotion and a 15% discount for the meet.js community.',
+    ctaText: 'Get 15% off with MEETJS',
     featured: true,
     image: '/discounts/ai-coding-summit-berlin.svg',
     tags: [
@@ -167,20 +184,21 @@ export const COMMUNITY_PARTICIPATION: CommunityItem[] = [
   },
   {
     id: 'state-of-html-2026',
-    title: 'State of HTML 2026 Survey',
+    title: 'State of HTML 2026 Survey Results',
     description:
-      'Devographics’ annual look at how we use HTML, forms, web components and browser APIs is back. Takes 10–15 minutes — and browser vendors use the results to prioritize their roadmaps, so your answers help decide what ships next.',
-    url: 'https://survey.devographics.com/en-US/survey/state-of-html/2026',
+      'The State of HTML 2026 survey results are now out! Explore the latest web platform features, remaining pain points, and new insights on AI’s impact on accessibility.',
+    url: 'https://2026.stateofhtml.com/en-US/',
     type: 'survey',
-    status: 'active',
+    status: 'completed',
     startDate: '2026-10-12',
+    endDate: '2026-11-18',
     organization: 'Devographics',
     impact:
-      'Your answers directly influence what browser vendors ship next — help shape the future of the web platform.',
-    ctaText: 'Fill out the survey',
-    featured: true,
+      'Browse the results to learn about HTML adoption, pain points, and web platform priorities across the industry.',
+    ctaText: 'View Results',
+    featured: false,
     image: 'https://assets.devographics.com/surveys/html2026.png',
-    tags: ['HTML', 'Survey', 'Community', 'Web Platform', 'Browser APIs'],
+    tags: ['HTML', 'Survey', 'Results', 'Community', 'Web Platform'],
   },
   {
     id: 'skill-sprint-2026',
