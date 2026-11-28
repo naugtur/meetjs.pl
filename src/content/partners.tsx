@@ -121,4 +121,19 @@ export const PARTNERS = [
     src: '/partners/devoxx-poland-white.svg',
     alt: 'Devoxx Poland',
   },
+  {
+    href: 'https://smashingconf.com/',
+    src: '/partners/smashingconf-white.svg',
+    alt: 'SmashingConf',
+  },
+  {
+    href: 'https://www.jetbrains.com/community/user-groups/',
+    src: '/partners/jetbrains-white.svg',
+    alt: 'JetBrains',
+  },
+  {
+    href: 'https://2027.boilingfrogs.pl/',
+    src: '/partners/boiling-frogs.png',
+    alt: 'Boiling Frogs',
+  },
 ];

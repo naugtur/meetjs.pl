@@ -63,6 +63,35 @@ export const partnerships: Partnership[] = [
     gradient: 'from-orange-500 to-amber-500',
   },
   {
+    name: 'Boiling Frogs 2027',
+    website: 'https://2027.boilingfrogs.pl/',
+    description:
+      'Konferencja poświęcona rzemiosłu programistycznemu (Software Craftsmanship) — 20 marca 2027 we Wrocławskim Centrum Kongresowym. meet.js jest oficjalnym partnerem medialnym wydarzenia.',
+    details: [
+      '20 marca 2027, Wrocławskie Centrum Kongresowe (ul. Wystawowa 1), Wrocław',
+      'Jednodniowa konferencja IT skupiona na fundamentalnej wiedzy, architekturze, jakości kodu i dobrych praktykach niezależnych od konkretnych frameworków',
+      'Logo meet.js na stronie partnerów oraz materiałach drukowanych (roll-up, plakat)',
+      '1 darmowa wejściówka do rozdania w konkursie dla społeczności meet.js',
+    ],
+    goals: [
+      'Promowanie rzemiosła programistycznego i dobrych praktyk inżynierskich w społeczności meet.js',
+      'Wzajemna promocja w kanałach społecznościowych i podczas wrocławskich meetupów meet.js',
+      'Konkurs z darmową wejściówką na konferencję dla członków społeczności',
+    ],
+    location: 'Wrocław, Wrocławskie Centrum Kongresowe',
+    contact: 'https://2027.boilingfrogs.pl/',
+    icon: (
+      <Image
+        src="/partners/boiling-frogs-icon.png"
+        alt="Boiling Frogs"
+        width={32}
+        height={32}
+        className="h-8 w-8 object-contain"
+      />
+    ),
+    gradient: 'from-lime-500 to-cyan-500',
+  },
+  {
     name: 'Dzień Programisty',
     website: 'https://dzienprogramisty.pl/',
     description:
@@ -187,6 +216,42 @@ export const partnerships: Partnership[] = [
     },
   },
   {
+    name: 'SmashingConf Amsterdam 2027',
+    website: 'https://smashingconf.com/amsterdam-2027',
+    description:
+      'In-person conference and workshops for designers, UI engineers and UX professionals by Smashing Magazine — May 18–21, 2027 at Pathé Tuschinski in Amsterdam. meet.js is an official media partner.',
+    details: [
+      'May 18–21, 2027 at Pathé Tuschinski, Amsterdam (conference May 19–20, full-day workshops May 18 & 21)',
+      'Single-track practical sessions on design systems, modern CSS, accessibility, Figma, UX and AI-driven workflows',
+      'meet.js logo on the SmashingConf Amsterdam partner page and featured in the Smashing Members newsletter (25K members)',
+      'Exclusive 15% community discount for meet.js members (code welovecommunity)',
+    ],
+    goals: [
+      'Continuing our long-term media partnership with Smashing Magazine across European editions',
+      'Connecting Polish front-end developers and UI engineers with the international Smashing community',
+      'Sharing an exclusive 15% ticket discount with meet.js members',
+    ],
+    location: 'Amsterdam, Netherlands (Pathé Tuschinski)',
+    contact: 'https://smashingconf.com/amsterdam-2027',
+    icon: (
+      <Image
+        src="/partners/smashingconf.svg"
+        alt="SmashingConf Amsterdam 2027"
+        width={64}
+        height={32}
+        className="h-8 w-auto object-contain"
+      />
+    ),
+    gradient: 'from-red-600 to-amber-400',
+    specialOffer: {
+      title: '15% Discount - Code welovecommunity',
+      description:
+        'Use code welovecommunity for 15% off tickets to SmashingConf Amsterdam 2027',
+      link: 'https://ti.to/smashingmagazine/smashingconf-amsterdam-2027/discount/welovecommunity?utm_source=meetjs&utm_medium=community_partner&utm_campaign=smashingconf-amsterdam-2027',
+      linkText: 'Get 15% Off',
+    },
+  },
+  {
     name: 'SmashingConf AI 2027 Conference',
     website: 'https://smashingconf.com/ai-2027-conference/',
     description:
@@ -245,11 +310,11 @@ export const partnerships: Partnership[] = [
     ),
     gradient: 'from-sky-600 to-teal-400',
     specialOffer: {
-      title: '10% Discount - Code FRIENDS',
+      title: '15% Discount - Code MEETJS',
       description:
-        'Use code FRIENDS for 10% off tickets to React Day Berlin 2026',
-      link: 'https://ti.to/gitnation/react-day-berlin-2026/discount/FRIENDS',
-      linkText: 'Get 10% Off',
+        'Use code MEETJS for 15% off tickets to React Day Berlin 2026',
+      link: 'https://ti.to/gitnation/react-day-berlin-2026/discount/MEETJS',
+      linkText: 'Get 15% Off',
     },
   },
   {
@@ -281,11 +346,11 @@ export const partnerships: Partnership[] = [
     ),
     gradient: 'from-violet-700 to-fuchsia-600',
     specialOffer: {
-      title: '10% Discount - Code FRIENDS',
+      title: '15% Discount - Code MEETJS',
       description:
-        'Use code FRIENDS for 10% off tickets to AI Coding Summit Berlin 2026',
-      link: 'https://ti.to/gitnation/ai-coding-summit-berlin-2026/discount/FRIENDS',
-      linkText: 'Get 10% Off',
+        'Use code MEETJS for 15% off tickets to AI Coding Summit Berlin 2026',
+      link: 'https://ti.to/gitnation/ai-coding-summit-berlin-2026/discount/MEETJS',
+      linkText: 'Get 15% Off',
     },
   },
   {
