@@ -116,4 +116,9 @@ export const PARTNERS = [
     src: '/partners/cnd-poland.svg',
     alt: 'Cloud Native Days Poland',
   },
+  {
+    href: 'https://www.jetbrains.com/community/user-groups/',
+    src: '/partners/jetbrains-white.svg',
+    alt: 'JetBrains',
+  },
 ];
