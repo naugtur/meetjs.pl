@@ -2,6 +2,26 @@ import { Promo } from '../types/promo';
 
 export const eventsDiscounts: Promo[] = [
   {
+    id: 'smashingconf-amsterdam-2027',
+    name: 'SmashingConf Amsterdam 2027',
+    message: '15% off with code welovecommunity!',
+    cta: '👉 Get 15% Off',
+    ticketLink:
+      'https://ti.to/smashingmagazine/smashingconf-amsterdam-2027/discount/welovecommunity?utm_source=meetjs&utm_medium=community_partner&utm_campaign=smashingconf-amsterdam-2027',
+    eventLink:
+      'https://smashingconf.com/amsterdam-2027?utm_source=meetjs&utm_medium=community_partner&utm_campaign=smashingconf-amsterdam-2027',
+    expiresAt: '2027-05-21T23:59:59+02:00',
+    description:
+      'meet.js is a media partner of SmashingConf Amsterdam 2027! Join designers, UI engineers and UX professionals on May 18–21, 2027 at Pathé Tuschinski in Amsterdam (workshops May 18 & 21, conference days May 19–20) for practical talks and hands-on sessions on design systems, modern CSS, accessibility, Figma, UX and AI-driven workflows. Use code welovecommunity for 15% off your ticket!',
+    gradient: 'bg-gradient-to-r from-red-600 via-orange-500 to-amber-400',
+    icon: '🐱',
+    image: '/partners/smashingconf-white.svg',
+    emojiRight: '🇳🇱',
+    country: 'Netherlands',
+    city: 'Amsterdam',
+    discountCode: 'welovecommunity',
+  },
+  {
     id: 'gdg-devfest-warsaw-2026',
     name: 'GDG DevFest Warsaw 2026',
     message: '33% off LastBird tickets with code MEETJS33!',

@@ -188,6 +188,42 @@ export const partnerships: Partnership[] = [
     },
   },
   {
+    name: 'SmashingConf Amsterdam 2027',
+    website: 'https://smashingconf.com/amsterdam-2027',
+    description:
+      'In-person conference and workshops for designers, UI engineers and UX professionals by Smashing Magazine — May 18–21, 2027 at Pathé Tuschinski in Amsterdam. meet.js is an official media partner.',
+    details: [
+      'May 18–21, 2027 at Pathé Tuschinski, Amsterdam (conference May 19–20, full-day workshops May 18 & 21)',
+      'Single-track practical sessions on design systems, modern CSS, accessibility, Figma, UX and AI-driven workflows',
+      'meet.js logo on the SmashingConf Amsterdam partner page and featured in the Smashing Members newsletter (25K members)',
+      'Exclusive 15% community discount for meet.js members (code welovecommunity)',
+    ],
+    goals: [
+      'Continuing our long-term media partnership with Smashing Magazine across European editions',
+      'Connecting Polish front-end developers and UI engineers with the international Smashing community',
+      'Sharing an exclusive 15% ticket discount with meet.js members',
+    ],
+    location: 'Amsterdam, Netherlands (Pathé Tuschinski)',
+    contact: 'https://smashingconf.com/amsterdam-2027',
+    icon: (
+      <Image
+        src="/partners/smashingconf.svg"
+        alt="SmashingConf Amsterdam 2027"
+        width={64}
+        height={32}
+        className="h-8 w-auto object-contain"
+      />
+    ),
+    gradient: 'from-red-600 to-amber-400',
+    specialOffer: {
+      title: '15% Discount - Code welovecommunity',
+      description:
+        'Use code welovecommunity for 15% off tickets to SmashingConf Amsterdam 2027',
+      link: 'https://ti.to/smashingmagazine/smashingconf-amsterdam-2027/discount/welovecommunity?utm_source=meetjs&utm_medium=community_partner&utm_campaign=smashingconf-amsterdam-2027',
+      linkText: 'Get 15% Off',
+    },
+  },
+  {
     name: 'SmashingConf AI 2027 Conference',
     website: 'https://smashingconf.com/ai-2027-conference/',
     description:

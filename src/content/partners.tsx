@@ -117,6 +117,11 @@ export const PARTNERS = [
     alt: 'Cloud Native Days Poland',
   },
   {
+    href: 'https://smashingconf.com/',
+    src: '/partners/smashingconf-white.svg',
+    alt: 'SmashingConf',
+  },
+  {
     href: 'https://www.jetbrains.com/community/user-groups/',
     src: '/partners/jetbrains-white.svg',
     alt: 'JetBrains',
