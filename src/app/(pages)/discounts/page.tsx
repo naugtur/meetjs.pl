@@ -1,6 +1,7 @@
 import { eventsDiscounts } from '@/content/events-discounts';
 import { softwareDiscounts } from '@/content/software-discounts';
 import { learningDiscounts } from '@/content/learning-discounts';
+import { recommendedResources } from '@/content/recommended';
 import type { Promo } from '@/types/promo';
 import {
   Card,
@@ -10,8 +11,9 @@ import {
   CardDescription,
   CardFooter,
 } from '@/components/ui/card';
-import { Gift, Ticket, Monitor, BookOpen } from 'lucide-react';
+import { Gift, Ticket, Monitor, BookOpen, Heart, Globe } from 'lucide-react';
 import UnifiedPromoCard from '@/components/UnifiedPromoCard';
+import RecommendedCard from '@/components/RecommendedCard';
 import { EventDiscountSection } from '@/components/EventDiscountSection';
 import ServerEmptyDiscountState from '@/components/ServerEmptyDiscountState';
 import { getTranslate } from '@/tolgee/server';
@@ -164,6 +166,38 @@ export default async function DiscountsPage() {
             description={t('discounts.empty.learning.description')}
           />
         )}
+      </div>
+
+      <div id="recommended" className="mb-8 mt-14 border-t pt-12">
+        <div className="mb-4 flex items-center gap-3">
+          <Heart className="h-6 w-6 text-pink-600" />
+          <h2 className="text-2xl font-bold">
+            {t('discounts.sections.recommended')}
+          </h2>
+        </div>
+        <p className="mb-6 text-muted-foreground">
+          {t('discounts.recommended.subtitle')}
+        </p>
+
+        <div className="mb-8 rounded-xl border border-emerald-200 bg-emerald-50/70 p-5 dark:border-emerald-800/60 dark:bg-emerald-950/30">
+          <div className="flex items-start gap-3">
+            <Globe className="mt-0.5 h-5 w-5 flex-shrink-0 text-emerald-600 dark:text-emerald-400" />
+            <div>
+              <h3 className="mb-1 font-semibold text-emerald-950 dark:text-emerald-100">
+                {t('discounts.ppp_banner.title')}
+              </h3>
+              <p className="text-sm leading-relaxed text-emerald-900/80 dark:text-emerald-200/80">
+                {t('discounts.ppp_banner.description')}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+          {recommendedResources.map((resource) => (
+            <RecommendedCard key={resource.id} resource={resource} />
+          ))}
+        </div>
       </div>
     </div>
   );

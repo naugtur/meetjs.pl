@@ -1,5 +1,6 @@
 import { eventsDiscounts } from './events-discounts';
 import { learningDiscounts } from './learning-discounts';
+import { recommendedResources } from './recommended';
 import { softwareDiscounts } from './software-discounts';
 
 const activePromos = [
@@ -16,6 +17,12 @@ const links = activePromos.flatMap((promo) =>
 
 describe('active promo links', () => {
   it.each(links)('$id $field has utm_source', ({ url }) => {
+    expect(new URL(url).searchParams.has('utm_source')).toBe(true);
+  });
+});
+
+describe('recommended resource links', () => {
+  it.each(recommendedResources)('$id url has utm_source', ({ url }) => {
     expect(new URL(url).searchParams.has('utm_source')).toBe(true);
   });
 });
